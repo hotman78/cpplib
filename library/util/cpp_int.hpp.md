@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#05c7e24700502a079cdd88012b5a76d3">util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/util/cpp_int.hpp">View this file on GitHub</a>
-    - Last commit date: 1970-01-01 00:00:00+00:00
+    - Last commit date: 2020-09-10 20:18:46+09:00
 
 
 
@@ -41,11 +41,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#include <boost/multiprecision/cpp_dec_float.hpp>
-#include <boost/multiprecision/cpp_int.hpp>
-namespace mp = boost::multiprecision;
-typedef mp::number<mp::cpp_dec_float<0>> cdouble;
-typedef mp::cpp_int cint;
+// #include <boost/multiprecision/cpp_dec_float.hpp>
+// #include <boost/multiprecision/cpp_int.hpp>
+// namespace mp = boost::multiprecision;
+// typedef mp::number<mp::cpp_dec_float<0>> cdouble;
+// typedef mp::cpp_int cint;
 ```
 {% endraw %}
 
@@ -53,11 +53,11 @@ typedef mp::cpp_int cint;
 {% raw %}
 ```cpp
 #line 1 "util/cpp_int.hpp"
-#include <boost/multiprecision/cpp_dec_float.hpp>
-#include <boost/multiprecision/cpp_int.hpp>
-namespace mp = boost::multiprecision;
-typedef mp::number<mp::cpp_dec_float<0>> cdouble;
-typedef mp::cpp_int cint;
+// #include <boost/multiprecision/cpp_dec_float.hpp>
+// #include <boost/multiprecision/cpp_int.hpp>
+// namespace mp = boost::multiprecision;
+// typedef mp::number<mp::cpp_dec_float<0>> cdouble;
+// typedef mp::cpp_int cint;
 
 ```
 {% endraw %}
