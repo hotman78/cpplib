@@ -1,5 +1,7 @@
 # cpplib
-[![Actions Status](https://github.com/hotman78/cpplib/workflows/verify/badge.svg)](https://github.com/hotman78/cpplib/actions)
+
+[![Actions Status](https://github.com/hotman78/cpplib/workflows/verify/badge.svg)](https://github.com/hotman78/cpplib/actions)[https://hotman78.github.io/cpplib/](サイト)
+
 競技プログラミングのC++のライブラリです
 
 # math
