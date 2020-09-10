@@ -56,8 +56,11 @@ int main(){
         lint c,s,t;
         cin>>c>>s>>t;
         if(c==0){
+            //seg[s]にtを右から適用
             seg.apply(s,t);
         }else{
+            //seg[s]+seg[s+1]+...+seg[t-1]
+            //要素数が0ならnoneが帰る
             cout<<seg.get(s,t).unwrap()<<endl;
         }
     }
