@@ -53,15 +53,15 @@ auto seg=make_segment_tree(vector<T>(n),min<lint>);//min monoid
 
 - 更新
 
-``seg.apply(s,t)``で$a_s \leftarrow a_s \dot t$と更新
+``seg.apply(s,t)``で$a_s \leftarrow a_s \cdot t$と更新
 
-``seg.apply_left(s,t)``で$a_s \leftarrow t \dot a_s$と更新
+``seg.apply_left(s,t)``で$a_s \leftarrow t \cdot a_s$と更新
 
 ``seg.change(s,t)``で$a_s \leftarrow	 t$と更新
 
 - 取得
 
-``seg.get(s,t)``で$a_s \dot a_{s+1} \dot \dots \dot a_{t-1}$をmaybe<T>型で取得
+``seg.get(s,t)``で$a_s \cdot a_{s+1} \cdot \dots \cdot a_{t-1}$をmaybe<T>型で取得
 
 
 ## Depends on
