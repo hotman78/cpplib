@@ -1,3 +1,8 @@
+/**
+ * @brief Segment Tree
+ * @docs docs/segment_tree.md
+ */
+
 #pragma once
 #include"../../alga/maybe.hpp"
 template<typename T,typename F>
