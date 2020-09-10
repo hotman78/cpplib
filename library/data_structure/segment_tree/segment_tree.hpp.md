@@ -42,30 +42,19 @@ layout: default
 1添加を行う為、単位元を渡す必要はない。
 空間計算量$\Theta(n)$
 
-## how to use
-```cpp:segment_tree.test.cpp
-int main(){
-    int n,q;
-    cin>>n>>q;
-    vector<int> v(n);
-    rep(i,n){
-        cin>>v[i];
-    }
-    auto seg=make_segment_tree(v,plus<lint>());
-    rep(i,q){
-        lint c,s,t;
-        cin>>c>>s>>t;
-        if(c==0){
-            //seg[s]にtを右から適用
-            seg.apply(s,t);
-        }else{
-            //seg[s]+seg[s+1]+...+seg[t-1]
-            //要素数が0ならnoneが帰る
-            cout<<seg.get(s,t).unwrap()<<endl;
-        }
-    }
-}
+## How to use
+```cpp
+auto seg=make_segment_tree(vector<T>(n),plus<lint>());//+ monoid
+auto seg=make_segment_tree(vector<T>(n),min<lint>);//min monoid
 ```
+で初期化
+
+``seg.apply(s,t)``で$a_s \leftarrow a_s \dot t$
+
+``seg.apply_left(s,t)``で$a_s \leftarrow t \dot a_s
+
+``seg.change(s,t)``で$a_s \leftarrow	 t$
+``seg.get(s,t)``で$a_s \dot a_{s+1} \dot \dots \dot a_{t-1}$をmaybe<T>型で取得
 
 
 ## Depends on
