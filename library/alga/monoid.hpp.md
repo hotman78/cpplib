@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="maybe.hpp.html">alga/maybe.hpp</a>
+* :heavy_check_mark: <a href="maybe.hpp.html">alga/maybe.hpp</a>
 
 
 ## Code

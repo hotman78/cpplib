@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: data_structure/segment_tree/segment_tree.test.cpp
+# :heavy_check_mark: data_structure/segment_tree/segment_tree.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/alga/maybe.hpp.html">alga/maybe.hpp</a>
-* :x: <a href="../../../library/data_structure/segment_tree/segment_tree.hpp.html">data_structure/segment_tree/segment_tree.hpp</a>
-* :x: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="../../../library/alga/maybe.hpp.html">alga/maybe.hpp</a>
+* :heavy_check_mark: <a href="../../../library/data_structure/segment_tree/segment_tree.hpp.html">data_structure/segment_tree/segment_tree.hpp</a>
+* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
