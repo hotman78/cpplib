@@ -39,7 +39,7 @@ layout: default
 ## Required by
 
 * :warning: <a href="monoid.hpp.html">alga/monoid.hpp</a>
-* :heavy_check_mark: <a href="../data_structure/segment_tree/segment_tree.hpp.html">data_structure/segment_tree/segment_tree.hpp</a>
+* :heavy_check_mark: <a href="../data_structure/segment_tree/segment_tree.hpp.html">Segment Tree <small>(data_structure/segment_tree/segment_tree.hpp)</small></a>
 
 
 ## Verified with

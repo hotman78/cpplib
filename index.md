@@ -53,7 +53,7 @@ layout: default
 
 ### data_structure/segment_tree
 
-* :heavy_check_mark: <a href="library/data_structure/segment_tree/segment_tree.hpp.html">data_structure/segment_tree/segment_tree.hpp</a>
+* :heavy_check_mark: <a href="library/data_structure/segment_tree/segment_tree.hpp.html">Segment Tree <small>(data_structure/segment_tree/segment_tree.hpp)</small></a>
 
 
 <div id="7e676e9e663beb40fd133f5ee24487c2"></div>
