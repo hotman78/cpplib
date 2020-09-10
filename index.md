@@ -38,7 +38,7 @@ layout: default
 
 ### alga
 
-* :warning: <a href="library/alga/maybe.hpp.html">alga/maybe.hpp</a>
+* :x: <a href="library/alga/maybe.hpp.html">alga/maybe.hpp</a>
 * :warning: <a href="library/alga/monoid.hpp.html">alga/monoid.hpp</a>
 
 
@@ -53,7 +53,7 @@ layout: default
 
 ### data_structure/segment_tree
 
-* :warning: <a href="library/data_structure/segment_tree/segment_tree.hpp.html">data_structure/segment_tree/segment_tree.hpp</a>
+* :x: <a href="library/data_structure/segment_tree/segment_tree.hpp.html">data_structure/segment_tree/segment_tree.hpp</a>
 
 
 <div id="7e676e9e663beb40fd133f5ee24487c2"></div>
@@ -67,11 +67,14 @@ layout: default
 
 ### util
 
-* :warning: <a href="library/util/template.hpp.html">util/template.hpp</a>
+* :warning: <a href="library/util/cpp_int.hpp.html">util/cpp_int.hpp</a>
+* :warning: <a href="library/util/pbds.hpp.html">util/pbds.hpp</a>
+* :x: <a href="library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/data_structure/dsu/union_find.test.cpp.html">data_structure/dsu/union_find.test.cpp</a>
+* :x: <a href="verify/data_structure/segment_tree/segment_tree.test.cpp.html">data_structure/segment_tree/segment_tree.test.cpp</a>
 
 

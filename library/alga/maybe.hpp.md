@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: alga/maybe.hpp
+# :x: alga/maybe.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,7 +39,12 @@ layout: default
 ## Required by
 
 * :warning: <a href="monoid.hpp.html">alga/monoid.hpp</a>
-* :warning: <a href="../data_structure/segment_tree/segment_tree.hpp.html">data_structure/segment_tree/segment_tree.hpp</a>
+* :x: <a href="../data_structure/segment_tree/segment_tree.hpp.html">data_structure/segment_tree/segment_tree.hpp</a>
+
+
+## Verified with
+
+* :x: <a href="../../verify/data_structure/segment_tree/segment_tree.test.cpp.html">data_structure/segment_tree/segment_tree.test.cpp</a>
 
 
 ## Code

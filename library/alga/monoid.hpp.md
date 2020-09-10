@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="maybe.hpp.html">alga/maybe.hpp</a>
+* :x: <a href="maybe.hpp.html">alga/maybe.hpp</a>
 
 
 ## Code
