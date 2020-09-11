@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#7490ac1138b0c79126fd7a453fe0bd8b">data_structure/dsu</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/dsu/union_find.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-10 16:53:23+09:00
+    - Last commit date: 2020-09-11 11:38:51+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/data_structure/dsu/union_find.hpp.html">data_structure/dsu/union_find.hpp</a>
+* :heavy_check_mark: <a href="../../../library/data_structure/dsu/union_find.hpp.html">Union Find <small>(data_structure/dsu/union_find.hpp)</small></a>
 
 
 ## Code
@@ -77,6 +77,12 @@ int main(){
 #include<bits/stdc++.h>
 using namespace std;
 #line 1 "data_structure/dsu/union_find.hpp"
+/**
+ * @brief Union Find
+ * @docs docs/union_find.md
+ * @see https://ja.wikipedia.org/wiki/%E7%B4%A0%E9%9B%86%E5%90%88%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0
+ */
+
 class UF{
     public:
     vector<int> data;

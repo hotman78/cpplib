@@ -25,13 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: data_structure/dsu/union_find.hpp
+# :heavy_check_mark: Union Find <small>(data_structure/dsu/union_find.hpp)</small>
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#7490ac1138b0c79126fd7a453fe0bd8b">data_structure/dsu</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/dsu/union_find.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-10 16:53:23+09:00
+    - Last commit date: 2020-09-11 11:38:51+09:00
+
+
+* see: <a href="https://ja.wikipedia.org/wiki/%E7%B4%A0%E9%9B%86%E5%90%88%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0">https://ja.wikipedia.org/wiki/%E7%B4%A0%E9%9B%86%E5%90%88%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0</a>
 
 
 
@@ -46,6 +49,12 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/**
+ * @brief Union Find
+ * @docs docs/union_find.md
+ * @see https://ja.wikipedia.org/wiki/%E7%B4%A0%E9%9B%86%E5%90%88%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0
+ */
+
 class UF{
     public:
     vector<int> data;
@@ -73,6 +82,12 @@ class UF{
 {% raw %}
 ```cpp
 #line 1 "data_structure/dsu/union_find.hpp"
+/**
+ * @brief Union Find
+ * @docs docs/union_find.md
+ * @see https://ja.wikipedia.org/wiki/%E7%B4%A0%E9%9B%86%E5%90%88%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0
+ */
+
 class UF{
     public:
     vector<int> data;
