@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fba856dbe1aaa5374a50a27f6dcea717">data_structure/segment_tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/segment_tree/segment_tree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-10 20:32:02+09:00
+    - Last commit date: 2020-09-11 09:41:15+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_add_range_sum">https://judge.yosupo.jp/problem/point_add_range_sum</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/alga/maybe.hpp.html">alga/maybe.hpp</a>
+* :heavy_check_mark: <a href="../../../library/alga/maybe.hpp.html">Maybe <small>(alga/maybe.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/data_structure/segment_tree/segment_tree.hpp.html">Segment Tree <small>(data_structure/segment_tree/segment_tree.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
@@ -88,7 +88,7 @@ Traceback (most recent call last):
     self.update(self._resolve(pathlib.Path(included), included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 310, in update
     raise BundleErrorAt(path, i + 1, "#pragma once found in a non-first line")
-onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: data_structure/segment_tree/segment_tree.hpp: line 6: #pragma once found in a non-first line
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: data_structure/segment_tree/segment_tree.hpp: line 7: #pragma once found in a non-first line
 
 ```
 {% endraw %}

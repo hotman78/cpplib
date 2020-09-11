@@ -38,7 +38,7 @@ layout: default
 
 ### alga
 
-* :heavy_check_mark: <a href="library/alga/maybe.hpp.html">alga/maybe.hpp</a>
+* :heavy_check_mark: <a href="library/alga/maybe.hpp.html">Maybe <small>(alga/maybe.hpp)</small></a>
 * :warning: <a href="library/alga/monoid.hpp.html">alga/monoid.hpp</a>
 
 

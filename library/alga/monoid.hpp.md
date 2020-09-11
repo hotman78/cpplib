@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#e6f47b8acce0ca7627e3018b3efad838">alga</a>
 * <a href="{{ site.github.repository_url }}/blob/master/alga/monoid.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-10 16:53:23+09:00
+    - Last commit date: 2020-09-11 09:41:15+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="maybe.hpp.html">alga/maybe.hpp</a>
+* :heavy_check_mark: <a href="maybe.hpp.html">Maybe <small>(alga/maybe.hpp)</small></a>
 
 
 ## Code
@@ -71,6 +71,12 @@ struct monoid{
 {% raw %}
 ```cpp
 #line 1 "alga/maybe.hpp"
+/**
+ * @brief Maybe
+ * @docs docs/maybe.md
+ * @see https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8A%E3%83%89_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)#Maybe%E3%83%A2%E3%83%8A%E3%83%89
+ */
+
 template<typename T>
 struct maybe{
     bool _is_none;
