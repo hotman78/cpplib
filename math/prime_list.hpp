@@ -3,9 +3,9 @@
 #include<bitset>
 #include<set>
 
-std::bitset<n+1> p;
 template<int n=10'000'000>
 std::vector<long long> prime_list() {
+    std::bitset<n+1> p;
     p.set();
     p[0]=0;
     for(int i=2;i<std::sqrt(n)+10;++i){
@@ -16,3 +16,4 @@ std::vector<long long> prime_list() {
     for(int i=2;i<=n;++i)if(p[i])list.push_back(i);
     return list;
 }
+
