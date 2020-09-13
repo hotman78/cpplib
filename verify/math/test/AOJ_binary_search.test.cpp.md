@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: math/test/AOJ_binary_search.test.cpp
+# :heavy_check_mark: math/test/AOJ_binary_search.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_binary_search.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:25:42+09:00
+    - Last commit date: 2020-09-13 15:35:32+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/math/binary_search.hpp.html">math/binary_search.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/binary_search.hpp.html">math/binary_search.hpp</a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -62,7 +62,7 @@ int main(){
     rep(i,q){
         lint x;
         cin>>x;
-        lint t=bs(0,n,[&](lint i){return a[i]<=x;});
+        lint t=bs(0,n-1,[&](lint i){return a[i]<=x;});
         if(t!=-1&&a[t]==x){
             ans++;
         }
@@ -143,7 +143,7 @@ int main(){
     rep(i,q){
         lint x;
         cin>>x;
-        lint t=bs(0,n,[&](lint i){return a[i]<=x;});
+        lint t=bs(0,n-1,[&](lint i){return a[i]<=x;});
         if(t!=-1&&a[t]==x){
             ans++;
         }

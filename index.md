@@ -74,7 +74,7 @@ layout: default
 
 ### math
 
-* :x: <a href="library/math/binary_search.hpp.html">math/binary_search.hpp</a>
+* :heavy_check_mark: <a href="library/math/binary_search.hpp.html">math/binary_search.hpp</a>
 * :warning: <a href="library/math/binary_search_double.hpp.html">math/binary_search_double.hpp</a>
 * :warning: <a href="library/math/carmichael_function.hpp.html">math/carmichael_function.hpp</a>
 * :warning: <a href="library/math/comb.hpp.html">math/comb.hpp</a>
@@ -112,7 +112,7 @@ layout: default
 
 * :heavy_check_mark: <a href="verify/data_structure/dsu/union_find.test.cpp.html">data_structure/dsu/union_find.test.cpp</a>
 * :heavy_check_mark: <a href="verify/data_structure/segment_tree/segment_tree.test.cpp.html">data_structure/segment_tree/segment_tree.test.cpp</a>
-* :x: <a href="verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
+* :heavy_check_mark: <a href="verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/AOJ_is_prime.test.cpp.html">math/test/AOJ_is_prime.test.cpp</a>
 * :x: <a href="verify/math/test/LC_floor_sum.test.cpp.html">math/test/LC_floor_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>

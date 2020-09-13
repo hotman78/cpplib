@@ -39,7 +39,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/data_structure/segment_tree/segment_tree.test.cpp.html">data_structure/segment_tree/segment_tree.test.cpp</a>
-* :x: <a href="../../verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/math/test/AOJ_is_prime.test.cpp.html">math/test/AOJ_is_prime.test.cpp</a>
 * :x: <a href="../../verify/math/test/LC_floor_sum.test.cpp.html">math/test/LC_floor_sum.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
