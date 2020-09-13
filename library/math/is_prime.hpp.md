@@ -38,12 +38,13 @@ layout: default
 
 ## Required by
 
-* :warning: <a href="prime_factor.hpp.html">math/prime_factor.hpp</a>
+* :heavy_check_mark: <a href="prime_factor.hpp.html">math/prime_factor.hpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/math/test/AOJ_is_prime.test.cpp.html">math/test/AOJ_is_prime.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
 
 
 ## Code
