@@ -2,6 +2,7 @@
 #include<vector>
 #include<numeric>
 #include<cmath>
+#include<algorithm>
 #include"is_prime.hpp"
 
 void __prime_factor(long long n,long long& c,std::vector<long long>& v){
