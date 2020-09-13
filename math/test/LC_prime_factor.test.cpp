@@ -5,7 +5,7 @@
 int main(){
     lint q;
     cin>>q;
-    rep(i,q){
+    while(q--){
         lint n;
         cin>>n;
         vec d=prime_factor(n);
