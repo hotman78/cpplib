@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: math/test/LC_totient_sum.test.cpp
+# :heavy_check_mark: math/test/LC_totient_sum.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_totient_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:59:09+09:00
+    - Last commit date: 2020-09-13 16:09:36+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/sum_of_totient_function">https://judge.yosupo.jp/problem/sum_of_totient_function</a>
@@ -39,10 +39,10 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/math/mod_int.hpp.html">math/mod_int.hpp</a>
-* :x: <a href="../../../library/math/mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
-* :x: <a href="../../../library/math/totient_sum.hpp.html">math/totient_sum.hpp</a>
-* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/mod_int.hpp.html">math/mod_int.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/totient_sum.hpp.html">math/totient_sum.hpp</a>
+* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -106,7 +106,7 @@ struct mod_int {
     using mint=mod_int<MOD>;
     using u64 = std::uint_fast64_t;
     u64 a;
-    constexpr mint(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}
+    constexpr mod_int(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}
     constexpr u64 &value()noexcept{return a;}
     constexpr const u64 &value() const noexcept {return a;}
     constexpr mint operator+(const mint rhs)const noexcept{return mint(*this) += rhs;}

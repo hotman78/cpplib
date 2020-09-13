@@ -42,7 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../library/math/euler_phi.hpp.html">math/euler_phi.hpp</a>
 * :heavy_check_mark: <a href="../../../library/math/mod_pow.hpp.html">math/mod_pow.hpp</a>
 * :heavy_check_mark: <a href="../../../library/math/tetration.hpp.html">math/tetration.hpp</a>
-* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: math/test/LC_prime_factor.test.cpp
+# :heavy_check_mark: math/test/LC_prime_factor.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_prime_factor.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:56:30+09:00
+    - Last commit date: 2020-09-13 16:01:34+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/factorize">https://judge.yosupo.jp/problem/factorize</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/math/is_prime.hpp.html">math/is_prime.hpp</a>
-* :x: <a href="../../../library/math/prime_factor.hpp.html">math/prime_factor.hpp</a>
-* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/is_prime.hpp.html">math/is_prime.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/prime_factor.hpp.html">math/prime_factor.hpp</a>
+* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -76,6 +76,7 @@ int main(){
 #include<vector>
 #include<numeric>
 #include<cmath>
+#include<algorithm>
 #line 2 "math/is_prime.hpp"
 #include <initializer_list>
 
@@ -105,7 +106,7 @@ bool is_prime(long long n){
     }
     return 1;
 }
-#line 6 "math/prime_factor.hpp"
+#line 7 "math/prime_factor.hpp"
 
 void __prime_factor(long long n,long long& c,std::vector<long long>& v){
     if(n==1)return;

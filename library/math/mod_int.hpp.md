@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: math/mod_int.hpp
+# :heavy_check_mark: math/mod_int.hpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/mod_int.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:09:36+09:00
 
 
 
@@ -39,12 +39,12 @@ layout: default
 ## Required by
 
 * :warning: <a href="mod_int1000000007.hpp.html">math/mod_int1000000007.hpp</a>
-* :x: <a href="mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
+* :heavy_check_mark: <a href="mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
 
 
 ## Verified with
 
-* :x: <a href="../../verify/math/test/LC_totient_sum.test.cpp.html">math/test/LC_totient_sum.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/math/test/LC_totient_sum.test.cpp.html">math/test/LC_totient_sum.test.cpp</a>
 
 
 ## Code
@@ -62,7 +62,7 @@ struct mod_int {
     using mint=mod_int<MOD>;
     using u64 = std::uint_fast64_t;
     u64 a;
-    constexpr mint(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}
+    constexpr mod_int(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}
     constexpr u64 &value()noexcept{return a;}
     constexpr const u64 &value() const noexcept {return a;}
     constexpr mint operator+(const mint rhs)const noexcept{return mint(*this) += rhs;}
@@ -198,7 +198,7 @@ struct mod_int {
     using mint=mod_int<MOD>;
     using u64 = std::uint_fast64_t;
     u64 a;
-    constexpr mint(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}
+    constexpr mod_int(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}
     constexpr u64 &value()noexcept{return a;}
     constexpr const u64 &value() const noexcept {return a;}
     constexpr mint operator+(const mint rhs)const noexcept{return mint(*this) += rhs;}
