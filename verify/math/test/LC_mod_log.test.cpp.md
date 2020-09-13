@@ -25,23 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/test/LC_tetration.test.cpp
+# :x: math/test/LC_mod_log.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_tetration.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 17:06:03+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_mod_log.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-13 17:33:31+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/tetration_mod">https://judge.yosupo.jp/problem/tetration_mod</a>
+* see: <a href="https://judge.yosupo.jp/problem/sqrt_mod">https://judge.yosupo.jp/problem/sqrt_mod</a>
 
 
 ## Depends on
 
 * :question: <a href="../../../library/math/euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
+* :x: <a href="../../../library/math/mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
 * :question: <a href="../../../library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/math/tetration.hpp.html">テトレーション <small>(math/tetration.hpp)</small></a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -50,17 +50,17 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/tetration_mod"
-#include "../tetration.hpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
+#include "../mod_log.hpp"
 #include "../../util/template.hpp"
 
 int main(){
-    int t;
+    lint t;
     cin>>t;
     while(t--){
-        int a,b,m;
-        cin>>a>>b>>m;
-        cout<<tetration(a,b,m)<<endl;
+        lint x>>y,p;
+        cin>>x>>y>>p;
+        cout<<mod_log(x,y,p)<<endl;
     }
 }
 ```
@@ -69,12 +69,8 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/test/LC_tetration.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/tetration_mod"
-#line 2 "math/tetration.hpp"
-#include<vector>
-#include<algorithm>
-#include<cmath>
+#line 1 "math/test/LC_mod_log.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
 #line 1 "math/mod_pow.hpp"
 /**
  * @brief (x^y)%mod
@@ -105,33 +101,48 @@ long long euler_phi(long long n) {
     if(n>1)ret-=ret/n;
     return ret;
 }
-#line 7 "math/tetration.hpp"
+#line 4 "math/mod_log.hpp"
+#include<map>
+#include<numeric>
+#include<cmath>
 
 /**
- * @brief テトレーション
+ * @brief 離散対数(ModLog)
  */
 
-long long tetration(long long a,long long b,long long m){
-    std::vector<long long> v;
-    long long d=m;
-    while(d!=1){
-        v.push_back(d);
-        d=euler_phi(d);
+long long mod_log(long long x,long long y,long long m){
+    if(1==y||(x==0&&y==0&&m==1))return 0;
+    if(x==0){
+        if(y==1)return 0;
+        if(y==0)return 1;
+        else return -1;
     }
-    v.push_back(1);
-    if(a==0)return (b+1)%2%m;
-    if(m==1)return 0;
-    if(a==1||b==0){
-        return 1;
+    long long _x=x,_y=y;
+    long long g=m;
+    long long cnt=0;
+    while(std::gcd(x,m)!=1)m/=std::gcd(x,m),cnt++;
+    g/=m;
+    x%=m;
+    y%=m;
+    std::map<long long,long long>b;
+    long long B=std::sqrt(m*g)+1;
+    long long phi=euler_phi(m);
+    long long a=mod_pow(x,B-1,m);
+    long long inv_x=mod_pow(x,phi-1,m);
+    for(long long i=B-1;i>=cnt;--i){
+        b[a]=i;
+        a=a*inv_x%m;
     }
-    if((long long)(v.size())>=b)v.resize(b-1,1);
-    std::reverse(v.begin(),v.end());
-    long long ans=a;
-    for(auto e:v){
-        long long ad=(ans<=32&&a<e&&std::pow((double)a,ans)<e?0:e);
-        ans=mod_pow(a%e,ans,e)+ad;
+    long long A=mod_pow(x,B*(phi-1),m);
+    long long A2=y;
+    for(long long i=0;i<B;++i){
+        for(long long j=0;j<cnt;++j)if(mod_pow(_x,i*B+j,m*g)==_y)return i*B+j;
+        if(b.count(A2)){
+            if(mod_pow(_x,i*B+b[A2],m*g)==_y)return i*B+b[A2];
+        }
+        A2=A2*A%m;
     }
-    return ans%m;
+    return -1;
 }
 #line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
@@ -173,15 +184,15 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 4 "math/test/LC_tetration.test.cpp"
+#line 4 "math/test/LC_mod_log.test.cpp"
 
 int main(){
-    int t;
+    lint t;
     cin>>t;
     while(t--){
-        int a,b,m;
-        cin>>a>>b>>m;
-        cout<<tetration(a,b,m)<<endl;
+        lint x>>y,p;
+        cin>>x>>y>>p;
+        cout<<mod_log(x,y,p)<<endl;
     }
 }
 

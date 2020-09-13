@@ -25,23 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/test/LC_tetration.test.cpp
+# :heavy_check_mark: math/test/LC_mod_sqrt.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_tetration.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 17:06:03+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_mod_sqrt.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-13 17:33:31+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/tetration_mod">https://judge.yosupo.jp/problem/tetration_mod</a>
+* see: <a href="https://judge.yosupo.jp/problem/sqrt_mod">https://judge.yosupo.jp/problem/sqrt_mod</a>
 
 
 ## Depends on
 
-* :question: <a href="../../../library/math/euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
 * :question: <a href="../../../library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/math/tetration.hpp.html">テトレーション <small>(math/tetration.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/util/random_gen.hpp.html">util/random_gen.hpp</a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -50,17 +50,17 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/tetration_mod"
-#include "../tetration.hpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
+#include "../mod_sqrt.hpp"
 #include "../../util/template.hpp"
 
 int main(){
-    int t;
+    lint t;
     cin>>t;
     while(t--){
-        int a,b,m;
-        cin>>a>>b>>m;
-        cout<<tetration(a,b,m)<<endl;
+        lint y,p;
+        cin>>y>>p;
+        cout<<mod_sqrt(y,p)<<endl;
     }
 }
 ```
@@ -69,12 +69,10 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/test/LC_tetration.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/tetration_mod"
-#line 2 "math/tetration.hpp"
-#include<vector>
-#include<algorithm>
-#include<cmath>
+#line 1 "math/test/LC_mod_sqrt.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
+#line 1 "math/mod_sqrt.hpp"
+#include<tuple>
 #line 1 "math/mod_pow.hpp"
 /**
  * @brief (x^y)%mod
@@ -89,49 +87,44 @@ long long mod_pow(long long x,long long y,long long mod){
     }
     return ret;
 }
-#line 1 "math/euler_phi.hpp"
+#line 2 "util/random_gen.hpp"
+#include<random>
+#include<chrono>
+
+struct RandomNumberGenerator {
+    std::mt19937 mt;
+
+    RandomNumberGenerator() : mt(std::chrono::steady_clock::now().time_since_epoch().count()) {}
+    int operator()(int a, int b) { // [a, b)
+        std::uniform_int_distribution< int > dist(a, b - 1);
+        return dist(mt);
+    }
+
+    int operator()(int b) { // [0, b)
+        return (*this)(0, b);
+    }
+};
+#line 4 "math/mod_sqrt.hpp"
+
 /**
- * @brief オイラーのファイ関数
+ * @brief ModSqrt
  */
 
-long long euler_phi(long long n) {
-    long long ret = n;
-    for(long long i=2;i*i<=n;i++) {
-        if(n%i==0) {
-            ret-=ret/i;
-            while(n%i==0)n/=i;
-        }
+long long mod_sqrt(long long a,long long mod){
+    if(mod==2||a==0)return a;
+    if(mod_pow(a,(mod-1)/2,mod)!=1)return -1;
+    if(mod%4==3)return mod_pow(a,(mod+1)/4,mod);
+    long long q=(mod-1),s=0;
+    while(q%2==0)q/=2,s++;
+    long long z=1;
+    RandomNumberGenerator rnd;
+    while(mod_pow(z=rnd(0,mod),(mod-1)/2,mod)!=mod-1);
+    long long c=mod_pow(z,q,mod),t=mod_pow(a,q,mod),r=mod_pow(a,(q+1)/2,mod),m=s;
+    while(m>1){
+        if(mod_pow(t,1<<(m-2),mod)==1)(c*=c)%=mod,--m;
+        else std::tie(c,t,r,m)=std::make_tuple(c*c%mod,c*c%mod*t%mod,c*r%mod,m-1);
     }
-    if(n>1)ret-=ret/n;
-    return ret;
-}
-#line 7 "math/tetration.hpp"
-
-/**
- * @brief テトレーション
- */
-
-long long tetration(long long a,long long b,long long m){
-    std::vector<long long> v;
-    long long d=m;
-    while(d!=1){
-        v.push_back(d);
-        d=euler_phi(d);
-    }
-    v.push_back(1);
-    if(a==0)return (b+1)%2%m;
-    if(m==1)return 0;
-    if(a==1||b==0){
-        return 1;
-    }
-    if((long long)(v.size())>=b)v.resize(b-1,1);
-    std::reverse(v.begin(),v.end());
-    long long ans=a;
-    for(auto e:v){
-        long long ad=(ans<=32&&a<e&&std::pow((double)a,ans)<e?0:e);
-        ans=mod_pow(a%e,ans,e)+ad;
-    }
-    return ans%m;
+    return r%mod;
 }
 #line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
@@ -173,15 +166,15 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 4 "math/test/LC_tetration.test.cpp"
+#line 4 "math/test/LC_mod_sqrt.test.cpp"
 
 int main(){
-    int t;
+    lint t;
     cin>>t;
     while(t--){
-        int a,b,m;
-        cin>>a>>b>>m;
-        cout<<tetration(a,b,m)<<endl;
+        lint y,p;
+        cin>>y>>p;
+        cout<<mod_sqrt(y,p)<<endl;
     }
 }
 

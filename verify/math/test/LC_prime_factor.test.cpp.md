@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_prime_factor.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 17:06:03+09:00
+    - Last commit date: 2020-09-13 17:33:31+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/factorize">https://judge.yosupo.jp/problem/factorize</a>
@@ -56,7 +56,7 @@ layout: default
 int main(){
     lint q;
     cin>>q;
-    rep(i,q){
+    while(q--){
         lint n;
         cin>>n;
         vec d=prime_factor(n);
@@ -195,7 +195,7 @@ template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){
 int main(){
     lint q;
     cin>>q;
-    rep(i,q){
+    while(q--){
         lint n;
         cin>>n;
         vec d=prime_factor(n);

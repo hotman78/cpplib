@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: util/random_gen.hpp
+# :heavy_check_mark: util/random_gen.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,12 @@ layout: default
 
 ## Required by
 
-* :warning: <a href="../math/mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
+* :heavy_check_mark: <a href="../math/mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/math/test/LC_mod_sqrt.test.cpp.html">math/test/LC_mod_sqrt.test.cpp</a>
 
 
 ## Code

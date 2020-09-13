@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: オイラーのファイ関数 <small>(math/euler_phi.hpp)</small>
+# :question: オイラーのファイ関数 <small>(math/euler_phi.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,12 +38,13 @@ layout: default
 
 ## Required by
 
-* :warning: <a href="mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
+* :x: <a href="mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
 * :heavy_check_mark: <a href="tetration.hpp.html">テトレーション <small>(math/tetration.hpp)</small></a>
 
 
 ## Verified with
 
+* :x: <a href="../../verify/math/test/LC_mod_log.test.cpp.html">math/test/LC_mod_log.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/math/test/LC_tetration.test.cpp.html">math/test/LC_tetration.test.cpp</a>
 
 
