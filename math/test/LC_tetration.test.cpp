@@ -1,7 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/tetration_mod"
 #include "../tetration.hpp"
-#include<bits/stdc++.h>
-using namespace std;
+#include "../../util/template.hpp"
 
 int main(){
     int t;
