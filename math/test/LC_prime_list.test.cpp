@@ -5,11 +5,12 @@
 int main(){
     lint n,a,b;
     cin>>n>>a>>b;
-    auto v=prime_list<510'000'000>();
-    cout<<lower_bound(all(v),n)-v.begin()<<endl;
+    auto v=prime_list(n);
+    vec ans;
     for(int i=b;v[i]<n;i+=a){
-        if(i!=b)cout<<" ";
-        cout<<v[i];
+        ans.push_back(v[i]);
     }
+    cout<<lower_bound(all(v),n)-v.begin()<<" "<<ans.size()<<endl;
+    output(ans);
     cout<<endl;
 }
