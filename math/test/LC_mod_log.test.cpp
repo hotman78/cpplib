@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
+#define PROBLEM "https://judge.yosupo.jp/problem/discrete_logarithm_mod"
 #include "../mod_log.hpp"
 #include "../../util/template.hpp"
 
