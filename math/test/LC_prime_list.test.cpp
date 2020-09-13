@@ -7,9 +7,9 @@ int main(){
     cin>>n>>a>>b;
     auto v=prime_list<510'000'000>();
     cout<<lower_bound(all(v),n)-v.begin()<<endl;
-    vector<int>ans;
     for(int i=b;v[i]<n;i+=a){
-        ans.push_back(v[i]);
+        if(i!=b)cout<<" ";
+        cout<<v[i];
     }
-    output(ans);
+    cout<<endl;
 }
