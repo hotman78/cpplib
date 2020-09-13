@@ -80,7 +80,7 @@ layout: default
 * :warning: <a href="library/math/comb.hpp.html">math/comb.hpp</a>
 * :warning: <a href="library/math/divisor_list.hpp.html">math/divisor_list.hpp</a>
 * :heavy_check_mark: <a href="library/math/euler_phi.hpp.html">math/euler_phi.hpp</a>
-* :x: <a href="library/math/floor_sum.hpp.html">math/floor_sum.hpp</a>
+* :heavy_check_mark: <a href="library/math/floor_sum.hpp.html">math/floor_sum.hpp</a>
 * :heavy_check_mark: <a href="library/math/is_prime.hpp.html">math/is_prime.hpp</a>
 * :warning: <a href="library/math/lagrange_interpolation.hpp.html">math/lagrange_interpolation.hpp</a>
 * :warning: <a href="library/math/mod_int.hpp.html">math/mod_int.hpp</a>
@@ -105,7 +105,7 @@ layout: default
 * :warning: <a href="library/util/cpp_int.hpp.html">util/cpp_int.hpp</a>
 * :warning: <a href="library/util/pbds.hpp.html">util/pbds.hpp</a>
 * :warning: <a href="library/util/random_gen.hpp.html">util/random_gen.hpp</a>
-* :question: <a href="library/util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Verify Files
@@ -114,7 +114,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/data_structure/segment_tree/segment_tree.test.cpp.html">data_structure/segment_tree/segment_tree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/AOJ_is_prime.test.cpp.html">math/test/AOJ_is_prime.test.cpp</a>
-* :x: <a href="verify/math/test/LC_floor_sum.test.cpp.html">math/test/LC_floor_sum.test.cpp</a>
+* :heavy_check_mark: <a href="verify/math/test/LC_floor_sum.test.cpp.html">math/test/LC_floor_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_tetration.test.cpp.html">math/test/LC_tetration.test.cpp</a>
 

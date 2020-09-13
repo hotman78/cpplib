@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: math/test/LC_floor_sum.test.cpp
+# :heavy_check_mark: math/test/LC_floor_sum.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_floor_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:28:21+09:00
+    - Last commit date: 2020-09-13 15:39:54+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/sum_of_floor_of_linear">https://judge.yosupo.jp/problem/sum_of_floor_of_linear</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/math/floor_sum.hpp.html">math/floor_sum.hpp</a>
-* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/floor_sum.hpp.html">math/floor_sum.hpp</a>
+* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -56,9 +56,9 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        lint n,m,a,b;
-        cin>>n>>m>>a>>b;
-        cout<<floor_sum(n,m,a,b)<<endl;
+        lint n,a,b,c;
+        cin>>n>>c>>a>>b;
+        cout<<floor_sum(a,b,c,n)<<endl;
     }
 }
 ```
@@ -131,9 +131,9 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        lint n,m,a,b;
-        cin>>n>>m>>a>>b;
-        cout<<floor_sum(n,m,a,b)<<endl;
+        lint n,a,b,c;
+        cin>>n>>c>>a>>b;
+        cout<<floor_sum(a,b,c,n)<<endl;
     }
 }
 
