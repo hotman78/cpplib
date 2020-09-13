@@ -6,8 +6,8 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        lint n,m,a,b;
-        cin>>n>>m>>a>>b;
-        cout<<floor_sum(n,m,a,b)<<endl;
+        lint n,a,b,c;
+        cin>>n>>c>>a>>b;
+        cout<<floor_sum(a,b,c,n)<<endl;
     }
 }
