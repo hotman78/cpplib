@@ -25,21 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/test/AOJ_is_prime.test.cpp
+# :x: math/test/AOJ_prime_factor.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_is_prime.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:25:42+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_prime_factor.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-13 15:56:30+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A</a>
 
 
 ## Depends on
 
 * :question: <a href="../../../library/math/is_prime.hpp.html">math/is_prime.hpp</a>
+* :x: <a href="../../../library/math/prime_factor.hpp.html">math/prime_factor.hpp</a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -48,20 +49,16 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
-#include "../is_prime.hpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A"
+#include "../prime_factor.hpp"
 #include "../../util/template.hpp"
 
 int main(){
-    lint t;
-    cin>>t;
-    lint ans=0;
-    while(t--){
-        lint n;
-        cin>>n;
-        ans+=is_prime(n);
-    }
-    cout<<ans<<endl;
+    lint n;
+    cin>>n;
+    auto v=prime_factor(n);
+    cout<<n<<": ";
+    output(v);
 }
 ```
 {% endraw %}
@@ -69,8 +66,12 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/test/AOJ_is_prime.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
+#line 1 "math/test/AOJ_prime_factor.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A"
+#line 2 "math/prime_factor.hpp"
+#include<vector>
+#include<numeric>
+#include<cmath>
 #line 2 "math/is_prime.hpp"
 #include <initializer_list>
 
@@ -99,6 +100,44 @@ bool is_prime(long long n){
         if(b)return 0;
     }
     return 1;
+}
+#line 6 "math/prime_factor.hpp"
+
+void __prime_factor(long long n,long long& c,std::vector<long long>& v){
+    if(n==1)return;
+    if(n%2==0){
+        v.emplace_back(2);
+        __prime_factor(n/2,c,v);
+        return;
+    }
+    if(is_prime(n)){
+        v.emplace_back(n);
+        return;
+    }
+    while(1){
+        long long x=2,y=2,d=1;
+        while(d==1){
+            x=((__int128_t)x*x+c)%n;
+            y=((__int128_t)y*y%n+c)%n;
+            y=((__int128_t)y*y%n+c)%n;
+            d=std::gcd(std::abs(x-y),n);
+        }
+        if(d==n){
+            c++;
+            continue;
+        }
+        __prime_factor(d,c,v);
+        __prime_factor(n/d,c,v);
+        return;
+    }
+}
+
+std::vector<long long>prime_factor(long long n){
+    std::vector<long long>v;
+    long long c=1;
+    __prime_factor(n,c,v);
+    std::sort(v.begin(),v.end());
+    return v;
 }
 #line 1 "util/template.hpp"
 #pragma GCC optimize("Ofast")
@@ -140,18 +179,14 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 4 "math/test/AOJ_is_prime.test.cpp"
+#line 4 "math/test/AOJ_prime_factor.test.cpp"
 
 int main(){
-    lint t;
-    cin>>t;
-    lint ans=0;
-    while(t--){
-        lint n;
-        cin>>n;
-        ans+=is_prime(n);
-    }
-    cout<<ans<<endl;
+    lint n;
+    cin>>n;
+    auto v=prime_factor(n);
+    cout<<n<<": ";
+    output(v);
 }
 
 ```

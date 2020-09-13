@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/test/LC_prime_factor.test.cpp
+# :x: math/test/LC_prime_factor.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_prime_factor.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:32:28+09:00
+    - Last commit date: 2020-09-13 15:56:30+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/factorize">https://judge.yosupo.jp/problem/factorize</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/math/is_prime.hpp.html">math/is_prime.hpp</a>
-* :heavy_check_mark: <a href="../../../library/math/prime_factor.hpp.html">math/prime_factor.hpp</a>
+* :question: <a href="../../../library/math/is_prime.hpp.html">math/is_prime.hpp</a>
+* :x: <a href="../../../library/math/prime_factor.hpp.html">math/prime_factor.hpp</a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -60,7 +60,6 @@ int main(){
         lint n;
         cin>>n;
         vec d=prime_factor(n);
-        sort(all(d));
         cout<<d.size()<<" "; 
         output(d);
     }
@@ -141,6 +140,7 @@ std::vector<long long>prime_factor(long long n){
     std::vector<long long>v;
     long long c=1;
     __prime_factor(n,c,v);
+    std::sort(v.begin(),v.end());
     return v;
 }
 #line 1 "util/template.hpp"
@@ -192,7 +192,6 @@ int main(){
         lint n;
         cin>>n;
         vec d=prime_factor(n);
-        sort(all(d));
         cout<<d.size()<<" "; 
         output(d);
     }

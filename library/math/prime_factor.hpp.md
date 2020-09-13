@@ -25,25 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/prime_factor.hpp
+# :x: math/prime_factor.hpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/prime_factor.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 15:56:30+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="is_prime.hpp.html">math/is_prime.hpp</a>
+* :question: <a href="is_prime.hpp.html">math/is_prime.hpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
+* :x: <a href="../../verify/math/test/AOJ_prime_factor.test.cpp.html">math/test/AOJ_prime_factor.test.cpp</a>
+* :x: <a href="../../verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
 
 
 ## Code
@@ -90,6 +91,7 @@ std::vector<long long>prime_factor(long long n){
     std::vector<long long>v;
     long long c=1;
     __prime_factor(n,c,v);
+    std::sort(v.begin(),v.end());
     return v;
 }
 ```
@@ -166,6 +168,7 @@ std::vector<long long>prime_factor(long long n){
     std::vector<long long>v;
     long long c=1;
     __prime_factor(n,c,v);
+    std::sort(v.begin(),v.end());
     return v;
 }
 

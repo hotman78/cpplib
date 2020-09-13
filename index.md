@@ -81,7 +81,7 @@ layout: default
 * :warning: <a href="library/math/divisor_list.hpp.html">math/divisor_list.hpp</a>
 * :heavy_check_mark: <a href="library/math/euler_phi.hpp.html">math/euler_phi.hpp</a>
 * :heavy_check_mark: <a href="library/math/floor_sum.hpp.html">math/floor_sum.hpp</a>
-* :heavy_check_mark: <a href="library/math/is_prime.hpp.html">math/is_prime.hpp</a>
+* :question: <a href="library/math/is_prime.hpp.html">math/is_prime.hpp</a>
 * :warning: <a href="library/math/lagrange_interpolation.hpp.html">math/lagrange_interpolation.hpp</a>
 * :x: <a href="library/math/mod_int.hpp.html">math/mod_int.hpp</a>
 * :warning: <a href="library/math/mod_int1000000007.hpp.html">math/mod_int1000000007.hpp</a>
@@ -90,7 +90,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/mod_pow.hpp.html">math/mod_pow.hpp</a>
 * :warning: <a href="library/math/mod_sqrt.hpp.html">math/mod_sqrt.hpp</a>
 * :warning: <a href="library/math/osa_k.hpp.html">math/osa_k.hpp</a>
-* :heavy_check_mark: <a href="library/math/prime_factor.hpp.html">math/prime_factor.hpp</a>
+* :x: <a href="library/math/prime_factor.hpp.html">math/prime_factor.hpp</a>
 * :warning: <a href="library/math/prime_list.hpp.html">math/prime_list.hpp</a>
 * :warning: <a href="library/math/prime_set.hpp.html">math/prime_set.hpp</a>
 * :warning: <a href="library/math/stern_brocot_tree.cpp.html">math/stern_brocot_tree.cpp</a>
@@ -114,8 +114,9 @@ layout: default
 * :heavy_check_mark: <a href="verify/data_structure/segment_tree/segment_tree.test.cpp.html">data_structure/segment_tree/segment_tree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/AOJ_is_prime.test.cpp.html">math/test/AOJ_is_prime.test.cpp</a>
+* :x: <a href="verify/math/test/AOJ_prime_factor.test.cpp.html">math/test/AOJ_prime_factor.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_floor_sum.test.cpp.html">math/test/LC_floor_sum.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
+* :x: <a href="verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_tetration.test.cpp.html">math/test/LC_tetration.test.cpp</a>
 * :x: <a href="verify/math/test/LC_totient_sum.test.cpp.html">math/test/LC_totient_sum.test.cpp</a>
 
