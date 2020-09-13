@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_prime_list.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 17:06:03+09:00
+    - Last commit date: 2020-09-13 17:26:50+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/enumerate_primes">https://judge.yosupo.jp/problem/enumerate_primes</a>
@@ -57,11 +57,11 @@ int main(){
     cin>>n>>a>>b;
     auto v=prime_list<510'000'000>();
     cout<<lower_bound(all(v),n)-v.begin()<<endl;
-    vector<int>ans;
     for(int i=b;v[i]<n;i+=a){
-        ans.push_back(v[i]);
+        if(i!=b)cout<<" ";
+        cout<<v[i];
     }
-    output(ans);
+    cout<<endl;
 }
 ```
 {% endraw %}
@@ -142,11 +142,11 @@ int main(){
     cin>>n>>a>>b;
     auto v=prime_list<510'000'000>();
     cout<<lower_bound(all(v),n)-v.begin()<<endl;
-    vector<int>ans;
     for(int i=b;v[i]<n;i+=a){
-        ans.push_back(v[i]);
+        if(i!=b)cout<<" ";
+        cout<<v[i];
     }
-    output(ans);
+    cout<<endl;
 }
 
 ```
