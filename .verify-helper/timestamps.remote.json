@@ -5,7 +5,8 @@
 "math/test/AOJ_is_prime.test.cpp": "2020-09-13 17:06:03 +0900",
 "math/test/AOJ_prime_factor.test.cpp": "2020-09-13 17:06:03 +0900",
 "math/test/LC_floor_sum.test.cpp": "2020-09-13 17:06:03 +0900",
-"math/test/LC_prime_factor.test.cpp": "2020-09-13 17:06:03 +0900",
+"math/test/LC_mod_sqrt.test.cpp": "2020-09-13 17:33:31 +0900",
+"math/test/LC_prime_factor.test.cpp": "2020-09-13 17:33:31 +0900",
 "math/test/LC_tetration.test.cpp": "2020-09-13 17:06:03 +0900",
 "math/test/LC_totient_sum.test.cpp": "2020-09-13 17:06:03 +0900"
 }
