@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_totient_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:09:36+09:00
+    - Last commit date: 2020-09-13 17:06:03+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/sum_of_totient_function">https://judge.yosupo.jp/problem/sum_of_totient_function</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/math/mod_int.hpp.html">math/mod_int.hpp</a>
-* :heavy_check_mark: <a href="../../../library/math/mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
-* :heavy_check_mark: <a href="../../../library/math/totient_sum.hpp.html">math/totient_sum.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/mod_int.hpp.html">ModInt <small>(math/mod_int.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/mod_int998244353.hpp.html">ModInt(998'244'353) <small>(math/mod_int998244353.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/totient_sum.hpp.html">トーシェント関数の和 <small>(math/totient_sum.hpp)</small></a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -70,6 +70,10 @@ int main(){
 #define PROBLEM "https://judge.yosupo.jp/problem/sum_of_totient_function"
 #line 2 "math/totient_sum.hpp"
 #include<map>
+
+/**
+ * @brief トーシェント関数の和
+ */
 
 template<typename T>
 T totient_sum(long long n){
@@ -100,6 +104,10 @@ T totient_sum(long long n){
 #include<cstdint>
 #include<iostream>
 #include<vector>
+
+/**
+ * @brief ModInt
+ */
 
 template<int MOD>
 struct mod_int {
@@ -228,13 +236,17 @@ template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::ifac;
 template<int MOD>bool mod_int<MOD>::init=1;
 #line 3 "math/mod_int998244353.hpp"
 using mint=mod_int<998'244'353>;
-#line 1 "util/template.hpp"
+
+/**
+ * @brief ModInt(998'244'353)
+ */
+#line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx")
 #include<bits/stdc++.h>
 using namespace std;
-__attribute__((constructor))void init(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}
+struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;
 typedef long long lint;
 #define INF (1LL<<60)
 #define IINF (1<<30)

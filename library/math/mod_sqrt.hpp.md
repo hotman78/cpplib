@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/mod_sqrt.hpp
+# :warning: ModSqrt <small>(math/mod_sqrt.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/mod_sqrt.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="mod_pow.hpp.html">math/mod_pow.hpp</a>
+* :heavy_check_mark: <a href="mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
 * :warning: <a href="../util/random_gen.hpp.html">util/random_gen.hpp</a>
 
 
@@ -50,6 +50,10 @@ layout: default
 #include<tuple>
 #include"mod_pow.hpp"
 #include"../util/random_gen.hpp"
+
+/**
+ * @brief ModSqrt
+ */
 
 long long mod_sqrt(long long a,long long mod){
     if(mod==2||a==0)return a;
@@ -76,6 +80,10 @@ long long mod_sqrt(long long a,long long mod){
 #line 1 "math/mod_sqrt.hpp"
 #include<tuple>
 #line 1 "math/mod_pow.hpp"
+/**
+ * @brief (x^y)%mod
+ */
+
 long long mod_pow(long long x,long long y,long long mod){
     long long ret=1;
     while(y>0) {
@@ -103,6 +111,10 @@ struct RandomNumberGenerator {
     }
 };
 #line 4 "math/mod_sqrt.hpp"
+
+/**
+ * @brief ModSqrt
+ */
 
 long long mod_sqrt(long long a,long long mod){
     if(mod==2||a==0)return a;

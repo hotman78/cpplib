@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/mod_pow.hpp
+# :heavy_check_mark: (x^y)%mod <small>(math/mod_pow.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/mod_pow.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
 
 ## Required by
 
-* :warning: <a href="mod_log.hpp.html">math/mod_log.hpp</a>
-* :warning: <a href="mod_sqrt.hpp.html">math/mod_sqrt.hpp</a>
-* :heavy_check_mark: <a href="tetration.hpp.html">math/tetration.hpp</a>
+* :warning: <a href="mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
+* :warning: <a href="mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
+* :heavy_check_mark: <a href="tetration.hpp.html">テトレーション <small>(math/tetration.hpp)</small></a>
 
 
 ## Verified with
@@ -53,6 +53,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/**
+ * @brief (x^y)%mod
+ */
+
 long long mod_pow(long long x,long long y,long long mod){
     long long ret=1;
     while(y>0) {
@@ -70,6 +74,10 @@ long long mod_pow(long long x,long long y,long long mod){
 {% raw %}
 ```cpp
 #line 1 "math/mod_pow.hpp"
+/**
+ * @brief (x^y)%mod
+ */
+
 long long mod_pow(long long x,long long y,long long mod){
     long long ret=1;
     while(y>0) {

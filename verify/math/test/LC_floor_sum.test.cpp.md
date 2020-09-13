@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_floor_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:39:54+09:00
+    - Last commit date: 2020-09-13 17:06:03+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/sum_of_floor_of_linear">https://judge.yosupo.jp/problem/sum_of_floor_of_linear</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/math/floor_sum.hpp.html">math/floor_sum.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/floor_sum.hpp.html">\sum_{i=0}^{n-1}\floor(a*i+b/c) <small>(math/floor_sum.hpp)</small></a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -70,7 +70,9 @@ int main(){
 #line 1 "math/test/LC_floor_sum.test.cpp"
 #define PROBLEM "https://judge.yosupo.jp/problem/sum_of_floor_of_linear"
 #line 2 "math/floor_sum.hpp"
-// \sum_{i=0}^{n-1}\floor(a*i+b/c)
+/**
+ * @brief \sum_{i=0}^{n-1}\floor(a*i+b/c)
+ */
 long long floor_sum(long long a,long long b,long long c,long long n){
     long long tmp=b/c*n+a/c*n*(n-1)/2;
     if(a%c==0){
@@ -85,13 +87,13 @@ long long floor_sum(long long a,long long b,long long c,long long n){
     n-=next;
     return tmp+floor_sum(c,n*a-((b+a*(n-1))/c*c-b),a,(b+a*(n-1))/c);
 }
-#line 1 "util/template.hpp"
+#line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx")
 #include<bits/stdc++.h>
 using namespace std;
-__attribute__((constructor))void init(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}
+struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;
 typedef long long lint;
 #define INF (1LL<<60)
 #define IINF (1<<30)

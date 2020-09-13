@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/osa_k.hpp
+# :warning: osa_k法 <small>(math/osa_k.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/osa_k.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
@@ -43,6 +43,10 @@ layout: default
 ```cpp
 #pragma once
 #include<map>
+
+/**
+ * @brief osa_k法
+ */
 
 template<typename Int>
 std::map<int,int> osa_k(Int n){
@@ -78,6 +82,10 @@ std::map<int,int> osa_k(Int n){
 ```cpp
 #line 2 "math/osa_k.hpp"
 #include<map>
+
+/**
+ * @brief osa_k法
+ */
 
 template<typename Int>
 std::map<int,int> osa_k(Int n){

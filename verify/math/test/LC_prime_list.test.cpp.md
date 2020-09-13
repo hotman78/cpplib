@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_prime_list.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:29:24+09:00
+    - Last commit date: 2020-09-13 17:06:03+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/enumerate_primes">https://judge.yosupo.jp/problem/enumerate_primes</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/math/prime_list.hpp.html">math/prime_list.hpp</a>
+* :x: <a href="../../../library/math/prime_list.hpp.html">素数列挙 <small>(math/prime_list.hpp)</small></a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -74,7 +74,12 @@ int main(){
 #line 2 "math/prime_list.hpp"
 #include<vector>
 #include<bitset>
+#include<cmath>
 #include<set>
+
+/**
+ * @brief 素数列挙
+ */
 
 template<int n=10'000'000>
 std::vector<long long> prime_list() {
@@ -90,13 +95,13 @@ std::vector<long long> prime_list() {
     return list;
 }
 
-#line 1 "util/template.hpp"
+#line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx")
 #include<bits/stdc++.h>
 using namespace std;
-__attribute__((constructor))void init(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}
+struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;
 typedef long long lint;
 #define INF (1LL<<60)
 #define IINF (1<<30)

@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/prime_factor.hpp
+# :heavy_check_mark: 素因数分解(高速) <small>(math/prime_factor.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/prime_factor.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:01:34+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="is_prime.hpp.html">math/is_prime.hpp</a>
+* :heavy_check_mark: <a href="is_prime.hpp.html">素数判定(高速) <small>(math/is_prime.hpp)</small></a>
 
 
 ## Verified with
@@ -58,6 +58,10 @@ layout: default
 #include<cmath>
 #include<algorithm>
 #include"is_prime.hpp"
+
+/**
+ * @brief 素因数分解(高速)
+ */
 
 void __prime_factor(long long n,long long& c,std::vector<long long>& v){
     if(n==1)return;
@@ -108,7 +112,9 @@ std::vector<long long>prime_factor(long long n){
 #include<algorithm>
 #line 2 "math/is_prime.hpp"
 #include <initializer_list>
-
+/**
+ * @brief 素数判定(高速)
+ */
 bool is_prime(long long n){
     if(n<=1)return 0;
     if(n==2)return 1;
@@ -136,6 +142,10 @@ bool is_prime(long long n){
     return 1;
 }
 #line 7 "math/prime_factor.hpp"
+
+/**
+ * @brief 素因数分解(高速)
+ */
 
 void __prime_factor(long long n,long long& c,std::vector<long long>& v){
     if(n==1)return;

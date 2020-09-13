@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#05c7e24700502a079cdd88012b5a76d3">util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/util/template.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-10 19:03:25+09:00
+    - Last commit date: 2020-09-13 17:06:03+09:00
 
 
 
@@ -54,12 +54,13 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+#pragma once
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx")
 #include<bits/stdc++.h>
 using namespace std;
-__attribute__((constructor))void init(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}
+struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;
 typedef long long lint;
 #define INF (1LL<<60)
 #define IINF (1<<30)
@@ -100,13 +101,13 @@ template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "util/template.hpp"
+#line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx")
 #include<bits/stdc++.h>
 using namespace std;
-__attribute__((constructor))void init(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}
+struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;
 typedef long long lint;
 #define INF (1LL<<60)
 #define IINF (1<<30)

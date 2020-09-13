@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/catalans_trapezoids.hpp
+# :warning: カタラン台形 <small>(math/catalans_trapezoids.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/catalans_trapezoids.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:13:29+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
@@ -41,10 +41,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-/*
-最終的にn個の"["とk個の"]"でカッコ列を作る
-但し、途中で"["の数が"]"の数よりm個以上大きくなる事を許さない
-*/
+/**
+ * @brief カタラン台形
+ */
 template<typename T>
 T catalans_trapezoids(long long n,long long k,long long m=1){
     if(m<=0)return T();
@@ -59,10 +58,9 @@ T catalans_trapezoids(long long n,long long k,long long m=1){
 {% raw %}
 ```cpp
 #line 1 "math/catalans_trapezoids.hpp"
-/*
-最終的にn個の"["とk個の"]"でカッコ列を作る
-但し、途中で"["の数が"]"の数よりm個以上大きくなる事を許さない
-*/
+/**
+ * @brief カタラン台形
+ */
 template<typename T>
 T catalans_trapezoids(long long n,long long k,long long m=1){
     if(m<=0)return T();

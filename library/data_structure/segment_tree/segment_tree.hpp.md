@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fba856dbe1aaa5374a50a27f6dcea717">data_structure/segment_tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/segment_tree/segment_tree.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 * see: <a href="https://en.wikipedia.org/wiki/Segment_tree">https://en.wikipedia.org/wiki/Segment_tree</a>
@@ -81,13 +81,12 @@ auto seg=make_segment_tree(vector<T>(n),min<lint>);//min monoid
 {% raw %}
 ```cpp
 #pragma once
+#include"../../alga/maybe.hpp"
 /**
  * @brief Segment Tree
  * @docs docs/segment_tree.md
  * @see https://en.wikipedia.org/wiki/Segment_tree
  */
-
-#include"../../alga/maybe.hpp"
 template<typename T,typename F>
 class segment_tree{
 	maybe<T>* node;
@@ -162,13 +161,6 @@ segment_tree<T,F> make_segment_tree(int size,T goast,F op){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "data_structure/segment_tree/segment_tree.hpp"
-/**
- * @brief Segment Tree
- * @docs docs/segment_tree.md
- * @see https://en.wikipedia.org/wiki/Segment_tree
- */
-
 #line 1 "alga/maybe.hpp"
 /**
  * @brief Maybe
@@ -201,7 +193,12 @@ auto expand(F op){
         return maybe<T>(op(s.unwrap(),t.unwrap()));
     };
 }
-#line 9 "data_structure/segment_tree/segment_tree.hpp"
+#line 3 "data_structure/segment_tree/segment_tree.hpp"
+/**
+ * @brief Segment Tree
+ * @docs docs/segment_tree.md
+ * @see https://en.wikipedia.org/wiki/Segment_tree
+ */
 template<typename T,typename F>
 class segment_tree{
 	maybe<T>* node;

@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/mod_log.hpp
+# :warning: 離散対数(ModLog) <small>(math/mod_log.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/mod_log.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="euler_phi.hpp.html">math/euler_phi.hpp</a>
-* :heavy_check_mark: <a href="mod_pow.hpp.html">math/mod_pow.hpp</a>
+* :heavy_check_mark: <a href="euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
+* :heavy_check_mark: <a href="mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
 
 
 ## Code
@@ -53,6 +53,10 @@ layout: default
 #include<map>
 #include<numeric>
 #include<cmath>
+
+/**
+ * @brief 離散対数(ModLog)
+ */
 
 long long mod_log(long long x,long long y,long long m){
     if(1==y||(x==0&&y==0&&m==1))return 0;
@@ -95,6 +99,10 @@ long long mod_log(long long x,long long y,long long m){
 {% raw %}
 ```cpp
 #line 1 "math/mod_pow.hpp"
+/**
+ * @brief (x^y)%mod
+ */
+
 long long mod_pow(long long x,long long y,long long mod){
     long long ret=1;
     while(y>0) {
@@ -105,6 +113,10 @@ long long mod_pow(long long x,long long y,long long mod){
     return ret;
 }
 #line 1 "math/euler_phi.hpp"
+/**
+ * @brief オイラーのファイ関数
+ */
+
 long long euler_phi(long long n) {
     long long ret = n;
     for(long long i=2;i*i<=n;i++) {
@@ -120,6 +132,10 @@ long long euler_phi(long long n) {
 #include<map>
 #include<numeric>
 #include<cmath>
+
+/**
+ * @brief 離散対数(ModLog)
+ */
 
 long long mod_log(long long x,long long y,long long m){
     if(1==y||(x==0&&y==0&&m==1))return 0;

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/lagrange_interpolation.hpp
+# :warning: ラグランジュ補完(連続点->一点) <small>(math/lagrange_interpolation.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/lagrange_interpolation.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
@@ -41,6 +41,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/**
+ * @brief ラグランジュ補完(連続点->一点)
+ */
+
 template<typename T>
 T lagrange_interpolation(vector<T>v,lint n){
     long long k=v.size();
@@ -62,6 +66,10 @@ T lagrange_interpolation(vector<T>v,lint n){
 {% raw %}
 ```cpp
 #line 1 "math/lagrange_interpolation.hpp"
+/**
+ * @brief ラグランジュ補完(連続点->一点)
+ */
+
 template<typename T>
 T lagrange_interpolation(vector<T>v,lint n){
     long long k=v.size();

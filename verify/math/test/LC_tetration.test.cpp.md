@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_tetration.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:20:01+09:00
+    - Last commit date: 2020-09-13 17:06:03+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/tetration_mod">https://judge.yosupo.jp/problem/tetration_mod</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/math/euler_phi.hpp.html">math/euler_phi.hpp</a>
-* :heavy_check_mark: <a href="../../../library/math/mod_pow.hpp.html">math/mod_pow.hpp</a>
-* :heavy_check_mark: <a href="../../../library/math/tetration.hpp.html">math/tetration.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/tetration.hpp.html">テトレーション <small>(math/tetration.hpp)</small></a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -76,6 +76,10 @@ int main(){
 #include<algorithm>
 #include<cmath>
 #line 1 "math/mod_pow.hpp"
+/**
+ * @brief (x^y)%mod
+ */
+
 long long mod_pow(long long x,long long y,long long mod){
     long long ret=1;
     while(y>0) {
@@ -86,6 +90,10 @@ long long mod_pow(long long x,long long y,long long mod){
     return ret;
 }
 #line 1 "math/euler_phi.hpp"
+/**
+ * @brief オイラーのファイ関数
+ */
+
 long long euler_phi(long long n) {
     long long ret = n;
     for(long long i=2;i*i<=n;i++) {
@@ -98,6 +106,10 @@ long long euler_phi(long long n) {
     return ret;
 }
 #line 7 "math/tetration.hpp"
+
+/**
+ * @brief テトレーション
+ */
 
 long long tetration(long long a,long long b,long long m){
     std::vector<long long> v;
@@ -121,13 +133,13 @@ long long tetration(long long a,long long b,long long m){
     }
     return ans%m;
 }
-#line 1 "util/template.hpp"
+#line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx")
 #include<bits/stdc++.h>
 using namespace std;
-__attribute__((constructor))void init(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}
+struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;
 typedef long long lint;
 #define INF (1LL<<60)
 #define IINF (1<<30)

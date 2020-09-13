@@ -38,7 +38,7 @@ layout: default
 
 ## Required by
 
-* :warning: <a href="../math/mod_sqrt.hpp.html">math/mod_sqrt.hpp</a>
+* :warning: <a href="../math/mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
 
 
 ## Code

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/comb.hpp
+# :warning: 二項係数 mod P <small>(math/comb.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/comb.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
@@ -41,6 +41,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/**
+ * @brief 二項係数 mod P
+ */
 template<int mod>
 long long comb(long long a, long long b){
     static bool init=1;
@@ -75,6 +78,9 @@ long long comb(long long a, long long b){
 {% raw %}
 ```cpp
 #line 1 "math/comb.hpp"
+/**
+ * @brief 二項係数 mod P
+ */
 template<int mod>
 long long comb(long long a, long long b){
     static bool init=1;

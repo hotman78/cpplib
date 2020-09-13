@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/tetration.hpp
+# :heavy_check_mark: テトレーション <small>(math/tetration.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/tetration.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="euler_phi.hpp.html">math/euler_phi.hpp</a>
-* :heavy_check_mark: <a href="mod_pow.hpp.html">math/mod_pow.hpp</a>
+* :heavy_check_mark: <a href="euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
+* :heavy_check_mark: <a href="mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
 
 
 ## Verified with
@@ -58,6 +58,10 @@ layout: default
 #include<cmath>
 #include"mod_pow.hpp"
 #include"euler_phi.hpp"
+
+/**
+ * @brief テトレーション
+ */
 
 long long tetration(long long a,long long b,long long m){
     std::vector<long long> v;
@@ -92,6 +96,10 @@ long long tetration(long long a,long long b,long long m){
 #include<algorithm>
 #include<cmath>
 #line 1 "math/mod_pow.hpp"
+/**
+ * @brief (x^y)%mod
+ */
+
 long long mod_pow(long long x,long long y,long long mod){
     long long ret=1;
     while(y>0) {
@@ -102,6 +110,10 @@ long long mod_pow(long long x,long long y,long long mod){
     return ret;
 }
 #line 1 "math/euler_phi.hpp"
+/**
+ * @brief オイラーのファイ関数
+ */
+
 long long euler_phi(long long n) {
     long long ret = n;
     for(long long i=2;i*i<=n;i++) {
@@ -114,6 +126,10 @@ long long euler_phi(long long n) {
     return ret;
 }
 #line 7 "math/tetration.hpp"
+
+/**
+ * @brief テトレーション
+ */
 
 long long tetration(long long a,long long b,long long m){
     std::vector<long long> v;

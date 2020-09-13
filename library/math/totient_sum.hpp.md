@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/totient_sum.hpp
+# :heavy_check_mark: トーシェント関数の和 <small>(math/totient_sum.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/totient_sum.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:59:09+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
@@ -48,6 +48,10 @@ layout: default
 ```cpp
 #pragma once
 #include<map>
+
+/**
+ * @brief トーシェント関数の和
+ */
 
 template<typename T>
 T totient_sum(long long n){
@@ -82,6 +86,10 @@ T totient_sum(long long n){
 ```cpp
 #line 2 "math/totient_sum.hpp"
 #include<map>
+
+/**
+ * @brief トーシェント関数の和
+ */
 
 template<typename T>
 T totient_sum(long long n){

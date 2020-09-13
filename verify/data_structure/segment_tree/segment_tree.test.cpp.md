@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fba856dbe1aaa5374a50a27f6dcea717">data_structure/segment_tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/segment_tree/segment_tree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 17:06:03+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_add_range_sum">https://judge.yosupo.jp/problem/point_add_range_sum</a>
@@ -83,13 +83,13 @@ int main(){
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 #include<bits/stdc++.h>
 using namespace std;
-#line 1 "util/template.hpp"
+#line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
 #pragma GCC target("avx")
-#line 5 "util/template.hpp"
+#line 6 "util/template.hpp"
 using namespace std;
-__attribute__((constructor))void init(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}
+struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;
 typedef long long lint;
 #define INF (1LL<<60)
 #define IINF (1<<30)
@@ -123,13 +123,6 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 2 "data_structure/segment_tree/segment_tree.hpp"
-/**
- * @brief Segment Tree
- * @docs docs/segment_tree.md
- * @see https://en.wikipedia.org/wiki/Segment_tree
- */
-
 #line 1 "alga/maybe.hpp"
 /**
  * @brief Maybe
@@ -162,7 +155,12 @@ auto expand(F op){
         return maybe<T>(op(s.unwrap(),t.unwrap()));
     };
 }
-#line 9 "data_structure/segment_tree/segment_tree.hpp"
+#line 3 "data_structure/segment_tree/segment_tree.hpp"
+/**
+ * @brief Segment Tree
+ * @docs docs/segment_tree.md
+ * @see https://en.wikipedia.org/wiki/Segment_tree
+ */
 template<typename T,typename F>
 class segment_tree{
 	maybe<T>* node;

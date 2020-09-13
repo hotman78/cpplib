@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/floor_sum.hpp
+# :heavy_check_mark: \sum_{i=0}^{n-1}\floor(a*i+b/c) <small>(math/floor_sum.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/floor_sum.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:28:21+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
@@ -47,7 +47,9 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-// \sum_{i=0}^{n-1}\floor(a*i+b/c)
+/**
+ * @brief \sum_{i=0}^{n-1}\floor(a*i+b/c)
+ */
 long long floor_sum(long long a,long long b,long long c,long long n){
     long long tmp=b/c*n+a/c*n*(n-1)/2;
     if(a%c==0){
@@ -69,7 +71,9 @@ long long floor_sum(long long a,long long b,long long c,long long n){
 {% raw %}
 ```cpp
 #line 2 "math/floor_sum.hpp"
-// \sum_{i=0}^{n-1}\floor(a*i+b/c)
+/**
+ * @brief \sum_{i=0}^{n-1}\floor(a*i+b/c)
+ */
 long long floor_sum(long long a,long long b,long long c,long long n){
     long long tmp=b/c*n+a/c*n*(n-1)/2;
     if(a%c==0){

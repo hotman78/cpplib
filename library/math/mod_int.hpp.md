@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/mod_int.hpp
+# :heavy_check_mark: ModInt <small>(math/mod_int.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/mod_int.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:09:36+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
 
 ## Required by
 
-* :warning: <a href="mod_int1000000007.hpp.html">math/mod_int1000000007.hpp</a>
-* :heavy_check_mark: <a href="mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
+* :warning: <a href="mod_int1000000007.hpp.html">ModInt(1'000'000'007) <small>(math/mod_int1000000007.hpp)</small></a>
+* :heavy_check_mark: <a href="mod_int998244353.hpp.html">ModInt(998'244'353) <small>(math/mod_int998244353.hpp)</small></a>
 
 
 ## Verified with
@@ -56,6 +56,10 @@ layout: default
 #include<cstdint>
 #include<iostream>
 #include<vector>
+
+/**
+ * @brief ModInt
+ */
 
 template<int MOD>
 struct mod_int {
@@ -192,6 +196,10 @@ template<int MOD>bool mod_int<MOD>::init=1;
 #include<cstdint>
 #include<iostream>
 #include<vector>
+
+/**
+ * @brief ModInt
+ */
 
 template<int MOD>
 struct mod_int {

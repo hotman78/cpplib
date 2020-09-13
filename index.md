@@ -74,28 +74,28 @@ layout: default
 
 ### math
 
-* :heavy_check_mark: <a href="library/math/binary_search.hpp.html">math/binary_search.hpp</a>
-* :warning: <a href="library/math/binary_search_double.hpp.html">math/binary_search_double.hpp</a>
-* :warning: <a href="library/math/carmichael_function.hpp.html">math/carmichael_function.hpp</a>
-* :warning: <a href="library/math/catalans_trapezoids.hpp.html">math/catalans_trapezoids.hpp</a>
-* :warning: <a href="library/math/comb.hpp.html">math/comb.hpp</a>
-* :warning: <a href="library/math/divisor_list.hpp.html">math/divisor_list.hpp</a>
-* :heavy_check_mark: <a href="library/math/euler_phi.hpp.html">math/euler_phi.hpp</a>
-* :heavy_check_mark: <a href="library/math/floor_sum.hpp.html">math/floor_sum.hpp</a>
-* :heavy_check_mark: <a href="library/math/is_prime.hpp.html">math/is_prime.hpp</a>
-* :warning: <a href="library/math/lagrange_interpolation.hpp.html">math/lagrange_interpolation.hpp</a>
-* :heavy_check_mark: <a href="library/math/mod_int.hpp.html">math/mod_int.hpp</a>
-* :warning: <a href="library/math/mod_int1000000007.hpp.html">math/mod_int1000000007.hpp</a>
-* :heavy_check_mark: <a href="library/math/mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
-* :warning: <a href="library/math/mod_log.hpp.html">math/mod_log.hpp</a>
-* :heavy_check_mark: <a href="library/math/mod_pow.hpp.html">math/mod_pow.hpp</a>
-* :warning: <a href="library/math/mod_sqrt.hpp.html">math/mod_sqrt.hpp</a>
-* :warning: <a href="library/math/osa_k.hpp.html">math/osa_k.hpp</a>
-* :heavy_check_mark: <a href="library/math/prime_factor.hpp.html">math/prime_factor.hpp</a>
-* :x: <a href="library/math/prime_list.hpp.html">math/prime_list.hpp</a>
+* :heavy_check_mark: <a href="library/math/binary_search.hpp.html">二分探索 <small>(math/binary_search.hpp)</small></a>
+* :warning: <a href="library/math/binary_search_double.hpp.html">二分探索(double) <small>(math/binary_search_double.hpp)</small></a>
+* :warning: <a href="library/math/carmichael_function.hpp.html">カーマイケル数 <small>(math/carmichael_function.hpp)</small></a>
+* :warning: <a href="library/math/catalans_trapezoids.hpp.html">カタラン台形 <small>(math/catalans_trapezoids.hpp)</small></a>
+* :warning: <a href="library/math/comb.hpp.html">二項係数 mod P <small>(math/comb.hpp)</small></a>
+* :warning: <a href="library/math/divisor_list.hpp.html">約数列挙 <small>(math/divisor_list.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/floor_sum.hpp.html">\sum_{i=0}^{n-1}\floor(a*i+b/c) <small>(math/floor_sum.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/is_prime.hpp.html">素数判定(高速) <small>(math/is_prime.hpp)</small></a>
+* :warning: <a href="library/math/lagrange_interpolation.hpp.html">ラグランジュ補完(連続点->一点) <small>(math/lagrange_interpolation.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/mod_int.hpp.html">ModInt <small>(math/mod_int.hpp)</small></a>
+* :warning: <a href="library/math/mod_int1000000007.hpp.html">ModInt(1'000'000'007) <small>(math/mod_int1000000007.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/mod_int998244353.hpp.html">ModInt(998'244'353) <small>(math/mod_int998244353.hpp)</small></a>
+* :warning: <a href="library/math/mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
+* :warning: <a href="library/math/mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
+* :warning: <a href="library/math/osa_k.hpp.html">osa_k法 <small>(math/osa_k.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/prime_factor.hpp.html">素因数分解(高速) <small>(math/prime_factor.hpp)</small></a>
+* :x: <a href="library/math/prime_list.hpp.html">素数列挙 <small>(math/prime_list.hpp)</small></a>
 * :warning: <a href="library/math/stern_brocot_tree.cpp.html">math/stern_brocot_tree.cpp</a>
-* :heavy_check_mark: <a href="library/math/tetration.hpp.html">math/tetration.hpp</a>
-* :heavy_check_mark: <a href="library/math/totient_sum.hpp.html">math/totient_sum.hpp</a>
+* :heavy_check_mark: <a href="library/math/tetration.hpp.html">テトレーション <small>(math/tetration.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/totient_sum.hpp.html">トーシェント関数の和 <small>(math/totient_sum.hpp)</small></a>
 
 
 <div id="05c7e24700502a079cdd88012b5a76d3"></div>

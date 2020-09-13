@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/divisor_list.hpp
+# :warning: 約数列挙 <small>(math/divisor_list.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/divisor_list.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:40:58+09:00
 
 
 
@@ -42,7 +42,9 @@ layout: default
 {% raw %}
 ```cpp
 #pragma once
-
+/**
+ * @brief 約数列挙
+ */
 template<typename T>
 auto divisor_list(T n){
     vector<T>res;
@@ -61,7 +63,9 @@ auto divisor_list(T n){
 {% raw %}
 ```cpp
 #line 2 "math/divisor_list.hpp"
-
+/**
+ * @brief 約数列挙
+ */
 template<typename T>
 auto divisor_list(T n){
     vector<T>res;

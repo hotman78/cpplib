@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: math/prime_list.hpp
+# :x: 素数列挙 <small>(math/prime_list.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/prime_list.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:29:24+09:00
+    - Last commit date: 2020-09-13 16:50:23+09:00
 
 
 
@@ -49,7 +49,12 @@ layout: default
 #pragma once
 #include<vector>
 #include<bitset>
+#include<cmath>
 #include<set>
+
+/**
+ * @brief 素数列挙
+ */
 
 template<int n=10'000'000>
 std::vector<long long> prime_list() {
@@ -75,7 +80,12 @@ std::vector<long long> prime_list() {
 #line 2 "math/prime_list.hpp"
 #include<vector>
 #include<bitset>
+#include<cmath>
 #include<set>
+
+/**
+ * @brief 素数列挙
+ */
 
 template<int n=10'000'000>
 std::vector<long long> prime_list() {
