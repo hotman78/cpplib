@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/totient_sum.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:51:55+09:00
+    - Last commit date: 2020-09-13 15:59:09+09:00
 
 
 
@@ -66,11 +66,11 @@ T totient_sum(long long n){
     T ans=T(n)*(n+1)/2;
     long long mx=0;
     for(long long i=1;i*i<n;i++){
-        ans-=T(n/i-n/(i+1))*totient_sum(i);
+        ans-=T(n/i-n/(i+1))*totient_sum<T>(i);
         mx=n/(i+1)+1;
     }
     for(long long i=2;i<mx;i++){
-        ans-=totient_sum(n/i);
+        ans-=totient_sum<T>(n/i);
     }
     return m2[n]=ans;
 }
@@ -100,11 +100,11 @@ T totient_sum(long long n){
     T ans=T(n)*(n+1)/2;
     long long mx=0;
     for(long long i=1;i*i<n;i++){
-        ans-=T(n/i-n/(i+1))*totient_sum(i);
+        ans-=T(n/i-n/(i+1))*totient_sum<T>(i);
         mx=n/(i+1)+1;
     }
     for(long long i=2;i<mx;i++){
-        ans-=totient_sum(n/i);
+        ans-=totient_sum<T>(n/i);
     }
     return m2[n]=ans;
 }
