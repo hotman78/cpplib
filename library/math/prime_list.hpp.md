@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/prime_list.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:50:23+09:00
+    - Last commit date: 2020-09-13 17:54:16+09:00
 
 
 
@@ -56,12 +56,11 @@ layout: default
  * @brief 素数列挙
  */
 
-template<int n=10'000'000>
-std::vector<long long> prime_list() {
-    std::bitset<n+1> p;
+std::bitset<500'000'001> p;
+std::vector<long long> prime_list(int n) {
     p.set();
     p[0]=0;
-    for(int i=2;i<std::sqrt(n)+10;++i){
+    for(int i=2;i*i<=n;++i){
         if(!p[i])continue;
         for(int j=2*i;j<n;j+=i)p[j]=0;
     }
@@ -87,12 +86,11 @@ std::vector<long long> prime_list() {
  * @brief 素数列挙
  */
 
-template<int n=10'000'000>
-std::vector<long long> prime_list() {
-    std::bitset<n+1> p;
+std::bitset<500'000'001> p;
+std::vector<long long> prime_list(int n) {
     p.set();
     p[0]=0;
-    for(int i=2;i<std::sqrt(n)+10;++i){
+    for(int i=2;i*i<=n;++i){
         if(!p[i])continue;
         for(int j=2*i;j<n;j+=i)p[j]=0;
     }
