@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: math/test/AOJ_binary_search.cpp
+# :warning: math/test/AOJ_is_prime.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_binary_search.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_is_prime.cpp">View this file on GitHub</a>
     - Last commit date: 2020-09-13 15:24:15+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C</a>
 
 
 ## Depends on
 
-* :warning: <a href="../binary_search.hpp.html">math/binary_search.hpp</a>
+* :warning: <a href="../is_prime.hpp.html">math/is_prime.hpp</a>
 * :heavy_check_mark: <a href="../../util/template.hpp.html">util/template.hpp</a>
 
 
@@ -48,24 +48,18 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B"
-#include "../binary_search.hpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
+#include "../is_prime.hpp"
 #include "../../util/template.hpp"
 
 int main(){
-    lint n,q;
-    cin>>n;
-    vec a(n);
-    rep(i,n)cin>>a[i];
-    cin>>q;
+    lint t;
+    cin>>t;
     lint ans=0;
-    rep(i,q){
-        lint x;
-        cin>>x;
-        lint t=bs(0,n,[&](lint i){return a[i]<=x;});
-        if(t!=-1&&a[t]==x){
-            ans++;
-        }
+    while(t--){
+        lint n;
+        cin>>n;
+        ans+=is_prime(n);
     }
     cout<<ans<<endl;
 }
@@ -75,21 +69,36 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/test/AOJ_binary_search.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B"
-#line 2 "math/binary_search.hpp"
-#include<functional>
+#line 1 "math/test/AOJ_is_prime.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
+#line 2 "math/is_prime.hpp"
+#include <initializer_list>
 
-template<typename F>
-long long bs(long long mn,long long mx,F func){
-    mn--;
-    mx++;
-	while(mx-mn>1){
-		long long mid=(mn+mx)/2;
-		if(!func(mid))mx=mid;
-		else mn=mid;
-	}
-    return mn;
+bool is_prime(long long n){
+    if(n<=1)return 0;
+    if(n==2)return 1;
+    if(n%2==0)return 0;
+    long long s=0,d=n-1;
+    while(d%2)d/=2,s++;
+    auto mod_pow=[](__int128_t a,__int128_t b,__int128_t n){
+        long long res=1;
+        while(b){
+            if(b%2)res=res*a%n;
+            a=a*a%n;
+            b/=2;
+        }
+        return (long long)(res);
+    };
+    for(long long e:{2,3,5,7,11,13,17,19,23,29,31,37}){
+        if(n<=e)break;
+        if(mod_pow(e,d,n)==1)continue;
+        bool b=1;
+        for(int i=0;i<s;i++){
+            if(mod_pow(e,d<<i,n)==n-1)b=0;
+        }
+        if(b)return 0;
+    }
+    return 1;
 }
 #line 1 "util/template.hpp"
 #pragma GCC optimize("Ofast")
@@ -131,22 +140,16 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 4 "math/test/AOJ_binary_search.cpp"
+#line 4 "math/test/AOJ_is_prime.cpp"
 
 int main(){
-    lint n,q;
-    cin>>n;
-    vec a(n);
-    rep(i,n)cin>>a[i];
-    cin>>q;
+    lint t;
+    cin>>t;
     lint ans=0;
-    rep(i,q){
-        lint x;
-        cin>>x;
-        lint t=bs(0,n,[&](lint i){return a[i]<=x;});
-        if(t!=-1&&a[t]==x){
-            ans++;
-        }
+    while(t--){
+        lint n;
+        cin>>n;
+        ans+=is_prime(n);
     }
     cout<<ans<<endl;
 }

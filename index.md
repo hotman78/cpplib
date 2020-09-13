@@ -103,6 +103,7 @@ layout: default
 ### math/test
 
 * :warning: <a href="library/math/test/AOJ_binary_search.cpp.html">math/test/AOJ_binary_search.cpp</a>
+* :warning: <a href="library/math/test/AOJ_is_prime.cpp.html">math/test/AOJ_is_prime.cpp</a>
 
 
 <div id="05c7e24700502a079cdd88012b5a76d3"></div>

@@ -39,6 +39,7 @@ layout: default
 ## Required by
 
 * :warning: <a href="prime_factor.hpp.html">math/prime_factor.hpp</a>
+* :warning: <a href="test/AOJ_is_prime.cpp.html">math/test/AOJ_is_prime.cpp</a>
 
 
 ## Code

@@ -39,6 +39,7 @@ layout: default
 ## Required by
 
 * :warning: <a href="../math/test/AOJ_binary_search.cpp.html">math/test/AOJ_binary_search.cpp</a>
+* :warning: <a href="../math/test/AOJ_is_prime.cpp.html">math/test/AOJ_is_prime.cpp</a>
 
 
 ## Verified with
