@@ -25,22 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/test/AOJ_prime_factor.test.cpp
+# :x: math/test/LC_prime_list.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_prime_factor.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:01:34+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_prime_list.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-13 16:29:24+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A</a>
+* see: <a href="https://judge.yosupo.jp/problem/enumerate_primes">https://judge.yosupo.jp/problem/enumerate_primes</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/math/is_prime.hpp.html">math/is_prime.hpp</a>
-* :heavy_check_mark: <a href="../../../library/math/prime_factor.hpp.html">math/prime_factor.hpp</a>
+* :x: <a href="../../../library/math/prime_list.hpp.html">math/prime_list.hpp</a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -49,16 +48,20 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A"
-#include "../prime_factor.hpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/enumerate_primes"
+#include "../prime_list.hpp"
 #include "../../util/template.hpp"
 
 int main(){
-    lint n;
-    cin>>n;
-    auto v=prime_factor(n);
-    cout<<n<<": ";
-    output(v);
+    lint n,a,b;
+    cin>>n>>a>>b;
+    auto v=prime_list<510'000'000>();
+    cout<<lower_bound(all(v),n)-v.begin()<<endl;
+    vector<int>ans;
+    for(int i=b;v[i]<n;i+=a){
+        ans.push_back(v[i]);
+    }
+    output(ans);
 }
 ```
 {% endraw %}
@@ -66,80 +69,27 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/test/AOJ_prime_factor.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A"
-#line 2 "math/prime_factor.hpp"
+#line 1 "math/test/LC_prime_list.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/enumerate_primes"
+#line 2 "math/prime_list.hpp"
 #include<vector>
-#include<numeric>
-#include<cmath>
-#include<algorithm>
-#line 2 "math/is_prime.hpp"
-#include <initializer_list>
+#include<bitset>
+#include<set>
 
-bool is_prime(long long n){
-    if(n<=1)return 0;
-    if(n==2)return 1;
-    if(n%2==0)return 0;
-    long long s=0,d=n-1;
-    while(d%2)d/=2,s++;
-    auto mod_pow=[](__int128_t a,__int128_t b,__int128_t n){
-        long long res=1;
-        while(b){
-            if(b%2)res=res*a%n;
-            a=a*a%n;
-            b/=2;
-        }
-        return (long long)(res);
-    };
-    for(long long e:{2,3,5,7,11,13,17,19,23,29,31,37}){
-        if(n<=e)break;
-        if(mod_pow(e,d,n)==1)continue;
-        bool b=1;
-        for(int i=0;i<s;i++){
-            if(mod_pow(e,d<<i,n)==n-1)b=0;
-        }
-        if(b)return 0;
+template<int n=10'000'000>
+std::vector<long long> prime_list() {
+    std::bitset<n+1> p;
+    p.set();
+    p[0]=0;
+    for(int i=2;i<std::sqrt(n)+10;++i){
+        if(!p[i])continue;
+        for(int j=2*i;j<n;j+=i)p[j]=0;
     }
-    return 1;
-}
-#line 7 "math/prime_factor.hpp"
-
-void __prime_factor(long long n,long long& c,std::vector<long long>& v){
-    if(n==1)return;
-    if(n%2==0){
-        v.emplace_back(2);
-        __prime_factor(n/2,c,v);
-        return;
-    }
-    if(is_prime(n)){
-        v.emplace_back(n);
-        return;
-    }
-    while(1){
-        long long x=2,y=2,d=1;
-        while(d==1){
-            x=((__int128_t)x*x+c)%n;
-            y=((__int128_t)y*y%n+c)%n;
-            y=((__int128_t)y*y%n+c)%n;
-            d=std::gcd(std::abs(x-y),n);
-        }
-        if(d==n){
-            c++;
-            continue;
-        }
-        __prime_factor(d,c,v);
-        __prime_factor(n/d,c,v);
-        return;
-    }
+    std::vector<long long>list;
+    for(int i=2;i<=n;++i)if(p[i])list.push_back(i);
+    return list;
 }
 
-std::vector<long long>prime_factor(long long n){
-    std::vector<long long>v;
-    long long c=1;
-    __prime_factor(n,c,v);
-    std::sort(v.begin(),v.end());
-    return v;
-}
 #line 1 "util/template.hpp"
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
@@ -180,14 +130,18 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 4 "math/test/AOJ_prime_factor.test.cpp"
+#line 4 "math/test/LC_prime_list.test.cpp"
 
 int main(){
-    lint n;
-    cin>>n;
-    auto v=prime_factor(n);
-    cout<<n<<": ";
-    output(v);
+    lint n,a,b;
+    cin>>n>>a>>b;
+    auto v=prime_list<510'000'000>();
+    cout<<lower_bound(all(v),n)-v.begin()<<endl;
+    vector<int>ans;
+    for(int i=b;v[i]<n;i+=a){
+        ans.push_back(v[i]);
+    }
+    output(ans);
 }
 
 ```

@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/prime_list.hpp
+# :x: math/prime_list.hpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/prime_list.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 16:29:24+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../verify/math/test/LC_prime_list.test.cpp.html">math/test/LC_prime_list.test.cpp</a>
 
 
 ## Code
@@ -47,7 +52,7 @@ layout: default
 #include<set>
 
 template<int n=10'000'000>
-std::vector<long long> primeList() {
+std::vector<long long> prime_list() {
     std::bitset<n+1> p;
     p.set();
     p[0]=0;
@@ -59,6 +64,8 @@ std::vector<long long> primeList() {
     for(int i=2;i<=n;++i)if(p[i])list.push_back(i);
     return list;
 }
+
+
 ```
 {% endraw %}
 
@@ -71,7 +78,7 @@ std::vector<long long> primeList() {
 #include<set>
 
 template<int n=10'000'000>
-std::vector<long long> primeList() {
+std::vector<long long> prime_list() {
     std::bitset<n+1> p;
     p.set();
     p[0]=0;
@@ -83,6 +90,7 @@ std::vector<long long> primeList() {
     for(int i=2;i<=n;++i)if(p[i])list.push_back(i);
     return list;
 }
+
 
 ```
 {% endraw %}

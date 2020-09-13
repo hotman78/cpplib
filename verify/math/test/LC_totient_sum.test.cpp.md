@@ -42,7 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../library/math/mod_int.hpp.html">math/mod_int.hpp</a>
 * :heavy_check_mark: <a href="../../../library/math/mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
 * :heavy_check_mark: <a href="../../../library/math/totient_sum.hpp.html">math/totient_sum.hpp</a>
-* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
