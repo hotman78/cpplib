@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/prime_list.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 17:54:16+09:00
+    - Last commit date: 2020-09-13 18:30:52+09:00
 
 
 
@@ -62,7 +62,7 @@ std::vector<long long> prime_list(int n) {
     p[0]=0;
     for(int i=2;i*i<=n;++i){
         if(!p[i])continue;
-        for(int j=2*i;j<n;j+=i)p[j]=0;
+        for(int j=2*i;j<=n;j+=i)p[j]=0;
     }
     std::vector<long long>list;
     for(int i=2;i<=n;++i)if(p[i])list.push_back(i);
@@ -92,7 +92,7 @@ std::vector<long long> prime_list(int n) {
     p[0]=0;
     for(int i=2;i*i<=n;++i){
         if(!p[i])continue;
-        for(int j=2*i;j<n;j+=i)p[j]=0;
+        for(int j=2*i;j<=n;j+=i)p[j]=0;
     }
     std::vector<long long>list;
     for(int i=2;i<=n;++i)if(p[i])list.push_back(i);
