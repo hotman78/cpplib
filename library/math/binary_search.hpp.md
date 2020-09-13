@@ -36,6 +36,11 @@ layout: default
 
 
 
+## Required by
+
+* :warning: <a href="test/AOJ_binary_search.cpp.html">math/test/AOJ_binary_search.cpp</a>
+
+
 ## Code
 
 <a id="unbundled"></a>
