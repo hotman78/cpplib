@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: 素数列挙 <small>(math/prime_list.hpp)</small>
+# :heavy_check_mark: 素数列挙 <small>(math/prime_list.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../verify/math/test/LC_prime_list.test.cpp.html">math/test/LC_prime_list.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/math/test/AOJ_prime_list.test.cpp.html">math/test/AOJ_prime_list.test.cpp</a>
 
 
 ## Code

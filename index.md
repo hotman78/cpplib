@@ -92,7 +92,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
 * :warning: <a href="library/math/osa_k.hpp.html">osa_k法 <small>(math/osa_k.hpp)</small></a>
 * :heavy_check_mark: <a href="library/math/prime_factor.hpp.html">素因数分解(高速) <small>(math/prime_factor.hpp)</small></a>
-* :x: <a href="library/math/prime_list.hpp.html">素数列挙 <small>(math/prime_list.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/prime_list.hpp.html">素数列挙 <small>(math/prime_list.hpp)</small></a>
 * :warning: <a href="library/math/stern_brocot_tree.cpp.html">math/stern_brocot_tree.cpp</a>
 * :heavy_check_mark: <a href="library/math/tetration.hpp.html">テトレーション <small>(math/tetration.hpp)</small></a>
 * :heavy_check_mark: <a href="library/math/totient_sum.hpp.html">トーシェント関数の和 <small>(math/totient_sum.hpp)</small></a>
@@ -105,7 +105,7 @@ layout: default
 * :warning: <a href="library/util/cpp_int.hpp.html">util/cpp_int.hpp</a>
 * :warning: <a href="library/util/pbds.hpp.html">util/pbds.hpp</a>
 * :heavy_check_mark: <a href="library/util/random_gen.hpp.html">util/random_gen.hpp</a>
-* :question: <a href="library/util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Verify Files
@@ -115,11 +115,11 @@ layout: default
 * :heavy_check_mark: <a href="verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/AOJ_is_prime.test.cpp.html">math/test/AOJ_is_prime.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/AOJ_prime_factor.test.cpp.html">math/test/AOJ_prime_factor.test.cpp</a>
+* :heavy_check_mark: <a href="verify/math/test/AOJ_prime_list.test.cpp.html">math/test/AOJ_prime_list.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_floor_sum.test.cpp.html">math/test/LC_floor_sum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_mod_log.test.cpp.html">math/test/LC_mod_log.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_mod_sqrt.test.cpp.html">math/test/LC_mod_sqrt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
-* :x: <a href="verify/math/test/LC_prime_list.test.cpp.html">math/test/LC_prime_list.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_tetration.test.cpp.html">math/test/LC_tetration.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_totient_sum.test.cpp.html">math/test/LC_totient_sum.test.cpp</a>
 

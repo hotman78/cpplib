@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: math/test/LC_prime_list.test.cpp
+# :heavy_check_mark: math/test/AOJ_prime_list.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_prime_list.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 18:52:45+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_prime_list.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-13 19:03:19+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/math/prime_list.hpp.html">素数列挙 <small>(math/prime_list.hpp)</small></a>
-* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/prime_list.hpp.html">素数列挙 <small>(math/prime_list.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -55,11 +55,18 @@ layout: default
 int main(){
     lint n;
     cin>>n;
-    auto v=prime_list(n);
-    cout<<v.size()<<endl;
+    vec a(n);
+    rep(i,n)cin>>a[i];
+    auto v=prime_list(100'000'000);
+    bitset<100'000'001>b;
     for(auto e:v){
-        cout<<e<<endl;
+        b[e]=1;
     }
+    lint ans=0;
+    for(auto e:a){
+        if(b[e])ans++;
+    }
+    cout<<ans<<endl;
 }
 ```
 {% endraw %}
@@ -67,7 +74,7 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/test/LC_prime_list.test.cpp"
+#line 1 "math/test/AOJ_prime_list.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
 #line 2 "math/prime_list.hpp"
 #include<vector>
@@ -132,16 +139,23 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 4 "math/test/LC_prime_list.test.cpp"
+#line 4 "math/test/AOJ_prime_list.test.cpp"
 
 int main(){
     lint n;
     cin>>n;
-    auto v=prime_list(n);
-    cout<<v.size()<<endl;
+    vec a(n);
+    rep(i,n)cin>>a[i];
+    auto v=prime_list(100'000'000);
+    bitset<100'000'001>b;
     for(auto e:v){
-        cout<<e<<endl;
+        b[e]=1;
     }
+    lint ans=0;
+    for(auto e:a){
+        if(b[e])ans++;
+    }
+    cout<<ans<<endl;
 }
 
 ```
