@@ -2,6 +2,10 @@
 #include"mod_pow.hpp"
 #include"../util/random_gen.hpp"
 
+/**
+ * @brief ModSqrt
+ */
+
 long long mod_sqrt(long long a,long long mod){
     if(mod==2||a==0)return a;
     if(mod_pow(a,(mod-1)/2,mod)!=1)return -1;

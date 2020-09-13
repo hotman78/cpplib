@@ -3,6 +3,10 @@
 #include<iostream>
 #include<vector>
 
+/**
+ * @brief ModInt
+ */
+
 template<int MOD>
 struct mod_int {
     using mint=mod_int<MOD>;

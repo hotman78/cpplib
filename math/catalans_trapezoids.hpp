@@ -1,7 +1,6 @@
-/*
-最終的にn個の"["とk個の"]"でカッコ列を作る
-但し、途中で"["の数が"]"の数よりm個以上大きくなる事を許さない
-*/
+/**
+ * @brief カタラン台形
+ */
 template<typename T>
 T catalans_trapezoids(long long n,long long k,long long m=1){
     if(m<=0)return T();

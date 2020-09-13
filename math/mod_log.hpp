@@ -5,6 +5,10 @@
 #include<numeric>
 #include<cmath>
 
+/**
+ * @brief 離散対数(ModLog)
+ */
+
 long long mod_log(long long x,long long y,long long m){
     if(1==y||(x==0&&y==0&&m==1))return 0;
     if(x==0){

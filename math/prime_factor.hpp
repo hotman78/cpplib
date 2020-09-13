@@ -5,6 +5,10 @@
 #include<algorithm>
 #include"is_prime.hpp"
 
+/**
+ * @brief 素因数分解(高速)
+ */
+
 void __prime_factor(long long n,long long& c,std::vector<long long>& v){
     if(n==1)return;
     if(n%2==0){

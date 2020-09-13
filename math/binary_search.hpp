@@ -1,6 +1,8 @@
 #pragma once
 #include<functional>
-
+/**
+ * @brief 二分探索
+ */
 template<typename F>
 long long bs(long long mn,long long mx,F func){
     mn--;

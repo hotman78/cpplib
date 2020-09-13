@@ -1,3 +1,7 @@
+/**
+ * @brief オイラーのファイ関数
+ */
+
 long long euler_phi(long long n) {
     long long ret = n;
     for(long long i=2;i*i<=n;i++) {

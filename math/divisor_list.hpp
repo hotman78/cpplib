@@ -1,5 +1,7 @@
 #pragma once
-
+/**
+ * @brief 約数列挙
+ */
 template<typename T>
 auto divisor_list(T n){
     vector<T>res;

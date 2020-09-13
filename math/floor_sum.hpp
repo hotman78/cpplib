@@ -1,5 +1,7 @@
 #pragma once
-// \sum_{i=0}^{n-1}\floor(a*i+b/c)
+/**
+ * @brief \sum_{i=0}^{n-1}\floor(a*i+b/c)
+ */
 long long floor_sum(long long a,long long b,long long c,long long n){
     long long tmp=b/c*n+a/c*n*(n-1)/2;
     if(a%c==0){

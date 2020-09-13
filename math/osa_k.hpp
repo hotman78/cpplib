@@ -1,6 +1,10 @@
 #pragma once
 #include<map>
 
+/**
+ * @brief osa_k法
+ */
+
 template<typename Int>
 std::map<int,int> osa_k(Int n){
     constexpr int mx=10'000'000;

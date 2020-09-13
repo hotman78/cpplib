@@ -1,6 +1,8 @@
 #pragma once
 #include<map>
-
+/**
+ * @brief カーマイケル数
+ */
 template<typename T>
 auto carmichael_function(T n){
     map<T,long long>ret;

@@ -1,6 +1,10 @@
 #pragma once
 #include<map>
 
+/**
+ * @brief トーシェント関数の和
+ */
+
 template<typename T>
 T totient_sum(long long n){
     static std::map<long long,T> m2;

@@ -1,6 +1,8 @@
 #pragma once
 #include <initializer_list>
-
+/**
+ * @brief 素数判定(高速)
+ */
 bool is_prime(long long n){
     if(n<=1)return 0;
     if(n==2)return 1;

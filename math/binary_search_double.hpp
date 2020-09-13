@@ -1,5 +1,8 @@
 #pragma once
 #include<functional>
+/**
+ * @brief 二分探索(double)
+ */
 
 template<typename F>
 double bs(double mn,double mx,F func) {

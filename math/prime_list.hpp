@@ -3,6 +3,10 @@
 #include<bitset>
 #include<set>
 
+/**
+ * @brief 素数列挙
+ */
+
 template<int n=10'000'000>
 std::vector<long long> prime_list() {
     std::bitset<n+1> p;

@@ -1,3 +1,7 @@
+/**
+ * @brief ラグランジュ補完(連続点->一点)
+ */
+
 template<typename T>
 T lagrange_interpolation(vector<T>v,lint n){
     long long k=v.size();

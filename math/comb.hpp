@@ -1,3 +1,6 @@
+/**
+ * @brief 二項係数 mod P
+ */
 template<int mod>
 long long comb(long long a, long long b){
     static bool init=1;

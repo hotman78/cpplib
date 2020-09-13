@@ -5,6 +5,10 @@
 #include"mod_pow.hpp"
 #include"euler_phi.hpp"
 
+/**
+ * @brief テトレーション
+ */
+
 long long tetration(long long a,long long b,long long m){
     std::vector<long long> v;
     long long d=m;
