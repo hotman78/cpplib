@@ -6,3 +6,4 @@ https://hotman78.github.io/cpplib/
 
 競技プログラミングのC++のライブラリです
 CC0ライセンスなので好きにコピーして下さい
+themeにうしさんの[minima](https://github.com/ei1333/minima)を使わせて頂いてます
