@@ -8,7 +8,7 @@ struct mod_int {
     using mint=mod_int<MOD>;
     using u64 = std::uint_fast64_t;
     u64 a;
-    constexpr mint(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}
+    constexpr mod_int(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}
     constexpr u64 &value()noexcept{return a;}
     constexpr const u64 &value() const noexcept {return a;}
     constexpr mint operator+(const mint rhs)const noexcept{return mint(*this) += rhs;}
