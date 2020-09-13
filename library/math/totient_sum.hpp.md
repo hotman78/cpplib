@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/totient_sum.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-13 15:51:55+09:00
 
 
 
@@ -63,10 +63,10 @@ T totient_sum(long long n){
     }
     if(n<1e7)return m[n];
     else if(m2.count(n))return m2[n];
-    Mint ans=Mint(n)*(n+1)/2;
+    T ans=T(n)*(n+1)/2;
     long long mx=0;
     for(long long i=1;i*i<n;i++){
-        ans-=Mint(n/i-n/(i+1))*totient_sum(i);
+        ans-=T(n/i-n/(i+1))*totient_sum(i);
         mx=n/(i+1)+1;
     }
     for(long long i=2;i<mx;i++){
@@ -97,10 +97,10 @@ T totient_sum(long long n){
     }
     if(n<1e7)return m[n];
     else if(m2.count(n))return m2[n];
-    Mint ans=Mint(n)*(n+1)/2;
+    T ans=T(n)*(n+1)/2;
     long long mx=0;
     for(long long i=1;i*i<n;i++){
-        ans-=Mint(n/i-n/(i+1))*totient_sum(i);
+        ans-=T(n/i-n/(i+1))*totient_sum(i);
         mx=n/(i+1)+1;
     }
     for(long long i=2;i<mx;i++){

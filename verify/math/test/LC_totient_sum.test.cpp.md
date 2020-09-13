@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_totient_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:47:08+09:00
+    - Last commit date: 2020-09-13 15:51:55+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/sum_of_totient_function">https://judge.yosupo.jp/problem/sum_of_totient_function</a>
@@ -85,10 +85,10 @@ T totient_sum(long long n){
     }
     if(n<1e7)return m[n];
     else if(m2.count(n))return m2[n];
-    Mint ans=Mint(n)*(n+1)/2;
+    T ans=T(n)*(n+1)/2;
     long long mx=0;
     for(long long i=1;i*i<n;i++){
-        ans-=Mint(n/i-n/(i+1))*totient_sum(i);
+        ans-=T(n/i-n/(i+1))*totient_sum(i);
         mx=n/(i+1)+1;
     }
     for(long long i=2;i<mx;i++){
