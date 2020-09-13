@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/sum_of_floor_linear.hpp
+# :x: math/floor_sum.hpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/sum_of_floor_linear.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/floor_sum.hpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-13 15:28:21+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../verify/math/test/LC_floor_sum.test.cpp.html">math/test/LC_floor_sum.test.cpp</a>
 
 
 ## Code
@@ -43,7 +48,7 @@ layout: default
 ```cpp
 #pragma once
 // \sum_{i=0}^{n-1}\floor(a*i+b/c)
-long long sum_of_floor_linear(long long a,long long b,long long c,long long n){
+long long floor_sum(long long a,long long b,long long c,long long n){
     long long tmp=b/c*n+a/c*n*(n-1)/2;
     if(a%c==0){
         return tmp;
@@ -55,7 +60,7 @@ long long sum_of_floor_linear(long long a,long long b,long long c,long long n){
     a%=c;
     b=b%c+a*next;
     n-=next;
-    return tmp+sum_of_floor_linear(c,n*a-((b+a*(n-1))/c*c-b),a,(b+a*(n-1))/c);
+    return tmp+floor_sum(c,n*a-((b+a*(n-1))/c*c-b),a,(b+a*(n-1))/c);
 }
 ```
 {% endraw %}
@@ -63,9 +68,9 @@ long long sum_of_floor_linear(long long a,long long b,long long c,long long n){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "math/sum_of_floor_linear.hpp"
+#line 2 "math/floor_sum.hpp"
 // \sum_{i=0}^{n-1}\floor(a*i+b/c)
-long long sum_of_floor_linear(long long a,long long b,long long c,long long n){
+long long floor_sum(long long a,long long b,long long c,long long n){
     long long tmp=b/c*n+a/c*n*(n-1)/2;
     if(a%c==0){
         return tmp;
@@ -77,7 +82,7 @@ long long sum_of_floor_linear(long long a,long long b,long long c,long long n){
     a%=c;
     b=b%c+a*next;
     n-=next;
-    return tmp+sum_of_floor_linear(c,n*a-((b+a*(n-1))/c*c-b),a,(b+a*(n-1))/c);
+    return tmp+floor_sum(c,n*a-((b+a*(n-1))/c*c-b),a,(b+a*(n-1))/c);
 }
 
 ```

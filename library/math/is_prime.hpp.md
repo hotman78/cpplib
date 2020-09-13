@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/is_prime.hpp
+# :heavy_check_mark: math/is_prime.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,7 +39,11 @@ layout: default
 ## Required by
 
 * :warning: <a href="prime_factor.hpp.html">math/prime_factor.hpp</a>
-* :warning: <a href="test/AOJ_is_prime.cpp.html">math/test/AOJ_is_prime.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/math/test/AOJ_is_prime.test.cpp.html">math/test/AOJ_is_prime.test.cpp</a>
 
 
 ## Code

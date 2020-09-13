@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="is_prime.hpp.html">math/is_prime.hpp</a>
+* :heavy_check_mark: <a href="is_prime.hpp.html">math/is_prime.hpp</a>
 
 
 ## Code

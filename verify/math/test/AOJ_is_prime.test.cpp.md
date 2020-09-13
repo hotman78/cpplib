@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: math/test/AOJ_is_prime.cpp
+# :heavy_check_mark: math/test/AOJ_is_prime.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_is_prime.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:24:15+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_is_prime.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-13 15:25:42+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../is_prime.hpp.html">math/is_prime.hpp</a>
-* :heavy_check_mark: <a href="../../util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/is_prime.hpp.html">math/is_prime.hpp</a>
+* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -69,7 +69,7 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/test/AOJ_is_prime.cpp"
+#line 1 "math/test/AOJ_is_prime.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
 #line 2 "math/is_prime.hpp"
 #include <initializer_list>
@@ -140,7 +140,7 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 4 "math/test/AOJ_is_prime.cpp"
+#line 4 "math/test/AOJ_is_prime.test.cpp"
 
 int main(){
     lint t;

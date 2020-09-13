@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/binary_search.hpp
+# :x: math/binary_search.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -36,9 +36,9 @@ layout: default
 
 
 
-## Required by
+## Verified with
 
-* :warning: <a href="test/AOJ_binary_search.cpp.html">math/test/AOJ_binary_search.cpp</a>
+* :x: <a href="../../verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
 
 
 ## Code

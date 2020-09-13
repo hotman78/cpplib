@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: math/test/AOJ_binary_search.cpp
+# :x: math/test/AOJ_binary_search.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_binary_search.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 15:24:15+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_binary_search.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-13 15:25:42+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../binary_search.hpp.html">math/binary_search.hpp</a>
-* :heavy_check_mark: <a href="../../util/template.hpp.html">util/template.hpp</a>
+* :x: <a href="../../../library/math/binary_search.hpp.html">math/binary_search.hpp</a>
+* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -75,7 +75,7 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/test/AOJ_binary_search.cpp"
+#line 1 "math/test/AOJ_binary_search.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B"
 #line 2 "math/binary_search.hpp"
 #include<functional>
@@ -131,7 +131,7 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 4 "math/test/AOJ_binary_search.cpp"
+#line 4 "math/test/AOJ_binary_search.test.cpp"
 
 int main(){
     lint n,q;
