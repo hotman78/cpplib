@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: util/template.hpp
+# :question: util/template.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -44,6 +44,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/math/test/LC_floor_sum.test.cpp.html">math/test/LC_floor_sum.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/math/test/LC_tetration.test.cpp.html">math/test/LC_tetration.test.cpp</a>
+* :x: <a href="../../verify/math/test/LC_totient_sum.test.cpp.html">math/test/LC_totient_sum.test.cpp</a>
 
 
 ## Code

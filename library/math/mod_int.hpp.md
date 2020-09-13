@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/mod_int.hpp
+# :x: math/mod_int.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,7 +39,12 @@ layout: default
 ## Required by
 
 * :warning: <a href="mod_int1000000007.hpp.html">math/mod_int1000000007.hpp</a>
-* :warning: <a href="mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
+* :x: <a href="mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
+
+
+## Verified with
+
+* :x: <a href="../../verify/math/test/LC_totient_sum.test.cpp.html">math/test/LC_totient_sum.test.cpp</a>
 
 
 ## Code

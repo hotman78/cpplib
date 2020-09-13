@@ -21,29 +21,28 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: math/mod_int998244353.hpp
+# :x: math/test/LC_totient_sum.test.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/mod_int998244353.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+* category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_totient_sum.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-13 15:47:08+09:00
 
 
+* see: <a href="https://judge.yosupo.jp/problem/sum_of_totient_function">https://judge.yosupo.jp/problem/sum_of_totient_function</a>
 
 
 ## Depends on
 
-* :x: <a href="mod_int.hpp.html">math/mod_int.hpp</a>
-
-
-## Verified with
-
-* :x: <a href="../../verify/math/test/LC_totient_sum.test.cpp.html">math/test/LC_totient_sum.test.cpp</a>
+* :x: <a href="../../../library/math/mod_int.hpp.html">math/mod_int.hpp</a>
+* :x: <a href="../../../library/math/mod_int998244353.hpp.html">math/mod_int998244353.hpp</a>
+* :x: <a href="../../../library/math/totient_sum.hpp.html">math/totient_sum.hpp</a>
+* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -51,15 +50,52 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#pragma once
-#include"mod_int.hpp"
-using mint=mod_int<998'244'353>;
+#define PROBLEM "https://judge.yosupo.jp/problem/sum_of_totient_function"
+#include "../totient_sum.hpp"
+#include "../mod_int998244353.hpp"
+#include "../../util/template.hpp"
+
+int main(){
+    lint n;
+    cin>>n;
+    cout<<totient_sum<mint>(n)<<endl;
+}
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
+#line 1 "math/test/LC_totient_sum.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/sum_of_totient_function"
+#line 2 "math/totient_sum.hpp"
+#include<map>
+
+template<typename T>
+T totient_sum(long long n){
+    static std::map<long long,T> m2;
+    static bool init=1;
+    static long long* m=new long long[10000000]();
+    if(init){
+        init=0;
+        long long k=1e7;
+        for(long long i=1;i<=k;i++)m[i]=i;
+        for(long long i=1;i<=k;i++)for(long long j=i*2;j<=k;j+=i)m[j]-=m[i];
+        for(long long i=1;i<k;i++)m[i+1]+=m[i];
+    }
+    if(n<1e7)return m[n];
+    else if(m2.count(n))return m2[n];
+    Mint ans=Mint(n)*(n+1)/2;
+    long long mx=0;
+    for(long long i=1;i*i<n;i++){
+        ans-=Mint(n/i-n/(i+1))*totient_sum(i);
+        mx=n/(i+1)+1;
+    }
+    for(long long i=2;i<mx;i++){
+        ans-=totient_sum(n/i);
+    }
+    return m2[n]=ans;
+}
 #line 2 "math/mod_int.hpp"
 #include<cstdint>
 #include<iostream>
@@ -192,9 +228,56 @@ template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::ifac;
 template<int MOD>bool mod_int<MOD>::init=1;
 #line 3 "math/mod_int998244353.hpp"
 using mint=mod_int<998'244'353>;
+#line 1 "util/template.hpp"
+#pragma GCC optimize("Ofast")
+#pragma GCC optimize("unroll-loops")
+#pragma GCC target("avx")
+#include<bits/stdc++.h>
+using namespace std;
+__attribute__((constructor))void init(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}
+typedef long long lint;
+#define INF (1LL<<60)
+#define IINF (1<<30)
+#define EPS (1e-10)
+#define endl ('\n')
+typedef vector<lint> vec;
+typedef vector<vector<lint>> mat;
+typedef vector<vector<vector<lint>>> mat3;
+typedef vector<string> svec;
+typedef vector<vector<string>> smat;
+template<typename T>inline void numout(T t){bool f=0;for(auto i:t){cout<<(f?" ":"")<<i<INF/2?i:"INF";f=1;}cout<<endl;}
+template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}
+template<typename T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?" ":"")<<i;f=1;}cout<<endl;}
+template<typename T>inline void output2(T t){for(auto i:t)output(i);}
+template<typename T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?"":" "<<t[i];f=1;}cout<<endl;}
+template<typename T>inline void _output2(T t){for(lint i=0;i<t.size();i++)output(t[i]);}
+#define rep(i,...) for(auto i:range(__VA_ARGS__)) 
+#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))
+#define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)
+#define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)
+#define irep(i) for(lint i=0;;++i)
+inline vector<long long> range(long long n){vector<long long>v(n);iota(v.begin(),v.end(),0LL);return v;}
+inline vector<long long> range(long long a,long long b){vector<long long>v(b-a);iota(v.begin(),v.end(),a);return v;}
+inline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return v;}
+template<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return v;}
+#define all(n) begin(n),end(n)
+#define dist(a,b,c,d) sqrt(pow(a-c,2)+pow(b-d,2))
+template<typename T,typename E>bool chmin(T& s,const E& t){bool res=s>t;s=min<T>(s,t);return res;}
+template<typename T,typename E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>(s,t);return res;}
+const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
+const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
+#define SUM(v) accumulate(all(v),0LL)
+template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
+#line 5 "math/test/LC_totient_sum.test.cpp"
+
+int main(){
+    lint n;
+    cin>>n;
+    cout<<totient_sum<mint>(n)<<endl;
+}
 
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
