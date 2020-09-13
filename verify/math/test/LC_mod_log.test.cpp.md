@@ -25,23 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: math/test/LC_mod_log.test.cpp
+# :heavy_check_mark: math/test/LC_mod_log.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_mod_log.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 17:54:58+09:00
+    - Last commit date: 2020-09-13 18:07:29+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/sqrt_mod">https://judge.yosupo.jp/problem/sqrt_mod</a>
+* see: <a href="https://judge.yosupo.jp/problem/discrete_logarithm_mod">https://judge.yosupo.jp/problem/discrete_logarithm_mod</a>
 
 
 ## Depends on
 
-* :question: <a href="../../../library/math/euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
-* :x: <a href="../../../library/math/mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
-* :question: <a href="../../../library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -50,7 +50,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
+#define PROBLEM "https://judge.yosupo.jp/problem/discrete_logarithm_mod"
 #include "../mod_log.hpp"
 #include "../../util/template.hpp"
 
@@ -70,7 +70,7 @@ int main(){
 {% raw %}
 ```cpp
 #line 1 "math/test/LC_mod_log.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/sqrt_mod"
+#define PROBLEM "https://judge.yosupo.jp/problem/discrete_logarithm_mod"
 #line 1 "math/mod_pow.hpp"
 /**
  * @brief (x^y)%mod

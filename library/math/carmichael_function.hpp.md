@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: カーマイケル数 <small>(math/carmichael_function.hpp)</small>
+# :warning: カーマイケル関数 <small>(math/carmichael_function.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/carmichael_function.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:40:58+09:00
+    - Last commit date: 2020-09-13 18:00:43+09:00
 
 
 
@@ -44,7 +44,7 @@ layout: default
 #pragma once
 #include<map>
 /**
- * @brief カーマイケル数
+ * @brief カーマイケル関数
  */
 template<typename T>
 auto carmichael_function(T n){
@@ -75,7 +75,7 @@ auto carmichael_function(T n){
 #line 2 "math/carmichael_function.hpp"
 #include<map>
 /**
- * @brief カーマイケル数
+ * @brief カーマイケル関数
  */
 template<typename T>
 auto carmichael_function(T n){

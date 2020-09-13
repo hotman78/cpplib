@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: 離散対数(ModLog) <small>(math/mod_log.hpp)</small>
+# :heavy_check_mark: 離散対数(ModLog) <small>(math/mod_log.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,13 +38,13 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
-* :question: <a href="mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
+* :heavy_check_mark: <a href="euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
+* :heavy_check_mark: <a href="mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
 
 
 ## Verified with
 
-* :x: <a href="../../verify/math/test/LC_mod_log.test.cpp.html">math/test/LC_mod_log.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/math/test/LC_mod_log.test.cpp.html">math/test/LC_mod_log.test.cpp</a>
 
 
 ## Code

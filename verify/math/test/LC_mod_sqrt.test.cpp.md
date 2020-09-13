@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/math/mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/util/random_gen.hpp.html">util/random_gen.hpp</a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>

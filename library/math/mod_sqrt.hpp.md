@@ -38,7 +38,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
+* :heavy_check_mark: <a href="mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
 * :heavy_check_mark: <a href="../util/random_gen.hpp.html">util/random_gen.hpp</a>
 
 

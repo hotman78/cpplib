@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: (x^y)%mod <small>(math/mod_pow.hpp)</small>
+# :heavy_check_mark: (x^y)%mod <small>(math/mod_pow.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,14 +38,14 @@ layout: default
 
 ## Required by
 
-* :x: <a href="mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
+* :heavy_check_mark: <a href="mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
 * :heavy_check_mark: <a href="mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
 * :heavy_check_mark: <a href="tetration.hpp.html">テトレーション <small>(math/tetration.hpp)</small></a>
 
 
 ## Verified with
 
-* :x: <a href="../../verify/math/test/LC_mod_log.test.cpp.html">math/test/LC_mod_log.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/math/test/LC_mod_log.test.cpp.html">math/test/LC_mod_log.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/math/test/LC_mod_sqrt.test.cpp.html">math/test/LC_mod_sqrt.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/math/test/LC_tetration.test.cpp.html">math/test/LC_tetration.test.cpp</a>
 
