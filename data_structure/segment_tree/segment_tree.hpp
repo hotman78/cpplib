@@ -1,10 +1,10 @@
+#pragma once
 /**
  * @brief Segment Tree
  * @docs docs/segment_tree.md
  * @see https://en.wikipedia.org/wiki/Segment_tree
  */
 
-#pragma once
 #include"../../alga/maybe.hpp"
 template<typename T,typename F>
 class segment_tree{

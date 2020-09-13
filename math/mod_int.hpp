@@ -1,6 +1,12 @@
-class mint {
-  using u64 = std::uint_fast64_t;
-    public:
+#pragma once
+#include<cstdint>
+#include<iostream>
+#include<vector>
+
+template<int MOD>
+struct mod_int {
+    using mint=mod_int<MOD>;
+    using u64 = std::uint_fast64_t;
     u64 a;
     constexpr mint(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}
     constexpr u64 &value()noexcept{return a;}
@@ -80,7 +86,8 @@ class mint {
     constexpr mint inv(){
         return pow(get_mod()-2);
     }
-    static vector<mint> fac,ifac;
+    static std::vector<mint> fac;
+    static std::vector<mint> ifac;
     static bool init;
     constexpr static int mx=10000001;
     void build(){
@@ -106,16 +113,18 @@ class mint {
         if(init)build();
         return ifac[a];
     }
-    friend ostream& operator<<(ostream& lhs, const mint& rhs) noexcept {
+    friend std::ostream& operator<<(std::ostream& lhs, const mint& rhs) noexcept {
         lhs << rhs.a;
         return lhs;
     }
-    friend istream& operator>>(istream& lhs,mint& rhs) noexcept {
+    friend std::istream& operator>>(std::istream& lhs,mint& rhs) noexcept {
         lhs >> rhs.a;
         return lhs;
     }
-    constexpr static u64 get_mod(){return MOD;}
+    constexpr static u64 get_mod(){
+        return MOD;
+    }
 };
-vector<mint> mint::fac;
-vector<mint> mint::ifac;
-bool mint::init=1;
+template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;
+template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::ifac;
+template<int MOD>bool mod_int<MOD>::init=1;
