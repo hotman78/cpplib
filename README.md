@@ -5,3 +5,4 @@
 https://hotman78.github.io/cpplib/
 
 競技プログラミングのC++のライブラリです
+CC0ライセンスなので好きにコピーして下さい
