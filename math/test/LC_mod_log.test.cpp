@@ -6,7 +6,7 @@ int main(){
     lint t;
     cin>>t;
     while(t--){
-        lint x>>y,p;
+        lint x,y,p;
         cin>>x>>y>>p;
         cout<<mod_log(x,y,p)<<endl;
     }
