@@ -31,10 +31,10 @@ layout: default
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_prime_list.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 18:30:52+09:00
+    - Last commit date: 2020-09-13 18:52:45+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/enumerate_primes">https://judge.yosupo.jp/problem/enumerate_primes</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C</a>
 
 
 ## Depends on
@@ -48,21 +48,18 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/enumerate_primes"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
 #include "../prime_list.hpp"
 #include "../../util/template.hpp"
 
 int main(){
-    lint n,a,b;
-    cin>>n>>a>>b;
+    lint n;
+    cin>>n;
     auto v=prime_list(n);
-    vec ans;
-    for(int i=b;i<(int)v.size();i+=a){
-        ans.push_back(v[i]);
+    cout<<v.size()<<endl;
+    for(auto e:v){
+        cout<<e<<endl;
     }
-    cout<<upper_bound(all(v),n)-v.begin()<<" "<<ans.size()<<endl;
-    output(ans);
-    cout<<endl;
 }
 ```
 {% endraw %}
@@ -71,7 +68,7 @@ int main(){
 {% raw %}
 ```cpp
 #line 1 "math/test/LC_prime_list.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/enumerate_primes"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
 #line 2 "math/prime_list.hpp"
 #include<vector>
 #include<bitset>
@@ -138,16 +135,13 @@ template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){
 #line 4 "math/test/LC_prime_list.test.cpp"
 
 int main(){
-    lint n,a,b;
-    cin>>n>>a>>b;
+    lint n;
+    cin>>n;
     auto v=prime_list(n);
-    vec ans;
-    for(int i=b;i<(int)v.size();i+=a){
-        ans.push_back(v[i]);
+    cout<<v.size()<<endl;
+    for(auto e:v){
+        cout<<e<<endl;
     }
-    cout<<upper_bound(all(v),n)-v.begin()<<" "<<ans.size()<<endl;
-    output(ans);
-    cout<<endl;
 }
 
 ```
