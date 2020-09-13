@@ -15,10 +15,10 @@ T totient_sum(long long n){
     }
     if(n<1e7)return m[n];
     else if(m2.count(n))return m2[n];
-    Mint ans=Mint(n)*(n+1)/2;
+    T ans=T(n)*(n+1)/2;
     long long mx=0;
     for(long long i=1;i*i<n;i++){
-        ans-=Mint(n/i-n/(i+1))*totient_sum(i);
+        ans-=T(n/i-n/(i+1))*totient_sum(i);
         mx=n/(i+1)+1;
     }
     for(long long i=2;i<mx;i++){
