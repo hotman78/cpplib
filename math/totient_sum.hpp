@@ -18,11 +18,11 @@ T totient_sum(long long n){
     T ans=T(n)*(n+1)/2;
     long long mx=0;
     for(long long i=1;i*i<n;i++){
-        ans-=T(n/i-n/(i+1))*totient_sum(i);
+        ans-=T(n/i-n/(i+1))*totient_sum<T>(i);
         mx=n/(i+1)+1;
     }
     for(long long i=2;i<mx;i++){
-        ans-=totient_sum(n/i);
+        ans-=totient_sum<T>(n/i);
     }
     return m2[n]=ans;
 }
