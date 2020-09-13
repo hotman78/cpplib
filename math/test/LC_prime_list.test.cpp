@@ -7,10 +7,10 @@ int main(){
     cin>>n>>a>>b;
     auto v=prime_list(n);
     vec ans;
-    for(int i=b;v[i]<n;i+=a){
+    for(int i=b;i<(int)v.size();i+=a){
         ans.push_back(v[i]);
     }
-    cout<<lower_bound(all(v),n)-v.begin()<<" "<<ans.size()<<endl;
+    cout<<upper_bound(all(v),n)-v.begin()<<" "<<ans.size()<<endl;
     output(ans);
     cout<<endl;
 }
