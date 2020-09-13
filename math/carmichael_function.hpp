@@ -1,7 +1,7 @@
 #pragma once
 #include<map>
 /**
- * @brief カーマイケル数
+ * @brief カーマイケル関数
  */
 template<typename T>
 auto carmichael_function(T n){
