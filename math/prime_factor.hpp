@@ -37,5 +37,6 @@ std::vector<long long>prime_factor(long long n){
     std::vector<long long>v;
     long long c=1;
     __prime_factor(n,c,v);
+    std::sort(v.begin(),v.end());
     return v;
 }

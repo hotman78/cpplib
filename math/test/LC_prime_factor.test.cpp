@@ -9,7 +9,6 @@ int main(){
         lint n;
         cin>>n;
         vec d=prime_factor(n);
-        sort(all(d));
         cout<<d.size()<<" "; 
         output(d);
     }
