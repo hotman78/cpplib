@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
 #include "../../util/template.hpp"
 #include "../../math/mod_int1000000007.hpp"
-#include "../convolution/FPS.hpp"
+#include "../FPS.hpp"
 
 int main(){
     lint n,m;
