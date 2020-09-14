@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: string/AhoCorasick.hpp
+# :warning: Aho-Corasick法 <small>(string/AhoCorasick.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#b45cffe084dd3d20d928bee85e7b0f21">string</a>
 * <a href="{{ site.github.repository_url }}/blob/master/string/AhoCorasick.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 20:40:53+09:00
+    - Last commit date: 2020-09-14 10:40:12+09:00
 
 
 
@@ -44,6 +44,10 @@ layout: default
 #pragma once
 #include<string>
 #include<queue>
+
+/**
+ * @brief Aho-Corasick法
+ */
 
 class AhoCorasick{
     struct node;
@@ -153,6 +157,10 @@ class AhoCorasick{
 #line 2 "string/AhoCorasick.hpp"
 #include<string>
 #include<queue>
+
+/**
+ * @brief Aho-Corasick法
+ */
 
 class AhoCorasick{
     struct node;

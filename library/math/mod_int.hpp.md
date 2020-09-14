@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: ModInt <small>(math/mod_int.hpp)</small>
+# :question: ModInt <small>(math/mod_int.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,12 +38,14 @@ layout: default
 
 ## Required by
 
-* :warning: <a href="mod_int1000000007.hpp.html">ModInt(1'000'000'007) <small>(math/mod_int1000000007.hpp)</small></a>
+* :x: <a href="mod_int1000000007.hpp.html">ModInt(1'000'000'007) <small>(math/mod_int1000000007.hpp)</small></a>
 * :heavy_check_mark: <a href="mod_int998244353.hpp.html">ModInt(998'244'353) <small>(math/mod_int998244353.hpp)</small></a>
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/convolution/test/LC_convolution_998244353.test.cpp.html">convolution/test/LC_convolution_998244353.test.cpp</a>
+* :x: <a href="../../verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/math/test/LC_totient_sum.test.cpp.html">math/test/LC_totient_sum.test.cpp</a>
 
 

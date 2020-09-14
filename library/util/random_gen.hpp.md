@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#05c7e24700502a079cdd88012b5a76d3">util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/util/random_gen.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 14:58:27+09:00
+    - Last commit date: 2020-09-14 10:33:36+09:00
 
 
 
@@ -57,7 +57,6 @@ layout: default
 
 struct RandomNumberGenerator {
     std::mt19937 mt;
-
     RandomNumberGenerator() : mt(std::chrono::steady_clock::now().time_since_epoch().count()) {}
     int operator()(int a, int b) { // [a, b)
         std::uniform_int_distribution< int > dist(a, b - 1);
@@ -80,7 +79,6 @@ struct RandomNumberGenerator {
 
 struct RandomNumberGenerator {
     std::mt19937 mt;
-
     RandomNumberGenerator() : mt(std::chrono::steady_clock::now().time_since_epoch().count()) {}
     int operator()(int a, int b) { // [a, b)
         std::uniform_int_distribution< int > dist(a, b - 1);

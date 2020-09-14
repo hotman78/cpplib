@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#fba856dbe1aaa5374a50a27f6dcea717">data_structure/segment_tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data_structure/segment_tree/segment_tree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 17:06:03+09:00
+    - Last commit date: 2020-09-14 18:54:16+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_add_range_sum">https://judge.yosupo.jp/problem/point_add_range_sum</a>
@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/alga/maybe.hpp.html">Maybe <small>(alga/maybe.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/data_structure/segment_tree/segment_tree.hpp.html">Segment Tree <small>(data_structure/segment_tree/segment_tree.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -116,7 +116,6 @@ inline vector<long long> range(long long a,long long b){vector<long long>v(b-a);
 inline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return v;}
 template<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return v;}
 #define all(n) begin(n),end(n)
-#define dist(a,b,c,d) sqrt(pow(a-c,2)+pow(b-d,2))
 template<typename T,typename E>bool chmin(T& s,const E& t){bool res=s>t;s=min<T>(s,t);return res;}
 template<typename T,typename E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>(s,t);return res;}
 const vector<lint> dx={1,0,-1,0,1,1,-1,-1};

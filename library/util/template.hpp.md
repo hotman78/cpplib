@@ -25,19 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: util/template.hpp
+# :question: util/template.hpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#05c7e24700502a079cdd88012b5a76d3">util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/util/template.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 17:06:03+09:00
+    - Last commit date: 2020-09-14 18:54:16+09:00
 
 
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/convolution/test/LC_convolution_998244353.test.cpp.html">convolution/test/LC_convolution_998244353.test.cpp</a>
+* :x: <a href="../../verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/data_structure/segment_tree/segment_tree.test.cpp.html">data_structure/segment_tree/segment_tree.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/math/test/AOJ_is_prime.test.cpp.html">math/test/AOJ_is_prime.test.cpp</a>
@@ -89,7 +91,6 @@ inline vector<long long> range(long long a,long long b){vector<long long>v(b-a);
 inline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return v;}
 template<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return v;}
 #define all(n) begin(n),end(n)
-#define dist(a,b,c,d) sqrt(pow(a-c,2)+pow(b-d,2))
 template<typename T,typename E>bool chmin(T& s,const E& t){bool res=s>t;s=min<T>(s,t);return res;}
 template<typename T,typename E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>(s,t);return res;}
 const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
@@ -136,7 +137,6 @@ inline vector<long long> range(long long a,long long b){vector<long long>v(b-a);
 inline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return v;}
 template<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return v;}
 #define all(n) begin(n),end(n)
-#define dist(a,b,c,d) sqrt(pow(a-c,2)+pow(b-d,2))
 template<typename T,typename E>bool chmin(T& s,const E& t){bool res=s>t;s=min<T>(s,t);return res;}
 template<typename T,typename E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>(s,t);return res;}
 const vector<lint> dx={1,0,-1,0,1,1,-1,-1};

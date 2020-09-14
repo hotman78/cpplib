@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/mod_sqrt.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:40:58+09:00
+    - Last commit date: 2020-09-14 10:33:36+09:00
 
 
 
@@ -104,7 +104,6 @@ long long mod_pow(long long x,long long y,long long mod){
 
 struct RandomNumberGenerator {
     std::mt19937 mt;
-
     RandomNumberGenerator() : mt(std::chrono::steady_clock::now().time_since_epoch().count()) {}
     int operator()(int a, int b) { // [a, b)
         std::uniform_int_distribution< int > dist(a, b - 1);

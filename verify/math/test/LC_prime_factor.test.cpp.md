@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_prime_factor.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 17:33:31+09:00
+    - Last commit date: 2020-09-14 18:54:16+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/factorize">https://judge.yosupo.jp/problem/factorize</a>
@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/math/is_prime.hpp.html">素数判定(高速) <small>(math/is_prime.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/math/prime_factor.hpp.html">素因数分解(高速) <small>(math/prime_factor.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -183,7 +183,6 @@ inline vector<long long> range(long long a,long long b){vector<long long>v(b-a);
 inline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return v;}
 template<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return v;}
 #define all(n) begin(n),end(n)
-#define dist(a,b,c,d) sqrt(pow(a-c,2)+pow(b-d,2))
 template<typename T,typename E>bool chmin(T& s,const E& t){bool res=s>t;s=min<T>(s,t);return res;}
 template<typename T,typename E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>(s,t);return res;}
 const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
