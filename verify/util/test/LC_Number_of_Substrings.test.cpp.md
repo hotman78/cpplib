@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: util/test/LC_Number_of_Substrings.test.cpp
+# :heavy_check_mark: util/test/LC_Number_of_Substrings.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#46fce1bd3c90bdac8c610415cb0a68fb">util/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/util/test/LC_Number_of_Substrings.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-14 22:49:35+09:00
+    - Last commit date: 2020-09-14 22:59:21+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/suffixarray">https://judge.yosupo.jp/problem/suffixarray</a>
+* see: <a href="https://judge.yosupo.jp/problem/number_of_substrings">https://judge.yosupo.jp/problem/number_of_substrings</a>
 
 
 ## Depends on
 
-* :question: <a href="../../../library/util/ACL.hpp.html">util/ACL.hpp</a>
-* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="../../../library/util/ACL.hpp.html">util/ACL.hpp</a>
+* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/suffixarray"
+#define PROBLEM "https://judge.yosupo.jp/problem/number_of_substrings"
 #include"../ACL.hpp"
 #include "../template.hpp"
 
@@ -72,7 +72,7 @@ int main(){
 {% raw %}
 ```cpp
 #line 1 "util/test/LC_Number_of_Substrings.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/suffixarray"
+#define PROBLEM "https://judge.yosupo.jp/problem/number_of_substrings"
 #line 2 "util/ACL.hpp"
 #include <algorithm>
 #include <array>

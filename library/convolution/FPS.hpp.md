@@ -42,7 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="../math/ceil_pow2.hpp.html">math/ceil_pow2.hpp</a>
 * :heavy_check_mark: <a href="../math/garner.hpp.html">ガーナーのアルゴリズム <small>(math/garner.hpp)</small></a>
 * :heavy_check_mark: <a href="../math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
-* :question: <a href="../util/ACL.hpp.html">util/ACL.hpp</a>
+* :heavy_check_mark: <a href="../util/ACL.hpp.html">util/ACL.hpp</a>
 
 
 ## Verified with

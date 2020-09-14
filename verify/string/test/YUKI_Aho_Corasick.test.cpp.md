@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/test/LC_floor_sum.test.cpp
+# :heavy_check_mark: string/test/YUKI_Aho_Corasick.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/test/LC_floor_sum.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-14 18:54:16+09:00
+* category: <a href="../../../index.html#1a7427d145086499c399a0f95224a581">string/test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/string/test/YUKI_Aho_Corasick.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-14 23:01:17+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/sum_of_floor_of_linear">https://judge.yosupo.jp/problem/sum_of_floor_of_linear</a>
+* see: <a href="https://yukicoder.me/problems/no/430">https://yukicoder.me/problems/no/430</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/math/floor_sum.hpp.html">\sum_{i=0}^{n-1}\floor(a*i+b/c) <small>(math/floor_sum.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/string/AhoCorasick.hpp.html">Aho-Corasick法 <small>(string/AhoCorasick.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -48,18 +48,22 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/sum_of_floor_of_linear"
-#include "../floor_sum.hpp"
+#define PROBLEM "https://yukicoder.me/problems/no/430"
+#include"../AhoCorasick.hpp"
 #include "../../util/template.hpp"
 
 int main(){
-    int t;
-    cin>>t;
-    while(t--){
-        lint n,a,b,c;
-        cin>>n>>c>>a>>b;
-        cout<<floor_sum(a,b,c,n)<<endl;
+    string s;
+    cin>>s;
+    lint q;
+    cin>>q;
+    AhoCorasick aho;
+    while(q--){
+        string t;
+        cin>>t;
+        aho.insert(t);
     }
+    cout<<aho.count(s)<<endl;
 }
 ```
 {% endraw %}
@@ -67,26 +71,114 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/test/LC_floor_sum.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/sum_of_floor_of_linear"
-#line 2 "math/floor_sum.hpp"
+#line 1 "string/test/YUKI_Aho_Corasick.test.cpp"
+#define PROBLEM "https://yukicoder.me/problems/no/430"
+#line 2 "string/AhoCorasick.hpp"
+#include<string>
+#include<queue>
+
 /**
- * @brief \sum_{i=0}^{n-1}\floor(a*i+b/c)
+ * @brief Aho-Corasick法
  */
-long long floor_sum(long long a,long long b,long long c,long long n){
-    long long tmp=b/c*n+a/c*n*(n-1)/2;
-    if(a%c==0){
-        return tmp;
+
+class AhoCorasick{
+    struct node;
+    using np=node*;
+    constexpr static int num=26;
+    constexpr static char base='A';
+    struct node{
+        np ch[num];
+        np link=nullptr;
+        int val=0;
+        node(){
+            for(int i=0;i<num;++i)ch[i]=nullptr;
+        }
+    };
+    np root=new node();
+    np root_par=new node();
+    public:
+    AhoCorasick(){
+        root->link=root_par;
+        for(int i=0;i<num;++i)root_par->ch[i]=root;
     }
-    long long next=(c-b%c+a%c-1)/(a%c);
-    if(next>=n){
-        return tmp;
+    void insert(std::string v){
+        np t=root;
+        int idx=0;
+        while(idx<(int)v.size()){
+            if(!t->ch[v[idx]-base])t->ch[v[idx]-base]=new node();
+            t=t->ch[v[idx]-base];
+            idx++;
+        }
+        t->val++;
     }
-    a%=c;
-    b=b%c+a*next;
-    n-=next;
-    return tmp+floor_sum(c,n*a-((b+a*(n-1))/c*c-b),a,(b+a*(n-1))/c);
-}
+    void build(){
+        built=1;
+        std::queue<np>que;
+        que.push(root);
+        while(!que.empty()){
+            np t=que.front();
+            que.pop();
+            for(int i=0;i<num;++i){
+                if(!t->ch[i])continue;
+                if(t==root){
+                    t->ch[i]->link=t;
+                }else{
+                    np s=t->link;
+                    while(!s->ch[i]){
+                        s=s->link;
+                    }
+                    t->ch[i]->link=s->ch[i];
+                }
+                que.push(t->ch[i]);
+            }
+        }
+    }
+    bool built=0;
+    int count(std::string v){
+        if(!built){build();built=1;}
+        np t=root;
+        int idx=0;
+        int res=0;
+        while(idx<(int)v.size()){
+            while(!t->ch[v[idx]-base]){
+                if(t==root){
+                    idx++;
+                    if(idx==(int)v.size())return res;
+                }else{
+                    t=t->link;
+                }
+            }
+            t=t->ch[v[idx++]-base];
+            auto s=t;
+            while(s!=root){
+                res+=s->val;
+                s=s->link;
+            }
+        }
+        return res;
+    }
+    int find_first(std::string v){
+        if(!built){build();built=1;}
+        np t=root;
+        int idx=0;
+        int res=0;
+        while(idx<(int)v.size()){
+            while(!t->ch[v[idx]-base]){
+                if(t==root){
+                    res++;
+                    idx++;
+                    if(idx==(int)v.size())return -1;
+                }else{
+                    res++;
+                    t=t->link;
+                }
+            }
+            t=t->ch[v[idx++]-base];
+            if(t->val>0)return res;
+        }
+        return -1;
+    }
+};
 #line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
@@ -126,16 +218,20 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 4 "math/test/LC_floor_sum.test.cpp"
+#line 4 "string/test/YUKI_Aho_Corasick.test.cpp"
 
 int main(){
-    int t;
-    cin>>t;
-    while(t--){
-        lint n,a,b,c;
-        cin>>n>>c>>a>>b;
-        cout<<floor_sum(a,b,c,n)<<endl;
+    string s;
+    cin>>s;
+    lint q;
+    cin>>q;
+    AhoCorasick aho;
+    while(q--){
+        string t;
+        cin>>t;
+        aho.insert(t);
     }
+    cout<<aho.count(s)<<endl;
 }
 
 ```
