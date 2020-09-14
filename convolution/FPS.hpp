@@ -1,7 +1,6 @@
 #pragma once
 #include"FPS_base.hpp"
-#include<atcoder/convolution>
-
+#include"../util/ACL.hpp"
 /**
  * @brief 形式的冪級数(ModInt)
  */
@@ -9,16 +8,21 @@
 template<typename Mint>
 struct _FPS{
     template<typename T>
-    T operator()(T s,T t){
-        vector<Mint> v=atcoder::convolution(static_cast<vector<Mint>>(s),static_cast<vector<Mint>>(t));
-        return *static_cast<T*>(&v);
+    T operator()(const T& _s,const T& _t){
+        vector<atcoder::static_modint<Mint::get_mod()>>s(_s.size()),t(_t.size());
+        for(size_t i=0;i<_s.size();++i)s[i]=_s[i].value();
+        for(size_t i=0;i<_t.size();++i)t[i]=_t[i].value();
+        vector<atcoder::static_modint<Mint::get_mod()>> _v=atcoder::convolution(s,t);
+        T v(_v.size());
+        for (size_t i=0;i<_v.size();++i)v[i]=_v[i].val();
+        return v;
     }
     template<typename T>
-    T fact(T s){
+    T fact(const T& s){
         return s.fact();
     }
     template<typename T>
-    T pow(T s,int i){
+    T pow(const T& s,int i){
         return s.pow(i);
     }
 };
