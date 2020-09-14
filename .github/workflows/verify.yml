@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies (Nim)
       run: sudo apt install nim
     - name: Install dependencies (Atcoder Library)
-      run: sudo mkdir /user/local/ac-library && sudo wget -P /user/local/ac-library https://img.atcoder.jp/practice2/ac-library.zip && sudo unzip /user/local/ac-library.zip 
+      run: sudo mkdir /usr/local/ac-library && sudo wget -P /usr/local/ac-library https://img.atcoder.jp/practice2/ac-library.zip && sudo unzip /usr/local/ac-library.zip 
 
     - name: Run tests
       env:  
