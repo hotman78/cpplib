@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: convolution/test/LC_convolution_998244353.test.cpp
+# :heavy_check_mark: convolution/test/LC_convolution_1000000007.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#138f586853b56e3cad59aa29ba977214">convolution/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/convolution/test/LC_convolution_998244353.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-14 19:36:00+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/convolution/test/LC_convolution_1000000007.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-14 22:49:35+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/convolution_mod">https://judge.yosupo.jp/problem/convolution_mod</a>
+* see: <a href="https://judge.yosupo.jp/problem/convolution_mod_1000000007">https://judge.yosupo.jp/problem/convolution_mod_1000000007</a>
 
 
 ## Depends on
@@ -44,7 +44,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../library/math/ceil_pow2.hpp.html">math/ceil_pow2.hpp</a>
 * :heavy_check_mark: <a href="../../../library/math/garner.hpp.html">ガーナーのアルゴリズム <small>(math/garner.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/math/mod_int.hpp.html">ModInt <small>(math/mod_int.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/math/mod_int998244353.hpp.html">ModInt(998'244'353) <small>(math/mod_int998244353.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/mod_int1000000007.hpp.html">ModInt(1'000'000'007) <small>(math/mod_int1000000007.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
 * :question: <a href="../../../library/util/ACL.hpp.html">util/ACL.hpp</a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
@@ -55,9 +55,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
+#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod_1000000007"
 #include "../../util/template.hpp"
-#include "../../math/mod_int998244353.hpp"
+#include "../../math/mod_int1000000007.hpp"
 #include "../FPS.hpp"
 
 int main(){
@@ -74,8 +74,8 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "convolution/test/LC_convolution_998244353.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
+#line 1 "convolution/test/LC_convolution_1000000007.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod_1000000007"
 #line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
@@ -246,11 +246,11 @@ struct mod_int {
 template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;
 template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::ifac;
 template<int MOD>bool mod_int<MOD>::init=1;
-#line 3 "math/mod_int998244353.hpp"
-using mint=mod_int<998'244'353>;
+#line 3 "math/mod_int1000000007.hpp"
+using mint=mod_int<1'000'000'007>;
 
 /**
- * @brief ModInt(998'244'353)
+ * @brief ModInt(1'000'000'007)
  */
 #line 1 "convolution/FPS_base.hpp"
 /**
@@ -2424,7 +2424,7 @@ struct _FPS{
     }
 };
 template<typename Mint>using fps=FPS_BASE<Mint,_FPS<Mint>>;
-#line 5 "convolution/test/LC_convolution_998244353.test.cpp"
+#line 5 "convolution/test/LC_convolution_1000000007.test.cpp"
 
 int main(){
     lint n,m;

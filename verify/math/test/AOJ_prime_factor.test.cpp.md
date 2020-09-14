@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/math/is_prime.hpp.html">素数判定(高速) <small>(math/is_prime.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/math/prime_factor.hpp.html">素因数分解(高速) <small>(math/prime_factor.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code

@@ -42,13 +42,13 @@ layout: default
 * :heavy_check_mark: <a href="../math/ceil_pow2.hpp.html">math/ceil_pow2.hpp</a>
 * :heavy_check_mark: <a href="../math/garner.hpp.html">ガーナーのアルゴリズム <small>(math/garner.hpp)</small></a>
 * :heavy_check_mark: <a href="../math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
-* :heavy_check_mark: <a href="../util/ACL.hpp.html">util/ACL.hpp</a>
+* :question: <a href="../util/ACL.hpp.html">util/ACL.hpp</a>
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/convolution/test/LC_convolution_1000000007.test.cpp.html">convolution/test/LC_convolution_1000000007.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/convolution/test/LC_convolution_998244353.test.cpp.html">convolution/test/LC_convolution_998244353.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
 
 
 ## Code

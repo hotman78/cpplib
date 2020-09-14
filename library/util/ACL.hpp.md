@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: util/ACL.hpp
+# :question: util/ACL.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -43,8 +43,10 @@ layout: default
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/convolution/test/LC_convolution_1000000007.test.cpp.html">convolution/test/LC_convolution_1000000007.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/convolution/test/LC_convolution_998244353.test.cpp.html">convolution/test/LC_convolution_998244353.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
+* :x: <a href="../../verify/util/test/LC_Number_of_Substrings.test.cpp.html">util/test/LC_Number_of_Substrings.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/util/test/LC_Suffix_Array.test.cpp.html">util/test/LC_Suffix_Array.test.cpp</a>
 
 
 ## Code

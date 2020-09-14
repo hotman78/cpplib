@@ -25,27 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: convolution/test/LC_convolution_998244353.test.cpp
+# :x: util/test/LC_Number_of_Substrings.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#138f586853b56e3cad59aa29ba977214">convolution/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/convolution/test/LC_convolution_998244353.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-14 19:36:00+09:00
+* category: <a href="../../../index.html#46fce1bd3c90bdac8c610415cb0a68fb">util/test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/util/test/LC_Number_of_Substrings.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-14 22:49:35+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/convolution_mod">https://judge.yosupo.jp/problem/convolution_mod</a>
+* see: <a href="https://judge.yosupo.jp/problem/suffixarray">https://judge.yosupo.jp/problem/suffixarray</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/convolution/FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/convolution/FPS_base.hpp.html">形式的冪級数(BASE) <small>(convolution/FPS_base.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/math/ceil_pow2.hpp.html">math/ceil_pow2.hpp</a>
-* :heavy_check_mark: <a href="../../../library/math/garner.hpp.html">ガーナーのアルゴリズム <small>(math/garner.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/math/mod_int.hpp.html">ModInt <small>(math/mod_int.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/math/mod_int998244353.hpp.html">ModInt(998'244'353) <small>(math/mod_int998244353.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
 * :question: <a href="../../../library/util/ACL.hpp.html">util/ACL.hpp</a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
@@ -55,18 +48,22 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
-#include "../../util/template.hpp"
-#include "../../math/mod_int998244353.hpp"
-#include "../FPS.hpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/suffixarray"
+#include"../ACL.hpp"
+#include "../template.hpp"
 
 int main(){
-    lint n,m;
-    cin>>n>>m;
-    fps<mint> a(n),b(m);
-    rep(i,n)cin>>a[i];
-    rep(i,m)cin>>b[i];
-    output(a*b);
+    using namespace atcoder;
+    string s;
+    cin>>s;
+    int n=s.size();
+    auto sa=suffix_array(s);
+    auto lcp=lcp_array(s,sa);
+    lint ans=n-sa[0];
+    for(int i=0;i<n-1;++i){
+        ans+=(n-sa[i+1])-lcp[i];
+    }
+    cout<<ans<<endl;
 }
 ```
 {% endraw %}
@@ -74,479 +71,11 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "convolution/test/LC_convolution_998244353.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
-#line 2 "util/template.hpp"
-#pragma GCC optimize("Ofast")
-#pragma GCC optimize("unroll-loops")
-#pragma GCC target("avx")
-#include<bits/stdc++.h>
-using namespace std;
-struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;
-typedef long long lint;
-#define INF (1LL<<60)
-#define IINF (1<<30)
-#define EPS (1e-10)
-#define endl ('\n')
-typedef vector<lint> vec;
-typedef vector<vector<lint>> mat;
-typedef vector<vector<vector<lint>>> mat3;
-typedef vector<string> svec;
-typedef vector<vector<string>> smat;
-template<typename T>inline void numout(T t){bool f=0;for(auto i:t){cout<<(f?" ":"")<<i<INF/2?i:"INF";f=1;}cout<<endl;}
-template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}
-template<typename T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?" ":"")<<i;f=1;}cout<<endl;}
-template<typename T>inline void output2(T t){for(auto i:t)output(i);}
-template<typename T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?"":" "<<t[i];f=1;}cout<<endl;}
-template<typename T>inline void _output2(T t){for(lint i=0;i<t.size();i++)output(t[i]);}
-#define rep(i,...) for(auto i:range(__VA_ARGS__)) 
-#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))
-#define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)
-#define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)
-#define irep(i) for(lint i=0;;++i)
-inline vector<long long> range(long long n){vector<long long>v(n);iota(v.begin(),v.end(),0LL);return v;}
-inline vector<long long> range(long long a,long long b){vector<long long>v(b-a);iota(v.begin(),v.end(),a);return v;}
-inline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return v;}
-template<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return v;}
-#define all(n) begin(n),end(n)
-template<typename T,typename E>bool chmin(T& s,const E& t){bool res=s>t;s=min<T>(s,t);return res;}
-template<typename T,typename E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>(s,t);return res;}
-const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
-const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
-#define SUM(v) accumulate(all(v),0LL)
-template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 5 "math/mod_int.hpp"
-
-/**
- * @brief ModInt
- */
-
-template<int MOD>
-struct mod_int {
-    using mint=mod_int<MOD>;
-    using u64 = std::uint_fast64_t;
-    u64 a;
-    constexpr mod_int(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}
-    constexpr u64 &value()noexcept{return a;}
-    constexpr const u64 &value() const noexcept {return a;}
-    constexpr mint operator+(const mint rhs)const noexcept{return mint(*this) += rhs;}
-    constexpr mint operator-(const mint rhs)const noexcept{return mint(*this)-=rhs;}
-    constexpr mint operator*(const mint rhs) const noexcept {return mint(*this) *= rhs;}
-    constexpr mint operator/(const mint rhs) const noexcept {return mint(*this) /= rhs;}
-    constexpr mint &operator+=(const mint rhs) noexcept {
-        a += rhs.a;
-        if (a >= get_mod())a -= get_mod();
-        return *this;
-    }
-    constexpr mint &operator-=(const mint rhs) noexcept {
-        if (a<rhs.a)a += get_mod();
-        a -= rhs.a;
-        return *this;
-    }
-    constexpr mint &operator*=(const mint rhs) noexcept {
-        a = a * rhs.a % get_mod();
-        return *this;
-    }
-    constexpr mint operator++(int) noexcept {
-        a += 1;
-        if (a >= get_mod())a -= get_mod();
-        return *this;
-    }
-    constexpr mint operator--(int) noexcept {
-        if (a<1)a += get_mod();
-        a -= 1;
-        return *this;
-    }
-    constexpr mint &operator/=(mint rhs) noexcept {
-        u64 exp=get_mod()-2;
-        while (exp) {
-            if (exp % 2) {
-                *this *= rhs;
-            }
-            rhs *= rhs;
-            exp /= 2;
-        }
-        return *this;
-    }
-    constexpr bool operator==(mint x) noexcept {
-        return a==x.a;
-    }
-    constexpr bool operator!=(mint x) noexcept {
-        return a!=x.a;
-    }
-    constexpr bool operator<(mint x) noexcept {
-        return a<x.a;
-    }
-    constexpr bool operator>(mint x) noexcept {
-        return a>x.a;
-    }
-    constexpr bool operator<=(mint x) noexcept {
-        return a<=x.a;
-    }
-    constexpr bool operator>=(mint x) noexcept {
-        return a>=x.a;
-    }
-    constexpr static int root(){
-        mint root = 2;
-        while(root.pow((get_mod()-1)>>1).a==1)root++;
-        return root.a;
-    }
-    constexpr mint pow(long long n){
-        long long x=a;
-        mint ret = 1;
-        while(n>0) {
-            if(n&1)(ret*=x);
-            (x*=x)%=get_mod();
-            n>>=1;
-        }
-        return ret;
-    }
-    constexpr mint inv(){
-        return pow(get_mod()-2);
-    }
-    static std::vector<mint> fac;
-    static std::vector<mint> ifac;
-    static bool init;
-    constexpr static int mx=10000001;
-    void build(){
-        init=0;
-        fac.resize(mx);
-        ifac.resize(mx);
-        fac[0]=1,ifac[0]=1;
-        for(int i=1;i<mx;i++)fac[i]=fac[i-1]*i;
-        ifac[mx-1]=fac[mx-1].inv();
-        for(int i=mx-2;i>=0;i--)ifac[i]=ifac[i+1]*(i+1);
-    }
-    mint comb(long long b){
-        if(init)build();
-        if(a==0&&b==0)return 1;
-        if((long long)a<b)return 0;
-        return fac[a]*ifac[a-b]*ifac[b];
-    }
-    mint fact(){
-        if(init)build();
-        return fac[a];
-    }
-    mint fact_inv(){
-        if(init)build();
-        return ifac[a];
-    }
-    friend std::ostream& operator<<(std::ostream& lhs, const mint& rhs) noexcept {
-        lhs << rhs.a;
-        return lhs;
-    }
-    friend std::istream& operator>>(std::istream& lhs,mint& rhs) noexcept {
-        lhs >> rhs.a;
-        return lhs;
-    }
-    constexpr static u64 get_mod(){
-        return MOD;
-    }
-};
-template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;
-template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::ifac;
-template<int MOD>bool mod_int<MOD>::init=1;
-#line 3 "math/mod_int998244353.hpp"
-using mint=mod_int<998'244'353>;
-
-/**
- * @brief ModInt(998'244'353)
- */
-#line 1 "convolution/FPS_base.hpp"
-/**
- * @brief 形式的冪級数(BASE)
- */
-
-template<typename T,typename F>
-struct FPS_BASE:std::vector<T>{
-    using std::vector<T>::vector;
-    using P=FPS_BASE<T,F>;
-    F fft;
-    FPS_BASE(){}
-    inline P operator +(T x)const noexcept{return P(*this)+=x;}
-    inline P operator -(T x)const noexcept{return P(*this)-=x;}
-    inline P operator *(T x)const noexcept{return P(*this)*=x;}
-    inline P operator /(T x)const noexcept{return P(*this)/=x;}
-    inline P operator <<(int x)noexcept{return P(*this)<<=x;}
-    inline P operator >>(int x)noexcept{return P(*this)>>=x;}
-    inline P operator +(const P& x)const noexcept{return P(*this)+=x;}
-    inline P operator -(const P& x)const noexcept{return P(*this)-=x;}
-    inline P operator -()const noexcept{return P(1,T(0))-=P(*this);}
-    inline P operator *(const P& x)const noexcept{return P(*this)*=x;}
-    inline P operator /(const P& x)const noexcept{return P(*this)/=x;}
-    inline P operator %(const P& x)const noexcept{return P(*this)%=x;}
-    bool operator ==(P x){
-        for(int i=0;i<(int)max((*this).size(),x.size());++i){
-            if(i>=(int)(*this).size()&&x[i]!=T())return 0;
-            if(i>=(int)x.size()&&(*this)[i]!=T())return 0;
-            if(i<(int)min((*this).size(),x.size()))if((*this)[i]!=x[i])return 0;
-        }
-        return 1;
-    }
-    P &operator +=(T x){
-        if(this->size()==0)this->resize(1,T(0));
-        (*this)[0]+=x;
-        return (*this);
-    }
-    P &operator -=(T x){
-        if(this->size()==0)this->resize(1,T(0));
-        (*this)[0]-=x;
-        return (*this);
-    }
-    P &operator *=(T x){
-        for(int i=0;i<(int)this->size();++i){
-            (*this)[i]*=x;
-        }
-        return (*this);
-    }
-    P &operator /=(T x){
-        return (*this)*=(T(1)/x);
-    }
-    P &operator <<=(int x){
-        P ret(x,T(0));
-        ret.insert(ret.end(),begin(*this),end(*this));
-        return (*this)=ret;
-    }
-    P &operator >>=(int x){
-        if((int)(*this).size()<=x)return (*this)=P();
-        P ret;
-        ret.insert(ret.end(),begin(*this)+x,end(*this));
-        return (*this)=ret;
-    }
-    P &operator +=(const P& x){
-        if(this->size()<x.size())this->resize(x.size(),T(0));
-        for(int i=0;i<(int)x.size();++i){
-            (*this)[i]+=x[i];
-        }
-        return (*this);
-    }
-    P &operator -=(const P& x){
-        if(this->size()<x.size())this->resize(x.size(),T(0));
-        for(int i=0;i<(int)x.size();++i){
-            (*this)[i]-=x[i];
-        }
-        return (*this);
-    }
-    P &operator *=(const P& x){
-        return (*this)=F()(*this,x);
-    }
-    P &operator /=(P x){
-        if(this->size()<x.size()) {
-            this->clear();
-            return (*this);
-        }
-        const int n=this->size()-x.size()+1;
-        return (*this) = (rev().pre(n)*x.rev().inv(n)).pre(n).rev(n);
-    }
-    P &operator %=(const P& x){
-        return ((*this)-=*this/x*x);
-    }
-    inline void print(){
-        for(int i=0;i<(int)(*this).size();++i)cerr<<(*this)[i]<<" \n"[i==(int)(*this).size()-1];
-        if((int)(*this).size()==0)cerr<<endl;
-    }
-    inline P& shrink(){while((*this).back()==0)(*this).pop_back();return (*this);}
-    inline P pre(int sz)const{
-        return P(begin(*this),begin(*this)+min((int)this->size(),sz));
-    }
-    P rev(int deg=-1){
-        P ret(*this);
-        if(deg!=-1)ret.resize(deg,T(0));
-        reverse(begin(ret),end(ret));
-        return ret;
-    }
-    P inv(int deg=-1){
-        assert((*this)[0]!=T(0));
-        const int n=deg==-1?this->size():deg;
-        P ret({T(1)/(*this)[0]});
-        for(int i=1;i<n;i<<=1){
-            ret*=(-ret*pre(i<<1)+2).pre(i<<1);
-        }
-        return ret.pre(n);
-    }
-    inline P dot(const P& x){
-        P ret(*this);
-        for(int i=0;i<int(min(this->size(),x.size()));++i){
-            ret[i]*=x[i];
-        }
-        return ret;
-    }
-    P diff(){
-        if((int)(*this).size()<=1)return P();
-        P ret(*this);
-        for(int i=0;i<(int)ret.size();i++){
-            ret[i]*=i;
-        }
-        return ret>>1;
-    }
-    P integral(){
-        P ret(*this);
-        for(int i=0;i<(int)ret.size();i++){
-            ret[i]/=i+1;
-        }
-        return ret<<1;
-    }
-    P log(int deg=-1){
-        assert((*this)[0]==T(1));
-        const int n=deg==-1?this->size():deg;
-        return (diff()*inv(n)).pre(n-1).integral();
-    }
-    P exp(int deg=-1){
-        assert((*this)[0]==T(0));
-        const int n=deg==-1?this->size():deg;
-        P ret({T(1)});
-        for(int i=1;i<n;i<<=1){
-            ret=ret*(pre(i<<1)+1-ret.log(i<<1)).pre(i<<1);
-        }
-        return ret.pre(n);
-    }
-    P pow(int c,int deg=-1){
-        // const int n=deg==-1?this->size():deg;
-        // long long i=0;
-        // P ret(*this);
-        // while(i!=(int)this->size()&&ret[i]==0)i++;
-        // if(i==(int)this->size())return P(n,0);
-        // if(i*c>=n)return P(n,0);
-        // T k=ret[i];
-        // return ((((ret>>i)/k).log()*c).exp()*(k.pow(c))<<(i*c)).pre(n);
-        P x(*this);
-        P ret(1,1);
-        while(c) {
-            if(c&1){
-                ret*=x;
-                if(~deg)ret=ret.pre(deg);
-            }
-            x*=x;
-            if(~deg)x=x.pre(deg);
-            c>>=1;
-        }
-        return ret;
-    }
-    P sqrt(int deg=-1){
-        const int n=deg==-1?this->size():deg;
-        if((*this)[0]==T(0)) {
-            for(int i=1;i<(int)this->size();i++) {
-                if((*this)[i]!=T(0)) {
-                    if(i&1)return{};
-                    if(n-i/2<=0)break;
-                    auto ret=(*this>>i).sqrt(n-i/2)<<(i/2);
-                    if((int)ret.size()<n)ret.resize(n,T(0));
-                    return ret;
-                }
-            }
-            return P(n,0);
-        }
-        P ret({T(1)});
-        for(int i=1;i<n;i<<=1){
-            ret=(ret+pre(i<<1)*ret.inv(i<<1)).pre(i<<1)/T(2);
-        }
-        return ret.pre(n);
-    }
-    P shift(int c){
-        const int n=this->size();
-        P f(*this),g(n,0);
-        for(int i=0;i<n;++i)f[i]*=F().fact(T(i));
-        for(int i=0;i<n;++i)g[i]=F().pow(T(c),i)/F().fact(T(i));
-        g=g.rev();
-        f*=g;
-        f>>=n-1;
-        for(int i=0;i<n;++i)f[i]/=F().fact(T(i));
-        return f;
-    }
-    T eval(T x){
-        T res=0;
-        for(int i=(int)this->size()-1;i>=0;--i){
-            res*=x;
-            res+=(*this)[i];
-        }
-        return res;
-    }
-    vector<T> multipoint_eval(const vector<T>&x){
-        const int n=x.size();
-        P* v=new P[2*n-1];
-        for(int i=0;i<n;i++)v[i+n-1]={T()-x[i],T(1)};
-        for(int i=n-2;i>=0;i--){v[i]=v[i*2+1]*v[i*2+2];}
-        v[0]=P(*this)%v[0];v[0].shrink();
-        for(int i=1;i<n*2-1;i++){
-            v[i]=v[(i-1)/2]%v[i];
-            v[i].shrink();
-        }
-        vector<T>res(n);
-        for(int i=0;i<n;i++)res[i]=v[i+n-1][0];
-        return res;
-    }
-    P slice(int s,int e,int k){
-        P res;
-        for(int i=s;i<e;i+=k)res.push_back((*this)[i]);
-        return res;
-    }
-    T nth_term(P q,int64_t x){
-        if(x==0)return (*this)[0]/q[0];
-        P p(*this);
-        P q2=q;
-        for(int i=1;i<(int)q2.size();i+=2)q2[i]*=-1;
-        q*=q2;
-        p*=q2;
-        return p.slice(x%2,p.size(),2).nth_term(q.slice(0,q.size(),2),x/2);
-    }
-    
-    //(*this)(t(x))
-    P manipulate(P t,int deg){
-        P s=P(*this);
-        if(deg==0)return P();
-        if((int)t.size()==1)return P{s.eval(t[0])};
-        int k=min((int)::sqrt(deg/(::log2(deg)+1))+1,(int)t.size());
-        int b=deg/k+1;
-        P t2=t.pre(k);
-        vector<P>table(s.size()/2+1,P{1});
-        for(int i=1;i<(int)table.size();i++){
-            table[i]=((table[i-1])*t2).pre(deg);
-        }
-        auto f=[&](auto f,auto l,auto r,int deg)->P{
-            if(r-l==1)return P{*l};
-            auto m=l+(r-l)/2;
-            return f(f,l,m,deg)+(table[m-l]*f(f,m,r,deg)).pre(deg);
-        };
-        P ans=P();
-        P tmp=f(f,s.begin(),s.end(),deg);
-        P tmp2=P{1};
-        T tmp3=T(1);
-        int tmp5=-1;
-        P tmp6=t2.diff();
-        if(tmp6==P()){
-            for(int i=0;i<b;++i){
-                if(tmp.size()==0)break;
-                ans+=(tmp2*tmp[0]).pre(deg)/tmp3;
-                tmp=tmp.diff();
-                tmp2=(tmp2*(t-t2)).pre(deg);
-                tmp3*=T(i+1);
-            }
-        }else{
-            while(t2[++tmp5]==T());
-            P tmp4=(tmp6>>(tmp5-1)).inv(deg);
-            for(int i=0;i<b;++i){
-                ans+=(tmp*tmp2).pre(deg)/tmp3;
-                tmp=((tmp.diff()>>(tmp5-1))*tmp4).pre(deg);
-                tmp2=(tmp2*(t-t2)).pre(deg);
-                tmp3*=T(i+1);
-            }
-        }
-        return ans;
-    }
-    //(*this)(t(x))
-    P manipulate2(P t,int deg){
-        P ans=P();
-        P s=(*this).rev();
-        for(int i=0;i<(int)s.size();++i){
-            ans=(ans*t+s[i]).pre(deg);
-        }
-        return ans;
-    }
-    void debug(){
-        for(int i=0;i<(int)(*this).size();++i)cerr<<(*this)[i]<<" \n"[i==(int)(*this).size()-1];
-    }
-};
-#line 4 "util/ACL.hpp"
+#line 1 "util/test/LC_Number_of_Substrings.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/suffixarray"
+#line 2 "util/ACL.hpp"
+#include <algorithm>
+#include <array>
 #ifdef _MSC_VER
 #include <intrin.h>
 #endif
@@ -572,7 +101,7 @@ int bsf(unsigned int n) {
 }
 }  // namespace internal
 }  // namespace atcoder
-#line 30 "util/ACL.hpp"
+#include <utility>
 namespace atcoder {
 namespace internal {
 // @param m `1 <= m`
@@ -729,7 +258,8 @@ constexpr int primitive_root_constexpr(int m) {
 template <int m> constexpr int primitive_root = primitive_root_constexpr(m);
 }  // namespace internal
 }  // namespace atcoder
-#line 188 "util/ACL.hpp"
+#include <cassert>
+#include <numeric>
 #include <type_traits>
 namespace atcoder {
 namespace internal {
@@ -1035,7 +565,8 @@ template <class T>
 using is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;
 }  // namespace internal
 }  // namespace atcoder
-#line 498 "util/ACL.hpp"
+#line 497 "util/ACL.hpp"
+#include <vector>
 namespace atcoder {
 namespace internal {
 template <class mint, internal::is_static_modint_t<mint>* = nullptr>
@@ -1320,6 +851,8 @@ template <class T> struct fenwick_tree {
     }
 };
 }  // namespace atcoder
+#line 787 "util/ACL.hpp"
+#include <iostream>
 #line 789 "util/ACL.hpp"
 namespace atcoder {
 template <class S,
@@ -1479,6 +1012,8 @@ struct lazy_segtree {
     }
 };
 }  // namespace atcoder
+#line 949 "util/ACL.hpp"
+#include <tuple>
 #line 951 "util/ACL.hpp"
 namespace atcoder {
 long long pow_mod(long long x, long long n, int m) {
@@ -1578,6 +1113,9 @@ template <class T> struct simple_queue {
 };
 }  // namespace internal
 }  // namespace atcoder
+#line 1051 "util/ACL.hpp"
+#include <limits>
+#include <queue>
 #line 1054 "util/ACL.hpp"
 namespace atcoder {
 template <class Cap> struct mf_graph {
@@ -2055,6 +1593,8 @@ template <class S, S (*op)(S, S), S (*e)()> struct segtree {
     void update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }
 };
 }  // namespace atcoder
+#line 1543 "util/ACL.hpp"
+#include <string>
 #line 1545 "util/ACL.hpp"
 namespace atcoder {
 namespace internal {
@@ -2331,108 +1871,59 @@ struct two_sat {
     internal::scc_graph scc;
 };
 }  // namespace atcoder
-#line 1 "math/ceil_pow2.hpp"
-int ceil_pow2(int n) {
-    int x = 0;
-    while ((1U << x) < (unsigned int)(n)) x++;
-    return x;
-}
-#line 1 "math/mod_pow.hpp"
-/**
- * @brief (x^y)%mod
- */
-
-long long mod_pow(long long x,long long y,long long mod){
-    long long ret=1;
-    while(y>0) {
-        if(y&1)(ret*=x)%=mod;
-        (x*=x)%=mod;
-        y>>=1;
-    }
-    return ret;
-}
-#line 4 "math/garner.hpp"
-
-/**
- * 
- * @brief ガーナーのアルゴリズム
- *
- */
-
-long long garner(std::vector<long long>a,std::vector<long long>mods){
-    const int sz=3;
-    long long coeffs[sz+1]={1,1,1,1};
-    long long constants[sz+1]={};
-    for(int i=0;i<sz;i++){
-        long long v=(mods[i]+a[i]-constants[i])%mods[i]*mod_pow(coeffs[i],mods[i]-2,mods[i])%mods[i];
-        for(int j=i+1;j<sz+1;j++) {
-            constants[j]=(constants[j]+coeffs[j]*v)%mods[j];
-            coeffs[j]=(coeffs[j]*mods[i])%mods[j];
-        }
-    }
-    return constants[3];
-}
-#line 6 "convolution/FPS.hpp"
-/**
- * @brief 形式的冪級数(ModInt)
- */
-
-template<typename Mint>
-struct _FPS{
-    template<typename T>
-    T operator()(const T& _s,const T& _t){
-        const size_t sz=_s.size()+_t.size()-1;
-        if((sz&((1<<ceil_pow2(sz))-1))==0){
-            vector<atcoder::static_modint<Mint::get_mod()>>s(_s.size()),t(_t.size());
-            for(size_t i=0;i<_s.size();++i)s[i]=_s[i].value();
-            for(size_t i=0;i<_t.size();++i)t[i]=_t[i].value();
-            vector<atcoder::static_modint<Mint::get_mod()>> _v=atcoder::convolution(s,t);
-            T v(_v.size());
-            for (size_t i=0;i<_v.size();++i)v[i]=_v[i].val();
-            return v;
-        }else{
-            vector<atcoder::static_modint<1224736769>>s1(_s.size()),t1(_t.size());
-            vector<atcoder::static_modint<1045430273>>s2(_s.size()),t2(_t.size());
-            vector<atcoder::static_modint<1007681537>>s3(_s.size()),t3(_t.size());
-            for(size_t i=0;i<_s.size();++i){
-                s1[i]=_s[i].value();
-                s2[i]=_s[i].value();
-                s3[i]=_s[i].value();
-            }
-            for(size_t i=0;i<_t.size();++i){
-                t1[i]=_t[i].value();
-                t2[i]=_t[i].value();
-                t3[i]=_t[i].value();
-            }
-            auto v1=atcoder::convolution(s1,t1);
-            auto v2=atcoder::convolution(s2,t2);
-            auto v3=atcoder::convolution(s3,t3);
-            T v(sz);
-            for(size_t i=0;i<sz;++i){
-                v[i]=garner(vector<long long>{v1[i].val(),v2[i].val(),v3[i].val()},vector<long long>{1224736769,1045430273,1007681537,Mint::get_mod()});
-            }
-            return v;
-        }
-    }
-    template<typename T>
-    T fact(const T& s){
-        return s.fact();
-    }
-    template<typename T>
-    T pow(const T& s,int i){
-        return s.pow(i);
-    }
-};
-template<typename Mint>using fps=FPS_BASE<Mint,_FPS<Mint>>;
-#line 5 "convolution/test/LC_convolution_998244353.test.cpp"
+#line 2 "util/template.hpp"
+#pragma GCC optimize("Ofast")
+#pragma GCC optimize("unroll-loops")
+#pragma GCC target("avx")
+#include<bits/stdc++.h>
+using namespace std;
+struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;
+typedef long long lint;
+#define INF (1LL<<60)
+#define IINF (1<<30)
+#define EPS (1e-10)
+#define endl ('\n')
+typedef vector<lint> vec;
+typedef vector<vector<lint>> mat;
+typedef vector<vector<vector<lint>>> mat3;
+typedef vector<string> svec;
+typedef vector<vector<string>> smat;
+template<typename T>inline void numout(T t){bool f=0;for(auto i:t){cout<<(f?" ":"")<<i<INF/2?i:"INF";f=1;}cout<<endl;}
+template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}
+template<typename T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?" ":"")<<i;f=1;}cout<<endl;}
+template<typename T>inline void output2(T t){for(auto i:t)output(i);}
+template<typename T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?"":" "<<t[i];f=1;}cout<<endl;}
+template<typename T>inline void _output2(T t){for(lint i=0;i<t.size();i++)output(t[i]);}
+#define rep(i,...) for(auto i:range(__VA_ARGS__)) 
+#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))
+#define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)
+#define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)
+#define irep(i) for(lint i=0;;++i)
+inline vector<long long> range(long long n){vector<long long>v(n);iota(v.begin(),v.end(),0LL);return v;}
+inline vector<long long> range(long long a,long long b){vector<long long>v(b-a);iota(v.begin(),v.end(),a);return v;}
+inline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return v;}
+template<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return v;}
+#define all(n) begin(n),end(n)
+template<typename T,typename E>bool chmin(T& s,const E& t){bool res=s>t;s=min<T>(s,t);return res;}
+template<typename T,typename E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>(s,t);return res;}
+const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
+const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
+#define SUM(v) accumulate(all(v),0LL)
+template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
+#line 4 "util/test/LC_Number_of_Substrings.test.cpp"
 
 int main(){
-    lint n,m;
-    cin>>n>>m;
-    fps<mint> a(n),b(m);
-    rep(i,n)cin>>a[i];
-    rep(i,m)cin>>b[i];
-    output(a*b);
+    using namespace atcoder;
+    string s;
+    cin>>s;
+    int n=s.size();
+    auto sa=suffix_array(s);
+    auto lcp=lcp_array(s,sa);
+    lint ans=n-sa[0];
+    for(int i=0;i<n-1;++i){
+        ans+=(n-sa[i+1])-lcp[i];
+    }
+    cout<<ans<<endl;
 }
 
 ```

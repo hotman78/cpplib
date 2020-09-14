@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/test/AOJ_is_prime.test.cpp
+# :heavy_check_mark: string/test/LC_Z_algorizm.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#ac0e84f4e067560125d03878b32a00d3">math/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/test/AOJ_is_prime.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-14 18:54:16+09:00
+* category: <a href="../../../index.html#1a7427d145086499c399a0f95224a581">string/test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/string/test/LC_Z_algorizm.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-14 22:49:35+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C</a>
+* see: <a href="https://judge.yosupo.jp/problem/zalgorithm">https://judge.yosupo.jp/problem/zalgorithm</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/math/is_prime.hpp.html">素数判定(高速) <small>(math/is_prime.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/string/Z_algorizm.hpp.html">Zアルゴリズム <small>(string/Z_algorizm.hpp)</small></a>
 * :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
@@ -48,20 +48,14 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
-#include "../is_prime.hpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
+#include "../Z_algorizm.hpp"
 #include "../../util/template.hpp"
 
 int main(){
-    lint t;
-    cin>>t;
-    lint ans=0;
-    while(t--){
-        lint n;
-        cin>>n;
-        ans+=is_prime(n);
-    }
-    cout<<ans<<endl;
+    string s;
+    cin>>s;
+    output(Z_algorizm(s));
 }
 ```
 {% endraw %}
@@ -69,38 +63,40 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/test/AOJ_is_prime.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
-#line 2 "math/is_prime.hpp"
-#include <initializer_list>
+#line 1 "string/test/LC_Z_algorizm.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
+#line 2 "string/Z_algorizm.hpp"
+#include<string>
+#include<vector>
+#include<algorithm>
+
 /**
- * @brief 素数判定(高速)
+ * @brief Zアルゴリズム
  */
-bool is_prime(long long n){
-    if(n<=1)return 0;
-    if(n==2)return 1;
-    if(n%2==0)return 0;
-    long long s=0,d=n-1;
-    while(d%2)d/=2,s++;
-    auto mod_pow=[](__int128_t a,__int128_t b,__int128_t n){
-        long long res=1;
-        while(b){
-            if(b%2)res=res*a%n;
-            a=a*a%n;
-            b/=2;
-        }
-        return (long long)(res);
-    };
-    for(long long e:{2,3,5,7,11,13,17,19,23,29,31,37}){
-        if(n<=e)break;
-        if(mod_pow(e,d,n)==1)continue;
-        bool b=1;
-        for(int i=0;i<s;i++){
-            if(mod_pow(e,d<<i,n)==n-1)b=0;
-        }
-        if(b)return 0;
+
+std::vector<int> Z_algorizm(const std::string& s){
+    std::vector<int>res(s.size());
+    res[0]=s.size();
+    int i=1,j=0;
+    while(i<(int)s.size()){
+        while(i+j<(int)s.size()&&s[j]==s[i+j])++j;
+        res[i]=j;
+        if(j==0){++i;continue;}
+        int k=1;
+        while(i+k<(int)s.size()&&k+res[k]<j)res[i+k]=res[k],++k;
+        i+=k;j-=k;
     }
-    return 1;
+    return res;
+}
+int find_first(const std::string& s,const std::string& t){
+    auto d=Z_algorizm(s+"#"+t);
+    auto itr=std::find(d.begin()+s.size(),d.end(),s.size());
+    if(itr!=d.end())return itr-d.begin()-s.size();
+    else return -1;
+}
+int count(const std::string& s,const std::string& t){
+    auto d=Z_algorizm(s+"#"+t);
+    return std::count(d.begin()+s.size(),d.end(),s.size());
 }
 #line 2 "util/template.hpp"
 #pragma GCC optimize("Ofast")
@@ -141,18 +137,12 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
-#line 4 "math/test/AOJ_is_prime.test.cpp"
+#line 4 "string/test/LC_Z_algorizm.test.cpp"
 
 int main(){
-    lint t;
-    cin>>t;
-    lint ans=0;
-    while(t--){
-        lint n;
-        cin>>n;
-        ans+=is_prime(n);
-    }
-    cout<<ans<<endl;
+    string s;
+    cin>>s;
+    output(Z_algorizm(s));
 }
 
 ```

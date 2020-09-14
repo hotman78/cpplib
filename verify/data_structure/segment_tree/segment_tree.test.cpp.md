@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/alga/maybe.hpp.html">Maybe <small>(alga/maybe.hpp)</small></a>
 * :heavy_check_mark: <a href="../../../library/data_structure/segment_tree/segment_tree.hpp.html">Segment Tree <small>(data_structure/segment_tree/segment_tree.hpp)</small></a>
-* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code

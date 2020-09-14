@@ -106,9 +106,9 @@ layout: default
 ### string
 
 * :warning: <a href="library/string/AhoCorasick.hpp.html">Aho-Corasick法 <small>(string/AhoCorasick.hpp)</small></a>
-* :warning: <a href="library/string/Z_algorizm.hpp.html">Zアルゴリズム <small>(string/Z_algorizm.hpp)</small></a>
+* :heavy_check_mark: <a href="library/string/Z_algorizm.hpp.html">Zアルゴリズム <small>(string/Z_algorizm.hpp)</small></a>
 * :warning: <a href="library/string/manacher.hpp.html">Manacher <small>(string/manacher.hpp)</small></a>
-* :warning: <a href="library/string/online_Zalgo.hpp.html">オンラインZアルゴリズム <small>(string/online_Zalgo.hpp)</small></a>
+* :heavy_check_mark: <a href="library/string/online_Zalgo.hpp.html">オンラインZアルゴリズム <small>(string/online_Zalgo.hpp)</small></a>
 * :warning: <a href="library/string/rolling_hash.hpp.html">ローリングハッシュ <small>(string/rolling_hash.hpp)</small></a>
 * :warning: <a href="library/string/subseceqence.cpp.html">部分列DP(WIP) <small>(string/subseceqence.cpp)</small></a>
 * :warning: <a href="library/string/suffix_array.hpp.html">SuffixArray <small>(string/suffix_array.hpp)</small></a>
@@ -120,17 +120,17 @@ layout: default
 
 ### util
 
-* :heavy_check_mark: <a href="library/util/ACL.hpp.html">util/ACL.hpp</a>
+* :question: <a href="library/util/ACL.hpp.html">util/ACL.hpp</a>
 * :warning: <a href="library/util/cpp_int.hpp.html">util/cpp_int.hpp</a>
 * :warning: <a href="library/util/pbds.hpp.html">util/pbds.hpp</a>
 * :heavy_check_mark: <a href="library/util/random_gen.hpp.html">util/random_gen.hpp</a>
-* :heavy_check_mark: <a href="library/util/template.hpp.html">util/template.hpp</a>
+* :question: <a href="library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Verify Files
 
+* :heavy_check_mark: <a href="verify/convolution/test/LC_convolution_1000000007.test.cpp.html">convolution/test/LC_convolution_1000000007.test.cpp</a>
 * :heavy_check_mark: <a href="verify/convolution/test/LC_convolution_998244353.test.cpp.html">convolution/test/LC_convolution_998244353.test.cpp</a>
-* :heavy_check_mark: <a href="verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
 * :heavy_check_mark: <a href="verify/data_structure/dsu/union_find.test.cpp.html">data_structure/dsu/union_find.test.cpp</a>
 * :heavy_check_mark: <a href="verify/data_structure/segment_tree/segment_tree.test.cpp.html">data_structure/segment_tree/segment_tree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
@@ -143,5 +143,9 @@ layout: default
 * :heavy_check_mark: <a href="verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_tetration.test.cpp.html">math/test/LC_tetration.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/LC_totient_sum.test.cpp.html">math/test/LC_totient_sum.test.cpp</a>
+* :heavy_check_mark: <a href="verify/string/test/LC_Z_algorizm.test.cpp.html">string/test/LC_Z_algorizm.test.cpp</a>
+* :heavy_check_mark: <a href="verify/string/test/LC_online_Z_algorizm.test.cpp.html">string/test/LC_online_Z_algorizm.test.cpp</a>
+* :x: <a href="verify/util/test/LC_Number_of_Substrings.test.cpp.html">util/test/LC_Number_of_Substrings.test.cpp</a>
+* :heavy_check_mark: <a href="verify/util/test/LC_Suffix_Array.test.cpp.html">util/test/LC_Suffix_Array.test.cpp</a>
 
 
