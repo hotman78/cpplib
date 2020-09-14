@@ -3,6 +3,10 @@
 #include<vector>
 #include<set>
 
+/**
+ * @brief オンラインZアルゴリズム
+ */
+
 struct online_Zalgo{
     std::vector<int>z;
     std::set<int>memo;

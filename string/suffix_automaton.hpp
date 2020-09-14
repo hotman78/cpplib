@@ -5,6 +5,10 @@
 #include<map>
 #include<set>
 
+/**
+ * @brief SuffixAutomaton
+ */
+
 struct suffix_automaton{
     struct node;
     using np=node*;

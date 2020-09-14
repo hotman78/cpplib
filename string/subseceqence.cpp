@@ -4,6 +4,10 @@
 #include<set>
 #include<tuple>
 
+/**
+ * @brief 部分列DP(WIP)
+ */
+
 struct subsequence{
     struct node;
     using np=node*;

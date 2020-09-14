@@ -4,6 +4,10 @@
 #include<set>
 #include<tuple>
 
+/**
+ * @brief ローリングハッシュ
+ */
+
 struct rolling_hash{
     using u64=std::uint64_t;
     constexpr static u64 mod=(1ULL<<61)-1;

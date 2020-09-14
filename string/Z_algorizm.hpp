@@ -3,6 +3,10 @@
 #include<vector>
 #include<algorithm>
 
+/**
+ * @brief Zアルゴリズム
+ */
+
 std::vector<int> Z_algorizm(const std::string& s){
     std::vector<int>res(s.size());
     res[0]=s.size();

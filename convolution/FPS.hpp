@@ -2,6 +2,10 @@
 #include"FPS_base.hpp"
 #include<atcoder/convolution>
 
+/**
+ * @brief 形式的冪級数(ModInt)
+ */
+
 template<typename Mint>
 struct _FPS{
     template<typename T>

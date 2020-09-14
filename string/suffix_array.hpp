@@ -5,6 +5,10 @@
 #include <numeric>
 #include<cmath>
 
+/**
+ * @brief SuffixArray
+ */
+
 std::vector<int> suffix_array(std::string s){
     int n=s.size();
     std::vector<int> v1(n,-1),v2(n,-1);

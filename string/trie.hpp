@@ -1,6 +1,10 @@
 #pragma once
 #include<string>
 
+/**
+ * @brief Trie木
+ */
+
 struct trie{
     struct node;
     using np=node*;

@@ -1,6 +1,10 @@
+/**
+ * @brief 形式的冪級数(BASE)
+ */
+
 template<typename T,typename F>
-struct FPS_BASE:vector<T>{
-    using vector<T>::vector;
+struct FPS_BASE:std::vector<T>{
+    using std::vector<T>::vector;
     using P=FPS_BASE<T,F>;
     F fft;
     FPS_BASE(){}

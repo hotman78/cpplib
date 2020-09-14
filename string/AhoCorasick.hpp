@@ -2,6 +2,10 @@
 #include<string>
 #include<queue>
 
+/**
+ * @brief Aho-Corasick法
+ */
+
 class AhoCorasick{
     struct node;
     using np=node*;

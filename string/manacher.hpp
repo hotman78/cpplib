@@ -2,6 +2,10 @@
 #include<string>
 #include<vector>
 
+/**
+ * @brief Manacher
+ */
+
 std::vector<int> manacher(std::string S){
     int i = 0, j = 0;
     std::string s;
