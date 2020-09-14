@@ -9,3 +9,5 @@ https://hotman78.github.io/cpplib/
 CC0ライセンスなので好きにコピーして下さい
 
 themeにうしさんの[minima](https://github.com/ei1333/minima)を使わせて頂いてます
+
+(themeのライセンスは僕に帰属してないので注意してください)
