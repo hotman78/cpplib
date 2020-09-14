@@ -26,7 +26,8 @@ jobs:
     # required only if you want to verify Nim code
     - name: Install dependencies (Nim)
       run: sudo apt install nim
-
+    - name: Install dependencies (Atcoder Library)
+      run: sudo git clone https://github.com/atcoder/ac-library
 
     - name: Run tests
       env:  
