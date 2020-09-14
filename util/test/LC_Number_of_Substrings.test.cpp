@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/suffixarray"
+#define PROBLEM "https://judge.yosupo.jp/problem/number_of_substrings"
 #include"../ACL.hpp"
 #include "../template.hpp"
 
