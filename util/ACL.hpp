@@ -1,3 +1,4 @@
+#pragma once
 #include <algorithm>
 #include <array>
 #ifdef _MSC_VER
