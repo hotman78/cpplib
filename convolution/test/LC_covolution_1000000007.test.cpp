@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
 #include "../../util/template.hpp"
-#include "../../math/mod_int998244353.hpp"
+#include "../../math/mod_int1000000007.hpp"
 #include "../convolution/FPS.hpp"
 
 int main(){
