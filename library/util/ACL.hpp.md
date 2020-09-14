@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: util/ACL.hpp
+# :heavy_check_mark: util/ACL.hpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,13 +38,13 @@ layout: default
 
 ## Required by
 
-* :question: <a href="../convolution/FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
+* :heavy_check_mark: <a href="../convolution/FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/convolution/test/LC_convolution_998244353.test.cpp.html">convolution/test/LC_convolution_998244353.test.cpp</a>
-* :x: <a href="../../verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
 
 
 ## Code

@@ -46,8 +46,8 @@ layout: default
 
 ### convolution
 
-* :question: <a href="library/convolution/FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
-* :question: <a href="library/convolution/FPS_base.hpp.html">形式的冪級数(BASE) <small>(convolution/FPS_base.hpp)</small></a>
+* :heavy_check_mark: <a href="library/convolution/FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
+* :heavy_check_mark: <a href="library/convolution/FPS_base.hpp.html">形式的冪級数(BASE) <small>(convolution/FPS_base.hpp)</small></a>
 
 
 <div id="b51445282e2a71a807e91edd8070e8ad"></div>
@@ -79,14 +79,16 @@ layout: default
 * :warning: <a href="library/math/binary_search_double.hpp.html">二分探索(double) <small>(math/binary_search_double.hpp)</small></a>
 * :warning: <a href="library/math/carmichael_function.hpp.html">カーマイケル関数 <small>(math/carmichael_function.hpp)</small></a>
 * :warning: <a href="library/math/catalans_trapezoids.hpp.html">カタラン台形 <small>(math/catalans_trapezoids.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/ceil_pow2.hpp.html">math/ceil_pow2.hpp</a>
 * :warning: <a href="library/math/comb.hpp.html">二項係数 mod P <small>(math/comb.hpp)</small></a>
 * :warning: <a href="library/math/divisor_list.hpp.html">約数列挙 <small>(math/divisor_list.hpp)</small></a>
 * :heavy_check_mark: <a href="library/math/euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
 * :heavy_check_mark: <a href="library/math/floor_sum.hpp.html">\sum_{i=0}^{n-1}\floor(a*i+b/c) <small>(math/floor_sum.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/garner.hpp.html">ガーナーのアルゴリズム <small>(math/garner.hpp)</small></a>
 * :heavy_check_mark: <a href="library/math/is_prime.hpp.html">素数判定(高速) <small>(math/is_prime.hpp)</small></a>
 * :warning: <a href="library/math/lagrange_interpolation.hpp.html">ラグランジュ補完(連続点->一点) <small>(math/lagrange_interpolation.hpp)</small></a>
-* :question: <a href="library/math/mod_int.hpp.html">ModInt <small>(math/mod_int.hpp)</small></a>
-* :x: <a href="library/math/mod_int1000000007.hpp.html">ModInt(1'000'000'007) <small>(math/mod_int1000000007.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/mod_int.hpp.html">ModInt <small>(math/mod_int.hpp)</small></a>
+* :heavy_check_mark: <a href="library/math/mod_int1000000007.hpp.html">ModInt(1'000'000'007) <small>(math/mod_int1000000007.hpp)</small></a>
 * :heavy_check_mark: <a href="library/math/mod_int998244353.hpp.html">ModInt(998'244'353) <small>(math/mod_int998244353.hpp)</small></a>
 * :heavy_check_mark: <a href="library/math/mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
 * :heavy_check_mark: <a href="library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
@@ -118,24 +120,17 @@ layout: default
 
 ### util
 
-* :question: <a href="library/util/ACL.hpp.html">util/ACL.hpp</a>
+* :heavy_check_mark: <a href="library/util/ACL.hpp.html">util/ACL.hpp</a>
 * :warning: <a href="library/util/cpp_int.hpp.html">util/cpp_int.hpp</a>
 * :warning: <a href="library/util/pbds.hpp.html">util/pbds.hpp</a>
 * :heavy_check_mark: <a href="library/util/random_gen.hpp.html">util/random_gen.hpp</a>
-* :question: <a href="library/util/template.hpp.html">util/template.hpp</a>
-
-
-<div id="3f6993c271f9d16deca67542cd4cc80e"></div>
-
-### util/ACL
-
-* :warning: <a href="library/util/ACL/util.hpp.html">util/ACL/util.hpp</a>
+* :heavy_check_mark: <a href="library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/convolution/test/LC_convolution_998244353.test.cpp.html">convolution/test/LC_convolution_998244353.test.cpp</a>
-* :x: <a href="verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
+* :heavy_check_mark: <a href="verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
 * :heavy_check_mark: <a href="verify/data_structure/dsu/union_find.test.cpp.html">data_structure/dsu/union_find.test.cpp</a>
 * :heavy_check_mark: <a href="verify/data_structure/segment_tree/segment_tree.test.cpp.html">data_structure/segment_tree/segment_tree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>

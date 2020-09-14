@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: 形式的冪級数(BASE) <small>(convolution/FPS_base.hpp)</small>
+# :heavy_check_mark: 形式的冪級数(BASE) <small>(convolution/FPS_base.hpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,13 +38,13 @@ layout: default
 
 ## Required by
 
-* :question: <a href="FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
+* :heavy_check_mark: <a href="FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/convolution/test/LC_convolution_998244353.test.cpp.html">convolution/test/LC_convolution_998244353.test.cpp</a>
-* :x: <a href="../../verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
 
 
 ## Code

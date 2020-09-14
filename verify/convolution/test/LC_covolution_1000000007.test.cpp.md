@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: convolution/test/LC_covolution_1000000007.test.cpp
+# :heavy_check_mark: convolution/test/LC_covolution_1000000007.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#138f586853b56e3cad59aa29ba977214">convolution/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/convolution/test/LC_covolution_1000000007.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-14 19:00:57+09:00
+    - Last commit date: 2020-09-14 19:36:00+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/convolution_mod_1000000007">https://judge.yosupo.jp/problem/convolution_mod_1000000007</a>
@@ -39,12 +39,15 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/convolution/FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
-* :question: <a href="../../../library/convolution/FPS_base.hpp.html">形式的冪級数(BASE) <small>(convolution/FPS_base.hpp)</small></a>
-* :question: <a href="../../../library/math/mod_int.hpp.html">ModInt <small>(math/mod_int.hpp)</small></a>
-* :x: <a href="../../../library/math/mod_int1000000007.hpp.html">ModInt(1'000'000'007) <small>(math/mod_int1000000007.hpp)</small></a>
-* :question: <a href="../../../library/util/ACL.hpp.html">util/ACL.hpp</a>
-* :question: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
+* :heavy_check_mark: <a href="../../../library/convolution/FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/convolution/FPS_base.hpp.html">形式的冪級数(BASE) <small>(convolution/FPS_base.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/ceil_pow2.hpp.html">math/ceil_pow2.hpp</a>
+* :heavy_check_mark: <a href="../../../library/math/garner.hpp.html">ガーナーのアルゴリズム <small>(math/garner.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/mod_int.hpp.html">ModInt <small>(math/mod_int.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/mod_int1000000007.hpp.html">ModInt(1'000'000'007) <small>(math/mod_int1000000007.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
+* :heavy_check_mark: <a href="../../../library/util/ACL.hpp.html">util/ACL.hpp</a>
+* :heavy_check_mark: <a href="../../../library/util/template.hpp.html">util/template.hpp</a>
 
 
 ## Code
@@ -2328,7 +2331,48 @@ struct two_sat {
     internal::scc_graph scc;
 };
 }  // namespace atcoder
-#line 4 "convolution/FPS.hpp"
+#line 1 "math/ceil_pow2.hpp"
+int ceil_pow2(int n) {
+    int x = 0;
+    while ((1U << x) < (unsigned int)(n)) x++;
+    return x;
+}
+#line 1 "math/mod_pow.hpp"
+/**
+ * @brief (x^y)%mod
+ */
+
+long long mod_pow(long long x,long long y,long long mod){
+    long long ret=1;
+    while(y>0) {
+        if(y&1)(ret*=x)%=mod;
+        (x*=x)%=mod;
+        y>>=1;
+    }
+    return ret;
+}
+#line 4 "math/garner.hpp"
+
+/**
+ * 
+ * @brief ガーナーのアルゴリズム
+ *
+ */
+
+long long garner(std::vector<long long>a,std::vector<long long>mods){
+    const int sz=3;
+    long long coeffs[sz+1]={1,1,1,1};
+    long long constants[sz+1]={};
+    for(int i=0;i<sz;i++){
+        long long v=(mods[i]+a[i]-constants[i])%mods[i]*mod_pow(coeffs[i],mods[i]-2,mods[i])%mods[i];
+        for(int j=i+1;j<sz+1;j++) {
+            constants[j]=(constants[j]+coeffs[j]*v)%mods[j];
+            coeffs[j]=(coeffs[j]*mods[i])%mods[j];
+        }
+    }
+    return constants[3];
+}
+#line 6 "convolution/FPS.hpp"
 /**
  * @brief 形式的冪級数(ModInt)
  */
@@ -2337,13 +2381,38 @@ template<typename Mint>
 struct _FPS{
     template<typename T>
     T operator()(const T& _s,const T& _t){
-        vector<atcoder::static_modint<Mint::get_mod()>>s(_s.size()),t(_t.size());
-        for(size_t i=0;i<_s.size();++i)s[i]=_s[i].value();
-        for(size_t i=0;i<_t.size();++i)t[i]=_t[i].value();
-        vector<atcoder::static_modint<Mint::get_mod()>> _v=atcoder::convolution(s,t);
-        T v(_v.size());
-        for (size_t i=0;i<_v.size();++i)v[i]=_v[i].val();
-        return v;
+        const size_t sz=_s.size()+_t.size()-1;
+        if((sz&((1<<ceil_pow2(sz))-1))==0){
+            vector<atcoder::static_modint<Mint::get_mod()>>s(_s.size()),t(_t.size());
+            for(size_t i=0;i<_s.size();++i)s[i]=_s[i].value();
+            for(size_t i=0;i<_t.size();++i)t[i]=_t[i].value();
+            vector<atcoder::static_modint<Mint::get_mod()>> _v=atcoder::convolution(s,t);
+            T v(_v.size());
+            for (size_t i=0;i<_v.size();++i)v[i]=_v[i].val();
+            return v;
+        }else{
+            vector<atcoder::static_modint<1224736769>>s1(_s.size()),t1(_t.size());
+            vector<atcoder::static_modint<1045430273>>s2(_s.size()),t2(_t.size());
+            vector<atcoder::static_modint<1007681537>>s3(_s.size()),t3(_t.size());
+            for(size_t i=0;i<_s.size();++i){
+                s1[i]=_s[i].value();
+                s2[i]=_s[i].value();
+                s3[i]=_s[i].value();
+            }
+            for(size_t i=0;i<_t.size();++i){
+                t1[i]=_t[i].value();
+                t2[i]=_t[i].value();
+                t3[i]=_t[i].value();
+            }
+            auto v1=atcoder::convolution(s1,t1);
+            auto v2=atcoder::convolution(s2,t2);
+            auto v3=atcoder::convolution(s3,t3);
+            T v(sz);
+            for(size_t i=0;i<sz;++i){
+                v[i]=garner(vector<long long>{v1[i].val(),v2[i].val(),v3[i].val()},vector<long long>{1224736769,1045430273,1007681537,Mint::get_mod()});
+            }
+            return v;
+        }
     }
     template<typename T>
     T fact(const T& s){

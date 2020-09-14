@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: (x^y)%mod <small>(math/mod_pow.hpp)</small>
+# :heavy_check_mark: math/ceil_pow2.hpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/mod_pow.hpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-13 16:40:58+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/math/ceil_pow2.hpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-14 19:36:00+09:00
 
 
 
@@ -39,19 +39,12 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="../convolution/FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
-* :heavy_check_mark: <a href="garner.hpp.html">ガーナーのアルゴリズム <small>(math/garner.hpp)</small></a>
-* :heavy_check_mark: <a href="mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
-* :heavy_check_mark: <a href="mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
-* :heavy_check_mark: <a href="tetration.hpp.html">テトレーション <small>(math/tetration.hpp)</small></a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/convolution/test/LC_convolution_998244353.test.cpp.html">convolution/test/LC_convolution_998244353.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/convolution/test/LC_covolution_1000000007.test.cpp.html">convolution/test/LC_covolution_1000000007.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/math/test/LC_mod_log.test.cpp.html">math/test/LC_mod_log.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/math/test/LC_mod_sqrt.test.cpp.html">math/test/LC_mod_sqrt.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/math/test/LC_tetration.test.cpp.html">math/test/LC_tetration.test.cpp</a>
 
 
 ## Code
@@ -59,39 +52,22 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-/**
- * @brief (x^y)%mod
- */
-
-long long mod_pow(long long x,long long y,long long mod){
-    long long ret=1;
-    while(y>0) {
-        if(y&1)(ret*=x)%=mod;
-        (x*=x)%=mod;
-        y>>=1;
-    }
-    return ret;
+int ceil_pow2(int n) {
+    int x = 0;
+    while ((1U << x) < (unsigned int)(n)) x++;
+    return x;
 }
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/mod_pow.hpp"
-/**
- * @brief (x^y)%mod
- */
-
-long long mod_pow(long long x,long long y,long long mod){
-    long long ret=1;
-    while(y>0) {
-        if(y&1)(ret*=x)%=mod;
-        (x*=x)%=mod;
-        y>>=1;
-    }
-    return ret;
+#line 1 "math/ceil_pow2.hpp"
+int ceil_pow2(int n) {
+    int x = 0;
+    while ((1U << x) < (unsigned int)(n)) x++;
+    return x;
 }
 
 ```
