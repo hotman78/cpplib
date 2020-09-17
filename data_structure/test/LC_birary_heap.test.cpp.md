@@ -9,15 +9,19 @@ data:
     title: util/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    links: []
-  bundledCode: "#line 2 \"data_structure/binary_heap.hpp\"\n#include<vector>\n#include<algorithm>\n\
-    #include<functional>\n\ntemplate<typename T,typename F=std::less<T>>\nstruct binary_heap{\n\
-    \tint idx=1;\n\tstruct node{\n\t\tint idx;\n\t\tT val;\n\t\tnode(int idx,T val):idx(idx),val(val){}\n\
-    \t};\n\tusing np=node*;\n\tstd::vector<np>v;\n\tF comp;\n\tbinary_heap(F comp):v(2,0),comp(comp){}\n\
+    PROBLEM: 'https:'
+    links:
+    - https://judge.yosupo.jp/problem/shortest_path
+  bundledCode: "#line 1 \"data_structure/test/LC_birary_heap.test.cpp\"\n#define PROBLEM\
+    \ https://judge.yosupo.jp/problem/shortest_path\n#line 2 \"data_structure/binary_heap.hpp\"\
+    \n#include<vector>\n#include<algorithm>\n#include<functional>\n\ntemplate<typename\
+    \ T,typename F=std::less<T>>\nstruct binary_heap{\n\tint idx=1;\n\tstruct node{\n\
+    \t\tint idx;\n\t\tT val;\n\t\tnode(int idx,T val):idx(idx),val(val){}\n\t};\n\t\
+    using np=node*;\n\tstd::vector<np>v;\n\tF comp;\n\tbinary_heap(F comp):v(2,0),comp(comp){}\n\
     \tbinary_heap():v(2,0),comp(F()){}\n\tvoid __swap(np& s,np& t){\n\t\tstd::swap(s,t);\n\
     \t\tstd::swap(s->idx,t->idx);\n\t}\n\tvoid up(int k){\n\t\twhile(k>1&&comp(v[k]->val,v[k/2]->val)){\n\
     \t\t\t__swap(v[k],v[k/2]);\n\t\t\tk/=2;\n\t\t}\n\t}\n\tvoid down(int k){\n\t\t\
@@ -60,7 +64,7 @@ data:
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
     \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
-    \ 3 \"data_structure/test/LC_birary_heap.test.hpp\"\n\nint main(){\n\tlint n,m,s,t;\n\
+    \ 4 \"data_structure/test/LC_birary_heap.test.cpp\"\n\nint main(){\n\tlint n,m,s,t;\n\
     \tcin>>n>>m>>s>>t;\n\tvector<vector<pair<lint,lint>>>g(n);\n\trep(i,m){\n\t\t\
     lint a,b,c;\n\t\tcin>>a>>b>>c;\n\t\tg[a].emplace_back(b,c);\n\t}\n\tbinary_heap<pair<lint,lint>>que;\n\
     \tvector<binary_heap<pair<lint,lint>>::np>v(n);\n\trep(i,n)v[i]=que.insert(make_pair(INF,i));\n\
@@ -72,10 +76,11 @@ data:
     \twhile(1){\n\t\tif(now==s)break;\n\t\tans.emplace_back(from[now],now);\n\t\t\
     now=from[now];\n\t}\n\tcout<<dif[t]<<\" \"<<ans.size()<<endl;\n\treverse(all(ans));\n\
     \tfor(auto e:ans){\n\t\tcout<<e.first<<\" \"<<e.second<<endl;\n\t}\n}\n"
-  code: "#include \"../binary_heap.hpp\"\n#include \"../../util/template.hpp\"\n\n\
-    int main(){\n\tlint n,m,s,t;\n\tcin>>n>>m>>s>>t;\n\tvector<vector<pair<lint,lint>>>g(n);\n\
-    \trep(i,m){\n\t\tlint a,b,c;\n\t\tcin>>a>>b>>c;\n\t\tg[a].emplace_back(b,c);\n\
-    \t}\n\tbinary_heap<pair<lint,lint>>que;\n\tvector<binary_heap<pair<lint,lint>>::np>v(n);\n\
+  code: "#define PROBLEM https://judge.yosupo.jp/problem/shortest_path\n#include \"\
+    ../binary_heap.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\t\
+    lint n,m,s,t;\n\tcin>>n>>m>>s>>t;\n\tvector<vector<pair<lint,lint>>>g(n);\n\t\
+    rep(i,m){\n\t\tlint a,b,c;\n\t\tcin>>a>>b>>c;\n\t\tg[a].emplace_back(b,c);\n\t\
+    }\n\tbinary_heap<pair<lint,lint>>que;\n\tvector<binary_heap<pair<lint,lint>>::np>v(n);\n\
     \trep(i,n)v[i]=que.insert(make_pair(INF,i));\n\tque.modify(v[s],make_pair(0,s));\n\
     \tvector<lint>from(n,-1);\n\tvector<lint>dif(n,INF);\n\tdif[s]=0;\n\twhile(!que.empty()){\n\
     \t\tauto [cost,now]=que.top();\n\t\tque.pop();\n\t\tfor(auto [e,c]:g[now]){\n\t\
@@ -89,15 +94,15 @@ data:
   - data_structure/binary_heap.hpp
   - util/template.hpp
   isVerificationFile: true
-  path: data_structure/test/LC_birary_heap.test.hpp
+  path: data_structure/test/LC_birary_heap.test.cpp
   requiredBy: []
-  timestamp: '2020-09-17 10:09:38+09:00'
+  timestamp: '2020-09-17 10:13:45+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: data_structure/test/LC_birary_heap.test.hpp
+documentation_of: data_structure/test/LC_birary_heap.test.cpp
 layout: document
 redirect_from:
-- /verify/data_structure/test/LC_birary_heap.test.hpp
-- /verify/data_structure/test/LC_birary_heap.test.hpp.html
-title: data_structure/test/LC_birary_heap.test.hpp
+- /verify/data_structure/test/LC_birary_heap.test.cpp
+- /verify/data_structure/test/LC_birary_heap.test.cpp.html
+title: data_structure/test/LC_birary_heap.test.cpp
 ---

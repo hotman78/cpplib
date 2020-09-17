@@ -64,8 +64,8 @@ data:
     path: data_structure/test/LC_fast_set.test.cpp
     title: data_structure/test/LC_fast_set.test.cpp
   - icon: ':x:'
-    path: data_structure/test/LC_birary_heap.test.hpp
-    title: data_structure/test/LC_birary_heap.test.hpp
+    path: data_structure/test/LC_birary_heap.test.cpp
+    title: data_structure/test/LC_birary_heap.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
   attributes:
@@ -156,7 +156,7 @@ data:
   - string/test/LC_Z_algorizm.test.cpp
   - string/test/LC_online_Z_algorizm.test.cpp
   - data_structure/test/LC_fast_set.test.cpp
-  - data_structure/test/LC_birary_heap.test.hpp
+  - data_structure/test/LC_birary_heap.test.cpp
 documentation_of: util/template.hpp
 layout: document
 redirect_from:

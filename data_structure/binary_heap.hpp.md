@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
-    path: data_structure/test/LC_birary_heap.test.hpp
-    title: data_structure/test/LC_birary_heap.test.hpp
+    path: data_structure/test/LC_birary_heap.test.cpp
+    title: data_structure/test/LC_birary_heap.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
   attributes:
@@ -54,7 +54,7 @@ data:
   timestamp: '2020-09-17 10:09:38+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - data_structure/test/LC_birary_heap.test.hpp
+  - data_structure/test/LC_birary_heap.test.cpp
 documentation_of: data_structure/binary_heap.hpp
 layout: document
 redirect_from:

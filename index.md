@@ -246,8 +246,8 @@ data:
   - name: data_structure/test
     pages:
     - icon: ':x:'
-      path: data_structure/test/LC_birary_heap.test.hpp
-      title: data_structure/test/LC_birary_heap.test.hpp
+      path: data_structure/test/LC_birary_heap.test.cpp
+      title: data_structure/test/LC_birary_heap.test.cpp
     - icon: ':x:'
       path: data_structure/test/LC_fast_set.test.cpp
       title: data_structure/test/LC_fast_set.test.cpp
