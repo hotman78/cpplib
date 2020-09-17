@@ -3,7 +3,7 @@
 ---
 
 @import
-  "minima/skins/{{ site.minima.skin | default: 'dark' }}",
+  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
   "minima/initialize";
 
 small {
@@ -12,7 +12,7 @@ small {
 
 pre, code {
   font-family: source-code-pro;
-  background-color: #FAFAFA !important;
+  background-color: #fafafa !important;
 }
 
 a:hover {
