@@ -12,7 +12,7 @@ plugins:
 - jekyll-remote-theme
 - jekyll-feed
 - jekyll-seo-tag
-remote_theme: hotman78/minima
+remote_theme: ei1333/minima
 theme: null
 timezone: Asia/Tokyo
 title: Hotman's Library
