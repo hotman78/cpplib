@@ -15,5 +15,7 @@
 "math/test/LC_totient_sum.test.cpp": "2020-09-14 18:54:16 +0900",
 "string/test/LC_Z_algorizm.test.cpp": "2020-09-14 22:49:35 +0900",
 "string/test/LC_online_Z_algorizm.test.cpp": "2020-09-14 22:49:35 +0900",
+"string/test/YUKI_Aho_Corasick.test.cpp": "2020-09-14 23:01:17 +0900",
+"util/test/LC_Number_of_Substrings.test.cpp": "2020-09-14 22:59:21 +0900",
 "util/test/LC_Suffix_Array.test.cpp": "2020-09-14 22:49:35 +0900"
 }
