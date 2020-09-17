@@ -5,6 +5,9 @@
 @import
   "leaf.scss","_base.scss","_highlight-dark.scss","_layout.scss","_layout-post.scss","_layout-home.scss","_layout-header.scss","_layout-footer.scss";
 
+.trigger{
+  display: none;
+}
 
 small {
   display: none;
@@ -32,8 +35,4 @@ h2, h3 {
 
 #library-files {
   border: none;
-}
-
-div.trigger{
-  display: none;
 }
