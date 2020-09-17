@@ -8,4 +8,4 @@ https://hotman78.github.io/cpplib/
 
 CC0ライセンスなので好きにコピーして下さい
 
-themeは現在試行錯誤中です
+themeは[ei1333/minima](https://github.com/ei1333/minima)を使わせて頂いてます
