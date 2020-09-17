@@ -1,8 +1,9 @@
 #pragma once
 #include<vector>
 #include<algorithm>
+#include<functional>
 
-template<typename T>
+template<typename T,typename F=std::less<T>>
 struct binary_heap{
 	int idx=1;
 	struct node{
@@ -12,7 +13,9 @@ struct binary_heap{
 	};
 	using np=node*;
 	std::vector<np>v;
-	binary_heap():v(2,0){}
+	F comp;
+	binary_heap(F comp):v(2,0),comp(comp){}
+	binary_heap():v(2,0),comp(F()){}
 	void __swap(np& s,np& t){
 		std::swap(s,t);
 		std::swap(s->idx,t->idx);
@@ -65,8 +68,5 @@ struct binary_heap{
 		t->val=val;
 		up(t->idx);
 		down(t->idx);
-	}
-	bool comp(T s,T t){
-		return s<t;
 	}
 };
