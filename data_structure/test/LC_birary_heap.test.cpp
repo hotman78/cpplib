@@ -1,3 +1,4 @@
+#define PROBLEM https://judge.yosupo.jp/problem/shortest_path
 #include "../binary_heap.hpp"
 #include "../../util/template.hpp"
 
