@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/fast_set.hpp
     title: data_structure/fast_set.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: 'https:'
+    PROBLEM: https://judge.yosupo.jp/problem/associative_array
     links:
     - https://judge.yosupo.jp/problem/associative_array
   bundledCode: "#line 1 \"data_structure/test/LC_fast_set.test.cpp\"\n#define PROBLEM\
-    \ https://judge.yosupo.jp/problem/associative_array\n#line 2 \"data_structure/fast_set.hpp\"\
+    \ \"https://judge.yosupo.jp/problem/associative_array\"\n#line 2 \"data_structure/fast_set.hpp\"\
     \n#include<cstdint>\n#include<vector>\n#include<tuple>\n#include<algorithm>\n\
     #include <cassert>\n#include<iostream>\n\ntemplate<typename T>\nstruct fast_set{\n\
     \tconstexpr static int B=4;\n    constexpr static int S=(1<<B);\n\tstruct node{\n\
@@ -73,7 +73,7 @@ data:
     \ cin>>c;\n        if(c==0){\n            lint s,t;\n            cin>>s>>t;\n\
     \            v[s]=t;\n        }else{\n            lint s;\n            cin>>s;\n\
     \            cout<<v[s]<<endl;\n        }\n    }\n}\n"
-  code: "#define PROBLEM https://judge.yosupo.jp/problem/associative_array\n#include\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/associative_array\"\n#include\
     \ \"../fast_set.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n \
     \   lint q;\n    cin>>q;\n    fast_set<lint>v;\n    while(q--){\n        lint\
     \ c;\n        cin>>c;\n        if(c==0){\n            lint s,t;\n            cin>>s>>t;\n\
@@ -85,8 +85,8 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_fast_set.test.cpp
   requiredBy: []
-  timestamp: '2020-09-17 10:13:45+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-17 10:15:19+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_fast_set.test.cpp
 layout: document

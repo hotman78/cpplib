@@ -44,7 +44,7 @@ data:
     - icon: ':warning:'
       path: data_structure/RMQ.hpp
       title: data_structure/RMQ.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/binary_heap.hpp
       title: data_structure/binary_heap.hpp
     - icon: ':warning:'
@@ -59,7 +59,7 @@ data:
     - icon: ':warning:'
       path: data_structure/disjoint_sparse_table.hpp
       title: data_structure/disjoint_sparse_table.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/fast_set.hpp
       title: data_structure/fast_set.hpp
     - icon: ':warning:'
@@ -231,7 +231,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
@@ -245,10 +245,10 @@ data:
       title: convolution/test/LC_convolution_998244353.test.cpp
   - name: data_structure/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_birary_heap.test.cpp
       title: data_structure/test/LC_birary_heap.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_fast_set.test.cpp
       title: data_structure/test/LC_fast_set.test.cpp
   - name: dsu/test

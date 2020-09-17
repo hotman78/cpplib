@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/binary_heap.hpp
     title: data_structure/binary_heap.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: 'https:'
+    PROBLEM: https://judge.yosupo.jp/problem/shortest_path
     links:
     - https://judge.yosupo.jp/problem/shortest_path
   bundledCode: "#line 1 \"data_structure/test/LC_birary_heap.test.cpp\"\n#define PROBLEM\
-    \ https://judge.yosupo.jp/problem/shortest_path\n#line 2 \"data_structure/binary_heap.hpp\"\
+    \ \"https://judge.yosupo.jp/problem/shortest_path\"\n#line 2 \"data_structure/binary_heap.hpp\"\
     \n#include<vector>\n#include<algorithm>\n#include<functional>\n\ntemplate<typename\
     \ T,typename F=std::less<T>>\nstruct binary_heap{\n\tint idx=1;\n\tstruct node{\n\
     \t\tint idx;\n\t\tT val;\n\t\tnode(int idx,T val):idx(idx),val(val){}\n\t};\n\t\
@@ -76,9 +76,9 @@ data:
     \twhile(1){\n\t\tif(now==s)break;\n\t\tans.emplace_back(from[now],now);\n\t\t\
     now=from[now];\n\t}\n\tcout<<dif[t]<<\" \"<<ans.size()<<endl;\n\treverse(all(ans));\n\
     \tfor(auto e:ans){\n\t\tcout<<e.first<<\" \"<<e.second<<endl;\n\t}\n}\n"
-  code: "#define PROBLEM https://judge.yosupo.jp/problem/shortest_path\n#include \"\
-    ../binary_heap.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\t\
-    lint n,m,s,t;\n\tcin>>n>>m>>s>>t;\n\tvector<vector<pair<lint,lint>>>g(n);\n\t\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n#include\
+    \ \"../binary_heap.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
+    \tlint n,m,s,t;\n\tcin>>n>>m>>s>>t;\n\tvector<vector<pair<lint,lint>>>g(n);\n\t\
     rep(i,m){\n\t\tlint a,b,c;\n\t\tcin>>a>>b>>c;\n\t\tg[a].emplace_back(b,c);\n\t\
     }\n\tbinary_heap<pair<lint,lint>>que;\n\tvector<binary_heap<pair<lint,lint>>::np>v(n);\n\
     \trep(i,n)v[i]=que.insert(make_pair(INF,i));\n\tque.modify(v[s],make_pair(0,s));\n\
@@ -96,8 +96,8 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_birary_heap.test.cpp
   requiredBy: []
-  timestamp: '2020-09-17 10:13:45+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-17 10:15:19+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_birary_heap.test.cpp
 layout: document

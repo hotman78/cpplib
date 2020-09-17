@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_birary_heap.test.cpp
     title: data_structure/test/LC_birary_heap.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -52,7 +52,7 @@ data:
   path: data_structure/binary_heap.hpp
   requiredBy: []
   timestamp: '2020-09-17 10:09:38+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - data_structure/test/LC_birary_heap.test.cpp
 documentation_of: data_structure/binary_heap.hpp
