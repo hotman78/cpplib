@@ -2,9 +2,6 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import
-  "leaf.scss","_base.scss","_highlight-dark.scss","_layout.scss","_layout-post.scss","_layout-home.scss","_layout-header.scss","_layout-footer.scss";
-
 .trigger{
   display: none;
 }
