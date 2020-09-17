@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: data_structure/test/LC_fast_set.test.cpp
+    title: data_structure/test/LC_fast_set.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -57,8 +60,9 @@ data:
   path: data_structure/fast_set.hpp
   requiredBy: []
   timestamp: '2020-09-17 09:30:53+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - data_structure/test/LC_fast_set.test.cpp
 documentation_of: data_structure/fast_set.hpp
 layout: document
 redirect_from:

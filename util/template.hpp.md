@@ -60,8 +60,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
+  - icon: ':x:'
+    path: data_structure/test/LC_fast_set.test.cpp
+    title: data_structure/test/LC_fast_set.test.cpp
+  - icon: ':x:'
+    path: data_structure/test/LC_birary_heap.test.hpp
+    title: data_structure/test/LC_birary_heap.test.hpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -129,7 +135,7 @@ data:
   requiredBy:
   - math/test/LC_sum_power_poly_limit.cpp
   timestamp: '2020-09-14 18:54:16+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - segment_tree/test/segment_tree.test.cpp
   - convolution/test/LC_convolution_1000000007.test.cpp
@@ -149,6 +155,8 @@ data:
   - string/test/YUKI_Aho_Corasick.test.cpp
   - string/test/LC_Z_algorizm.test.cpp
   - string/test/LC_online_Z_algorizm.test.cpp
+  - data_structure/test/LC_fast_set.test.cpp
+  - data_structure/test/LC_birary_heap.test.hpp
 documentation_of: util/template.hpp
 layout: document
 redirect_from:
