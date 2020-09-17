@@ -10,7 +10,6 @@ minima:
 plugins:
 - jemoji
 - jekyll-remote-theme
-remote_theme: hotman78/cpplib-theme
-theme: null
+theme: jekyll-theme-midnight
 timezone: Asia/Tokyo
 title: Hotman's Library
