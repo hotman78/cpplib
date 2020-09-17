@@ -1,4 +1,4 @@
-#define PROBLEM https://judge.yosupo.jp/problem/associative_array
+#define PROBLEM "https://judge.yosupo.jp/problem/associative_array"
 #include "../fast_set.hpp"
 #include "../../util/template.hpp"
 
