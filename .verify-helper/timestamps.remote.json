@@ -1,8 +1,7 @@
 {
 "convolution/test/LC_convolution_1000000007.test.cpp": "2020-09-14 22:49:35 +0900",
 "convolution/test/LC_convolution_998244353.test.cpp": "2020-09-14 19:36:00 +0900",
-"data_structure/dsu/union_find.test.cpp": "2020-09-11 11:38:51 +0900",
-"data_structure/segment_tree/segment_tree.test.cpp": "2020-09-14 18:54:16 +0900",
+"dsu/test/union_find.test.cpp": "2020-09-17 09:30:53 +0900",
 "math/test/AOJ_binary_search.test.cpp": "2020-09-14 18:54:16 +0900",
 "math/test/AOJ_is_prime.test.cpp": "2020-09-14 18:54:16 +0900",
 "math/test/AOJ_prime_factor.test.cpp": "2020-09-14 18:54:16 +0900",
