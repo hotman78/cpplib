@@ -2,7 +2,6 @@
 #include"../alga/maybe.hpp"
 /**
  * @brief Segment Tree
- * @docs docs/segment_tree.md
  * @see https://en.wikipedia.org/wiki/Segment_tree
  */
 template<typename T,typename F>
