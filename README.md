@@ -8,5 +8,4 @@ https://hotman78.github.io/cpplib/
 
 CC0ライセンスなので好きにコピーして下さい
 
-themeにうしさんの[minima](https://github.com/ei1333/minima)を使わせて頂いてます
-
+themeは[jekyll/minima](https://github.com/jekyll/minima)を改造した[hotman78/minima](https://github.com/hotman78/minima)を使っています
