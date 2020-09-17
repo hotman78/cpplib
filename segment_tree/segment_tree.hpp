@@ -1,5 +1,5 @@
 #pragma once
-#include"../../alga/maybe.hpp"
+#include"../alga/maybe.hpp"
 /**
  * @brief Segment Tree
  * @docs docs/segment_tree.md
