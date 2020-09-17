@@ -3,7 +3,8 @@
 ---
 
 @import
-  @import "jekyll-theme-midnight";
+  "jekyll-theme-leaf/_base.scss","jekyll-theme-leaf/_highlight-dark.scss";
+
 
 small {
   display: none;
