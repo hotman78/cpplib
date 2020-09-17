@@ -9,7 +9,7 @@ plugins:
 - jekyll-seo-tag
 
 theme: null 
-remote_theme: hotman78/minima
+remote_theme: ei1333/minima
  
 lang: ja
 
