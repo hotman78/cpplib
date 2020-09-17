@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #include "../../util/template.hpp"
-#include "segment_tree.hpp"
+#include "../segment_tree.hpp"
 
 int main(){
     lint n,q;
