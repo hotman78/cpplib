@@ -8,6 +8,10 @@ plugins:
 theme: null
 remote_theme: SupunKavinda/jekyll-theme-leaf
 
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+ 
 lang: ja
 
 timezone: Asia/Tokyo
