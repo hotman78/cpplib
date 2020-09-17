@@ -1,152 +1,308 @@
 ---
-layout: default
+data:
+  libraryCategories:
+  - name: BBST/AVL
+    pages:
+    - icon: ':warning:'
+      path: BBST/AVL/base.hpp
+      title: BBST/AVL/base.hpp
+    - icon: ':warning:'
+      path: BBST/AVL/set.hpp
+      title: BBST/AVL/set.hpp
+  - name: BBST/RBST
+    pages:
+    - icon: ':warning:'
+      path: BBST/RBST/base.hpp
+      title: BBST/RBST/base.hpp
+  - name: alga
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: alga/maybe.hpp
+      title: Maybe
+    - icon: ':warning:'
+      path: alga/monoid.hpp
+      title: alga/monoid.hpp
+  - name: convolution
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: convolution/FPS.hpp
+      title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
+    - icon: ':heavy_check_mark:'
+      path: convolution/FPS_base.hpp
+      title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
+  - name: data_structure
+    pages:
+    - icon: ':warning:'
+      path: data_structure/BIT.hpp
+      title: data_structure/BIT.hpp
+    - icon: ':warning:'
+      path: data_structure/CumulativeSum.hpp
+      title: data_structure/CumulativeSum.hpp
+    - icon: ':warning:'
+      path: data_structure/Li_Chao_tree.hpp
+      title: data_structure/Li_Chao_tree.hpp
+    - icon: ':warning:'
+      path: data_structure/RMQ.hpp
+      title: data_structure/RMQ.hpp
+    - icon: ':warning:'
+      path: data_structure/binary_heap.hpp
+      title: data_structure/binary_heap.hpp
+    - icon: ':warning:'
+      path: data_structure/binary_trie.hpp
+      title: data_structure/binary_trie.hpp
+    - icon: ':warning:'
+      path: data_structure/bitvector.hpp
+      title: data_structure/bitvector.hpp
+    - icon: ':warning:'
+      path: data_structure/cartesian_tree.hpp
+      title: data_structure/cartesian_tree.hpp
+    - icon: ':warning:'
+      path: data_structure/disjoint_sparse_table.hpp
+      title: data_structure/disjoint_sparse_table.hpp
+    - icon: ':warning:'
+      path: data_structure/fast_set.hpp
+      title: data_structure/fast_set.hpp
+    - icon: ':warning:'
+      path: data_structure/hash_map.hpp
+      title: data_structure/hash_map.hpp
+    - icon: ':warning:'
+      path: data_structure/kdtree.hpp
+      title: data_structure/kdtree.hpp
+    - icon: ':warning:'
+      path: data_structure/leftist_heap.hpp
+      title: data_structure/leftist_heap.hpp
+    - icon: ':warning:'
+      path: data_structure/skew_heap.hpp
+      title: data_structure/skew_heap.hpp
+    - icon: ':warning:'
+      path: data_structure/sparse_table.hpp
+      title: data_structure/sparse_table.hpp
+    - icon: ':warning:'
+      path: data_structure/sqrtd.hpp
+      title: data_structure/sqrtd.hpp
+    - icon: ':warning:'
+      path: data_structure/swag.hpp
+      title: data_structure/swag.hpp
+    - icon: ':warning:'
+      path: data_structure/trie.hpp
+      title: data_structure/trie.hpp
+    - icon: ':warning:'
+      path: data_structure/wavelet_matrix.hpp
+      title: data_structure/wavelet_matrix.hpp
+  - name: dsu
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: dsu/union_find.hpp
+      title: Union Find
+  - name: math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: math/binary_search.hpp
+      title: "\u4E8C\u5206\u63A2\u7D22"
+    - icon: ':warning:'
+      path: math/binary_search_double.hpp
+      title: "\u4E8C\u5206\u63A2\u7D22(double)"
+    - icon: ':warning:'
+      path: math/carmichael_function.hpp
+      title: "\u30AB\u30FC\u30DE\u30A4\u30B1\u30EB\u95A2\u6570"
+    - icon: ':warning:'
+      path: math/catalans_trapezoids.hpp
+      title: "\u30AB\u30BF\u30E9\u30F3\u53F0\u5F62"
+    - icon: ':heavy_check_mark:'
+      path: math/ceil_pow2.hpp
+      title: math/ceil_pow2.hpp
+    - icon: ':warning:'
+      path: math/comb.hpp
+      title: "\u4E8C\u9805\u4FC2\u6570 mod P"
+    - icon: ':warning:'
+      path: math/divisor_list.hpp
+      title: "\u7D04\u6570\u5217\u6319"
+    - icon: ':heavy_check_mark:'
+      path: math/euler_phi.hpp
+      title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
+    - icon: ':heavy_check_mark:'
+      path: math/floor_sum.hpp
+      title: \sum_{i=0}^{n-1}\floor(a*i+b/c)
+    - icon: ':heavy_check_mark:'
+      path: math/garner.hpp
+      title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
+    - icon: ':warning:'
+      path: math/get_monomials.hpp
+      title: math/get_monomials.hpp
+    - icon: ':heavy_check_mark:'
+      path: math/is_prime.hpp
+      title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
+    - icon: ':warning:'
+      path: math/lagrange_interpolation.hpp
+      title: "\u30E9\u30B0\u30E9\u30F3\u30B8\u30E5\u88DC\u5B8C(\u9023\u7D9A\u70B9\
+        ->\u4E00\u70B9)"
+    - icon: ':heavy_check_mark:'
+      path: math/mod_int.hpp
+      title: ModInt
+    - icon: ':heavy_check_mark:'
+      path: math/mod_int1000000007.hpp
+      title: ModInt(1'000'000'007)
+    - icon: ':heavy_check_mark:'
+      path: math/mod_int998244353.hpp
+      title: ModInt(998'244'353)
+    - icon: ':heavy_check_mark:'
+      path: math/mod_log.hpp
+      title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
+    - icon: ':heavy_check_mark:'
+      path: math/mod_pow.hpp
+      title: (x^y)%mod
+    - icon: ':heavy_check_mark:'
+      path: math/mod_sqrt.hpp
+      title: ModSqrt
+    - icon: ':warning:'
+      path: math/osa_k.hpp
+      title: "osa_k\u6CD5"
+    - icon: ':heavy_check_mark:'
+      path: math/prime_factor.hpp
+      title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
+    - icon: ':heavy_check_mark:'
+      path: math/prime_list.hpp
+      title: "\u7D20\u6570\u5217\u6319"
+    - icon: ':warning:'
+      path: math/stern_brocot_tree.cpp
+      title: math/stern_brocot_tree.cpp
+    - icon: ':warning:'
+      path: math/sum_power_poly.hpp
+      title: math/sum_power_poly.hpp
+    - icon: ':warning:'
+      path: math/sum_power_poly_limit.hpp
+      title: math/sum_power_poly_limit.hpp
+    - icon: ':heavy_check_mark:'
+      path: math/tetration.hpp
+      title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
+    - icon: ':heavy_check_mark:'
+      path: math/totient_sum.hpp
+      title: "\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\u306E\u548C"
+  - name: math/test
+    pages:
+    - icon: ':warning:'
+      path: math/test/LC_sum_power_poly_limit.cpp
+      title: math/test/LC_sum_power_poly_limit.cpp
+  - name: segment_tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: segment_tree/segment_tree.hpp
+      title: Segment Tree
+  - name: string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: string/AhoCorasick.hpp
+      title: "Aho-Corasick\u6CD5"
+    - icon: ':heavy_check_mark:'
+      path: string/Z_algorizm.hpp
+      title: "Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
+    - icon: ':warning:'
+      path: string/manacher.hpp
+      title: Manacher
+    - icon: ':heavy_check_mark:'
+      path: string/online_Zalgo.hpp
+      title: "\u30AA\u30F3\u30E9\u30A4\u30F3Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
+    - icon: ':warning:'
+      path: string/rolling_hash.hpp
+      title: "\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5"
+    - icon: ':warning:'
+      path: string/subseceqence.cpp
+      title: "\u90E8\u5206\u5217DP(WIP)"
+    - icon: ':warning:'
+      path: string/suffix_array.hpp
+      title: SuffixArray
+    - icon: ':warning:'
+      path: string/suffix_automaton.hpp
+      title: SuffixAutomaton
+    - icon: ':warning:'
+      path: string/trie.hpp
+      title: "Trie\u6728"
+  - name: util
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: util/ACL.hpp
+      title: util/ACL.hpp
+    - icon: ':warning:'
+      path: util/cpp_int.hpp
+      title: util/cpp_int.hpp
+    - icon: ':warning:'
+      path: util/pbds.hpp
+      title: util/pbds.hpp
+    - icon: ':heavy_check_mark:'
+      path: util/random_gen.hpp
+      title: util/random_gen.hpp
+    - icon: ':heavy_check_mark:'
+      path: util/template.hpp
+      title: util/template.hpp
+  verificationCategories:
+  - name: convolution/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: convolution/test/LC_convolution_1000000007.test.cpp
+      title: convolution/test/LC_convolution_1000000007.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: convolution/test/LC_convolution_998244353.test.cpp
+      title: convolution/test/LC_convolution_998244353.test.cpp
+  - name: dsu/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: dsu/test/union_find.test.cpp
+      title: dsu/test/union_find.test.cpp
+  - name: math/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: math/test/AOJ_binary_search.test.cpp
+      title: math/test/AOJ_binary_search.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/test/AOJ_is_prime.test.cpp
+      title: math/test/AOJ_is_prime.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/test/AOJ_prime_factor.test.cpp
+      title: math/test/AOJ_prime_factor.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/test/AOJ_prime_list.test.cpp
+      title: math/test/AOJ_prime_list.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/test/LC_floor_sum.test.cpp
+      title: math/test/LC_floor_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/test/LC_mod_log.test.cpp
+      title: math/test/LC_mod_log.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/test/LC_mod_sqrt.test.cpp
+      title: math/test/LC_mod_sqrt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/test/LC_prime_factor.test.cpp
+      title: math/test/LC_prime_factor.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/test/LC_tetration.test.cpp
+      title: math/test/LC_tetration.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: math/test/LC_totient_sum.test.cpp
+      title: math/test/LC_totient_sum.test.cpp
+  - name: segment_tree/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: segment_tree/test/segment_tree.test.cpp
+      title: segment_tree/test/segment_tree.test.cpp
+  - name: string/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: string/test/LC_Z_algorizm.test.cpp
+      title: string/test/LC_Z_algorizm.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: string/test/LC_online_Z_algorizm.test.cpp
+      title: string/test/LC_online_Z_algorizm.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: string/test/YUKI_Aho_Corasick.test.cpp
+      title: string/test/YUKI_Aho_Corasick.test.cpp
+  - name: util/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: util/test/LC_Number_of_Substrings.test.cpp
+      title: util/test/LC_Number_of_Substrings.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: util/test/LC_Suffix_Array.test.cpp
+      title: util/test/LC_Suffix_Array.test.cpp
+layout: toppage
 ---
-
-<!-- mathjax config similar to math.stackexchange -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" }},
-    tex2jax: {
-      inlineMath: [ ['$','$'] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { matchFontHeight: false },
-    displayAlign: "left",
-    displayIndent: "2em"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="assets/css/copy-button.css" />
-
-
-# {{ site.title }}
-
-[![Actions Status]({{ site.github.repository_url }}/workflows/verify/badge.svg)]({{ site.github.repository_url }}/actions)
-<a href="{{ site.github.repository_url }}"><img src="https://img.shields.io/github/last-commit/{{ site.github.owner_name }}/{{ site.github.repository_name }}" /></a>
-
-{% if site.github.project_tagline %}{{ site.github.project_tagline }}{% else %}This documentation is automatically generated by <a href="https://github.com/online-judge-tools/verification-helper">online-judge-tools/verification-helper</a>.{% endif %}
-
-## Library Files
-
-<div id="e6f47b8acce0ca7627e3018b3efad838"></div>
-
-### alga
-
-* :heavy_check_mark: <a href="library/alga/maybe.hpp.html">Maybe <small>(alga/maybe.hpp)</small></a>
-* :warning: <a href="library/alga/monoid.hpp.html">alga/monoid.hpp</a>
-
-
-<div id="a9595c1c24c33b16056d2ad07e71682d"></div>
-
-### convolution
-
-* :heavy_check_mark: <a href="library/convolution/FPS.hpp.html">形式的冪級数(ModInt) <small>(convolution/FPS.hpp)</small></a>
-* :heavy_check_mark: <a href="library/convolution/FPS_base.hpp.html">形式的冪級数(BASE) <small>(convolution/FPS_base.hpp)</small></a>
-
-
-<div id="b51445282e2a71a807e91edd8070e8ad"></div>
-
-### data_structure/BBST/RBST
-
-* :warning: <a href="library/data_structure/BBST/RBST/base.hpp.html">data_structure/BBST/RBST/base.hpp</a>
-
-
-<div id="7490ac1138b0c79126fd7a453fe0bd8b"></div>
-
-### data_structure/dsu
-
-* :heavy_check_mark: <a href="library/data_structure/dsu/union_find.hpp.html">Union Find <small>(data_structure/dsu/union_find.hpp)</small></a>
-
-
-<div id="fba856dbe1aaa5374a50a27f6dcea717"></div>
-
-### data_structure/segment_tree
-
-* :heavy_check_mark: <a href="library/data_structure/segment_tree/segment_tree.hpp.html">Segment Tree <small>(data_structure/segment_tree/segment_tree.hpp)</small></a>
-
-
-<div id="7e676e9e663beb40fd133f5ee24487c2"></div>
-
-### math
-
-* :heavy_check_mark: <a href="library/math/binary_search.hpp.html">二分探索 <small>(math/binary_search.hpp)</small></a>
-* :warning: <a href="library/math/binary_search_double.hpp.html">二分探索(double) <small>(math/binary_search_double.hpp)</small></a>
-* :warning: <a href="library/math/carmichael_function.hpp.html">カーマイケル関数 <small>(math/carmichael_function.hpp)</small></a>
-* :warning: <a href="library/math/catalans_trapezoids.hpp.html">カタラン台形 <small>(math/catalans_trapezoids.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/ceil_pow2.hpp.html">math/ceil_pow2.hpp</a>
-* :warning: <a href="library/math/comb.hpp.html">二項係数 mod P <small>(math/comb.hpp)</small></a>
-* :warning: <a href="library/math/divisor_list.hpp.html">約数列挙 <small>(math/divisor_list.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/euler_phi.hpp.html">オイラーのファイ関数 <small>(math/euler_phi.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/floor_sum.hpp.html">\sum_{i=0}^{n-1}\floor(a*i+b/c) <small>(math/floor_sum.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/garner.hpp.html">ガーナーのアルゴリズム <small>(math/garner.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/is_prime.hpp.html">素数判定(高速) <small>(math/is_prime.hpp)</small></a>
-* :warning: <a href="library/math/lagrange_interpolation.hpp.html">ラグランジュ補完(連続点->一点) <small>(math/lagrange_interpolation.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/mod_int.hpp.html">ModInt <small>(math/mod_int.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/mod_int1000000007.hpp.html">ModInt(1'000'000'007) <small>(math/mod_int1000000007.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/mod_int998244353.hpp.html">ModInt(998'244'353) <small>(math/mod_int998244353.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/mod_log.hpp.html">離散対数(ModLog) <small>(math/mod_log.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/mod_pow.hpp.html">(x^y)%mod <small>(math/mod_pow.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/mod_sqrt.hpp.html">ModSqrt <small>(math/mod_sqrt.hpp)</small></a>
-* :warning: <a href="library/math/osa_k.hpp.html">osa_k法 <small>(math/osa_k.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/prime_factor.hpp.html">素因数分解(高速) <small>(math/prime_factor.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/prime_list.hpp.html">素数列挙 <small>(math/prime_list.hpp)</small></a>
-* :warning: <a href="library/math/stern_brocot_tree.cpp.html">math/stern_brocot_tree.cpp</a>
-* :heavy_check_mark: <a href="library/math/tetration.hpp.html">テトレーション <small>(math/tetration.hpp)</small></a>
-* :heavy_check_mark: <a href="library/math/totient_sum.hpp.html">トーシェント関数の和 <small>(math/totient_sum.hpp)</small></a>
-
-
-<div id="b45cffe084dd3d20d928bee85e7b0f21"></div>
-
-### string
-
-* :heavy_check_mark: <a href="library/string/AhoCorasick.hpp.html">Aho-Corasick法 <small>(string/AhoCorasick.hpp)</small></a>
-* :heavy_check_mark: <a href="library/string/Z_algorizm.hpp.html">Zアルゴリズム <small>(string/Z_algorizm.hpp)</small></a>
-* :warning: <a href="library/string/manacher.hpp.html">Manacher <small>(string/manacher.hpp)</small></a>
-* :heavy_check_mark: <a href="library/string/online_Zalgo.hpp.html">オンラインZアルゴリズム <small>(string/online_Zalgo.hpp)</small></a>
-* :warning: <a href="library/string/rolling_hash.hpp.html">ローリングハッシュ <small>(string/rolling_hash.hpp)</small></a>
-* :warning: <a href="library/string/subseceqence.cpp.html">部分列DP(WIP) <small>(string/subseceqence.cpp)</small></a>
-* :warning: <a href="library/string/suffix_array.hpp.html">SuffixArray <small>(string/suffix_array.hpp)</small></a>
-* :warning: <a href="library/string/suffix_automaton.hpp.html">SuffixAutomaton <small>(string/suffix_automaton.hpp)</small></a>
-* :warning: <a href="library/string/trie.hpp.html">Trie木 <small>(string/trie.hpp)</small></a>
-
-
-<div id="05c7e24700502a079cdd88012b5a76d3"></div>
-
-### util
-
-* :heavy_check_mark: <a href="library/util/ACL.hpp.html">util/ACL.hpp</a>
-* :warning: <a href="library/util/cpp_int.hpp.html">util/cpp_int.hpp</a>
-* :warning: <a href="library/util/pbds.hpp.html">util/pbds.hpp</a>
-* :heavy_check_mark: <a href="library/util/random_gen.hpp.html">util/random_gen.hpp</a>
-* :heavy_check_mark: <a href="library/util/template.hpp.html">util/template.hpp</a>
-
-
-## Verify Files
-
-* :heavy_check_mark: <a href="verify/convolution/test/LC_convolution_1000000007.test.cpp.html">convolution/test/LC_convolution_1000000007.test.cpp</a>
-* :heavy_check_mark: <a href="verify/convolution/test/LC_convolution_998244353.test.cpp.html">convolution/test/LC_convolution_998244353.test.cpp</a>
-* :heavy_check_mark: <a href="verify/data_structure/dsu/union_find.test.cpp.html">data_structure/dsu/union_find.test.cpp</a>
-* :heavy_check_mark: <a href="verify/data_structure/segment_tree/segment_tree.test.cpp.html">data_structure/segment_tree/segment_tree.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/AOJ_binary_search.test.cpp.html">math/test/AOJ_binary_search.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/AOJ_is_prime.test.cpp.html">math/test/AOJ_is_prime.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/AOJ_prime_factor.test.cpp.html">math/test/AOJ_prime_factor.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/AOJ_prime_list.test.cpp.html">math/test/AOJ_prime_list.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/LC_floor_sum.test.cpp.html">math/test/LC_floor_sum.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/LC_mod_log.test.cpp.html">math/test/LC_mod_log.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/LC_mod_sqrt.test.cpp.html">math/test/LC_mod_sqrt.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/LC_prime_factor.test.cpp.html">math/test/LC_prime_factor.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/LC_tetration.test.cpp.html">math/test/LC_tetration.test.cpp</a>
-* :heavy_check_mark: <a href="verify/math/test/LC_totient_sum.test.cpp.html">math/test/LC_totient_sum.test.cpp</a>
-* :heavy_check_mark: <a href="verify/string/test/LC_Z_algorizm.test.cpp.html">string/test/LC_Z_algorizm.test.cpp</a>
-* :heavy_check_mark: <a href="verify/string/test/LC_online_Z_algorizm.test.cpp.html">string/test/LC_online_Z_algorizm.test.cpp</a>
-* :heavy_check_mark: <a href="verify/string/test/YUKI_Aho_Corasick.test.cpp.html">string/test/YUKI_Aho_Corasick.test.cpp</a>
-* :heavy_check_mark: <a href="verify/util/test/LC_Number_of_Substrings.test.cpp.html">util/test/LC_Number_of_Substrings.test.cpp</a>
-* :heavy_check_mark: <a href="verify/util/test/LC_Suffix_Array.test.cpp.html">util/test/LC_Suffix_Array.test.cpp</a>
-
-
