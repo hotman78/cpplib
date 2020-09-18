@@ -13,4 +13,4 @@ https://hotman78.github.io/cpplib/
 
 CC0ライセンスなので好きにコピーして下さい
 
-themeは[ei1333/minima](https://github.com/ei1333/minima)をforkしたものを使わせて頂いてます
+themeは[ei1333/minima](https://github.com/ei1333/minima)をforkして使わせて頂いてます
