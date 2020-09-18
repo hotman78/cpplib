@@ -52,7 +52,7 @@ std::vector<int> dominator_tree(std::vector<std::vector<int>>g,int s){
             }
         }
     }
-    uf_min uf(n);
+    uf_min<int> uf(n);
     std::vector<std::vector<int>>sdom_list(n+1);
     std::vector<int>u(n,-1);
     for(int i=n-1;i>=0;--i){
