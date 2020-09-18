@@ -85,7 +85,7 @@ data:
       title: SWAG(Queue)
     - icon: ':warning:'
       path: data_structure/trie.hpp
-      title: trie(WIP)
+      title: Trie(WIP)
     - icon: ':warning:'
       path: data_structure/wavelet_matrix.hpp
       title: WaveletMatrix(WIP)
@@ -190,16 +190,16 @@ data:
       title: Segment Tree
   - name: string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/AhoCorasick.hpp
       title: "Aho-Corasick\u6CD5"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/Z_algorizm.hpp
       title: "Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
       path: string/manacher.hpp
       title: Manacher
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/online_Zalgo.hpp
       title: "\u30AA\u30F3\u30E9\u30A4\u30F3Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
@@ -219,7 +219,7 @@ data:
       title: "Trie\u6728"
   - name: util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: util/ACL.hpp
       title: util/ACL.hpp
     - icon: ':warning:'
@@ -231,7 +231,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
@@ -245,12 +245,24 @@ data:
       title: convolution/test/LC_convolution_998244353.test.cpp
   - name: data_structure/test
     pages:
+    - icon: ':x:'
+      path: data_structure/test/LC_RMQ.test.cpp
+      title: data_structure/test/LC_RMQ.test.cpp
+    - icon: ':x:'
+      path: data_structure/test/LC_binary_indexed_tree.test.cpp
+      title: data_structure/test/LC_binary_indexed_tree.test.cpp
+    - icon: ':x:'
+      path: data_structure/test/LC_binary_trie.test.cpp
+      title: data_structure/test/LC_binary_trie.test.cpp
     - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_birary_heap.test.cpp
       title: data_structure/test/LC_birary_heap.test.cpp
     - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_fast_set.test.cpp
       title: data_structure/test/LC_fast_set.test.cpp
+    - icon: ':x:'
+      path: data_structure/test/LC_wavelet_matrix.test.cpp
+      title: data_structure/test/LC_wavelet_matrix.test.cpp
   - name: dsu/test
     pages:
     - icon: ':heavy_check_mark:'
@@ -295,21 +307,21 @@ data:
       title: segment_tree/test/segment_tree.test.cpp
   - name: string/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/test/LC_Z_algorizm.test.cpp
       title: string/test/LC_Z_algorizm.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/test/LC_online_Z_algorizm.test.cpp
       title: string/test/LC_online_Z_algorizm.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/test/YUKI_Aho_Corasick.test.cpp
       title: string/test/YUKI_Aho_Corasick.test.cpp
   - name: util/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: util/test/LC_Number_of_Substrings.test.cpp
       title: util/test/LC_Number_of_Substrings.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: util/test/LC_Suffix_Array.test.cpp
       title: util/test/LC_Suffix_Array.test.cpp
 layout: toppage

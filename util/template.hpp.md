@@ -15,10 +15,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/test/LC_convolution_998244353.test.cpp
     title: convolution/test/LC_convolution_998244353.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: util/test/LC_Number_of_Substrings.test.cpp
     title: util/test/LC_Number_of_Substrings.test.cpp
   - icon: ':heavy_check_mark:'
@@ -51,13 +51,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/test/LC_tetration.test.cpp
     title: math/test/LC_tetration.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/test/YUKI_Aho_Corasick.test.cpp
     title: string/test/YUKI_Aho_Corasick.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/test/LC_Z_algorizm.test.cpp
     title: string/test/LC_Z_algorizm.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
   - icon: ':heavy_check_mark:'
@@ -67,7 +67,7 @@ data:
     path: data_structure/test/LC_birary_heap.test.cpp
     title: data_structure/test/LC_birary_heap.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -87,9 +87,10 @@ data:
     \ i=0;i<t.size();i++)output(t[i]);}\n#define rep(i,...) for(auto i:range(__VA_ARGS__))\
     \ \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b)\
     \ for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n\
-    #define irep(i) for(lint i=0;;++i)\ninline vector<long long> range(long long n){vector<long\
-    \ long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline vector<long long> range(long\
-    \ long a,long long b){vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
+    #define irep(i) for(lint i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return\
+    \ vector<long long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b){if(b<=a)return\
+    \ vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
     \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
     \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
     \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
@@ -116,9 +117,10 @@ data:
     \ i=0;i<t.size();i++)output(t[i]);}\n#define rep(i,...) for(auto i:range(__VA_ARGS__))\
     \ \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b)\
     \ for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n\
-    #define irep(i) for(lint i=0;;++i)\ninline vector<long long> range(long long n){vector<long\
-    \ long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline vector<long long> range(long\
-    \ long a,long long b){vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
+    #define irep(i) for(lint i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return\
+    \ vector<long long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b){if(b<=a)return\
+    \ vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
     \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
     \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
     \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
@@ -134,8 +136,8 @@ data:
   path: util/template.hpp
   requiredBy:
   - math/test/LC_sum_power_poly_limit.cpp
-  timestamp: '2020-09-14 18:54:16+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-09-18 12:55:10+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - segment_tree/test/segment_tree.test.cpp
   - convolution/test/LC_convolution_1000000007.test.cpp

@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/ACL.hpp
     title: util/ACL.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
@@ -771,9 +771,10 @@ data:
     \ i=0;i<t.size();i++)output(t[i]);}\n#define rep(i,...) for(auto i:range(__VA_ARGS__))\
     \ \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b)\
     \ for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n\
-    #define irep(i) for(lint i=0;;++i)\ninline vector<long long> range(long long n){vector<long\
-    \ long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline vector<long long> range(long\
-    \ long a,long long b){vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
+    #define irep(i) for(lint i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return\
+    \ vector<long long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b){if(b<=a)return\
+    \ vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
     \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
     \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
     \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
@@ -795,8 +796,8 @@ data:
   isVerificationFile: true
   path: util/test/LC_Suffix_Array.test.cpp
   requiredBy: []
-  timestamp: '2020-09-14 22:49:35+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-18 12:55:10+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: util/test/LC_Suffix_Array.test.cpp
 layout: document

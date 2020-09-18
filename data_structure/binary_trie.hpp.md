@@ -23,11 +23,10 @@ data:
     \        return 1;\n    }\n    int count(u64 x){\n        np t=root;\n       \
     \ for(int i=B-1;i>=0;--i){\n            if(!t->ch[0])t->ch[0]=new node();\n  \
     \          if(!t->ch[1])t->ch[1]=new node();\n            t=t->ch[(x>>i)&1];\n\
-    \        }\n        return t->cnt;\n    }\n    u64 min_element(u64 x){\n     \
-    \   np t=root;\n        u64 res=0;\n        for(int i=B-1;i>=0;--i){\n       \
-    \     if(!t->ch[0])t->ch[0]=new node();\n            if(!t->ch[1])t->ch[1]=new\
-    \ node();\n            if(t->ch[(x>>i)&1]->cnt)t=t->ch[(x>>i)&1];\n          \
-    \  else{\n                t=t->ch[1-((x>>i)&1)];\n                res+=1ULL<<i;\n\
+    \        }\n        return t->cnt;\n    }\n    u64 xor_min(u64 x){\n        np\
+    \ t=root;\n        u64 res=0;\n        for(int i=B-1;i>=0;--i){\n            if(!t->ch[0])t->ch[0]=new\
+    \ node();\n            if(!t->ch[1])t->ch[1]=new node();\n            if(t->ch[(x>>i)&1]->cnt)t=t->ch[(x>>i)&1];\n\
+    \            else{\n                t=t->ch[1-((x>>i)&1)];\n                res+=1ULL<<i;\n\
     \            }\n        }\n        return res;\n    }\n};\n"
   code: "#pragma once\n#include<cstdint>\n\n/**\n * @brief BinaryTrie\n */\n\nstruct\
     \ binary_trie{\n    constexpr static int B=64;\n    using u64=std::uint64_t;\n\
@@ -42,17 +41,16 @@ data:
     \            t->cnt--;\n        }\n        return 1;\n    }\n    int count(u64\
     \ x){\n        np t=root;\n        for(int i=B-1;i>=0;--i){\n            if(!t->ch[0])t->ch[0]=new\
     \ node();\n            if(!t->ch[1])t->ch[1]=new node();\n            t=t->ch[(x>>i)&1];\n\
-    \        }\n        return t->cnt;\n    }\n    u64 min_element(u64 x){\n     \
-    \   np t=root;\n        u64 res=0;\n        for(int i=B-1;i>=0;--i){\n       \
-    \     if(!t->ch[0])t->ch[0]=new node();\n            if(!t->ch[1])t->ch[1]=new\
-    \ node();\n            if(t->ch[(x>>i)&1]->cnt)t=t->ch[(x>>i)&1];\n          \
-    \  else{\n                t=t->ch[1-((x>>i)&1)];\n                res+=1ULL<<i;\n\
+    \        }\n        return t->cnt;\n    }\n    u64 xor_min(u64 x){\n        np\
+    \ t=root;\n        u64 res=0;\n        for(int i=B-1;i>=0;--i){\n            if(!t->ch[0])t->ch[0]=new\
+    \ node();\n            if(!t->ch[1])t->ch[1]=new node();\n            if(t->ch[(x>>i)&1]->cnt)t=t->ch[(x>>i)&1];\n\
+    \            else{\n                t=t->ch[1-((x>>i)&1)];\n                res+=1ULL<<i;\n\
     \            }\n        }\n        return res;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data_structure/binary_trie.hpp
   requiredBy: []
-  timestamp: '2020-09-18 12:11:44+09:00'
+  timestamp: '2020-09-18 12:55:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data_structure/binary_trie.hpp
