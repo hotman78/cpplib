@@ -1,6 +1,7 @@
 #pragma once
 #include<vector>
 #include"graph_template.hpp"
+
 /**
  * @brief 重心分解
  */

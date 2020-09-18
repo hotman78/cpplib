@@ -1,24 +1,35 @@
 #pragma once
 #include<vector>
+#include<queue>
+#include<functional>
+#include<tuple>
+#include<limits>
+#include"graph_template.hpp"
 
 /**
  * @brief ダイクストラ O((E+V)logE)
  */
-template<typename E,typename T>
-std::vector<T> __dijkstra(vector<vector<pair<E,T>>> list,lint s,T inf){
-    std::priority_queue<pair<T,E>,vector<pair<T,E>>,greater<pair<T,E>>>que;
-    vector<T>diff(list.size(),inf);
-    diff[s]=0;
+
+template<typename T,typename F=std::less<T>>
+std::vector<T> dijkstra(const graph_w<T>& list,int s,T zero=0,T inf=std::numeric_limits<T>::max(),F f=F()){
+    std::priority_queue<std::pair<T,int>,std::vector<pair<T,int>>,std::greater<std::pair<T,int>>>que;
+    std::vector<T>diff(list.size(),inf);
+    diff[s]=zero;
     que.push(make_pair(T(),s));
     while(!que.empty()){
         auto d=que.top();
         que.pop();
-        T x;E now;
+        T x;
+        int now;
         tie(x,now)=d;
         for(auto d2:list[now]){
-            T sa;E to;
+            T sa;
+            int to;
             tie(to,sa)=d2;
-            if(chmin(diff[to],diff[now]+sa))que.emplace(diff[to],to);
+            if(f(diff[now]+sa,diff[to])){
+                diff[to]=diff[now]+sa;
+                que.emplace(diff[to],to);
+            }
         }
     }
     return diff;

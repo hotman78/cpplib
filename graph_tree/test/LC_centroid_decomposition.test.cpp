@@ -5,7 +5,7 @@
 #include "../../util/template.hpp"
 
 int main(){
-    lint n;
+    int n;
     cin>>n;
     graph g=load_tree0(n);
     centroid_decomposition cd(g);
