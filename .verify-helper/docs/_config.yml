@@ -7,7 +7,7 @@ plugins:
 - jekyll-remote-theme
 
 theme: null 
-remote_theme: ei1333/minima
+remote_theme: hotman78/minima
  
 lang: ja
 
