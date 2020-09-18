@@ -9,7 +9,7 @@ struct BIT{
     std::vector<long long> bit;
     int n;
     BIT(long long n):n(n){
-        //bit.resize(n+1,0);
+        bit.resize(n+1,0);
     }
     //0-indexed [0,x)-sum
     long long sum(long long x){
@@ -23,8 +23,7 @@ struct BIT{
     }
     //0-indexed
     void add(long long x,long long val){
-        ++x;
         if(x>=n)return;
-        for(long long i=x;i<=n;i+=i&-i)bit[i]+=val;
+        for(long long i=x+1;i<=n;i+=i&-i)bit[i]+=val;
     }
 };

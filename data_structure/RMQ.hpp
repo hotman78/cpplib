@@ -1,8 +1,10 @@
 #pragma once
 #include<assert.h>
 #include<vector>
+#include<stack>
 #include<numeric>
 #include<cmath>
+#include<algorithm>
 
 /**
  * @brief RMQ&amp;lt;O(N),O(1)&amp;gt;
@@ -18,9 +20,9 @@ class RMQ{
         public:
         small_rmq(std::vector<T> v):v(v){
             assert(v.size()<=64);
-            vector<int>tmp(v.size());
+            std::vector<int>tmp(v.size());
             table.resize(v.size(),0);
-            stack<T>stk;
+            std::stack<T>stk;
             for(int i=0;i<(int)v.size();++i){
                 tmp.resize(v.size());
                 while(!stk.empty()&&v[stk.top()]>=v[i]){
@@ -34,7 +36,7 @@ class RMQ{
             }
         }
         T query(int l,int r){
-            if(l==r)return numeric_limits<T>::max();
+            if(l==r)return std::numeric_limits<T>::max();
             const u64 tmp=table[r-1]&~((1ULL<<l)-1);
             if(tmp==0)return v[r-1];
             else return v[__builtin_ctzll(tmp)];
@@ -45,7 +47,7 @@ class RMQ{
         public:
         sparse_table(std::vector<T> v){
             int n=v.size(),log=log2(n)+1;
-            data.resize(n,vector<T>(log));
+            data.resize(n,std::vector<T>(log));
             for(int i=0;i<n;i++)data[i][0]=v[i];
             for(int j=1;j<log;j++)for(int i=0;i+(1<<(j-1))<n;i++){
                 data[i][j]=f(data[i][j-1],data[i+(1<<(j-1))][j-1]);
@@ -53,7 +55,7 @@ class RMQ{
         }
         T get(int l,int r){
             if(l==r)return std::numeric_limits<T>::max();
-            if(r<l)swap(l,r);
+            if(r<l)std::swap(l,r);
             int k=log2(r-l);
             return f(data[l][k],data[r-(1<<k)][k]);
         }

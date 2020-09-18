@@ -1,3 +1,3 @@
 /**
- * @brief trie(WIP)
+ * @brief Trie(WIP)
  */

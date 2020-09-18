@@ -45,7 +45,7 @@ struct binary_trie{
         }
         return t->cnt;
     }
-    u64 min_element(u64 x){
+    u64 xor_min(u64 x){
         np t=root;
         u64 res=0;
         for(int i=B-1;i>=0;--i){
