@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: functional/MIN.hpp
     title: "\u6700\u5C0F\u5024"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

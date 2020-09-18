@@ -123,7 +123,7 @@ data:
     - icon: ':warning:'
       path: graph_tree/bellmanFord.hpp
       title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5(WIP)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph_tree/centroid_decomposition.hpp
       title: "\u91CD\u5FC3\u5206\u89E3"
     - icon: ':warning:'
@@ -141,7 +141,7 @@ data:
     - icon: ':warning:'
       path: graph_tree/fast_dijkstra.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O(E+VlogE)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph_tree/graph_template.hpp
       title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
@@ -186,10 +186,10 @@ data:
       title: 2-SAT
   - name: math
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/FPS_base.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/FPS_long.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
     - icon: ':heavy_check_mark:'
@@ -207,7 +207,7 @@ data:
     - icon: ':warning:'
       path: math/catalans_trapezoids.hpp
       title: "\u30AB\u30BF\u30E9\u30F3\u53F0\u5F62"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/ceil_pow2.hpp
       title: math/ceil_pow2.hpp
     - icon: ':warning:'
@@ -222,7 +222,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/floor_sum.hpp
       title: \sum_{i=0}^{n-1}\floor(a*i+b/c)
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/garner.hpp
       title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
@@ -247,7 +247,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/mod_log.hpp
       title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_pow.hpp
       title: (x^y)%mod
     - icon: ':heavy_check_mark:'
@@ -318,7 +318,7 @@ data:
       title: "Trie\u6728"
   - name: util
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: util/ACL.hpp
       title: util/ACL.hpp
     - icon: ':warning:'
@@ -330,7 +330,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
@@ -379,7 +379,7 @@ data:
       title: dsu/test/union_find.test.cpp
   - name: graph_tree/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph_tree/test/LC_centroid_decomposition.test.cpp
       title: graph_tree/test/LC_centroid_decomposition.test.cpp
   - name: math/test

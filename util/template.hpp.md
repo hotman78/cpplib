@@ -60,7 +60,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
     title: graph_tree/test/LC_centroid_decomposition.test.cpp
   - icon: ':heavy_check_mark:'
@@ -100,7 +100,7 @@ data:
     path: data_structure/test/LC_wavelet_matrix.test.cpp
     title: data_structure/test/LC_wavelet_matrix.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -170,7 +170,7 @@ data:
   requiredBy:
   - math/test/LC_sum_power_poly_limit.cpp
   timestamp: '2020-09-18 12:55:10+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - segment_tree/test/segment_tree.test.cpp
   - util/test/LC_Suffix_Array.test.cpp
