@@ -33,62 +33,62 @@ data:
   - name: data_structure
     pages:
     - icon: ':warning:'
-      path: data_structure/BIT.hpp
-      title: data_structure/BIT.hpp
-    - icon: ':warning:'
-      path: data_structure/CumulativeSum.hpp
-      title: data_structure/CumulativeSum.hpp
-    - icon: ':warning:'
-      path: data_structure/Li_Chao_tree.hpp
-      title: data_structure/Li_Chao_tree.hpp
-    - icon: ':warning:'
       path: data_structure/RMQ.hpp
-      title: data_structure/RMQ.hpp
+      title: <O(N),O(1)>RMQ
     - icon: ':heavy_check_mark:'
       path: data_structure/binary_heap.hpp
-      title: data_structure/binary_heap.hpp
+      title: "\u30D0\u30A4\u30CA\u30EA\u30FC\u30D2\u30FC\u30D7"
+    - icon: ':warning:'
+      path: data_structure/binary_indexed_tree.hpp
+      title: BinaryIndexedTree
     - icon: ':warning:'
       path: data_structure/binary_trie.hpp
-      title: data_structure/binary_trie.hpp
+      title: "\u30D0\u30A4\u30CA\u30EA\u30FC\u30C8\u30E9\u30A4"
     - icon: ':warning:'
-      path: data_structure/bitvector.hpp
-      title: data_structure/bitvector.hpp
+      path: data_structure/bit_vector.hpp
+      title: "\u30D3\u30C3\u30C8\u30D9\u30AF\u30BF\u30FC"
     - icon: ':warning:'
       path: data_structure/cartesian_tree.hpp
-      title: data_structure/cartesian_tree.hpp
+      title: cartesian_tree
+    - icon: ':warning:'
+      path: data_structure/cumulative_sum.hpp
+      title: "\u7D2F\u7A4D\u548C(WIP)"
     - icon: ':warning:'
       path: data_structure/disjoint_sparse_table.hpp
-      title: data_structure/disjoint_sparse_table.hpp
+      title: DisjointSparseTable
     - icon: ':heavy_check_mark:'
       path: data_structure/fast_set.hpp
-      title: data_structure/fast_set.hpp
+      title: "FastSet(\u9045\u3044)"
     - icon: ':warning:'
       path: data_structure/hash_map.hpp
-      title: data_structure/hash_map.hpp
+      title: HashMap(WIP)
     - icon: ':warning:'
-      path: data_structure/kdtree.hpp
-      title: data_structure/kdtree.hpp
+      path: data_structure/kd_tree.hpp
+      title: "Kd\u6728(WIP)"
     - icon: ':warning:'
       path: data_structure/leftist_heap.hpp
-      title: data_structure/leftist_heap.hpp
+      title: "\u30DE\u30FC\u30B8\u53EF\u80FD\u30D2\u30FC\u30D7(LeftistHeap)"
+    - icon: ':warning:'
+      path: data_structure/li_chao_tree.hpp
+      title: LiChaoTree
     - icon: ':warning:'
       path: data_structure/skew_heap.hpp
-      title: data_structure/skew_heap.hpp
+      title: "\u30DE\u30FC\u30B8\u53EF\u80FD\u30D2\u30FC\u30D7(SkewHeap)"
     - icon: ':warning:'
       path: data_structure/sparse_table.hpp
-      title: data_structure/sparse_table.hpp
+      title: SparseTable
     - icon: ':warning:'
       path: data_structure/sqrtd.hpp
-      title: data_structure/sqrtd.hpp
+      title: "\u5E73\u65B9\u5206\u5272(WIP)"
     - icon: ':warning:'
       path: data_structure/swag.hpp
-      title: data_structure/swag.hpp
+      title: SWAG(Queue)
     - icon: ':warning:'
       path: data_structure/trie.hpp
-      title: data_structure/trie.hpp
+      title: trie(WIP)
     - icon: ':warning:'
       path: data_structure/wavelet_matrix.hpp
-      title: data_structure/wavelet_matrix.hpp
+      title: WaveletMatrix(WIP)
   - name: dsu
     pages:
     - icon: ':heavy_check_mark:'

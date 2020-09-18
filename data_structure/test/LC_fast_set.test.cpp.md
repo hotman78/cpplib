@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data_structure/fast_set.hpp
-    title: data_structure/fast_set.hpp
+    title: "FastSet(\u9045\u3044)"
   - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
@@ -19,10 +19,11 @@ data:
   bundledCode: "#line 1 \"data_structure/test/LC_fast_set.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/associative_array\"\n#line 2 \"data_structure/fast_set.hpp\"\
     \n#include<cstdint>\n#include<vector>\n#include<tuple>\n#include<algorithm>\n\
-    #include <cassert>\n#include<iostream>\n\ntemplate<typename T>\nstruct fast_set{\n\
-    \tconstexpr static int B=4;\n    constexpr static int S=(1<<B);\n\tstruct node{\n\
-    \t\tT val=0;\n        bool b=0;\n\t\tnode* ch[S]={};\n        static int node_count;\n\
-    \        void* operator new(std::size_t){\n            static node* pool=(node*)malloc(4096*sizeof(node));\n\
+    #include <cassert>\n#include<iostream>\n\n/**\n * @brief FastSet(\u9045\u3044\
+    )\n */\n\ntemplate<typename T>\nstruct fast_set{\n\tconstexpr static int B=4;\n\
+    \    constexpr static int S=(1<<B);\n\tstruct node{\n\t\tT val=0;\n        bool\
+    \ b=0;\n\t\tnode* ch[S]={};\n        static int node_count;\n        void* operator\
+    \ new(std::size_t){\n            static node* pool=(node*)malloc(4096*sizeof(node));\n\
     \            if(node_count==4096){\n                node_count=0;\n          \
     \      pool=(node*)malloc(4096*sizeof(node));\n            }\n            return\
     \ pool + node_count++;\n        }\n        node(){}\n\t};\n\tusing np=node*;\n\
@@ -85,7 +86,7 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_fast_set.test.cpp
   requiredBy: []
-  timestamp: '2020-09-17 10:15:19+09:00'
+  timestamp: '2020-09-18 12:01:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_fast_set.test.cpp
