@@ -1,7 +1,7 @@
 #pragma once
 
 /**
- * @brief ビットベクター
+ * @brief BitVector
  */
 
 class bitvec{

@@ -4,7 +4,7 @@
 #include<functional>
 
 /**
- * @brief バイナリーヒープ
+ * @brief BinaryHeap
  */
 
 template<typename T,typename F=std::less<T>>

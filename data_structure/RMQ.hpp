@@ -5,7 +5,7 @@
 #include<cmath>
 
 /**
- * @brief <O(N),O(1)>RMQ
+ * @brief &amp;lt;O(N),O(1)&amp;gt;RMQ
  * @see https://noshi91.hatenablog.com/entry/2018/08/16/125415
  */
 

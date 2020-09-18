@@ -2,7 +2,7 @@
 #include<cstdint>
 
 /**
- * @brief バイナリートライ
+ * @brief BinaryTrie
  */
 
 struct binary_trie{
