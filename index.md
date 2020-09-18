@@ -32,6 +32,12 @@ data:
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
   - name: data_structure
     pages:
+    - icon: ':warning:'
+      path: data_structure/HLD_lazy.hpp
+      title: data_structure/HLD_lazy.hpp
+    - icon: ':warning:'
+      path: data_structure/HLD_seg.hpp
+      title: data_structure/HLD_seg.hpp
     - icon: ':heavy_check_mark:'
       path: data_structure/RMQ.hpp
       title: RMQ&amp;lt;O(N),O(1)&amp;gt;
@@ -56,6 +62,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/disjoint_sparse_table.hpp
       title: DisjointSparseTable
+    - icon: ':warning:'
+      path: data_structure/euler_tour_tree.hpp
+      title: data_structure/euler_tour_tree.hpp
     - icon: ':heavy_check_mark:'
       path: data_structure/fast_set.hpp
       title: "FastSet(\u9045\u3044)"
@@ -71,6 +80,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/li_chao_tree.hpp
       title: LiChaoTree
+    - icon: ':warning:'
+      path: data_structure/link_cut_tree.hpp
+      title: data_structure/link_cut_tree.hpp
     - icon: ':warning:'
       path: data_structure/skew_heap.hpp
       title: "\u30DE\u30FC\u30B8\u53EF\u80FD\u30D2\u30FC\u30D7(SkewHeap)"
@@ -91,6 +103,9 @@ data:
       title: WaveletMatrix(WIP)
   - name: dsu
     pages:
+    - icon: ':warning:'
+      path: dsu/uf_min.hpp
+      title: dsu/uf_min.hpp
     - icon: ':heavy_check_mark:'
       path: dsu/union_find.hpp
       title: Union Find
@@ -111,6 +126,72 @@ data:
     - icon: ':heavy_check_mark:'
       path: functional/composite.hpp
       title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
+  - name: graph_tree
+    pages:
+    - icon: ':warning:'
+      path: graph_tree/bellmanFord.hpp
+      title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5(WIP)"
+    - icon: ':warning:'
+      path: graph_tree/centroid_decomposition.hpp
+      title: "\u91CD\u5FC3\u5206\u89E3"
+    - icon: ':warning:'
+      path: graph_tree/child_size.hpp
+      title: "\u90E8\u5206\u6728\u306E\u5927\u304D\u3055"
+    - icon: ':warning:'
+      path: graph_tree/depth.hpp
+      title: "\u6839\u304B\u3089\u306E\u6DF1\u3055"
+    - icon: ':warning:'
+      path: graph_tree/dijkstra.hpp
+      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O((E+V)logE)"
+    - icon: ':warning:'
+      path: graph_tree/dominator_tree.hpp
+      title: "\u652F\u914D\u6728"
+    - icon: ':warning:'
+      path: graph_tree/fast_dijkstra.hpp
+      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O(E+VlogE)"
+    - icon: ':warning:'
+      path: graph_tree/graph_template.hpp
+      title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
+    - icon: ':warning:'
+      path: graph_tree/lca.hpp
+      title: LCA &amp;lt;O(N),O(1)&amp;gt;
+    - icon: ':warning:'
+      path: graph_tree/lca_short.hpp
+      title: "LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;"
+    - icon: ':warning:'
+      path: graph_tree/max_flow.hpp
+      title: "max_flow(Dinic\u6CD5)"
+    - icon: ':warning:'
+      path: graph_tree/maximum_independent_set.hpp
+      title: "\u6700\u5927\u72EC\u7ACB\u96C6\u5408(V<=50)"
+    - icon: ':warning:'
+      path: graph_tree/min_cost_flow.hpp
+      title: "\u6700\u5C0F\u8CBB\u7528\u6D41(CostScaling)"
+    - icon: ':warning:'
+      path: graph_tree/min_cost_flow_ei.hpp
+      title: "\u3046\u3057\u3055\u3093\u304B\u3089\u30D1\u30AF\u3063\u3066\u304D\u305F\
+        \u6700\u5C0F\u8CBB\u7528\u6D41"
+    - icon: ':warning:'
+      path: graph_tree/reroot.hpp
+      title: "\u5168\u65B9\u4F4D\u6728DP"
+    - icon: ':warning:'
+      path: graph_tree/scc.hpp
+      title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
+    - icon: ':warning:'
+      path: graph_tree/top_tree.hpp
+      title: graph_tree/top_tree.hpp
+    - icon: ':warning:'
+      path: graph_tree/topological_sort.hpp
+      title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
+    - icon: ':warning:'
+      path: graph_tree/tree_fold.hpp
+      title: "\u6728\u4E0A\u306E\u7573\u307F\u8FBC\u307F(WIP)"
+    - icon: ':warning:'
+      path: graph_tree/two_edge_connectivity.hpp
+      title: "\u4E8C\u8FBA\u9023\u7D50\u6210\u5206\u5206\u89E3"
+    - icon: ':warning:'
+      path: graph_tree/two_sat.hpp
+      title: 2-SAT
   - name: math
     pages:
     - icon: ':heavy_check_mark:'

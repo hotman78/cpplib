@@ -8,6 +8,9 @@ data:
   - icon: ':warning:'
     path: alga/monoid.hpp
     title: alga/monoid.hpp
+  - icon: ':warning:'
+    path: graph_tree/min_cost_flow.hpp
+    title: "\u6700\u5C0F\u8CBB\u7528\u6D41(CostScaling)"
   - icon: ':heavy_check_mark:'
     path: data_structure/swag.hpp
     title: SWAG(Queue)
@@ -50,6 +53,7 @@ data:
   requiredBy:
   - segment_tree/segment_tree.hpp
   - alga/monoid.hpp
+  - graph_tree/min_cost_flow.hpp
   - data_structure/swag.hpp
   timestamp: '2020-09-18 14:44:21+09:00'
   verificationStatus: LIBRARY_ALL_AC

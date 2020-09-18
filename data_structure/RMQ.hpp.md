@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: graph_tree/lca.hpp
+    title: LCA &amp;lt;O(N),O(1)&amp;gt;
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_RMQ.test.cpp
@@ -85,7 +88,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data_structure/RMQ.hpp
-  requiredBy: []
+  requiredBy:
+  - graph_tree/lca.hpp
   timestamp: '2020-09-18 12:55:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
