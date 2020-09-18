@@ -8,15 +8,14 @@
  * @brief SparseTable
  */
 
-template<typename T>
+template<typename T,typename F>
 class sparse_table{
-    using F=std::function<T(T,T)>;
     F f;
     std::vector<std::vector<T>>data;
     public:
-    sparse_table(std::vector<T> v,F f):f(f){
+    sparse_table(std::vector<T> v,F f=F()):f(f){
         int n=v.size(),log=log2(n)+1;
-        data.resize(n,vector<T>(log));
+        data.resize(n,std::vector<T>(log));
         for(int i=0;i<n;i++)data[i][0]=v[i];
         for(int j=1;j<log;j++)for(int i=0;i+(1<<(j-1))<n;i++){
             data[i][j]=f(data[i][j-1],data[i+(1<<(j-1))][j-1]);
