@@ -74,7 +74,7 @@ data:
     - icon: ':warning:'
       path: data_structure/skew_heap.hpp
       title: "\u30DE\u30FC\u30B8\u53EF\u80FD\u30D2\u30FC\u30D7(SkewHeap)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/sparse_table.hpp
       title: SparseTable
     - icon: ':warning:'
@@ -94,6 +94,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: dsu/union_find.hpp
       title: Union Find
+  - name: functional
+    pages:
+    - icon: ':warning:'
+      path: functional/MAX.hpp
+      title: functional/MAX.hpp
+    - icon: ':heavy_check_mark:'
+      path: functional/MIN.hpp
+      title: functional/MIN.hpp
+    - icon: ':warning:'
+      path: functional/argmax.hpp
+      title: functional/argmax.hpp
+    - icon: ':warning:'
+      path: functional/argmin.hpp
+      title: functional/argmin.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -272,6 +286,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_segment_add_get_min.test.cpp
       title: data_structure/test/LC_segment_add_get_min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: data_structure/test/LC_sparse_table.test.cpp
+      title: data_structure/test/LC_sparse_table.test.cpp
     - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_wavelet_matrix.test.cpp
       title: data_structure/test/LC_wavelet_matrix.test.cpp
