@@ -51,7 +51,7 @@ data:
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
     \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
-    \ 1 \"alga/maybe.hpp\"\n/**\n * @brief Maybe\n * @see https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8A%E3%83%89_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)#Maybe%E3%83%A2%E3%83%8A%E3%83%89\n\
+    \ 3 \"alga/maybe.hpp\"\n\n/**\n * @brief Maybe\n * @see https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8A%E3%83%89_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)#Maybe%E3%83%A2%E3%83%8A%E3%83%89\n\
     \ */\n\ntemplate<typename T>\nstruct maybe{\n    bool _is_none;\n    T val;\n\
     \    maybe():_is_none(true){}\n    maybe(T val):_is_none(false),val(val){}\n \
     \   T unwrap()const{\n        assert(!_is_none);\n        return val;\n    }\n\
@@ -102,7 +102,7 @@ data:
   isVerificationFile: true
   path: segment_tree/test/segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-18 12:55:10+09:00'
+  timestamp: '2020-09-18 14:44:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: segment_tree/test/segment_tree.test.cpp

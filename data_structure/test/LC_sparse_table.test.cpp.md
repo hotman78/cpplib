@@ -6,7 +6,7 @@ data:
     title: SparseTable
   - icon: ':heavy_check_mark:'
     path: functional/MIN.hpp
-    title: functional/MIN.hpp
+    title: "\u6700\u5C0F\u5024"
   - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
@@ -30,10 +30,11 @@ data:
     \        }\n    }\n    T get(int l,int r){\n        if(r<l)std::swap(l,r);\n \
     \       //assert(0<l||r<=(T)data.size());\n        int k=std::log2(r-l);\n   \
     \     return f(data[l][k],data[r-(1<<k)][k]);\n    }\n};\n#line 3 \"functional/MIN.hpp\"\
-    \n\ntemplate<typename T>\nstruct MIN{\n    T operator()(const T& s,const T& t){\n\
-    \        return std::min(s,t);\n    }\n};\n#line 2 \"util/template.hpp\"\n#pragma\
-    \ GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"unroll-loops\")\n#pragma GCC\
-    \ target(\"avx\")\n#include<bits/stdc++.h>\nusing namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
+    \n\n/**\n * @brief \u6700\u5C0F\u5024\n */\n\ntemplate<typename T>\nstruct MIN{\n\
+    \    T operator()(const T& s,const T& t){\n        return std::min(s,t);\n   \
+    \ }\n};\n#line 2 \"util/template.hpp\"\n#pragma GCC optimize(\"Ofast\")\n#pragma\
+    \ GCC optimize(\"unroll-loops\")\n#pragma GCC target(\"avx\")\n#include<bits/stdc++.h>\n\
+    using namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
     \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
@@ -77,7 +78,7 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_sparse_table.test.cpp
   requiredBy: []
-  timestamp: '2020-09-18 14:18:22+09:00'
+  timestamp: '2020-09-18 14:44:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_sparse_table.test.cpp

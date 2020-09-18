@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/test/LC_totient_sum.test.cpp
     title: math/test/LC_totient_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_swag.test.cpp
+    title: data_structure/test/LC_swag.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -134,6 +137,7 @@ data:
   - convolution/test/LC_convolution_1000000007.test.cpp
   - convolution/test/LC_convolution_998244353.test.cpp
   - math/test/LC_totient_sum.test.cpp
+  - data_structure/test/LC_swag.test.cpp
 documentation_of: math/mod_int.hpp
 layout: document
 redirect_from:

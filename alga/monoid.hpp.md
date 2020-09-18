@@ -11,7 +11,8 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
-  bundledCode: "#line 1 \"alga/maybe.hpp\"\n/**\n * @brief Maybe\n * @see https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8A%E3%83%89_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)#Maybe%E3%83%A2%E3%83%8A%E3%83%89\n\
+  bundledCode: "#line 2 \"alga/maybe.hpp\"\n#include<cassert>\n\n/**\n * @brief Maybe\n\
+    \ * @see https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8A%E3%83%89_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)#Maybe%E3%83%A2%E3%83%8A%E3%83%89\n\
     \ */\n\ntemplate<typename T>\nstruct maybe{\n    bool _is_none;\n    T val;\n\
     \    maybe():_is_none(true){}\n    maybe(T val):_is_none(false),val(val){}\n \
     \   T unwrap()const{\n        assert(!_is_none);\n        return val;\n    }\n\
@@ -38,7 +39,7 @@ data:
   isVerificationFile: false
   path: alga/monoid.hpp
   requiredBy: []
-  timestamp: '2020-09-17 09:48:35+09:00'
+  timestamp: '2020-09-18 14:44:21+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: alga/monoid.hpp

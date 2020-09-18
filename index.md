@@ -80,7 +80,7 @@ data:
     - icon: ':warning:'
       path: data_structure/sqrtd.hpp
       title: "\u5E73\u65B9\u5206\u5272(WIP)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/swag.hpp
       title: SWAG(Queue)
     - icon: ':warning:'
@@ -98,16 +98,19 @@ data:
     pages:
     - icon: ':warning:'
       path: functional/MAX.hpp
-      title: functional/MAX.hpp
+      title: "\u6700\u5927\u5024"
     - icon: ':heavy_check_mark:'
       path: functional/MIN.hpp
-      title: functional/MIN.hpp
+      title: "\u6700\u5C0F\u5024"
     - icon: ':warning:'
       path: functional/argmax.hpp
-      title: functional/argmax.hpp
+      title: "\u6700\u5927\u5024\u3068\u305D\u306E\u4F4D\u7F6E"
     - icon: ':warning:'
       path: functional/argmin.hpp
-      title: functional/argmin.hpp
+      title: "\u6700\u5C0F\u5024\u3068\u305D\u306E\u4F4D\u7F6E"
+    - icon: ':heavy_check_mark:'
+      path: functional/composite.hpp
+      title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -289,6 +292,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_sparse_table.test.cpp
       title: data_structure/test/LC_sparse_table.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: data_structure/test/LC_swag.test.cpp
+      title: data_structure/test/LC_swag.test.cpp
     - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_wavelet_matrix.test.cpp
       title: data_structure/test/LC_wavelet_matrix.test.cpp

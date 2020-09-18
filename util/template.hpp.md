@@ -67,6 +67,9 @@ data:
     path: data_structure/test/LC_fast_set.test.cpp
     title: data_structure/test/LC_fast_set.test.cpp
   - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_swag.test.cpp
+    title: data_structure/test/LC_swag.test.cpp
+  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_binary_indexed_tree.test.cpp
     title: data_structure/test/LC_binary_indexed_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -186,6 +189,7 @@ data:
   - string/test/LC_online_Z_algorizm.test.cpp
   - data_structure/test/LC_sparse_table.test.cpp
   - data_structure/test/LC_fast_set.test.cpp
+  - data_structure/test/LC_swag.test.cpp
   - data_structure/test/LC_binary_indexed_tree.test.cpp
   - data_structure/test/LC_birary_heap.test.cpp
   - data_structure/test/LC_cartesian_tree.test.cpp
