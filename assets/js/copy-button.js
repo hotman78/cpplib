@@ -1,4 +1,5 @@
-window.addEventListener('load', function(){
+'use strict';
+$(function() {
     const unbundle = function () {
         $('#unbundled').each(function(index, element) {
             $(element).parent().next().show();
