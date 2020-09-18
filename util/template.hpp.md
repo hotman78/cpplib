@@ -76,6 +76,12 @@ data:
     path: data_structure/test/LC_binary_trie.test.cpp
     title: data_structure/test/LC_binary_trie.test.cpp
   - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_segment_add_get_min.test.cpp
+    title: data_structure/test/LC_segment_add_get_min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_line_add_get_min.test.cpp
+    title: data_structure/test/LC_line_add_get_min.test.cpp
+  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_disjoint_sparse_table.test.cpp
     title: data_structure/test/LC_disjoint_sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
@@ -180,6 +186,8 @@ data:
   - data_structure/test/LC_birary_heap.test.cpp
   - data_structure/test/LC_cartesian_tree.test.cpp
   - data_structure/test/LC_binary_trie.test.cpp
+  - data_structure/test/LC_segment_add_get_min.test.cpp
+  - data_structure/test/LC_line_add_get_min.test.cpp
   - data_structure/test/LC_disjoint_sparse_table.test.cpp
   - data_structure/test/LC_RMQ.test.cpp
   - data_structure/test/LC_wavelet_matrix.test.cpp

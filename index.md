@@ -68,7 +68,7 @@ data:
     - icon: ':warning:'
       path: data_structure/leftist_heap.hpp
       title: "\u30DE\u30FC\u30B8\u53EF\u80FD\u30D2\u30FC\u30D7(LeftistHeap)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/li_chao_tree.hpp
       title: LiChaoTree
     - icon: ':warning:'
@@ -266,6 +266,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_fast_set.test.cpp
       title: data_structure/test/LC_fast_set.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: data_structure/test/LC_line_add_get_min.test.cpp
+      title: data_structure/test/LC_line_add_get_min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: data_structure/test/LC_segment_add_get_min.test.cpp
+      title: data_structure/test/LC_segment_add_get_min.test.cpp
     - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_wavelet_matrix.test.cpp
       title: data_structure/test/LC_wavelet_matrix.test.cpp
