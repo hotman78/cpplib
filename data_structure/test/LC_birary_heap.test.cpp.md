@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data_structure/binary_heap.hpp
-    title: "\u30D0\u30A4\u30CA\u30EA\u30FC\u30D2\u30FC\u30D7"
+    title: BinaryHeap
   - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
@@ -19,10 +19,9 @@ data:
   bundledCode: "#line 1 \"data_structure/test/LC_birary_heap.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/shortest_path\"\n#line 2 \"data_structure/binary_heap.hpp\"\
     \n#include<vector>\n#include<algorithm>\n#include<functional>\n\n/**\n * @brief\
-    \ \u30D0\u30A4\u30CA\u30EA\u30FC\u30D2\u30FC\u30D7\n */\n\ntemplate<typename T,typename\
-    \ F=std::less<T>>\nstruct binary_heap{\n\tint idx=1;\n\tstruct node{\n\t\tint\
-    \ idx;\n\t\tT val;\n\t\tnode(int idx,T val):idx(idx),val(val){}\n\t};\n\tusing\
-    \ np=node*;\n\tstd::vector<np>v;\n\tF comp;\n\tbinary_heap(F comp):v(2,0),comp(comp){}\n\
+    \ BinaryHeap\n */\n\ntemplate<typename T,typename F=std::less<T>>\nstruct binary_heap{\n\
+    \tint idx=1;\n\tstruct node{\n\t\tint idx;\n\t\tT val;\n\t\tnode(int idx,T val):idx(idx),val(val){}\n\
+    \t};\n\tusing np=node*;\n\tstd::vector<np>v;\n\tF comp;\n\tbinary_heap(F comp):v(2,0),comp(comp){}\n\
     \tbinary_heap():v(2,0),comp(F()){}\n\tvoid __swap(np& s,np& t){\n\t\tstd::swap(s,t);\n\
     \t\tstd::swap(s->idx,t->idx);\n\t}\n\tvoid up(int k){\n\t\twhile(k>1&&comp(v[k]->val,v[k/2]->val)){\n\
     \t\t\t__swap(v[k],v[k/2]);\n\t\t\tk/=2;\n\t\t}\n\t}\n\tvoid down(int k){\n\t\t\
@@ -97,7 +96,7 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_birary_heap.test.cpp
   requiredBy: []
-  timestamp: '2020-09-18 12:01:17+09:00'
+  timestamp: '2020-09-18 12:11:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_birary_heap.test.cpp

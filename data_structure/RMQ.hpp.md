@@ -7,15 +7,16 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: <O(N),O(1)>RMQ
+    document_title: RMQ&amp;lt;O(N),O(1)&amp;gt;
     links:
     - https://noshi91.hatenablog.com/entry/2018/08/16/125415
   bundledCode: "#line 2 \"data_structure/RMQ.hpp\"\n#include<assert.h>\n#include<vector>\n\
-    #include<numeric>\n#include<cmath>\n\n/**\n * @brief <O(N),O(1)>RMQ\n * @see https://noshi91.hatenablog.com/entry/2018/08/16/125415\n\
-    \ */\n\ntemplate<typename T>\nclass RMQ{\n    class small_rmq{\n        using\
-    \ u64=unsigned long long;\n        std::vector<u64>table;\n        std::vector<T>\
-    \ v;\n        public:\n        small_rmq(std::vector<T> v):v(v){\n           \
-    \ assert(v.size()<=64);\n            vector<int>tmp(v.size());\n            table.resize(v.size(),0);\n\
+    #include<numeric>\n#include<cmath>\n\n/**\n * @brief RMQ&amp;lt;O(N),O(1)&amp;gt;\n\
+    \ * @see https://noshi91.hatenablog.com/entry/2018/08/16/125415\n */\n\ntemplate<typename\
+    \ T>\nclass RMQ{\n    class small_rmq{\n        using u64=unsigned long long;\n\
+    \        std::vector<u64>table;\n        std::vector<T> v;\n        public:\n\
+    \        small_rmq(std::vector<T> v):v(v){\n            assert(v.size()<=64);\n\
+    \            vector<int>tmp(v.size());\n            table.resize(v.size(),0);\n\
     \            stack<T>stk;\n            for(int i=0;i<(int)v.size();++i){\n   \
     \             tmp.resize(v.size());\n                while(!stk.empty()&&v[stk.top()]>=v[i]){\n\
     \                    stk.pop();\n                }\n                tmp[i]=stk.empty()?-1:stk.top();\n\
@@ -44,7 +45,7 @@ data:
     \ backet[s/b]->query(s%b,t%b);\n        return std::min({backet[s/b]->query(s%b,b),st->get(s/b+1,t/b),backet[t/b]->query(0,t%b)});\n\
     \    }\n};\n"
   code: "#pragma once\n#include<assert.h>\n#include<vector>\n#include<numeric>\n#include<cmath>\n\
-    \n/**\n * @brief <O(N),O(1)>RMQ\n * @see https://noshi91.hatenablog.com/entry/2018/08/16/125415\n\
+    \n/**\n * @brief RMQ&amp;lt;O(N),O(1)&amp;gt;\n * @see https://noshi91.hatenablog.com/entry/2018/08/16/125415\n\
     \ */\n\ntemplate<typename T>\nclass RMQ{\n    class small_rmq{\n        using\
     \ u64=unsigned long long;\n        std::vector<u64>table;\n        std::vector<T>\
     \ v;\n        public:\n        small_rmq(std::vector<T> v):v(v){\n           \
@@ -80,7 +81,7 @@ data:
   isVerificationFile: false
   path: data_structure/RMQ.hpp
   requiredBy: []
-  timestamp: '2020-09-18 12:01:17+09:00'
+  timestamp: '2020-09-18 12:12:51+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data_structure/RMQ.hpp
@@ -88,5 +89,5 @@ layout: document
 redirect_from:
 - /library/data_structure/RMQ.hpp
 - /library/data_structure/RMQ.hpp.html
-title: <O(N),O(1)>RMQ
+title: RMQ&amp;lt;O(N),O(1)&amp;gt;
 ---

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':warning:'
     path: data_structure/bit_vector.hpp
-    title: "\u30D3\u30C3\u30C8\u30D9\u30AF\u30BF\u30FC"
+    title: BitVector
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: hpp
@@ -14,13 +14,13 @@ data:
     links: []
   bundledCode: "#line 2 \"data_structure/wavelet_matrix.hpp\"\n#include<vector>\n\
     #include<algorithm>\n#line 2 \"data_structure/bit_vector.hpp\"\n\n/**\n * @brief\
-    \ \u30D3\u30C3\u30C8\u30D9\u30AF\u30BF\u30FC\n */\n\nclass bitvec{\n\tusing u32=unsigned\
-    \ int;\n\tusing u8=unsigned char;\n    using lint=long long;\n\t//4*10^6\u5BFE\
-    \u5FDC\n\t//\u30D6\u30ED\u30C3\u30AF\u5E458,\u30C1\u30E3\u30F3\u30AF\u5E45256\n\
-    \tconst int bw=8,cw=256;\n\tconst int len=15625,sz=4000000;\n\tbool data[4000000]={0};\n\
-    \tu32 chunk[15626];\n\tu8 block[15625][33];\n\tpublic:\n\tbitvec(){}\n\tvoid build(){\n\
-    \t\tchunk[0]=0;\n\t\tfor(int i=0;i<15625;i++){\n\t\t\tblock[i][0]=0;\n\t\t\tfor(int\
-    \ j=0;j<31;j++){\n\t\t\t\tblock[i][j+1]=block[i][j];\n\t\t\t\tfor(int k=0;k<8;k++)block[i][j+1]+=data[i*cw+j*bw+k];\n\
+    \ BitVector\n */\n\nclass bitvec{\n\tusing u32=unsigned int;\n\tusing u8=unsigned\
+    \ char;\n    using lint=long long;\n\t//4*10^6\u5BFE\u5FDC\n\t//\u30D6\u30ED\u30C3\
+    \u30AF\u5E458,\u30C1\u30E3\u30F3\u30AF\u5E45256\n\tconst int bw=8,cw=256;\n\t\
+    const int len=15625,sz=4000000;\n\tbool data[4000000]={0};\n\tu32 chunk[15626];\n\
+    \tu8 block[15625][33];\n\tpublic:\n\tbitvec(){}\n\tvoid build(){\n\t\tchunk[0]=0;\n\
+    \t\tfor(int i=0;i<15625;i++){\n\t\t\tblock[i][0]=0;\n\t\t\tfor(int j=0;j<31;j++){\n\
+    \t\t\t\tblock[i][j+1]=block[i][j];\n\t\t\t\tfor(int k=0;k<8;k++)block[i][j+1]+=data[i*cw+j*bw+k];\n\
     \t\t\t}\n\t\t\tchunk[i+1]=chunk[i]+block[i][31];\n\t\t\tfor(int k=0;k<8;k++)chunk[i+1]+=data[i*cw+31*bw+k];\n\
     \t\t}\n\t}\n\tinline void set(int idx,bool b){data[idx]=b;}\n\tinline bool get(int\
     \ idx){return data[idx];}\n    inline int rank(int idx,bool b)const{\n       \
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: data_structure/wavelet_matrix.hpp
   requiredBy: []
-  timestamp: '2020-09-18 12:01:17+09:00'
+  timestamp: '2020-09-18 12:11:44+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data_structure/wavelet_matrix.hpp

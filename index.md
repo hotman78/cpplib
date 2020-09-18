@@ -34,19 +34,19 @@ data:
     pages:
     - icon: ':warning:'
       path: data_structure/RMQ.hpp
-      title: <O(N),O(1)>RMQ
+      title: RMQ&amp;lt;O(N),O(1)&amp;gt;
     - icon: ':heavy_check_mark:'
       path: data_structure/binary_heap.hpp
-      title: "\u30D0\u30A4\u30CA\u30EA\u30FC\u30D2\u30FC\u30D7"
+      title: BinaryHeap
     - icon: ':warning:'
       path: data_structure/binary_indexed_tree.hpp
       title: BinaryIndexedTree
     - icon: ':warning:'
       path: data_structure/binary_trie.hpp
-      title: "\u30D0\u30A4\u30CA\u30EA\u30FC\u30C8\u30E9\u30A4"
+      title: BinaryTrie
     - icon: ':warning:'
       path: data_structure/bit_vector.hpp
-      title: "\u30D3\u30C3\u30C8\u30D9\u30AF\u30BF\u30FC"
+      title: BitVector
     - icon: ':warning:'
       path: data_structure/cartesian_tree.hpp
       title: cartesian_tree
