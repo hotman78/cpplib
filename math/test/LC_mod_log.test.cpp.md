@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/mod_log.hpp
     title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   - icon: ':heavy_check_mark:'
     path: math/euler_phi.hpp
     title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

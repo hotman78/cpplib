@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/RMQ.hpp
     title: RMQ&amp;lt;O(N),O(1)&amp;gt;
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

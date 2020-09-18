@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
@@ -16,48 +16,50 @@ data:
     document_title: LCA &amp;lt;O(N),O(1)&amp;gt;
     links: []
   bundledCode: "#line 2 \"graph_tree/lca.hpp\"\n#include<vector>\n#include<cmath>\n\
-    #include<tuple>\n#line 3 \"graph_tree/graph_template.hpp\"\n#include<iostream>\n\
+    #include<tuple>\n#line 4 \"graph_tree/graph_template.hpp\"\n#include<iostream>\n\
     /**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\n\
-    using graph=std::vector<std::vector<int>>;\ntemplate<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>;\n\
+    using graph=std::vector<std::vector<int>>;\ntemplate<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
     \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
     \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n}\ngraph load_digraph(int n,int m){\n    graph\
-    \ g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
-    \        --s;--t;\n        g[s].push_back(t);\n    }\n}\ngraph load_graph0(int\
-    \ n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n  \
-    \      std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
-    \    }\n}\ngraph load_digraph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
-    \        int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n    }\n\
-    }\ngraph load_tree(int n){\n    graph g(n);\n    for(int i=0;i<n-1;++i){\n   \
-    \     int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n}\ngraph load_tree1(int n){\n    graph g(n);\n\
-    \    for(int i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n    \
-    \    --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n    }\n\
-    }\ngraph load_treep(int n){\n    graph g(n);\n    for(int i=0;i<n-1;++i){\n  \
-    \      int t;\n        std::cin>>t;\n        g[i+1].push_back(t);\n        g[t].push_back(i+1);\n\
-    \    }\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int n,int m){\n\
+    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
+    \ m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    \        --s;--t;\n        g[s].push_back(t);\n    }\n    return g;\n}\ngraph\
+    \ load_graph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n    \
+    \    int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
+    \    }\n    return g;\n}\ngraph load_digraph0(int n,int m){\n    graph g(n);\n\
+    \    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n      \
+    \  g[s].push_back(t);\n    }\n    return g;\n}\ngraph load_tree(int n){\n    graph\
+    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    \        --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n  \
+    \  }\n    return g;\n}\ngraph load_tree0(int n){\n    graph g(n);\n    for(int\
+    \ i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n\
+    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_treep(int n){\n\
+    \    graph g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n        std::cin>>t;\n\
+    \        g[i+1].push_back(t);\n        g[t].push_back(i+1);\n    }\n    return\
+    \ g;\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int n,int m){\n\
     \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
     \ u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n}\ntemplate<typename T>\ngraph_w<T> load_digraph_weight(int\
-    \ n,int m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n\
-    \        T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \    }\n}\ntemplate<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
-    \ u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n\
-    \    }\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int m){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
-    \ u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n}\n\
-    template<typename T>\ngraph_w<T> load_tree_weight(int n){\n    graph_w<T> g(n);\n\
-    \    for(int i=0;i<n-1;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
-    \        --s;--t;\n        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n\
-    \    }\n}\ntemplate<typename T>\ngraph_w<T> load_tree1_weight(int n){\n    graph_w<T>\
-    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        T u;\n       \
-    \ std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n    \
-    \    g[t].emplace_back(s,u);\n    }\n}\ntemplate<typename T>\ngraph_w<T> load_treep_weight(int\
-    \ n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n   \
-    \     T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n     \
-    \   g[t].emplace_back(i+1,u);\n    }\n}\n#line 2 \"data_structure/RMQ.hpp\"\n\
-    #include<assert.h>\n#line 4 \"data_structure/RMQ.hpp\"\n#include<stack>\n#include<numeric>\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_digraph_weight(int n,int m){\n    graph_w<T> g(n);\n    for(int\
+    \ i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
+    \        --s;--t;\n        g[s].emplace_back(t,u);\n    }\n    return g;\n}\n\
+    template<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n    graph_w<T>\
+    \ g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
+    \        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n    }\n   \
+    \ return g;\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int\
+    \ m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n   \
+    \     T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n\
+    \    return g;\n}\ntemplate<typename T>\ngraph_w<T> load_tree_weight(int n){\n\
+    \    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n       \
+    \ T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_tree0_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
+    \        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
+    \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
+    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 2 \"data_structure/RMQ.hpp\"\
+    \n#include<assert.h>\n#line 4 \"data_structure/RMQ.hpp\"\n#include<stack>\n#include<numeric>\n\
     #line 7 \"data_structure/RMQ.hpp\"\n#include<algorithm>\n\n/**\n * @brief RMQ&amp;lt;O(N),O(1)&amp;gt;\n\
     \ * @see https://noshi91.hatenablog.com/entry/2018/08/16/125415\n */\n\ntemplate<typename\
     \ T>\nclass RMQ{\n    class small_rmq{\n        using u64=unsigned long long;\n\
@@ -141,7 +143,7 @@ data:
   isVerificationFile: false
   path: graph_tree/lca.hpp
   requiredBy: []
-  timestamp: '2020-09-18 16:29:26+09:00'
+  timestamp: '2020-09-18 20:23:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph_tree/lca.hpp

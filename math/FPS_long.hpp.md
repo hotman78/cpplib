@@ -1,58 +1,59 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: convolution/FPS_base.hpp
+  - icon: ':x:'
+    path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/ACL.hpp
     title: util/ACL.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: convolution/test/LC_convolution_1000000007.test.cpp
-    title: convolution/test/LC_convolution_1000000007.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: convolution/test/LC_convolution_998244353.test.cpp
-    title: convolution/test/LC_convolution_998244353.test.cpp
+  - icon: ':x:'
+    path: graph_tree/test/LC_centroid_decomposition.test.cpp
+    title: graph_tree/test/LC_centroid_decomposition.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
+    document_title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
     links: []
-  bundledCode: "#line 1 \"convolution/FPS_base.hpp\"\n/**\n * @brief \u5F62\u5F0F\u7684\
-    \u51AA\u7D1A\u6570(BASE)\n */\n\ntemplate<typename T,typename F>\nstruct FPS_BASE:std::vector<T>{\n\
-    \    using std::vector<T>::vector;\n    using P=FPS_BASE<T,F>;\n    F fft;\n \
-    \   FPS_BASE(){}\n    inline P operator +(T x)const noexcept{return P(*this)+=x;}\n\
-    \    inline P operator -(T x)const noexcept{return P(*this)-=x;}\n    inline P\
-    \ operator *(T x)const noexcept{return P(*this)*=x;}\n    inline P operator /(T\
-    \ x)const noexcept{return P(*this)/=x;}\n    inline P operator <<(int x)noexcept{return\
-    \ P(*this)<<=x;}\n    inline P operator >>(int x)noexcept{return P(*this)>>=x;}\n\
-    \    inline P operator +(const P& x)const noexcept{return P(*this)+=x;}\n    inline\
-    \ P operator -(const P& x)const noexcept{return P(*this)-=x;}\n    inline P operator\
-    \ -()const noexcept{return P(1,T(0))-=P(*this);}\n    inline P operator *(const\
-    \ P& x)const noexcept{return P(*this)*=x;}\n    inline P operator /(const P& x)const\
-    \ noexcept{return P(*this)/=x;}\n    inline P operator %(const P& x)const noexcept{return\
-    \ P(*this)%=x;}\n    bool operator ==(P x){\n        for(int i=0;i<(int)max((*this).size(),x.size());++i){\n\
-    \            if(i>=(int)(*this).size()&&x[i]!=T())return 0;\n            if(i>=(int)x.size()&&(*this)[i]!=T())return\
-    \ 0;\n            if(i<(int)min((*this).size(),x.size()))if((*this)[i]!=x[i])return\
-    \ 0;\n        }\n        return 1;\n    }\n    P &operator +=(T x){\n        if(this->size()==0)this->resize(1,T(0));\n\
+  bundledCode: "#line 2 \"math/FPS_long.hpp\"\n#include<vector>\n#line 3 \"math/FPS_base.hpp\"\
+    \n#include<tuple>\n#include<iostream>\n#include<cmath>\n#include<type_traits>\n\
+    \n/**\n * @brief \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)\n */\n\ntemplate<typename\
+    \ T,typename F>\nstruct FPS_BASE:std::vector<T>{\n    using std::vector<T>::vector;\n\
+    \    using P=FPS_BASE<T,F>;\n    F fft;\n    FPS_BASE(){}\n    inline P operator\
+    \ +(T x)const noexcept{return P(*this)+=x;}\n    inline P operator -(T x)const\
+    \ noexcept{return P(*this)-=x;}\n    inline P operator *(T x)const noexcept{return\
+    \ P(*this)*=x;}\n    inline P operator /(T x)const noexcept{return P(*this)/=x;}\n\
+    \    inline P operator <<(int x)noexcept{return P(*this)<<=x;}\n    inline P operator\
+    \ >>(int x)noexcept{return P(*this)>>=x;}\n    inline P operator +(const P& x)const\
+    \ noexcept{return P(*this)+=x;}\n    inline P operator -(const P& x)const noexcept{return\
+    \ P(*this)-=x;}\n    inline P operator -()const noexcept{return P(1,T(0))-=P(*this);}\n\
+    \    inline P operator *(const P& x)const noexcept{return P(*this)*=x;}\n    inline\
+    \ P operator /(const P& x)const noexcept{return P(*this)/=x;}\n    inline P operator\
+    \ %(const P& x)const noexcept{return P(*this)%=x;}\n    bool operator ==(P x){\n\
+    \        for(int i=0;i<(int)max((*this).size(),x.size());++i){\n            if(i>=(int)(*this).size()&&x[i]!=T())return\
+    \ 0;\n            if(i>=(int)x.size()&&(*this)[i]!=T())return 0;\n           \
+    \ if(i<(int)min((*this).size(),x.size()))if((*this)[i]!=x[i])return 0;\n     \
+    \   }\n        return 1;\n    }\n    P &operator +=(T x){\n        if(this->size()==0)this->resize(1,T(0));\n\
     \        (*this)[0]+=x;\n        return (*this);\n    }\n    P &operator -=(T\
     \ x){\n        if(this->size()==0)this->resize(1,T(0));\n        (*this)[0]-=x;\n\
     \        return (*this);\n    }\n    P &operator *=(T x){\n        for(int i=0;i<(int)this->size();++i){\n\
     \            (*this)[i]*=x;\n        }\n        return (*this);\n    }\n    P\
-    \ &operator /=(T x){\n        return (*this)*=(T(1)/x);\n    }\n    P &operator\
-    \ <<=(int x){\n        P ret(x,T(0));\n        ret.insert(ret.end(),begin(*this),end(*this));\n\
+    \ &operator /=(T x){\n        if(std::is_same<T,long long>::value){\n        \
+    \    for(int i=0;i<(int)this->size();++i){\n                (*this)[i]/=x;\n \
+    \           }\n            return (*this);\n        }\n        return (*this)*=(T(1)/x);\n\
+    \    }\n    P &operator <<=(int x){\n        P ret(x,T(0));\n        ret.insert(ret.end(),begin(*this),end(*this));\n\
     \        return (*this)=ret;\n    }\n    P &operator >>=(int x){\n        if((int)(*this).size()<=x)return\
     \ (*this)=P();\n        P ret;\n        ret.insert(ret.end(),begin(*this)+x,end(*this));\n\
     \        return (*this)=ret;\n    }\n    P &operator +=(const P& x){\n       \
@@ -66,10 +67,10 @@ data:
     \ (*this);\n        }\n        const int n=this->size()-x.size()+1;\n        return\
     \ (*this) = (rev().pre(n)*x.rev().inv(n)).pre(n).rev(n);\n    }\n    P &operator\
     \ %=(const P& x){\n        return ((*this)-=*this/x*x);\n    }\n    inline void\
-    \ print(){\n        for(int i=0;i<(int)(*this).size();++i)cerr<<(*this)[i]<<\"\
-    \ \\n\"[i==(int)(*this).size()-1];\n        if((int)(*this).size()==0)cerr<<endl;\n\
-    \    }\n    inline P& shrink(){while((*this).back()==0)(*this).pop_back();return\
-    \ (*this);}\n    inline P pre(int sz)const{\n        return P(begin(*this),begin(*this)+min((int)this->size(),sz));\n\
+    \ print(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
+    \ \\n\"[i==(int)(*this).size()-1];\n        if((int)(*this).size()==0)std::cerr<<'\\\
+    n';\n    }\n    inline P& shrink(){while((*this).back()==0)(*this).pop_back();return\
+    \ (*this);}\n    inline P pre(int sz)const{\n        return P(begin(*this),begin(*this)+std::min((int)this->size(),sz));\n\
     \    }\n    P rev(int deg=-1){\n        P ret(*this);\n        if(deg!=-1)ret.resize(deg,T(0));\n\
     \        reverse(begin(ret),end(ret));\n        return ret;\n    }\n    P inv(int\
     \ deg=-1){\n        assert((*this)[0]!=T(0));\n        const int n=deg==-1?this->size():deg;\n\
@@ -108,11 +109,12 @@ data:
     \        f*=g;\n        f>>=n-1;\n        for(int i=0;i<n;++i)f[i]/=F().fact(T(i));\n\
     \        return f;\n    }\n    T eval(T x){\n        T res=0;\n        for(int\
     \ i=(int)this->size()-1;i>=0;--i){\n            res*=x;\n            res+=(*this)[i];\n\
-    \        }\n        return res;\n    }\n    vector<T> multipoint_eval(const vector<T>&x){\n\
-    \        const int n=x.size();\n        P* v=new P[2*n-1];\n        for(int i=0;i<n;i++)v[i+n-1]={T()-x[i],T(1)};\n\
-    \        for(int i=n-2;i>=0;i--){v[i]=v[i*2+1]*v[i*2+2];}\n        v[0]=P(*this)%v[0];v[0].shrink();\n\
-    \        for(int i=1;i<n*2-1;i++){\n            v[i]=v[(i-1)/2]%v[i];\n      \
-    \      v[i].shrink();\n        }\n        vector<T>res(n);\n        for(int i=0;i<n;i++)res[i]=v[i+n-1][0];\n\
+    \        }\n        return res;\n    }\n    std::vector<T> multipoint_eval(const\
+    \ std::vector<T>&x){\n        const int n=x.size();\n        P* v=new P[2*n-1];\n\
+    \        for(int i=0;i<n;i++)v[i+n-1]={T()-x[i],T(1)};\n        for(int i=n-2;i>=0;i--){v[i]=v[i*2+1]*v[i*2+2];}\n\
+    \        v[0]=P(*this)%v[0];v[0].shrink();\n        for(int i=1;i<n*2-1;i++){\n\
+    \            v[i]=v[(i-1)/2]%v[i];\n            v[i].shrink();\n        }\n  \
+    \      std::vector<T>res(n);\n        for(int i=0;i<n;i++)res[i]=v[i+n-1][0];\n\
     \        return res;\n    }\n    P slice(int s,int e,int k){\n        P res;\n\
     \        for(int i=s;i<e;i+=k)res.push_back((*this)[i]);\n        return res;\n\
     \    }\n    T nth_term(P q,int64_t x){\n        if(x==0)return (*this)[0]/q[0];\n\
@@ -120,8 +122,8 @@ data:
     \        q*=q2;\n        p*=q2;\n        return p.slice(x%2,p.size(),2).nth_term(q.slice(0,q.size(),2),x/2);\n\
     \    }\n    \n    //(*this)(t(x))\n    P manipulate(P t,int deg){\n        P s=P(*this);\n\
     \        if(deg==0)return P();\n        if((int)t.size()==1)return P{s.eval(t[0])};\n\
-    \        int k=min((int)::sqrt(deg/(::log2(deg)+1))+1,(int)t.size());\n      \
-    \  int b=deg/k+1;\n        P t2=t.pre(k);\n        vector<P>table(s.size()/2+1,P{1});\n\
+    \        int k=std::min((int)::sqrt(deg/(::log2(deg)+1))+1,(int)t.size());\n \
+    \       int b=deg/k+1;\n        P t2=t.pre(k);\n        std::vector<P>table(s.size()/2+1,P{1});\n\
     \        for(int i=1;i<(int)table.size();i++){\n            table[i]=((table[i-1])*t2).pre(deg);\n\
     \        }\n        auto f=[&](auto f,auto l,auto r,int deg)->P{\n           \
     \ if(r-l==1)return P{*l};\n            auto m=l+(r-l)/2;\n            return f(f,l,m,deg)+(table[m-l]*f(f,m,r,deg)).pre(deg);\n\
@@ -137,7 +139,7 @@ data:
     \            }\n        }\n        return ans;\n    }\n    //(*this)(t(x))\n \
     \   P manipulate2(P t,int deg){\n        P ans=P();\n        P s=(*this).rev();\n\
     \        for(int i=0;i<(int)s.size();++i){\n            ans=(ans*t+s[i]).pre(deg);\n\
-    \        }\n        return ans;\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)cerr<<(*this)[i]<<\"\
+    \        }\n        return ans;\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
     \ \\n\"[i==(int)(*this).size()-1];\n    }\n};\n#line 2 \"util/ACL.hpp\"\n#include\
     \ <algorithm>\n#include <array>\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\
     namespace atcoder {\nnamespace internal {\n// @param n `0 <= n`\n// @return minimum\
@@ -208,11 +210,11 @@ data:
     \            ok = false;\n                break;\n            }\n        }\n \
     \       if (ok) return g;\n    }\n}\ntemplate <int m> constexpr int primitive_root\
     \ = primitive_root_constexpr(m);\n}  // namespace internal\n}  // namespace atcoder\n\
-    #include <cassert>\n#include <numeric>\n#include <type_traits>\nnamespace atcoder\
-    \ {\nnamespace internal {\n#ifndef _MSC_VER\ntemplate <class T>\nusing is_signed_int128\
-    \ =\n    typename std::conditional<std::is_same<T, __int128_t>::value ||\n   \
-    \                               std::is_same<T, __int128>::value,\n          \
-    \                    std::true_type,\n                              std::false_type>::type;\n\
+    #include <cassert>\n#include <numeric>\n#line 189 \"util/ACL.hpp\"\nnamespace\
+    \ atcoder {\nnamespace internal {\n#ifndef _MSC_VER\ntemplate <class T>\nusing\
+    \ is_signed_int128 =\n    typename std::conditional<std::is_same<T, __int128_t>::value\
+    \ ||\n                                  std::is_same<T, __int128>::value,\n  \
+    \                            std::true_type,\n                              std::false_type>::type;\n\
     template <class T>\nusing is_unsigned_int128 =\n    typename std::conditional<std::is_same<T,\
     \ __uint128_t>::value ||\n                                  std::is_same<T, unsigned\
     \ __int128>::value,\n                              std::true_type,\n         \
@@ -339,63 +341,62 @@ data:
     template <class> struct is_dynamic_modint : public std::false_type {};\ntemplate\
     \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
     \ {};\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
-    }  // namespace internal\n}  // namespace atcoder\n#line 497 \"util/ACL.hpp\"\n\
-    #include <vector>\nnamespace atcoder {\nnamespace internal {\ntemplate <class\
-    \ mint, internal::is_static_modint_t<mint>* = nullptr>\nvoid butterfly(std::vector<mint>&\
-    \ a) {\n    static constexpr int g = internal::primitive_root<mint::mod()>;\n\
-    \    int n = int(a.size());\n    int h = internal::ceil_pow2(n);\n    static bool\
-    \ first = true;\n    static mint sum_e[30];  // sum_e[i] = ies[0] * ... * ies[i\
-    \ - 1] * es[i]\n    if (first) {\n        first = false;\n        mint es[30],\
-    \ ies[30];  // es[i]^(2^(2+i)) == 1\n        int cnt2 = bsf(mint::mod() - 1);\n\
-    \        mint e = mint(g).pow((mint::mod() - 1) >> cnt2), ie = e.inv();\n    \
-    \    for (int i = cnt2; i >= 2; i--) {\n            // e^(2^i) == 1\n        \
-    \    es[i - 2] = e;\n            ies[i - 2] = ie;\n            e *= e;\n     \
-    \       ie *= ie;\n        }\n        mint now = 1;\n        for (int i = 0; i\
-    \ <= cnt2 - 2; i++) {\n            sum_e[i] = es[i] * now;\n            now *=\
-    \ ies[i];\n        }\n    }\n    for (int ph = 1; ph <= h; ph++) {\n        int\
-    \ w = 1 << (ph - 1), p = 1 << (h - ph);\n        mint now = 1;\n        for (int\
-    \ s = 0; s < w; s++) {\n            int offset = s << (h - ph + 1);\n        \
-    \    for (int i = 0; i < p; i++) {\n                auto l = a[i + offset];\n\
-    \                auto r = a[i + offset + p] * now;\n                a[i + offset]\
-    \ = l + r;\n                a[i + offset + p] = l - r;\n            }\n      \
-    \      now *= sum_e[bsf(~(unsigned int)(s))];\n        }\n    }\n}\ntemplate <class\
-    \ mint, internal::is_static_modint_t<mint>* = nullptr>\nvoid butterfly_inv(std::vector<mint>&\
-    \ a) {\n    static constexpr int g = internal::primitive_root<mint::mod()>;\n\
-    \    int n = int(a.size());\n    int h = internal::ceil_pow2(n);\n    static bool\
-    \ first = true;\n    static mint sum_ie[30];  // sum_ie[i] = es[0] * ... * es[i\
-    \ - 1] * ies[i]\n    if (first) {\n        first = false;\n        mint es[30],\
-    \ ies[30];  // es[i]^(2^(2+i)) == 1\n        int cnt2 = bsf(mint::mod() - 1);\n\
-    \        mint e = mint(g).pow((mint::mod() - 1) >> cnt2), ie = e.inv();\n    \
-    \    for (int i = cnt2; i >= 2; i--) {\n            // e^(2^i) == 1\n        \
-    \    es[i - 2] = e;\n            ies[i - 2] = ie;\n            e *= e;\n     \
-    \       ie *= ie;\n        }\n        mint now = 1;\n        for (int i = 0; i\
-    \ <= cnt2 - 2; i++) {\n            sum_ie[i] = ies[i] * now;\n            now\
-    \ *= es[i];\n        }\n    }\n    for (int ph = h; ph >= 1; ph--) {\n       \
-    \ int w = 1 << (ph - 1), p = 1 << (h - ph);\n        mint inow = 1;\n        for\
-    \ (int s = 0; s < w; s++) {\n            int offset = s << (h - ph + 1);\n   \
-    \         for (int i = 0; i < p; i++) {\n                auto l = a[i + offset];\n\
-    \                auto r = a[i + offset + p];\n                a[i + offset] =\
-    \ l + r;\n                a[i + offset + p] =\n                    (unsigned long\
-    \ long)(mint::mod() + l.val() - r.val()) *\n                    inow.val();\n\
-    \            }\n            inow *= sum_ie[bsf(~(unsigned int)(s))];\n       \
-    \ }\n    }\n}\n}  // namespace internal\ntemplate <class mint, internal::is_static_modint_t<mint>*\
-    \ = nullptr>\nstd::vector<mint> convolution(std::vector<mint> a, std::vector<mint>\
+    }  // namespace internal\n}  // namespace atcoder\n#line 498 \"util/ACL.hpp\"\n\
+    namespace atcoder {\nnamespace internal {\ntemplate <class mint, internal::is_static_modint_t<mint>*\
+    \ = nullptr>\nvoid butterfly(std::vector<mint>& a) {\n    static constexpr int\
+    \ g = internal::primitive_root<mint::mod()>;\n    int n = int(a.size());\n   \
+    \ int h = internal::ceil_pow2(n);\n    static bool first = true;\n    static mint\
+    \ sum_e[30];  // sum_e[i] = ies[0] * ... * ies[i - 1] * es[i]\n    if (first)\
+    \ {\n        first = false;\n        mint es[30], ies[30];  // es[i]^(2^(2+i))\
+    \ == 1\n        int cnt2 = bsf(mint::mod() - 1);\n        mint e = mint(g).pow((mint::mod()\
+    \ - 1) >> cnt2), ie = e.inv();\n        for (int i = cnt2; i >= 2; i--) {\n  \
+    \          // e^(2^i) == 1\n            es[i - 2] = e;\n            ies[i - 2]\
+    \ = ie;\n            e *= e;\n            ie *= ie;\n        }\n        mint now\
+    \ = 1;\n        for (int i = 0; i <= cnt2 - 2; i++) {\n            sum_e[i] =\
+    \ es[i] * now;\n            now *= ies[i];\n        }\n    }\n    for (int ph\
+    \ = 1; ph <= h; ph++) {\n        int w = 1 << (ph - 1), p = 1 << (h - ph);\n \
+    \       mint now = 1;\n        for (int s = 0; s < w; s++) {\n            int\
+    \ offset = s << (h - ph + 1);\n            for (int i = 0; i < p; i++) {\n   \
+    \             auto l = a[i + offset];\n                auto r = a[i + offset +\
+    \ p] * now;\n                a[i + offset] = l + r;\n                a[i + offset\
+    \ + p] = l - r;\n            }\n            now *= sum_e[bsf(~(unsigned int)(s))];\n\
+    \        }\n    }\n}\ntemplate <class mint, internal::is_static_modint_t<mint>*\
+    \ = nullptr>\nvoid butterfly_inv(std::vector<mint>& a) {\n    static constexpr\
+    \ int g = internal::primitive_root<mint::mod()>;\n    int n = int(a.size());\n\
+    \    int h = internal::ceil_pow2(n);\n    static bool first = true;\n    static\
+    \ mint sum_ie[30];  // sum_ie[i] = es[0] * ... * es[i - 1] * ies[i]\n    if (first)\
+    \ {\n        first = false;\n        mint es[30], ies[30];  // es[i]^(2^(2+i))\
+    \ == 1\n        int cnt2 = bsf(mint::mod() - 1);\n        mint e = mint(g).pow((mint::mod()\
+    \ - 1) >> cnt2), ie = e.inv();\n        for (int i = cnt2; i >= 2; i--) {\n  \
+    \          // e^(2^i) == 1\n            es[i - 2] = e;\n            ies[i - 2]\
+    \ = ie;\n            e *= e;\n            ie *= ie;\n        }\n        mint now\
+    \ = 1;\n        for (int i = 0; i <= cnt2 - 2; i++) {\n            sum_ie[i] =\
+    \ ies[i] * now;\n            now *= es[i];\n        }\n    }\n    for (int ph\
+    \ = h; ph >= 1; ph--) {\n        int w = 1 << (ph - 1), p = 1 << (h - ph);\n \
+    \       mint inow = 1;\n        for (int s = 0; s < w; s++) {\n            int\
+    \ offset = s << (h - ph + 1);\n            for (int i = 0; i < p; i++) {\n   \
+    \             auto l = a[i + offset];\n                auto r = a[i + offset +\
+    \ p];\n                a[i + offset] = l + r;\n                a[i + offset +\
+    \ p] =\n                    (unsigned long long)(mint::mod() + l.val() - r.val())\
+    \ *\n                    inow.val();\n            }\n            inow *= sum_ie[bsf(~(unsigned\
+    \ int)(s))];\n        }\n    }\n}\n}  // namespace internal\ntemplate <class mint,\
+    \ internal::is_static_modint_t<mint>* = nullptr>\nstd::vector<mint> convolution(std::vector<mint>\
+    \ a, std::vector<mint> b) {\n    int n = int(a.size()), m = int(b.size());\n \
+    \   if (!n || !m) return {};\n    if (std::min(n, m) <= 60) {\n        if (n <\
+    \ m) {\n            std::swap(n, m);\n            std::swap(a, b);\n        }\n\
+    \        std::vector<mint> ans(n + m - 1);\n        for (int i = 0; i < n; i++)\
+    \ {\n            for (int j = 0; j < m; j++) {\n                ans[i + j] +=\
+    \ a[i] * b[j];\n            }\n        }\n        return ans;\n    }\n    int\
+    \ z = 1 << internal::ceil_pow2(n + m - 1);\n    a.resize(z);\n    internal::butterfly(a);\n\
+    \    b.resize(z);\n    internal::butterfly(b);\n    for (int i = 0; i < z; i++)\
+    \ {\n        a[i] *= b[i];\n    }\n    internal::butterfly_inv(a);\n    a.resize(n\
+    \ + m - 1);\n    mint iz = mint(z).inv();\n    for (int i = 0; i < n + m - 1;\
+    \ i++) a[i] *= iz;\n    return a;\n}\ntemplate <unsigned int mod = 998244353,\n\
+    \          class T,\n          std::enable_if_t<internal::is_integral<T>::value>*\
+    \ = nullptr>\nstd::vector<T> convolution(const std::vector<T>& a, const std::vector<T>&\
     \ b) {\n    int n = int(a.size()), m = int(b.size());\n    if (!n || !m) return\
-    \ {};\n    if (std::min(n, m) <= 60) {\n        if (n < m) {\n            std::swap(n,\
-    \ m);\n            std::swap(a, b);\n        }\n        std::vector<mint> ans(n\
-    \ + m - 1);\n        for (int i = 0; i < n; i++) {\n            for (int j = 0;\
-    \ j < m; j++) {\n                ans[i + j] += a[i] * b[j];\n            }\n \
-    \       }\n        return ans;\n    }\n    int z = 1 << internal::ceil_pow2(n\
-    \ + m - 1);\n    a.resize(z);\n    internal::butterfly(a);\n    b.resize(z);\n\
-    \    internal::butterfly(b);\n    for (int i = 0; i < z; i++) {\n        a[i]\
-    \ *= b[i];\n    }\n    internal::butterfly_inv(a);\n    a.resize(n + m - 1);\n\
-    \    mint iz = mint(z).inv();\n    for (int i = 0; i < n + m - 1; i++) a[i] *=\
-    \ iz;\n    return a;\n}\ntemplate <unsigned int mod = 998244353,\n          class\
-    \ T,\n          std::enable_if_t<internal::is_integral<T>::value>* = nullptr>\n\
-    std::vector<T> convolution(const std::vector<T>& a, const std::vector<T>& b) {\n\
-    \    int n = int(a.size()), m = int(b.size());\n    if (!n || !m) return {};\n\
-    \    using mint = static_modint<mod>;\n    std::vector<mint> a2(n), b2(m);\n \
-    \   for (int i = 0; i < n; i++) {\n        a2[i] = mint(a[i]);\n    }\n    for\
+    \ {};\n    using mint = static_modint<mod>;\n    std::vector<mint> a2(n), b2(m);\n\
+    \    for (int i = 0; i < n; i++) {\n        a2[i] = mint(a[i]);\n    }\n    for\
     \ (int i = 0; i < m; i++) {\n        b2[i] = mint(b[i]);\n    }\n    auto c2 =\
     \ convolution(move(a2), move(b2));\n    std::vector<T> c(n + m - 1);\n    for\
     \ (int i = 0; i < n + m - 1; i++) {\n        c[i] = c2[i].val();\n    }\n    return\
@@ -464,28 +465,27 @@ data:
     \    int _n;\n    std::vector<U> data;\n    U sum(int r) {\n        U s = 0;\n\
     \        while (r > 0) {\n            s += data[r - 1];\n            r -= r &\
     \ -r;\n        }\n        return s;\n    }\n};\n}  // namespace atcoder\n#line\
-    \ 787 \"util/ACL.hpp\"\n#include <iostream>\n#line 789 \"util/ACL.hpp\"\nnamespace\
-    \ atcoder {\ntemplate <class S,\n          S (*op)(S, S),\n          S (*e)(),\n\
-    \          class F,\n          S (*mapping)(F, S),\n          F (*composition)(F,\
-    \ F),\n          F (*id)()>\nstruct lazy_segtree {\n  public:\n    lazy_segtree()\
-    \ : lazy_segtree(0) {}\n    lazy_segtree(int n) : lazy_segtree(std::vector<S>(n,\
-    \ e())) {}\n    lazy_segtree(const std::vector<S>& v) : _n(int(v.size())) {\n\
-    \        log = internal::ceil_pow2(_n);\n        size = 1 << log;\n        d =\
-    \ std::vector<S>(2 * size, e());\n        lz = std::vector<F>(size, id());\n \
-    \       for (int i = 0; i < _n; i++) d[size + i] = v[i];\n        for (int i =\
-    \ size - 1; i >= 1; i--) {\n            update(i);\n        }\n    }\n    void\
-    \ set(int p, S x) {\n        assert(0 <= p && p < _n);\n        p += size;\n \
-    \       for (int i = log; i >= 1; i--) push(p >> i);\n        d[p] = x;\n    \
-    \    for (int i = 1; i <= log; i++) update(p >> i);\n    }\n    S get(int p) {\n\
-    \        assert(0 <= p && p < _n);\n        p += size;\n        for (int i = log;\
-    \ i >= 1; i--) push(p >> i);\n        return d[p];\n    }\n    S prod(int l, int\
-    \ r) {\n        assert(0 <= l && l <= r && r <= _n);\n        if (l == r) return\
-    \ e();\n        l += size;\n        r += size;\n        for (int i = log; i >=\
-    \ 1; i--) {\n            if (((l >> i) << i) != l) push(l >> i);\n           \
-    \ if (((r >> i) << i) != r) push(r >> i);\n        }\n        S sml = e(), smr\
-    \ = e();\n        while (l < r) {\n            if (l & 1) sml = op(sml, d[l++]);\n\
-    \            if (r & 1) smr = op(d[--r], smr);\n            l >>= 1;\n       \
-    \     r >>= 1;\n        }\n        return op(sml, smr);\n    }\n    S all_prod()\
+    \ 789 \"util/ACL.hpp\"\nnamespace atcoder {\ntemplate <class S,\n          S (*op)(S,\
+    \ S),\n          S (*e)(),\n          class F,\n          S (*mapping)(F, S),\n\
+    \          F (*composition)(F, F),\n          F (*id)()>\nstruct lazy_segtree\
+    \ {\n  public:\n    lazy_segtree() : lazy_segtree(0) {}\n    lazy_segtree(int\
+    \ n) : lazy_segtree(std::vector<S>(n, e())) {}\n    lazy_segtree(const std::vector<S>&\
+    \ v) : _n(int(v.size())) {\n        log = internal::ceil_pow2(_n);\n        size\
+    \ = 1 << log;\n        d = std::vector<S>(2 * size, e());\n        lz = std::vector<F>(size,\
+    \ id());\n        for (int i = 0; i < _n; i++) d[size + i] = v[i];\n        for\
+    \ (int i = size - 1; i >= 1; i--) {\n            update(i);\n        }\n    }\n\
+    \    void set(int p, S x) {\n        assert(0 <= p && p < _n);\n        p += size;\n\
+    \        for (int i = log; i >= 1; i--) push(p >> i);\n        d[p] = x;\n   \
+    \     for (int i = 1; i <= log; i++) update(p >> i);\n    }\n    S get(int p)\
+    \ {\n        assert(0 <= p && p < _n);\n        p += size;\n        for (int i\
+    \ = log; i >= 1; i--) push(p >> i);\n        return d[p];\n    }\n    S prod(int\
+    \ l, int r) {\n        assert(0 <= l && l <= r && r <= _n);\n        if (l ==\
+    \ r) return e();\n        l += size;\n        r += size;\n        for (int i =\
+    \ log; i >= 1; i--) {\n            if (((l >> i) << i) != l) push(l >> i);\n \
+    \           if (((r >> i) << i) != r) push(r >> i);\n        }\n        S sml\
+    \ = e(), smr = e();\n        while (l < r) {\n            if (l & 1) sml = op(sml,\
+    \ d[l++]);\n            if (r & 1) smr = op(d[--r], smr);\n            l >>= 1;\n\
+    \            r >>= 1;\n        }\n        return op(sml, smr);\n    }\n    S all_prod()\
     \ { return d[1]; }\n    void apply(int p, F f) {\n        assert(0 <= p && p <\
     \ _n);\n        p += size;\n        for (int i = log; i >= 1; i--) push(p >> i);\n\
     \        d[p] = mapping(f, d[p]);\n        for (int i = 1; i <= log; i++) update(p\
@@ -527,64 +527,64 @@ data:
     \ all_apply(int k, F f) {\n        d[k] = mapping(f, d[k]);\n        if (k < size)\
     \ lz[k] = composition(f, lz[k]);\n    }\n    void push(int k) {\n        all_apply(2\
     \ * k, lz[k]);\n        all_apply(2 * k + 1, lz[k]);\n        lz[k] = id();\n\
-    \    }\n};\n}  // namespace atcoder\n#line 949 \"util/ACL.hpp\"\n#include <tuple>\n\
-    #line 951 \"util/ACL.hpp\"\nnamespace atcoder {\nlong long pow_mod(long long x,\
-    \ long long n, int m) {\n    assert(0 <= n && 1 <= m);\n    if (m == 1) return\
-    \ 0;\n    internal::barrett bt((unsigned int)(m));\n    unsigned int r = 1, y\
-    \ = (unsigned int)(internal::safe_mod(x, m));\n    while (n) {\n        if (n\
-    \ & 1) r = bt.mul(r, y);\n        y = bt.mul(y, y);\n        n >>= 1;\n    }\n\
-    \    return r;\n}\nlong long inv_mod(long long x, long long m) {\n    assert(1\
-    \ <= m);\n    auto z = internal::inv_gcd(x, m);\n    assert(z.first == 1);\n \
-    \   return z.second;\n}\n// (rem, mod)\nstd::pair<long long, long long> crt(const\
-    \ std::vector<long long>& r,\n                                    const std::vector<long\
-    \ long>& m) {\n    assert(r.size() == m.size());\n    int n = int(r.size());\n\
-    \    // Contracts: 0 <= r0 < m0\n    long long r0 = 0, m0 = 1;\n    for (int i\
-    \ = 0; i < n; i++) {\n        assert(1 <= m[i]);\n        long long r1 = internal::safe_mod(r[i],\
-    \ m[i]), m1 = m[i];\n        if (m0 < m1) {\n            std::swap(r0, r1);\n\
-    \            std::swap(m0, m1);\n        }\n        if (m0 % m1 == 0) {\n    \
-    \        if (r0 % m1 != r1) return {0, 0};\n            continue;\n        }\n\
-    \        // assume: m0 > m1, lcm(m0, m1) >= 2 * max(m0, m1)\n        // (r0, m0),\
-    \ (r1, m1) -> (r2, m2 = lcm(m0, m1));\n        // r2 % m0 = r0\n        // r2\
-    \ % m1 = r1\n        // -> (r0 + x*m0) % m1 = r1\n        // -> x*u0*g % (u1*g)\
-    \ = (r1 - r0) (u0*g = m0, u1*g = m1)\n        // -> x = (r1 - r0) / g * inv(u0)\
-    \ (mod u1)\n        // im = inv(u0) (mod u1) (0 <= im < u1)\n        long long\
-    \ g, im;\n        std::tie(g, im) = internal::inv_gcd(m0, m1);\n        long long\
-    \ u1 = (m1 / g);\n        // |r1 - r0| < (m0 + m1) <= lcm(m0, m1)\n        if\
-    \ ((r1 - r0) % g) return {0, 0};\n        // u1 * u1 <= m1 * m1 / g / g <= m0\
-    \ * m1 / g = lcm(m0, m1)\n        long long x = (r1 - r0) / g % u1 * im % u1;\n\
-    \        // |r0| + |m0 * x|\n        // < m0 + m0 * (u1 - 1)\n        // = m0\
-    \ + m0 * m1 / g - m0\n        // = lcm(m0, m1)\n        r0 += x * m0;\n      \
-    \  m0 *= u1;  // -> lcm(m0, m1)\n        if (r0 < 0) r0 += m0;\n    }\n    return\
-    \ {r0, m0};\n}\nlong long floor_sum(long long n, long long m, long long a, long\
-    \ long b) {\n    long long ans = 0;\n    if (a >= m) {\n        ans += (n - 1)\
-    \ * n * (a / m) / 2;\n        a %= m;\n    }\n    if (b >= m) {\n        ans +=\
-    \ n * (b / m);\n        b %= m;\n    }\n    long long y_max = (a * n + b) / m,\
-    \ x_max = (y_max * m - b);\n    if (y_max == 0) return ans;\n    ans += (n - (x_max\
-    \ + a - 1) / a) * y_max;\n    ans += floor_sum(y_max, a, m, (a - x_max % a) %\
-    \ a);\n    return ans;\n}\n}  // namespace atcoder\n#line 1032 \"util/ACL.hpp\"\
-    \nnamespace atcoder {\nnamespace internal {\ntemplate <class T> struct simple_queue\
-    \ {\n    std::vector<T> payload;\n    int pos = 0;\n    void reserve(int n) {\
-    \ payload.reserve(n); }\n    int size() const { return int(payload.size()) - pos;\
-    \ }\n    bool empty() const { return pos == int(payload.size()); }\n    void push(const\
-    \ T& t) { payload.push_back(t); }\n    T& front() { return payload[pos]; }\n \
-    \   void clear() {\n        payload.clear();\n        pos = 0;\n    }\n    void\
-    \ pop() { pos++; }\n};\n}  // namespace internal\n}  // namespace atcoder\n#line\
-    \ 1051 \"util/ACL.hpp\"\n#include <limits>\n#include <queue>\n#line 1054 \"util/ACL.hpp\"\
-    \nnamespace atcoder {\ntemplate <class Cap> struct mf_graph {\n  public:\n   \
-    \ mf_graph() : _n(0) {}\n    mf_graph(int n) : _n(n), g(n) {}\n    int add_edge(int\
-    \ from, int to, Cap cap) {\n        assert(0 <= from && from < _n);\n        assert(0\
-    \ <= to && to < _n);\n        assert(0 <= cap);\n        int m = int(pos.size());\n\
-    \        pos.push_back({from, int(g[from].size())});\n        int from_id = int(g[from].size());\n\
-    \        int to_id = int(g[to].size());\n        if (from == to) to_id++;\n  \
-    \      g[from].push_back(_edge{to, to_id, cap});\n        g[to].push_back(_edge{from,\
-    \ from_id, 0});\n        return m;\n    }\n    struct edge {\n        int from,\
-    \ to;\n        Cap cap, flow;\n    };\n    edge get_edge(int i) {\n        int\
-    \ m = int(pos.size());\n        assert(0 <= i && i < m);\n        auto _e = g[pos[i].first][pos[i].second];\n\
-    \        auto _re = g[_e.to][_e.rev];\n        return edge{pos[i].first, _e.to,\
-    \ _e.cap + _re.cap, _re.cap};\n    }\n    std::vector<edge> edges() {\n      \
-    \  int m = int(pos.size());\n        std::vector<edge> result;\n        for (int\
-    \ i = 0; i < m; i++) {\n            result.push_back(get_edge(i));\n        }\n\
-    \        return result;\n    }\n    void change_edge(int i, Cap new_cap, Cap new_flow)\
+    \    }\n};\n}  // namespace atcoder\n#line 951 \"util/ACL.hpp\"\nnamespace atcoder\
+    \ {\nlong long pow_mod(long long x, long long n, int m) {\n    assert(0 <= n &&\
+    \ 1 <= m);\n    if (m == 1) return 0;\n    internal::barrett bt((unsigned int)(m));\n\
+    \    unsigned int r = 1, y = (unsigned int)(internal::safe_mod(x, m));\n    while\
+    \ (n) {\n        if (n & 1) r = bt.mul(r, y);\n        y = bt.mul(y, y);\n   \
+    \     n >>= 1;\n    }\n    return r;\n}\nlong long inv_mod(long long x, long long\
+    \ m) {\n    assert(1 <= m);\n    auto z = internal::inv_gcd(x, m);\n    assert(z.first\
+    \ == 1);\n    return z.second;\n}\n// (rem, mod)\nstd::pair<long long, long long>\
+    \ crt(const std::vector<long long>& r,\n                                    const\
+    \ std::vector<long long>& m) {\n    assert(r.size() == m.size());\n    int n =\
+    \ int(r.size());\n    // Contracts: 0 <= r0 < m0\n    long long r0 = 0, m0 = 1;\n\
+    \    for (int i = 0; i < n; i++) {\n        assert(1 <= m[i]);\n        long long\
+    \ r1 = internal::safe_mod(r[i], m[i]), m1 = m[i];\n        if (m0 < m1) {\n  \
+    \          std::swap(r0, r1);\n            std::swap(m0, m1);\n        }\n   \
+    \     if (m0 % m1 == 0) {\n            if (r0 % m1 != r1) return {0, 0};\n   \
+    \         continue;\n        }\n        // assume: m0 > m1, lcm(m0, m1) >= 2 *\
+    \ max(m0, m1)\n        // (r0, m0), (r1, m1) -> (r2, m2 = lcm(m0, m1));\n    \
+    \    // r2 % m0 = r0\n        // r2 % m1 = r1\n        // -> (r0 + x*m0) % m1\
+    \ = r1\n        // -> x*u0*g % (u1*g) = (r1 - r0) (u0*g = m0, u1*g = m1)\n   \
+    \     // -> x = (r1 - r0) / g * inv(u0) (mod u1)\n        // im = inv(u0) (mod\
+    \ u1) (0 <= im < u1)\n        long long g, im;\n        std::tie(g, im) = internal::inv_gcd(m0,\
+    \ m1);\n        long long u1 = (m1 / g);\n        // |r1 - r0| < (m0 + m1) <=\
+    \ lcm(m0, m1)\n        if ((r1 - r0) % g) return {0, 0};\n        // u1 * u1 <=\
+    \ m1 * m1 / g / g <= m0 * m1 / g = lcm(m0, m1)\n        long long x = (r1 - r0)\
+    \ / g % u1 * im % u1;\n        // |r0| + |m0 * x|\n        // < m0 + m0 * (u1\
+    \ - 1)\n        // = m0 + m0 * m1 / g - m0\n        // = lcm(m0, m1)\n       \
+    \ r0 += x * m0;\n        m0 *= u1;  // -> lcm(m0, m1)\n        if (r0 < 0) r0\
+    \ += m0;\n    }\n    return {r0, m0};\n}\nlong long floor_sum(long long n, long\
+    \ long m, long long a, long long b) {\n    long long ans = 0;\n    if (a >= m)\
+    \ {\n        ans += (n - 1) * n * (a / m) / 2;\n        a %= m;\n    }\n    if\
+    \ (b >= m) {\n        ans += n * (b / m);\n        b %= m;\n    }\n    long long\
+    \ y_max = (a * n + b) / m, x_max = (y_max * m - b);\n    if (y_max == 0) return\
+    \ ans;\n    ans += (n - (x_max + a - 1) / a) * y_max;\n    ans += floor_sum(y_max,\
+    \ a, m, (a - x_max % a) % a);\n    return ans;\n}\n}  // namespace atcoder\n#line\
+    \ 1032 \"util/ACL.hpp\"\nnamespace atcoder {\nnamespace internal {\ntemplate <class\
+    \ T> struct simple_queue {\n    std::vector<T> payload;\n    int pos = 0;\n  \
+    \  void reserve(int n) { payload.reserve(n); }\n    int size() const { return\
+    \ int(payload.size()) - pos; }\n    bool empty() const { return pos == int(payload.size());\
+    \ }\n    void push(const T& t) { payload.push_back(t); }\n    T& front() { return\
+    \ payload[pos]; }\n    void clear() {\n        payload.clear();\n        pos =\
+    \ 0;\n    }\n    void pop() { pos++; }\n};\n}  // namespace internal\n}  // namespace\
+    \ atcoder\n#line 1051 \"util/ACL.hpp\"\n#include <limits>\n#include <queue>\n\
+    #line 1054 \"util/ACL.hpp\"\nnamespace atcoder {\ntemplate <class Cap> struct\
+    \ mf_graph {\n  public:\n    mf_graph() : _n(0) {}\n    mf_graph(int n) : _n(n),\
+    \ g(n) {}\n    int add_edge(int from, int to, Cap cap) {\n        assert(0 <=\
+    \ from && from < _n);\n        assert(0 <= to && to < _n);\n        assert(0 <=\
+    \ cap);\n        int m = int(pos.size());\n        pos.push_back({from, int(g[from].size())});\n\
+    \        int from_id = int(g[from].size());\n        int to_id = int(g[to].size());\n\
+    \        if (from == to) to_id++;\n        g[from].push_back(_edge{to, to_id,\
+    \ cap});\n        g[to].push_back(_edge{from, from_id, 0});\n        return m;\n\
+    \    }\n    struct edge {\n        int from, to;\n        Cap cap, flow;\n   \
+    \ };\n    edge get_edge(int i) {\n        int m = int(pos.size());\n        assert(0\
+    \ <= i && i < m);\n        auto _e = g[pos[i].first][pos[i].second];\n       \
+    \ auto _re = g[_e.to][_e.rev];\n        return edge{pos[i].first, _e.to, _e.cap\
+    \ + _re.cap, _re.cap};\n    }\n    std::vector<edge> edges() {\n        int m\
+    \ = int(pos.size());\n        std::vector<edge> result;\n        for (int i =\
+    \ 0; i < m; i++) {\n            result.push_back(get_edge(i));\n        }\n  \
+    \      return result;\n    }\n    void change_edge(int i, Cap new_cap, Cap new_flow)\
     \ {\n        int m = int(pos.size());\n        assert(0 <= i && i < m);\n    \
     \    assert(0 <= new_flow && new_flow <= new_cap);\n        auto& _e = g[pos[i].first][pos[i].second];\n\
     \        auto& _re = g[_e.to][_e.rev];\n        _e.cap = new_cap - new_flow;\n\
@@ -888,75 +888,43 @@ data:
     \ v=(mods[i]+a[i]-constants[i])%mods[i]*mod_pow(coeffs[i],mods[i]-2,mods[i])%mods[i];\n\
     \        for(int j=i+1;j<sz+1;j++) {\n            constants[j]=(constants[j]+coeffs[j]*v)%mods[j];\n\
     \            coeffs[j]=(coeffs[j]*mods[i])%mods[j];\n        }\n    }\n    return\
-    \ constants[3];\n}\n#line 6 \"convolution/FPS.hpp\"\n/**\n * @brief \u5F62\u5F0F\
-    \u7684\u51AA\u7D1A\u6570(ModInt)\n */\n\ntemplate<typename Mint>\nstruct _FPS{\n\
+    \ constants[3];\n}\n#line 7 \"math/FPS_long.hpp\"\n\n/**\n * @brief \u5F62\u5F0F\
+    \u7684\u51AA\u7D1A\u6570(Integer)\n */\n\nstruct _FPS{\n    template<typename\
+    \ T>\n    T operator()(const T& _s,const T& _t){\n        std::vector<long long>v=atcoder::convolution_ll(static_cast<std::vector<long\
+    \ long>>(_s),static_cast<std::vector<long long>>(_t));\n        return *static_cast<T*>(&v);\n\
+    \    }\n    template<typename T>\n    T fact(const T& s){\n        T t=1;\n  \
+    \      for(int i=1;i<=s;++i){\n            t*=i;\n        }\n        return t;\n\
+    \    }\n    template<typename T>\n    T pow(T s,int i){\n        T t=1;\n    \
+    \    while(i){\n            if(i%2)t*=s;\n            s*=s;\n            i/=2;\n\
+    \        }\n        return t;\n    }\n};\nusing fps=FPS_BASE<long long,_FPS>;\n"
+  code: "#pragma once\n#include<vector>\n#include\"FPS_base.hpp\"\n#include\"../util/ACL.hpp\"\
+    \n#include\"../math/ceil_pow2.hpp\"\n#include\"../math/garner.hpp\"\n\n/**\n *\
+    \ @brief \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)\n */\n\nstruct _FPS{\n\
     \    template<typename T>\n    T operator()(const T& _s,const T& _t){\n      \
-    \  const size_t sz=_s.size()+_t.size()-1;\n        if((sz&((1<<ceil_pow2(sz))-1))==0){\n\
-    \            vector<atcoder::static_modint<Mint::get_mod()>>s(_s.size()),t(_t.size());\n\
-    \            for(size_t i=0;i<_s.size();++i)s[i]=_s[i].value();\n            for(size_t\
-    \ i=0;i<_t.size();++i)t[i]=_t[i].value();\n            vector<atcoder::static_modint<Mint::get_mod()>>\
-    \ _v=atcoder::convolution(s,t);\n            T v(_v.size());\n            for\
-    \ (size_t i=0;i<_v.size();++i)v[i]=_v[i].val();\n            return v;\n     \
-    \   }else{\n            vector<atcoder::static_modint<1224736769>>s1(_s.size()),t1(_t.size());\n\
-    \            vector<atcoder::static_modint<1045430273>>s2(_s.size()),t2(_t.size());\n\
-    \            vector<atcoder::static_modint<1007681537>>s3(_s.size()),t3(_t.size());\n\
-    \            for(size_t i=0;i<_s.size();++i){\n                s1[i]=_s[i].value();\n\
-    \                s2[i]=_s[i].value();\n                s3[i]=_s[i].value();\n\
-    \            }\n            for(size_t i=0;i<_t.size();++i){\n               \
-    \ t1[i]=_t[i].value();\n                t2[i]=_t[i].value();\n               \
-    \ t3[i]=_t[i].value();\n            }\n            auto v1=atcoder::convolution(s1,t1);\n\
-    \            auto v2=atcoder::convolution(s2,t2);\n            auto v3=atcoder::convolution(s3,t3);\n\
-    \            T v(sz);\n            for(size_t i=0;i<sz;++i){\n               \
-    \ v[i]=garner(vector<long long>{v1[i].val(),v2[i].val(),v3[i].val()},vector<long\
-    \ long>{1224736769,1045430273,1007681537,Mint::get_mod()});\n            }\n \
-    \           return v;\n        }\n    }\n    template<typename T>\n    T fact(const\
-    \ T& s){\n        return s.fact();\n    }\n    template<typename T>\n    T pow(const\
-    \ T& s,int i){\n        return s.pow(i);\n    }\n};\ntemplate<typename Mint>using\
-    \ fps=FPS_BASE<Mint,_FPS<Mint>>;\n"
-  code: "#pragma once\n#include\"FPS_base.hpp\"\n#include\"../util/ACL.hpp\"\n#include\"\
-    ../math/ceil_pow2.hpp\"\n#include\"../math/garner.hpp\"\n/**\n * @brief \u5F62\
-    \u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)\n */\n\ntemplate<typename Mint>\nstruct\
-    \ _FPS{\n    template<typename T>\n    T operator()(const T& _s,const T& _t){\n\
-    \        const size_t sz=_s.size()+_t.size()-1;\n        if((sz&((1<<ceil_pow2(sz))-1))==0){\n\
-    \            vector<atcoder::static_modint<Mint::get_mod()>>s(_s.size()),t(_t.size());\n\
-    \            for(size_t i=0;i<_s.size();++i)s[i]=_s[i].value();\n            for(size_t\
-    \ i=0;i<_t.size();++i)t[i]=_t[i].value();\n            vector<atcoder::static_modint<Mint::get_mod()>>\
-    \ _v=atcoder::convolution(s,t);\n            T v(_v.size());\n            for\
-    \ (size_t i=0;i<_v.size();++i)v[i]=_v[i].val();\n            return v;\n     \
-    \   }else{\n            vector<atcoder::static_modint<1224736769>>s1(_s.size()),t1(_t.size());\n\
-    \            vector<atcoder::static_modint<1045430273>>s2(_s.size()),t2(_t.size());\n\
-    \            vector<atcoder::static_modint<1007681537>>s3(_s.size()),t3(_t.size());\n\
-    \            for(size_t i=0;i<_s.size();++i){\n                s1[i]=_s[i].value();\n\
-    \                s2[i]=_s[i].value();\n                s3[i]=_s[i].value();\n\
-    \            }\n            for(size_t i=0;i<_t.size();++i){\n               \
-    \ t1[i]=_t[i].value();\n                t2[i]=_t[i].value();\n               \
-    \ t3[i]=_t[i].value();\n            }\n            auto v1=atcoder::convolution(s1,t1);\n\
-    \            auto v2=atcoder::convolution(s2,t2);\n            auto v3=atcoder::convolution(s3,t3);\n\
-    \            T v(sz);\n            for(size_t i=0;i<sz;++i){\n               \
-    \ v[i]=garner(vector<long long>{v1[i].val(),v2[i].val(),v3[i].val()},vector<long\
-    \ long>{1224736769,1045430273,1007681537,Mint::get_mod()});\n            }\n \
-    \           return v;\n        }\n    }\n    template<typename T>\n    T fact(const\
-    \ T& s){\n        return s.fact();\n    }\n    template<typename T>\n    T pow(const\
-    \ T& s,int i){\n        return s.pow(i);\n    }\n};\ntemplate<typename Mint>using\
-    \ fps=FPS_BASE<Mint,_FPS<Mint>>;"
+    \  std::vector<long long>v=atcoder::convolution_ll(static_cast<std::vector<long\
+    \ long>>(_s),static_cast<std::vector<long long>>(_t));\n        return *static_cast<T*>(&v);\n\
+    \    }\n    template<typename T>\n    T fact(const T& s){\n        T t=1;\n  \
+    \      for(int i=1;i<=s;++i){\n            t*=i;\n        }\n        return t;\n\
+    \    }\n    template<typename T>\n    T pow(T s,int i){\n        T t=1;\n    \
+    \    while(i){\n            if(i%2)t*=s;\n            s*=s;\n            i/=2;\n\
+    \        }\n        return t;\n    }\n};\nusing fps=FPS_BASE<long long,_FPS>;"
   dependsOn:
-  - convolution/FPS_base.hpp
+  - math/FPS_base.hpp
   - util/ACL.hpp
   - math/ceil_pow2.hpp
   - math/garner.hpp
   - math/mod_pow.hpp
   isVerificationFile: false
-  path: convolution/FPS.hpp
+  path: math/FPS_long.hpp
   requiredBy: []
-  timestamp: '2020-09-14 19:36:00+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-09-18 20:23:58+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - convolution/test/LC_convolution_1000000007.test.cpp
-  - convolution/test/LC_convolution_998244353.test.cpp
-documentation_of: convolution/FPS.hpp
+  - graph_tree/test/LC_centroid_decomposition.test.cpp
+documentation_of: math/FPS_long.hpp
 layout: document
 redirect_from:
-- /library/convolution/FPS.hpp
-- /library/convolution/FPS.hpp.html
-title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
+- /library/math/FPS_long.hpp
+- /library/math/FPS_long.hpp.html
+title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
 ---

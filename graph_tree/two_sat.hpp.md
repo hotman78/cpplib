@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: graph_tree/scc.hpp
     title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
-  - icon: ':warning:'
+  - icon: ':x:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
@@ -16,48 +16,51 @@ data:
     document_title: 2-SAT
     links: []
   bundledCode: "#line 2 \"graph_tree/two_sat.hpp\"\n#include<vector>\n#include<algorithm>\n\
-    #line 3 \"graph_tree/scc.hpp\"\n#include<tuple>\n#line 3 \"graph_tree/graph_template.hpp\"\
+    #line 3 \"graph_tree/scc.hpp\"\n#include<tuple>\n#line 4 \"graph_tree/graph_template.hpp\"\
     \n#include<iostream>\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\
     \u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\ntemplate<typename\
-    \ T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>;\n\ngraph load_graph(int\
+    \ T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\ngraph load_graph(int\
     \ n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n  \
     \      std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n       \
-    \ g[t].push_back(s);\n    }\n}\ngraph load_digraph(int n,int m){\n    graph g(n);\n\
+    \ g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int m){\n\
+    \    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    \        --s;--t;\n        g[s].push_back(t);\n    }\n    return g;\n}\ngraph\
+    \ load_graph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n    \
+    \    int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
+    \    }\n    return g;\n}\ngraph load_digraph0(int n,int m){\n    graph g(n);\n\
     \    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n      \
-    \  --s;--t;\n        g[s].push_back(t);\n    }\n}\ngraph load_graph0(int n,int\
-    \ m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
-    \        g[s].push_back(t);\n        g[t].push_back(s);\n    }\n}\ngraph load_digraph0(int\
-    \ n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n  \
-    \      std::cin>>s>>t;\n        g[s].push_back(t);\n    }\n}\ngraph load_tree(int\
-    \ n){\n    graph g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n      \
-    \  std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
-    \    }\n}\ngraph load_tree1(int n){\n    graph g(n);\n    for(int i=0;i<n-1;++i){\n\
-    \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n}\ngraph load_treep(int n){\n    graph g(n);\n\
-    \    for(int i=0;i<n-1;++i){\n        int t;\n        std::cin>>t;\n        g[i+1].push_back(t);\n\
-    \        g[t].push_back(i+1);\n    }\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int\
-    \ n,int m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n\
-    \        T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n}\ntemplate<typename T>\ngraph_w<T> load_digraph_weight(int\
-    \ n,int m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n\
-    \        T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \    }\n}\ntemplate<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n\
+    \  g[s].push_back(t);\n    }\n    return g;\n}\ngraph load_tree(int n){\n    graph\
+    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    \        --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n  \
+    \  }\n    return g;\n}\ngraph load_tree0(int n){\n    graph g(n);\n    for(int\
+    \ i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n\
+    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_treep(int n){\n\
+    \    graph g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n        std::cin>>t;\n\
+    \        g[i+1].push_back(t);\n        g[t].push_back(i+1);\n    }\n    return\
+    \ g;\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int n,int m){\n\
     \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
-    \ u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n\
-    \    }\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int m){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
-    \ u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n}\n\
-    template<typename T>\ngraph_w<T> load_tree_weight(int n){\n    graph_w<T> g(n);\n\
-    \    for(int i=0;i<n-1;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
-    \        --s;--t;\n        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n\
-    \    }\n}\ntemplate<typename T>\ngraph_w<T> load_tree1_weight(int n){\n    graph_w<T>\
-    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        T u;\n       \
-    \ std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n    \
-    \    g[t].emplace_back(s,u);\n    }\n}\ntemplate<typename T>\ngraph_w<T> load_treep_weight(int\
-    \ n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n   \
-    \     T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n     \
-    \   g[t].emplace_back(i+1,u);\n    }\n}\n#line 6 \"graph_tree/scc.hpp\"\n\n/**\n\
-    \ * @brief \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\n */\n\nstd::pair<std::vector<int>,graph>\
+    \ u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_digraph_weight(int n,int m){\n    graph_w<T> g(n);\n    for(int\
+    \ i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
+    \        --s;--t;\n        g[s].emplace_back(t,u);\n    }\n    return g;\n}\n\
+    template<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n    graph_w<T>\
+    \ g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
+    \        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n    }\n   \
+    \ return g;\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int\
+    \ m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n   \
+    \     T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n\
+    \    return g;\n}\ntemplate<typename T>\ngraph_w<T> load_tree_weight(int n){\n\
+    \    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n       \
+    \ T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_tree0_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
+    \        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
+    \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
+    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 6 \"graph_tree/scc.hpp\"\
+    \n\n/**\n * @brief \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\n */\n\nstd::pair<std::vector<int>,graph>\
     \ scc(const graph& g){\n    int n=g.size();\n    std::vector<std::vector<int>>rev(n);\n\
     \    for(int i=0;i<n;i++)for(auto e:g[i]){\n        rev[e].emplace_back(i);\n\
     \    }\n    int idx=0;\n    std::vector<int>v(n,-1);\n    std::vector<bool>visited(n,0);\n\
@@ -99,7 +102,7 @@ data:
   isVerificationFile: false
   path: graph_tree/two_sat.hpp
   requiredBy: []
-  timestamp: '2020-09-18 16:29:26+09:00'
+  timestamp: '2020-09-18 20:23:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph_tree/two_sat.hpp

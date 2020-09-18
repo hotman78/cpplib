@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/fast_set.hpp
     title: "FastSet(\u9045\u3044)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/mod_sqrt.hpp
     title: ModSqrt
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   - icon: ':heavy_check_mark:'
     path: util/random_gen.hpp
     title: util/random_gen.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

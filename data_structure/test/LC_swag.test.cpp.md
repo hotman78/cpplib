@@ -16,7 +16,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: functional/composite.hpp
     title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

@@ -10,12 +10,6 @@ data:
     path: segment_tree/test/segment_tree.test.cpp
     title: segment_tree/test/segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: convolution/test/LC_convolution_1000000007.test.cpp
-    title: convolution/test/LC_convolution_1000000007.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: convolution/test/LC_convolution_998244353.test.cpp
-    title: convolution/test/LC_convolution_998244353.test.cpp
-  - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
   - icon: ':heavy_check_mark:'
@@ -60,6 +54,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
+  - icon: ':x:'
+    path: graph_tree/test/LC_centroid_decomposition.test.cpp
+    title: graph_tree/test/LC_centroid_decomposition.test.cpp
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_sparse_table.test.cpp
     title: data_structure/test/LC_sparse_table.test.cpp
@@ -97,7 +94,7 @@ data:
     path: data_structure/test/LC_wavelet_matrix.test.cpp
     title: data_structure/test/LC_wavelet_matrix.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -167,11 +164,9 @@ data:
   requiredBy:
   - math/test/LC_sum_power_poly_limit.cpp
   timestamp: '2020-09-18 12:55:10+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - segment_tree/test/segment_tree.test.cpp
-  - convolution/test/LC_convolution_1000000007.test.cpp
-  - convolution/test/LC_convolution_998244353.test.cpp
   - util/test/LC_Suffix_Array.test.cpp
   - util/test/LC_Number_of_Substrings.test.cpp
   - math/test/AOJ_prime_factor.test.cpp
@@ -187,6 +182,7 @@ data:
   - string/test/YUKI_Aho_Corasick.test.cpp
   - string/test/LC_Z_algorizm.test.cpp
   - string/test/LC_online_Z_algorizm.test.cpp
+  - graph_tree/test/LC_centroid_decomposition.test.cpp
   - data_structure/test/LC_sparse_table.test.cpp
   - data_structure/test/LC_fast_set.test.cpp
   - data_structure/test/LC_swag.test.cpp

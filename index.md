@@ -22,14 +22,6 @@ data:
     - icon: ':warning:'
       path: alga/monoid.hpp
       title: alga/monoid.hpp
-  - name: convolution
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: convolution/FPS.hpp
-      title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
-    - icon: ':heavy_check_mark:'
-      path: convolution/FPS_base.hpp
-      title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
   - name: data_structure
     pages:
     - icon: ':warning:'
@@ -131,7 +123,7 @@ data:
     - icon: ':warning:'
       path: graph_tree/bellmanFord.hpp
       title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5(WIP)"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph_tree/centroid_decomposition.hpp
       title: "\u91CD\u5FC3\u5206\u89E3"
     - icon: ':warning:'
@@ -149,7 +141,7 @@ data:
     - icon: ':warning:'
       path: graph_tree/fast_dijkstra.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O(E+VlogE)"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph_tree/graph_template.hpp
       title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
@@ -194,6 +186,15 @@ data:
       title: 2-SAT
   - name: math
     pages:
+    - icon: ':x:'
+      path: math/FPS_base.hpp
+      title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
+    - icon: ':x:'
+      path: math/FPS_long.hpp
+      title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
+    - icon: ':warning:'
+      path: math/FPS_mint.hpp
+      title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
     - icon: ':heavy_check_mark:'
       path: math/binary_search.hpp
       title: "\u4E8C\u5206\u63A2\u7D22"
@@ -206,7 +207,7 @@ data:
     - icon: ':warning:'
       path: math/catalans_trapezoids.hpp
       title: "\u30AB\u30BF\u30E9\u30F3\u53F0\u5F62"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/ceil_pow2.hpp
       title: math/ceil_pow2.hpp
     - icon: ':warning:'
@@ -221,7 +222,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/floor_sum.hpp
       title: \sum_{i=0}^{n-1}\floor(a*i+b/c)
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/garner.hpp
       title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
@@ -237,7 +238,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/mod_int.hpp
       title: ModInt
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: math/mod_int1000000007.hpp
       title: ModInt(1'000'000'007)
     - icon: ':heavy_check_mark:'
@@ -246,7 +247,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/mod_log.hpp
       title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/mod_pow.hpp
       title: (x^y)%mod
     - icon: ':heavy_check_mark:'
@@ -317,7 +318,7 @@ data:
       title: "Trie\u6728"
   - name: util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: util/ACL.hpp
       title: util/ACL.hpp
     - icon: ':warning:'
@@ -329,18 +330,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
-  - name: convolution/test
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: convolution/test/LC_convolution_1000000007.test.cpp
-      title: convolution/test/LC_convolution_1000000007.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: convolution/test/LC_convolution_998244353.test.cpp
-      title: convolution/test/LC_convolution_998244353.test.cpp
   - name: data_structure/test
     pages:
     - icon: ':heavy_check_mark:'
@@ -384,6 +377,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: dsu/test/union_find.test.cpp
       title: dsu/test/union_find.test.cpp
+  - name: graph_tree/test
+    pages:
+    - icon: ':x:'
+      path: graph_tree/test/LC_centroid_decomposition.test.cpp
+      title: graph_tree/test/LC_centroid_decomposition.test.cpp
   - name: math/test
     pages:
     - icon: ':heavy_check_mark:'
@@ -398,6 +396,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/test/AOJ_prime_list.test.cpp
       title: math/test/AOJ_prime_list.test.cpp
+    - icon: ':x:'
+      path: math/test/LC_convolution_1000000007.test.cpp
+      title: math/test/LC_convolution_1000000007.test.cpp
+    - icon: ':x:'
+      path: math/test/LC_convolution_998244353.test.cpp
+      title: math/test/LC_convolution_998244353.test.cpp
     - icon: ':heavy_check_mark:'
       path: math/test/LC_floor_sum.test.cpp
       title: math/test/LC_floor_sum.test.cpp
