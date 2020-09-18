@@ -5,6 +5,9 @@ data:
   - icon: ':warning:'
     path: math/test/LC_sum_power_poly_limit.cpp
     title: math/test/LC_sum_power_poly_limit.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/dijkstra.hpp
+    title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: segment_tree/test/segment_tree.test.cpp
@@ -60,6 +63,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_dijkstra.test.cpp
+    title: graph_tree/test/LC_dijkstra.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_dijkstra_fast.test.cpp
+    title: graph_tree/test/LC_dijkstra_fast.test.cpp
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
     title: graph_tree/test/LC_centroid_decomposition.test.cpp
@@ -169,6 +178,7 @@ data:
   path: util/template.hpp
   requiredBy:
   - math/test/LC_sum_power_poly_limit.cpp
+  - graph_tree/dijkstra.hpp
   timestamp: '2020-09-18 12:55:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -190,6 +200,8 @@ data:
   - string/test/YUKI_Aho_Corasick.test.cpp
   - string/test/LC_Z_algorizm.test.cpp
   - string/test/LC_online_Z_algorizm.test.cpp
+  - graph_tree/test/LC_dijkstra.test.cpp
+  - graph_tree/test/LC_dijkstra_fast.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp
   - data_structure/test/LC_sparse_table.test.cpp
   - data_structure/test/LC_fast_set.test.cpp

@@ -132,15 +132,15 @@ data:
     - icon: ':warning:'
       path: graph_tree/depth.hpp
       title: "\u6839\u304B\u3089\u306E\u6DF1\u3055"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph_tree/dijkstra.hpp
-      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O((E+V)logE)"
+      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
+    - icon: ':heavy_check_mark:'
+      path: graph_tree/dijkstra_fast.hpp
+      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O(E+VlogE)"
     - icon: ':warning:'
       path: graph_tree/dominator_tree.hpp
       title: "\u652F\u914D\u6728"
-    - icon: ':warning:'
-      path: graph_tree/fast_dijkstra.hpp
-      title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O(E+VlogE)"
     - icon: ':heavy_check_mark:'
       path: graph_tree/graph_template.hpp
       title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
@@ -169,6 +169,9 @@ data:
     - icon: ':warning:'
       path: graph_tree/scc.hpp
       title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
+    - icon: ':warning:'
+      path: graph_tree/shortest_path_tree_dijkstra.hpp
+      title: "\u6700\u77ED\u7D4C\u8DEF\u6728 O((E+V)logE)"
     - icon: ':warning:'
       path: graph_tree/top_tree.hpp
       title: graph_tree/top_tree.hpp
@@ -382,6 +385,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph_tree/test/LC_centroid_decomposition.test.cpp
       title: graph_tree/test/LC_centroid_decomposition.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph_tree/test/LC_dijkstra.test.cpp
+      title: graph_tree/test/LC_dijkstra.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph_tree/test/LC_dijkstra_fast.test.cpp
+      title: graph_tree/test/LC_dijkstra_fast.test.cpp
   - name: math/test
     pages:
     - icon: ':heavy_check_mark:'

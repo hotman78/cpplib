@@ -2,27 +2,29 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: graph_tree/dijkstra.hpp
+    title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
+  - icon: ':heavy_check_mark:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: graph_tree/test/LC_dijkstra.test.cpp
-    title: graph_tree/test/LC_dijkstra.test.cpp
-  _pathExtension: hpp
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
-    links: []
-  bundledCode: "#line 2 \"graph_tree/dijkstra.hpp\"\n#include<vector>\n#include<queue>\n\
-    #include<functional>\n#include<tuple>\n#include<limits>\n#include<algorithm>\n\
-    #line 4 \"graph_tree/graph_template.hpp\"\n#include<iostream>\n/**\n * @brief\
-    \ \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\n\
-    template<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
+    PROBLEM: https://judge.yosupo.jp/problem/shortest_path
+    links:
+    - https://judge.yosupo.jp/problem/shortest_path
+  bundledCode: "#line 1 \"graph_tree/test/LC_dijkstra.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/shortest_path\"\n#line 2 \"graph_tree/dijkstra.hpp\"\
+    \n#include<vector>\n#include<queue>\n#include<functional>\n#include<tuple>\n#include<limits>\n\
+    #include<algorithm>\n#line 4 \"graph_tree/graph_template.hpp\"\n#include<iostream>\n\
+    /**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\n\
+    using graph=std::vector<std::vector<int>>;\ntemplate<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
     \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
     \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
     \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
@@ -111,43 +113,33 @@ data:
     \    bool reachable(int t){\n        return par[t]!=-1;\n    }\n    std::vector<int>\
     \ get_path(int t){\n        std::vector<int>res;\n        while(t!=s){\n     \
     \       res.push_back(t);\n            t=par[t];\n        }\n        res.push_back(s);\n\
-    \        std::reverse(res.begin(),res.end());\n        return res;\n    }\n};\n"
-  code: "#pragma once\n#include<vector>\n#include<queue>\n#include<functional>\n#include<tuple>\n\
-    #include<limits>\n#include<algorithm>\n#include\"graph_template.hpp\"\n#include\"\
-    ../util/template.hpp\"\n/**\n * @brief \u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5\
-    \ O((E+V)logE)\n */\n\ntemplate<typename T,typename F=std::less<T>,typename Add=std::plus<T>>\n\
-    struct dijkstra{\n    int s;\n    std::vector<T> diff;\n    std::vector<int> par;\n\
-    \    std::vector<int>used;\n    dijkstra(const graph_w<T>& list,int s,T zero=T(),T\
-    \ inf=std::numeric_limits<T>::max(),F f=F(),Add add=Add()):s(s){\n        int\
-    \ n=list.size();\n        diff.resize(n,inf);\n        par.resize(n,-1);\n   \
-    \     used.resize(n,0);\n        std::priority_queue<std::pair<T,int>,std::vector<std::pair<T,int>>,std::greater<std::pair<T,int>>>que;\n\
-    \        diff[s]=zero;\n        que.push(std::make_pair(T(),s));\n        while(!que.empty()){\n\
-    \            auto d=que.top();\n            que.pop();\n            T x;\n   \
-    \         int now;\n            std::tie(x,now)=d;\n            if(used[now])continue;\n\
-    \            used[now]=1;\n            for(auto d2:list[now]){\n             \
-    \   T sa;\n                int to;\n                std::tie(to,sa)=d2;\n    \
-    \            T tmp=add(diff[now],sa);\n                if(f(tmp,diff[to])){\n\
-    \                    diff[to]=tmp;\n                    par[to]=now;\n       \
-    \             que.emplace(diff[to],to);\n                }\n            }\n  \
-    \      }\n    }\n    T operator[](int idx){\n        return diff[idx];\n    }\n\
-    \    bool reachable(int t){\n        return par[t]!=-1;\n    }\n    std::vector<int>\
-    \ get_path(int t){\n        std::vector<int>res;\n        while(t!=s){\n     \
-    \       res.push_back(t);\n            t=par[t];\n        }\n        res.push_back(s);\n\
-    \        std::reverse(res.begin(),res.end());\n        return res;\n    }\n};"
+    \        std::reverse(res.begin(),res.end());\n        return res;\n    }\n};\n\
+    #line 5 \"graph_tree/test/LC_dijkstra.test.cpp\"\n\nint main(){\n    lint n,m,s,t;\n\
+    \    cin>>n>>m>>s>>t;\n    auto g=load_digraph0_weight<lint>(n,m);\n    dijkstra<lint>\
+    \ d(g,s);\n    if(d.reachable(t)){\n        auto p=d.get_path(t);\n        cout<<d[t]<<\"\
+    \ \"<<p.size()-1<<endl;\n        rep(i,p.size()-1){\n            cout<<p[i]<<\"\
+    \ \"<<p[i+1]<<endl;\n        }\n    }else{\n        cout<<-1<<endl;\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n#include\"\
+    ../dijkstra.hpp\"\n#include\"../graph_template.hpp\"\n#include\"../../util/template.hpp\"\
+    \n\nint main(){\n    lint n,m,s,t;\n    cin>>n>>m>>s>>t;\n    auto g=load_digraph0_weight<lint>(n,m);\n\
+    \    dijkstra<lint> d(g,s);\n    if(d.reachable(t)){\n        auto p=d.get_path(t);\n\
+    \        cout<<d[t]<<\" \"<<p.size()-1<<endl;\n        rep(i,p.size()-1){\n  \
+    \          cout<<p[i]<<\" \"<<p[i+1]<<endl;\n        }\n    }else{\n        cout<<-1<<endl;\n\
+    \    }\n}"
   dependsOn:
+  - graph_tree/dijkstra.hpp
   - graph_tree/graph_template.hpp
   - util/template.hpp
-  isVerificationFile: false
-  path: graph_tree/dijkstra.hpp
+  isVerificationFile: true
+  path: graph_tree/test/LC_dijkstra.test.cpp
   requiredBy: []
   timestamp: '2020-09-18 22:01:54+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - graph_tree/test/LC_dijkstra.test.cpp
-documentation_of: graph_tree/dijkstra.hpp
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: graph_tree/test/LC_dijkstra.test.cpp
 layout: document
 redirect_from:
-- /library/graph_tree/dijkstra.hpp
-- /library/graph_tree/dijkstra.hpp.html
-title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
+- /verify/graph_tree/test/LC_dijkstra.test.cpp
+- /verify/graph_tree/test/LC_dijkstra.test.cpp.html
+title: graph_tree/test/LC_dijkstra.test.cpp
 ---
