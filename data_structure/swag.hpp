@@ -3,6 +3,10 @@
 #include<tuple>
 #include<cmath>
 
+/**
+ * @brief SWAG(Queue)
+ */
+
 template<typename T,typename E=T>
 class swag{
     std::stack<std::pair<T,E>>front,back;

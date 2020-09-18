@@ -3,6 +3,10 @@
 #include<algorithm>
 #include<functional>
 
+/**
+ * @brief バイナリーヒープ
+ */
+
 template<typename T,typename F=std::less<T>>
 struct binary_heap{
 	int idx=1;

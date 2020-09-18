@@ -1,7 +1,11 @@
 #pragma once
 #include<vector>
 #include<algorithm>
-#include"bitvector.hpp"
+#include"bit_vector.hpp"
+
+/**
+ * @brief WaveletMatrix(WIP)
+ */
 
 class wavelet_matrix{
     using lint=long long;

@@ -4,6 +4,11 @@
 #include<numeric>
 #include<cmath>
 
+/**
+ * @brief <O(N),O(1)>RMQ
+ * @see https://noshi91.hatenablog.com/entry/2018/08/16/125415
+ */
+
 template<typename T>
 class RMQ{
     class small_rmq{

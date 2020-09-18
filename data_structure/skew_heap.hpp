@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * @brief マージ可能ヒープ(SkewHeap)
+ */
+
 template<typename T>
 class skew_heap{
 	struct node;

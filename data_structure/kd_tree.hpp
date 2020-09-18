@@ -1,15 +1,19 @@
 #pragma once
 #include<vector>
 
+/**
+ * @brief Kd木(WIP)
+ */
+
 template<typename T=long long,int sz=2>
-struct kdtree{
+struct kd_tree{
     typedef array<T,sz> Point;
     Point point;
     //vector<Point> v;
 	long long v_size;
     int axis,depth;
-    kdtree *l=nullptr,*r=nullptr;
-    kdtree(vector<Point> v=vector<Point>{},int depth=0):v_size(v.size()),depth(depth){
+    kd_tree *l=nullptr,*r=nullptr;
+    kd_tree(vector<Point> v=vector<Point>{},int depth=0):v_size(v.size()),depth(depth){
         build(v,depth);
     }
     inline bool comp(const Point& s,const Point& t){

@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * @brief DisjointSparseTable
+ */
+
 template<typename T>
 class disjoint_sparse_table{
 	T** table;

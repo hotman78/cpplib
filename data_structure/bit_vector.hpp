@@ -1,3 +1,9 @@
+#pragma once
+
+/**
+ * @brief ビットベクター
+ */
+
 class bitvec{
 	using u32=unsigned int;
 	using u8=unsigned char;

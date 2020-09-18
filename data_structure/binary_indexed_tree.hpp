@@ -1,6 +1,10 @@
 #pragma once
 #include<vector>
 
+/**
+ * @brief BinaryIndexedTree
+ */
+
 struct BIT{
     std::vector<long long> bit;
     int n;

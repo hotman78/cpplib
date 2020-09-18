@@ -4,6 +4,10 @@
 #include<cmath>
 #include<algorithm>
 
+/**
+ * @brief SparseTable
+ */
+
 template<typename T>
 class sparse_table{
     using F=std::function<T(T,T)>;

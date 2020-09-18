@@ -2,6 +2,11 @@
 #include<vector>
 #include<stack>
 
+/**
+ * @brief cartesian_tree
+ */
+
+
 template<typename T>
 struct cartesian_tree{
     struct node;

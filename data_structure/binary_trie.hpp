@@ -1,6 +1,10 @@
 #pragma once
 #include<cstdint>
 
+/**
+ * @brief バイナリートライ
+ */
+
 struct binary_trie{
     constexpr static int B=64;
     using u64=std::uint64_t;

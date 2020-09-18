@@ -6,6 +6,10 @@
 #include <cassert>
 #include<iostream>
 
+/**
+ * @brief FastSet(遅い)
+ */
+
 template<typename T>
 struct fast_set{
 	constexpr static int B=4;

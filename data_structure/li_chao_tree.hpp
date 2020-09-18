@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * @brief LiChaoTree
+ */
+
 template<typename T>
 class LHT{
     using lint = long long;

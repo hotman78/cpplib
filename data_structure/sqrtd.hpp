@@ -1,3 +1,7 @@
+/**
+ * @brief 平方分割(WIP)
+ */
+
 template<typename T>
 struct sqrtd{
     vector<T>v;

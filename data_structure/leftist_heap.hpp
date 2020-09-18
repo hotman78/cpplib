@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * @brief マージ可能ヒープ(LeftistHeap)
+ */
+
 template<typename T>
 struct heap{
     struct node{
