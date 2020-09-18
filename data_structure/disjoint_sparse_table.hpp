@@ -1,16 +1,21 @@
 #pragma once
+#include<functional>
+#include<vector>
 
 /**
  * @brief DisjointSparseTable
  */
 
-template<typename T>
+template<typename T,typename F=std::plus<T>>
 class disjoint_sparse_table{
 	T** table;
 	T* data;
 	int n=1,cnt=0;
 	public:
-	disjoint_sparse_table(const vector<T>& v){
+	F f;
+	disjoint_sparse_table(const std::vector<T>& v,F f):f(f){init(v);}
+	disjoint_sparse_table(const std::vector<T>& v):f(F()){init(v);}
+	void init(const std::vector<T>& v){
 		while(n<(int)v.size())n<<=1,cnt++;
 		table=new T*[cnt];
 		for(int i=0;i<cnt;i++){
@@ -34,13 +39,10 @@ class disjoint_sparse_table{
 			}
 		}
 	}
-	T get(auto l,auto r){
+	T get(int l,int r){
 		r--;
 		if(l==r)return data[l];
 		const int t=31-__builtin_clz((int)(l^r));
 		return f(table[t][l],table[t][r]);
-	}
-	inline T f(const T& a,const T& b){
-		return min(a,b);
 	}
 };
