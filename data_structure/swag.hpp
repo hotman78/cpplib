@@ -2,15 +2,17 @@
 #include<stack>
 #include<tuple>
 #include<cmath>
-
+#include"../alga/maybe.hpp"
 /**
  * @brief SWAG(Queue)
  */
 
-template<typename T,typename E=T>
+template<typename T,typename F>
 class swag{
-    std::stack<std::pair<T,E>>front,back;
+    std::stack<std::pair<T,T>>front,back;
+    F f;
     public:
+    swag(F f=F()):f(f){}
     inline int size(){
         return front.size()+back.size();
     }
@@ -19,7 +21,7 @@ class swag{
     }
     void push(T val){
         if(back.empty()){
-            back.emplace(val,f(e,val));
+            back.emplace(val,val);
         }else{
             back.emplace(val,f(back.top().second,val));
         }
@@ -29,18 +31,15 @@ class swag{
             while(!back.empty()){
                 const T val=back.top().first;
                 back.pop();
-                if(front.empty())front.emplace(val,f(val,e));
+                if(front.empty())front.emplace(val,val);
                 else front.emplace(val,f(val,front.top().second));
             }
         }
         front.pop();
     }
-    E fold(){
-        return f(front.empty()?e:front.top().second,back.empty()?e:back.top().second);
+    maybe<T> fold(){
+        if(front.empty()&&back.empty())return maybe<T>();
+        else if(front.empty()||back.empty())return front.empty()?back.top().second:front.top().second;
+        return f(front.top().second,back.top().second);
     }
-    private:
-    E f(const T& s,const T& t){
-        return std::min(s,t);
-    }
-    E e=1LL<<60;
 };

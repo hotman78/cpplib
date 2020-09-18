@@ -1,5 +1,8 @@
 #pragma once
 #include<algorithm>
+/**
+ * @brief 最大値
+ */
 
 template<typename T>
 struct MAX{
