@@ -1,3 +1,10 @@
+#pragma once
+#include<vector>
+#include<tuple>
+#include<iostream>
+#include<cmath>
+#include<type_traits>
+
 /**
  * @brief 形式的冪級数(BASE)
  */
@@ -45,6 +52,12 @@ struct FPS_BASE:std::vector<T>{
         return (*this);
     }
     P &operator /=(T x){
+        if(std::is_same<T,long long>::value){
+            for(int i=0;i<(int)this->size();++i){
+                (*this)[i]/=x;
+            }
+            return (*this);
+        }
         return (*this)*=(T(1)/x);
     }
     P &operator <<=(int x){
@@ -87,12 +100,12 @@ struct FPS_BASE:std::vector<T>{
         return ((*this)-=*this/x*x);
     }
     inline void print(){
-        for(int i=0;i<(int)(*this).size();++i)cerr<<(*this)[i]<<" \n"[i==(int)(*this).size()-1];
-        if((int)(*this).size()==0)cerr<<endl;
+        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<" \n"[i==(int)(*this).size()-1];
+        if((int)(*this).size()==0)std::cerr<<'\n';
     }
     inline P& shrink(){while((*this).back()==0)(*this).pop_back();return (*this);}
     inline P pre(int sz)const{
-        return P(begin(*this),begin(*this)+min((int)this->size(),sz));
+        return P(begin(*this),begin(*this)+std::min((int)this->size(),sz));
     }
     P rev(int deg=-1){
         P ret(*this);
@@ -206,7 +219,7 @@ struct FPS_BASE:std::vector<T>{
         }
         return res;
     }
-    vector<T> multipoint_eval(const vector<T>&x){
+    std::vector<T> multipoint_eval(const std::vector<T>&x){
         const int n=x.size();
         P* v=new P[2*n-1];
         for(int i=0;i<n;i++)v[i+n-1]={T()-x[i],T(1)};
@@ -216,7 +229,7 @@ struct FPS_BASE:std::vector<T>{
             v[i]=v[(i-1)/2]%v[i];
             v[i].shrink();
         }
-        vector<T>res(n);
+        std::vector<T>res(n);
         for(int i=0;i<n;i++)res[i]=v[i+n-1][0];
         return res;
     }
@@ -240,10 +253,10 @@ struct FPS_BASE:std::vector<T>{
         P s=P(*this);
         if(deg==0)return P();
         if((int)t.size()==1)return P{s.eval(t[0])};
-        int k=min((int)::sqrt(deg/(::log2(deg)+1))+1,(int)t.size());
+        int k=std::min((int)::sqrt(deg/(::log2(deg)+1))+1,(int)t.size());
         int b=deg/k+1;
         P t2=t.pre(k);
-        vector<P>table(s.size()/2+1,P{1});
+        std::vector<P>table(s.size()/2+1,P{1});
         for(int i=1;i<(int)table.size();i++){
             table[i]=((table[i-1])*t2).pre(deg);
         }
@@ -288,6 +301,6 @@ struct FPS_BASE:std::vector<T>{
         return ans;
     }
     void debug(){
-        for(int i=0;i<(int)(*this).size();++i)cerr<<(*this)[i]<<" \n"[i==(int)(*this).size()-1];
+        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<" \n"[i==(int)(*this).size()-1];
     }
 };

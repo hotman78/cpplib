@@ -1,24 +1,16 @@
 #pragma once
 #include<vector>
-
+#include"graph_template.hpp"
 /**
  * @brief 重心分解
  */
 
-template<typename T>
-struct centroid_decomposition{
-    std::vector<std::vector<T>>g;
+class centroid_decomposition{
+    graph g;
     std::vector<int>used;
     std::vector<int>v;
-    std::vector<vector<int>>ch;
+    graph ch;
     int s;
-    centroid_decomposition(const vector<vector<T>>&g):g(g){
-        int n=g.size();
-        used.resize(n);
-        v.resize(n);
-        ch.resize(n);
-        dfs(0,-1,n,-1);
-    }
     int dfs(int n,int p,int sz,int root){
         if(used[n])return 0;
         bool b=1;
@@ -39,4 +31,15 @@ struct centroid_decomposition{
         }
         return g.size()*2;
     }
+    public:
+    centroid_decomposition(const graph&g):g(g){
+        int n=g.size();
+        used.resize(n);
+        ch.resize(n);
+        dfs(0,-1,n,-1);
+    }
+
+    int get_root(){return s;}
+    std::vector<int> operator[](int i){return ch[i];}
+    std::vector<int> get_euler_tour(){return v;}
 };
