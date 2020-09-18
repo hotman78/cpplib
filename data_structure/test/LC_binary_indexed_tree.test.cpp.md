@@ -15,10 +15,11 @@ data:
     , line 258, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
     )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../template.hpp:\
     \ line -1: no such header\n"
-  code: "#include \"../binary_indexed_tree.hpp\"\n#include \"../../template.hpp\"\n\
-    \nint main(){\n\tlint n,q;\n\tcin>>n>>q;\n\tBIT bit(n);\n\trep(i,n){\n\t\tlint\
-    \ x;\n\t\tcin>>x;\n\t\tbit.add(i,x);\n\t}\n\twhile(q--){\n\t\tlint c,s,t;\n\t\t\
-    cin>>c>>s>>t;\n\t\tif(c==0){\n\t\t\tbit.add(s,t);\n\t\t}else{\n\t\t\tcout<<bit.sum(s,t)<<endl;\n\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
+    #include \"../binary_indexed_tree.hpp\"\n#include \"../../template.hpp\"\n\nint\
+    \ main(){\n\tlint n,q;\n\tcin>>n>>q;\n\tBIT bit(n);\n\trep(i,n){\n\t\tlint x;\n\
+    \t\tcin>>x;\n\t\tbit.add(i,x);\n\t}\n\twhile(q--){\n\t\tlint c,s,t;\n\t\tcin>>c>>s>>t;\n\
+    \t\tif(c==0){\n\t\t\tbit.add(s,t);\n\t\t}else{\n\t\t\tcout<<bit.sum(s,t)<<endl;\n\
     \t\t}\n\t}\n}"
   dependsOn: []
   isVerificationFile: true

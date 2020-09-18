@@ -15,22 +15,21 @@ data:
     , line 258, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
     )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../template.hpp:\
     \ line -1: no such header\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\
-    #include \"../wavelet_matrix.hpp\"\n#include \"../../template.hpp\"\n\nint main(){\n\
-    \tlint n,q;\n\tcin>>n>>q;\n\tvec a(n);\n\trep(i,n)cin>>a[i];\n\twavelet_matrix\
-    \ wm(a);\n\twhile(q--){\n\t\tlint l,r,k;\n\t\tcin>>l>>r>>k;\n\t\tcout<<wm.kth_element(l,r,k)<<endl;\n\
-    \t}\n}"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/cartesian_tree\"\n#include\
+    \ \"../cartesian_tree.hpp\"\n#include \"../../template.hpp\"\n\nint main(){\n\t\
+    lint n;\n\tcin>>n;\n\tvec a(n);\n\trep(i,n)cin>>a[i];\n\tcartesian_tree<lint>ct(a);\n\
+    \toutput(ct.get());\n}"
   dependsOn: []
   isVerificationFile: true
-  path: data_structure/test/LC_wavelet_matrix.test.cpp
+  path: data_structure/test/LC_cartesian_tree.test.cpp
   requiredBy: []
   timestamp: '1970-01-01 00:00:00+00:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: data_structure/test/LC_wavelet_matrix.test.cpp
+documentation_of: data_structure/test/LC_cartesian_tree.test.cpp
 layout: document
 redirect_from:
-- /verify/data_structure/test/LC_wavelet_matrix.test.cpp
-- /verify/data_structure/test/LC_wavelet_matrix.test.cpp.html
-title: data_structure/test/LC_wavelet_matrix.test.cpp
+- /verify/data_structure/test/LC_cartesian_tree.test.cpp
+- /verify/data_structure/test/LC_cartesian_tree.test.cpp.html
+title: data_structure/test/LC_cartesian_tree.test.cpp
 ---

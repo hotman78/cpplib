@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: util/random_gen.hpp
     title: util/random_gen.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

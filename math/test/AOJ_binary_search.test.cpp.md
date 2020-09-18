@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/binary_search.hpp
     title: "\u4E8C\u5206\u63A2\u7D22"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

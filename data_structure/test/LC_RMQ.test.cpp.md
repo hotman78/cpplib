@@ -15,10 +15,11 @@ data:
     , line 258, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
     )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../template.hpp:\
     \ line -1: no such header\n"
-  code: "#include \"../RMQ.hpp\"\n#include \"../../template.hpp\"\n\nint main(){\n\
-    \tlint n,q;\n\tcin>>n>>q;\n\tvector<lint>a(n);\n\trep(i,n)cin>>a[i];\n\tRMQ<lint>\
-    \ rmq(a);\n\twhile(q--){\n\t\tlint s,t;\n\t\tcin>>s>>t;\n\t\tcout<<rmq.query(s,t)<<endl;\n\
-    \t}\n}"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#include \"\
+    ../RMQ.hpp\"\n#include \"../../template.hpp\"\n\nint main(){\n\tlint n,q;\n\t\
+    cin>>n>>q;\n\tvector<lint>a(n);\n\trep(i,n)cin>>a[i];\n\tRMQ<lint> rmq(a);\n\t\
+    while(q--){\n\t\tlint s,t;\n\t\tcin>>s>>t;\n\t\tcout<<rmq.query(s,t)<<endl;\n\t\
+    }\n}"
   dependsOn: []
   isVerificationFile: true
   path: data_structure/test/LC_RMQ.test.cpp

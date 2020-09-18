@@ -12,14 +12,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/test/LC_convolution_998244353.test.cpp
     title: convolution/test/LC_convolution_998244353.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Number_of_Substrings.test.cpp
     title: util/test/LC_Number_of_Substrings.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links:
@@ -1510,7 +1510,7 @@ data:
   requiredBy:
   - convolution/FPS.hpp
   timestamp: '2020-09-14 19:00:57+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - convolution/test/LC_convolution_1000000007.test.cpp
   - convolution/test/LC_convolution_998244353.test.cpp
