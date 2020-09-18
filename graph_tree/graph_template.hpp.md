@@ -45,6 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
     title: graph_tree/test/LC_centroid_decomposition.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_dominator_tree.test.cpp
+    title: graph_tree/test/LC_dominator_tree.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -159,6 +162,7 @@ data:
   - graph_tree/test/LC_dijkstra.test.cpp
   - graph_tree/test/LC_dijkstra_fast.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp
+  - graph_tree/test/LC_dominator_tree.test.cpp
 documentation_of: graph_tree/graph_template.hpp
 layout: document
 redirect_from:

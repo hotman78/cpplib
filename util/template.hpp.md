@@ -73,6 +73,9 @@ data:
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
     title: graph_tree/test/LC_centroid_decomposition.test.cpp
   - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_dominator_tree.test.cpp
+    title: graph_tree/test/LC_dominator_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_sparse_table.test.cpp
     title: data_structure/test/LC_sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
@@ -203,6 +206,7 @@ data:
   - graph_tree/test/LC_dijkstra.test.cpp
   - graph_tree/test/LC_dijkstra_fast.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp
+  - graph_tree/test/LC_dominator_tree.test.cpp
   - data_structure/test/LC_sparse_table.test.cpp
   - data_structure/test/LC_fast_set.test.cpp
   - data_structure/test/LC_swag.test.cpp

@@ -95,9 +95,10 @@ data:
       title: WaveletMatrix(WIP)
   - name: dsu
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: dsu/uf_min.hpp
-      title: dsu/uf_min.hpp
+      title: "\u6839\u3068\u306EPath\u306E\u4E2D\u3067\u306E\u6700\u5C0F\u5024\u3092\
+        \u8FD4\u3059UnionFind"
     - icon: ':heavy_check_mark:'
       path: dsu/union_find.hpp
       title: Union Find
@@ -138,7 +139,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph_tree/dijkstra_fast.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O(E+VlogE)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph_tree/dominator_tree.hpp
       title: "\u652F\u914D\u6728"
     - icon: ':heavy_check_mark:'
@@ -391,6 +392,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph_tree/test/LC_dijkstra_fast.test.cpp
       title: graph_tree/test/LC_dijkstra_fast.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph_tree/test/LC_dominator_tree.test.cpp
+      title: graph_tree/test/LC_dominator_tree.test.cpp
   - name: math/test
     pages:
     - icon: ':heavy_check_mark:'
