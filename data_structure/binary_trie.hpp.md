@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_binary_trie.test.cpp
+    title: data_structure/test/LC_binary_trie.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: BinaryTrie
@@ -51,8 +54,9 @@ data:
   path: data_structure/binary_trie.hpp
   requiredBy: []
   timestamp: '2020-09-18 12:55:10+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - data_structure/test/LC_binary_trie.test.cpp
 documentation_of: data_structure/binary_trie.hpp
 layout: document
 redirect_from:

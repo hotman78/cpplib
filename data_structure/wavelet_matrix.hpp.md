@@ -1,13 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/bit_vector.hpp
     title: BitVector
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_wavelet_matrix.test.cpp
+    title: data_structure/test/LC_wavelet_matrix.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: WaveletMatrix(WIP)
@@ -73,8 +76,9 @@ data:
   path: data_structure/wavelet_matrix.hpp
   requiredBy: []
   timestamp: '2020-09-18 12:11:44+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - data_structure/test/LC_wavelet_matrix.test.cpp
 documentation_of: data_structure/wavelet_matrix.hpp
 layout: document
 redirect_from:

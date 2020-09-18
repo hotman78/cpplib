@@ -32,28 +32,28 @@ data:
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
   - name: data_structure
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/RMQ.hpp
       title: RMQ&amp;lt;O(N),O(1)&amp;gt;
     - icon: ':heavy_check_mark:'
       path: data_structure/binary_heap.hpp
       title: BinaryHeap
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/binary_indexed_tree.hpp
       title: BinaryIndexedTree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/binary_trie.hpp
       title: BinaryTrie
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/bit_vector.hpp
       title: BitVector
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/cartesian_tree.hpp
       title: cartesian_tree
     - icon: ':warning:'
       path: data_structure/cumulative_sum.hpp
       title: "\u7D2F\u7A4D\u548C(WIP)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/disjoint_sparse_table.hpp
       title: DisjointSparseTable
     - icon: ':heavy_check_mark:'
@@ -86,7 +86,7 @@ data:
     - icon: ':warning:'
       path: data_structure/trie.hpp
       title: Trie(WIP)
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/wavelet_matrix.hpp
       title: WaveletMatrix(WIP)
   - name: dsu
@@ -245,25 +245,28 @@ data:
       title: convolution/test/LC_convolution_998244353.test.cpp
   - name: data_structure/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_RMQ.test.cpp
       title: data_structure/test/LC_RMQ.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_binary_indexed_tree.test.cpp
       title: data_structure/test/LC_binary_indexed_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_binary_trie.test.cpp
       title: data_structure/test/LC_binary_trie.test.cpp
     - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_birary_heap.test.cpp
       title: data_structure/test/LC_birary_heap.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_cartesian_tree.test.cpp
       title: data_structure/test/LC_cartesian_tree.test.cpp
     - icon: ':heavy_check_mark:'
+      path: data_structure/test/LC_disjoint_sparse_table.test.cpp
+      title: data_structure/test/LC_disjoint_sparse_table.test.cpp
+    - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_fast_set.test.cpp
       title: data_structure/test/LC_fast_set.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_wavelet_matrix.test.cpp
       title: data_structure/test/LC_wavelet_matrix.test.cpp
   - name: dsu/test

@@ -64,8 +64,26 @@ data:
     path: data_structure/test/LC_fast_set.test.cpp
     title: data_structure/test/LC_fast_set.test.cpp
   - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_binary_indexed_tree.test.cpp
+    title: data_structure/test/LC_binary_indexed_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_birary_heap.test.cpp
     title: data_structure/test/LC_birary_heap.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_cartesian_tree.test.cpp
+    title: data_structure/test/LC_cartesian_tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_binary_trie.test.cpp
+    title: data_structure/test/LC_binary_trie.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_disjoint_sparse_table.test.cpp
+    title: data_structure/test/LC_disjoint_sparse_table.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_RMQ.test.cpp
+    title: data_structure/test/LC_RMQ.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_wavelet_matrix.test.cpp
+    title: data_structure/test/LC_wavelet_matrix.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -158,7 +176,13 @@ data:
   - string/test/LC_Z_algorizm.test.cpp
   - string/test/LC_online_Z_algorizm.test.cpp
   - data_structure/test/LC_fast_set.test.cpp
+  - data_structure/test/LC_binary_indexed_tree.test.cpp
   - data_structure/test/LC_birary_heap.test.cpp
+  - data_structure/test/LC_cartesian_tree.test.cpp
+  - data_structure/test/LC_binary_trie.test.cpp
+  - data_structure/test/LC_disjoint_sparse_table.test.cpp
+  - data_structure/test/LC_RMQ.test.cpp
+  - data_structure/test/LC_wavelet_matrix.test.cpp
 documentation_of: util/template.hpp
 layout: document
 redirect_from:

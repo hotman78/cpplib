@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: data_structure/binary_trie.hpp
-    title: BinaryTrie
+    path: data_structure/disjoint_sparse_table.hpp
+    title: DisjointSparseTable
   - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
@@ -13,30 +13,28 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/set_xor_min
+    PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
     links:
-    - https://judge.yosupo.jp/problem/set_xor_min
-  bundledCode: "#line 1 \"data_structure/test/LC_binary_trie.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/set_xor_min\"\n#line 2 \"data_structure/binary_trie.hpp\"\
-    \n#include<cstdint>\n\n/**\n * @brief BinaryTrie\n */\n\nstruct binary_trie{\n\
-    \    constexpr static int B=64;\n    using u64=std::uint64_t;\n    struct node{\n\
-    \        node* ch[2]={0,0};\n        int cnt=0;\n    };\n    using np=node*;\n\
-    \    np root=new node();\n    void insert(u64 x){\n        np t=root;\n      \
-    \  t->cnt++;\n        for(int i=B-1;i>=0;--i){\n            if(!t->ch[0])t->ch[0]=new\
-    \ node();\n            if(!t->ch[1])t->ch[1]=new node();\n            t=t->ch[(x>>i)&1];\n\
-    \            t->cnt++;\n        }\n    }\n    bool erase(u64 x){\n        np t=root;\n\
-    \        if(!count(x))return 0;\n        t->cnt--;\n        for(int i=B-1;i>=0;--i){\n\
-    \            if(!t->ch[0])t->ch[0]=new node();\n            if(!t->ch[1])t->ch[1]=new\
-    \ node();\n            t=t->ch[(x>>i)&1];\n            t->cnt--;\n        }\n\
-    \        return 1;\n    }\n    int count(u64 x){\n        np t=root;\n       \
-    \ for(int i=B-1;i>=0;--i){\n            if(!t->ch[0])t->ch[0]=new node();\n  \
-    \          if(!t->ch[1])t->ch[1]=new node();\n            t=t->ch[(x>>i)&1];\n\
-    \        }\n        return t->cnt;\n    }\n    u64 xor_min(u64 x){\n        np\
-    \ t=root;\n        u64 res=0;\n        for(int i=B-1;i>=0;--i){\n            if(!t->ch[0])t->ch[0]=new\
-    \ node();\n            if(!t->ch[1])t->ch[1]=new node();\n            if(t->ch[(x>>i)&1]->cnt)t=t->ch[(x>>i)&1];\n\
-    \            else{\n                t=t->ch[1-((x>>i)&1)];\n                res+=1ULL<<i;\n\
-    \            }\n        }\n        return res;\n    }\n};\n#line 2 \"util/template.hpp\"\
-    \n#pragma GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"unroll-loops\")\n#pragma\
+    - https://judge.yosupo.jp/problem/static_range_sum
+  bundledCode: "#line 1 \"data_structure/test/LC_disjoint_sparse_table.test.cpp\"\n\
+    #define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#line 2\
+    \ \"data_structure/disjoint_sparse_table.hpp\"\n#include<functional>\n#include<vector>\n\
+    \n/**\n * @brief DisjointSparseTable\n */\n\ntemplate<typename T,typename F=std::plus<T>>\n\
+    class disjoint_sparse_table{\n\tT** table;\n\tT* data;\n\tint n=1,cnt=0;\n\tpublic:\n\
+    \tF f;\n\tdisjoint_sparse_table(const std::vector<T>& v,F f):f(f){init(v);}\n\t\
+    disjoint_sparse_table(const std::vector<T>& v):f(F()){init(v);}\n\tvoid init(const\
+    \ std::vector<T>& v){\n\t\twhile(n<(int)v.size())n<<=1,cnt++;\n\t\ttable=new T*[cnt];\n\
+    \t\tfor(int i=0;i<cnt;i++){\n\t\t\ttable[i]=new T[n]();\n\t\t}\n\t\tdata =new\
+    \ T[n];\n\t\tfor(int i=0;i<(int)v.size();i++)data[i]=v[i];\n\t\tfor(int i=0;i<cnt;i++){\n\
+    \t\t\tfor(int j=0;j<(n>>(i+1));j++){\n\t\t\t\tconst int mid=(j<<(i+1))+(1<<i);\n\
+    \t\t\t\tfor(int k=0;k<(1<<i);k++){\n\t\t\t\t\tif(k==0){\n\t\t\t\t\t\tif(0<=mid-1&&mid-1<(int)v.size())table[i][mid-1]=v[mid-1];\n\
+    \t\t\t\t\t\tif(0<=mid&&mid<(int)v.size())table[i][mid]=v[mid];\n\t\t\t\t\t}\n\t\
+    \t\t\t\telse{\n\t\t\t\t\t\tif(0<=mid-1-k&&mid-1-k<(int)v.size())table[i][mid-1-k]=f(table[i][mid-k],v[mid-1-k]);\n\
+    \t\t\t\t\t\tif(0<=mid+k&&mid+k<(int)v.size())table[i][mid+k]=f(table[i][mid+k-1],v[mid+k]);\n\
+    \t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tT get(int l,int r){\n\t\tr--;\n\
+    \t\tif(l==r)return data[l];\n\t\tconst int t=31-__builtin_clz((int)(l^r));\n\t\
+    \treturn f(table[t][l],table[t][r]);\n\t}\n};\n#line 2 \"util/template.hpp\"\n\
+    #pragma GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"unroll-loops\")\n#pragma\
     \ GCC target(\"avx\")\n#include<bits/stdc++.h>\nusing namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
@@ -65,28 +63,28 @@ data:
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
     \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
-    \ 4 \"data_structure/test/LC_binary_trie.test.cpp\"\n\nint main(){\n\tlint n;\n\
-    \tcin>>n;\n\tbinary_trie b;\n\twhile(n--){\n\t\tlint c,x;\n\t\tcin>>c>>x;\n\t\t\
-    if(c==0&&!b.count(x))b.insert(x);\n\t\tif(c==1)b.erase(x);\n\t\tif(c==2)cout<<b.xor_min(x)<<endl;\n\
-    \t}\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n#include\
-    \ \"../binary_trie.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
-    \tlint n;\n\tcin>>n;\n\tbinary_trie b;\n\twhile(n--){\n\t\tlint c,x;\n\t\tcin>>c>>x;\n\
-    \t\tif(c==0&&!b.count(x))b.insert(x);\n\t\tif(c==1)b.erase(x);\n\t\tif(c==2)cout<<b.xor_min(x)<<endl;\n\
-    \t}\n}"
+    \ 4 \"data_structure/test/LC_disjoint_sparse_table.test.cpp\"\n\nint main(){\n\
+    \tlint n,q;\n\tcin>>n>>q;\n\tvec a(n);\n\trep(i,n)cin>>a[i];\n\tdisjoint_sparse_table<lint>dst(a);\n\
+    \twhile(q--){\n\t\tlint s,t;\n\t\tcin>>s>>t;\n\t\tcout<<dst.get(s,t)<<endl;\n\t\
+    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
+    \ \"../disjoint_sparse_table.hpp\"\n#include \"../../util/template.hpp\"\n\nint\
+    \ main(){\n\tlint n,q;\n\tcin>>n>>q;\n\tvec a(n);\n\trep(i,n)cin>>a[i];\n\tdisjoint_sparse_table<lint>dst(a);\n\
+    \twhile(q--){\n\t\tlint s,t;\n\t\tcin>>s>>t;\n\t\tcout<<dst.get(s,t)<<endl;\n\t\
+    }\n}"
   dependsOn:
-  - data_structure/binary_trie.hpp
+  - data_structure/disjoint_sparse_table.hpp
   - util/template.hpp
   isVerificationFile: true
-  path: data_structure/test/LC_binary_trie.test.cpp
+  path: data_structure/test/LC_disjoint_sparse_table.test.cpp
   requiredBy: []
   timestamp: '2020-09-18 13:26:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: data_structure/test/LC_binary_trie.test.cpp
+documentation_of: data_structure/test/LC_disjoint_sparse_table.test.cpp
 layout: document
 redirect_from:
-- /verify/data_structure/test/LC_binary_trie.test.cpp
-- /verify/data_structure/test/LC_binary_trie.test.cpp.html
-title: data_structure/test/LC_binary_trie.test.cpp
+- /verify/data_structure/test/LC_disjoint_sparse_table.test.cpp
+- /verify/data_structure/test/LC_disjoint_sparse_table.test.cpp.html
+title: data_structure/test/LC_disjoint_sparse_table.test.cpp
 ---
