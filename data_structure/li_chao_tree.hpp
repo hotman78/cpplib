@@ -1,5 +1,7 @@
 #pragma once
-
+#include<limits>
+#include<cmath>
+#include<algorithm>
 /**
  * @brief LiChaoTree
  */
@@ -17,15 +19,15 @@ class LHT{
     np root=nullptr;
     T sign(T x){return (x>0)-(x<0);}
     np update(T a,T b,lint p,lint q,lint l,lint r,np t){
-        if(!t)t=new node(0,numeric_limits<T>::max());
+        if(!t)t=new node(0,std::numeric_limits<T>::max());
         //区間外
         if(r<=p||q<=l)return t;
         //全て区間内
         if(p<=l&&r<=q){
             lint m=(l+r)/2;
             if(a*m+b<=(t->a)*m+(t->b)){
-                swap(a,t->a);
-                swap(b,t->b);
+                std::swap(a,t->a);
+                std::swap(b,t->b);
             }
             if(r-l==1||a==t->a)return t;
             if(sign((a-t->a)*l+(b-t->b))*sign((a-t->a)*m+(b-t->b))<=0)t->ch[0]=update(a,b,p,q,l,m,t->ch[0]);
@@ -38,15 +40,16 @@ class LHT{
         return t;
     }
     T get(lint x,lint l,lint r,np t){
-        if(!t)return numeric_limits<T>::max();
+        if(!t)return std::numeric_limits<T>::max();
         if(r-l==1)return t->a*x+t->b;
         lint m=(l+r)/2;
-        if(l<=x&&x<m)return min(t->a*x+t->b,get(x,l,m,t->ch[0]));
-        else return min(t->a*x+t->b,get(x,m,r,t->ch[1]));
+        if(l<=x&&x<m)return std::min(t->a*x+t->b,get(x,l,m,t->ch[0]));
+        else return std::min(t->a*x+t->b,get(x,m,r,t->ch[1]));
     }
-    lint mn=-1LL<<32;
-    lint mx=1LL<<32;
+    lint mn;
+    lint mx;
     public:
+    LHT(lint mn=-1LL<<30,lint mx=1LL<<30):mn(mn),mx(mx){}
     T get(lint x){
         return get(x,mn,mx,root);
     }
