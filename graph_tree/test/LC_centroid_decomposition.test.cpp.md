@@ -4,16 +4,16 @@ data:
   - icon: ':x:'
     path: math/FPS_long.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
   - icon: ':question:'
     path: util/ACL.hpp
     title: util/ACL.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
   - icon: ':question:'
@@ -952,7 +952,7 @@ data:
     graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
     \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
     \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 4 \"graph_tree/centroid_decomposition.hpp\"\
-    \n/**\n * @brief \u91CD\u5FC3\u5206\u89E3\n */\n\nclass centroid_decomposition{\n\
+    \n\n/**\n * @brief \u91CD\u5FC3\u5206\u89E3\n */\n\nclass centroid_decomposition{\n\
     \    graph g;\n    std::vector<int>used;\n    std::vector<int>v;\n    graph ch;\n\
     \    int s;\n    int dfs(int n,int p,int sz,int root){\n        if(used[n])return\
     \ 0;\n        bool b=1;\n        int res=1;\n        for(auto e:g[n]){\n     \
@@ -995,7 +995,7 @@ data:
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
     \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
     \ 6 \"graph_tree/test/LC_centroid_decomposition.test.cpp\"\n\nint main(){\n  \
-    \  lint n;\n    cin>>n;\n    graph g=load_tree0(n);\n    centroid_decomposition\
+    \  int n;\n    cin>>n;\n    graph g=load_tree0(n);\n    centroid_decomposition\
     \ cd(g);\n    auto d=cd.get_euler_tour();\n    fps ans;\n    bitset<200000>used;\n\
     \    rep(i,n){\n        fps s{1};\n        used[d[i]]=1;\n        for(auto e:g[d[i]]){\n\
     \            fps v{0};\n            auto f=[&](auto f,lint n,lint p,lint cnt){\n\
@@ -1009,7 +1009,7 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
     \n#include \"../../math/FPS_long.hpp\"\n#include \"../graph_template.hpp\"\n#include\
     \ \"../centroid_decomposition.hpp\"\n#include \"../../util/template.hpp\"\n\n\
-    int main(){\n    lint n;\n    cin>>n;\n    graph g=load_tree0(n);\n    centroid_decomposition\
+    int main(){\n    int n;\n    cin>>n;\n    graph g=load_tree0(n);\n    centroid_decomposition\
     \ cd(g);\n    auto d=cd.get_euler_tour();\n    fps ans;\n    bitset<200000>used;\n\
     \    rep(i,n){\n        fps s{1};\n        used[d[i]]=1;\n        for(auto e:g[d[i]]){\n\
     \            fps v{0};\n            auto f=[&](auto f,lint n,lint p,lint cnt){\n\
@@ -1033,7 +1033,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_centroid_decomposition.test.cpp
   requiredBy: []
-  timestamp: '2020-09-18 20:23:58+09:00'
+  timestamp: '2020-09-18 20:41:35+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: graph_tree/test/LC_centroid_decomposition.test.cpp

@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
   - icon: ':question:'
     path: util/ACL.hpp
     title: util/ACL.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
   - icon: ':question:'

@@ -59,7 +59,7 @@ data:
     graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
     \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
     \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 4 \"graph_tree/centroid_decomposition.hpp\"\
-    \n/**\n * @brief \u91CD\u5FC3\u5206\u89E3\n */\n\nclass centroid_decomposition{\n\
+    \n\n/**\n * @brief \u91CD\u5FC3\u5206\u89E3\n */\n\nclass centroid_decomposition{\n\
     \    graph g;\n    std::vector<int>used;\n    std::vector<int>v;\n    graph ch;\n\
     \    int s;\n    int dfs(int n,int p,int sz,int root){\n        if(used[n])return\
     \ 0;\n        bool b=1;\n        int res=1;\n        for(auto e:g[n]){\n     \
@@ -72,18 +72,18 @@ data:
     \        dfs(0,-1,n,-1);\n    }\n\n    int get_root(){return s;}\n    std::vector<int>\
     \ operator[](int i){return ch[i];}\n    std::vector<int> get_euler_tour(){return\
     \ v;}\n};\n"
-  code: "#pragma once\n#include<vector>\n#include\"graph_template.hpp\"\n/**\n * @brief\
-    \ \u91CD\u5FC3\u5206\u89E3\n */\n\nclass centroid_decomposition{\n    graph g;\n\
-    \    std::vector<int>used;\n    std::vector<int>v;\n    graph ch;\n    int s;\n\
-    \    int dfs(int n,int p,int sz,int root){\n        if(used[n])return 0;\n   \
-    \     bool b=1;\n        int res=1;\n        for(auto e:g[n]){\n            if(p==e)continue;\n\
-    \            auto t=dfs(e,n,sz,root);\n            res+=t;\n            if(t>sz/2)b=0;\n\
-    \        }\n        if(!b||sz-res>sz/2)return res;\n        if(root!=-1)ch[root].push_back(n);\n\
-    \        else s=n;\n        v.push_back(n);\n        used[n]=1;\n        for(auto\
-    \ e:g[n]){\n            dfs(e,n,dfs(e,n,g.size()*2,n),n);\n        }\n       \
-    \ return g.size()*2;\n    }\n    public:\n    centroid_decomposition(const graph&g):g(g){\n\
-    \        int n=g.size();\n        used.resize(n);\n        ch.resize(n);\n   \
-    \     dfs(0,-1,n,-1);\n    }\n\n    int get_root(){return s;}\n    std::vector<int>\
+  code: "#pragma once\n#include<vector>\n#include\"graph_template.hpp\"\n\n/**\n *\
+    \ @brief \u91CD\u5FC3\u5206\u89E3\n */\n\nclass centroid_decomposition{\n    graph\
+    \ g;\n    std::vector<int>used;\n    std::vector<int>v;\n    graph ch;\n    int\
+    \ s;\n    int dfs(int n,int p,int sz,int root){\n        if(used[n])return 0;\n\
+    \        bool b=1;\n        int res=1;\n        for(auto e:g[n]){\n          \
+    \  if(p==e)continue;\n            auto t=dfs(e,n,sz,root);\n            res+=t;\n\
+    \            if(t>sz/2)b=0;\n        }\n        if(!b||sz-res>sz/2)return res;\n\
+    \        if(root!=-1)ch[root].push_back(n);\n        else s=n;\n        v.push_back(n);\n\
+    \        used[n]=1;\n        for(auto e:g[n]){\n            dfs(e,n,dfs(e,n,g.size()*2,n),n);\n\
+    \        }\n        return g.size()*2;\n    }\n    public:\n    centroid_decomposition(const\
+    \ graph&g):g(g){\n        int n=g.size();\n        used.resize(n);\n        ch.resize(n);\n\
+    \        dfs(0,-1,n,-1);\n    }\n\n    int get_root(){return s;}\n    std::vector<int>\
     \ operator[](int i){return ch[i];}\n    std::vector<int> get_euler_tour(){return\
     \ v;}\n};"
   dependsOn:
@@ -91,7 +91,7 @@ data:
   isVerificationFile: false
   path: graph_tree/centroid_decomposition.hpp
   requiredBy: []
-  timestamp: '2020-09-18 20:23:58+09:00'
+  timestamp: '2020-09-18 20:41:35+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - graph_tree/test/LC_centroid_decomposition.test.cpp

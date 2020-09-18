@@ -5,13 +5,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int1000000007.hpp
     title: ModInt(1'000'000'007)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: math/test/LC_totient_sum.test.cpp
     title: math/test/LC_totient_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: math/test/LC_convolution_1000000007.test.cpp
+    title: math/test/LC_convolution_1000000007.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: math/test/LC_convolution_998244353.test.cpp
+    title: math/test/LC_convolution_998244353.test.cpp
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_swag.test.cpp
     title: data_structure/test/LC_swag.test.cpp
@@ -129,6 +135,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - math/test/LC_totient_sum.test.cpp
+  - math/test/LC_convolution_1000000007.test.cpp
+  - math/test/LC_convolution_998244353.test.cpp
   - data_structure/test/LC_swag.test.cpp
 documentation_of: math/mod_int.hpp
 layout: document

@@ -186,13 +186,13 @@ data:
       title: 2-SAT
   - name: math
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/FPS_base.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
     - icon: ':x:'
       path: math/FPS_long.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/FPS_mint.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
     - icon: ':heavy_check_mark:'
@@ -207,7 +207,7 @@ data:
     - icon: ':warning:'
       path: math/catalans_trapezoids.hpp
       title: "\u30AB\u30BF\u30E9\u30F3\u53F0\u5F62"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/ceil_pow2.hpp
       title: math/ceil_pow2.hpp
     - icon: ':warning:'
@@ -222,7 +222,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/floor_sum.hpp
       title: \sum_{i=0}^{n-1}\floor(a*i+b/c)
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/garner.hpp
       title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
@@ -238,7 +238,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/mod_int.hpp
       title: ModInt
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_int1000000007.hpp
       title: ModInt(1'000'000'007)
     - icon: ':heavy_check_mark:'
@@ -396,10 +396,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/test/AOJ_prime_list.test.cpp
       title: math/test/AOJ_prime_list.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_convolution_1000000007.test.cpp
       title: math/test/LC_convolution_1000000007.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_convolution_998244353.test.cpp
       title: math/test/LC_convolution_998244353.test.cpp
     - icon: ':heavy_check_mark:'

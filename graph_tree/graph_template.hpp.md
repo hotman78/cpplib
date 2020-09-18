@@ -29,6 +29,9 @@ data:
   - icon: ':warning:'
     path: graph_tree/two_sat.hpp
     title: 2-SAT
+  - icon: ':warning:'
+    path: graph_tree/dijkstra.hpp
+    title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O((E+V)logE)"
   _extendedVerifiedWith:
   - icon: ':x:'
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
@@ -139,6 +142,7 @@ data:
   - graph_tree/two_edge_connectivity.hpp
   - graph_tree/scc.hpp
   - graph_tree/two_sat.hpp
+  - graph_tree/dijkstra.hpp
   timestamp: '2020-09-18 20:23:58+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:

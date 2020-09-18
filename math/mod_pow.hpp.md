@@ -14,10 +14,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/mod_log.hpp
     title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
   _extendedVerifiedWith:
@@ -25,8 +25,14 @@ data:
     path: math/test/LC_mod_sqrt.test.cpp
     title: math/test/LC_mod_sqrt.test.cpp
   - icon: ':heavy_check_mark:'
+    path: math/test/LC_convolution_1000000007.test.cpp
+    title: math/test/LC_convolution_1000000007.test.cpp
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_mod_log.test.cpp
     title: math/test/LC_mod_log.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: math/test/LC_convolution_998244353.test.cpp
+    title: math/test/LC_convolution_998244353.test.cpp
   - icon: ':heavy_check_mark:'
     path: math/test/LC_tetration.test.cpp
     title: math/test/LC_tetration.test.cpp
@@ -60,7 +66,9 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - math/test/LC_mod_sqrt.test.cpp
+  - math/test/LC_convolution_1000000007.test.cpp
   - math/test/LC_mod_log.test.cpp
+  - math/test/LC_convolution_998244353.test.cpp
   - math/test/LC_tetration.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp
 documentation_of: math/mod_pow.hpp
