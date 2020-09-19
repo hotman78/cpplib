@@ -1,4 +1,5 @@
 #pragma once
+#include<vector>
 #include"../alga/maybe.hpp"
 /**
  * @brief セグメント木
@@ -16,7 +17,7 @@ class segment_tree{
 		node=new maybe<T>[n*2];
 		for(int i=0;i<n*2;i++)node[i]=maybe<T>();
 	}
-    segment_tree(const vector<T>&v,F op=F()):op(op){
+    segment_tree(const std::vector<T>&v,F op=F()):op(op){
         auto f=expand<T,F>(op);
         const int sz=v.size();
 		while(n<=sz)n<<=1;

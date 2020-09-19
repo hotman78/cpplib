@@ -38,8 +38,8 @@ class dual_segment_tree{
 		if(r<=a||b<=l)return;
 		else if(a<=l&&r<=b)t->val=f(t->val,x);
 	    else if(r-l>1){
-			set(a,b,x,l,(l+r)/2,t->ch[0]);
-			set(a,b,x,(l+r)/2,r,t->ch[1]);
+			update(a,b,x,l,(l+r)/2,t->ch[0]);
+			update(a,b,x,(l+r)/2,r,t->ch[1]);
 		}
 	}
 	maybe<T> get(int x,int l,int r,np& t){
