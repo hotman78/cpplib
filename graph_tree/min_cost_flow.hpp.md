@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: graph_tree/max_flow.hpp
     title: "max_flow(Dinic\u6CD5)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: alga/maybe.hpp
     title: Maybe
   _extendedRequiredBy: []
@@ -44,18 +44,19 @@ data:
     \   T unwrap()const{\n        assert(!_is_none);\n        return val;\n    }\n\
     \    T unwrap_or(T e)const{\n        return _is_none?e:val;\n    }\n    bool is_none()const{return\
     \ _is_none;}\n    bool is_some()const{return !_is_none;}\n};\n\ntemplate<typename\
-    \ T,typename F>\nauto expand(F op){\n    return [op](const maybe<T>& s,const maybe<T>&\
-    \ t){\n        if(s.is_none())return t;\n        if(t.is_none())return s;\n  \
-    \      return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 7 \"graph_tree/min_cost_flow.hpp\"\
-    \n\n/**\n * @brief \u6700\u5C0F\u8CBB\u7528\u6D41(CostScaling)\n */\n\n//Res\u306F\
-    \u7B54\u3048\u304Clong long\u306E\u6700\u5927\u5024\u3092\u8D85\u3048\u308B\u6642\
-    \u7528\ntemplate<typename T,typename Res=T>\nstruct min_cost_flow{\n    int v;\n\
-    \    constexpr static T inf=1LL<<60;\n    Res ans=0;\n    struct edge{\n     \
-    \   int to;\n        T cap,cost,st;\n        int rev;\n        bool is_rev,edge_rev;\n\
-    \        int id;\n    };\n    max_flow<T> mf;\n    std::vector<T>p;\n    std::vector<vector<edge*>>e;//\u8FBA\
-    \u306E\u30AD\u30E3\u30D1\u30B7\u30C6\u30A3\n    std::vector<T>d;//\u9802\u70B9\
-    \u306E\u30AD\u30E3\u30D1\u30B7\u30C6\u30A3\n    std::queue<int>active;\n    T\
-    \ eps=1;\n    int idx=0;\n    std::vector<T>res;\n    min_cost_flow(int v):v(v),mf(v+2),p(v,0),e(v),d(v,0){}\n\
+    \ T,typename F>\nauto expand(F op){\n    return [&op](const maybe<T>& s,const\
+    \ maybe<T>& t){\n        if(s.is_none())return t;\n        if(t.is_none())return\
+    \ s;\n        return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 7\
+    \ \"graph_tree/min_cost_flow.hpp\"\n\n/**\n * @brief \u6700\u5C0F\u8CBB\u7528\u6D41\
+    (CostScaling)\n */\n\n//Res\u306F\u7B54\u3048\u304Clong long\u306E\u6700\u5927\
+    \u5024\u3092\u8D85\u3048\u308B\u6642\u7528\ntemplate<typename T,typename Res=T>\n\
+    struct min_cost_flow{\n    int v;\n    constexpr static T inf=1LL<<60;\n    Res\
+    \ ans=0;\n    struct edge{\n        int to;\n        T cap,cost,st;\n        int\
+    \ rev;\n        bool is_rev,edge_rev;\n        int id;\n    };\n    max_flow<T>\
+    \ mf;\n    std::vector<T>p;\n    std::vector<vector<edge*>>e;//\u8FBA\u306E\u30AD\
+    \u30E3\u30D1\u30B7\u30C6\u30A3\n    std::vector<T>d;//\u9802\u70B9\u306E\u30AD\
+    \u30E3\u30D1\u30B7\u30C6\u30A3\n    std::queue<int>active;\n    T eps=1;\n   \
+    \ int idx=0;\n    std::vector<T>res;\n    min_cost_flow(int v):v(v),mf(v+2),p(v,0),e(v),d(v,0){}\n\
     \    void add_edge(int from,int to,T mn,T mx,T cost){\n        res.push_back(0);\n\
     \        if(from==to){\n            if(cost<0)res[idx++]=mx,ans+=mx*cost;\n  \
     \          else res[idx++]=mn,ans+=mn*cost;\n            return;\n        }\n\
@@ -165,7 +166,7 @@ data:
   isVerificationFile: false
   path: graph_tree/min_cost_flow.hpp
   requiredBy: []
-  timestamp: '2020-09-18 16:29:26+09:00'
+  timestamp: '2020-09-19 12:18:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph_tree/min_cost_flow.hpp

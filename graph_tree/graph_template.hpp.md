@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   - icon: ':warning:'
@@ -46,9 +46,12 @@ data:
     path: graph_tree/maximum_independent_set.hpp
     title: "\u6700\u5927\u72EC\u7ACB\u96C6\u5408(V<=50)"
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: segment_tree/test/LC_segment_tree.test.cpp
+    title: segment_tree/test/LC_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: segment_tree/test/segment_tree.test.cpp
-    title: segment_tree/test/segment_tree.test.cpp
+    path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
+    title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
@@ -158,7 +161,7 @@ data:
     path: data_structure/test/LC_wavelet_matrix.test.cpp
     title: data_structure/test/LC_wavelet_matrix.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
@@ -269,9 +272,10 @@ data:
   - graph_tree/shortest_path_tree_dijkstra.hpp
   - graph_tree/maximum_independent_set.hpp
   timestamp: '2020-09-18 20:23:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - segment_tree/test/segment_tree.test.cpp
+  - segment_tree/test/LC_segment_tree.test.cpp
+  - segment_tree/test/AOJ_dual_segment_tree.test.cpp
   - util/test/LC_Suffix_Array.test.cpp
   - util/test/LC_Number_of_Substrings.test.cpp
   - math/test/AOJ_prime_factor.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -12,9 +12,12 @@ data:
     path: graph_tree/dijkstra.hpp
     title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: segment_tree/test/LC_segment_tree.test.cpp
+    title: segment_tree/test/LC_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: segment_tree/test/segment_tree.test.cpp
-    title: segment_tree/test/segment_tree.test.cpp
+    path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
+    title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
@@ -124,7 +127,7 @@ data:
     path: data_structure/test/LC_wavelet_matrix.test.cpp
     title: data_structure/test/LC_wavelet_matrix.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -241,9 +244,10 @@ data:
   - math/test/LC_sum_power_poly_limit.cpp
   - graph_tree/dijkstra.hpp
   timestamp: '2020-09-19 09:30:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - segment_tree/test/segment_tree.test.cpp
+  - segment_tree/test/LC_segment_tree.test.cpp
+  - segment_tree/test/AOJ_dual_segment_tree.test.cpp
   - util/test/LC_Suffix_Array.test.cpp
   - util/test/LC_Number_of_Substrings.test.cpp
   - math/test/AOJ_prime_factor.test.cpp

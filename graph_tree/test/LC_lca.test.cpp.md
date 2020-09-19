@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/depth.hpp
     title: "\u6839\u304B\u3089\u306E\u6DF1\u3055"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
@@ -23,13 +23,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/sparse_table.hpp
     title: SparseTable
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: alga/maybe.hpp
     title: Maybe
   - icon: ':heavy_check_mark:'
     path: functional/argmin.hpp
     title: "\u6700\u5C0F\u5024\u3068\u305D\u306E\u4F4D\u7F6E"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
@@ -116,14 +116,14 @@ data:
     \   T unwrap()const{\n        assert(!_is_none);\n        return val;\n    }\n\
     \    T unwrap_or(T e)const{\n        return _is_none?e:val;\n    }\n    bool is_none()const{return\
     \ _is_none;}\n    bool is_some()const{return !_is_none;}\n};\n\ntemplate<typename\
-    \ T,typename F>\nauto expand(F op){\n    return [op](const maybe<T>& s,const maybe<T>&\
-    \ t){\n        if(s.is_none())return t;\n        if(t.is_none())return s;\n  \
-    \      return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 7 \"data_structure/sparse_table.hpp\"\
-    \n/**\n * @brief SparseTable\n */\n\ntemplate<typename T,typename F>\nclass sparse_table{\n\
-    \    F f;\n    std::vector<std::vector<T>>data;\n    public:\n    sparse_table(std::vector<T>\
-    \ v,F f=F()):f(f){\n        int n=v.size(),log=log2(n)+1;\n        data.resize(n,std::vector<T>(log));\n\
-    \        for(int i=0;i<n;i++)data[i][0]=v[i];\n        for(int j=1;j<log;j++)for(int\
-    \ i=0;i+(1<<(j-1))<n;i++){\n            data[i][j]=f(data[i][j-1],data[i+(1<<(j-1))][j-1]);\n\
+    \ T,typename F>\nauto expand(F op){\n    return [&op](const maybe<T>& s,const\
+    \ maybe<T>& t){\n        if(s.is_none())return t;\n        if(t.is_none())return\
+    \ s;\n        return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 7\
+    \ \"data_structure/sparse_table.hpp\"\n/**\n * @brief SparseTable\n */\n\ntemplate<typename\
+    \ T,typename F>\nclass sparse_table{\n    F f;\n    std::vector<std::vector<T>>data;\n\
+    \    public:\n    sparse_table(std::vector<T> v,F f=F()):f(f){\n        int n=v.size(),log=log2(n)+1;\n\
+    \        data.resize(n,std::vector<T>(log));\n        for(int i=0;i<n;i++)data[i][0]=v[i];\n\
+    \        for(int j=1;j<log;j++)for(int i=0;i+(1<<(j-1))<n;i++){\n            data[i][j]=f(data[i][j-1],data[i+(1<<(j-1))][j-1]);\n\
     \        }\n    }\n    maybe<T> get(int l,int r){\n        if(l==r)return maybe<T>();\n\
     \        if(r<l)std::swap(l,r);\n        int k=std::log2(r-l);\n        return\
     \ maybe<T>(f(data[l][k],data[r-(1<<k)][k]));\n    }\n};\n#line 3 \"functional/argmin.hpp\"\
@@ -216,7 +216,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_lca.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 10:39:25+09:00'
+  timestamp: '2020-09-19 12:18:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_lca.test.cpp

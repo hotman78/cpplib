@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: alga/maybe.hpp
     title: Maybe
   _extendedRequiredBy: []
@@ -23,13 +23,13 @@ data:
     \   T unwrap()const{\n        assert(!_is_none);\n        return val;\n    }\n\
     \    T unwrap_or(T e)const{\n        return _is_none?e:val;\n    }\n    bool is_none()const{return\
     \ _is_none;}\n    bool is_some()const{return !_is_none;}\n};\n\ntemplate<typename\
-    \ T,typename F>\nauto expand(F op){\n    return [op](const maybe<T>& s,const maybe<T>&\
-    \ t){\n        if(s.is_none())return t;\n        if(t.is_none())return s;\n  \
-    \      return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 6 \"data_structure/swag.hpp\"\
-    \n/**\n * @brief SWAG(Queue)\n */\n\ntemplate<typename T,typename F>\nclass swag{\n\
-    \    std::stack<std::pair<T,T>>front,back;\n    F f;\n    public:\n    swag(F\
-    \ f=F()):f(f){}\n    inline int size(){\n        return front.size()+back.size();\n\
-    \    }\n    inline int empty(){\n        return front.empty()&&back.empty();\n\
+    \ T,typename F>\nauto expand(F op){\n    return [&op](const maybe<T>& s,const\
+    \ maybe<T>& t){\n        if(s.is_none())return t;\n        if(t.is_none())return\
+    \ s;\n        return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 6\
+    \ \"data_structure/swag.hpp\"\n/**\n * @brief SWAG(Queue)\n */\n\ntemplate<typename\
+    \ T,typename F>\nclass swag{\n    std::stack<std::pair<T,T>>front,back;\n    F\
+    \ f;\n    public:\n    swag(F f=F()):f(f){}\n    inline int size(){\n        return\
+    \ front.size()+back.size();\n    }\n    inline int empty(){\n        return front.empty()&&back.empty();\n\
     \    }\n    void push(T val){\n        if(back.empty()){\n            back.emplace(val,val);\n\
     \        }else{\n            back.emplace(val,f(back.top().second,val));\n   \
     \     }\n    }\n    void pop(){\n        if(front.empty()){\n            while(!back.empty()){\n\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: data_structure/swag.hpp
   requiredBy: []
-  timestamp: '2020-09-18 14:44:21+09:00'
+  timestamp: '2020-09-19 12:18:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - data_structure/test/LC_swag.test.cpp

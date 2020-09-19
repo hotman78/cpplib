@@ -10,16 +10,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/swag.hpp
     title: SWAG(Queue)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: alga/maybe.hpp
     title: Maybe
   - icon: ':heavy_check_mark:'
     path: functional/composite.hpp
     title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
@@ -90,13 +90,13 @@ data:
     \   T unwrap()const{\n        assert(!_is_none);\n        return val;\n    }\n\
     \    T unwrap_or(T e)const{\n        return _is_none?e:val;\n    }\n    bool is_none()const{return\
     \ _is_none;}\n    bool is_some()const{return !_is_none;}\n};\n\ntemplate<typename\
-    \ T,typename F>\nauto expand(F op){\n    return [op](const maybe<T>& s,const maybe<T>&\
-    \ t){\n        if(s.is_none())return t;\n        if(t.is_none())return s;\n  \
-    \      return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 6 \"data_structure/swag.hpp\"\
-    \n/**\n * @brief SWAG(Queue)\n */\n\ntemplate<typename T,typename F>\nclass swag{\n\
-    \    std::stack<std::pair<T,T>>front,back;\n    F f;\n    public:\n    swag(F\
-    \ f=F()):f(f){}\n    inline int size(){\n        return front.size()+back.size();\n\
-    \    }\n    inline int empty(){\n        return front.empty()&&back.empty();\n\
+    \ T,typename F>\nauto expand(F op){\n    return [&op](const maybe<T>& s,const\
+    \ maybe<T>& t){\n        if(s.is_none())return t;\n        if(t.is_none())return\
+    \ s;\n        return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 6\
+    \ \"data_structure/swag.hpp\"\n/**\n * @brief SWAG(Queue)\n */\n\ntemplate<typename\
+    \ T,typename F>\nclass swag{\n    std::stack<std::pair<T,T>>front,back;\n    F\
+    \ f;\n    public:\n    swag(F f=F()):f(f){}\n    inline int size(){\n        return\
+    \ front.size()+back.size();\n    }\n    inline int empty(){\n        return front.empty()&&back.empty();\n\
     \    }\n    void push(T val){\n        if(back.empty()){\n            back.emplace(val,val);\n\
     \        }else{\n            back.emplace(val,f(back.top().second,val));\n   \
     \     }\n    }\n    void pop(){\n        if(front.empty()){\n            while(!back.empty()){\n\
@@ -207,7 +207,7 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_swag.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 09:30:13+09:00'
+  timestamp: '2020-09-19 12:18:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_swag.test.cpp

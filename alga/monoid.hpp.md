@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: alga/maybe.hpp
     title: Maybe
   _extendedRequiredBy: []
@@ -18,15 +18,16 @@ data:
     \   T unwrap()const{\n        assert(!_is_none);\n        return val;\n    }\n\
     \    T unwrap_or(T e)const{\n        return _is_none?e:val;\n    }\n    bool is_none()const{return\
     \ _is_none;}\n    bool is_some()const{return !_is_none;}\n};\n\ntemplate<typename\
-    \ T,typename F>\nauto expand(F op){\n    return [op](const maybe<T>& s,const maybe<T>&\
-    \ t){\n        if(s.is_none())return t;\n        if(t.is_none())return s;\n  \
-    \      return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 3 \"alga/monoid.hpp\"\
-    \n\ntemplate<typename T,typename F>\nstruct monoid{\n    using M=monoid<T,F>;\n\
-    \    maybe<T> val;\n    F op;\n    monoid(F op):val(maybe<T>()),op(op){}\n   \
-    \ monoid(T val,F op):val(maybe<T>(val)),op(op){}\n    maybe<T> get(){return val;}\n\
-    \    void set(T x){return val=maybe<T>(x);}\n    M operator+(const M& rhs){\n\
-    \        if(val.is_none())return rhs;\n        if(rhs.val.is_none())return *this;\n\
-    \        return monoid(op(get().unwrap(),rhs.get().unwrap()),op);\n    }\n};\n"
+    \ T,typename F>\nauto expand(F op){\n    return [&op](const maybe<T>& s,const\
+    \ maybe<T>& t){\n        if(s.is_none())return t;\n        if(t.is_none())return\
+    \ s;\n        return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 3\
+    \ \"alga/monoid.hpp\"\n\ntemplate<typename T,typename F>\nstruct monoid{\n   \
+    \ using M=monoid<T,F>;\n    maybe<T> val;\n    F op;\n    monoid(F op):val(maybe<T>()),op(op){}\n\
+    \    monoid(T val,F op):val(maybe<T>(val)),op(op){}\n    maybe<T> get(){return\
+    \ val;}\n    void set(T x){return val=maybe<T>(x);}\n    M operator+(const M&\
+    \ rhs){\n        if(val.is_none())return rhs;\n        if(rhs.val.is_none())return\
+    \ *this;\n        return monoid(op(get().unwrap(),rhs.get().unwrap()),op);\n \
+    \   }\n};\n"
   code: "#pragma once\n#include\"maybe.hpp\"\n\ntemplate<typename T,typename F>\n\
     struct monoid{\n    using M=monoid<T,F>;\n    maybe<T> val;\n    F op;\n    monoid(F\
     \ op):val(maybe<T>()),op(op){}\n    monoid(T val,F op):val(maybe<T>(val)),op(op){}\n\
@@ -39,7 +40,7 @@ data:
   isVerificationFile: false
   path: alga/monoid.hpp
   requiredBy: []
-  timestamp: '2020-09-18 14:44:21+09:00'
+  timestamp: '2020-09-19 12:18:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: alga/monoid.hpp

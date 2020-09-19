@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/lca_short.hpp
     title: "LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

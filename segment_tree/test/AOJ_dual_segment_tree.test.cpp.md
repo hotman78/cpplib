@@ -2,8 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: data_structure/cartesian_tree.hpp
-    title: cartesian_tree
+    path: segment_tree/dual_segment_tree.hpp
+    title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+  - icon: ':question:'
+    path: alga/maybe.hpp
+    title: Maybe
+  - icon: ':heavy_check_mark:'
+    path: functional/update.hpp
+    title: "\u66F4\u65B0"
   - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
@@ -16,32 +22,43 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/cartesian_tree
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
     links:
-    - https://judge.yosupo.jp/problem/cartesian_tree
-  bundledCode: "#line 1 \"data_structure/test/LC_cartesian_tree.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/cartesian_tree\"\n#line 2 \"data_structure/cartesian_tree.hpp\"\
-    \n#include<vector>\n#include<stack>\n#include<cstdint>\n#include<functional>\n\
-    \n/**\n * @brief cartesian_tree\n */\n\ntemplate<typename T,typename F=std::less<T>>\n\
-    struct cartesian_tree{\n    struct node;\n    using np=node*;\n    struct node{\n\
-    \        np ch[2]={0,0};\n        T val;\n        int pos;\n        int sz=0;\n\
-    \        node(T val,int pos):val(val),pos(pos){}\n    };\n    int size(np t){return\
-    \ t?t->sz:0;}\n    np update(np t){}\n    np root=0;\n    int sz=0;\n    F comp;\n\
-    \    cartesian_tree(std::vector<T>v,F comp):comp(comp){\n        for(auto e:v)push_back(e);\n\
-    \    }\n    cartesian_tree(std::vector<T>v):comp(F()){\n        for(auto e:v)push_back(e);\n\
-    \    }\n    cartesian_tree(F comp):comp(comp){}\n    cartesian_tree():comp(F()){}\n\
-    \n    void push_back(int val){\n        static std::stack<np>stk;\n        while(!stk.empty()&&comp(val,stk.top()->val))stk.pop();\n\
-    \        np t=new node(val,sz);\n        if(stk.empty()){\n            t->ch[0]=root;\n\
-    \            root=t;\n        }else{\n            t->ch[0]=stk.top()->ch[1];\n\
-    \            stk.top()->ch[1]=t;\n        }\n        stk.emplace(t);\n       \
-    \ sz++;\n    }\n    std::int64_t update_size(np t){\n        if(!t)return 0;\n\
-    \        return t->sz=update_size(t->ch[0])+1+update_size(t->ch[1]);\n    }\n\
-    \    std::vector<T>get(){\n\t\tstd::vector<T>v(sz);\n\t\tauto f=[&](auto f,np\
-    \ t){\n\t\t\tif(!t)return;\n\t\t\tf(f,t->ch[0]);\n\t\t\tif(t->ch[0])v[t->ch[0]->pos]=t->pos;\n\
-    \t\t\tif(t->ch[1])v[t->ch[1]->pos]=t->pos;\n\t\t\tf(f,t->ch[1]);\n\t\t};\n\t\t\
-    v[root->pos]=root->pos;\n\t\tf(f,root);\n\t\treturn v;\n\t}\n};\n#line 2 \"util/template.hpp\"\
-    \n#pragma GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"unroll-loops\")\n#pragma\
-    \ GCC target(\"avx\")\n#include<bits/stdc++.h>\nusing namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
+  bundledCode: "#line 1 \"segment_tree/test/AOJ_dual_segment_tree.test.cpp\"\n#define\
+    \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\"\
+    \n#line 2 \"alga/maybe.hpp\"\n#include<cassert>\n\n/**\n * @brief Maybe\n * @see\
+    \ https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8A%E3%83%89_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)#Maybe%E3%83%A2%E3%83%8A%E3%83%89\n\
+    \ */\n\ntemplate<typename T>\nstruct maybe{\n    bool _is_none;\n    T val;\n\
+    \    maybe():_is_none(true){}\n    maybe(T val):_is_none(false),val(val){}\n \
+    \   T unwrap()const{\n        assert(!_is_none);\n        return val;\n    }\n\
+    \    T unwrap_or(T e)const{\n        return _is_none?e:val;\n    }\n    bool is_none()const{return\
+    \ _is_none;}\n    bool is_some()const{return !_is_none;}\n};\n\ntemplate<typename\
+    \ T,typename F>\nauto expand(F op){\n    return [&op](const maybe<T>& s,const\
+    \ maybe<T>& t){\n        if(s.is_none())return t;\n        if(t.is_none())return\
+    \ s;\n        return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 3\
+    \ \"segment_tree/dual_segment_tree.hpp\"\n\n/**\n * @brief \u53CC\u5BFE\u30BB\u30B0\
+    \u30E1\u30F3\u30C8\u6728\n */\n\ntemplate<typename T,typename F>\nclass dual_segment_tree{\n\
+    \tstruct node;\n\tusing np=node*;\n\tstruct node{\n\t\tmaybe<T> val;\n\t\tnp ch[2]={nullptr,nullptr};\n\
+    \t\tnode(maybe<T> val=maybe<T>()):val(val){}\n\t};\n\tnp root=nullptr;\n\tint\
+    \ n=1,sz;\n    F op;\n\tpublic:\n\tdual_segment_tree(int sz,F op=F()):sz(sz),op(op){while(n<sz)n<<=1;}\n\
+    \tinline void set(int l,int r,T x){set(l,r,x,0,n,root);}\n\tinline maybe<T> get(int\
+    \ x){return get(x,0,n,root);}\n\tprivate:\n\tvoid eval(np& t){\n        auto f=expand<T,F>(op);\n\
+    \t\tif(t->val.is_none())return;\n\t\tif(!t->ch[0])t->ch[0]=new node();\n\t\tif(!t->ch[1])t->ch[1]=new\
+    \ node();\n\t\tt->ch[0]->val=f(t->ch[0]->val,t->val);\n\t\tt->ch[1]->val=f(t->ch[1]->val,t->val);\n\
+    \t\tt->val=maybe<T>();\n\t}\n\tvoid set(int a,int b,T x,int l,int r,np& t){\n\
+    \        auto f=expand<T,F>(op);\n        if(!t)t=new node();\n\t\tif(r-l>1)eval(t);\n\
+    \t\tif(r<=a||b<=l)return;\n\t\telse if(a<=l&&r<=b)t->val=f(t->val,x);\n\t    else\
+    \ if(r-l>1){\n\t\t\tset(a,b,x,l,(l+r)/2,t->ch[0]);\n\t\t\tset(a,b,x,(l+r)/2,r,t->ch[1]);\n\
+    \t\t}\n\t}\n\tmaybe<T> get(int x,int l,int r,np& t){\n        auto f=expand<T,F>(op);\n\
+    \        if(!t)t=new node();\n\t\tif(r-l>1)eval(t);\n\t\tif(x<l||r<=x)return maybe<T>();\n\
+    \        else if(r-l==1){\n            return t->val;\n        }\n\t\telse return\
+    \ f(get(x,l,(l+r)/2,t->ch[0]),get(x,(l+r)/2,r,t->ch[1]));\n\t}\n};\n#line 2 \"\
+    functional/update.hpp\"\n\n/**\n * @brief \u66F4\u65B0\n */\n\ntemplate<typename\
+    \ T>\nstruct update{\n    T operator()(const T& s,const T& t){\n        return\
+    \ t;\n    }\n};\n#line 2 \"util/template.hpp\"\n#pragma GCC optimize(\"Ofast\"\
+    )\n#pragma GCC optimize(\"unroll-loops\")\n#pragma GCC target(\"avx\")\n#include<bits/stdc++.h>\n\
+    using namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
     \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
@@ -111,27 +128,36 @@ data:
     \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
     graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
     \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
-    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 4 \"data_structure/test/LC_cartesian_tree.test.cpp\"\
-    \n\nint main(){\n\tlint n;\n\tcin>>n;\n\tvec a(n);\n\trep(i,n)cin>>a[i];\n\tcartesian_tree<lint>ct(a);\n\
-    \toutput(ct.get());\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/cartesian_tree\"\n#include\
-    \ \"../cartesian_tree.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
-    \tlint n;\n\tcin>>n;\n\tvec a(n);\n\trep(i,n)cin>>a[i];\n\tcartesian_tree<lint>ct(a);\n\
-    \toutput(ct.get());\n}"
+    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 5 \"segment_tree/test/AOJ_dual_segment_tree.test.cpp\"\
+    \n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n    dual_segment_tree<lint,update<lint>>seg(n);\n\
+    \    while(q--){\n        lint c;\n        cin>>c;\n        if(c==0){\n      \
+    \      lint s,t,u;\n            cin>>s>>t>>u;\n            seg.set(s,t+1,u);\n\
+    \        }else{\n            lint x;\n            cin>>x;\n            cout<<seg.get(x).unwrap_or((1LL<<31)-1)<<endl;\n\
+    \        }\n    }\n}\n"
+  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\"\
+    \n#include \"../dual_segment_tree.hpp\"\n#include \"../../functional/update.hpp\"\
+    \n#include \"../../util/template.hpp\"\n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n\
+    \    dual_segment_tree<lint,update<lint>>seg(n);\n    while(q--){\n        lint\
+    \ c;\n        cin>>c;\n        if(c==0){\n            lint s,t,u;\n          \
+    \  cin>>s>>t>>u;\n            seg.set(s,t+1,u);\n        }else{\n            lint\
+    \ x;\n            cin>>x;\n            cout<<seg.get(x).unwrap_or((1LL<<31)-1)<<endl;\n\
+    \        }\n    }\n}"
   dependsOn:
-  - data_structure/cartesian_tree.hpp
+  - segment_tree/dual_segment_tree.hpp
+  - alga/maybe.hpp
+  - functional/update.hpp
   - util/template.hpp
   - graph_tree/graph_template.hpp
   isVerificationFile: true
-  path: data_structure/test/LC_cartesian_tree.test.cpp
+  path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 09:30:13+09:00'
+  timestamp: '2020-09-19 12:19:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: data_structure/test/LC_cartesian_tree.test.cpp
+documentation_of: segment_tree/test/AOJ_dual_segment_tree.test.cpp
 layout: document
 redirect_from:
-- /verify/data_structure/test/LC_cartesian_tree.test.cpp
-- /verify/data_structure/test/LC_cartesian_tree.test.cpp.html
-title: data_structure/test/LC_cartesian_tree.test.cpp
+- /verify/segment_tree/test/AOJ_dual_segment_tree.test.cpp
+- /verify/segment_tree/test/AOJ_dual_segment_tree.test.cpp.html
+title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
 ---
