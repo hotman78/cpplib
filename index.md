@@ -126,6 +126,9 @@ data:
       path: functional/composite.hpp
       title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
     - icon: ':heavy_check_mark:'
+      path: functional/range_add_and_range_sum.hpp
+      title: "\u533A\u9593\u52A0\u7B97"
+    - icon: ':x:'
       path: functional/update.hpp
       title: "\u66F4\u65B0"
   - name: graph_tree
@@ -301,9 +304,12 @@ data:
       title: math/test/LC_sum_power_poly_limit.cpp
   - name: segment_tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: segment_tree/dual_segment_tree.hpp
       title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':heavy_check_mark:'
+      path: segment_tree/lazy_segment_tree.hpp
+      title: segment_tree/lazy_segment_tree.hpp
     - icon: ':x:'
       path: segment_tree/segment_tree.hpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -460,9 +466,12 @@ data:
       title: math/test/LC_totient_sum.test.cpp
   - name: segment_tree/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
       title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
+      title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
     - icon: ':x:'
       path: segment_tree/test/LC_segment_tree.test.cpp
       title: segment_tree/test/LC_segment_tree.test.cpp

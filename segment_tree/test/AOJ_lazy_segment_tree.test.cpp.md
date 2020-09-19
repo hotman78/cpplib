@@ -1,15 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
-    path: segment_tree/dual_segment_tree.hpp
-    title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+  - icon: ':heavy_check_mark:'
+    path: segment_tree/lazy_segment_tree.hpp
+    title: segment_tree/lazy_segment_tree.hpp
   - icon: ':question:'
     path: alga/maybe.hpp
     title: Maybe
-  - icon: ':x:'
-    path: functional/update.hpp
-    title: "\u66F4\u65B0"
+  - icon: ':heavy_check_mark:'
+    path: functional/range_add_and_range_sum.hpp
+    title: "\u533A\u9593\u52A0\u7B97"
   - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
@@ -19,14 +19,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
     links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
-  bundledCode: "#line 1 \"segment_tree/test/AOJ_dual_segment_tree.test.cpp\"\n#define\
-    \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\"\
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
+  bundledCode: "#line 1 \"segment_tree/test/AOJ_lazy_segment_tree.test.cpp\"\n#define\
+    \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
     \n#line 2 \"alga/maybe.hpp\"\n#include<cassert>\n\n/**\n * @brief Maybe\n * @see\
     \ https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8A%E3%83%89_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)#Maybe%E3%83%A2%E3%83%8A%E3%83%89\n\
     \ */\n\ntemplate<typename T>\nstruct maybe{\n    bool _is_none;\n    T val;\n\
@@ -37,28 +37,35 @@ data:
     \ T,typename F>\nauto expand(F op){\n    return [&op](const maybe<T>& s,const\
     \ maybe<T>& t){\n        if(s.is_none())return t;\n        if(t.is_none())return\
     \ s;\n        return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 3\
-    \ \"segment_tree/dual_segment_tree.hpp\"\n\n/**\n * @brief \u53CC\u5BFE\u30BB\u30B0\
-    \u30E1\u30F3\u30C8\u6728\n */\n\ntemplate<typename T,typename F>\nclass dual_segment_tree{\n\
-    \tstruct node;\n\tusing np=node*;\n\tstruct node{\n\t\tmaybe<T> val;\n\t\tnp ch[2]={nullptr,nullptr};\n\
-    \t\tnode(maybe<T> val=maybe<T>()):val(val){}\n\t};\n\tnp root=nullptr;\n\tint\
-    \ n=1,sz;\n    F op;\n\tpublic:\n\tdual_segment_tree(int sz,F op=F()):sz(sz),op(op){while(n<sz)n<<=1;}\n\
-    \tinline void update(int l,int r,T x){update(l,r,x,0,n,root);}\n\tinline maybe<T>\
-    \ get(int x){return get(x,0,n,root);}\n\tprivate:\n\tvoid eval(np& t){\n     \
-    \   auto f=expand<T,F>(op);\n\t\tif(t->val.is_none())return;\n\t\tif(!t->ch[0])t->ch[0]=new\
-    \ node();\n\t\tif(!t->ch[1])t->ch[1]=new node();\n\t\tt->ch[0]->val=f(t->ch[0]->val,t->val);\n\
-    \t\tt->ch[1]->val=f(t->ch[1]->val,t->val);\n\t\tt->val=maybe<T>();\n\t}\n\tvoid\
-    \ update(int a,int b,T x,int l,int r,np& t){\n        auto f=expand<T,F>(op);\n\
-    \        if(!t)t=new node();\n\t\tif(r-l>1)eval(t);\n\t\tif(r<=a||b<=l)return;\n\
-    \t\telse if(a<=l&&r<=b)t->val=f(t->val,x);\n\t    else if(r-l>1){\n\t\t\tset(a,b,x,l,(l+r)/2,t->ch[0]);\n\
-    \t\t\tset(a,b,x,(l+r)/2,r,t->ch[1]);\n\t\t}\n\t}\n\tmaybe<T> get(int x,int l,int\
-    \ r,np& t){\n        auto f=expand<T,F>(op);\n        if(!t)t=new node();\n\t\t\
-    if(r-l>1)eval(t);\n\t\tif(x<l||r<=x)return maybe<T>();\n        else if(r-l==1){\n\
-    \            return t->val;\n        }\n\t\telse return f(get(x,l,(l+r)/2,t->ch[0]),get(x,(l+r)/2,r,t->ch[1]));\n\
-    \t}\n};\n#line 2 \"functional/update.hpp\"\n\n/**\n * @brief \u66F4\u65B0\n */\n\
-    \ntemplate<typename T>\nstruct update{\n    T operator()(const T& s,const T& t){\n\
-    \        return t;\n    }\n};\n#line 2 \"util/template.hpp\"\n#pragma GCC optimize(\"\
-    Ofast\")\n#pragma GCC optimize(\"unroll-loops\")\n#pragma GCC target(\"avx\")\n\
-    #include<bits/stdc++.h>\nusing namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
+    \ \"segment_tree/lazy_segment_tree.hpp\"\n\ntemplate<typename T,typename E,typename\
+    \ F,typename G,typename H>\nclass lazy_segment_tree{\n    using i64=long long;\n\
+    \    i64 n;\n    i64 sz;\n    struct node;\n    using np=node*;\n    struct node{\n\
+    \        maybe<T> val=maybe<T>();\n        maybe<E> lazy=maybe<E>();\n       \
+    \ np lch=nullptr,rch=nullptr;\n        node(){}\n    };\n    np root=new node();\n\
+    \    maybe<T> update(i64 a,i64 b,E x,i64 l,i64 r,np t){\n        auto f=expand<T,F>(_f);\n\
+    \        eval(t,l,r);\n        //\u533A\u9593\u5916\n        if(r<=a||b<=l)return\
+    \ t->val;\n        //\u5168\u90E8\u533A\u9593\u5185\n        if(a<=l&&r<=b){\n\
+    \            t->lazy=x;\n            eval(t,l,r);\n            return t->val;\n\
+    \        }\n        //\u4E00\u90E8\u533A\u9593\u5185\n        return t->val=f(update(a,b,x,l,(l+r)/2,t->lch),update(a,b,x,(l+r)/2,r,t->rch));\n\
+    \    }\n    maybe<T> get(i64 a,i64 b,i64 l,i64 r,np t){\n        auto f=expand<T,F>(_f);\n\
+    \        eval(t,l,r);\n        //\u533A\u9593\u5916\n        if(r<=a||b<=l)return\
+    \ maybe<T>();\n        //\u5168\u90E8\u533A\u9593\u5185\n        if(a<=l&&r<=b)return\
+    \ t->val;\n        //\u4E00\u90E8\u533A\u9593\u5185\n        return f(get(a,b,l,(l+r)/2,t->lch),get(a,b,(l+r)/2,r,t->rch));\n\
+    \    }\n    void eval(np t,i64 l,i64 r){\n        auto g=expand<E,G>(_g);\n  \
+    \      if(r-l>1){\n            if(!t->lch)t->lch=new node();\n            if(!t->rch)t->rch=new\
+    \ node();\n            t->lch->lazy=g(t->lch->lazy,t->lazy);\n            t->rch->lazy=g(t->rch->lazy,t->lazy);\n\
+    \        }\n        t->val=h(t->val,t->lazy,l,r);\n        t->lazy=maybe<E>();\n\
+    \    }\n    F _f;G _g;H _h;\n    maybe<T> h(const maybe<T>&s,const maybe<E>&t,int\
+    \ l,int r){\n        if(t.is_none())return s;\n        else return maybe<T>(_h(s,t.unwrap(),l,r));\n\
+    \    }\n    public:\n    lazy_segment_tree(i64 sz,F f=F(),G g=G(),H h=H()):n(1),sz(sz),_f(f),_g(g),_h(h){while(n<sz)n<<=1;}\n\
+    \    //0-indexed [a,b)\n    void update(i64 a,i64 b,E x){update(a,b,x,0,n,root);}\n\
+    \    //0-indexed [a,b)\n    maybe<T> get(i64 a,i64 b){return get(a,b,0,n,root);}\n\
+    };\n#line 3 \"functional/range_add_and_range_sum.hpp\"\n\n/**\n * @brief \u533A\
+    \u9593\u52A0\u7B97\n */\n\ntemplate<typename T,typename E>\nstruct range_add_and_range_sum{\n\
+    \    T operator()(const maybe<T>& s,const E& t,int l,int r){\n        return s.unwrap_or(T())+t*(r-l);\n\
+    \    }\n};\n#line 2 \"util/template.hpp\"\n#pragma GCC optimize(\"Ofast\")\n#pragma\
+    \ GCC optimize(\"unroll-loops\")\n#pragma GCC target(\"avx\")\n#include<bits/stdc++.h>\n\
+    using namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
     \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
@@ -128,36 +135,36 @@ data:
     \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
     graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
     \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
-    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 5 \"segment_tree/test/AOJ_dual_segment_tree.test.cpp\"\
-    \n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n    dual_segment_tree<lint,update<lint>>seg(n);\n\
+    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 5 \"segment_tree/test/AOJ_lazy_segment_tree.test.cpp\"\
+    \n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n    lazy_segment_tree<lint,lint,plus<lint>,plus<lint>,range_add_and_range_sum<lint,lint>>seg(n);\n\
     \    while(q--){\n        lint c;\n        cin>>c;\n        if(c==0){\n      \
     \      lint s,t,u;\n            cin>>s>>t>>u;\n            seg.update(s-1,t,u);\n\
-    \        }else{\n            lint x;\n            cin>>x;\n            cout<<seg.get(x-1).unwrap_or((1LL<<31)-1)<<endl;\n\
+    \        }else{\n            lint s,t;\n            cin>>s>>t;\n            cout<<seg.get(s-1,t).unwrap_or(0)<<endl;\n\
     \        }\n    }\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\"\
-    \n#include \"../dual_segment_tree.hpp\"\n#include \"../../functional/update.hpp\"\
+  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
+    \n#include \"../lazy_segment_tree.hpp\"\n#include \"../../functional/range_add_and_range_sum.hpp\"\
     \n#include \"../../util/template.hpp\"\n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n\
-    \    dual_segment_tree<lint,update<lint>>seg(n);\n    while(q--){\n        lint\
-    \ c;\n        cin>>c;\n        if(c==0){\n            lint s,t,u;\n          \
-    \  cin>>s>>t>>u;\n            seg.update(s-1,t,u);\n        }else{\n         \
-    \   lint x;\n            cin>>x;\n            cout<<seg.get(x-1).unwrap_or((1LL<<31)-1)<<endl;\n\
+    \    lazy_segment_tree<lint,lint,plus<lint>,plus<lint>,range_add_and_range_sum<lint,lint>>seg(n);\n\
+    \    while(q--){\n        lint c;\n        cin>>c;\n        if(c==0){\n      \
+    \      lint s,t,u;\n            cin>>s>>t>>u;\n            seg.update(s-1,t,u);\n\
+    \        }else{\n            lint s,t;\n            cin>>s>>t;\n            cout<<seg.get(s-1,t).unwrap_or(0)<<endl;\n\
     \        }\n    }\n}"
   dependsOn:
-  - segment_tree/dual_segment_tree.hpp
+  - segment_tree/lazy_segment_tree.hpp
   - alga/maybe.hpp
-  - functional/update.hpp
+  - functional/range_add_and_range_sum.hpp
   - util/template.hpp
   - graph_tree/graph_template.hpp
   isVerificationFile: true
-  path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
+  path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
   requiredBy: []
   timestamp: '2020-09-19 12:47:58+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: segment_tree/test/AOJ_dual_segment_tree.test.cpp
+documentation_of: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
 layout: document
 redirect_from:
-- /verify/segment_tree/test/AOJ_dual_segment_tree.test.cpp
-- /verify/segment_tree/test/AOJ_dual_segment_tree.test.cpp.html
-title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
+- /verify/segment_tree/test/AOJ_lazy_segment_tree.test.cpp
+- /verify/segment_tree/test/AOJ_lazy_segment_tree.test.cpp.html
+title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
 ---

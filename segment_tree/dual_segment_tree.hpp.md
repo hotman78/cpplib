@@ -6,11 +6,11 @@ data:
     title: Maybe
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
     title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -30,29 +30,30 @@ data:
     \tstruct node;\n\tusing np=node*;\n\tstruct node{\n\t\tmaybe<T> val;\n\t\tnp ch[2]={nullptr,nullptr};\n\
     \t\tnode(maybe<T> val=maybe<T>()):val(val){}\n\t};\n\tnp root=nullptr;\n\tint\
     \ n=1,sz;\n    F op;\n\tpublic:\n\tdual_segment_tree(int sz,F op=F()):sz(sz),op(op){while(n<sz)n<<=1;}\n\
-    \tinline void set(int l,int r,T x){set(l,r,x,0,n,root);}\n\tinline maybe<T> get(int\
-    \ x){return get(x,0,n,root);}\n\tprivate:\n\tvoid eval(np& t){\n        auto f=expand<T,F>(op);\n\
-    \t\tif(t->val.is_none())return;\n\t\tif(!t->ch[0])t->ch[0]=new node();\n\t\tif(!t->ch[1])t->ch[1]=new\
-    \ node();\n\t\tt->ch[0]->val=f(t->ch[0]->val,t->val);\n\t\tt->ch[1]->val=f(t->ch[1]->val,t->val);\n\
-    \t\tt->val=maybe<T>();\n\t}\n\tvoid set(int a,int b,T x,int l,int r,np& t){\n\
-    \        auto f=expand<T,F>(op);\n        if(!t)t=new node();\n\t\tif(r-l>1)eval(t);\n\
-    \t\tif(r<=a||b<=l)return;\n\t\telse if(a<=l&&r<=b)t->val=f(t->val,x);\n\t    else\
-    \ if(r-l>1){\n\t\t\tset(a,b,x,l,(l+r)/2,t->ch[0]);\n\t\t\tset(a,b,x,(l+r)/2,r,t->ch[1]);\n\
-    \t\t}\n\t}\n\tmaybe<T> get(int x,int l,int r,np& t){\n        auto f=expand<T,F>(op);\n\
-    \        if(!t)t=new node();\n\t\tif(r-l>1)eval(t);\n\t\tif(x<l||r<=x)return maybe<T>();\n\
-    \        else if(r-l==1){\n            return t->val;\n        }\n\t\telse return\
-    \ f(get(x,l,(l+r)/2,t->ch[0]),get(x,(l+r)/2,r,t->ch[1]));\n\t}\n};\n"
+    \tinline void update(int l,int r,T x){update(l,r,x,0,n,root);}\n\tinline maybe<T>\
+    \ get(int x){return get(x,0,n,root);}\n\tprivate:\n\tvoid eval(np& t){\n     \
+    \   auto f=expand<T,F>(op);\n\t\tif(t->val.is_none())return;\n\t\tif(!t->ch[0])t->ch[0]=new\
+    \ node();\n\t\tif(!t->ch[1])t->ch[1]=new node();\n\t\tt->ch[0]->val=f(t->ch[0]->val,t->val);\n\
+    \t\tt->ch[1]->val=f(t->ch[1]->val,t->val);\n\t\tt->val=maybe<T>();\n\t}\n\tvoid\
+    \ update(int a,int b,T x,int l,int r,np& t){\n        auto f=expand<T,F>(op);\n\
+    \        if(!t)t=new node();\n\t\tif(r-l>1)eval(t);\n\t\tif(r<=a||b<=l)return;\n\
+    \t\telse if(a<=l&&r<=b)t->val=f(t->val,x);\n\t    else if(r-l>1){\n\t\t\tset(a,b,x,l,(l+r)/2,t->ch[0]);\n\
+    \t\t\tset(a,b,x,(l+r)/2,r,t->ch[1]);\n\t\t}\n\t}\n\tmaybe<T> get(int x,int l,int\
+    \ r,np& t){\n        auto f=expand<T,F>(op);\n        if(!t)t=new node();\n\t\t\
+    if(r-l>1)eval(t);\n\t\tif(x<l||r<=x)return maybe<T>();\n        else if(r-l==1){\n\
+    \            return t->val;\n        }\n\t\telse return f(get(x,l,(l+r)/2,t->ch[0]),get(x,(l+r)/2,r,t->ch[1]));\n\
+    \t}\n};\n"
   code: "#pragma once\n#include\"../alga/maybe.hpp\"\n\n/**\n * @brief \u53CC\u5BFE\
     \u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n */\n\ntemplate<typename T,typename F>\n\
     class dual_segment_tree{\n\tstruct node;\n\tusing np=node*;\n\tstruct node{\n\t\
     \tmaybe<T> val;\n\t\tnp ch[2]={nullptr,nullptr};\n\t\tnode(maybe<T> val=maybe<T>()):val(val){}\n\
     \t};\n\tnp root=nullptr;\n\tint n=1,sz;\n    F op;\n\tpublic:\n\tdual_segment_tree(int\
-    \ sz,F op=F()):sz(sz),op(op){while(n<sz)n<<=1;}\n\tinline void set(int l,int r,T\
-    \ x){set(l,r,x,0,n,root);}\n\tinline maybe<T> get(int x){return get(x,0,n,root);}\n\
+    \ sz,F op=F()):sz(sz),op(op){while(n<sz)n<<=1;}\n\tinline void update(int l,int\
+    \ r,T x){update(l,r,x,0,n,root);}\n\tinline maybe<T> get(int x){return get(x,0,n,root);}\n\
     \tprivate:\n\tvoid eval(np& t){\n        auto f=expand<T,F>(op);\n\t\tif(t->val.is_none())return;\n\
     \t\tif(!t->ch[0])t->ch[0]=new node();\n\t\tif(!t->ch[1])t->ch[1]=new node();\n\
     \t\tt->ch[0]->val=f(t->ch[0]->val,t->val);\n\t\tt->ch[1]->val=f(t->ch[1]->val,t->val);\n\
-    \t\tt->val=maybe<T>();\n\t}\n\tvoid set(int a,int b,T x,int l,int r,np& t){\n\
+    \t\tt->val=maybe<T>();\n\t}\n\tvoid update(int a,int b,T x,int l,int r,np& t){\n\
     \        auto f=expand<T,F>(op);\n        if(!t)t=new node();\n\t\tif(r-l>1)eval(t);\n\
     \t\tif(r<=a||b<=l)return;\n\t\telse if(a<=l&&r<=b)t->val=f(t->val,x);\n\t    else\
     \ if(r-l>1){\n\t\t\tset(a,b,x,l,(l+r)/2,t->ch[0]);\n\t\t\tset(a,b,x,(l+r)/2,r,t->ch[1]);\n\
@@ -65,8 +66,8 @@ data:
   isVerificationFile: false
   path: segment_tree/dual_segment_tree.hpp
   requiredBy: []
-  timestamp: '2020-09-19 12:19:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-09-19 12:47:58+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - segment_tree/test/AOJ_dual_segment_tree.test.cpp
 documentation_of: segment_tree/dual_segment_tree.hpp

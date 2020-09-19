@@ -2,12 +2,18 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: segment_tree/lazy_segment_tree.hpp
+    title: segment_tree/lazy_segment_tree.hpp
   - icon: ':x:'
     path: segment_tree/segment_tree.hpp
     title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: segment_tree/dual_segment_tree.hpp
     title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+  - icon: ':heavy_check_mark:'
+    path: functional/range_add_and_range_sum.hpp
+    title: "\u533A\u9593\u52A0\u7B97"
   - icon: ':warning:'
     path: alga/monoid.hpp
     title: alga/monoid.hpp
@@ -34,9 +40,12 @@ data:
   - icon: ':x:'
     path: segment_tree/test/LC_segment_tree.test.cpp
     title: segment_tree/test/LC_segment_tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
     title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
+    title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_lca.test.cpp
     title: graph_tree/test/LC_lca.test.cpp
@@ -79,8 +88,10 @@ data:
   isVerificationFile: false
   path: alga/maybe.hpp
   requiredBy:
+  - segment_tree/lazy_segment_tree.hpp
   - segment_tree/segment_tree.hpp
   - segment_tree/dual_segment_tree.hpp
+  - functional/range_add_and_range_sum.hpp
   - alga/monoid.hpp
   - graph_tree/min_cost_flow.hpp
   - graph_tree/lca.hpp
@@ -93,6 +104,7 @@ data:
   verifiedWith:
   - segment_tree/test/LC_segment_tree.test.cpp
   - segment_tree/test/AOJ_dual_segment_tree.test.cpp
+  - segment_tree/test/AOJ_lazy_segment_tree.test.cpp
   - graph_tree/test/LC_lca.test.cpp
   - data_structure/test/LC_sparse_table.test.cpp
   - data_structure/test/LC_swag.test.cpp

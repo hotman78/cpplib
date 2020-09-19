@@ -15,9 +15,12 @@ data:
   - icon: ':x:'
     path: segment_tree/test/LC_segment_tree.test.cpp
     title: segment_tree/test/LC_segment_tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
     title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
+    title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
@@ -248,6 +251,7 @@ data:
   verifiedWith:
   - segment_tree/test/LC_segment_tree.test.cpp
   - segment_tree/test/AOJ_dual_segment_tree.test.cpp
+  - segment_tree/test/AOJ_lazy_segment_tree.test.cpp
   - util/test/LC_Suffix_Array.test.cpp
   - util/test/LC_Number_of_Substrings.test.cpp
   - math/test/AOJ_prime_factor.test.cpp
