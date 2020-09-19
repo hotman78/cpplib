@@ -12,31 +12,31 @@ data:
     path: graph_tree/dijkstra.hpp
     title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/segment_tree.test.cpp
     title: segment_tree/test/segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Number_of_Substrings.test.cpp
     title: util/test/LC_Number_of_Substrings.test.cpp
   - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_factor.test.cpp
     title: math/test/AOJ_prime_factor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_prime_factor.test.cpp
     title: math/test/LC_prime_factor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_mod_sqrt.test.cpp
     title: math/test/LC_mod_sqrt.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_totient_sum.test.cpp
     title: math/test/LC_totient_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_mod_log.test.cpp
     title: math/test/LC_mod_log.test.cpp
   - icon: ':heavy_check_mark:'
@@ -54,16 +54,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_list.test.cpp
     title: math/test/AOJ_prime_list.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_tetration.test.cpp
     title: math/test/LC_tetration.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/YUKI_Aho_Corasick.test.cpp
     title: string/test/YUKI_Aho_Corasick.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/LC_Z_algorizm.test.cpp
     title: string/test/LC_Z_algorizm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
   - icon: ':heavy_check_mark:'
@@ -73,6 +73,9 @@ data:
     path: graph_tree/test/LC_dijkstra.test.cpp
     title: graph_tree/test/LC_dijkstra.test.cpp
   - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_lca.test.cpp
+    title: graph_tree/test/LC_lca.test.cpp
+  - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_dijkstra_fast.test.cpp
     title: graph_tree/test/LC_dijkstra_fast.test.cpp
   - icon: ':heavy_check_mark:'
@@ -81,7 +84,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_dominator_tree.test.cpp
     title: graph_tree/test/LC_dominator_tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data_structure/test/LC_sparse_table.test.cpp
     title: data_structure/test/LC_sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
@@ -257,6 +260,7 @@ data:
   - string/test/LC_online_Z_algorizm.test.cpp
   - graph_tree/test/LC_lca_short.test.cpp
   - graph_tree/test/LC_dijkstra.test.cpp
+  - graph_tree/test/LC_lca.test.cpp
   - graph_tree/test/LC_dijkstra_fast.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp
   - graph_tree/test/LC_dominator_tree.test.cpp

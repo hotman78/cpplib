@@ -7,10 +7,10 @@ data:
   - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int.hpp
     title: ModInt
   - icon: ':heavy_check_mark:'
@@ -19,7 +19,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/ACL.hpp
     title: util/ACL.hpp
   - icon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   _extendedRequiredBy: []

@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/segment_tree.hpp
     title: Segment Tree
   - icon: ':question:'
@@ -16,7 +16,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -147,7 +147,7 @@ data:
   path: segment_tree/test/segment_tree.test.cpp
   requiredBy: []
   timestamp: '2020-09-19 09:30:13+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: segment_tree/test/segment_tree.test.cpp
 layout: document

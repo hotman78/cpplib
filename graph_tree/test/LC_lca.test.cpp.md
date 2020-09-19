@@ -2,6 +2,10 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: graph_tree/lca.hpp
+    title: "LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\u89E3\u3068\u540C\u7B49\u306E\u901F\
+      \u3055)"
+  - icon: ':heavy_check_mark:'
     path: graph_tree/depth.hpp
     title: "\u6839\u304B\u3089\u306E\u6DF1\u3055"
   - icon: ':question:'
@@ -25,22 +29,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: functional/argmin.hpp
     title: "\u6700\u5C0F\u5024\u3068\u305D\u306E\u4F4D\u7F6E"
+  - icon: ':question:'
+    path: util/template.hpp
+    title: util/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: graph_tree/test/LC_lca.test.cpp
-    title: graph_tree/test/LC_lca.test.cpp
-  _pathExtension: hpp
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: "LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\u89E3\u3068\u540C\u7B49\
-      \u306E\u901F\u3055)"
-    links: []
-  bundledCode: "#line 2 \"graph_tree/lca.hpp\"\n#include<vector>\n#include<cmath>\n\
-    #include<tuple>\n#line 4 \"graph_tree/graph_template.hpp\"\n#include<iostream>\n\
-    /**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\n\
-    using graph=std::vector<std::vector<int>>;\ntemplate<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
+    PROBLEM: https://judge.yosupo.jp/problem/lca
+    links:
+    - https://judge.yosupo.jp/problem/lca
+  bundledCode: "#line 1 \"graph_tree/test/LC_lca.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\
+    \n#line 2 \"graph_tree/lca.hpp\"\n#include<vector>\n#include<cmath>\n#include<tuple>\n\
+    #line 4 \"graph_tree/graph_template.hpp\"\n#include<iostream>\n/**\n * @brief\
+    \ \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\n\
+    template<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
     \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
     \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
     \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
@@ -160,24 +165,45 @@ data:
     \    }\n        };\n        f(f,s,-1);\n        st=new arg_rmq<int>(comp_data);\n\
     \    }\n    int query(int p,int q){\n        return data[st->query(std::min(start[p],start[q]),std::max(start[p],start[q])+1).unwrap().first];\n\
     \    }\n    int dist(int p,int q){\n        return __dist[p]+__dist[q]-2*__dist[query(p,q)];\n\
-    \    }\n};\n"
-  code: "#pragma once\n#include<vector>\n#include<cmath>\n#include<tuple>\n#include\"\
-    depth.hpp\"\n#include\"distance.hpp\"\n#include\"graph_template.hpp\"\n#include\"\
-    ../data_structure/arg_rmq.hpp\"\n\n/**\n * @brief LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\
-    \u89E3\u3068\u540C\u7B49\u306E\u901F\u3055)\n */\n\nclass lca{\n    std::vector<int>data;\n\
-    \    std::vector<int>comp_data;\n    std::vector<int>start;\n    arg_rmq<int>*st;\n\
-    \    std::vector<int> __dist;\n    public:\n    lca(){}\n    lca(std::vector<std::vector<int>>v,int\
-    \ s){\n        data.resize(v.size()*2-1);\n        comp_data.resize(v.size()*2-1);\n\
-    \        start.resize(v.size());\n        int i=0;\n        __dist=distance(v,s);\n\
-    \        auto f=[&](auto f,int n,int p)->void{\n            start[n]=i;\n    \
-    \        data[i]=n;\n            comp_data[i++]=__dist[n];\n            for(int\
-    \ t:v[n]){\n                if(t==p)continue;\n                f(f,t,n);\n   \
-    \             data[i]=n;\n                comp_data[i++]=__dist[n];\n        \
-    \    }\n        };\n        f(f,s,-1);\n        st=new arg_rmq<int>(comp_data);\n\
-    \    }\n    int query(int p,int q){\n        return data[st->query(std::min(start[p],start[q]),std::max(start[p],start[q])+1).unwrap().first];\n\
-    \    }\n    int dist(int p,int q){\n        return __dist[p]+__dist[q]-2*__dist[query(p,q)];\n\
-    \    }\n};"
+    \    }\n};\n#line 2 \"util/template.hpp\"\n#pragma GCC optimize(\"Ofast\")\n#pragma\
+    \ GCC optimize(\"unroll-loops\")\n#pragma GCC target(\"avx\")\n#include<bits/stdc++.h>\n\
+    using namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
+    typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
+    \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
+    \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
+    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void numout(T\
+    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i<INF/2?i:\"INF\";f=1;}cout<<endl;}\n\
+    template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}\ntemplate<typename\
+    \ T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\n\
+    template<typename T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename\
+    \ T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?\"\"\
+    :\" \"<<t[i];f=1;}cout<<endl;}\ntemplate<typename T>inline void _output2(T t){for(lint\
+    \ i=0;i<t.size();i++)output(t[i]);}\n#define rep(i,...) for(auto i:range(__VA_ARGS__))\
+    \ \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b)\
+    \ for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n\
+    #define irep(i) for(lint i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return\
+    \ vector<long long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b){if(b<=a)return\
+    \ vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
+    \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
+    \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
+    \ v;}\n#define all(n) begin(n),end(n)\ntemplate<typename T,typename E>bool chmin(T&\
+    \ s,const E& t){bool res=s>t;s=min<T>(s,t);return res;}\ntemplate<typename T,typename\
+    \ E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>(s,t);return res;}\nconst\
+    \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
+    #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
+    \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
+    \ 4 \"graph_tree/test/LC_lca.test.cpp\"\n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n\
+    \    auto g=load_treep(n);\n    lca lca(g,0);\n    while(q--){\n        lint s,t;\n\
+    \        cin>>s>>t;\n        cout<<lca.query(s,t)<<endl;\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n#include \"../lca.hpp\"\
+    \n#include \"../../util/template.hpp\"\n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n\
+    \    auto g=load_treep(n);\n    lca lca(g,0);\n    while(q--){\n        lint s,t;\n\
+    \        cin>>s>>t;\n        cout<<lca.query(s,t)<<endl;\n    }\n}"
   dependsOn:
+  - graph_tree/lca.hpp
   - graph_tree/depth.hpp
   - graph_tree/graph_template.hpp
   - graph_tree/distance.hpp
@@ -186,18 +212,17 @@ data:
   - data_structure/sparse_table.hpp
   - alga/maybe.hpp
   - functional/argmin.hpp
-  isVerificationFile: false
-  path: graph_tree/lca.hpp
+  - util/template.hpp
+  isVerificationFile: true
+  path: graph_tree/test/LC_lca.test.cpp
   requiredBy: []
   timestamp: '2020-09-19 10:39:25+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - graph_tree/test/LC_lca.test.cpp
-documentation_of: graph_tree/lca.hpp
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: graph_tree/test/LC_lca.test.cpp
 layout: document
 redirect_from:
-- /library/graph_tree/lca.hpp
-- /library/graph_tree/lca.hpp.html
-title: "LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\u89E3\u3068\u540C\u7B49\u306E\u901F\
-  \u3055)"
+- /verify/graph_tree/test/LC_lca.test.cpp
+- /verify/graph_tree/test/LC_lca.test.cpp.html
+title: graph_tree/test/LC_lca.test.cpp
 ---

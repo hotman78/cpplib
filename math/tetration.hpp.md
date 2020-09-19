@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/euler_phi.hpp
     title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_tetration.test.cpp
     title: math/test/LC_tetration.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
@@ -52,7 +52,7 @@ data:
   path: math/tetration.hpp
   requiredBy: []
   timestamp: '2020-09-13 16:40:58+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - math/test/LC_tetration.test.cpp
 documentation_of: math/tetration.hpp

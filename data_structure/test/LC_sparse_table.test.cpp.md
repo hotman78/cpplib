@@ -1,10 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data_structure/sparse_table.hpp
     title: SparseTable
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: alga/maybe.hpp
+    title: Maybe
+  - icon: ':question:'
     path: functional/MIN.hpp
     title: "\u6700\u5C0F\u5024"
   - icon: ':question:'
@@ -16,7 +19,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -25,14 +28,24 @@ data:
   bundledCode: "#line 1 \"data_structure/test/LC_sparse_table.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#line 2 \"data_structure/sparse_table.hpp\"\
     \n#include<vector>\n#include<functional>\n#include<cmath>\n#include<algorithm>\n\
+    #line 2 \"alga/maybe.hpp\"\n#include<cassert>\n\n/**\n * @brief Maybe\n * @see\
+    \ https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8A%E3%83%89_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)#Maybe%E3%83%A2%E3%83%8A%E3%83%89\n\
+    \ */\n\ntemplate<typename T>\nstruct maybe{\n    bool _is_none;\n    T val;\n\
+    \    maybe():_is_none(true){}\n    maybe(T val):_is_none(false),val(val){}\n \
+    \   T unwrap()const{\n        assert(!_is_none);\n        return val;\n    }\n\
+    \    T unwrap_or(T e)const{\n        return _is_none?e:val;\n    }\n    bool is_none()const{return\
+    \ _is_none;}\n    bool is_some()const{return !_is_none;}\n};\n\ntemplate<typename\
+    \ T,typename F>\nauto expand(F op){\n    return [op](const maybe<T>& s,const maybe<T>&\
+    \ t){\n        if(s.is_none())return t;\n        if(t.is_none())return s;\n  \
+    \      return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 7 \"data_structure/sparse_table.hpp\"\
     \n/**\n * @brief SparseTable\n */\n\ntemplate<typename T,typename F>\nclass sparse_table{\n\
     \    F f;\n    std::vector<std::vector<T>>data;\n    public:\n    sparse_table(std::vector<T>\
     \ v,F f=F()):f(f){\n        int n=v.size(),log=log2(n)+1;\n        data.resize(n,std::vector<T>(log));\n\
     \        for(int i=0;i<n;i++)data[i][0]=v[i];\n        for(int j=1;j<log;j++)for(int\
     \ i=0;i+(1<<(j-1))<n;i++){\n            data[i][j]=f(data[i][j-1],data[i+(1<<(j-1))][j-1]);\n\
-    \        }\n    }\n    T get(int l,int r){\n        if(r<l)std::swap(l,r);\n \
-    \       //assert(0<l||r<=(T)data.size());\n        int k=std::log2(r-l);\n   \
-    \     return f(data[l][k],data[r-(1<<k)][k]);\n    }\n};\n#line 3 \"functional/MIN.hpp\"\
+    \        }\n    }\n    maybe<T> get(int l,int r){\n        if(l==r)return maybe<T>();\n\
+    \        if(r<l)std::swap(l,r);\n        int k=std::log2(r-l);\n        return\
+    \ maybe<T>(f(data[l][k],data[r-(1<<k)][k]));\n    }\n};\n#line 3 \"functional/MIN.hpp\"\
     \n\n/**\n * @brief \u6700\u5C0F\u5024\n */\n\ntemplate<typename T>\nstruct MIN{\n\
     \    T operator()(const T& s,const T& t){\n        return std::min(s,t);\n   \
     \ }\n};\n#line 2 \"util/template.hpp\"\n#pragma GCC optimize(\"Ofast\")\n#pragma\
@@ -118,14 +131,15 @@ data:
     \t\tcout<<s.get(l,r)<<endl;\n\t}\n}"
   dependsOn:
   - data_structure/sparse_table.hpp
+  - alga/maybe.hpp
   - functional/MIN.hpp
   - util/template.hpp
   - graph_tree/graph_template.hpp
   isVerificationFile: true
   path: data_structure/test/LC_sparse_table.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 09:30:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-19 10:39:25+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: data_structure/test/LC_sparse_table.test.cpp
 layout: document

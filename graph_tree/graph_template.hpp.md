@@ -11,15 +11,16 @@ data:
   - icon: ':warning:'
     path: graph_tree/child_size.hpp
     title: "\u90E8\u5206\u6728\u306E\u5927\u304D\u3055"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/depth.hpp
     title: "\u6839\u304B\u3089\u306E\u6DF1\u3055"
   - icon: ':heavy_check_mark:'
     path: graph_tree/centroid_decomposition.hpp
     title: "\u91CD\u5FC3\u5206\u89E3"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/lca.hpp
-    title: LCA &amp;lt;O(N),O(1)&amp;gt;(WIP)
+    title: "LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\u89E3\u3068\u540C\u7B49\u306E\u901F\
+      \u3055)"
   - icon: ':heavy_check_mark:'
     path: graph_tree/lca_short.hpp
     title: "LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;"
@@ -42,31 +43,31 @@ data:
     path: graph_tree/shortest_path_tree_dijkstra.hpp
     title: "\u6700\u77ED\u7D4C\u8DEF\u6728 O((E+V)logE)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/segment_tree.test.cpp
     title: segment_tree/test/segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Number_of_Substrings.test.cpp
     title: util/test/LC_Number_of_Substrings.test.cpp
   - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_factor.test.cpp
     title: math/test/AOJ_prime_factor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_prime_factor.test.cpp
     title: math/test/LC_prime_factor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_mod_sqrt.test.cpp
     title: math/test/LC_mod_sqrt.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_totient_sum.test.cpp
     title: math/test/LC_totient_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_mod_log.test.cpp
     title: math/test/LC_mod_log.test.cpp
   - icon: ':heavy_check_mark:'
@@ -84,16 +85,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_list.test.cpp
     title: math/test/AOJ_prime_list.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_tetration.test.cpp
     title: math/test/LC_tetration.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/YUKI_Aho_Corasick.test.cpp
     title: string/test/YUKI_Aho_Corasick.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/LC_Z_algorizm.test.cpp
     title: string/test/LC_Z_algorizm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
   - icon: ':heavy_check_mark:'
@@ -103,6 +104,9 @@ data:
     path: graph_tree/test/LC_dijkstra.test.cpp
     title: graph_tree/test/LC_dijkstra.test.cpp
   - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_lca.test.cpp
+    title: graph_tree/test/LC_lca.test.cpp
+  - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_dijkstra_fast.test.cpp
     title: graph_tree/test/LC_dijkstra_fast.test.cpp
   - icon: ':heavy_check_mark:'
@@ -111,7 +115,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_dominator_tree.test.cpp
     title: graph_tree/test/LC_dominator_tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data_structure/test/LC_sparse_table.test.cpp
     title: data_structure/test/LC_sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
@@ -280,6 +284,7 @@ data:
   - string/test/LC_online_Z_algorizm.test.cpp
   - graph_tree/test/LC_lca_short.test.cpp
   - graph_tree/test/LC_dijkstra.test.cpp
+  - graph_tree/test/LC_lca.test.cpp
   - graph_tree/test/LC_dijkstra_fast.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp
   - graph_tree/test/LC_dominator_tree.test.cpp

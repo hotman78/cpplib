@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/AhoCorasick.hpp
     title: "Aho-Corasick\u6CD5"
   - icon: ':question:'
@@ -13,7 +13,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/430
@@ -143,7 +143,7 @@ data:
   path: string/test/YUKI_Aho_Corasick.test.cpp
   requiredBy: []
   timestamp: '2020-09-19 09:30:13+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: string/test/YUKI_Aho_Corasick.test.cpp
 layout: document

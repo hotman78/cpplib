@@ -1,10 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/lca.hpp
+    title: "LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\u89E3\u3068\u540C\u7B49\u306E\u901F\
+      \u3055)"
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_lca.test.cpp
+    title: graph_tree/test/LC_lca.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -20,10 +27,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph_tree/distance.hpp
-  requiredBy: []
+  requiredBy:
+  - graph_tree/lca.hpp
   timestamp: '2020-09-19 09:30:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - graph_tree/test/LC_lca.test.cpp
 documentation_of: graph_tree/distance.hpp
 layout: document
 redirect_from:
