@@ -8,6 +8,7 @@
 "data_structure/test/LC_fast_set.test.cpp": "2020-09-19 09:30:13 +0900",
 "data_structure/test/LC_line_add_get_min.test.cpp": "2020-09-19 09:30:13 +0900",
 "data_structure/test/LC_segment_add_get_min.test.cpp": "2020-09-19 09:30:13 +0900",
+"data_structure/test/LC_sparse_table.test.cpp": "2020-09-19 10:47:59 +0900",
 "data_structure/test/LC_swag.test.cpp": "2020-09-19 09:30:13 +0900",
 "data_structure/test/LC_wavelet_matrix.test.cpp": "2020-09-19 09:30:13 +0900",
 "dsu/test/union_find.test.cpp": "2020-09-17 09:48:35 +0900",
