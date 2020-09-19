@@ -46,7 +46,7 @@ data:
     path: graph_tree/maximum_independent_set.hpp
     title: "\u6700\u5927\u72EC\u7ACB\u96C6\u5408(V<=50)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/LC_segment_tree.test.cpp
     title: segment_tree/test/LC_segment_tree.test.cpp
   - icon: ':x:'

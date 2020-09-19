@@ -12,7 +12,7 @@ data:
     path: graph_tree/dijkstra.hpp
     title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/LC_segment_tree.test.cpp
     title: segment_tree/test/LC_segment_tree.test.cpp
   - icon: ':x:'

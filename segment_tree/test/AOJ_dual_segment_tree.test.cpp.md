@@ -49,10 +49,10 @@ data:
     \t\tt->ch[1]->val=f(t->ch[1]->val,t->val);\n\t\tt->val=maybe<T>();\n\t}\n\tvoid\
     \ update(int a,int b,T x,int l,int r,np& t){\n        auto f=expand<T,F>(op);\n\
     \        if(!t)t=new node();\n\t\tif(r-l>1)eval(t);\n\t\tif(r<=a||b<=l)return;\n\
-    \t\telse if(a<=l&&r<=b)t->val=f(t->val,x);\n\t    else if(r-l>1){\n\t\t\tset(a,b,x,l,(l+r)/2,t->ch[0]);\n\
-    \t\t\tset(a,b,x,(l+r)/2,r,t->ch[1]);\n\t\t}\n\t}\n\tmaybe<T> get(int x,int l,int\
-    \ r,np& t){\n        auto f=expand<T,F>(op);\n        if(!t)t=new node();\n\t\t\
-    if(r-l>1)eval(t);\n\t\tif(x<l||r<=x)return maybe<T>();\n        else if(r-l==1){\n\
+    \t\telse if(a<=l&&r<=b)t->val=f(t->val,x);\n\t    else if(r-l>1){\n\t\t\tupdate(a,b,x,l,(l+r)/2,t->ch[0]);\n\
+    \t\t\tupdate(a,b,x,(l+r)/2,r,t->ch[1]);\n\t\t}\n\t}\n\tmaybe<T> get(int x,int\
+    \ l,int r,np& t){\n        auto f=expand<T,F>(op);\n        if(!t)t=new node();\n\
+    \t\tif(r-l>1)eval(t);\n\t\tif(x<l||r<=x)return maybe<T>();\n        else if(r-l==1){\n\
     \            return t->val;\n        }\n\t\telse return f(get(x,l,(l+r)/2,t->ch[0]),get(x,(l+r)/2,r,t->ch[1]));\n\
     \t}\n};\n#line 2 \"functional/update.hpp\"\n\n/**\n * @brief \u66F4\u65B0\n */\n\
     \ntemplate<typename T>\nstruct update{\n    T operator()(const T& s,const T& t){\n\
@@ -151,7 +151,7 @@ data:
   isVerificationFile: true
   path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 12:47:58+09:00'
+  timestamp: '2020-09-19 12:52:56+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: segment_tree/test/AOJ_dual_segment_tree.test.cpp

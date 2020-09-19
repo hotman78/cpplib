@@ -310,7 +310,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: segment_tree/lazy_segment_tree.hpp
       title: segment_tree/lazy_segment_tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/segment_tree.hpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - name: string
@@ -472,7 +472,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
       title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/test/LC_segment_tree.test.cpp
       title: segment_tree/test/LC_segment_tree.test.cpp
   - name: string/test
