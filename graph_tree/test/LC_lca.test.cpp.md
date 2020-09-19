@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/depth.hpp
     title: "\u6839\u304B\u3089\u306E\u6DF1\u3055"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
@@ -23,13 +23,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/sparse_table.hpp
     title: SparseTable
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
   - icon: ':heavy_check_mark:'
     path: functional/argmin.hpp
     title: "\u6700\u5C0F\u5024\u3068\u305D\u306E\u4F4D\u7F6E"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: segment_tree/segment_tree.hpp
     title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
@@ -34,8 +34,8 @@ data:
     \ T,typename F>\nauto expand(F op){\n    return [&op](const maybe<T>& s,const\
     \ maybe<T>& t){\n        if(s.is_none())return t;\n        if(t.is_none())return\
     \ s;\n        return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 4\
-    \ \"segment_tree/segment_tree.hpp\"\n/**\n * @brief \u30BB\u30B0\u30E1\u30F3\u30C8\
-    \u6728\n * @see https://en.wikipedia.org/wiki/Segment_tree\n */\ntemplate<typename\
+    \ \"segment_tree/segment_tree.hpp\"\n\n/**\n * @brief \u30BB\u30B0\u30E1\u30F3\
+    \u30C8\u6728\n * @see https://en.wikipedia.org/wiki/Segment_tree\n */\n\ntemplate<typename\
     \ T,typename F>\nclass segment_tree{\n\tmaybe<T>* node;\n    F op;\n\tint n=1;\n\
     \tpublic:\n    segment_tree(){}\n\tsegment_tree(int sz,F op=F()):op(op){\n\t\t\
     while(n<=sz)n<<=1;\n\t\tnode=new maybe<T>[n*2];\n\t\tfor(int i=0;i<n*2;i++)node[i]=maybe<T>();\n\
@@ -146,7 +146,7 @@ data:
   isVerificationFile: true
   path: segment_tree/test/LC_segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 12:52:56+09:00'
+  timestamp: '2020-09-19 12:56:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: segment_tree/test/LC_segment_tree.test.cpp

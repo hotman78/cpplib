@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: segment_tree/test/LC_segment_tree.test.cpp
     title: segment_tree/test/LC_segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
     title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -130,7 +130,7 @@ data:
     path: data_structure/test/LC_wavelet_matrix.test.cpp
     title: data_structure/test/LC_wavelet_matrix.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -247,7 +247,7 @@ data:
   - math/test/LC_sum_power_poly_limit.cpp
   - graph_tree/dijkstra.hpp
   timestamp: '2020-09-19 09:30:13+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - segment_tree/test/LC_segment_tree.test.cpp
   - segment_tree/test/AOJ_dual_segment_tree.test.cpp

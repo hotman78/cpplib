@@ -4,16 +4,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: segment_tree/lazy_segment_tree.hpp
     title: segment_tree/lazy_segment_tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
   - icon: ':heavy_check_mark:'
     path: functional/range_add_and_range_sum.hpp
     title: "\u533A\u9593\u52A0\u7B97"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []

@@ -16,7 +16,7 @@ data:
       title: BBST/RBST/base.hpp
   - name: alga
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: alga/maybe.hpp
       title: Maybe
     - icon: ':warning:'
@@ -128,7 +128,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: functional/range_add_and_range_sum.hpp
       title: "\u533A\u9593\u52A0\u7B97"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: functional/update.hpp
       title: "\u66F4\u65B0"
   - name: graph_tree
@@ -157,7 +157,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph_tree/dominator_tree.hpp
       title: "\u652F\u914D\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph_tree/graph_template.hpp
       title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
@@ -304,7 +304,7 @@ data:
       title: math/test/LC_sum_power_poly_limit.cpp
   - name: segment_tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/dual_segment_tree.hpp
       title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
@@ -356,7 +356,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
@@ -466,7 +466,7 @@ data:
       title: math/test/LC_totient_sum.test.cpp
   - name: segment_tree/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
       title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
     - icon: ':heavy_check_mark:'

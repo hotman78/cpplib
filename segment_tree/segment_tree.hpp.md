@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
   _extendedRequiredBy: []
@@ -26,8 +26,8 @@ data:
     \ T,typename F>\nauto expand(F op){\n    return [&op](const maybe<T>& s,const\
     \ maybe<T>& t){\n        if(s.is_none())return t;\n        if(t.is_none())return\
     \ s;\n        return maybe<T>(op(s.unwrap(),t.unwrap()));\n    };\n}\n#line 4\
-    \ \"segment_tree/segment_tree.hpp\"\n/**\n * @brief \u30BB\u30B0\u30E1\u30F3\u30C8\
-    \u6728\n * @see https://en.wikipedia.org/wiki/Segment_tree\n */\ntemplate<typename\
+    \ \"segment_tree/segment_tree.hpp\"\n\n/**\n * @brief \u30BB\u30B0\u30E1\u30F3\
+    \u30C8\u6728\n * @see https://en.wikipedia.org/wiki/Segment_tree\n */\n\ntemplate<typename\
     \ T,typename F>\nclass segment_tree{\n\tmaybe<T>* node;\n    F op;\n\tint n=1;\n\
     \tpublic:\n    segment_tree(){}\n\tsegment_tree(int sz,F op=F()):op(op){\n\t\t\
     while(n<=sz)n<<=1;\n\t\tnode=new maybe<T>[n*2];\n\t\tfor(int i=0;i<n*2;i++)node[i]=maybe<T>();\n\
@@ -46,9 +46,9 @@ data:
     \  auto f=expand<T,F>(op);\n        t+=n;\n        node[t]=maybe<T>(val);\n  \
     \      while(t>1){\n            t=t>>1;\n            node[t]=f(node[t*2],node[t*2+1]);\n\
     \        }\n    }\n};\n"
-  code: "#pragma once\n#include<vector>\n#include\"../alga/maybe.hpp\"\n/**\n * @brief\
-    \ \u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @see https://en.wikipedia.org/wiki/Segment_tree\n\
-    \ */\ntemplate<typename T,typename F>\nclass segment_tree{\n\tmaybe<T>* node;\n\
+  code: "#pragma once\n#include<vector>\n#include\"../alga/maybe.hpp\"\n\n/**\n *\
+    \ @brief \u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @see https://en.wikipedia.org/wiki/Segment_tree\n\
+    \ */\n\ntemplate<typename T,typename F>\nclass segment_tree{\n\tmaybe<T>* node;\n\
     \    F op;\n\tint n=1;\n\tpublic:\n    segment_tree(){}\n\tsegment_tree(int sz,F\
     \ op=F()):op(op){\n\t\twhile(n<=sz)n<<=1;\n\t\tnode=new maybe<T>[n*2];\n\t\tfor(int\
     \ i=0;i<n*2;i++)node[i]=maybe<T>();\n\t}\n    segment_tree(const std::vector<T>&v,F\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: segment_tree/segment_tree.hpp
   requiredBy: []
-  timestamp: '2020-09-19 12:52:56+09:00'
+  timestamp: '2020-09-19 12:56:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - segment_tree/test/LC_segment_tree.test.cpp

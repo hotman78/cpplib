@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/dual_segment_tree.hpp
     title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: functional/update.hpp
     title: "\u66F4\u65B0"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
@@ -131,16 +131,16 @@ data:
     \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 5 \"segment_tree/test/AOJ_dual_segment_tree.test.cpp\"\
     \n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n    dual_segment_tree<lint,update<lint>>seg(n);\n\
     \    while(q--){\n        lint c;\n        cin>>c;\n        if(c==0){\n      \
-    \      lint s,t,u;\n            cin>>s>>t>>u;\n            seg.update(s-1,t,u);\n\
-    \        }else{\n            lint x;\n            cin>>x;\n            cout<<seg.get(x-1).unwrap_or((1LL<<31)-1)<<endl;\n\
+    \      lint s,t,u;\n            cin>>s>>t>>u;\n            seg.update(s,t+1,u);\n\
+    \        }else{\n            lint x;\n            cin>>x;\n            cout<<seg.get(x).unwrap_or((1LL<<31)-1)<<endl;\n\
     \        }\n    }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\"\
     \n#include \"../dual_segment_tree.hpp\"\n#include \"../../functional/update.hpp\"\
     \n#include \"../../util/template.hpp\"\n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n\
     \    dual_segment_tree<lint,update<lint>>seg(n);\n    while(q--){\n        lint\
     \ c;\n        cin>>c;\n        if(c==0){\n            lint s,t,u;\n          \
-    \  cin>>s>>t>>u;\n            seg.update(s-1,t,u);\n        }else{\n         \
-    \   lint x;\n            cin>>x;\n            cout<<seg.get(x-1).unwrap_or((1LL<<31)-1)<<endl;\n\
+    \  cin>>s>>t>>u;\n            seg.update(s,t+1,u);\n        }else{\n         \
+    \   lint x;\n            cin>>x;\n            cout<<seg.get(x).unwrap_or((1LL<<31)-1)<<endl;\n\
     \        }\n    }\n}"
   dependsOn:
   - segment_tree/dual_segment_tree.hpp
@@ -151,8 +151,8 @@ data:
   isVerificationFile: true
   path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 12:52:56+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-19 12:56:38+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: segment_tree/test/AOJ_dual_segment_tree.test.cpp
 layout: document
