@@ -1,10 +1,12 @@
 #pragma once
 #include<vector>
 #include"../alga/maybe.hpp"
+
 /**
  * @brief セグメント木
  * @see https://en.wikipedia.org/wiki/Segment_tree
  */
+
 template<typename T,typename F>
 class segment_tree{
 	maybe<T>* node;

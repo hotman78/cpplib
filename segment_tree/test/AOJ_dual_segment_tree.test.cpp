@@ -13,11 +13,11 @@ int main(){
         if(c==0){
             lint s,t,u;
             cin>>s>>t>>u;
-            seg.update(s-1,t,u);
+            seg.update(s,t+1,u);
         }else{
             lint x;
             cin>>x;
-            cout<<seg.get(x-1).unwrap_or((1LL<<31)-1)<<endl;
+            cout<<seg.get(x).unwrap_or((1LL<<31)-1)<<endl;
         }
     }
 }
