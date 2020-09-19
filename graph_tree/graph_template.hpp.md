@@ -116,6 +116,9 @@ data:
     path: graph_tree/test/LC_maximum_independent_set.test.cpp
     title: graph_tree/test/LC_maximum_independent_set.test.cpp
   - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_push_relabel.test.cpp
+    title: graph_tree/test/LC_push_relabel.test.cpp
+  - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_lca.test.cpp
     title: graph_tree/test/LC_lca.test.cpp
   - icon: ':heavy_check_mark:'
@@ -300,6 +303,7 @@ data:
   - graph_tree/test/LC_lca_short.test.cpp
   - graph_tree/test/LC_dijkstra.test.cpp
   - graph_tree/test/LC_maximum_independent_set.test.cpp
+  - graph_tree/test/LC_push_relabel.test.cpp
   - graph_tree/test/LC_lca.test.cpp
   - graph_tree/test/LC_dijkstra_fast.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp

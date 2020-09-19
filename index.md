@@ -180,6 +180,9 @@ data:
       path: graph_tree/min_cost_flow_ei.hpp
       title: "\u3046\u3057\u3055\u3093\u304B\u3089\u30D1\u30AF\u3063\u3066\u304D\u305F\
         \u6700\u5C0F\u8CBB\u7528\u6D41"
+    - icon: ':heavy_check_mark:'
+      path: graph_tree/push_relabel.hpp
+      title: "\u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))"
     - icon: ':warning:'
       path: graph_tree/reroot.hpp
       title: "\u5168\u65B9\u4F4D\u6728DP"
@@ -426,6 +429,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph_tree/test/LC_maximum_independent_set.test.cpp
       title: graph_tree/test/LC_maximum_independent_set.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph_tree/test/LC_push_relabel.test.cpp
+      title: graph_tree/test/LC_push_relabel.test.cpp
   - name: math/test
     pages:
     - icon: ':heavy_check_mark:'
