@@ -19,7 +19,7 @@ class dual_segment_tree{
     F op;
 	public:
 	dual_segment_tree(int sz,F op=F()):sz(sz),op(op){while(n<sz)n<<=1;}
-	inline void set(int l,int r,T x){set(l,r,x,0,n,root);}
+	inline void update(int l,int r,T x){update(l,r,x,0,n,root);}
 	inline maybe<T> get(int x){return get(x,0,n,root);}
 	private:
 	void eval(np& t){
@@ -31,7 +31,7 @@ class dual_segment_tree{
 		t->ch[1]->val=f(t->ch[1]->val,t->val);
 		t->val=maybe<T>();
 	}
-	void set(int a,int b,T x,int l,int r,np& t){
+	void update(int a,int b,T x,int l,int r,np& t){
         auto f=expand<T,F>(op);
         if(!t)t=new node();
 		if(r-l>1)eval(t);
