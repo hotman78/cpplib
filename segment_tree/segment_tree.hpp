@@ -11,12 +11,12 @@ class segment_tree{
 	int n=1;
 	public:
     segment_tree(){}
-	segment_tree(int sz,F op):op(op){
+	segment_tree(int sz,F op=F()):op(op){
 		while(n<=sz)n<<=1;
 		node=new maybe<T>[n*2];
 		for(int i=0;i<n*2;i++)node[i]=maybe<T>();
 	}
-    segment_tree(const vector<T>&v,F op):op(op){
+    segment_tree(const vector<T>&v,F op=F()):op(op){
         auto f=expand<T,F>(op);
         const int sz=v.size();
 		while(n<=sz)n<<=1;
@@ -63,12 +63,3 @@ class segment_tree{
         }
     }
 };
-
-template<typename T,typename F>
-segment_tree<T,F> make_segment_tree(vector<T> v,F op){
-    return segment_tree<T,F>(v,op);
-}
-template<typename T,typename F>
-segment_tree<T,F> make_segment_tree(int size,T goast,F op){
-    return segment_tree<T,F>(size,op);
-}

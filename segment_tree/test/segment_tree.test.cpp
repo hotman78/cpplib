@@ -11,7 +11,7 @@ int main(){
     rep(i,n){
         cin>>v[i];
     }
-    auto seg=make_segment_tree(v,plus<lint>());
+    segment_tree<lint,plus<lint>> seg(v);
     rep(i,q){
         lint c,s,t;
         cin>>c>>s>>t;
