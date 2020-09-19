@@ -10,16 +10,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/swag.hpp
     title: SWAG(Queue)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
   - icon: ':heavy_check_mark:'
     path: functional/composite.hpp
     title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []

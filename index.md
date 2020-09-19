@@ -16,7 +16,7 @@ data:
       title: BBST/RBST/base.hpp
   - name: alga
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: alga/maybe.hpp
       title: Maybe
     - icon: ':warning:'
@@ -84,7 +84,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/small_rmq.hpp
       title: data_structure/small_rmq.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/sparse_table.hpp
       title: SparseTable
     - icon: ':warning:'
@@ -113,7 +113,7 @@ data:
     - icon: ':warning:'
       path: functional/MAX.hpp
       title: "\u6700\u5927\u5024"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: functional/MIN.hpp
       title: "\u6700\u5C0F\u5024"
     - icon: ':warning:'
@@ -151,7 +151,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph_tree/dominator_tree.hpp
       title: "\u652F\u914D\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph_tree/graph_template.hpp
       title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':heavy_check_mark:'
@@ -344,7 +344,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
@@ -377,7 +377,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_segment_add_get_min.test.cpp
       title: data_structure/test/LC_segment_add_get_min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/test/LC_sparse_table.test.cpp
       title: data_structure/test/LC_sparse_table.test.cpp
     - icon: ':heavy_check_mark:'

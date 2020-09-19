@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/sparse_table.hpp
     title: SparseTable
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: functional/MIN.hpp
     title: "\u6700\u5C0F\u5024"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -123,12 +123,12 @@ data:
     \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 5 \"data_structure/test/LC_sparse_table.test.cpp\"\
     \n\nint main(){\n\tlint n,q;\n\tcin>>n>>q;\n\tvec a(n);\n\trep(i,n)cin>>a[i];\n\
     \tsparse_table<lint,MIN<lint>>s(a);\n\twhile(q--){\n\t\tlint l,r;\n\t\tcin>>l>>r;\n\
-    \t\tcout<<s.get(l,r)<<endl;\n\t}\n}\n"
+    \t\tcout<<s.get(l,r).unwrap()<<endl;\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#include \"\
     ../sparse_table.hpp\"\n#include \"../../functional/MIN.hpp\"\n#include \"../../util/template.hpp\"\
     \n\nint main(){\n\tlint n,q;\n\tcin>>n>>q;\n\tvec a(n);\n\trep(i,n)cin>>a[i];\n\
     \tsparse_table<lint,MIN<lint>>s(a);\n\twhile(q--){\n\t\tlint l,r;\n\t\tcin>>l>>r;\n\
-    \t\tcout<<s.get(l,r)<<endl;\n\t}\n}"
+    \t\tcout<<s.get(l,r).unwrap()<<endl;\n\t}\n}"
   dependsOn:
   - data_structure/sparse_table.hpp
   - alga/maybe.hpp
@@ -138,8 +138,8 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_sparse_table.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 10:39:25+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-19 10:47:59+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_sparse_table.test.cpp
 layout: document

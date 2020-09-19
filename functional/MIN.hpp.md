@@ -6,14 +6,14 @@ data:
     path: data_structure/RMQ.hpp
     title: RMQ&amp;lt;O(N),O(1)&amp;gt;
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_sparse_table.test.cpp
     title: data_structure/test/LC_sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_RMQ.test.cpp
     title: data_structure/test/LC_RMQ.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6700\u5C0F\u5024"
@@ -30,7 +30,7 @@ data:
   requiredBy:
   - data_structure/RMQ.hpp
   timestamp: '2020-09-18 14:44:21+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - data_structure/test/LC_sparse_table.test.cpp
   - data_structure/test/LC_RMQ.test.cpp

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   - icon: ':warning:'
@@ -115,7 +115,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_dominator_tree.test.cpp
     title: graph_tree/test/LC_dominator_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_sparse_table.test.cpp
     title: data_structure/test/LC_sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
@@ -152,7 +152,7 @@ data:
     path: data_structure/test/LC_wavelet_matrix.test.cpp
     title: data_structure/test/LC_wavelet_matrix.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
@@ -262,7 +262,7 @@ data:
   - graph_tree/dijkstra.hpp
   - graph_tree/shortest_path_tree_dijkstra.hpp
   timestamp: '2020-09-18 20:23:58+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - segment_tree/test/segment_tree.test.cpp
   - util/test/LC_Suffix_Array.test.cpp

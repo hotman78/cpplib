@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/arg_rmq.hpp
     title: RangeArgminQuery &amp;lt;O(N),O(1)&amp;gt;
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/sparse_table.hpp
     title: SparseTable
   _extendedVerifiedWith:
@@ -34,7 +34,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_lca.test.cpp
     title: graph_tree/test/LC_lca.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_sparse_table.test.cpp
     title: data_structure/test/LC_sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
@@ -44,7 +44,7 @@ data:
     path: data_structure/test/LC_RMQ.test.cpp
     title: data_structure/test/LC_RMQ.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: Maybe
@@ -82,7 +82,7 @@ data:
   - data_structure/arg_rmq.hpp
   - data_structure/sparse_table.hpp
   timestamp: '2020-09-18 14:44:21+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - segment_tree/test/segment_tree.test.cpp
   - graph_tree/test/LC_lca.test.cpp

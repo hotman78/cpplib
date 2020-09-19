@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/small_rmq.hpp
     title: data_structure/small_rmq.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/sparse_table.hpp
     title: SparseTable
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: functional/MIN.hpp
     title: "\u6700\u5C0F\u5024"
   _extendedRequiredBy: []
