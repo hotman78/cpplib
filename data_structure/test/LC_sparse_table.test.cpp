@@ -12,6 +12,6 @@ int main(){
 	while(q--){
 		lint l,r;
 		cin>>l>>r;
-		cout<<s.get(l,r)<<endl;
+		cout<<s.get(l,r).unwrap()<<endl;
 	}
 }
