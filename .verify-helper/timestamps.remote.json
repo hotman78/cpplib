@@ -15,6 +15,7 @@
 "graph_tree/test/LC_centroid_decomposition.test.cpp": "2020-09-18 20:41:35 +0900",
 "graph_tree/test/LC_dijkstra.test.cpp": "2020-09-18 22:01:54 +0900",
 "graph_tree/test/LC_dijkstra_fast.test.cpp": "2020-09-18 22:01:54 +0900",
+"graph_tree/test/LC_dominator_tree.test.cpp": "2020-09-18 22:09:53 +0900",
 "math/test/AOJ_binary_search.test.cpp": "2020-09-18 12:55:10 +0900",
 "math/test/AOJ_is_prime.test.cpp": "2020-09-18 12:55:10 +0900",
 "math/test/AOJ_prime_factor.test.cpp": "2020-09-18 12:55:10 +0900",
