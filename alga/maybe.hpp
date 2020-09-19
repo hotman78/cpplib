@@ -25,7 +25,7 @@ struct maybe{
 
 template<typename T,typename F>
 auto expand(F op){
-    return [op](const maybe<T>& s,const maybe<T>& t){
+    return [&op](const maybe<T>& s,const maybe<T>& t){
         if(s.is_none())return t;
         if(t.is_none())return s;
         return maybe<T>(op(s.unwrap(),t.unwrap()));

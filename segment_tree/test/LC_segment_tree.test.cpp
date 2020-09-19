@@ -1,8 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
-#include<bits/stdc++.h>
-using namespace std;
-#include "../../util/template.hpp"
 #include "../segment_tree.hpp"
+#include "../../util/template.hpp"
 
 int main(){
     lint n,q;
