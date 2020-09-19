@@ -73,6 +73,9 @@ data:
     path: graph_tree/test/LC_dijkstra.test.cpp
     title: graph_tree/test/LC_dijkstra.test.cpp
   - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_maximum_independent_set.test.cpp
+    title: graph_tree/test/LC_maximum_independent_set.test.cpp
+  - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_lca.test.cpp
     title: graph_tree/test/LC_lca.test.cpp
   - icon: ':heavy_check_mark:'
@@ -260,6 +263,7 @@ data:
   - string/test/LC_online_Z_algorizm.test.cpp
   - graph_tree/test/LC_lca_short.test.cpp
   - graph_tree/test/LC_dijkstra.test.cpp
+  - graph_tree/test/LC_maximum_independent_set.test.cpp
   - graph_tree/test/LC_lca.test.cpp
   - graph_tree/test/LC_dijkstra_fast.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp

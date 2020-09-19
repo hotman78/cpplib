@@ -42,6 +42,9 @@ data:
   - icon: ':warning:'
     path: graph_tree/shortest_path_tree_dijkstra.hpp
     title: "\u6700\u77ED\u7D4C\u8DEF\u6728 O((E+V)logE)"
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/maximum_independent_set.hpp
+    title: "\u6700\u5927\u72EC\u7ACB\u96C6\u5408(V<=50)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: segment_tree/test/segment_tree.test.cpp
@@ -103,6 +106,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_dijkstra.test.cpp
     title: graph_tree/test/LC_dijkstra.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_maximum_independent_set.test.cpp
+    title: graph_tree/test/LC_maximum_independent_set.test.cpp
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_lca.test.cpp
     title: graph_tree/test/LC_lca.test.cpp
@@ -261,6 +267,7 @@ data:
   - graph_tree/dijkstra_fast.hpp
   - graph_tree/dijkstra.hpp
   - graph_tree/shortest_path_tree_dijkstra.hpp
+  - graph_tree/maximum_independent_set.hpp
   timestamp: '2020-09-18 20:23:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -284,6 +291,7 @@ data:
   - string/test/LC_online_Z_algorizm.test.cpp
   - graph_tree/test/LC_lca_short.test.cpp
   - graph_tree/test/LC_dijkstra.test.cpp
+  - graph_tree/test/LC_maximum_independent_set.test.cpp
   - graph_tree/test/LC_lca.test.cpp
   - graph_tree/test/LC_dijkstra_fast.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp

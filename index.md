@@ -164,7 +164,7 @@ data:
     - icon: ':warning:'
       path: graph_tree/max_flow.hpp
       title: "max_flow(Dinic\u6CD5)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph_tree/maximum_independent_set.hpp
       title: "\u6700\u5927\u72EC\u7ACB\u96C6\u5408(V<=50)"
     - icon: ':warning:'
@@ -411,6 +411,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph_tree/test/LC_lca_short.test.cpp
       title: graph_tree/test/LC_lca_short.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph_tree/test/LC_maximum_independent_set.test.cpp
+      title: graph_tree/test/LC_maximum_independent_set.test.cpp
   - name: math/test
     pages:
     - icon: ':heavy_check_mark:'
