@@ -63,9 +63,9 @@ data:
     \n/**\n * @brief Segment Tree\n * @see https://en.wikipedia.org/wiki/Segment_tree\n\
     \ */\ntemplate<typename T,typename F>\nclass segment_tree{\n\tmaybe<T>* node;\n\
     \    F op;\n\tint n=1;\n\tpublic:\n    segment_tree(){}\n\tsegment_tree(int sz,F\
-    \ op):op(op){\n\t\twhile(n<=sz)n<<=1;\n\t\tnode=new maybe<T>[n*2];\n\t\tfor(int\
+    \ op=F()):op(op){\n\t\twhile(n<=sz)n<<=1;\n\t\tnode=new maybe<T>[n*2];\n\t\tfor(int\
     \ i=0;i<n*2;i++)node[i]=maybe<T>();\n\t}\n    segment_tree(const vector<T>&v,F\
-    \ op):op(op){\n        auto f=expand<T,F>(op);\n        const int sz=v.size();\n\
+    \ op=F()):op(op){\n        auto f=expand<T,F>(op);\n        const int sz=v.size();\n\
     \t\twhile(n<=sz)n<<=1;\n\t\tnode=new maybe<T>[n*2]();\n        for(int i=0;i<sz;i++)node[i+n]=maybe<T>(v[i]);\n\
     \        for(int i=n-1;i>=1;i--)node[i]=f(node[i*2],node[i*2+1]);\n\t}\n    maybe<T>\
     \ get(int l,int r){\n        auto f=expand<T,F>(op);\n        l+=n;r+=n;\n   \
@@ -79,21 +79,18 @@ data:
     \            t=t>>1;\n        }\n    }\n    void change(int t,T val){\n      \
     \  auto f=expand<T,F>(op);\n        t+=n;\n        node[t]=maybe<T>(val);\n  \
     \      while(t>1){\n            t=t>>1;\n            node[t]=f(node[t*2],node[t*2+1]);\n\
-    \        }\n    }\n};\n\ntemplate<typename T,typename F>\nsegment_tree<T,F> make_segment_tree(vector<T>\
-    \ v,F op){\n    return segment_tree<T,F>(v,op);\n}\ntemplate<typename T,typename\
-    \ F>\nsegment_tree<T,F> make_segment_tree(int size,T goast,F op){\n    return\
-    \ segment_tree<T,F>(size,op);\n}\n#line 6 \"segment_tree/test/segment_tree.test.cpp\"\
-    \n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n    vec v(n);\n    rep(i,n){\n\
-    \        cin>>v[i];\n    }\n    auto seg=make_segment_tree(v,plus<lint>());\n\
-    \    rep(i,q){\n        lint c,s,t;\n        cin>>c>>s>>t;\n        if(c==0){\n\
-    \            seg.apply(s,t);\n        }else{\n            cout<<seg.get(s,t).unwrap()<<endl;\n\
-    \        }\n    }\n}\n"
+    \        }\n    }\n};\n#line 6 \"segment_tree/test/segment_tree.test.cpp\"\n\n\
+    int main(){\n    lint n,q;\n    cin>>n>>q;\n    vec v(n);\n    rep(i,n){\n   \
+    \     cin>>v[i];\n    }\n    segment_tree<lint,plus<lint>> seg(v);\n    rep(i,q){\n\
+    \        lint c,s,t;\n        cin>>c>>s>>t;\n        if(c==0){\n            seg.apply(s,t);\n\
+    \        }else{\n            cout<<seg.get(s,t).unwrap()<<endl;\n        }\n \
+    \   }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     #include<bits/stdc++.h>\nusing namespace std;\n#include \"../../util/template.hpp\"\
     \n#include \"../segment_tree.hpp\"\n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n\
-    \    vec v(n);\n    rep(i,n){\n        cin>>v[i];\n    }\n    auto seg=make_segment_tree(v,plus<lint>());\n\
-    \    rep(i,q){\n        lint c,s,t;\n        cin>>c>>s>>t;\n        if(c==0){\n\
-    \            seg.apply(s,t);\n        }else{\n            cout<<seg.get(s,t).unwrap()<<endl;\n\
+    \    vec v(n);\n    rep(i,n){\n        cin>>v[i];\n    }\n    segment_tree<lint,plus<lint>>\
+    \ seg(v);\n    rep(i,q){\n        lint c,s,t;\n        cin>>c>>s>>t;\n       \
+    \ if(c==0){\n            seg.apply(s,t);\n        }else{\n            cout<<seg.get(s,t).unwrap()<<endl;\n\
     \        }\n    }\n}"
   dependsOn:
   - util/template.hpp
@@ -102,7 +99,7 @@ data:
   isVerificationFile: true
   path: segment_tree/test/segment_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-18 14:44:21+09:00'
+  timestamp: '2020-09-19 09:16:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: segment_tree/test/segment_tree.test.cpp
