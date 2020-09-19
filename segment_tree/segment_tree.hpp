@@ -1,7 +1,7 @@
 #pragma once
 #include"../alga/maybe.hpp"
 /**
- * @brief Segment Tree
+ * @brief セグメント木
  * @see https://en.wikipedia.org/wiki/Segment_tree
  */
 template<typename T,typename F>

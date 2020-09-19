@@ -1,6 +1,10 @@
 #pragma once
 #include"../alga/maybe.hpp"
 
+/**
+ * @brief 双対セグメント木
+ */
+
 template<typename T,typename F>
 class dual_segment_tree{
 	struct node;
