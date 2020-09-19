@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
+    path: graph_tree/depth.hpp
+    title: "\u6839\u304B\u3089\u306E\u6DF1\u3055"
+  - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   - icon: ':heavy_check_mark:'
@@ -13,7 +16,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: LCA &amp;lt;O(N),O(1)&amp;gt;
+    document_title: LCA &amp;lt;O(N),O(1)&amp;gt;(WIP)
     links: []
   bundledCode: "#line 2 \"graph_tree/lca.hpp\"\n#include<vector>\n#include<cmath>\n\
     #include<tuple>\n#line 4 \"graph_tree/graph_template.hpp\"\n#include<iostream>\n\
@@ -58,8 +61,13 @@ data:
     \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
     graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
     \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
-    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 2 \"data_structure/RMQ.hpp\"\
-    \n#include<assert.h>\n#line 4 \"data_structure/RMQ.hpp\"\n#include<stack>\n#include<numeric>\n\
+    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 5 \"graph_tree/depth.hpp\"\
+    \n\n/**\n * @brief \u6839\u304B\u3089\u306E\u6DF1\u3055\n */\n\nstd::vector<int>\
+    \ depth(const graph& g,int start){\n\tstd::vector<int>memo(g.size());\n\tauto\
+    \ f=[&](auto f,int v,int p)->int{\n\t\tT mx=0;\n\t\tfor(auto t:g[v]){\n\t\t\t\
+    if(t==p)continue;\n\t\t\tmx=std::max(mx,f(f,t,v));\n\t\t}\n\t\treturn memo[v]=mx+1;\n\
+    \t};\n\tf(f,start,-1);\n\treturn memo;\n}\n#line 2 \"data_structure/RMQ.hpp\"\n\
+    #include<assert.h>\n#line 4 \"data_structure/RMQ.hpp\"\n#include<stack>\n#include<numeric>\n\
     #line 7 \"data_structure/RMQ.hpp\"\n#include<algorithm>\n\n/**\n * @brief RMQ&amp;lt;O(N),O(1)&amp;gt;\n\
     \ * @see https://noshi91.hatenablog.com/entry/2018/08/16/125415\n */\n\ntemplate<typename\
     \ T>\nclass RMQ{\n    class small_rmq{\n        using u64=unsigned long long;\n\
@@ -92,58 +100,42 @@ data:
     \            backet.push_back(new small_rmq(tmp));\n        }\n        st=new\
     \ sparse_table(tmp2);\n    }\n    T query(int s,int t){\n        if(s/b==t/b)return\
     \ backet[s/b]->query(s%b,t%b);\n        return std::min({backet[s/b]->query(s%b,b),st->get(s/b+1,t/b),backet[t/b]->query(0,t%b)});\n\
-    \    }\n};\n#line 7 \"graph_tree/lca.hpp\"\n\n/**\n * @brief LCA &amp;lt;O(N),O(1)&amp;gt;\n\
+    \    }\n};\n#line 8 \"graph_tree/lca.hpp\"\n\n/**\n * @brief LCA &amp;lt;O(N),O(1)&amp;gt;(WIP)\n\
     \ */\n\nclass LCA{\n    std::vector<std::pair<int,int>>data;\n    std::vector<int>start;\n\
     \    RMQ<std::pair<int,int>>*st;\n    std::vector<int>dep;\n    std::vector<int>\
     \ __dist;\n    public:\n    LCA(){}\n    LCA(std::vector<std::vector<int>>v,int\
     \ s){\n        data.resize(v.size()*2-1);\n        start.resize(v.size());\n \
-    \       int i=0;\n        dep=depth(s,v);\n        __dist=__distance(s,v);\n \
-    \       auto f=[&](auto f,int n,int p)->void{\n            start[n]=i;\n     \
-    \       data[i++]=std::make_pair(dep[n],n);\n            for(int t:v[n]){\n  \
-    \              if(t==p)continue;\n                f(f,t,n);\n                data[i++]=std::make_pair(dep[n],n);\n\
+    \       int i=0;\n        dep=depth(v,s);\n        __dist=distance(v,s);\n   \
+    \     auto f=[&](auto f,int n,int p)->void{\n            start[n]=i;\n       \
+    \     data[i++]=std::make_pair(dep[n],n);\n            for(int t:v[n]){\n    \
+    \            if(t==p)continue;\n                f(f,t,n);\n                data[i++]=std::make_pair(dep[n],n);\n\
     \            }\n        };\n        f(f,s,-1);\n        st=new RMQ<std::pair<int,int>>(data);\n\
-    \    }\n    int lca(int p,int q){\n        return st->query(std::min(start[p],start[q]),std::max(start[p],start[q])+1).second;\n\
-    \    }\n    int distance(int p,int q){\n        return __dist[p]+__dist[q]-2*__dist[lca(p,q)];\n\
-    \    }\n    std::vector<int> __distance(int start,std::vector<std::vector<int>>G){\n\
-    \t\tstd::vector<int>memo(G.size());\n\t\tauto f=[&](auto f,int v,int p,int i)->void{\n\
-    \t\t\tfor(auto t:G[v]){\n\t\t\t\tif(t==p)continue;\n\t\t\t\tf(f,t,v,i+1);\n\t\t\
-    \t}\n\t\t\treturn memo[v]=i;\n\t\t};\n\t\tf(f,start,-1,0);\n\t\treturn memo;\n\
-    \    }\n    std::vector<int> depth(int start,std::vector<std::vector<int>>G){\n\
-    \        std::vector<int>memo(G.size());\n        auto f=[&](auto f,int v,int\
-    \ p)->int{\n            int mx=0;\n            for(int t:G[v]){\n            \
-    \    if(t==p)continue;\n                mx=std::max(mx,f(f,t,v));\n          \
-    \  }\n            return memo[v]=mx+1;\n        };\n        f(f,start,-1);\n \
-    \       return memo;\n    }\n};\n"
+    \    }\n    int query(int p,int q){\n        return st->query(std::min(start[p],start[q]),std::max(start[p],start[q])+1).second;\n\
+    \    }\n    int dist(int p,int q){\n        return __dist[p]+__dist[q]-2*__dist[lca(p,q)];\n\
+    \    }\n};\n"
   code: "#pragma once\n#include<vector>\n#include<cmath>\n#include<tuple>\n#include\"\
-    graph_template.hpp\"\n#include\"../data_structure/RMQ.hpp\"\n\n/**\n * @brief\
-    \ LCA &amp;lt;O(N),O(1)&amp;gt;\n */\n\nclass LCA{\n    std::vector<std::pair<int,int>>data;\n\
-    \    std::vector<int>start;\n    RMQ<std::pair<int,int>>*st;\n    std::vector<int>dep;\n\
-    \    std::vector<int> __dist;\n    public:\n    LCA(){}\n    LCA(std::vector<std::vector<int>>v,int\
-    \ s){\n        data.resize(v.size()*2-1);\n        start.resize(v.size());\n \
-    \       int i=0;\n        dep=depth(s,v);\n        __dist=__distance(s,v);\n \
-    \       auto f=[&](auto f,int n,int p)->void{\n            start[n]=i;\n     \
-    \       data[i++]=std::make_pair(dep[n],n);\n            for(int t:v[n]){\n  \
-    \              if(t==p)continue;\n                f(f,t,n);\n                data[i++]=std::make_pair(dep[n],n);\n\
-    \            }\n        };\n        f(f,s,-1);\n        st=new RMQ<std::pair<int,int>>(data);\n\
-    \    }\n    int lca(int p,int q){\n        return st->query(std::min(start[p],start[q]),std::max(start[p],start[q])+1).second;\n\
-    \    }\n    int distance(int p,int q){\n        return __dist[p]+__dist[q]-2*__dist[lca(p,q)];\n\
-    \    }\n    std::vector<int> __distance(int start,std::vector<std::vector<int>>G){\n\
-    \t\tstd::vector<int>memo(G.size());\n\t\tauto f=[&](auto f,int v,int p,int i)->void{\n\
-    \t\t\tfor(auto t:G[v]){\n\t\t\t\tif(t==p)continue;\n\t\t\t\tf(f,t,v,i+1);\n\t\t\
-    \t}\n\t\t\treturn memo[v]=i;\n\t\t};\n\t\tf(f,start,-1,0);\n\t\treturn memo;\n\
-    \    }\n    std::vector<int> depth(int start,std::vector<std::vector<int>>G){\n\
-    \        std::vector<int>memo(G.size());\n        auto f=[&](auto f,int v,int\
-    \ p)->int{\n            int mx=0;\n            for(int t:G[v]){\n            \
-    \    if(t==p)continue;\n                mx=std::max(mx,f(f,t,v));\n          \
-    \  }\n            return memo[v]=mx+1;\n        };\n        f(f,start,-1);\n \
-    \       return memo;\n    }\n};"
+    depth.hpp\"\n#include\"graph_template.hpp\"\n#include\"../data_structure/RMQ.hpp\"\
+    \n\n/**\n * @brief LCA &amp;lt;O(N),O(1)&amp;gt;(WIP)\n */\n\nclass LCA{\n   \
+    \ std::vector<std::pair<int,int>>data;\n    std::vector<int>start;\n    RMQ<std::pair<int,int>>*st;\n\
+    \    std::vector<int>dep;\n    std::vector<int> __dist;\n    public:\n    LCA(){}\n\
+    \    LCA(std::vector<std::vector<int>>v,int s){\n        data.resize(v.size()*2-1);\n\
+    \        start.resize(v.size());\n        int i=0;\n        dep=depth(v,s);\n\
+    \        __dist=distance(v,s);\n        auto f=[&](auto f,int n,int p)->void{\n\
+    \            start[n]=i;\n            data[i++]=std::make_pair(dep[n],n);\n  \
+    \          for(int t:v[n]){\n                if(t==p)continue;\n             \
+    \   f(f,t,n);\n                data[i++]=std::make_pair(dep[n],n);\n         \
+    \   }\n        };\n        f(f,s,-1);\n        st=new RMQ<std::pair<int,int>>(data);\n\
+    \    }\n    int query(int p,int q){\n        return st->query(std::min(start[p],start[q]),std::max(start[p],start[q])+1).second;\n\
+    \    }\n    int dist(int p,int q){\n        return __dist[p]+__dist[q]-2*__dist[lca(p,q)];\n\
+    \    }\n};"
   dependsOn:
+  - graph_tree/depth.hpp
   - graph_tree/graph_template.hpp
   - data_structure/RMQ.hpp
   isVerificationFile: false
   path: graph_tree/lca.hpp
   requiredBy: []
-  timestamp: '2020-09-18 20:23:58+09:00'
+  timestamp: '2020-09-19 09:30:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph_tree/lca.hpp
@@ -151,5 +143,5 @@ layout: document
 redirect_from:
 - /library/graph_tree/lca.hpp
 - /library/graph_tree/lca.hpp.html
-title: LCA &amp;lt;O(N),O(1)&amp;gt;
+title: LCA &amp;lt;O(N),O(1)&amp;gt;(WIP)
 ---

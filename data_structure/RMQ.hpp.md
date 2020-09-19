@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: graph_tree/lca.hpp
-    title: LCA &amp;lt;O(N),O(1)&amp;gt;
+    title: LCA &amp;lt;O(N),O(1)&amp;gt;(WIP)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_RMQ.test.cpp

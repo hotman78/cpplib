@@ -8,10 +8,10 @@ data:
     path: dsu/uf_min.hpp
     title: "\u6839\u3068\u306EPath\u306E\u4E2D\u3067\u306E\u6700\u5C0F\u5024\u3092\
       \u8FD4\u3059UnionFind"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
@@ -153,7 +153,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_dominator_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-18 22:09:53+09:00'
+  timestamp: '2020-09-19 09:30:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_dominator_tree.test.cpp

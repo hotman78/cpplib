@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: graph_tree/max_flow.hpp
     title: "max_flow(Dinic\u6CD5)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: alga/maybe.hpp
     title: Maybe
   _extendedRequiredBy: []

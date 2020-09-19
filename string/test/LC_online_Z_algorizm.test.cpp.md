@@ -1,16 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/online_Zalgo.hpp
     title: "\u30AA\u30F3\u30E9\u30A4\u30F3Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
+  - icon: ':question:'
+    path: graph_tree/graph_template.hpp
+    title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
@@ -61,9 +64,52 @@ data:
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
     \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
-    \ 4 \"string/test/LC_online_Z_algorizm.test.cpp\"\n\nint main(){\n    string s;\n\
-    \    cin>>s;\n    online_Zalgo z;\n    for(auto e:s)z.add(e);\n    vec v(s.size());\n\
-    \    rep(i,s.size())v[i]=z[i];\n    output(v);\n}\n"
+    \ 5 \"graph_tree/graph_template.hpp\"\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\
+    \u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\n\
+    template<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
+    \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
+    \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
+    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
+    \ m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    \        --s;--t;\n        g[s].push_back(t);\n    }\n    return g;\n}\ngraph\
+    \ load_graph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n    \
+    \    int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
+    \    }\n    return g;\n}\ngraph load_digraph0(int n,int m){\n    graph g(n);\n\
+    \    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n      \
+    \  g[s].push_back(t);\n    }\n    return g;\n}\ngraph load_tree(int n){\n    graph\
+    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    \        --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n  \
+    \  }\n    return g;\n}\ngraph load_tree0(int n){\n    graph g(n);\n    for(int\
+    \ i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n\
+    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_treep(int n){\n\
+    \    graph g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n        std::cin>>t;\n\
+    \        g[i+1].push_back(t);\n        g[t].push_back(i+1);\n    }\n    return\
+    \ g;\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int n,int m){\n\
+    \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
+    \ u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_digraph_weight(int n,int m){\n    graph_w<T> g(n);\n    for(int\
+    \ i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
+    \        --s;--t;\n        g[s].emplace_back(t,u);\n    }\n    return g;\n}\n\
+    template<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n    graph_w<T>\
+    \ g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
+    \        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n    }\n   \
+    \ return g;\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int\
+    \ m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n   \
+    \     T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n\
+    \    return g;\n}\ntemplate<typename T>\ngraph_w<T> load_tree_weight(int n){\n\
+    \    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n       \
+    \ T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_tree0_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
+    \        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
+    \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
+    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 4 \"string/test/LC_online_Z_algorizm.test.cpp\"\
+    \n\nint main(){\n    string s;\n    cin>>s;\n    online_Zalgo z;\n    for(auto\
+    \ e:s)z.add(e);\n    vec v(s.size());\n    rep(i,s.size())v[i]=z[i];\n    output(v);\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\n#include\
     \ \"../online_Zalgo.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
     \    string s;\n    cin>>s;\n    online_Zalgo z;\n    for(auto e:s)z.add(e);\n\
@@ -71,11 +117,12 @@ data:
   dependsOn:
   - string/online_Zalgo.hpp
   - util/template.hpp
+  - graph_tree/graph_template.hpp
   isVerificationFile: true
   path: string/test/LC_online_Z_algorizm.test.cpp
   requiredBy: []
-  timestamp: '2020-09-18 12:55:10+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-19 09:30:13+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: string/test/LC_online_Z_algorizm.test.cpp
 layout: document

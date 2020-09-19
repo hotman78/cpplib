@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: graph_tree/graph_template.hpp
+    title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy:
   - icon: ':warning:'
     path: math/test/LC_sum_power_poly_limit.cpp
@@ -9,31 +12,31 @@ data:
     path: graph_tree/dijkstra.hpp
     title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: segment_tree/test/segment_tree.test.cpp
     title: segment_tree/test/segment_tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: util/test/LC_Number_of_Substrings.test.cpp
     title: util/test/LC_Number_of_Substrings.test.cpp
   - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_factor.test.cpp
     title: math/test/AOJ_prime_factor.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_prime_factor.test.cpp
     title: math/test/LC_prime_factor.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_mod_sqrt.test.cpp
     title: math/test/LC_mod_sqrt.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_totient_sum.test.cpp
     title: math/test/LC_totient_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_mod_log.test.cpp
     title: math/test/LC_mod_log.test.cpp
   - icon: ':heavy_check_mark:'
@@ -51,18 +54,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_list.test.cpp
     title: math/test/AOJ_prime_list.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_tetration.test.cpp
     title: math/test/LC_tetration.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/test/YUKI_Aho_Corasick.test.cpp
     title: string/test/YUKI_Aho_Corasick.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/test/LC_Z_algorizm.test.cpp
     title: string/test/LC_Z_algorizm.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_lca_short.test.cpp
+    title: graph_tree/test/LC_lca_short.test.cpp
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_dijkstra.test.cpp
     title: graph_tree/test/LC_dijkstra.test.cpp
@@ -112,7 +118,7 @@ data:
     path: data_structure/test/LC_wavelet_matrix.test.cpp
     title: data_structure/test/LC_wavelet_matrix.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -145,7 +151,51 @@ data:
     \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n"
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
+    \ 5 \"graph_tree/graph_template.hpp\"\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\
+    \u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\n\
+    template<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
+    \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
+    \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
+    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
+    \ m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    \        --s;--t;\n        g[s].push_back(t);\n    }\n    return g;\n}\ngraph\
+    \ load_graph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n    \
+    \    int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
+    \    }\n    return g;\n}\ngraph load_digraph0(int n,int m){\n    graph g(n);\n\
+    \    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n      \
+    \  g[s].push_back(t);\n    }\n    return g;\n}\ngraph load_tree(int n){\n    graph\
+    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    \        --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n  \
+    \  }\n    return g;\n}\ngraph load_tree0(int n){\n    graph g(n);\n    for(int\
+    \ i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n\
+    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_treep(int n){\n\
+    \    graph g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n        std::cin>>t;\n\
+    \        g[i+1].push_back(t);\n        g[t].push_back(i+1);\n    }\n    return\
+    \ g;\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int n,int m){\n\
+    \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
+    \ u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_digraph_weight(int n,int m){\n    graph_w<T> g(n);\n    for(int\
+    \ i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
+    \        --s;--t;\n        g[s].emplace_back(t,u);\n    }\n    return g;\n}\n\
+    template<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n    graph_w<T>\
+    \ g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
+    \        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n    }\n   \
+    \ return g;\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int\
+    \ m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n   \
+    \     T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n\
+    \    return g;\n}\ntemplate<typename T>\ngraph_w<T> load_tree_weight(int n){\n\
+    \    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n       \
+    \ T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_tree0_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
+    \        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
+    \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
+    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 41 \"util/template.hpp\"\
+    \n"
   code: "#pragma once\n#pragma GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"unroll-loops\"\
     )\n#pragma GCC target(\"avx\")\n#include<bits/stdc++.h>\nusing namespace std;\n\
     struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
@@ -175,15 +225,17 @@ data:
     \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n"
-  dependsOn: []
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#include\
+    \ \"../graph_tree/graph_template.hpp\"\n"
+  dependsOn:
+  - graph_tree/graph_template.hpp
   isVerificationFile: false
   path: util/template.hpp
   requiredBy:
   - math/test/LC_sum_power_poly_limit.cpp
   - graph_tree/dijkstra.hpp
-  timestamp: '2020-09-18 12:55:10+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-09-19 09:30:13+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - segment_tree/test/segment_tree.test.cpp
   - util/test/LC_Suffix_Array.test.cpp
@@ -203,6 +255,7 @@ data:
   - string/test/YUKI_Aho_Corasick.test.cpp
   - string/test/LC_Z_algorizm.test.cpp
   - string/test/LC_online_Z_algorizm.test.cpp
+  - graph_tree/test/LC_lca_short.test.cpp
   - graph_tree/test/LC_dijkstra.test.cpp
   - graph_tree/test/LC_dijkstra_fast.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp

@@ -1,10 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: graph_tree/lca.hpp
+    title: LCA &amp;lt;O(N),O(1)&amp;gt;(WIP)
   _extendedVerifiedWith: []
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
@@ -57,13 +60,13 @@ data:
     \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
     \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 5 \"graph_tree/depth.hpp\"\
     \n\n/**\n * @brief \u6839\u304B\u3089\u306E\u6DF1\u3055\n */\n\nstd::vector<int>\
-    \ depth(int start,const graph& g){\n\tstd::vector<int>memo(g.size());\n\tauto\
+    \ depth(const graph& g,int start){\n\tstd::vector<int>memo(g.size());\n\tauto\
     \ f=[&](auto f,int v,int p)->int{\n\t\tT mx=0;\n\t\tfor(auto t:g[v]){\n\t\t\t\
     if(t==p)continue;\n\t\t\tmx=std::max(mx,f(f,t,v));\n\t\t}\n\t\treturn memo[v]=mx+1;\n\
     \t};\n\tf(f,start,-1);\n\treturn memo;\n}\n"
   code: "#pragma once\n#include<vector>\n#include<cmath>\n#include\"graph_template.hpp\"\
     \n\n/**\n * @brief \u6839\u304B\u3089\u306E\u6DF1\u3055\n */\n\nstd::vector<int>\
-    \ depth(int start,const graph& g){\n\tstd::vector<int>memo(g.size());\n\tauto\
+    \ depth(const graph& g,int start){\n\tstd::vector<int>memo(g.size());\n\tauto\
     \ f=[&](auto f,int v,int p)->int{\n\t\tT mx=0;\n\t\tfor(auto t:g[v]){\n\t\t\t\
     if(t==p)continue;\n\t\t\tmx=std::max(mx,f(f,t,v));\n\t\t}\n\t\treturn memo[v]=mx+1;\n\
     \t};\n\tf(f,start,-1);\n\treturn memo;\n}"
@@ -71,8 +74,9 @@ data:
   - graph_tree/graph_template.hpp
   isVerificationFile: false
   path: graph_tree/depth.hpp
-  requiredBy: []
-  timestamp: '2020-09-18 20:23:58+09:00'
+  requiredBy:
+  - graph_tree/lca.hpp
+  timestamp: '2020-09-19 09:30:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph_tree/depth.hpp

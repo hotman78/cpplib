@@ -1,13 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_lca_short.test.cpp
+    title: graph_tree/test/LC_lca_short.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;"
@@ -97,8 +100,9 @@ data:
   path: graph_tree/lca_short.hpp
   requiredBy: []
   timestamp: '2020-09-18 20:23:58+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - graph_tree/test/LC_lca_short.test.cpp
 documentation_of: graph_tree/lca_short.hpp
 layout: document
 redirect_from:

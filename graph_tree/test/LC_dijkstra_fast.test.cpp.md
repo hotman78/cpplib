@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/dijkstra_fast.hpp
     title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O(E+VlogE)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
@@ -134,7 +134,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_dijkstra_fast.test.cpp
   requiredBy: []
-  timestamp: '2020-09-18 22:01:54+09:00'
+  timestamp: '2020-09-19 09:30:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_dijkstra_fast.test.cpp

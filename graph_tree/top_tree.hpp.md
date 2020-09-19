@@ -7,12 +7,13 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    document_title: TopTree(WIP)
     links: []
-  bundledCode: "#line 1 \"graph_tree/top_tree.hpp\"\n/**\n * TopTree(WIP)\n */\n\n\
-    template<typename T,typename E>\nclass top_tree{\n\tstruct node;\n\tusing np=node*;\n\
-    \tstruct cluster{\n\t\tbool is_compress,is_edge,guarded;\n\t\tint l,r;\n\t\tT\
-    \ key=et;\n\t\tnp ch[3]={nullptr,nullptr,nullptr};\n\t\tnp p=nullptr;\n\t\tcluster(){}\n\
-    \t\tcluster(int l,int r,bool is_compress,bool is_edge):l(l),r(r),is_compress(is_compress),is_edge(is_edge){}\n\
+  bundledCode: "#line 1 \"graph_tree/top_tree.hpp\"\n/**\n * @brief TopTree(WIP)\n\
+    \ */\n\ntemplate<typename T,typename E>\nclass top_tree{\n\tstruct node;\n\tusing\
+    \ np=node*;\n\tstruct cluster{\n\t\tbool is_compress,is_edge,guarded;\n\t\tint\
+    \ l,r;\n\t\tT key=et;\n\t\tnp ch[3]={nullptr,nullptr,nullptr};\n\t\tnp p=nullptr;\n\
+    \t\tcluster(){}\n\t\tcluster(int l,int r,bool is_compress,bool is_edge):l(l),r(r),is_compress(is_compress),is_edge(is_edge){}\n\
     \        bool is_root(){\n            return !p||p->guarded||(p->ch[0]!=this&&p->ch[1]!=this);\n\
     \        }\n\t};\n\tnp root=nullptr;\n\tvoid join(np p,np t,int i){\n\t\tif(t)t->p=p;\n\
     \t\tif(p)p->ch[i]=t,update(p);\n\t}\n\t//\u5DE6\u53F3\u306E\u5B50\u3092\u5165\u308C\
@@ -44,8 +45,8 @@ data:
     \t\t\t\tnp p=new node(s,v->r,1,0);\n\t\t\t\tnp q=new node(s,t,0,1);\n\t\t\t\t\
     join(p,q,0);\n\t\t\t\tjoin(p,v,1);\n\t\t\t\tv=p;\n\t\t\t}\n\t\t}else{\n\t\t\t\
     v=new node(s,t,0,1);\n\t\t}\n\t\t\n\t}\n\tvoid cut(){\n\n\t}\n};\n"
-  code: "/**\n * TopTree(WIP)\n */\n\ntemplate<typename T,typename E>\nclass top_tree{\n\
-    \tstruct node;\n\tusing np=node*;\n\tstruct cluster{\n\t\tbool is_compress,is_edge,guarded;\n\
+  code: "/**\n * @brief TopTree(WIP)\n */\n\ntemplate<typename T,typename E>\nclass\
+    \ top_tree{\n\tstruct node;\n\tusing np=node*;\n\tstruct cluster{\n\t\tbool is_compress,is_edge,guarded;\n\
     \t\tint l,r;\n\t\tT key=et;\n\t\tnp ch[3]={nullptr,nullptr,nullptr};\n\t\tnp p=nullptr;\n\
     \t\tcluster(){}\n\t\tcluster(int l,int r,bool is_compress,bool is_edge):l(l),r(r),is_compress(is_compress),is_edge(is_edge){}\n\
     \        bool is_root(){\n            return !p||p->guarded||(p->ch[0]!=this&&p->ch[1]!=this);\n\
@@ -83,7 +84,7 @@ data:
   isVerificationFile: false
   path: graph_tree/top_tree.hpp
   requiredBy: []
-  timestamp: '2020-09-18 16:29:26+09:00'
+  timestamp: '2020-09-19 09:30:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph_tree/top_tree.hpp
@@ -91,5 +92,5 @@ layout: document
 redirect_from:
 - /library/graph_tree/top_tree.hpp
 - /library/graph_tree/top_tree.hpp.html
-title: graph_tree/top_tree.hpp
+title: TopTree(WIP)
 ---

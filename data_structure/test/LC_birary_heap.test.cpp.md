@@ -4,9 +4,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/binary_heap.hpp
     title: BinaryHeap
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
+  - icon: ':question:'
+    path: graph_tree/graph_template.hpp
+    title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -65,18 +68,61 @@ data:
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
     \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
-    \ 4 \"data_structure/test/LC_birary_heap.test.cpp\"\n\nint main(){\n\tlint n,m,s,t;\n\
-    \tcin>>n>>m>>s>>t;\n\tvector<vector<pair<lint,lint>>>g(n);\n\trep(i,m){\n\t\t\
-    lint a,b,c;\n\t\tcin>>a>>b>>c;\n\t\tg[a].emplace_back(b,c);\n\t}\n\tbinary_heap<pair<lint,lint>>que;\n\
-    \tvector<binary_heap<pair<lint,lint>>::np>v(n);\n\trep(i,n)v[i]=que.insert(make_pair(INF,i));\n\
-    \tque.modify(v[s],make_pair(0,s));\n\tvector<lint>from(n,-1);\n\tvector<lint>dif(n,INF);\n\
-    \tdif[s]=0;\n\twhile(!que.empty()){\n\t\tauto [cost,now]=que.top();\n\t\tque.pop();\n\
-    \t\tfor(auto [e,c]:g[now]){\n\t\t\tif(chmin(dif[e],dif[now]+c)){\n\t\t\t\tfrom[e]=now;\n\
-    \t\t\t\tque.modify(v[e],make_pair(dif[e],e));\n\t\t\t}\n\t\t}\n\t}\n\tif(dif[t]==INF){\n\
-    \t\tcout<<-1<<endl;\n\t\treturn 0;\n\t}\n\tlint now=t;\n\tvector<pair<lint,lint>>ans;\n\
-    \twhile(1){\n\t\tif(now==s)break;\n\t\tans.emplace_back(from[now],now);\n\t\t\
-    now=from[now];\n\t}\n\tcout<<dif[t]<<\" \"<<ans.size()<<endl;\n\treverse(all(ans));\n\
-    \tfor(auto e:ans){\n\t\tcout<<e.first<<\" \"<<e.second<<endl;\n\t}\n}\n"
+    \ 5 \"graph_tree/graph_template.hpp\"\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\
+    \u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\n\
+    template<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
+    \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
+    \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
+    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
+    \ m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    \        --s;--t;\n        g[s].push_back(t);\n    }\n    return g;\n}\ngraph\
+    \ load_graph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n    \
+    \    int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
+    \    }\n    return g;\n}\ngraph load_digraph0(int n,int m){\n    graph g(n);\n\
+    \    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n      \
+    \  g[s].push_back(t);\n    }\n    return g;\n}\ngraph load_tree(int n){\n    graph\
+    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    \        --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n  \
+    \  }\n    return g;\n}\ngraph load_tree0(int n){\n    graph g(n);\n    for(int\
+    \ i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n\
+    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_treep(int n){\n\
+    \    graph g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n        std::cin>>t;\n\
+    \        g[i+1].push_back(t);\n        g[t].push_back(i+1);\n    }\n    return\
+    \ g;\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int n,int m){\n\
+    \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
+    \ u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_digraph_weight(int n,int m){\n    graph_w<T> g(n);\n    for(int\
+    \ i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
+    \        --s;--t;\n        g[s].emplace_back(t,u);\n    }\n    return g;\n}\n\
+    template<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n    graph_w<T>\
+    \ g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
+    \        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n    }\n   \
+    \ return g;\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int\
+    \ m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n   \
+    \     T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n\
+    \    return g;\n}\ntemplate<typename T>\ngraph_w<T> load_tree_weight(int n){\n\
+    \    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n       \
+    \ T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_tree0_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
+    \        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n\
+    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
+    graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
+    \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
+    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 4 \"data_structure/test/LC_birary_heap.test.cpp\"\
+    \n\nint main(){\n\tlint n,m,s,t;\n\tcin>>n>>m>>s>>t;\n\tvector<vector<pair<lint,lint>>>g(n);\n\
+    \trep(i,m){\n\t\tlint a,b,c;\n\t\tcin>>a>>b>>c;\n\t\tg[a].emplace_back(b,c);\n\
+    \t}\n\tbinary_heap<pair<lint,lint>>que;\n\tvector<binary_heap<pair<lint,lint>>::np>v(n);\n\
+    \trep(i,n)v[i]=que.insert(make_pair(INF,i));\n\tque.modify(v[s],make_pair(0,s));\n\
+    \tvector<lint>from(n,-1);\n\tvector<lint>dif(n,INF);\n\tdif[s]=0;\n\twhile(!que.empty()){\n\
+    \t\tauto [cost,now]=que.top();\n\t\tque.pop();\n\t\tfor(auto [e,c]:g[now]){\n\t\
+    \t\tif(chmin(dif[e],dif[now]+c)){\n\t\t\t\tfrom[e]=now;\n\t\t\t\tque.modify(v[e],make_pair(dif[e],e));\n\
+    \t\t\t}\n\t\t}\n\t}\n\tif(dif[t]==INF){\n\t\tcout<<-1<<endl;\n\t\treturn 0;\n\t\
+    }\n\tlint now=t;\n\tvector<pair<lint,lint>>ans;\n\twhile(1){\n\t\tif(now==s)break;\n\
+    \t\tans.emplace_back(from[now],now);\n\t\tnow=from[now];\n\t}\n\tcout<<dif[t]<<\"\
+    \ \"<<ans.size()<<endl;\n\treverse(all(ans));\n\tfor(auto e:ans){\n\t\tcout<<e.first<<\"\
+    \ \"<<e.second<<endl;\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n#include\
     \ \"../binary_heap.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
     \tlint n,m,s,t;\n\tcin>>n>>m>>s>>t;\n\tvector<vector<pair<lint,lint>>>g(n);\n\t\
@@ -94,10 +140,11 @@ data:
   dependsOn:
   - data_structure/binary_heap.hpp
   - util/template.hpp
+  - graph_tree/graph_template.hpp
   isVerificationFile: true
   path: data_structure/test/LC_birary_heap.test.cpp
   requiredBy: []
-  timestamp: '2020-09-18 12:55:10+09:00'
+  timestamp: '2020-09-19 09:30:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_birary_heap.test.cpp

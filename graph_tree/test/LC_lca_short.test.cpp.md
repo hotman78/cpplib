@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/lca_short.hpp
+    title: "LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;"
   - icon: ':question:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
@@ -8,25 +11,24 @@ data:
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: graph_tree/test/LC_dijkstra.test.cpp
-    title: graph_tree/test/LC_dijkstra.test.cpp
-  _pathExtension: hpp
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
-    links: []
-  bundledCode: "#line 2 \"graph_tree/dijkstra.hpp\"\n#include<vector>\n#include<queue>\n\
-    #include<functional>\n#include<tuple>\n#include<limits>\n#include<algorithm>\n\
-    #line 4 \"graph_tree/graph_template.hpp\"\n#include<iostream>\n/**\n * @brief\
-    \ \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\n\
-    template<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
-    \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
-    \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
-    \ m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
+    PROBLEM: https://judge.yosupo.jp/problem/lca
+    links:
+    - https://judge.yosupo.jp/problem/lca
+  bundledCode: "#line 1 \"graph_tree/test/LC_lca_short.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/lca\"\n#line 2 \"graph_tree/lca_short.hpp\"\
+    \n#include<vector>\n#line 3 \"graph_tree/graph_template.hpp\"\n#include<tuple>\n\
+    #include<iostream>\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\
+    \u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\ntemplate<typename T>\n\
+    using graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\ngraph load_graph(int\
+    \ n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n  \
+    \      std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n       \
+    \ g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int m){\n\
+    \    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
     \        --s;--t;\n        g[s].push_back(t);\n    }\n    return g;\n}\ngraph\
     \ load_graph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n    \
     \    int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
@@ -62,9 +64,26 @@ data:
     \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
     graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
     \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
-    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 2 \"util/template.hpp\"\
-    \n#pragma GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"unroll-loops\")\n#pragma\
-    \ GCC target(\"avx\")\n#include<bits/stdc++.h>\nusing namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
+    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 4 \"graph_tree/lca_short.hpp\"\
+    \n\n/**\n * @brief LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;\n */\n\nstruct\
+    \ lca{\n    graph g;\n    std::vector<int>sz,in,out,nxt,par;\n    lca(const graph&\
+    \ g,int s):g(g){\n        int n=g.size();\n        sz.resize(n,0);\n        in.resize(n,0);\n\
+    \        out.resize(n,0);\n        nxt.resize(n,s);\n        par.resize(n,s);\n\
+    \        dfs_sz(s,-1);\n        dfs_hld(s,-1);\n    }\n    void dfs_sz(int v,int\
+    \ p) {\n        sz[v] = 1;\n        for(auto &u: g[v]) {\n            if(p==u)continue;\n\
+    \            dfs_sz(u,v);\n            sz[v]+=sz[u];\n            if(sz[u]>sz[g[v][0]])std::swap(u,g[v][0]);\n\
+    \        }\n    }\n    void dfs_hld(int v,int p) {\n        static int t=0;\n\
+    \        in[v]=t++;\n        for(auto u: g[v]){\n            if(p==u)continue;\n\
+    \            nxt[u]=(u==g[v][0]?nxt[v]:u);\n            par[u]=(u==g[v][0]?par[v]:v);\n\
+    \            dfs_hld(u,v);\n        }\n        out[v] = t;\n    }\n    int query(int\
+    \ s,int t){\n        while(nxt[s]!=nxt[t]){\n\t\t\tif(sz[nxt[s]]>sz[nxt[t]])t=par[t];\n\
+    \t\t\telse s=par[s];\n\t\t}\n        return sz[s]>sz[t]?s:t;\n    }\n    int distance(int\
+    \ s,int t){\n\t\tint res=0;\n\t\twhile(nxt[s]!=nxt[t]){\n\t\t\tif(sz[nxt[s]]>sz[nxt[t]]){\n\
+    \t\t\t\tres+=in[t]-in[nxt[t]]+1;\n\t\t\t\tt=par[t];\n\t\t\t}\n\t\t\telse {\n\t\
+    \t\t\tres+=in[s]-in[nxt[s]]+1;\n\t\t\t\ts=par[s];\n\t\t\t}\n\t\t}\n\t\treturn\
+    \ res+std::abs(in[s]-in[t]);\n\t}\n};\n#line 2 \"util/template.hpp\"\n#pragma\
+    \ GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"unroll-loops\")\n#pragma GCC\
+    \ target(\"avx\")\n#include<bits/stdc++.h>\nusing namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
     \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
@@ -92,62 +111,28 @@ data:
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
     \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
-    \ 10 \"graph_tree/dijkstra.hpp\"\n/**\n * @brief \u30C0\u30A4\u30AF\u30B9\u30C8\
-    \u30E9\u6CD5 O((E+V)logE)\n */\n\ntemplate<typename T,typename F=std::less<T>,typename\
-    \ Add=std::plus<T>>\nstruct dijkstra{\n    int s;\n    std::vector<T> diff;\n\
-    \    std::vector<int> par;\n    std::vector<int>used;\n    dijkstra(const graph_w<T>&\
-    \ list,int s,T zero=T(),T inf=std::numeric_limits<T>::max(),F f=F(),Add add=Add()):s(s){\n\
-    \        int n=list.size();\n        diff.resize(n,inf);\n        par.resize(n,-1);\n\
-    \        used.resize(n,0);\n        std::priority_queue<std::pair<T,int>,std::vector<std::pair<T,int>>,std::greater<std::pair<T,int>>>que;\n\
-    \        diff[s]=zero;\n        que.push(std::make_pair(T(),s));\n        while(!que.empty()){\n\
-    \            auto d=que.top();\n            que.pop();\n            T x;\n   \
-    \         int now;\n            std::tie(x,now)=d;\n            if(used[now])continue;\n\
-    \            used[now]=1;\n            for(auto d2:list[now]){\n             \
-    \   T sa;\n                int to;\n                std::tie(to,sa)=d2;\n    \
-    \            T tmp=add(diff[now],sa);\n                if(f(tmp,diff[to])){\n\
-    \                    diff[to]=tmp;\n                    par[to]=now;\n       \
-    \             que.emplace(diff[to],to);\n                }\n            }\n  \
-    \      }\n    }\n    T operator[](int idx){\n        return diff[idx];\n    }\n\
-    \    bool reachable(int t){\n        return par[t]!=-1;\n    }\n    std::vector<int>\
-    \ get_path(int t){\n        std::vector<int>res;\n        while(t!=s){\n     \
-    \       res.push_back(t);\n            t=par[t];\n        }\n        res.push_back(s);\n\
-    \        std::reverse(res.begin(),res.end());\n        return res;\n    }\n};\n"
-  code: "#pragma once\n#include<vector>\n#include<queue>\n#include<functional>\n#include<tuple>\n\
-    #include<limits>\n#include<algorithm>\n#include\"graph_template.hpp\"\n#include\"\
-    ../util/template.hpp\"\n/**\n * @brief \u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5\
-    \ O((E+V)logE)\n */\n\ntemplate<typename T,typename F=std::less<T>,typename Add=std::plus<T>>\n\
-    struct dijkstra{\n    int s;\n    std::vector<T> diff;\n    std::vector<int> par;\n\
-    \    std::vector<int>used;\n    dijkstra(const graph_w<T>& list,int s,T zero=T(),T\
-    \ inf=std::numeric_limits<T>::max(),F f=F(),Add add=Add()):s(s){\n        int\
-    \ n=list.size();\n        diff.resize(n,inf);\n        par.resize(n,-1);\n   \
-    \     used.resize(n,0);\n        std::priority_queue<std::pair<T,int>,std::vector<std::pair<T,int>>,std::greater<std::pair<T,int>>>que;\n\
-    \        diff[s]=zero;\n        que.push(std::make_pair(T(),s));\n        while(!que.empty()){\n\
-    \            auto d=que.top();\n            que.pop();\n            T x;\n   \
-    \         int now;\n            std::tie(x,now)=d;\n            if(used[now])continue;\n\
-    \            used[now]=1;\n            for(auto d2:list[now]){\n             \
-    \   T sa;\n                int to;\n                std::tie(to,sa)=d2;\n    \
-    \            T tmp=add(diff[now],sa);\n                if(f(tmp,diff[to])){\n\
-    \                    diff[to]=tmp;\n                    par[to]=now;\n       \
-    \             que.emplace(diff[to],to);\n                }\n            }\n  \
-    \      }\n    }\n    T operator[](int idx){\n        return diff[idx];\n    }\n\
-    \    bool reachable(int t){\n        return par[t]!=-1;\n    }\n    std::vector<int>\
-    \ get_path(int t){\n        std::vector<int>res;\n        while(t!=s){\n     \
-    \       res.push_back(t);\n            t=par[t];\n        }\n        res.push_back(s);\n\
-    \        std::reverse(res.begin(),res.end());\n        return res;\n    }\n};"
+    \ 4 \"graph_tree/test/LC_lca_short.test.cpp\"\n\nint main(){\n    lint n,q;\n\
+    \    cin>>n>>q;\n    auto g=load_treep(n);\n    lca lca(g,0);\n    while(q--){\n\
+    \        lint s,t;\n        cin>>s>>t;\n        cout<<lca.query(s,t)<<endl;\n\
+    \    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n#include \"../lca_short.hpp\"\
+    \n#include \"../../util/template.hpp\"\n\nint main(){\n    lint n,q;\n    cin>>n>>q;\n\
+    \    auto g=load_treep(n);\n    lca lca(g,0);\n    while(q--){\n        lint s,t;\n\
+    \        cin>>s>>t;\n        cout<<lca.query(s,t)<<endl;\n    }\n}"
   dependsOn:
+  - graph_tree/lca_short.hpp
   - graph_tree/graph_template.hpp
   - util/template.hpp
-  isVerificationFile: false
-  path: graph_tree/dijkstra.hpp
+  isVerificationFile: true
+  path: graph_tree/test/LC_lca_short.test.cpp
   requiredBy: []
   timestamp: '2020-09-19 09:30:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - graph_tree/test/LC_dijkstra.test.cpp
-documentation_of: graph_tree/dijkstra.hpp
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: graph_tree/test/LC_lca_short.test.cpp
 layout: document
 redirect_from:
-- /library/graph_tree/dijkstra.hpp
-- /library/graph_tree/dijkstra.hpp.html
-title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
+- /verify/graph_tree/test/LC_lca_short.test.cpp
+- /verify/graph_tree/test/LC_lca_short.test.cpp.html
+title: graph_tree/test/LC_lca_short.test.cpp
 ---

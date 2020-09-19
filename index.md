@@ -16,7 +16,7 @@ data:
       title: BBST/RBST/base.hpp
   - name: alga
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: alga/maybe.hpp
       title: Maybe
     - icon: ':warning:'
@@ -139,16 +139,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph_tree/dijkstra_fast.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O(E+VlogE)"
+    - icon: ':warning:'
+      path: graph_tree/distance.hpp
+      title: graph_tree/distance.hpp
     - icon: ':heavy_check_mark:'
       path: graph_tree/dominator_tree.hpp
       title: "\u652F\u914D\u6728"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph_tree/graph_template.hpp
       title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
     - icon: ':warning:'
       path: graph_tree/lca.hpp
-      title: LCA &amp;lt;O(N),O(1)&amp;gt;
-    - icon: ':warning:'
+      title: LCA &amp;lt;O(N),O(1)&amp;gt;(WIP)
+    - icon: ':heavy_check_mark:'
       path: graph_tree/lca_short.hpp
       title: "LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;"
     - icon: ':warning:'
@@ -175,7 +178,7 @@ data:
       title: "\u6700\u77ED\u7D4C\u8DEF\u6728 O((E+V)logE)"
     - icon: ':warning:'
       path: graph_tree/top_tree.hpp
-      title: graph_tree/top_tree.hpp
+      title: TopTree(WIP)
     - icon: ':warning:'
       path: graph_tree/topological_sort.hpp
       title: "\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8"
@@ -220,7 +223,7 @@ data:
     - icon: ':warning:'
       path: math/divisor_list.hpp
       title: "\u7D04\u6570\u5217\u6319"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/euler_phi.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
     - icon: ':heavy_check_mark:'
@@ -232,35 +235,35 @@ data:
     - icon: ':warning:'
       path: math/get_monomials.hpp
       title: math/get_monomials.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/is_prime.hpp
       title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
     - icon: ':warning:'
       path: math/lagrange_interpolation.hpp
       title: "\u30E9\u30B0\u30E9\u30F3\u30B8\u30E5\u88DC\u5B8C(\u9023\u7D9A\u70B9\
         ->\u4E00\u70B9)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/mod_int.hpp
       title: ModInt
     - icon: ':heavy_check_mark:'
       path: math/mod_int1000000007.hpp
       title: ModInt(1'000'000'007)
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/mod_int998244353.hpp
       title: ModInt(998'244'353)
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/mod_log.hpp
       title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/mod_pow.hpp
       title: (x^y)%mod
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/mod_sqrt.hpp
       title: ModSqrt
     - icon: ':warning:'
       path: math/osa_k.hpp
       title: "osa_k\u6CD5"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/prime_factor.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
     - icon: ':heavy_check_mark:'
@@ -275,10 +278,10 @@ data:
     - icon: ':warning:'
       path: math/sum_power_poly_limit.hpp
       title: math/sum_power_poly_limit.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/tetration.hpp
       title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/totient_sum.hpp
       title: "\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\u306E\u548C"
   - name: math/test
@@ -288,21 +291,21 @@ data:
       title: math/test/LC_sum_power_poly_limit.cpp
   - name: segment_tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: segment_tree/segment_tree.hpp
       title: Segment Tree
   - name: string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/AhoCorasick.hpp
       title: "Aho-Corasick\u6CD5"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/Z_algorizm.hpp
       title: "Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
       path: string/manacher.hpp
       title: Manacher
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/online_Zalgo.hpp
       title: "\u30AA\u30F3\u30E9\u30A4\u30F3Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
@@ -322,7 +325,7 @@ data:
       title: "Trie\u6728"
   - name: util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: util/ACL.hpp
       title: util/ACL.hpp
     - icon: ':warning:'
@@ -331,10 +334,10 @@ data:
     - icon: ':warning:'
       path: util/pbds.hpp
       title: util/pbds.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
@@ -395,6 +398,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph_tree/test/LC_dominator_tree.test.cpp
       title: graph_tree/test/LC_dominator_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph_tree/test/LC_lca_short.test.cpp
+      title: graph_tree/test/LC_lca_short.test.cpp
   - name: math/test
     pages:
     - icon: ':heavy_check_mark:'
@@ -418,43 +424,43 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/test/LC_floor_sum.test.cpp
       title: math/test/LC_floor_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_mod_log.test.cpp
       title: math/test/LC_mod_log.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_mod_sqrt.test.cpp
       title: math/test/LC_mod_sqrt.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_prime_factor.test.cpp
       title: math/test/LC_prime_factor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_tetration.test.cpp
       title: math/test/LC_tetration.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_totient_sum.test.cpp
       title: math/test/LC_totient_sum.test.cpp
   - name: segment_tree/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: segment_tree/test/segment_tree.test.cpp
       title: segment_tree/test/segment_tree.test.cpp
   - name: string/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/test/LC_Z_algorizm.test.cpp
       title: string/test/LC_Z_algorizm.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/test/LC_online_Z_algorizm.test.cpp
       title: string/test/LC_online_Z_algorizm.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/test/YUKI_Aho_Corasick.test.cpp
       title: string/test/YUKI_Aho_Corasick.test.cpp
   - name: util/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: util/test/LC_Number_of_Substrings.test.cpp
       title: util/test/LC_Number_of_Substrings.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: util/test/LC_Suffix_Array.test.cpp
       title: util/test/LC_Suffix_Array.test.cpp
 layout: toppage

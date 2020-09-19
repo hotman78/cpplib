@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: segment_tree/segment_tree.hpp
     title: Segment Tree
   - icon: ':warning:'
@@ -15,14 +15,14 @@ data:
     path: data_structure/swag.hpp
     title: SWAG(Queue)
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: segment_tree/test/segment_tree.test.cpp
     title: segment_tree/test/segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_swag.test.cpp
     title: data_structure/test/LC_swag.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: Maybe
@@ -56,7 +56,7 @@ data:
   - graph_tree/min_cost_flow.hpp
   - data_structure/swag.hpp
   timestamp: '2020-09-18 14:44:21+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - segment_tree/test/segment_tree.test.cpp
   - data_structure/test/LC_swag.test.cpp
