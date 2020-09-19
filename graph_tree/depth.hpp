@@ -10,7 +10,7 @@
 std::vector<int> depth(const graph& g,int start){
 	std::vector<int>memo(g.size());
 	auto f=[&](auto f,int v,int p)->int{
-		T mx=0;
+		int mx=0;
 		for(auto t:g[v]){
 			if(t==p)continue;
 			mx=std::max(mx,f(f,t,v));

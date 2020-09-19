@@ -3,7 +3,7 @@
 #include<functional>
 #include<cmath>
 #include<algorithm>
-
+#include"../alga/maybe.hpp"
 /**
  * @brief SparseTable
  */
@@ -21,10 +21,10 @@ class sparse_table{
             data[i][j]=f(data[i][j-1],data[i+(1<<(j-1))][j-1]);
         }
     }
-    T get(int l,int r){
+    maybe<T> get(int l,int r){
+        if(l==r)return maybe<T>();
         if(r<l)std::swap(l,r);
-        //assert(0<l||r<=(T)data.size());
         int k=std::log2(r-l);
-        return f(data[l][k],data[r-(1<<k)][k]);
+        return maybe<T>(f(data[l][k],data[r-(1<<k)][k]));
     }
 };
