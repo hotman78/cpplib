@@ -7,7 +7,7 @@
  * @brief 根からの深さ
  */
 
-std::vector<int> depth(int start,const graph& g){
+std::vector<int> depth(const graph& g,int start){
 	std::vector<int>memo(g.size());
 	auto f=[&](auto f,int v,int p)->int{
 		T mx=0;

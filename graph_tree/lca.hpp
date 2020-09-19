@@ -2,11 +2,12 @@
 #include<vector>
 #include<cmath>
 #include<tuple>
+#include"depth.hpp"
 #include"graph_template.hpp"
 #include"../data_structure/RMQ.hpp"
 
 /**
- * @brief LCA &amp;lt;O(N),O(1)&amp;gt;
+ * @brief LCA &amp;lt;O(N),O(1)&amp;gt;(WIP)
  */
 
 class LCA{
@@ -21,8 +22,8 @@ class LCA{
         data.resize(v.size()*2-1);
         start.resize(v.size());
         int i=0;
-        dep=depth(s,v);
-        __dist=__distance(s,v);
+        dep=depth(v,s);
+        __dist=distance(v,s);
         auto f=[&](auto f,int n,int p)->void{
             start[n]=i;
             data[i++]=std::make_pair(dep[n],n);
@@ -35,35 +36,10 @@ class LCA{
         f(f,s,-1);
         st=new RMQ<std::pair<int,int>>(data);
     }
-    int lca(int p,int q){
+    int query(int p,int q){
         return st->query(std::min(start[p],start[q]),std::max(start[p],start[q])+1).second;
     }
-    int distance(int p,int q){
+    int dist(int p,int q){
         return __dist[p]+__dist[q]-2*__dist[lca(p,q)];
-    }
-    std::vector<int> __distance(int start,std::vector<std::vector<int>>G){
-		std::vector<int>memo(G.size());
-		auto f=[&](auto f,int v,int p,int i)->void{
-			for(auto t:G[v]){
-				if(t==p)continue;
-				f(f,t,v,i+1);
-			}
-			return memo[v]=i;
-		};
-		f(f,start,-1,0);
-		return memo;
-    }
-    std::vector<int> depth(int start,std::vector<std::vector<int>>G){
-        std::vector<int>memo(G.size());
-        auto f=[&](auto f,int v,int p)->int{
-            int mx=0;
-            for(int t:G[v]){
-                if(t==p)continue;
-                mx=std::max(mx,f(f,t,v));
-            }
-            return memo[v]=mx+1;
-        };
-        f(f,start,-1);
-        return memo;
     }
 };
