@@ -1,34 +1,34 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/ACL.hpp
     title: util/ACL.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
@@ -969,7 +969,7 @@ data:
   path: math/FPS_mint.hpp
   requiredBy: []
   timestamp: '2020-09-24 10:34:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - math/test/LC_convolution_1000000007.test.cpp
   - math/test/LC_interpolation.test.cpp

@@ -2,15 +2,15 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/mod_sqrt.hpp
     title: ModSqrt
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_mod_sqrt.test.cpp
     title: math/test/LC_mod_sqrt.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -31,7 +31,7 @@ data:
   requiredBy:
   - math/mod_sqrt.hpp
   timestamp: '2020-09-14 10:33:36+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - math/test/LC_mod_sqrt.test.cpp
 documentation_of: util/random_gen.hpp

@@ -2,15 +2,18 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/min_cost_flow.hpp
     title: "\u6700\u5C0F\u8CBB\u7528\u6D41(CostScaling)"
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph_tree/test/LC_push_relabel.test.cpp
     title: graph_tree/test/LC_push_relabel.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_min_cost_flow.test.cpp
+    title: graph_tree/test/LC_min_cost_flow.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))"
@@ -73,9 +76,10 @@ data:
   requiredBy:
   - graph_tree/min_cost_flow.hpp
   timestamp: '2020-09-19 19:17:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - graph_tree/test/LC_push_relabel.test.cpp
+  - graph_tree/test/LC_min_cost_flow.test.cpp
 documentation_of: graph_tree/push_relabel.hpp
 layout: document
 redirect_from:

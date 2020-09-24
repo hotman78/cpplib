@@ -1,37 +1,37 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_int.hpp
     title: ModInt
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/ACL.hpp
     title: util/ACL.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
@@ -51,14 +51,15 @@ data:
     template<typename T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename\
     \ T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?\"\"\
     :\" \"<<t[i];f=1;}cout<<endl;}\ntemplate<typename T>inline void _output2(T t){for(lint\
-    \ i=0;i<t.size();i++)output(t[i]);}\n#define rep(i,...) for(auto i:range(__VA_ARGS__))\
-    \ \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b)\
-    \ for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n\
-    #define irep(i) for(lint i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return\
-    \ vector<long long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return\
-    \ v;}\ninline vector<long long> range(long long a,long long b){if(b<=a)return\
-    \ vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
-    \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
+    \ i=0;i<t.size();i++)output(t[i]);}\n#define loop(n) for(long long _=0;_<(long\
+    \ long)(n);++_)\n#define rep(i,...) for(auto i:range(__VA_ARGS__)) \n#define rrep(i,...)\
+    \ for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)\n\
+    #define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n#define irep(i) for(lint\
+    \ i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return vector<long\
+    \ long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline\
+    \ vector<long long> range(long long a,long long b){if(b<=a)return vector<long\
+    \ long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return v;}\ninline\
+    \ vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
     \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
     \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
     \ v;}\n#define all(n) begin(n),end(n)\ntemplate<typename T,typename E>bool chmin(T&\
@@ -1034,8 +1035,8 @@ data:
   isVerificationFile: true
   path: math/test/LC_convolution_998244353.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 10:34:58+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-24 16:21:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: math/test/LC_convolution_998244353.test.cpp
 layout: document
