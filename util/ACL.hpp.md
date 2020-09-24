@@ -5,20 +5,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/FPS_long.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Number_of_Substrings.test.cpp
     title: util/test/LC_Number_of_Substrings.test.cpp
   - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
   - icon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
     title: graph_tree/test/LC_centroid_decomposition.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links:
@@ -1520,7 +1520,7 @@ data:
   - math/FPS_long.hpp
   - math/FPS_mint.hpp
   timestamp: '2020-09-14 19:00:57+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - util/test/LC_Suffix_Array.test.cpp
   - util/test/LC_Number_of_Substrings.test.cpp

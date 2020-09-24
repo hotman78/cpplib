@@ -9,22 +9,22 @@ data:
     path: graph_tree/dijkstra.hpp
     title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/LC_segment_tree.test.cpp
     title: segment_tree/test/LC_segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
     title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
     title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Number_of_Substrings.test.cpp
     title: util/test/LC_Number_of_Substrings.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_factor.test.cpp
     title: math/test/AOJ_prime_factor.test.cpp
   - icon: ':x:'
@@ -39,7 +39,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
   - icon: ':heavy_check_mark:'
@@ -63,13 +63,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/test/LC_tetration.test.cpp
     title: math/test/LC_tetration.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/YUKI_Aho_Corasick.test.cpp
     title: string/test/YUKI_Aho_Corasick.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/LC_Z_algorizm.test.cpp
     title: string/test/LC_Z_algorizm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
   - icon: ':heavy_check_mark:'

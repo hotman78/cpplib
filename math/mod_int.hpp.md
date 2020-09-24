@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
   - icon: ':heavy_check_mark:'
@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
   - icon: ':heavy_check_mark:'
@@ -25,7 +25,7 @@ data:
     path: data_structure/test/LC_swag.test.cpp
     title: data_structure/test/LC_swag.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: ModInt
@@ -135,7 +135,7 @@ data:
   - math/mod_int998244353.hpp
   - math/mod_int1000000007.hpp
   timestamp: '2020-09-24 10:34:58+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - math/test/LC_totient_sum.test.cpp
   - math/test/LC_convolution_1000000007.test.cpp

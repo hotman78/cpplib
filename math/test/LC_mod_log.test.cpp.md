@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/mod_log.hpp
     title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   - icon: ':heavy_check_mark:'

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/mod_sqrt.hpp
     title: ModSqrt
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   - icon: ':heavy_check_mark:'

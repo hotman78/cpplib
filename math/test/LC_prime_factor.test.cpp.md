@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/prime_factor.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
   - icon: ':question:'
@@ -76,12 +76,14 @@ data:
     \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
     \ \"../graph_tree/graph_template.hpp\"\n#line 4 \"math/test/LC_prime_factor.test.cpp\"\
     \n\nint main(){\n    lint q;\n    cin>>q;\n    while(q--){\n        lint n;\n\
-    \        cin>>n;\n        vec d=prime_factor(n);\n        cout<<d.size()<<\" \"\
-    ; \n        output(d);\n    }\n}\n"
+    \        cin>>n;\n        auto d=prime_factor(n);\n        cout<<d.size()<<\"\
+    \ \";\n        vec ans; \n        for(auto [s,t]:d)rep(i,t)ans.push_back(s);\n\
+    \        output(ans);\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\n#include \"\
     ../prime_factor.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n \
     \   lint q;\n    cin>>q;\n    while(q--){\n        lint n;\n        cin>>n;\n\
-    \        vec d=prime_factor(n);\n        cout<<d.size()<<\" \"; \n        output(d);\n\
+    \        auto d=prime_factor(n);\n        cout<<d.size()<<\" \";\n        vec\
+    \ ans; \n        for(auto [s,t]:d)rep(i,t)ans.push_back(s);\n        output(ans);\n\
     \    }\n}"
   dependsOn:
   - math/prime_factor.hpp
@@ -90,7 +92,7 @@ data:
   isVerificationFile: true
   path: math/test/LC_prime_factor.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 10:34:58+09:00'
+  timestamp: '2020-09-24 14:18:37+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: math/test/LC_prime_factor.test.cpp

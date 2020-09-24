@@ -2,16 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/lazy_segment_tree.hpp
     title: segment_tree/lazy_segment_tree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/segment_tree.hpp
     title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/dual_segment_tree.hpp
     title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: functional/range_add_and_range_sum.hpp
     title: "\u533A\u9593\u52A0\u7B97"
   - icon: ':warning:'
@@ -37,13 +37,13 @@ data:
     path: data_structure/sparse_table.hpp
     title: SparseTable
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/LC_segment_tree.test.cpp
     title: segment_tree/test/LC_segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
     title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
     title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -59,7 +59,7 @@ data:
     path: data_structure/test/LC_RMQ.test.cpp
     title: data_structure/test/LC_RMQ.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: Maybe
@@ -100,7 +100,7 @@ data:
   - data_structure/arg_rmq.hpp
   - data_structure/sparse_table.hpp
   timestamp: '2020-09-19 12:18:12+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - segment_tree/test/LC_segment_tree.test.cpp
   - segment_tree/test/AOJ_dual_segment_tree.test.cpp

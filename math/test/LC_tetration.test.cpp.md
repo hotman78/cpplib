@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/tetration.hpp
     title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   - icon: ':heavy_check_mark:'

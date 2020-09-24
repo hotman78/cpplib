@@ -7,25 +7,25 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/mod_int1000000007.hpp
     title: ModInt(1'000'000'007)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int.hpp
     title: ModInt
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/ACL.hpp
     title: util/ACL.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   _extendedRequiredBy: []

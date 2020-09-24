@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/totient_sum.hpp
     title: "\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\u306E\u548C"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int.hpp
     title: ModInt
   - icon: ':question:'

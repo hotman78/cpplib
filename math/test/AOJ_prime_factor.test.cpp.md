@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/prime_factor.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
   - icon: ':question:'
@@ -13,7 +13,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A
@@ -76,11 +76,13 @@ data:
     \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
     \ \"../graph_tree/graph_template.hpp\"\n#line 4 \"math/test/AOJ_prime_factor.test.cpp\"\
     \n\nint main(){\n    lint n;\n    cin>>n;\n    auto v=prime_factor(n);\n    cout<<n<<\"\
-    : \";\n    output(v);\n}\n"
+    : \";\n    vec ans;\n    for(auto [s,t]:v)rep(i,t)ans.push_back(s);\n    output(ans);\n\
+    }\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A\"\
     \n#include \"../prime_factor.hpp\"\n#include \"../../util/template.hpp\"\n\nint\
     \ main(){\n    lint n;\n    cin>>n;\n    auto v=prime_factor(n);\n    cout<<n<<\"\
-    : \";\n    output(v);\n}"
+    : \";\n    vec ans;\n    for(auto [s,t]:v)rep(i,t)ans.push_back(s);\n    output(ans);\n\
+    }"
   dependsOn:
   - math/prime_factor.hpp
   - math/is_prime.hpp
@@ -88,8 +90,8 @@ data:
   isVerificationFile: true
   path: math/test/AOJ_prime_factor.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 10:34:58+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-09-24 14:18:12+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: math/test/AOJ_prime_factor.test.cpp
 layout: document

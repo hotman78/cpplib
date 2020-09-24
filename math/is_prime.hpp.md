@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/prime_factor.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_factor.test.cpp
     title: math/test/AOJ_prime_factor.test.cpp
   - icon: ':x:'

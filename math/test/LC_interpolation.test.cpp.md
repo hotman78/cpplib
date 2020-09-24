@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/ACL.hpp
     title: util/ACL.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int.hpp
     title: ModInt
   - icon: ':question:'
@@ -31,7 +31,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/polynomial_interpolation
@@ -1038,7 +1038,7 @@ data:
   path: math/test/LC_interpolation.test.cpp
   requiredBy: []
   timestamp: '2020-09-24 10:34:58+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: math/test/LC_interpolation.test.cpp
 layout: document

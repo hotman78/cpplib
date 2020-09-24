@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30AA\u30F3\u30E9\u30A4\u30F3Z\u30A2\u30EB\u30B4\u30EA\u30BA\
@@ -48,7 +48,7 @@ data:
   path: string/online_Zalgo.hpp
   requiredBy: []
   timestamp: '2020-09-14 10:40:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - string/test/LC_online_Z_algorizm.test.cpp
 documentation_of: string/online_Zalgo.hpp

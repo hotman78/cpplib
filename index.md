@@ -16,7 +16,7 @@ data:
       title: BBST/RBST/base.hpp
   - name: alga
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: alga/maybe.hpp
       title: Maybe
     - icon: ':warning:'
@@ -128,10 +128,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: functional/composite.hpp
       title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: functional/range_add_and_range_sum.hpp
       title: "\u533A\u9593\u52A0\u7B97"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: functional/update.hpp
       title: "\u66F4\u65B0"
   - name: graph_tree
@@ -218,13 +218,13 @@ data:
       title: 2-SAT
   - name: math
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/FPS_base.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
     - icon: ':heavy_check_mark:'
       path: math/FPS_long.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/FPS_mint.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
     - icon: ':heavy_check_mark:'
@@ -239,7 +239,7 @@ data:
     - icon: ':warning:'
       path: math/catalans_trapezoids.hpp
       title: "\u30AB\u30BF\u30E9\u30F3\u53F0\u5F62"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/ceil_pow2.hpp
       title: math/ceil_pow2.hpp
     - icon: ':warning:'
@@ -254,7 +254,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/floor_sum.hpp
       title: \sum_{i=0}^{n-1}\floor(a*i+b/c)
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/garner.hpp
       title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
@@ -267,13 +267,13 @@ data:
       path: math/lagrange_interpolation.hpp
       title: "\u30E9\u30B0\u30E9\u30F3\u30B8\u30E5\u88DC\u5B8C(\u9023\u7D9A\u70B9\
         ->\u4E00\u70B9)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_int.hpp
       title: ModInt
     - icon: ':heavy_check_mark:'
       path: math/mod_int1000000007.hpp
       title: ModInt(1'000'000'007)
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_int998244353.hpp
       title: ModInt(998'244'353)
     - icon: ':warning:'
@@ -282,7 +282,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/mod_log.hpp
       title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_pow.hpp
       title: (x^y)%mod
     - icon: ':heavy_check_mark:'
@@ -291,7 +291,7 @@ data:
     - icon: ':warning:'
       path: math/osa_k.hpp
       title: "osa_k\u6CD5"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/prime_factor.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
     - icon: ':heavy_check_mark:'
@@ -319,27 +319,27 @@ data:
       title: math/test/LC_sum_power_poly_limit.cpp
   - name: segment_tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/dual_segment_tree.hpp
       title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/lazy_segment_tree.hpp
       title: segment_tree/lazy_segment_tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/segment_tree.hpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - name: string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/AhoCorasick.hpp
       title: "Aho-Corasick\u6CD5"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/Z_algorizm.hpp
       title: "Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
       path: string/manacher.hpp
       title: Manacher
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/online_Zalgo.hpp
       title: "\u30AA\u30F3\u30E9\u30A4\u30F3Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
@@ -359,7 +359,7 @@ data:
       title: "Trie\u6728"
   - name: util
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: util/ACL.hpp
       title: util/ACL.hpp
     - icon: ':warning:'
@@ -455,7 +455,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/test/AOJ_is_prime.test.cpp
       title: math/test/AOJ_is_prime.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/AOJ_prime_factor.test.cpp
       title: math/test/AOJ_prime_factor.test.cpp
     - icon: ':heavy_check_mark:'
@@ -470,7 +470,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/test/LC_floor_sum.test.cpp
       title: math/test/LC_floor_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_interpolation.test.cpp
       title: math/test/LC_interpolation.test.cpp
     - icon: ':heavy_check_mark:'
@@ -490,32 +490,32 @@ data:
       title: math/test/LC_totient_sum.test.cpp
   - name: segment_tree/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
       title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
       title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/test/LC_segment_tree.test.cpp
       title: segment_tree/test/LC_segment_tree.test.cpp
   - name: string/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/test/LC_Z_algorizm.test.cpp
       title: string/test/LC_Z_algorizm.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/test/LC_online_Z_algorizm.test.cpp
       title: string/test/LC_online_Z_algorizm.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/test/YUKI_Aho_Corasick.test.cpp
       title: string/test/YUKI_Aho_Corasick.test.cpp
   - name: util/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: util/test/LC_Number_of_Substrings.test.cpp
       title: util/test/LC_Number_of_Substrings.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: util/test/LC_Suffix_Array.test.cpp
       title: util/test/LC_Suffix_Array.test.cpp
 layout: toppage
