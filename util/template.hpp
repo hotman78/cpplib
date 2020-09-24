@@ -21,6 +21,7 @@ template<typename T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?" ":
 template<typename T>inline void output2(T t){for(auto i:t)output(i);}
 template<typename T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?"":" "<<t[i];f=1;}cout<<endl;}
 template<typename T>inline void _output2(T t){for(lint i=0;i<t.size();i++)output(t[i]);}
+#define loop(n) for(long long _=0;_<(long long)(n);++_)
 #define rep(i,...) for(auto i:range(__VA_ARGS__)) 
 #define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))
 #define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)

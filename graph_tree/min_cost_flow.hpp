@@ -3,7 +3,6 @@
 #include<queue>
 #include<cmath>
 #include"push_relabel.hpp"
-#include"../alga/maybe.hpp"
 
 /**
  * @brief 最小費用流(CostScaling)
@@ -13,7 +12,6 @@
 template<typename T,typename Res=T>
 struct min_cost_flow{
     int v;
-    constexpr static T inf=1LL<<60;
     Res ans=0;
     struct edge{
         int to;
@@ -27,11 +25,13 @@ struct min_cost_flow{
     std::vector<vector<edge*>>e;//辺のキャパシティ
     std::vector<T>d;//頂点のキャパシティ
     std::queue<int>active;
+    std::vector<tuple<int,int,T,T,T>>edges;
     T eps=1;
     int idx=0;
     std::vector<T>res;
     min_cost_flow(int v):v(v),mf(v+2),p(v,0),e(v),d(v,0){}
     void add_edge(int from,int to,T mn,T mx,T cost){
+        edges.emplace_back(from,to,mn,mx,cost);
         res.push_back(0);
         if(from==to){
             if(cost<0)res[idx++]=mx,ans+=mx*cost;
@@ -109,7 +109,7 @@ struct min_cost_flow{
         }
         return ans;
     }
-    bool ok(vector<T>b){
+    bool ok(std::vector<T>b){
         T tmp=0,tmp2=0;
         for(int i=0;i<v;++i){
             if(d[i]+b[i]>=0){
@@ -123,22 +123,35 @@ struct min_cost_flow{
         }
         return tmp==tmp2&&mf.run(v,v+1)==tmp;
     }
-    maybe<Res> run(int s,int t,T f){
+    Res run(int s,int t,T f){
         d[s]+=f;
         d[t]-=f;
-        if(ok(d))return maybe<Res>(flow());
-        else maybe<Res>();
+        return flow();
     }
-    maybe<Res> run(vector<T>b){
+    Res run(std::vector<T>b){
         for(int i=0;i<v;++i)d[i]+=b[i];
-        if(ok(d))return maybe<Res>(flow());
-        else maybe<Res>();
+        return flow();
     }
-    vector<T> flow_result(){
+    std::vector<T> flow_result(){
         for(int i=0;i<v;i++)for(auto ed:e[i]){
             if(ed->is_rev)continue;
             res[ed->id]=ed->st+e[ed->to][ed->rev]->cap*(ed->edge_rev?-1:1);
         }
         return res;
+    }
+    //flow_resultを渡す
+    std::vector<T>potential(const std::vector<T>& f){
+        std::vector<T>p(v,0);
+        std::vector<tuple<int,int,T>>g;
+        int idx=0;
+        for(auto [from,to,mn,mx,cost]:edges){
+            if(mn<f[idx])g.emplace_back(to,from,-cost);
+            if(f[idx]<mx)g.emplace_back(from,to,cost);
+            idx++;
+        }
+        for(int i=0;i<v;++i)for(auto [s,t,c]:g){
+            p[t]=std::min(p[t],p[s]+c);
+        }
+        return p;
     }
 };
