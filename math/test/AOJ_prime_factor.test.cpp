@@ -7,5 +7,7 @@ int main(){
     cin>>n;
     auto v=prime_factor(n);
     cout<<n<<": ";
-    output(v);
+    vec ans;
+    for(auto [s,t]:v)rep(i,t)ans.push_back(s);
+    output(ans);
 }
