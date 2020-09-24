@@ -27,7 +27,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_factor.test.cpp
     title: math/test/AOJ_prime_factor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_prime_factor.test.cpp
     title: math/test/LC_prime_factor.test.cpp
   - icon: ':heavy_check_mark:'
@@ -136,7 +136,7 @@ data:
     path: data_structure/test/LC_wavelet_matrix.test.cpp
     title: data_structure/test/LC_wavelet_matrix.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     links: []
@@ -209,7 +209,7 @@ data:
   - math/test/LC_sum_power_poly_limit.cpp
   - graph_tree/dijkstra.hpp
   timestamp: '2020-09-24 10:34:58+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - segment_tree/test/LC_segment_tree.test.cpp
   - segment_tree/test/AOJ_dual_segment_tree.test.cpp

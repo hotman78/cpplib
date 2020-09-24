@@ -260,7 +260,7 @@ data:
     - icon: ':warning:'
       path: math/get_monomials.hpp
       title: math/get_monomials.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/is_prime.hpp
       title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
     - icon: ':warning:'
@@ -291,7 +291,7 @@ data:
     - icon: ':warning:'
       path: math/osa_k.hpp
       title: "osa_k\u6CD5"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/prime_factor.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
     - icon: ':heavy_check_mark:'
@@ -371,7 +371,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
@@ -479,7 +479,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/test/LC_mod_sqrt.test.cpp
       title: math/test/LC_mod_sqrt.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_prime_factor.test.cpp
       title: math/test/LC_prime_factor.test.cpp
     - icon: ':heavy_check_mark:'

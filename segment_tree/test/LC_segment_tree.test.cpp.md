@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

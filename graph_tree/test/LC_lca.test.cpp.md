@@ -29,7 +29,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: functional/argmin.hpp
     title: "\u6700\u5C0F\u5024\u3068\u305D\u306E\u4F4D\u7F6E"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

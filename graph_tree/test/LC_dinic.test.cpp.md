@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/dinic.hpp
     title: "\u6700\u5927\u6D41(Dinic\u6CD5)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

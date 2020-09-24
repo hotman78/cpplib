@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: functional/range_add_and_range_sum.hpp
     title: "\u533A\u9593\u52A0\u7B97"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

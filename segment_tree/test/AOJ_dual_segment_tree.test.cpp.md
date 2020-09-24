@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: functional/update.hpp
     title: "\u66F4\u65B0"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []

@@ -25,7 +25,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/mod_int.hpp
     title: ModInt
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
