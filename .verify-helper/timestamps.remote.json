@@ -19,5 +19,16 @@
 "graph_tree/test/LC_dominator_tree.test.cpp": "2020-09-24 10:34:58 +0900",
 "graph_tree/test/LC_lca.test.cpp": "2020-09-24 10:34:58 +0900",
 "graph_tree/test/LC_lca_short.test.cpp": "2020-09-24 10:34:58 +0900",
-"graph_tree/test/LC_maximum_independent_set.test.cpp": "2020-09-24 10:34:58 +0900"
+"graph_tree/test/LC_maximum_independent_set.test.cpp": "2020-09-24 10:34:58 +0900",
+"graph_tree/test/LC_push_relabel.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/AOJ_binary_search.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/AOJ_is_prime.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/AOJ_prime_list.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/LC_convolution_1000000007.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/LC_convolution_998244353.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/LC_floor_sum.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/LC_mod_log.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/LC_mod_sqrt.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/LC_tetration.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/LC_totient_sum.test.cpp": "2020-09-24 10:34:58 +0900"
 }
