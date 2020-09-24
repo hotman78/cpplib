@@ -9,9 +9,9 @@ int main(){
         lint n;
         cin>>n;
         auto d=prime_factor(n);
-        cout<<d.size()<<" ";
         vec ans; 
         for(auto [s,t]:d)rep(i,t)ans.push_back(s);
+        cout<<ans.size()<<" ";
         output(ans);
     }
 }
