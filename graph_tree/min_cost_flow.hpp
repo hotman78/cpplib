@@ -2,7 +2,7 @@
 #include<vector>
 #include<queue>
 #include<cmath>
-#include"max_flow.hpp"
+#include"push_relabel.hpp
 #include"../alga/maybe.hpp"
 
 /**
@@ -22,7 +22,7 @@ struct min_cost_flow{
         bool is_rev,edge_rev;
         int id;
     };
-    max_flow<T> mf;
+    push_relabel<T> mf;
     std::vector<T>p;
     std::vector<vector<edge*>>e;//辺のキャパシティ
     std::vector<T>d;//頂点のキャパシティ
