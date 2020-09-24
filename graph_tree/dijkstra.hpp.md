@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/graph_template.hpp
     title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
@@ -23,48 +23,30 @@ data:
     #line 4 \"graph_tree/graph_template.hpp\"\n#include<iostream>\n/**\n * @brief\
     \ \u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\n\
     template<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
-    \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
-    \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
-    \ m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
-    \        --s;--t;\n        g[s].push_back(t);\n    }\n    return g;\n}\ngraph\
-    \ load_graph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n    \
-    \    int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
-    \    }\n    return g;\n}\ngraph load_digraph0(int n,int m){\n    graph g(n);\n\
-    \    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n      \
-    \  g[s].push_back(t);\n    }\n    return g;\n}\ngraph load_tree(int n){\n    graph\
-    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
-    \        --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n  \
-    \  }\n    return g;\n}\ngraph load_tree0(int n){\n    graph g(n);\n    for(int\
-    \ i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_treep(int n){\n\
-    \    graph g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n        std::cin>>t;\n\
-    \        g[i+1].push_back(t);\n        g[t].push_back(i+1);\n    }\n    return\
-    \ g;\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int n,int m){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
-    \ u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_digraph_weight(int n,int m){\n    graph_w<T> g(n);\n    for(int\
-    \ i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
-    \        --s;--t;\n        g[s].emplace_back(t,u);\n    }\n    return g;\n}\n\
-    template<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n    graph_w<T>\
-    \ g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
-    \        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n    }\n   \
-    \ return g;\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int\
-    \ m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n   \
-    \     T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n\
-    \    return g;\n}\ntemplate<typename T>\ngraph_w<T> load_tree_weight(int n){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n       \
-    \ T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_tree0_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
-    \        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
-    \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
-    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 2 \"util/template.hpp\"\
-    \n#pragma GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"unroll-loops\")\n#pragma\
-    \ GCC target(\"avx\")\n#include<bits/stdc++.h>\nusing namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
+    \ngraph load_graph(int n,int m){graph g(n);for(int i=0;i<m;++i){int s,t;std::cin>>s>>t;--s;--t;g[s].push_back(t);g[t].push_back(s);}return\
+    \ g;}\ngraph load_digraph(int n,int m){graph g(n);for(int i=0;i<m;++i){int s,t;std::cin>>s>>t;--s;--t;g[s].push_back(t);}return\
+    \ g;}\ngraph load_graph0(int n,int m){graph g(n);for(int i=0;i<m;++i){int s,t;std::cin>>s>>t;g[s].push_back(t);g[t].push_back(s);}return\
+    \ g;}\ngraph load_digraph0(int n,int m){graph g(n);for(int i=0;i<m;++i){int s,t;std::cin>>s>>t;g[s].push_back(t);}return\
+    \ g;}\ngraph load_tree(int n){graph g(n);for(int i=0;i<n-1;++i){int s,t;std::cin>>s>>t;--s;--t;g[s].push_back(t);g[t].push_back(s);}return\
+    \ g;}\ngraph load_tree0(int n){graph g(n);for(int i=0;i<n-1;++i){int s,t;std::cin>>s>>t;g[s].push_back(t);g[t].push_back(s);}return\
+    \ g;}\ngraph load_treep(int n){graph g(n);for(int i=0;i<n-1;++i){int t;std::cin>>t;g[i+1].push_back(t);g[t].push_back(i+1);}return\
+    \ g;}\ntemplate<typename T>graph_w<T> load_graph_weight(int n,int m){graph_w<T>\
+    \ g(n);for(int i=0;i<m;++i){int s,t;T u;std::cin>>s>>t>>u;--s;--t;g[s].emplace_back(t,u);g[t].emplace_back(s,u);}return\
+    \ g;}\ntemplate<typename T>graph_w<T> load_digraph_weight(int n,int m){graph_w<T>\
+    \ g(n);for(int i=0;i<m;++i){int s,t;T u;std::cin>>s>>t>>u;--s;--t;g[s].emplace_back(t,u);}return\
+    \ g;}\ntemplate<typename T>graph_w<T> load_graph0_weight(int n,int m){graph_w<T>\
+    \ g(n);for(int i=0;i<m;++i){int s,t;T u;std::cin>>s>>t>>u;g[s].emplace_back(t,u);g[t].emplace_back(s,u);}return\
+    \ g;}\ntemplate<typename T>graph_w<T> load_digraph0_weight(int n,int m){graph_w<T>\
+    \ g(n);for(int i=0;i<m;++i){int s,t;T u;std::cin>>s>>t>>u;g[s].emplace_back(t,u);}return\
+    \ g;}\ntemplate<typename T>graph_w<T> load_tree_weight(int n){graph_w<T> g(n);for(int\
+    \ i=0;i<n-1;++i){int s,t;T u;std::cin>>s>>t>>u;--s;--t;g[s].emplace_back(t,u);g[t].emplace_back(s,u);}return\
+    \ g;}\ntemplate<typename T>graph_w<T> load_tree0_weight(int n){graph_w<T> g(n);for(int\
+    \ i=0;i<n-1;++i){int s,t;T u;std::cin>>s>>t>>u;g[s].emplace_back(t,u);g[t].emplace_back(s,u);}return\
+    \ g;}\ntemplate<typename T>graph_w<T> load_treep_weight(int n){graph_w<T> g(n);for(int\
+    \ i=0;i<n-1;++i){int t;T u;std::cin>>t>>u;g[i+1].emplace_back(t,u);g[t].emplace_back(i+1,u);}return\
+    \ g;}\n#line 2 \"util/template.hpp\"\n#pragma GCC optimize(\"Ofast\")\n#pragma\
+    \ GCC optimize(\"unroll-loops\")\n#pragma GCC target(\"avx\")\n#include<bits/stdc++.h>\n\
+    using namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
     \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
@@ -91,14 +73,15 @@ data:
     \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
-    \ 10 \"graph_tree/dijkstra.hpp\"\n/**\n * @brief \u30C0\u30A4\u30AF\u30B9\u30C8\
-    \u30E9\u6CD5 O((E+V)logE)\n */\n\ntemplate<typename T,typename F=std::less<T>,typename\
-    \ Add=std::plus<T>>\nstruct dijkstra{\n    int s;\n    std::vector<T> diff;\n\
-    \    std::vector<int> par;\n    std::vector<int>used;\n    dijkstra(const graph_w<T>&\
-    \ list,int s,T zero=T(),T inf=std::numeric_limits<T>::max(),F f=F(),Add add=Add()):s(s){\n\
-    \        int n=list.size();\n        diff.resize(n,inf);\n        par.resize(n,-1);\n\
-    \        used.resize(n,0);\n        std::priority_queue<std::pair<T,int>,std::vector<std::pair<T,int>>,std::greater<std::pair<T,int>>>que;\n\
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
+    \ \"../graph_tree/graph_template.hpp\"\n#line 10 \"graph_tree/dijkstra.hpp\"\n\
+    /**\n * @brief \u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)\n */\n\n\
+    template<typename T,typename F=std::less<T>,typename Add=std::plus<T>>\nstruct\
+    \ dijkstra{\n    int s;\n    std::vector<T> diff;\n    std::vector<int> par;\n\
+    \    std::vector<int>used;\n    dijkstra(const graph_w<T>& list,int s,T zero=T(),T\
+    \ inf=std::numeric_limits<T>::max(),F f=F(),Add add=Add()):s(s){\n        int\
+    \ n=list.size();\n        diff.resize(n,inf);\n        par.resize(n,-1);\n   \
+    \     used.resize(n,0);\n        std::priority_queue<std::pair<T,int>,std::vector<std::pair<T,int>>,std::greater<std::pair<T,int>>>que;\n\
     \        diff[s]=zero;\n        que.push(std::make_pair(T(),s));\n        while(!que.empty()){\n\
     \            auto d=que.top();\n            que.pop();\n            T x;\n   \
     \         int now;\n            std::tie(x,now)=d;\n            if(used[now])continue;\n\
@@ -140,7 +123,7 @@ data:
   isVerificationFile: false
   path: graph_tree/dijkstra.hpp
   requiredBy: []
-  timestamp: '2020-09-19 09:30:13+09:00'
+  timestamp: '2020-09-24 10:34:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - graph_tree/test/LC_dijkstra.test.cpp

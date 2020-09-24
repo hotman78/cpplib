@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph_tree/test/LC_push_relabel.test.cpp
     title: graph_tree/test/LC_push_relabel.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))"
@@ -69,7 +69,7 @@ data:
   path: graph_tree/push_relabel.hpp
   requiredBy: []
   timestamp: '2020-09-19 19:17:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - graph_tree/test/LC_push_relabel.test.cpp
 documentation_of: graph_tree/push_relabel.hpp

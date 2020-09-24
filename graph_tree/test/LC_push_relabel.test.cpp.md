@@ -1,19 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph_tree/push_relabel.hpp
     title: "\u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
-  - icon: ':heavy_check_mark:'
-    path: graph_tree/graph_template.hpp
-    title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A
@@ -75,50 +72,8 @@ data:
     \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
-    \ 5 \"graph_tree/graph_template.hpp\"\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\
-    \u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\n\
-    template<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
-    \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
-    \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
-    \ m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
-    \        --s;--t;\n        g[s].push_back(t);\n    }\n    return g;\n}\ngraph\
-    \ load_graph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n    \
-    \    int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
-    \    }\n    return g;\n}\ngraph load_digraph0(int n,int m){\n    graph g(n);\n\
-    \    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n      \
-    \  g[s].push_back(t);\n    }\n    return g;\n}\ngraph load_tree(int n){\n    graph\
-    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
-    \        --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n  \
-    \  }\n    return g;\n}\ngraph load_tree0(int n){\n    graph g(n);\n    for(int\
-    \ i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_treep(int n){\n\
-    \    graph g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n        std::cin>>t;\n\
-    \        g[i+1].push_back(t);\n        g[t].push_back(i+1);\n    }\n    return\
-    \ g;\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int n,int m){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
-    \ u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_digraph_weight(int n,int m){\n    graph_w<T> g(n);\n    for(int\
-    \ i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
-    \        --s;--t;\n        g[s].emplace_back(t,u);\n    }\n    return g;\n}\n\
-    template<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n    graph_w<T>\
-    \ g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
-    \        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n    }\n   \
-    \ return g;\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int\
-    \ m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n   \
-    \     T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n\
-    \    return g;\n}\ntemplate<typename T>\ngraph_w<T> load_tree_weight(int n){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n       \
-    \ T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_tree0_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
-    \        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
-    \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
-    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 4 \"graph_tree/test/LC_push_relabel.test.cpp\"\
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
+    \ \"../graph_tree/graph_template.hpp\"\n#line 4 \"graph_tree/test/LC_push_relabel.test.cpp\"\
     \n\nint main(){\n    lint n,m;\n    cin>>n>>m;\n    push_relabel<lint>mf(n);\n\
     \    while(m--){\n        lint u,v,c;\n        cin>>u>>v>>c;\n        mf.add_edge(u,v,c);\n\
     \    }\n    cout<<mf.run(0,n-1)<<endl;\n}\n"
@@ -130,12 +85,11 @@ data:
   dependsOn:
   - graph_tree/push_relabel.hpp
   - util/template.hpp
-  - graph_tree/graph_template.hpp
   isVerificationFile: true
   path: graph_tree/test/LC_push_relabel.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 19:17:15+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-24 10:34:58+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: graph_tree/test/LC_push_relabel.test.cpp
 layout: document

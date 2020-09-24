@@ -1,15 +1,6 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
-    path: util/template.hpp
-    title: util/template.hpp
-  - icon: ':x:'
-    path: math/mod_int1000000007.hpp
-    title: ModInt(1'000'000'007)
-  - icon: ':question:'
-    path: math/mod_int.hpp
-    title: ModInt
   - icon: ':x:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
@@ -28,111 +19,41 @@ data:
   - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
+  - icon: ':question:'
+    path: math/mod_int998244353.hpp
+    title: ModInt(998'244'353)
+  - icon: ':question:'
+    path: math/mod_int.hpp
+    title: ModInt
+  - icon: ':question:'
+    path: util/template.hpp
+    title: util/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/convolution_mod_1000000007
+    PROBLEM: https://judge.yosupo.jp/problem/polynomial_interpolation
     links:
-    - https://judge.yosupo.jp/problem/convolution_mod_1000000007
-  bundledCode: "#line 1 \"math/test/LC_convolution_1000000007.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod_1000000007\"\n#line\
-    \ 2 \"util/template.hpp\"\n#pragma GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"\
-    unroll-loops\")\n#pragma GCC target(\"avx\")\n#include<bits/stdc++.h>\nusing namespace\
-    \ std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
-    typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
-    \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
-    \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
-    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void numout(T\
-    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i<INF/2?i:\"INF\";f=1;}cout<<endl;}\n\
-    template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}\ntemplate<typename\
-    \ T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\n\
-    template<typename T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename\
-    \ T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?\"\"\
-    :\" \"<<t[i];f=1;}cout<<endl;}\ntemplate<typename T>inline void _output2(T t){for(lint\
-    \ i=0;i<t.size();i++)output(t[i]);}\n#define rep(i,...) for(auto i:range(__VA_ARGS__))\
-    \ \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b)\
-    \ for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n\
-    #define irep(i) for(lint i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return\
-    \ vector<long long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return\
-    \ v;}\ninline vector<long long> range(long long a,long long b){if(b<=a)return\
-    \ vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
-    \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
-    \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
-    \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
-    \ v;}\n#define all(n) begin(n),end(n)\ntemplate<typename T,typename E>bool chmin(T&\
-    \ s,const E& t){bool res=s>t;s=min<T>(s,t);return res;}\ntemplate<typename T,typename\
-    \ E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>(s,t);return res;}\nconst\
-    \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
-    #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
-    \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
-    \ \"../graph_tree/graph_template.hpp\"\n#line 5 \"math/mod_int.hpp\"\n\n/**\n\
-    \ * @brief ModInt\n */\n\ntemplate<int MOD>\nstruct mod_int {\n    using mint=mod_int<MOD>;\n\
-    \    using u64 = std::uint_fast64_t;\n    u64 a;\n    constexpr mod_int(const\
-    \ long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}\n  \
-    \  constexpr u64 &value()noexcept{return a;}\n    constexpr const u64 &value()\
-    \ const noexcept {return a;}\n    constexpr mint operator+(const mint rhs)const\
-    \ noexcept{return mint(*this) += rhs;}\n    constexpr mint operator-(const mint\
-    \ rhs)const noexcept{return mint(*this)-=rhs;}\n    constexpr mint operator*(const\
-    \ mint rhs) const noexcept {return mint(*this) *= rhs;}\n    constexpr mint operator/(const\
-    \ mint rhs) const noexcept {return mint(*this) /= rhs;}\n    constexpr mint &operator+=(const\
-    \ mint rhs) noexcept {\n        a += rhs.a;\n        if (a >= get_mod())a -= get_mod();\n\
-    \        return *this;\n    }\n    constexpr mint &operator-=(const mint rhs)\
-    \ noexcept {\n        if (a<rhs.a)a += get_mod();\n        a -= rhs.a;\n     \
-    \   return *this;\n    }\n    constexpr mint &operator*=(const mint rhs) noexcept\
-    \ {\n        a = a * rhs.a % get_mod();\n        return *this;\n    }\n    constexpr\
-    \ mint operator++(int) noexcept {\n        a += 1;\n        if (a >= get_mod())a\
-    \ -= get_mod();\n        return *this;\n    }\n    constexpr mint operator--(int)\
-    \ noexcept {\n        if (a<1)a += get_mod();\n        a -= 1;\n        return\
-    \ *this;\n    }\n    constexpr mint &operator/=(mint rhs) noexcept {\n       \
-    \ u64 exp=get_mod()-2;\n        while (exp) {\n            if (exp % 2) {\n  \
-    \              *this *= rhs;\n            }\n            rhs *= rhs;\n       \
-    \     exp /= 2;\n        }\n        return *this;\n    }\n    constexpr bool operator==(mint\
-    \ x) noexcept {\n        return a==x.a;\n    }\n    constexpr bool operator!=(mint\
-    \ x) noexcept {\n        return a!=x.a;\n    }\n    constexpr bool operator<(mint\
-    \ x) noexcept {\n        return a<x.a;\n    }\n    constexpr bool operator>(mint\
-    \ x) noexcept {\n        return a>x.a;\n    }\n    constexpr bool operator<=(mint\
-    \ x) noexcept {\n        return a<=x.a;\n    }\n    constexpr bool operator>=(mint\
-    \ x) noexcept {\n        return a>=x.a;\n    }\n    constexpr static int root(){\n\
-    \        mint root = 2;\n        while(root.pow((get_mod()-1)>>1).a==1)root++;\n\
-    \        return root.a;\n    }\n    constexpr mint pow(long long n)const{\n  \
-    \      long long x=a;\n        mint ret = 1;\n        while(n>0) {\n         \
-    \   if(n&1)(ret*=x);\n            (x*=x)%=get_mod();\n            n>>=1;\n   \
-    \     }\n        return ret;\n    }\n    constexpr mint inv(){\n        return\
-    \ pow(get_mod()-2);\n    }\n    static std::vector<mint> fac;\n    static std::vector<mint>\
-    \ ifac;\n    static bool init;\n    constexpr static int mx=10000001;\n    void\
-    \ build()const{\n        init=0;\n        fac.resize(mx);\n        ifac.resize(mx);\n\
-    \        fac[0]=1,ifac[0]=1;\n        for(int i=1;i<mx;i++)fac[i]=fac[i-1]*i;\n\
-    \        ifac[mx-1]=fac[mx-1].inv();\n        for(int i=mx-2;i>=0;i--)ifac[i]=ifac[i+1]*(i+1);\n\
-    \    }\n    mint comb(long long b){\n        if(init)build();\n        if(a==0&&b==0)return\
-    \ 1;\n        if((long long)a<b)return 0;\n        return fac[a]*ifac[a-b]*ifac[b];\n\
-    \    }\n    mint fact()const{\n        if(init)build();\n        return fac[a];\n\
-    \    }\n    mint fact_inv()const{\n        if(init)build();\n        return ifac[a];\n\
-    \    }\n    friend std::ostream& operator<<(std::ostream& lhs, const mint& rhs)\
-    \ noexcept {\n        lhs << rhs.a;\n        return lhs;\n    }\n    friend std::istream&\
-    \ operator>>(std::istream& lhs,mint& rhs) noexcept {\n        lhs >> rhs.a;\n\
-    \        return lhs;\n    }\n    constexpr static u64 get_mod(){\n        return\
-    \ MOD;\n    }\n};\ntemplate<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;\n\
-    template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::ifac;\ntemplate<int MOD>bool\
-    \ mod_int<MOD>::init=1;\n#line 3 \"math/mod_int1000000007.hpp\"\nusing mint=mod_int<1'000'000'007>;\n\
-    \n/**\n * @brief ModInt(1'000'000'007)\n */\n#line 6 \"math/FPS_base.hpp\"\n#include<type_traits>\n\
-    #line 8 \"math/FPS_base.hpp\"\n\n/**\n * @brief \u5F62\u5F0F\u7684\u51AA\u7D1A\
-    \u6570(BASE)\n */\n\ntemplate<typename T,typename F>\nstruct FPS_BASE:std::vector<T>{\n\
-    \    using std::vector<T>::vector;\n    using P=FPS_BASE<T,F>;\n    F fft;\n \
-    \   FPS_BASE(){}\n    inline P operator +(T x)const noexcept{return P(*this)+=x;}\n\
-    \    inline P operator -(T x)const noexcept{return P(*this)-=x;}\n    inline P\
-    \ operator *(T x)const noexcept{return P(*this)*=x;}\n    inline P operator /(T\
-    \ x)const noexcept{return P(*this)/=x;}\n    inline P operator <<(int x)noexcept{return\
-    \ P(*this)<<=x;}\n    inline P operator >>(int x)noexcept{return P(*this)>>=x;}\n\
-    \    inline P operator +(const P& x)const noexcept{return P(*this)+=x;}\n    inline\
-    \ P operator -(const P& x)const noexcept{return P(*this)-=x;}\n    inline P operator\
-    \ -()const noexcept{return P(1,T(0))-=P(*this);}\n    inline P operator *(const\
-    \ P& x)const noexcept{return P(*this)*=x;}\n    inline P operator /(const P& x)const\
-    \ noexcept{return P(*this)/=x;}\n    inline P operator %(const P& x)const noexcept{return\
-    \ P(*this)%=x;}\n    bool operator ==(P x){\n        for(int i=0;i<(int)max((*this).size(),x.size());++i){\n\
+    - https://judge.yosupo.jp/problem/polynomial_interpolation
+  bundledCode: "#line 1 \"math/test/LC_interpolation.test.cpp\"\n#define PROBLEM \"\
+    https://judge.yosupo.jp/problem/polynomial_interpolation\"\n#line 2 \"math/FPS_base.hpp\"\
+    \n#include<vector>\n#include<tuple>\n#include<iostream>\n#include<cmath>\n#include<type_traits>\n\
+    #include<cassert>\n\n/**\n * @brief \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)\n\
+    \ */\n\ntemplate<typename T,typename F>\nstruct FPS_BASE:std::vector<T>{\n   \
+    \ using std::vector<T>::vector;\n    using P=FPS_BASE<T,F>;\n    F fft;\n    FPS_BASE(){}\n\
+    \    inline P operator +(T x)const noexcept{return P(*this)+=x;}\n    inline P\
+    \ operator -(T x)const noexcept{return P(*this)-=x;}\n    inline P operator *(T\
+    \ x)const noexcept{return P(*this)*=x;}\n    inline P operator /(T x)const noexcept{return\
+    \ P(*this)/=x;}\n    inline P operator <<(int x)noexcept{return P(*this)<<=x;}\n\
+    \    inline P operator >>(int x)noexcept{return P(*this)>>=x;}\n    inline P operator\
+    \ +(const P& x)const noexcept{return P(*this)+=x;}\n    inline P operator -(const\
+    \ P& x)const noexcept{return P(*this)-=x;}\n    inline P operator -()const noexcept{return\
+    \ P(1,T(0))-=P(*this);}\n    inline P operator *(const P& x)const noexcept{return\
+    \ P(*this)*=x;}\n    inline P operator /(const P& x)const noexcept{return P(*this)/=x;}\n\
+    \    inline P operator %(const P& x)const noexcept{return P(*this)%=x;}\n    bool\
+    \ operator ==(P x){\n        for(int i=0;i<(int)max((*this).size(),x.size());++i){\n\
     \            if(i>=(int)(*this).size()&&x[i]!=T())return 0;\n            if(i>=(int)x.size()&&(*this)[i]!=T())return\
     \ 0;\n            if(i<(int)min((*this).size(),x.size()))if((*this)[i]!=x[i])return\
     \ 0;\n        }\n        return 1;\n    }\n    P &operator +=(T x){\n        if(this->size()==0)this->resize(1,T(0));\n\
@@ -244,45 +165,46 @@ data:
     \        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n            a[i]=F().pow(T(i),n)/F().fact(T(i));\n\
     \            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n        }\n        return\
     \ (a*b).pre(n+1);\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
-    \ \\n\"[i==(int)(*this).size()-1];\n    }\n};\n#line 4 \"util/ACL.hpp\"\n#ifdef\
-    \ _MSC_VER\n#include <intrin.h>\n#endif\nnamespace atcoder {\nnamespace internal\
-    \ {\n// @param n `0 <= n`\n// @return minimum non-negative `x` s.t. `n <= 2**x`\n\
-    int ceil_pow2(int n) {\n    int x = 0;\n    while ((1U << x) < (unsigned int)(n))\
-    \ x++;\n    return x;\n}\n// @param n `1 <= n`\n// @return minimum non-negative\
-    \ `x` s.t. `(n & (1 << x)) != 0`\nint bsf(unsigned int n) {\n#ifdef _MSC_VER\n\
-    \    unsigned long index;\n    _BitScanForward(&index, n);\n    return index;\n\
-    #else\n    return __builtin_ctz(n);\n#endif\n}\n}  // namespace internal\n}  //\
-    \ namespace atcoder\n#line 30 \"util/ACL.hpp\"\nnamespace atcoder {\nnamespace\
-    \ internal {\n// @param m `1 <= m`\n// @return x mod m\nconstexpr long long safe_mod(long\
-    \ long x, long long m) {\n    x %= m;\n    if (x < 0) x += m;\n    return x;\n\
-    }\n// Fast modular multiplication by barrett reduction\n// Reference: https://en.wikipedia.org/wiki/Barrett_reduction\n\
-    // NOTE: reconsider after Ice Lake\nstruct barrett {\n    unsigned int _m;\n \
-    \   unsigned long long im;\n    // @param m `1 <= m < 2^31`\n    barrett(unsigned\
-    \ int m) : _m(m), im((unsigned long long)(-1) / m + 1) {}\n    // @return m\n\
-    \    unsigned int umod() const { return _m; }\n    // @param a `0 <= a < m`\n\
-    \    // @param b `0 <= b < m`\n    // @return `a * b % m`\n    unsigned int mul(unsigned\
-    \ int a, unsigned int b) const {\n        // [1] m = 1\n        // a = b = im\
-    \ = 0, so okay\n        // [2] m >= 2\n        // im = ceil(2^64 / m)\n      \
-    \  // -> im * m = 2^64 + r (0 <= r < m)\n        // let z = a*b = c*m + d (0 <=\
-    \ c, d < m)\n        // a*b * im = (c*m + d) * im = c*(im*m) + d*im = c*2^64 +\
-    \ c*r + d*im\n        // c*r + d*im < m * m + m * im < m * m + 2^64 + m <= 2^64\
-    \ + m * (m + 1) < 2^64 * 2\n        // ((ab * im) >> 64) == c or c + 1\n     \
-    \   unsigned long long z = a;\n        z *= b;\n#ifdef _MSC_VER\n        unsigned\
-    \ long long x;\n        _umul128(z, im, &x);\n#else\n        unsigned long long\
-    \ x =\n            (unsigned long long)(((unsigned __int128)(z)*im) >> 64);\n\
-    #endif\n        unsigned int v = (unsigned int)(z - x * _m);\n        if (_m <=\
-    \ v) v += _m;\n        return v;\n    }\n};\n// @param n `0 <= n`\n// @param m\
-    \ `1 <= m`\n// @return `(x ** n) % m`\nconstexpr long long pow_mod_constexpr(long\
-    \ long x, long long n, int m) {\n    if (m == 1) return 0;\n    unsigned int _m\
-    \ = (unsigned int)(m);\n    unsigned long long r = 1;\n    unsigned long long\
-    \ y = safe_mod(x, m);\n    while (n) {\n        if (n & 1) r = (r * y) % _m;\n\
-    \        y = (y * y) % _m;\n        n >>= 1;\n    }\n    return r;\n}\n// Reference:\n\
-    // M. Forisek and J. Jancina,\n// Fast Primality Testing for Integers That Fit\
-    \ into a Machine Word\n// @param n `0 <= n`\nconstexpr bool is_prime_constexpr(int\
-    \ n) {\n    if (n <= 1) return false;\n    if (n == 2 || n == 7 || n == 61) return\
-    \ true;\n    if (n % 2 == 0) return false;\n    long long d = n - 1;\n    while\
-    \ (d % 2 == 0) d /= 2;\n    constexpr long long bases[3] = {2, 7, 61};\n    for\
-    \ (long long a : bases) {\n        long long t = d;\n        long long y = pow_mod_constexpr(a,\
+    \ \\n\"[i==(int)(*this).size()-1];\n    }\n};\n#line 2 \"util/ACL.hpp\"\n#include\
+    \ <algorithm>\n#include <array>\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\
+    namespace atcoder {\nnamespace internal {\n// @param n `0 <= n`\n// @return minimum\
+    \ non-negative `x` s.t. `n <= 2**x`\nint ceil_pow2(int n) {\n    int x = 0;\n\
+    \    while ((1U << x) < (unsigned int)(n)) x++;\n    return x;\n}\n// @param n\
+    \ `1 <= n`\n// @return minimum non-negative `x` s.t. `(n & (1 << x)) != 0`\nint\
+    \ bsf(unsigned int n) {\n#ifdef _MSC_VER\n    unsigned long index;\n    _BitScanForward(&index,\
+    \ n);\n    return index;\n#else\n    return __builtin_ctz(n);\n#endif\n}\n}  //\
+    \ namespace internal\n}  // namespace atcoder\n#include <utility>\nnamespace atcoder\
+    \ {\nnamespace internal {\n// @param m `1 <= m`\n// @return x mod m\nconstexpr\
+    \ long long safe_mod(long long x, long long m) {\n    x %= m;\n    if (x < 0)\
+    \ x += m;\n    return x;\n}\n// Fast modular multiplication by barrett reduction\n\
+    // Reference: https://en.wikipedia.org/wiki/Barrett_reduction\n// NOTE: reconsider\
+    \ after Ice Lake\nstruct barrett {\n    unsigned int _m;\n    unsigned long long\
+    \ im;\n    // @param m `1 <= m < 2^31`\n    barrett(unsigned int m) : _m(m), im((unsigned\
+    \ long long)(-1) / m + 1) {}\n    // @return m\n    unsigned int umod() const\
+    \ { return _m; }\n    // @param a `0 <= a < m`\n    // @param b `0 <= b < m`\n\
+    \    // @return `a * b % m`\n    unsigned int mul(unsigned int a, unsigned int\
+    \ b) const {\n        // [1] m = 1\n        // a = b = im = 0, so okay\n     \
+    \   // [2] m >= 2\n        // im = ceil(2^64 / m)\n        // -> im * m = 2^64\
+    \ + r (0 <= r < m)\n        // let z = a*b = c*m + d (0 <= c, d < m)\n       \
+    \ // a*b * im = (c*m + d) * im = c*(im*m) + d*im = c*2^64 + c*r + d*im\n     \
+    \   // c*r + d*im < m * m + m * im < m * m + 2^64 + m <= 2^64 + m * (m + 1) <\
+    \ 2^64 * 2\n        // ((ab * im) >> 64) == c or c + 1\n        unsigned long\
+    \ long z = a;\n        z *= b;\n#ifdef _MSC_VER\n        unsigned long long x;\n\
+    \        _umul128(z, im, &x);\n#else\n        unsigned long long x =\n       \
+    \     (unsigned long long)(((unsigned __int128)(z)*im) >> 64);\n#endif\n     \
+    \   unsigned int v = (unsigned int)(z - x * _m);\n        if (_m <= v) v += _m;\n\
+    \        return v;\n    }\n};\n// @param n `0 <= n`\n// @param m `1 <= m`\n//\
+    \ @return `(x ** n) % m`\nconstexpr long long pow_mod_constexpr(long long x, long\
+    \ long n, int m) {\n    if (m == 1) return 0;\n    unsigned int _m = (unsigned\
+    \ int)(m);\n    unsigned long long r = 1;\n    unsigned long long y = safe_mod(x,\
+    \ m);\n    while (n) {\n        if (n & 1) r = (r * y) % _m;\n        y = (y *\
+    \ y) % _m;\n        n >>= 1;\n    }\n    return r;\n}\n// Reference:\n// M. Forisek\
+    \ and J. Jancina,\n// Fast Primality Testing for Integers That Fit into a Machine\
+    \ Word\n// @param n `0 <= n`\nconstexpr bool is_prime_constexpr(int n) {\n   \
+    \ if (n <= 1) return false;\n    if (n == 2 || n == 7 || n == 61) return true;\n\
+    \    if (n % 2 == 0) return false;\n    long long d = n - 1;\n    while (d % 2\
+    \ == 0) d /= 2;\n    constexpr long long bases[3] = {2, 7, 61};\n    for (long\
+    \ long a : bases) {\n        long long t = d;\n        long long y = pow_mod_constexpr(a,\
     \ t, n);\n        while (t != n - 1 && y != 1 && y != n - 1) {\n            y\
     \ = y * y % n;\n            t <<= 1;\n        }\n        if (y != n - 1 && t %\
     \ 2 == 0) {\n            return false;\n        }\n    }\n    return true;\n}\n\
@@ -313,25 +235,25 @@ data:
     \            ok = false;\n                break;\n            }\n        }\n \
     \       if (ok) return g;\n    }\n}\ntemplate <int m> constexpr int primitive_root\
     \ = primitive_root_constexpr(m);\n}  // namespace internal\n}  // namespace atcoder\n\
-    #line 189 \"util/ACL.hpp\"\nnamespace atcoder {\nnamespace internal {\n#ifndef\
-    \ _MSC_VER\ntemplate <class T>\nusing is_signed_int128 =\n    typename std::conditional<std::is_same<T,\
-    \ __int128_t>::value ||\n                                  std::is_same<T, __int128>::value,\n\
-    \                              std::true_type,\n                             \
-    \ std::false_type>::type;\ntemplate <class T>\nusing is_unsigned_int128 =\n  \
-    \  typename std::conditional<std::is_same<T, __uint128_t>::value ||\n        \
-    \                          std::is_same<T, unsigned __int128>::value,\n      \
-    \                        std::true_type,\n                              std::false_type>::type;\n\
-    template <class T>\nusing make_unsigned_int128 =\n    typename std::conditional<std::is_same<T,\
-    \ __int128_t>::value,\n                              __uint128_t,\n          \
-    \                    unsigned __int128>;\ntemplate <class T>\nusing is_integral\
-    \ = typename std::conditional<std::is_integral<T>::value ||\n                \
-    \                                  is_signed_int128<T>::value ||\n           \
-    \                                       is_unsigned_int128<T>::value,\n      \
-    \                                        std::true_type,\n                   \
-    \                           std::false_type>::type;\ntemplate <class T>\nusing\
-    \ is_signed_int = typename std::conditional<(is_integral<T>::value &&\n      \
-    \                                           std::is_signed<T>::value) ||\n   \
-    \                                                 is_signed_int128<T>::value,\n\
+    #line 187 \"util/ACL.hpp\"\n#include <numeric>\n#line 189 \"util/ACL.hpp\"\nnamespace\
+    \ atcoder {\nnamespace internal {\n#ifndef _MSC_VER\ntemplate <class T>\nusing\
+    \ is_signed_int128 =\n    typename std::conditional<std::is_same<T, __int128_t>::value\
+    \ ||\n                                  std::is_same<T, __int128>::value,\n  \
+    \                            std::true_type,\n                              std::false_type>::type;\n\
+    template <class T>\nusing is_unsigned_int128 =\n    typename std::conditional<std::is_same<T,\
+    \ __uint128_t>::value ||\n                                  std::is_same<T, unsigned\
+    \ __int128>::value,\n                              std::true_type,\n         \
+    \                     std::false_type>::type;\ntemplate <class T>\nusing make_unsigned_int128\
+    \ =\n    typename std::conditional<std::is_same<T, __int128_t>::value,\n     \
+    \                         __uint128_t,\n                              unsigned\
+    \ __int128>;\ntemplate <class T>\nusing is_integral = typename std::conditional<std::is_integral<T>::value\
+    \ ||\n                                                  is_signed_int128<T>::value\
+    \ ||\n                                                  is_unsigned_int128<T>::value,\n\
+    \                                              std::true_type,\n             \
+    \                                 std::false_type>::type;\ntemplate <class T>\n\
+    using is_signed_int = typename std::conditional<(is_integral<T>::value &&\n  \
+    \                                               std::is_signed<T>::value) ||\n\
+    \                                                    is_signed_int128<T>::value,\n\
     \                                                std::true_type,\n           \
     \                                     std::false_type>::type;\ntemplate <class\
     \ T>\nusing is_unsigned_int =\n    typename std::conditional<(is_integral<T>::value\
@@ -671,11 +593,12 @@ data:
     \ }\n    void push(const T& t) { payload.push_back(t); }\n    T& front() { return\
     \ payload[pos]; }\n    void clear() {\n        payload.clear();\n        pos =\
     \ 0;\n    }\n    void pop() { pos++; }\n};\n}  // namespace internal\n}  // namespace\
-    \ atcoder\n#line 1054 \"util/ACL.hpp\"\nnamespace atcoder {\ntemplate <class Cap>\
-    \ struct mf_graph {\n  public:\n    mf_graph() : _n(0) {}\n    mf_graph(int n)\
-    \ : _n(n), g(n) {}\n    int add_edge(int from, int to, Cap cap) {\n        assert(0\
-    \ <= from && from < _n);\n        assert(0 <= to && to < _n);\n        assert(0\
-    \ <= cap);\n        int m = int(pos.size());\n        pos.push_back({from, int(g[from].size())});\n\
+    \ atcoder\n#line 1051 \"util/ACL.hpp\"\n#include <limits>\n#include <queue>\n\
+    #line 1054 \"util/ACL.hpp\"\nnamespace atcoder {\ntemplate <class Cap> struct\
+    \ mf_graph {\n  public:\n    mf_graph() : _n(0) {}\n    mf_graph(int n) : _n(n),\
+    \ g(n) {}\n    int add_edge(int from, int to, Cap cap) {\n        assert(0 <=\
+    \ from && from < _n);\n        assert(0 <= to && to < _n);\n        assert(0 <=\
+    \ cap);\n        int m = int(pos.size());\n        pos.push_back({from, int(g[from].size())});\n\
     \        int from_id = int(g[from].size());\n        int to_id = int(g[to].size());\n\
     \        if (from == to) to_id++;\n        g[from].push_back(_edge{to, to_id,\
     \ cap});\n        g[to].push_back(_edge{from, from_id, 0});\n        return m;\n\
@@ -869,52 +792,52 @@ data:
     \          }\n            sm = op(d[r], sm);\n        } while ((r & -r) != r);\n\
     \        return 0;\n    }\n  private:\n    int _n, size, log;\n    std::vector<S>\
     \ d;\n    void update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }\n};\n}  //\
-    \ namespace atcoder\n#line 1545 \"util/ACL.hpp\"\nnamespace atcoder {\nnamespace\
-    \ internal {\nstd::vector<int> sa_naive(const std::vector<int>& s) {\n    int\
-    \ n = int(s.size());\n    std::vector<int> sa(n);\n    std::iota(sa.begin(), sa.end(),\
-    \ 0);\n    std::sort(sa.begin(), sa.end(), [&](int l, int r) {\n        if (l\
-    \ == r) return false;\n        while (l < n && r < n) {\n            if (s[l]\
-    \ != s[r]) return s[l] < s[r];\n            l++;\n            r++;\n        }\n\
-    \        return l == n;\n    });\n    return sa;\n}\nstd::vector<int> sa_doubling(const\
-    \ std::vector<int>& s) {\n    int n = int(s.size());\n    std::vector<int> sa(n),\
-    \ rnk = s, tmp(n);\n    std::iota(sa.begin(), sa.end(), 0);\n    for (int k =\
-    \ 1; k < n; k *= 2) {\n        auto cmp = [&](int x, int y) {\n            if\
-    \ (rnk[x] != rnk[y]) return rnk[x] < rnk[y];\n            int rx = x + k < n ?\
-    \ rnk[x + k] : -1;\n            int ry = y + k < n ? rnk[y + k] : -1;\n      \
-    \      return rx < ry;\n        };\n        std::sort(sa.begin(), sa.end(), cmp);\n\
-    \        tmp[sa[0]] = 0;\n        for (int i = 1; i < n; i++) {\n            tmp[sa[i]]\
-    \ = tmp[sa[i - 1]] + (cmp(sa[i - 1], sa[i]) ? 1 : 0);\n        }\n        std::swap(tmp,\
-    \ rnk);\n    }\n    return sa;\n}\n// SA-IS, linear-time suffix array construction\n\
-    // Reference:\n// G. Nong, S. Zhang, and W. H. Chan,\n// Two Efficient Algorithms\
-    \ for Linear Time Suffix Array Construction\ntemplate <int THRESHOLD_NAIVE = 10,\
-    \ int THRESHOLD_DOUBLING = 40>\nstd::vector<int> sa_is(const std::vector<int>&\
-    \ s, int upper) {\n    int n = int(s.size());\n    if (n == 0) return {};\n  \
-    \  if (n == 1) return {0};\n    if (n == 2) {\n        if (s[0] < s[1]) {\n  \
-    \          return {0, 1};\n        } else {\n            return {1, 0};\n    \
-    \    }\n    }\n    if (n < THRESHOLD_NAIVE) {\n        return sa_naive(s);\n \
-    \   }\n    if (n < THRESHOLD_DOUBLING) {\n        return sa_doubling(s);\n   \
-    \ }\n    std::vector<int> sa(n);\n    std::vector<bool> ls(n);\n    for (int i\
-    \ = n - 2; i >= 0; i--) {\n        ls[i] = (s[i] == s[i + 1]) ? ls[i + 1] : (s[i]\
-    \ < s[i + 1]);\n    }\n    std::vector<int> sum_l(upper + 1), sum_s(upper + 1);\n\
-    \    for (int i = 0; i < n; i++) {\n        if (!ls[i]) {\n            sum_s[s[i]]++;\n\
-    \        } else {\n            sum_l[s[i] + 1]++;\n        }\n    }\n    for (int\
-    \ i = 0; i <= upper; i++) {\n        sum_s[i] += sum_l[i];\n        if (i < upper)\
-    \ sum_l[i + 1] += sum_s[i];\n    }\n    auto induce = [&](const std::vector<int>&\
-    \ lms) {\n        std::fill(sa.begin(), sa.end(), -1);\n        std::vector<int>\
-    \ buf(upper + 1);\n        std::copy(sum_s.begin(), sum_s.end(), buf.begin());\n\
-    \        for (auto d : lms) {\n            if (d == n) continue;\n           \
-    \ sa[buf[s[d]]++] = d;\n        }\n        std::copy(sum_l.begin(), sum_l.end(),\
-    \ buf.begin());\n        sa[buf[s[n - 1]]++] = n - 1;\n        for (int i = 0;\
-    \ i < n; i++) {\n            int v = sa[i];\n            if (v >= 1 && !ls[v -\
-    \ 1]) {\n                sa[buf[s[v - 1]]++] = v - 1;\n            }\n       \
-    \ }\n        std::copy(sum_l.begin(), sum_l.end(), buf.begin());\n        for\
-    \ (int i = n - 1; i >= 0; i--) {\n            int v = sa[i];\n            if (v\
-    \ >= 1 && ls[v - 1]) {\n                sa[--buf[s[v - 1] + 1]] = v - 1;\n   \
-    \         }\n        }\n    };\n    std::vector<int> lms_map(n + 1, -1);\n   \
-    \ int m = 0;\n    for (int i = 1; i < n; i++) {\n        if (!ls[i - 1] && ls[i])\
-    \ {\n            lms_map[i] = m++;\n        }\n    }\n    std::vector<int> lms;\n\
-    \    lms.reserve(m);\n    for (int i = 1; i < n; i++) {\n        if (!ls[i - 1]\
-    \ && ls[i]) {\n            lms.push_back(i);\n        }\n    }\n    induce(lms);\n\
+    \ namespace atcoder\n#line 1543 \"util/ACL.hpp\"\n#include <string>\n#line 1545\
+    \ \"util/ACL.hpp\"\nnamespace atcoder {\nnamespace internal {\nstd::vector<int>\
+    \ sa_naive(const std::vector<int>& s) {\n    int n = int(s.size());\n    std::vector<int>\
+    \ sa(n);\n    std::iota(sa.begin(), sa.end(), 0);\n    std::sort(sa.begin(), sa.end(),\
+    \ [&](int l, int r) {\n        if (l == r) return false;\n        while (l < n\
+    \ && r < n) {\n            if (s[l] != s[r]) return s[l] < s[r];\n           \
+    \ l++;\n            r++;\n        }\n        return l == n;\n    });\n    return\
+    \ sa;\n}\nstd::vector<int> sa_doubling(const std::vector<int>& s) {\n    int n\
+    \ = int(s.size());\n    std::vector<int> sa(n), rnk = s, tmp(n);\n    std::iota(sa.begin(),\
+    \ sa.end(), 0);\n    for (int k = 1; k < n; k *= 2) {\n        auto cmp = [&](int\
+    \ x, int y) {\n            if (rnk[x] != rnk[y]) return rnk[x] < rnk[y];\n   \
+    \         int rx = x + k < n ? rnk[x + k] : -1;\n            int ry = y + k <\
+    \ n ? rnk[y + k] : -1;\n            return rx < ry;\n        };\n        std::sort(sa.begin(),\
+    \ sa.end(), cmp);\n        tmp[sa[0]] = 0;\n        for (int i = 1; i < n; i++)\
+    \ {\n            tmp[sa[i]] = tmp[sa[i - 1]] + (cmp(sa[i - 1], sa[i]) ? 1 : 0);\n\
+    \        }\n        std::swap(tmp, rnk);\n    }\n    return sa;\n}\n// SA-IS,\
+    \ linear-time suffix array construction\n// Reference:\n// G. Nong, S. Zhang,\
+    \ and W. H. Chan,\n// Two Efficient Algorithms for Linear Time Suffix Array Construction\n\
+    template <int THRESHOLD_NAIVE = 10, int THRESHOLD_DOUBLING = 40>\nstd::vector<int>\
+    \ sa_is(const std::vector<int>& s, int upper) {\n    int n = int(s.size());\n\
+    \    if (n == 0) return {};\n    if (n == 1) return {0};\n    if (n == 2) {\n\
+    \        if (s[0] < s[1]) {\n            return {0, 1};\n        } else {\n  \
+    \          return {1, 0};\n        }\n    }\n    if (n < THRESHOLD_NAIVE) {\n\
+    \        return sa_naive(s);\n    }\n    if (n < THRESHOLD_DOUBLING) {\n     \
+    \   return sa_doubling(s);\n    }\n    std::vector<int> sa(n);\n    std::vector<bool>\
+    \ ls(n);\n    for (int i = n - 2; i >= 0; i--) {\n        ls[i] = (s[i] == s[i\
+    \ + 1]) ? ls[i + 1] : (s[i] < s[i + 1]);\n    }\n    std::vector<int> sum_l(upper\
+    \ + 1), sum_s(upper + 1);\n    for (int i = 0; i < n; i++) {\n        if (!ls[i])\
+    \ {\n            sum_s[s[i]]++;\n        } else {\n            sum_l[s[i] + 1]++;\n\
+    \        }\n    }\n    for (int i = 0; i <= upper; i++) {\n        sum_s[i] +=\
+    \ sum_l[i];\n        if (i < upper) sum_l[i + 1] += sum_s[i];\n    }\n    auto\
+    \ induce = [&](const std::vector<int>& lms) {\n        std::fill(sa.begin(), sa.end(),\
+    \ -1);\n        std::vector<int> buf(upper + 1);\n        std::copy(sum_s.begin(),\
+    \ sum_s.end(), buf.begin());\n        for (auto d : lms) {\n            if (d\
+    \ == n) continue;\n            sa[buf[s[d]]++] = d;\n        }\n        std::copy(sum_l.begin(),\
+    \ sum_l.end(), buf.begin());\n        sa[buf[s[n - 1]]++] = n - 1;\n        for\
+    \ (int i = 0; i < n; i++) {\n            int v = sa[i];\n            if (v >=\
+    \ 1 && !ls[v - 1]) {\n                sa[buf[s[v - 1]]++] = v - 1;\n         \
+    \   }\n        }\n        std::copy(sum_l.begin(), sum_l.end(), buf.begin());\n\
+    \        for (int i = n - 1; i >= 0; i--) {\n            int v = sa[i];\n    \
+    \        if (v >= 1 && ls[v - 1]) {\n                sa[--buf[s[v - 1] + 1]] =\
+    \ v - 1;\n            }\n        }\n    };\n    std::vector<int> lms_map(n + 1,\
+    \ -1);\n    int m = 0;\n    for (int i = 1; i < n; i++) {\n        if (!ls[i -\
+    \ 1] && ls[i]) {\n            lms_map[i] = m++;\n        }\n    }\n    std::vector<int>\
+    \ lms;\n    lms.reserve(m);\n    for (int i = 1; i < n; i++) {\n        if (!ls[i\
+    \ - 1] && ls[i]) {\n            lms.push_back(i);\n        }\n    }\n    induce(lms);\n\
     \    if (m) {\n        std::vector<int> sorted_lms;\n        sorted_lms.reserve(m);\n\
     \        for (int v : sa) {\n            if (lms_map[v] != -1) sorted_lms.push_back(v);\n\
     \        }\n        std::vector<int> rec_s(m);\n        int rec_upper = 0;\n \
@@ -1014,34 +937,113 @@ data:
     \           return v;\n        }\n    }\n    template<typename T>\n    T fact(const\
     \ T& s){\n        return s.fact();\n    }\n    template<typename T>\n    T pow(const\
     \ T& s,long long i){\n        return s.pow(i);\n    }\n};\ntemplate<typename Mint>using\
-    \ fps=FPS_BASE<Mint,_FPS<Mint>>;\n#line 5 \"math/test/LC_convolution_1000000007.test.cpp\"\
-    \n\nint main(){\n    lint n,m;\n    cin>>n>>m;\n    fps<mint> a(n),b(m);\n   \
-    \ rep(i,n)cin>>a[i];\n    rep(i,m)cin>>b[i];\n    output(a*b);\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod_1000000007\"\
-    \n#include \"../../util/template.hpp\"\n#include \"../../math/mod_int1000000007.hpp\"\
-    \n#include \"../FPS_mint.hpp\"\n\nint main(){\n    lint n,m;\n    cin>>n>>m;\n\
-    \    fps<mint> a(n),b(m);\n    rep(i,n)cin>>a[i];\n    rep(i,m)cin>>b[i];\n  \
-    \  output(a*b);\n}"
+    \ fps=FPS_BASE<Mint,_FPS<Mint>>;\n#line 2 \"math/mod_int.hpp\"\n#include<cstdint>\n\
+    #line 5 \"math/mod_int.hpp\"\n\n/**\n * @brief ModInt\n */\n\ntemplate<int MOD>\n\
+    struct mod_int {\n    using mint=mod_int<MOD>;\n    using u64 = std::uint_fast64_t;\n\
+    \    u64 a;\n    constexpr mod_int(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}\n\
+    \    constexpr u64 &value()noexcept{return a;}\n    constexpr const u64 &value()\
+    \ const noexcept {return a;}\n    constexpr mint operator+(const mint rhs)const\
+    \ noexcept{return mint(*this) += rhs;}\n    constexpr mint operator-(const mint\
+    \ rhs)const noexcept{return mint(*this)-=rhs;}\n    constexpr mint operator*(const\
+    \ mint rhs) const noexcept {return mint(*this) *= rhs;}\n    constexpr mint operator/(const\
+    \ mint rhs) const noexcept {return mint(*this) /= rhs;}\n    constexpr mint &operator+=(const\
+    \ mint rhs) noexcept {\n        a += rhs.a;\n        if (a >= get_mod())a -= get_mod();\n\
+    \        return *this;\n    }\n    constexpr mint &operator-=(const mint rhs)\
+    \ noexcept {\n        if (a<rhs.a)a += get_mod();\n        a -= rhs.a;\n     \
+    \   return *this;\n    }\n    constexpr mint &operator*=(const mint rhs) noexcept\
+    \ {\n        a = a * rhs.a % get_mod();\n        return *this;\n    }\n    constexpr\
+    \ mint operator++(int) noexcept {\n        a += 1;\n        if (a >= get_mod())a\
+    \ -= get_mod();\n        return *this;\n    }\n    constexpr mint operator--(int)\
+    \ noexcept {\n        if (a<1)a += get_mod();\n        a -= 1;\n        return\
+    \ *this;\n    }\n    constexpr mint &operator/=(mint rhs) noexcept {\n       \
+    \ u64 exp=get_mod()-2;\n        while (exp) {\n            if (exp % 2) {\n  \
+    \              *this *= rhs;\n            }\n            rhs *= rhs;\n       \
+    \     exp /= 2;\n        }\n        return *this;\n    }\n    constexpr bool operator==(mint\
+    \ x) noexcept {\n        return a==x.a;\n    }\n    constexpr bool operator!=(mint\
+    \ x) noexcept {\n        return a!=x.a;\n    }\n    constexpr bool operator<(mint\
+    \ x) noexcept {\n        return a<x.a;\n    }\n    constexpr bool operator>(mint\
+    \ x) noexcept {\n        return a>x.a;\n    }\n    constexpr bool operator<=(mint\
+    \ x) noexcept {\n        return a<=x.a;\n    }\n    constexpr bool operator>=(mint\
+    \ x) noexcept {\n        return a>=x.a;\n    }\n    constexpr static int root(){\n\
+    \        mint root = 2;\n        while(root.pow((get_mod()-1)>>1).a==1)root++;\n\
+    \        return root.a;\n    }\n    constexpr mint pow(long long n)const{\n  \
+    \      long long x=a;\n        mint ret = 1;\n        while(n>0) {\n         \
+    \   if(n&1)(ret*=x);\n            (x*=x)%=get_mod();\n            n>>=1;\n   \
+    \     }\n        return ret;\n    }\n    constexpr mint inv(){\n        return\
+    \ pow(get_mod()-2);\n    }\n    static std::vector<mint> fac;\n    static std::vector<mint>\
+    \ ifac;\n    static bool init;\n    constexpr static int mx=10000001;\n    void\
+    \ build()const{\n        init=0;\n        fac.resize(mx);\n        ifac.resize(mx);\n\
+    \        fac[0]=1,ifac[0]=1;\n        for(int i=1;i<mx;i++)fac[i]=fac[i-1]*i;\n\
+    \        ifac[mx-1]=fac[mx-1].inv();\n        for(int i=mx-2;i>=0;i--)ifac[i]=ifac[i+1]*(i+1);\n\
+    \    }\n    mint comb(long long b){\n        if(init)build();\n        if(a==0&&b==0)return\
+    \ 1;\n        if((long long)a<b)return 0;\n        return fac[a]*ifac[a-b]*ifac[b];\n\
+    \    }\n    mint fact()const{\n        if(init)build();\n        return fac[a];\n\
+    \    }\n    mint fact_inv()const{\n        if(init)build();\n        return ifac[a];\n\
+    \    }\n    friend std::ostream& operator<<(std::ostream& lhs, const mint& rhs)\
+    \ noexcept {\n        lhs << rhs.a;\n        return lhs;\n    }\n    friend std::istream&\
+    \ operator>>(std::istream& lhs,mint& rhs) noexcept {\n        lhs >> rhs.a;\n\
+    \        return lhs;\n    }\n    constexpr static u64 get_mod(){\n        return\
+    \ MOD;\n    }\n};\ntemplate<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;\n\
+    template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::ifac;\ntemplate<int MOD>bool\
+    \ mod_int<MOD>::init=1;\n#line 3 \"math/mod_int998244353.hpp\"\nusing mint=mod_int<998'244'353>;\n\
+    \n/**\n * @brief ModInt(998'244'353)\n */\n#line 2 \"util/template.hpp\"\n#pragma\
+    \ GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"unroll-loops\")\n#pragma GCC\
+    \ target(\"avx\")\n#include<bits/stdc++.h>\nusing namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
+    typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
+    \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
+    \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
+    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void numout(T\
+    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i<INF/2?i:\"INF\";f=1;}cout<<endl;}\n\
+    template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}\ntemplate<typename\
+    \ T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\n\
+    template<typename T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename\
+    \ T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?\"\"\
+    :\" \"<<t[i];f=1;}cout<<endl;}\ntemplate<typename T>inline void _output2(T t){for(lint\
+    \ i=0;i<t.size();i++)output(t[i]);}\n#define rep(i,...) for(auto i:range(__VA_ARGS__))\
+    \ \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b)\
+    \ for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n\
+    #define irep(i) for(lint i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return\
+    \ vector<long long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b){if(b<=a)return\
+    \ vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
+    \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
+    \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
+    \ v;}\n#define all(n) begin(n),end(n)\ntemplate<typename T,typename E>bool chmin(T&\
+    \ s,const E& t){bool res=s>t;s=min<T>(s,t);return res;}\ntemplate<typename T,typename\
+    \ E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>(s,t);return res;}\nconst\
+    \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
+    #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
+    \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
+    \ \"../graph_tree/graph_template.hpp\"\n#line 5 \"math/test/LC_interpolation.test.cpp\"\
+    \n\nint main(){\n    int n;\n    cin>>n;\n    vector<mint> x(n),y(n);\n    rep(i,n)cin>>x[i];\n\
+    \    rep(i,n)cin>>y[i];\n    output(fps<mint>::interpolation(x,y));\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/polynomial_interpolation\"\
+    \n#include\"../FPS_mint.hpp\"\n#include\"../mod_int998244353.hpp\"\n#include\"\
+    ../../util/template.hpp\"\n\nint main(){\n    int n;\n    cin>>n;\n    vector<mint>\
+    \ x(n),y(n);\n    rep(i,n)cin>>x[i];\n    rep(i,n)cin>>y[i];\n    output(fps<mint>::interpolation(x,y));\n\
+    }"
   dependsOn:
-  - util/template.hpp
-  - math/mod_int1000000007.hpp
-  - math/mod_int.hpp
   - math/FPS_mint.hpp
   - math/FPS_base.hpp
   - util/ACL.hpp
   - math/ceil_pow2.hpp
   - math/garner.hpp
   - math/mod_pow.hpp
+  - math/mod_int998244353.hpp
+  - math/mod_int.hpp
+  - util/template.hpp
   isVerificationFile: true
-  path: math/test/LC_convolution_1000000007.test.cpp
+  path: math/test/LC_interpolation.test.cpp
   requiredBy: []
   timestamp: '2020-09-24 10:34:58+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: math/test/LC_convolution_1000000007.test.cpp
+documentation_of: math/test/LC_interpolation.test.cpp
 layout: document
 redirect_from:
-- /verify/math/test/LC_convolution_1000000007.test.cpp
-- /verify/math/test/LC_convolution_1000000007.test.cpp.html
-title: math/test/LC_convolution_1000000007.test.cpp
+- /verify/math/test/LC_interpolation.test.cpp
+- /verify/math/test/LC_interpolation.test.cpp.html
+title: math/test/LC_interpolation.test.cpp
 ---

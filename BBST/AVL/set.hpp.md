@@ -50,7 +50,7 @@ data:
     \ (x)<(*this);}\n    bool operator <=(const Node& x)const{return !((x)>(*this));}\n\
     \    bool operator >=(const Node& x)const{return !((x)<(*this));}\n    bool operator\
     \ ==(const Node& x)const{return (x)<=(*this)&&(*this)<=(x);}\n    void update(Node*\
-    \ t){\n\n    }\n};\n\ntemplate<typename T>\nstruct avl_set:public AVL_base<Node<T>>{\n\
+    \ t){\n        \n    }\n};\n\ntemplate<typename T>\nstruct avl_set:public AVL_base<Node<T>>{\n\
     \    using AVL_base<Node<T>>::AVL_base;\n    using np=Node<T>*;\n    np root=0;\n\
     \    int lower_bound(np t,np x){\n        if(*x<*t)return lower_bound(t->ch[0],x);\n\
     \        else return AVL_base<Node<T>>::sz(t->ch[0])+1+lower_bound(t->ch[1],x);\n\
@@ -67,7 +67,7 @@ data:
     \ (x)<(*this);}\n    bool operator <=(const Node& x)const{return !((x)>(*this));}\n\
     \    bool operator >=(const Node& x)const{return !((x)<(*this));}\n    bool operator\
     \ ==(const Node& x)const{return (x)<=(*this)&&(*this)<=(x);}\n    void update(Node*\
-    \ t){\n\n    }\n};\n\ntemplate<typename T>\nstruct avl_set:public AVL_base<Node<T>>{\n\
+    \ t){\n        \n    }\n};\n\ntemplate<typename T>\nstruct avl_set:public AVL_base<Node<T>>{\n\
     \    using AVL_base<Node<T>>::AVL_base;\n    using np=Node<T>*;\n    np root=0;\n\
     \    int lower_bound(np t,np x){\n        if(*x<*t)return lower_bound(t->ch[0],x);\n\
     \        else return AVL_base<Node<T>>::sz(t->ch[0])+1+lower_bound(t->ch[1],x);\n\
@@ -82,7 +82,7 @@ data:
   isVerificationFile: false
   path: BBST/AVL/set.hpp
   requiredBy: []
-  timestamp: '2020-09-17 09:30:53+09:00'
+  timestamp: '2020-09-24 10:34:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: BBST/AVL/set.hpp

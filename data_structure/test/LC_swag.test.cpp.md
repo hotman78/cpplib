@@ -1,27 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_int.hpp
     title: ModInt
   - icon: ':heavy_check_mark:'
     path: data_structure/swag.hpp
     title: SWAG(Queue)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: alga/maybe.hpp
     title: Maybe
   - icon: ':heavy_check_mark:'
     path: functional/composite.hpp
     title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
-  - icon: ':heavy_check_mark:'
-    path: graph_tree/graph_template.hpp
-    title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -62,21 +59,21 @@ data:
     \ x) noexcept {\n        return a<=x.a;\n    }\n    constexpr bool operator>=(mint\
     \ x) noexcept {\n        return a>=x.a;\n    }\n    constexpr static int root(){\n\
     \        mint root = 2;\n        while(root.pow((get_mod()-1)>>1).a==1)root++;\n\
-    \        return root.a;\n    }\n    constexpr mint pow(long long n){\n       \
-    \ long long x=a;\n        mint ret = 1;\n        while(n>0) {\n            if(n&1)(ret*=x);\n\
-    \            (x*=x)%=get_mod();\n            n>>=1;\n        }\n        return\
-    \ ret;\n    }\n    constexpr mint inv(){\n        return pow(get_mod()-2);\n \
-    \   }\n    static std::vector<mint> fac;\n    static std::vector<mint> ifac;\n\
-    \    static bool init;\n    constexpr static int mx=10000001;\n    void build(){\n\
-    \        init=0;\n        fac.resize(mx);\n        ifac.resize(mx);\n        fac[0]=1,ifac[0]=1;\n\
-    \        for(int i=1;i<mx;i++)fac[i]=fac[i-1]*i;\n        ifac[mx-1]=fac[mx-1].inv();\n\
-    \        for(int i=mx-2;i>=0;i--)ifac[i]=ifac[i+1]*(i+1);\n    }\n    mint comb(long\
-    \ long b){\n        if(init)build();\n        if(a==0&&b==0)return 1;\n      \
-    \  if((long long)a<b)return 0;\n        return fac[a]*ifac[a-b]*ifac[b];\n   \
-    \ }\n    mint fact(){\n        if(init)build();\n        return fac[a];\n    }\n\
-    \    mint fact_inv(){\n        if(init)build();\n        return ifac[a];\n   \
-    \ }\n    friend std::ostream& operator<<(std::ostream& lhs, const mint& rhs) noexcept\
-    \ {\n        lhs << rhs.a;\n        return lhs;\n    }\n    friend std::istream&\
+    \        return root.a;\n    }\n    constexpr mint pow(long long n)const{\n  \
+    \      long long x=a;\n        mint ret = 1;\n        while(n>0) {\n         \
+    \   if(n&1)(ret*=x);\n            (x*=x)%=get_mod();\n            n>>=1;\n   \
+    \     }\n        return ret;\n    }\n    constexpr mint inv(){\n        return\
+    \ pow(get_mod()-2);\n    }\n    static std::vector<mint> fac;\n    static std::vector<mint>\
+    \ ifac;\n    static bool init;\n    constexpr static int mx=10000001;\n    void\
+    \ build()const{\n        init=0;\n        fac.resize(mx);\n        ifac.resize(mx);\n\
+    \        fac[0]=1,ifac[0]=1;\n        for(int i=1;i<mx;i++)fac[i]=fac[i-1]*i;\n\
+    \        ifac[mx-1]=fac[mx-1].inv();\n        for(int i=mx-2;i>=0;i--)ifac[i]=ifac[i+1]*(i+1);\n\
+    \    }\n    mint comb(long long b){\n        if(init)build();\n        if(a==0&&b==0)return\
+    \ 1;\n        if((long long)a<b)return 0;\n        return fac[a]*ifac[a-b]*ifac[b];\n\
+    \    }\n    mint fact()const{\n        if(init)build();\n        return fac[a];\n\
+    \    }\n    mint fact_inv()const{\n        if(init)build();\n        return ifac[a];\n\
+    \    }\n    friend std::ostream& operator<<(std::ostream& lhs, const mint& rhs)\
+    \ noexcept {\n        lhs << rhs.a;\n        return lhs;\n    }\n    friend std::istream&\
     \ operator>>(std::istream& lhs,mint& rhs) noexcept {\n        lhs >> rhs.a;\n\
     \        return lhs;\n    }\n    constexpr static u64 get_mod(){\n        return\
     \ MOD;\n    }\n};\ntemplate<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;\n\
@@ -139,50 +136,8 @@ data:
     \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
-    \ 5 \"graph_tree/graph_template.hpp\"\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\
-    \u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\n\
-    template<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
-    \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
-    \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
-    \ m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
-    \        --s;--t;\n        g[s].push_back(t);\n    }\n    return g;\n}\ngraph\
-    \ load_graph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n    \
-    \    int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
-    \    }\n    return g;\n}\ngraph load_digraph0(int n,int m){\n    graph g(n);\n\
-    \    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n      \
-    \  g[s].push_back(t);\n    }\n    return g;\n}\ngraph load_tree(int n){\n    graph\
-    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
-    \        --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n  \
-    \  }\n    return g;\n}\ngraph load_tree0(int n){\n    graph g(n);\n    for(int\
-    \ i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_treep(int n){\n\
-    \    graph g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n        std::cin>>t;\n\
-    \        g[i+1].push_back(t);\n        g[t].push_back(i+1);\n    }\n    return\
-    \ g;\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int n,int m){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
-    \ u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_digraph_weight(int n,int m){\n    graph_w<T> g(n);\n    for(int\
-    \ i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
-    \        --s;--t;\n        g[s].emplace_back(t,u);\n    }\n    return g;\n}\n\
-    template<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n    graph_w<T>\
-    \ g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
-    \        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n    }\n   \
-    \ return g;\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int\
-    \ m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n   \
-    \     T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n\
-    \    return g;\n}\ntemplate<typename T>\ngraph_w<T> load_tree_weight(int n){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n       \
-    \ T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_tree0_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
-    \        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
-    \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
-    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 6 \"data_structure/test/LC_swag.test.cpp\"\
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
+    \ \"../graph_tree/graph_template.hpp\"\n#line 6 \"data_structure/test/LC_swag.test.cpp\"\
     \n\nint main(){\n\tlint n;\n\tcin>>n;\n\tswag<pair<mint,mint>,composite<mint>>sw;\n\
     \twhile(n--){\n\t\tlint c;\n\t\tcin>>c;\n\t\tif(c==0){\n\t\t\tlint s,t;\n\t\t\t\
     cin>>s>>t;\n\t\t\tsw.push(make_pair(s,t));\n\t\t}\n\t\tif(c==1){\n\t\t\tsw.pop();\n\
@@ -203,11 +158,10 @@ data:
   - alga/maybe.hpp
   - functional/composite.hpp
   - util/template.hpp
-  - graph_tree/graph_template.hpp
   isVerificationFile: true
   path: data_structure/test/LC_swag.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 12:18:12+09:00'
+  timestamp: '2020-09-24 10:34:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_swag.test.cpp

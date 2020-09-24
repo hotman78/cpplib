@@ -1,40 +1,37 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
-  - icon: ':heavy_check_mark:'
-    path: graph_tree/graph_template.hpp
-    title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_int.hpp
     title: ModInt
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: util/ACL.hpp
     title: util/ACL.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
@@ -70,54 +67,12 @@ data:
     \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#line\
-    \ 5 \"graph_tree/graph_template.hpp\"\n/**\n * @brief \u30B0\u30E9\u30D5\u30C6\
-    \u30F3\u30D7\u30EC\u30FC\u30C8\n */\n\nusing graph=std::vector<std::vector<int>>;\n\
-    template<typename T>\nusing graph_w=std::vector<std::vector<std::pair<int,T>>>;\n\
-    \ngraph load_graph(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n\
-    \        int s,t;\n        std::cin>>s>>t;\n        --s;--t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_digraph(int n,int\
-    \ m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
-    \        --s;--t;\n        g[s].push_back(t);\n    }\n    return g;\n}\ngraph\
-    \ load_graph0(int n,int m){\n    graph g(n);\n    for(int i=0;i<m;++i){\n    \
-    \    int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n\
-    \    }\n    return g;\n}\ngraph load_digraph0(int n,int m){\n    graph g(n);\n\
-    \    for(int i=0;i<m;++i){\n        int s,t;\n        std::cin>>s>>t;\n      \
-    \  g[s].push_back(t);\n    }\n    return g;\n}\ngraph load_tree(int n){\n    graph\
-    \ g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n\
-    \        --s;--t;\n        g[s].push_back(t);\n        g[t].push_back(s);\n  \
-    \  }\n    return g;\n}\ngraph load_tree0(int n){\n    graph g(n);\n    for(int\
-    \ i=0;i<n-1;++i){\n        int s,t;\n        std::cin>>s>>t;\n        g[s].push_back(t);\n\
-    \        g[t].push_back(s);\n    }\n    return g;\n}\ngraph load_treep(int n){\n\
-    \    graph g(n);\n    for(int i=0;i<n-1;++i){\n        int t;\n        std::cin>>t;\n\
-    \        g[i+1].push_back(t);\n        g[t].push_back(i+1);\n    }\n    return\
-    \ g;\n}\n\ntemplate<typename T>\ngraph_w<T> load_graph_weight(int n,int m){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T\
-    \ u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_digraph_weight(int n,int m){\n    graph_w<T> g(n);\n    for(int\
-    \ i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
-    \        --s;--t;\n        g[s].emplace_back(t,u);\n    }\n    return g;\n}\n\
-    template<typename T>\ngraph_w<T> load_graph0_weight(int n,int m){\n    graph_w<T>\
-    \ g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n\
-    \        g[s].emplace_back(t,u);\n        g[t].emplace_back(s,u);\n    }\n   \
-    \ return g;\n}\ntemplate<typename T>\ngraph_w<T> load_digraph0_weight(int n,int\
-    \ m){\n    graph_w<T> g(n);\n    for(int i=0;i<m;++i){\n        int s,t;\n   \
-    \     T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n    }\n\
-    \    return g;\n}\ntemplate<typename T>\ngraph_w<T> load_tree_weight(int n){\n\
-    \    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n        int s,t;\n       \
-    \ T u;\n        std::cin>>s>>t>>u;\n        --s;--t;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_tree0_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
-    \        int s,t;\n        T u;\n        std::cin>>s>>t>>u;\n        g[s].emplace_back(t,u);\n\
-    \        g[t].emplace_back(s,u);\n    }\n    return g;\n}\ntemplate<typename T>\n\
-    graph_w<T> load_treep_weight(int n){\n    graph_w<T> g(n);\n    for(int i=0;i<n-1;++i){\n\
-    \        int t;\n        T u;\n        std::cin>>t>>u;\n        g[i+1].emplace_back(t,u);\n\
-    \        g[t].emplace_back(i+1,u);\n    }\n    return g;\n}\n#line 5 \"math/mod_int.hpp\"\
-    \n\n/**\n * @brief ModInt\n */\n\ntemplate<int MOD>\nstruct mod_int {\n    using\
-    \ mint=mod_int<MOD>;\n    using u64 = std::uint_fast64_t;\n    u64 a;\n    constexpr\
-    \ mod_int(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}\n\
-    \    constexpr u64 &value()noexcept{return a;}\n    constexpr const u64 &value()\
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
+    \ \"../graph_tree/graph_template.hpp\"\n#line 5 \"math/mod_int.hpp\"\n\n/**\n\
+    \ * @brief ModInt\n */\n\ntemplate<int MOD>\nstruct mod_int {\n    using mint=mod_int<MOD>;\n\
+    \    using u64 = std::uint_fast64_t;\n    u64 a;\n    constexpr mod_int(const\
+    \ long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}\n  \
+    \  constexpr u64 &value()noexcept{return a;}\n    constexpr const u64 &value()\
     \ const noexcept {return a;}\n    constexpr mint operator+(const mint rhs)const\
     \ noexcept{return mint(*this) += rhs;}\n    constexpr mint operator-(const mint\
     \ rhs)const noexcept{return mint(*this)-=rhs;}\n    constexpr mint operator*(const\
@@ -142,44 +97,44 @@ data:
     \ x) noexcept {\n        return a<=x.a;\n    }\n    constexpr bool operator>=(mint\
     \ x) noexcept {\n        return a>=x.a;\n    }\n    constexpr static int root(){\n\
     \        mint root = 2;\n        while(root.pow((get_mod()-1)>>1).a==1)root++;\n\
-    \        return root.a;\n    }\n    constexpr mint pow(long long n){\n       \
-    \ long long x=a;\n        mint ret = 1;\n        while(n>0) {\n            if(n&1)(ret*=x);\n\
-    \            (x*=x)%=get_mod();\n            n>>=1;\n        }\n        return\
-    \ ret;\n    }\n    constexpr mint inv(){\n        return pow(get_mod()-2);\n \
-    \   }\n    static std::vector<mint> fac;\n    static std::vector<mint> ifac;\n\
-    \    static bool init;\n    constexpr static int mx=10000001;\n    void build(){\n\
-    \        init=0;\n        fac.resize(mx);\n        ifac.resize(mx);\n        fac[0]=1,ifac[0]=1;\n\
-    \        for(int i=1;i<mx;i++)fac[i]=fac[i-1]*i;\n        ifac[mx-1]=fac[mx-1].inv();\n\
-    \        for(int i=mx-2;i>=0;i--)ifac[i]=ifac[i+1]*(i+1);\n    }\n    mint comb(long\
-    \ long b){\n        if(init)build();\n        if(a==0&&b==0)return 1;\n      \
-    \  if((long long)a<b)return 0;\n        return fac[a]*ifac[a-b]*ifac[b];\n   \
-    \ }\n    mint fact(){\n        if(init)build();\n        return fac[a];\n    }\n\
-    \    mint fact_inv(){\n        if(init)build();\n        return ifac[a];\n   \
-    \ }\n    friend std::ostream& operator<<(std::ostream& lhs, const mint& rhs) noexcept\
-    \ {\n        lhs << rhs.a;\n        return lhs;\n    }\n    friend std::istream&\
+    \        return root.a;\n    }\n    constexpr mint pow(long long n)const{\n  \
+    \      long long x=a;\n        mint ret = 1;\n        while(n>0) {\n         \
+    \   if(n&1)(ret*=x);\n            (x*=x)%=get_mod();\n            n>>=1;\n   \
+    \     }\n        return ret;\n    }\n    constexpr mint inv(){\n        return\
+    \ pow(get_mod()-2);\n    }\n    static std::vector<mint> fac;\n    static std::vector<mint>\
+    \ ifac;\n    static bool init;\n    constexpr static int mx=10000001;\n    void\
+    \ build()const{\n        init=0;\n        fac.resize(mx);\n        ifac.resize(mx);\n\
+    \        fac[0]=1,ifac[0]=1;\n        for(int i=1;i<mx;i++)fac[i]=fac[i-1]*i;\n\
+    \        ifac[mx-1]=fac[mx-1].inv();\n        for(int i=mx-2;i>=0;i--)ifac[i]=ifac[i+1]*(i+1);\n\
+    \    }\n    mint comb(long long b){\n        if(init)build();\n        if(a==0&&b==0)return\
+    \ 1;\n        if((long long)a<b)return 0;\n        return fac[a]*ifac[a-b]*ifac[b];\n\
+    \    }\n    mint fact()const{\n        if(init)build();\n        return fac[a];\n\
+    \    }\n    mint fact_inv()const{\n        if(init)build();\n        return ifac[a];\n\
+    \    }\n    friend std::ostream& operator<<(std::ostream& lhs, const mint& rhs)\
+    \ noexcept {\n        lhs << rhs.a;\n        return lhs;\n    }\n    friend std::istream&\
     \ operator>>(std::istream& lhs,mint& rhs) noexcept {\n        lhs >> rhs.a;\n\
     \        return lhs;\n    }\n    constexpr static u64 get_mod(){\n        return\
     \ MOD;\n    }\n};\ntemplate<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;\n\
     template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::ifac;\ntemplate<int MOD>bool\
     \ mod_int<MOD>::init=1;\n#line 3 \"math/mod_int998244353.hpp\"\nusing mint=mod_int<998'244'353>;\n\
     \n/**\n * @brief ModInt(998'244'353)\n */\n#line 6 \"math/FPS_base.hpp\"\n#include<type_traits>\n\
-    \n/**\n * @brief \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)\n */\n\ntemplate<typename\
-    \ T,typename F>\nstruct FPS_BASE:std::vector<T>{\n    using std::vector<T>::vector;\n\
-    \    using P=FPS_BASE<T,F>;\n    F fft;\n    FPS_BASE(){}\n    inline P operator\
-    \ +(T x)const noexcept{return P(*this)+=x;}\n    inline P operator -(T x)const\
-    \ noexcept{return P(*this)-=x;}\n    inline P operator *(T x)const noexcept{return\
-    \ P(*this)*=x;}\n    inline P operator /(T x)const noexcept{return P(*this)/=x;}\n\
-    \    inline P operator <<(int x)noexcept{return P(*this)<<=x;}\n    inline P operator\
-    \ >>(int x)noexcept{return P(*this)>>=x;}\n    inline P operator +(const P& x)const\
-    \ noexcept{return P(*this)+=x;}\n    inline P operator -(const P& x)const noexcept{return\
-    \ P(*this)-=x;}\n    inline P operator -()const noexcept{return P(1,T(0))-=P(*this);}\n\
-    \    inline P operator *(const P& x)const noexcept{return P(*this)*=x;}\n    inline\
-    \ P operator /(const P& x)const noexcept{return P(*this)/=x;}\n    inline P operator\
-    \ %(const P& x)const noexcept{return P(*this)%=x;}\n    bool operator ==(P x){\n\
-    \        for(int i=0;i<(int)max((*this).size(),x.size());++i){\n            if(i>=(int)(*this).size()&&x[i]!=T())return\
-    \ 0;\n            if(i>=(int)x.size()&&(*this)[i]!=T())return 0;\n           \
-    \ if(i<(int)min((*this).size(),x.size()))if((*this)[i]!=x[i])return 0;\n     \
-    \   }\n        return 1;\n    }\n    P &operator +=(T x){\n        if(this->size()==0)this->resize(1,T(0));\n\
+    #line 8 \"math/FPS_base.hpp\"\n\n/**\n * @brief \u5F62\u5F0F\u7684\u51AA\u7D1A\
+    \u6570(BASE)\n */\n\ntemplate<typename T,typename F>\nstruct FPS_BASE:std::vector<T>{\n\
+    \    using std::vector<T>::vector;\n    using P=FPS_BASE<T,F>;\n    F fft;\n \
+    \   FPS_BASE(){}\n    inline P operator +(T x)const noexcept{return P(*this)+=x;}\n\
+    \    inline P operator -(T x)const noexcept{return P(*this)-=x;}\n    inline P\
+    \ operator *(T x)const noexcept{return P(*this)*=x;}\n    inline P operator /(T\
+    \ x)const noexcept{return P(*this)/=x;}\n    inline P operator <<(int x)noexcept{return\
+    \ P(*this)<<=x;}\n    inline P operator >>(int x)noexcept{return P(*this)>>=x;}\n\
+    \    inline P operator +(const P& x)const noexcept{return P(*this)+=x;}\n    inline\
+    \ P operator -(const P& x)const noexcept{return P(*this)-=x;}\n    inline P operator\
+    \ -()const noexcept{return P(1,T(0))-=P(*this);}\n    inline P operator *(const\
+    \ P& x)const noexcept{return P(*this)*=x;}\n    inline P operator /(const P& x)const\
+    \ noexcept{return P(*this)/=x;}\n    inline P operator %(const P& x)const noexcept{return\
+    \ P(*this)%=x;}\n    bool operator ==(P x){\n        for(int i=0;i<(int)max((*this).size(),x.size());++i){\n\
+    \            if(i>=(int)(*this).size()&&x[i]!=T())return 0;\n            if(i>=(int)x.size()&&(*this)[i]!=T())return\
+    \ 0;\n            if(i<(int)min((*this).size(),x.size()))if((*this)[i]!=x[i])return\
+    \ 0;\n        }\n        return 1;\n    }\n    P &operator +=(T x){\n        if(this->size()==0)this->resize(1,T(0));\n\
     \        (*this)[0]+=x;\n        return (*this);\n    }\n    P &operator -=(T\
     \ x){\n        if(this->size()==0)this->resize(1,T(0));\n        (*this)[0]-=x;\n\
     \        return (*this);\n    }\n    P &operator *=(T x){\n        for(int i=0;i<(int)this->size();++i){\n\
@@ -200,7 +155,7 @@ data:
     \ if(this->size()<x.size()) {\n            this->clear();\n            return\
     \ (*this);\n        }\n        const int n=this->size()-x.size()+1;\n        return\
     \ (*this) = (rev().pre(n)*x.rev().inv(n)).pre(n).rev(n);\n    }\n    P &operator\
-    \ %=(const P& x){\n        return ((*this)-=*this/x*x);\n    }\n    inline void\
+    \ %=(const P& x){\n        return ((*this)-=(*this)/x*x);\n    }\n    inline void\
     \ print(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
     \ \\n\"[i==(int)(*this).size()-1];\n        if((int)(*this).size()==0)std::cerr<<'\\\
     n';\n    }\n    inline P& shrink(){while((*this).back()==0)(*this).pop_back();return\
@@ -243,16 +198,27 @@ data:
     \        f*=g;\n        f>>=n-1;\n        for(int i=0;i<n;++i)f[i]/=F().fact(T(i));\n\
     \        return f;\n    }\n    T eval(T x){\n        T res=0;\n        for(int\
     \ i=(int)this->size()-1;i>=0;--i){\n            res*=x;\n            res+=(*this)[i];\n\
-    \        }\n        return res;\n    }\n    std::vector<T> multipoint_eval(const\
-    \ std::vector<T>&x){\n        const int n=x.size();\n        P* v=new P[2*n-1];\n\
-    \        for(int i=0;i<n;i++)v[i+n-1]={T()-x[i],T(1)};\n        for(int i=n-2;i>=0;i--){v[i]=v[i*2+1]*v[i*2+2];}\n\
-    \        v[0]=P(*this)%v[0];v[0].shrink();\n        for(int i=1;i<n*2-1;i++){\n\
-    \            v[i]=v[(i-1)/2]%v[i];\n            v[i].shrink();\n        }\n  \
-    \      std::vector<T>res(n);\n        for(int i=0;i<n;i++)res[i]=v[i+n-1][0];\n\
-    \        return res;\n    }\n    P slice(int s,int e,int k){\n        P res;\n\
-    \        for(int i=s;i<e;i+=k)res.push_back((*this)[i]);\n        return res;\n\
-    \    }\n    T nth_term(P q,int64_t x){\n        if(x==0)return (*this)[0]/q[0];\n\
-    \        P p(*this);\n        P q2=q;\n        for(int i=1;i<(int)q2.size();i+=2)q2[i]*=-1;\n\
+    \        }\n        return res;\n    }\n    static P interpolation(const std::vector<T>&x,const\
+    \ std::vector<T>& y){\n        const int n=x.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n\
+    \        std::vector<P> b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-x[i],1});\n\
+    \        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};\n\
+    \        auto d=(a[0].first).multipoint_eval(x);\n        for(int i=0;i<n;++i)b[i+n-1]=P{T(y[i]/d[i])};\n\
+    \        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;\n\
+    \        return b[0];\n    }\n    static P interpolation(const std::vector<T>&\
+    \ y){\n        const int n=y.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n\
+    \        std::vector<P>b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-i,1});\n\
+    \        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};\n\
+    \        for(int i=0;i<n;++i){\n            T tmp=F().fact(T(i))*F().pow(T(-1),i)*F().fact(T(n-1-i));\n\
+    \            b[i+n-1]=P{T(y[i]/tmp)};\n        }\n        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;\n\
+    \        return b[0];\n    }\n    std::vector<T> multipoint_eval(const std::vector<T>&x){\n\
+    \        const int n=x.size();\n        P* v=new P[2*n-1];\n        for(int i=0;i<n;i++)v[i+n-1]={T()-x[i],T(1)};\n\
+    \        for(int i=n-2;i>=0;i--){v[i]=v[i*2+1]*v[i*2+2];}\n        v[0]=P(*this)%v[0];v[0].shrink();\n\
+    \        for(int i=1;i<n*2-1;i++){\n            v[i]=v[(i-1)/2]%v[i];\n      \
+    \      v[i].shrink();\n        }\n        std::vector<T>res(n);\n        for(int\
+    \ i=0;i<n;i++)res[i]=v[i+n-1][0];\n        return res;\n    }\n    P slice(int\
+    \ s,int e,int k){\n        P res;\n        for(int i=s;i<e;i+=k)res.push_back((*this)[i]);\n\
+    \        return res;\n    }\n    T nth_term(P q,int64_t x){\n        if(x==0)return\
+    \ (*this)[0]/q[0];\n        P p(*this);\n        P q2=q;\n        for(int i=1;i<(int)q2.size();i+=2)q2[i]*=-1;\n\
     \        q*=q2;\n        p*=q2;\n        return p.slice(x%2,p.size(),2).nth_term(q.slice(0,q.size(),2),x/2);\n\
     \    }\n    \n    //(*this)(t(x))\n    P manipulate(P t,int deg){\n        P s=P(*this);\n\
     \        if(deg==0)return P();\n        if((int)t.size()==1)return P{s.eval(t[0])};\n\
@@ -273,7 +239,10 @@ data:
     \            }\n        }\n        return ans;\n    }\n    //(*this)(t(x))\n \
     \   P manipulate2(P t,int deg){\n        P ans=P();\n        P s=(*this).rev();\n\
     \        for(int i=0;i<(int)s.size();++i){\n            ans=(ans*t+s[i]).pre(deg);\n\
-    \        }\n        return ans;\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
+    \        }\n        return ans;\n    }\n    static P stirling_second(int n){\n\
+    \        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n            a[i]=F().pow(T(i),n)/F().fact(T(i));\n\
+    \            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n        }\n        return\
+    \ (a*b).pre(n+1);\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
     \ \\n\"[i==(int)(*this).size()-1];\n    }\n};\n#line 4 \"util/ACL.hpp\"\n#ifdef\
     \ _MSC_VER\n#include <intrin.h>\n#endif\nnamespace atcoder {\nnamespace internal\
     \ {\n// @param n `0 <= n`\n// @return minimum non-negative `x` s.t. `n <= 2**x`\n\
@@ -1023,15 +992,15 @@ data:
     \ constants[3];\n}\n#line 6 \"math/FPS_mint.hpp\"\n/**\n * @brief \u5F62\u5F0F\
     \u7684\u51AA\u7D1A\u6570(ModInt)\n */\n\ntemplate<typename Mint>\nstruct _FPS{\n\
     \    template<typename T>\n    T operator()(const T& _s,const T& _t){\n      \
-    \  const size_t sz=_s.size()+_t.size()-1;\n        if((sz&((1<<ceil_pow2(sz))-1))==0){\n\
-    \            vector<atcoder::static_modint<Mint::get_mod()>>s(_s.size()),t(_t.size());\n\
+    \  if(_s.size()==0||_t.size()==0)return T();\n        const size_t sz=_s.size()+_t.size()-1;\n\
+    \        if((Mint::get_mod()&((1<<ceil_pow2(sz))-1))==1){\n            std::vector<atcoder::static_modint<Mint::get_mod()>>s(_s.size()),t(_t.size());\n\
     \            for(size_t i=0;i<_s.size();++i)s[i]=_s[i].value();\n            for(size_t\
-    \ i=0;i<_t.size();++i)t[i]=_t[i].value();\n            vector<atcoder::static_modint<Mint::get_mod()>>\
+    \ i=0;i<_t.size();++i)t[i]=_t[i].value();\n            std::vector<atcoder::static_modint<Mint::get_mod()>>\
     \ _v=atcoder::convolution(s,t);\n            T v(_v.size());\n            for\
     \ (size_t i=0;i<_v.size();++i)v[i]=_v[i].val();\n            return v;\n     \
-    \   }else{\n            vector<atcoder::static_modint<1224736769>>s1(_s.size()),t1(_t.size());\n\
-    \            vector<atcoder::static_modint<1045430273>>s2(_s.size()),t2(_t.size());\n\
-    \            vector<atcoder::static_modint<1007681537>>s3(_s.size()),t3(_t.size());\n\
+    \   }else{\n            std::vector<atcoder::static_modint<1224736769>>s1(_s.size()),t1(_t.size());\n\
+    \            std::vector<atcoder::static_modint<1045430273>>s2(_s.size()),t2(_t.size());\n\
+    \            std::vector<atcoder::static_modint<1007681537>>s3(_s.size()),t3(_t.size());\n\
     \            for(size_t i=0;i<_s.size();++i){\n                s1[i]=_s[i].value();\n\
     \                s2[i]=_s[i].value();\n                s3[i]=_s[i].value();\n\
     \            }\n            for(size_t i=0;i<_t.size();++i){\n               \
@@ -1039,11 +1008,11 @@ data:
     \ t3[i]=_t[i].value();\n            }\n            auto v1=atcoder::convolution(s1,t1);\n\
     \            auto v2=atcoder::convolution(s2,t2);\n            auto v3=atcoder::convolution(s3,t3);\n\
     \            T v(sz);\n            for(size_t i=0;i<sz;++i){\n               \
-    \ v[i]=garner(vector<long long>{v1[i].val(),v2[i].val(),v3[i].val()},vector<long\
+    \ v[i]=garner(std::vector<long long>{v1[i].val(),v2[i].val(),v3[i].val()},std::vector<long\
     \ long>{1224736769,1045430273,1007681537,Mint::get_mod()});\n            }\n \
     \           return v;\n        }\n    }\n    template<typename T>\n    T fact(const\
     \ T& s){\n        return s.fact();\n    }\n    template<typename T>\n    T pow(const\
-    \ T& s,int i){\n        return s.pow(i);\n    }\n};\ntemplate<typename Mint>using\
+    \ T& s,long long i){\n        return s.pow(i);\n    }\n};\ntemplate<typename Mint>using\
     \ fps=FPS_BASE<Mint,_FPS<Mint>>;\n#line 5 \"math/test/LC_convolution_998244353.test.cpp\"\
     \n\nint main(){\n    lint n,m;\n    cin>>n>>m;\n    fps<mint> a(n),b(m);\n   \
     \ rep(i,n)cin>>a[i];\n    rep(i,m)cin>>b[i];\n    output(a*b);\n}\n"
@@ -1054,7 +1023,6 @@ data:
     \ output(a*b);\n}"
   dependsOn:
   - util/template.hpp
-  - graph_tree/graph_template.hpp
   - math/mod_int998244353.hpp
   - math/mod_int.hpp
   - math/FPS_mint.hpp
@@ -1066,8 +1034,8 @@ data:
   isVerificationFile: true
   path: math/test/LC_convolution_998244353.test.cpp
   requiredBy: []
-  timestamp: '2020-09-19 09:30:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-24 10:34:58+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: math/test/LC_convolution_998244353.test.cpp
 layout: document

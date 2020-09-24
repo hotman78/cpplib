@@ -5,41 +5,44 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/FPS_long.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
+    path: math/test/LC_interpolation.test.cpp
+    title: math/test/LC_interpolation.test.cpp
+  - icon: ':x:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
     title: graph_tree/test/LC_centroid_decomposition.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
     links: []
   bundledCode: "#line 2 \"math/FPS_base.hpp\"\n#include<vector>\n#include<tuple>\n\
-    #include<iostream>\n#include<cmath>\n#include<type_traits>\n\n/**\n * @brief \u5F62\
-    \u5F0F\u7684\u51AA\u7D1A\u6570(BASE)\n */\n\ntemplate<typename T,typename F>\n\
-    struct FPS_BASE:std::vector<T>{\n    using std::vector<T>::vector;\n    using\
-    \ P=FPS_BASE<T,F>;\n    F fft;\n    FPS_BASE(){}\n    inline P operator +(T x)const\
-    \ noexcept{return P(*this)+=x;}\n    inline P operator -(T x)const noexcept{return\
-    \ P(*this)-=x;}\n    inline P operator *(T x)const noexcept{return P(*this)*=x;}\n\
-    \    inline P operator /(T x)const noexcept{return P(*this)/=x;}\n    inline P\
-    \ operator <<(int x)noexcept{return P(*this)<<=x;}\n    inline P operator >>(int\
-    \ x)noexcept{return P(*this)>>=x;}\n    inline P operator +(const P& x)const noexcept{return\
-    \ P(*this)+=x;}\n    inline P operator -(const P& x)const noexcept{return P(*this)-=x;}\n\
-    \    inline P operator -()const noexcept{return P(1,T(0))-=P(*this);}\n    inline\
-    \ P operator *(const P& x)const noexcept{return P(*this)*=x;}\n    inline P operator\
-    \ /(const P& x)const noexcept{return P(*this)/=x;}\n    inline P operator %(const\
-    \ P& x)const noexcept{return P(*this)%=x;}\n    bool operator ==(P x){\n     \
-    \   for(int i=0;i<(int)max((*this).size(),x.size());++i){\n            if(i>=(int)(*this).size()&&x[i]!=T())return\
+    #include<iostream>\n#include<cmath>\n#include<type_traits>\n#include<cassert>\n\
+    \n/**\n * @brief \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)\n */\n\ntemplate<typename\
+    \ T,typename F>\nstruct FPS_BASE:std::vector<T>{\n    using std::vector<T>::vector;\n\
+    \    using P=FPS_BASE<T,F>;\n    F fft;\n    FPS_BASE(){}\n    inline P operator\
+    \ +(T x)const noexcept{return P(*this)+=x;}\n    inline P operator -(T x)const\
+    \ noexcept{return P(*this)-=x;}\n    inline P operator *(T x)const noexcept{return\
+    \ P(*this)*=x;}\n    inline P operator /(T x)const noexcept{return P(*this)/=x;}\n\
+    \    inline P operator <<(int x)noexcept{return P(*this)<<=x;}\n    inline P operator\
+    \ >>(int x)noexcept{return P(*this)>>=x;}\n    inline P operator +(const P& x)const\
+    \ noexcept{return P(*this)+=x;}\n    inline P operator -(const P& x)const noexcept{return\
+    \ P(*this)-=x;}\n    inline P operator -()const noexcept{return P(1,T(0))-=P(*this);}\n\
+    \    inline P operator *(const P& x)const noexcept{return P(*this)*=x;}\n    inline\
+    \ P operator /(const P& x)const noexcept{return P(*this)/=x;}\n    inline P operator\
+    \ %(const P& x)const noexcept{return P(*this)%=x;}\n    bool operator ==(P x){\n\
+    \        for(int i=0;i<(int)max((*this).size(),x.size());++i){\n            if(i>=(int)(*this).size()&&x[i]!=T())return\
     \ 0;\n            if(i>=(int)x.size()&&(*this)[i]!=T())return 0;\n           \
     \ if(i<(int)min((*this).size(),x.size()))if((*this)[i]!=x[i])return 0;\n     \
     \   }\n        return 1;\n    }\n    P &operator +=(T x){\n        if(this->size()==0)this->resize(1,T(0));\n\
@@ -63,7 +66,7 @@ data:
     \ if(this->size()<x.size()) {\n            this->clear();\n            return\
     \ (*this);\n        }\n        const int n=this->size()-x.size()+1;\n        return\
     \ (*this) = (rev().pre(n)*x.rev().inv(n)).pre(n).rev(n);\n    }\n    P &operator\
-    \ %=(const P& x){\n        return ((*this)-=*this/x*x);\n    }\n    inline void\
+    \ %=(const P& x){\n        return ((*this)-=(*this)/x*x);\n    }\n    inline void\
     \ print(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
     \ \\n\"[i==(int)(*this).size()-1];\n        if((int)(*this).size()==0)std::cerr<<'\\\
     n';\n    }\n    inline P& shrink(){while((*this).back()==0)(*this).pop_back();return\
@@ -106,16 +109,27 @@ data:
     \        f*=g;\n        f>>=n-1;\n        for(int i=0;i<n;++i)f[i]/=F().fact(T(i));\n\
     \        return f;\n    }\n    T eval(T x){\n        T res=0;\n        for(int\
     \ i=(int)this->size()-1;i>=0;--i){\n            res*=x;\n            res+=(*this)[i];\n\
-    \        }\n        return res;\n    }\n    std::vector<T> multipoint_eval(const\
-    \ std::vector<T>&x){\n        const int n=x.size();\n        P* v=new P[2*n-1];\n\
-    \        for(int i=0;i<n;i++)v[i+n-1]={T()-x[i],T(1)};\n        for(int i=n-2;i>=0;i--){v[i]=v[i*2+1]*v[i*2+2];}\n\
-    \        v[0]=P(*this)%v[0];v[0].shrink();\n        for(int i=1;i<n*2-1;i++){\n\
-    \            v[i]=v[(i-1)/2]%v[i];\n            v[i].shrink();\n        }\n  \
-    \      std::vector<T>res(n);\n        for(int i=0;i<n;i++)res[i]=v[i+n-1][0];\n\
-    \        return res;\n    }\n    P slice(int s,int e,int k){\n        P res;\n\
-    \        for(int i=s;i<e;i+=k)res.push_back((*this)[i]);\n        return res;\n\
-    \    }\n    T nth_term(P q,int64_t x){\n        if(x==0)return (*this)[0]/q[0];\n\
-    \        P p(*this);\n        P q2=q;\n        for(int i=1;i<(int)q2.size();i+=2)q2[i]*=-1;\n\
+    \        }\n        return res;\n    }\n    static P interpolation(const std::vector<T>&x,const\
+    \ std::vector<T>& y){\n        const int n=x.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n\
+    \        std::vector<P> b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-x[i],1});\n\
+    \        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};\n\
+    \        auto d=(a[0].first).multipoint_eval(x);\n        for(int i=0;i<n;++i)b[i+n-1]=P{T(y[i]/d[i])};\n\
+    \        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;\n\
+    \        return b[0];\n    }\n    static P interpolation(const std::vector<T>&\
+    \ y){\n        const int n=y.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n\
+    \        std::vector<P>b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-i,1});\n\
+    \        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};\n\
+    \        for(int i=0;i<n;++i){\n            T tmp=F().fact(T(i))*F().pow(T(-1),i)*F().fact(T(n-1-i));\n\
+    \            b[i+n-1]=P{T(y[i]/tmp)};\n        }\n        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;\n\
+    \        return b[0];\n    }\n    std::vector<T> multipoint_eval(const std::vector<T>&x){\n\
+    \        const int n=x.size();\n        P* v=new P[2*n-1];\n        for(int i=0;i<n;i++)v[i+n-1]={T()-x[i],T(1)};\n\
+    \        for(int i=n-2;i>=0;i--){v[i]=v[i*2+1]*v[i*2+2];}\n        v[0]=P(*this)%v[0];v[0].shrink();\n\
+    \        for(int i=1;i<n*2-1;i++){\n            v[i]=v[(i-1)/2]%v[i];\n      \
+    \      v[i].shrink();\n        }\n        std::vector<T>res(n);\n        for(int\
+    \ i=0;i<n;i++)res[i]=v[i+n-1][0];\n        return res;\n    }\n    P slice(int\
+    \ s,int e,int k){\n        P res;\n        for(int i=s;i<e;i+=k)res.push_back((*this)[i]);\n\
+    \        return res;\n    }\n    T nth_term(P q,int64_t x){\n        if(x==0)return\
+    \ (*this)[0]/q[0];\n        P p(*this);\n        P q2=q;\n        for(int i=1;i<(int)q2.size();i+=2)q2[i]*=-1;\n\
     \        q*=q2;\n        p*=q2;\n        return p.slice(x%2,p.size(),2).nth_term(q.slice(0,q.size(),2),x/2);\n\
     \    }\n    \n    //(*this)(t(x))\n    P manipulate(P t,int deg){\n        P s=P(*this);\n\
     \        if(deg==0)return P();\n        if((int)t.size()==1)return P{s.eval(t[0])};\n\
@@ -136,23 +150,26 @@ data:
     \            }\n        }\n        return ans;\n    }\n    //(*this)(t(x))\n \
     \   P manipulate2(P t,int deg){\n        P ans=P();\n        P s=(*this).rev();\n\
     \        for(int i=0;i<(int)s.size();++i){\n            ans=(ans*t+s[i]).pre(deg);\n\
-    \        }\n        return ans;\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
+    \        }\n        return ans;\n    }\n    static P stirling_second(int n){\n\
+    \        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n            a[i]=F().pow(T(i),n)/F().fact(T(i));\n\
+    \            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n        }\n        return\
+    \ (a*b).pre(n+1);\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
     \ \\n\"[i==(int)(*this).size()-1];\n    }\n};\n"
   code: "#pragma once\n#include<vector>\n#include<tuple>\n#include<iostream>\n#include<cmath>\n\
-    #include<type_traits>\n\n/**\n * @brief \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)\n\
-    \ */\n\ntemplate<typename T,typename F>\nstruct FPS_BASE:std::vector<T>{\n   \
-    \ using std::vector<T>::vector;\n    using P=FPS_BASE<T,F>;\n    F fft;\n    FPS_BASE(){}\n\
-    \    inline P operator +(T x)const noexcept{return P(*this)+=x;}\n    inline P\
-    \ operator -(T x)const noexcept{return P(*this)-=x;}\n    inline P operator *(T\
-    \ x)const noexcept{return P(*this)*=x;}\n    inline P operator /(T x)const noexcept{return\
-    \ P(*this)/=x;}\n    inline P operator <<(int x)noexcept{return P(*this)<<=x;}\n\
-    \    inline P operator >>(int x)noexcept{return P(*this)>>=x;}\n    inline P operator\
-    \ +(const P& x)const noexcept{return P(*this)+=x;}\n    inline P operator -(const\
-    \ P& x)const noexcept{return P(*this)-=x;}\n    inline P operator -()const noexcept{return\
-    \ P(1,T(0))-=P(*this);}\n    inline P operator *(const P& x)const noexcept{return\
-    \ P(*this)*=x;}\n    inline P operator /(const P& x)const noexcept{return P(*this)/=x;}\n\
-    \    inline P operator %(const P& x)const noexcept{return P(*this)%=x;}\n    bool\
-    \ operator ==(P x){\n        for(int i=0;i<(int)max((*this).size(),x.size());++i){\n\
+    #include<type_traits>\n#include<cassert>\n\n/**\n * @brief \u5F62\u5F0F\u7684\u51AA\
+    \u7D1A\u6570(BASE)\n */\n\ntemplate<typename T,typename F>\nstruct FPS_BASE:std::vector<T>{\n\
+    \    using std::vector<T>::vector;\n    using P=FPS_BASE<T,F>;\n    F fft;\n \
+    \   FPS_BASE(){}\n    inline P operator +(T x)const noexcept{return P(*this)+=x;}\n\
+    \    inline P operator -(T x)const noexcept{return P(*this)-=x;}\n    inline P\
+    \ operator *(T x)const noexcept{return P(*this)*=x;}\n    inline P operator /(T\
+    \ x)const noexcept{return P(*this)/=x;}\n    inline P operator <<(int x)noexcept{return\
+    \ P(*this)<<=x;}\n    inline P operator >>(int x)noexcept{return P(*this)>>=x;}\n\
+    \    inline P operator +(const P& x)const noexcept{return P(*this)+=x;}\n    inline\
+    \ P operator -(const P& x)const noexcept{return P(*this)-=x;}\n    inline P operator\
+    \ -()const noexcept{return P(1,T(0))-=P(*this);}\n    inline P operator *(const\
+    \ P& x)const noexcept{return P(*this)*=x;}\n    inline P operator /(const P& x)const\
+    \ noexcept{return P(*this)/=x;}\n    inline P operator %(const P& x)const noexcept{return\
+    \ P(*this)%=x;}\n    bool operator ==(P x){\n        for(int i=0;i<(int)max((*this).size(),x.size());++i){\n\
     \            if(i>=(int)(*this).size()&&x[i]!=T())return 0;\n            if(i>=(int)x.size()&&(*this)[i]!=T())return\
     \ 0;\n            if(i<(int)min((*this).size(),x.size()))if((*this)[i]!=x[i])return\
     \ 0;\n        }\n        return 1;\n    }\n    P &operator +=(T x){\n        if(this->size()==0)this->resize(1,T(0));\n\
@@ -176,7 +193,7 @@ data:
     \ if(this->size()<x.size()) {\n            this->clear();\n            return\
     \ (*this);\n        }\n        const int n=this->size()-x.size()+1;\n        return\
     \ (*this) = (rev().pre(n)*x.rev().inv(n)).pre(n).rev(n);\n    }\n    P &operator\
-    \ %=(const P& x){\n        return ((*this)-=*this/x*x);\n    }\n    inline void\
+    \ %=(const P& x){\n        return ((*this)-=(*this)/x*x);\n    }\n    inline void\
     \ print(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
     \ \\n\"[i==(int)(*this).size()-1];\n        if((int)(*this).size()==0)std::cerr<<'\\\
     n';\n    }\n    inline P& shrink(){while((*this).back()==0)(*this).pop_back();return\
@@ -219,16 +236,27 @@ data:
     \        f*=g;\n        f>>=n-1;\n        for(int i=0;i<n;++i)f[i]/=F().fact(T(i));\n\
     \        return f;\n    }\n    T eval(T x){\n        T res=0;\n        for(int\
     \ i=(int)this->size()-1;i>=0;--i){\n            res*=x;\n            res+=(*this)[i];\n\
-    \        }\n        return res;\n    }\n    std::vector<T> multipoint_eval(const\
-    \ std::vector<T>&x){\n        const int n=x.size();\n        P* v=new P[2*n-1];\n\
-    \        for(int i=0;i<n;i++)v[i+n-1]={T()-x[i],T(1)};\n        for(int i=n-2;i>=0;i--){v[i]=v[i*2+1]*v[i*2+2];}\n\
-    \        v[0]=P(*this)%v[0];v[0].shrink();\n        for(int i=1;i<n*2-1;i++){\n\
-    \            v[i]=v[(i-1)/2]%v[i];\n            v[i].shrink();\n        }\n  \
-    \      std::vector<T>res(n);\n        for(int i=0;i<n;i++)res[i]=v[i+n-1][0];\n\
-    \        return res;\n    }\n    P slice(int s,int e,int k){\n        P res;\n\
-    \        for(int i=s;i<e;i+=k)res.push_back((*this)[i]);\n        return res;\n\
-    \    }\n    T nth_term(P q,int64_t x){\n        if(x==0)return (*this)[0]/q[0];\n\
-    \        P p(*this);\n        P q2=q;\n        for(int i=1;i<(int)q2.size();i+=2)q2[i]*=-1;\n\
+    \        }\n        return res;\n    }\n    static P interpolation(const std::vector<T>&x,const\
+    \ std::vector<T>& y){\n        const int n=x.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n\
+    \        std::vector<P> b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-x[i],1});\n\
+    \        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};\n\
+    \        auto d=(a[0].first).multipoint_eval(x);\n        for(int i=0;i<n;++i)b[i+n-1]=P{T(y[i]/d[i])};\n\
+    \        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;\n\
+    \        return b[0];\n    }\n    static P interpolation(const std::vector<T>&\
+    \ y){\n        const int n=y.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n\
+    \        std::vector<P>b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-i,1});\n\
+    \        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};\n\
+    \        for(int i=0;i<n;++i){\n            T tmp=F().fact(T(i))*F().pow(T(-1),i)*F().fact(T(n-1-i));\n\
+    \            b[i+n-1]=P{T(y[i]/tmp)};\n        }\n        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;\n\
+    \        return b[0];\n    }\n    std::vector<T> multipoint_eval(const std::vector<T>&x){\n\
+    \        const int n=x.size();\n        P* v=new P[2*n-1];\n        for(int i=0;i<n;i++)v[i+n-1]={T()-x[i],T(1)};\n\
+    \        for(int i=n-2;i>=0;i--){v[i]=v[i*2+1]*v[i*2+2];}\n        v[0]=P(*this)%v[0];v[0].shrink();\n\
+    \        for(int i=1;i<n*2-1;i++){\n            v[i]=v[(i-1)/2]%v[i];\n      \
+    \      v[i].shrink();\n        }\n        std::vector<T>res(n);\n        for(int\
+    \ i=0;i<n;i++)res[i]=v[i+n-1][0];\n        return res;\n    }\n    P slice(int\
+    \ s,int e,int k){\n        P res;\n        for(int i=s;i<e;i+=k)res.push_back((*this)[i]);\n\
+    \        return res;\n    }\n    T nth_term(P q,int64_t x){\n        if(x==0)return\
+    \ (*this)[0]/q[0];\n        P p(*this);\n        P q2=q;\n        for(int i=1;i<(int)q2.size();i+=2)q2[i]*=-1;\n\
     \        q*=q2;\n        p*=q2;\n        return p.slice(x%2,p.size(),2).nth_term(q.slice(0,q.size(),2),x/2);\n\
     \    }\n    \n    //(*this)(t(x))\n    P manipulate(P t,int deg){\n        P s=P(*this);\n\
     \        if(deg==0)return P();\n        if((int)t.size()==1)return P{s.eval(t[0])};\n\
@@ -249,7 +277,10 @@ data:
     \            }\n        }\n        return ans;\n    }\n    //(*this)(t(x))\n \
     \   P manipulate2(P t,int deg){\n        P ans=P();\n        P s=(*this).rev();\n\
     \        for(int i=0;i<(int)s.size();++i){\n            ans=(ans*t+s[i]).pre(deg);\n\
-    \        }\n        return ans;\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
+    \        }\n        return ans;\n    }\n    static P stirling_second(int n){\n\
+    \        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n            a[i]=F().pow(T(i),n)/F().fact(T(i));\n\
+    \            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n        }\n        return\
+    \ (a*b).pre(n+1);\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
     \ \\n\"[i==(int)(*this).size()-1];\n    }\n};"
   dependsOn: []
   isVerificationFile: false
@@ -257,10 +288,11 @@ data:
   requiredBy:
   - math/FPS_long.hpp
   - math/FPS_mint.hpp
-  timestamp: '2020-09-18 20:23:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-09-24 10:34:58+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - math/test/LC_convolution_1000000007.test.cpp
+  - math/test/LC_interpolation.test.cpp
   - math/test/LC_convolution_998244353.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp
 documentation_of: math/FPS_base.hpp

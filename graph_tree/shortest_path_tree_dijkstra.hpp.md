@@ -39,7 +39,7 @@ data:
   isVerificationFile: false
   path: graph_tree/shortest_path_tree_dijkstra.hpp
   requiredBy: []
-  timestamp: '2020-09-18 22:01:54+09:00'
+  timestamp: '2020-09-24 10:34:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph_tree/shortest_path_tree_dijkstra.hpp

@@ -16,7 +16,7 @@ data:
       title: BBST/RBST/base.hpp
   - name: alga
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: alga/maybe.hpp
       title: Maybe
     - icon: ':warning:'
@@ -51,6 +51,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/cartesian_tree.hpp
       title: cartesian_tree
+    - icon: ':warning:'
+      path: data_structure/cht.hpp
+      title: data_structure/cht.hpp
     - icon: ':warning:'
       path: data_structure/cumulative_sum.hpp
       title: "\u7D2F\u7A4D\u548C(WIP)"
@@ -125,10 +128,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: functional/composite.hpp
       title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: functional/range_add_and_range_sum.hpp
       title: "\u533A\u9593\u52A0\u7B97"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: functional/update.hpp
       title: "\u66F4\u65B0"
   - name: graph_tree
@@ -152,11 +155,17 @@ data:
       path: graph_tree/dijkstra_fast.hpp
       title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O(E+VlogE)"
     - icon: ':heavy_check_mark:'
+      path: graph_tree/dinic.hpp
+      title: "\u6700\u5927\u6D41(Dinic\u6CD5)"
+    - icon: ':heavy_check_mark:'
       path: graph_tree/distance.hpp
       title: graph_tree/distance.hpp
     - icon: ':heavy_check_mark:'
       path: graph_tree/dominator_tree.hpp
       title: "\u652F\u914D\u6728"
+    - icon: ':warning:'
+      path: graph_tree/euler_tour.hpp
+      title: graph_tree/euler_tour.hpp
     - icon: ':heavy_check_mark:'
       path: graph_tree/graph_template.hpp
       title: "\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8"
@@ -168,19 +177,19 @@ data:
       path: graph_tree/lca_short.hpp
       title: "LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;"
     - icon: ':warning:'
-      path: graph_tree/max_flow.hpp
-      title: "max_flow(Dinic\u6CD5)"
+      path: graph_tree/lex_bfs.hpp
+      title: graph_tree/lex_bfs.hpp
     - icon: ':heavy_check_mark:'
       path: graph_tree/maximum_independent_set.hpp
       title: "\u6700\u5927\u72EC\u7ACB\u96C6\u5408(V<=50)"
     - icon: ':warning:'
       path: graph_tree/min_cost_flow.hpp
-      title: "\u6700\u5C0F\u8CBB\u7528\u6D41(CostScaling)"
+      title: graph_tree/min_cost_flow.hpp
     - icon: ':warning:'
       path: graph_tree/min_cost_flow_ei.hpp
       title: "\u3046\u3057\u3055\u3093\u304B\u3089\u30D1\u30AF\u3063\u3066\u304D\u305F\
         \u6700\u5C0F\u8CBB\u7528\u6D41"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph_tree/push_relabel.hpp
       title: "\u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))"
     - icon: ':warning:'
@@ -209,16 +218,16 @@ data:
       title: 2-SAT
   - name: math
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/FPS_base.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
     - icon: ':heavy_check_mark:'
       path: math/FPS_long.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/FPS_mint.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/binary_search.hpp
       title: "\u4E8C\u5206\u63A2\u7D22"
     - icon: ':warning:'
@@ -230,7 +239,7 @@ data:
     - icon: ':warning:'
       path: math/catalans_trapezoids.hpp
       title: "\u30AB\u30BF\u30E9\u30F3\u53F0\u5F62"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/ceil_pow2.hpp
       title: math/ceil_pow2.hpp
     - icon: ':warning:'
@@ -239,50 +248,53 @@ data:
     - icon: ':warning:'
       path: math/divisor_list.hpp
       title: "\u7D04\u6570\u5217\u6319"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/euler_phi.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/floor_sum.hpp
       title: \sum_{i=0}^{n-1}\floor(a*i+b/c)
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/garner.hpp
       title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
       path: math/get_monomials.hpp
       title: math/get_monomials.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/is_prime.hpp
       title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
     - icon: ':warning:'
       path: math/lagrange_interpolation.hpp
       title: "\u30E9\u30B0\u30E9\u30F3\u30B8\u30E5\u88DC\u5B8C(\u9023\u7D9A\u70B9\
         ->\u4E00\u70B9)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/mod_int.hpp
       title: ModInt
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/mod_int1000000007.hpp
       title: ModInt(1'000'000'007)
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/mod_int998244353.hpp
       title: ModInt(998'244'353)
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: math/mod_inv.hpp
+      title: math/mod_inv.hpp
+    - icon: ':x:'
       path: math/mod_log.hpp
       title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/mod_pow.hpp
       title: (x^y)%mod
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/mod_sqrt.hpp
       title: ModSqrt
     - icon: ':warning:'
       path: math/osa_k.hpp
       title: "osa_k\u6CD5"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/prime_factor.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/prime_list.hpp
       title: "\u7D20\u6570\u5217\u6319"
     - icon: ':warning:'
@@ -294,10 +306,10 @@ data:
     - icon: ':warning:'
       path: math/sum_power_poly_limit.hpp
       title: math/sum_power_poly_limit.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/tetration.hpp
       title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/totient_sum.hpp
       title: "\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\u306E\u548C"
   - name: math/test
@@ -307,27 +319,27 @@ data:
       title: math/test/LC_sum_power_poly_limit.cpp
   - name: segment_tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: segment_tree/dual_segment_tree.hpp
       title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: segment_tree/lazy_segment_tree.hpp
       title: segment_tree/lazy_segment_tree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: segment_tree/segment_tree.hpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - name: string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/AhoCorasick.hpp
       title: "Aho-Corasick\u6CD5"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/Z_algorizm.hpp
       title: "Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
       path: string/manacher.hpp
       title: Manacher
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/online_Zalgo.hpp
       title: "\u30AA\u30F3\u30E9\u30A4\u30F3Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
@@ -347,7 +359,7 @@ data:
       title: "Trie\u6728"
   - name: util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: util/ACL.hpp
       title: util/ACL.hpp
     - icon: ':warning:'
@@ -356,10 +368,10 @@ data:
     - icon: ':warning:'
       path: util/pbds.hpp
       title: util/pbds.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
@@ -418,6 +430,9 @@ data:
       path: graph_tree/test/LC_dijkstra_fast.test.cpp
       title: graph_tree/test/LC_dijkstra_fast.test.cpp
     - icon: ':heavy_check_mark:'
+      path: graph_tree/test/LC_dinic.test.cpp
+      title: graph_tree/test/LC_dinic.test.cpp
+    - icon: ':heavy_check_mark:'
       path: graph_tree/test/LC_dominator_tree.test.cpp
       title: graph_tree/test/LC_dominator_tree.test.cpp
     - icon: ':heavy_check_mark:'
@@ -429,75 +444,78 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph_tree/test/LC_maximum_independent_set.test.cpp
       title: graph_tree/test/LC_maximum_independent_set.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph_tree/test/LC_push_relabel.test.cpp
       title: graph_tree/test/LC_push_relabel.test.cpp
   - name: math/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/AOJ_binary_search.test.cpp
       title: math/test/AOJ_binary_search.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/AOJ_is_prime.test.cpp
       title: math/test/AOJ_is_prime.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/AOJ_prime_factor.test.cpp
       title: math/test/AOJ_prime_factor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/AOJ_prime_list.test.cpp
       title: math/test/AOJ_prime_list.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_convolution_1000000007.test.cpp
       title: math/test/LC_convolution_1000000007.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_convolution_998244353.test.cpp
       title: math/test/LC_convolution_998244353.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_floor_sum.test.cpp
       title: math/test/LC_floor_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
+      path: math/test/LC_interpolation.test.cpp
+      title: math/test/LC_interpolation.test.cpp
+    - icon: ':x:'
       path: math/test/LC_mod_log.test.cpp
       title: math/test/LC_mod_log.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_mod_sqrt.test.cpp
       title: math/test/LC_mod_sqrt.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_prime_factor.test.cpp
       title: math/test/LC_prime_factor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_tetration.test.cpp
       title: math/test/LC_tetration.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_totient_sum.test.cpp
       title: math/test/LC_totient_sum.test.cpp
   - name: segment_tree/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
       title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
       title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: segment_tree/test/LC_segment_tree.test.cpp
       title: segment_tree/test/LC_segment_tree.test.cpp
   - name: string/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/test/LC_Z_algorizm.test.cpp
       title: string/test/LC_Z_algorizm.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/test/LC_online_Z_algorizm.test.cpp
       title: string/test/LC_online_Z_algorizm.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/test/YUKI_Aho_Corasick.test.cpp
       title: string/test/YUKI_Aho_Corasick.test.cpp
   - name: util/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: util/test/LC_Number_of_Substrings.test.cpp
       title: util/test/LC_Number_of_Substrings.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: util/test/LC_Suffix_Array.test.cpp
       title: util/test/LC_Suffix_Array.test.cpp
 layout: toppage
