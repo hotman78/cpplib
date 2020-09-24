@@ -4,7 +4,7 @@ data:
   - icon: ':x:'
     path: math/prime_factor.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/is_prime.hpp
     title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
   - icon: ':question:'

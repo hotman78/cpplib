@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/AOJ_binary_search.test.cpp
     title: math/test/AOJ_binary_search.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u4E8C\u5206\u63A2\u7D22"
@@ -26,7 +26,7 @@ data:
   path: math/binary_search.hpp
   requiredBy: []
   timestamp: '2020-09-13 16:40:58+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - math/test/AOJ_binary_search.test.cpp
 documentation_of: math/binary_search.hpp

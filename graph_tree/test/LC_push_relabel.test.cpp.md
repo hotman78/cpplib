@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/push_relabel.hpp
     title: "\u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))"
   - icon: ':question:'
@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A
@@ -89,7 +89,7 @@ data:
   path: graph_tree/test/LC_push_relabel.test.cpp
   requiredBy: []
   timestamp: '2020-09-24 10:34:58+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_push_relabel.test.cpp
 layout: document

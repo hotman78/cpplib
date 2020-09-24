@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/is_prime.hpp
     title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
   _extendedRequiredBy: []

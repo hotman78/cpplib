@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: math/mod_int.hpp
     title: ModInt
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   - icon: ':question:'
@@ -31,7 +31,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
@@ -1035,7 +1035,7 @@ data:
   path: math/test/LC_convolution_998244353.test.cpp
   requiredBy: []
   timestamp: '2020-09-24 10:34:58+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: math/test/LC_convolution_998244353.test.cpp
 layout: document

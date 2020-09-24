@@ -2,41 +2,41 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/tetration.hpp
     title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_sqrt.hpp
     title: ModSqrt
   - icon: ':heavy_check_mark:'
     path: math/FPS_long.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_log.hpp
     title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   - icon: ':question:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_mod_sqrt.test.cpp
     title: math/test/LC_mod_sqrt.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
   - icon: ':x:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_mod_log.test.cpp
     title: math/test/LC_mod_log.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_tetration.test.cpp
     title: math/test/LC_tetration.test.cpp
   - icon: ':heavy_check_mark:'

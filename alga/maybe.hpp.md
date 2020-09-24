@@ -17,6 +17,9 @@ data:
   - icon: ':warning:'
     path: alga/monoid.hpp
     title: alga/monoid.hpp
+  - icon: ':warning:'
+    path: graph_tree/min_cost_flow.hpp
+    title: "\u6700\u5C0F\u8CBB\u7528\u6D41(CostScaling)"
   - icon: ':heavy_check_mark:'
     path: graph_tree/lca.hpp
     title: "LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\u89E3\u3068\u540C\u7B49\u306E\u901F\
@@ -90,6 +93,7 @@ data:
   - segment_tree/dual_segment_tree.hpp
   - functional/range_add_and_range_sum.hpp
   - alga/monoid.hpp
+  - graph_tree/min_cost_flow.hpp
   - graph_tree/lca.hpp
   - data_structure/swag.hpp
   - data_structure/RMQ.hpp

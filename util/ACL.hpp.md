@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/FPS_long.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   _extendedVerifiedWith:
@@ -15,13 +15,13 @@ data:
   - icon: ':x:'
     path: util/test/LC_Number_of_Substrings.test.cpp
     title: util/test/LC_Number_of_Substrings.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
   - icon: ':x:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
   - icon: ':heavy_check_mark:'
