@@ -5,11 +5,10 @@
  * @brief osa_k法
  */
 
-template<typename Int>
-std::map<int,int> osa_k(Int n){
+std::map<int,int> osa_k(int n){
     constexpr int mx=10'000'000;
     assert(n<mx);
-    static init=false;
+    static bool init=false;
     static int v[mx];
     static vector<int>pr;
     if(!init){

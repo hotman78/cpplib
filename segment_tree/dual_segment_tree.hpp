@@ -9,18 +9,19 @@ template<typename T,typename F>
 class dual_segment_tree{
 	struct node;
 	using np=node*;
+	using i64=long long;
 	struct node{
 		maybe<T> val;
 		np ch[2]={nullptr,nullptr};
 		node(maybe<T> val=maybe<T>()):val(val){}
 	};
 	np root=nullptr;
-	int n=1,sz;
+	i64 n=1,sz;
     F op;
 	public:
-	dual_segment_tree(int sz,F op=F()):sz(sz),op(op){while(n<sz)n<<=1;}
-	inline void update(int l,int r,T x){update(l,r,x,0,n,root);}
-	inline maybe<T> get(int x){return get(x,0,n,root);}
+	dual_segment_tree(i64 sz,F op=F()):sz(sz),op(op){while(n<sz)n<<=1;}
+	inline void update(i64 l,i64 r,T x){update(l,r,x,0,n,root);}
+	inline maybe<T> get(i64 x){return get(x,0,n,root);}
 	private:
 	void eval(np& t){
         auto f=expand<T,F>(op);
@@ -31,7 +32,7 @@ class dual_segment_tree{
 		t->ch[1]->val=f(t->ch[1]->val,t->val);
 		t->val=maybe<T>();
 	}
-	void update(int a,int b,T x,int l,int r,np& t){
+	void update(i64 a,i64 b,T x,i64 l,i64 r,np& t){
         auto f=expand<T,F>(op);
         if(!t)t=new node();
 		if(r-l>1)eval(t);
@@ -42,7 +43,7 @@ class dual_segment_tree{
 			update(a,b,x,(l+r)/2,r,t->ch[1]);
 		}
 	}
-	maybe<T> get(int x,int l,int r,np& t){
+	maybe<T> get(i64 x,i64 l,i64 r,np& t){
         auto f=expand<T,F>(op);
         if(!t)t=new node();
 		if(r-l>1)eval(t);

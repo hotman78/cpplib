@@ -4,6 +4,7 @@
 #include<iostream>
 #include<cmath>
 #include<type_traits>
+#include<cassert>
 
 /**
  * @brief 形式的冪級数(BASE)
@@ -97,7 +98,7 @@ struct FPS_BASE:std::vector<T>{
         return (*this) = (rev().pre(n)*x.rev().inv(n)).pre(n).rev(n);
     }
     P &operator %=(const P& x){
-        return ((*this)-=*this/x*x);
+        return ((*this)-=(*this)/x*x);
     }
     inline void print(){
         for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<" \n"[i==(int)(*this).size()-1];
@@ -219,6 +220,30 @@ struct FPS_BASE:std::vector<T>{
         }
         return res;
     }
+    static P interpolation(const std::vector<T>&x,const std::vector<T>& y){
+        const int n=x.size();
+        std::vector<std::pair<P,P>>a(n*2-1);
+        std::vector<P> b(n*2-1);
+        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-x[i],1});
+        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};
+        auto d=(a[0].first).multipoint_eval(x);
+        for(int i=0;i<n;++i)b[i+n-1]=P{T(y[i]/d[i])};
+        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;
+        return b[0];
+    }
+    static P interpolation(const std::vector<T>& y){
+        const int n=y.size();
+        std::vector<std::pair<P,P>>a(n*2-1);
+        std::vector<P>b(n*2-1);
+        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-i,1});
+        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};
+        for(int i=0;i<n;++i){
+            T tmp=F().fact(T(i))*F().pow(T(-1),i)*F().fact(T(n-1-i));
+            b[i+n-1]=P{T(y[i]/tmp)};
+        }
+        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;
+        return b[0];
+    }
     std::vector<T> multipoint_eval(const std::vector<T>&x){
         const int n=x.size();
         P* v=new P[2*n-1];
@@ -299,6 +324,14 @@ struct FPS_BASE:std::vector<T>{
             ans=(ans*t+s[i]).pre(deg);
         }
         return ans;
+    }
+    static P stirling_second(int n){
+        P a(n+1,0),b(n+1,0);
+        for(int i=0;i<=n;++i){
+            a[i]=F().pow(T(i),n)/F().fact(T(i));
+            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));
+        }
+        return (a*b).pre(n+1);
     }
     void debug(){
         for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<" \n"[i==(int)(*this).size()-1];

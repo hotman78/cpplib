@@ -3,6 +3,7 @@
 #include<numeric>
 #include<cmath>
 #include<algorithm>
+#include<map>
 #include"is_prime.hpp"
 
 /**
@@ -38,10 +39,13 @@ void __prime_factor(long long n,long long& c,std::vector<long long>& v){
     }
 }
 
-std::vector<long long>prime_factor(long long n){
+std::map<long long,long long> prime_factor(long long n){
     std::vector<long long>v;
     long long c=1;
     __prime_factor(n,c,v);
-    std::sort(v.begin(),v.end());
-    return v;
+    std::map<long long,long long>m;
+    for(auto e:v){
+        m[e]++;
+    }
+    return m;
 }

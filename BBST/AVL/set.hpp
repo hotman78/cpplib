@@ -16,7 +16,7 @@ struct Node{
     bool operator >=(const Node& x)const{return !((x)<(*this));}
     bool operator ==(const Node& x)const{return (x)<=(*this)&&(*this)<=(x);}
     void update(Node* t){
-
+        
     }
 };
 

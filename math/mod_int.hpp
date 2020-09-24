@@ -77,7 +77,7 @@ struct mod_int {
         while(root.pow((get_mod()-1)>>1).a==1)root++;
         return root.a;
     }
-    constexpr mint pow(long long n){
+    constexpr mint pow(long long n)const{
         long long x=a;
         mint ret = 1;
         while(n>0) {
@@ -94,7 +94,7 @@ struct mod_int {
     static std::vector<mint> ifac;
     static bool init;
     constexpr static int mx=10000001;
-    void build(){
+    void build()const{
         init=0;
         fac.resize(mx);
         ifac.resize(mx);
@@ -109,11 +109,11 @@ struct mod_int {
         if((long long)a<b)return 0;
         return fac[a]*ifac[a-b]*ifac[b];
     }
-    mint fact(){
+    mint fact()const{
         if(init)build();
         return fac[a];
     }
-    mint fact_inv(){
+    mint fact_inv()const{
         if(init)build();
         return ifac[a];
     }
