@@ -31,6 +31,7 @@
 "math/test/LC_interpolation.test.cpp": "2020-09-24 10:34:58 +0900",
 "math/test/LC_mod_log.test.cpp": "2020-09-24 10:34:58 +0900",
 "math/test/LC_mod_sqrt.test.cpp": "2020-09-24 10:34:58 +0900",
+"math/test/LC_prime_factor.test.cpp": "2020-09-24 15:35:22 +0900",
 "math/test/LC_tetration.test.cpp": "2020-09-24 10:34:58 +0900",
 "math/test/LC_totient_sum.test.cpp": "2020-09-24 10:34:58 +0900",
 "segment_tree/test/AOJ_dual_segment_tree.test.cpp": "2020-09-24 10:34:58 +0900",
