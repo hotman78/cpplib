@@ -19,6 +19,7 @@
 "graph_tree/test/LC_lca.test.cpp": "2020-09-19 12:18:12 +0900",
 "graph_tree/test/LC_lca_short.test.cpp": "2020-09-19 09:30:13 +0900",
 "graph_tree/test/LC_maximum_independent_set.test.cpp": "2020-09-19 11:01:08 +0900",
+"graph_tree/test/LC_push_relabel.test.cpp": "2020-09-19 19:17:15 +0900",
 "math/test/AOJ_binary_search.test.cpp": "2020-09-19 09:30:13 +0900",
 "math/test/AOJ_is_prime.test.cpp": "2020-09-19 09:30:13 +0900",
 "math/test/AOJ_prime_factor.test.cpp": "2020-09-19 09:30:13 +0900",
