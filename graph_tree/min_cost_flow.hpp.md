@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/push_relabel.hpp
     title: "\u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))"
   _extendedRequiredBy: []

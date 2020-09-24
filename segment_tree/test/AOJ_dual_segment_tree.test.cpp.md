@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/dual_segment_tree.hpp
     title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':question:'
     path: alga/maybe.hpp
     title: Maybe
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: functional/update.hpp
     title: "\u66F4\u65B0"
   - icon: ':question:'
@@ -16,7 +16,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
@@ -108,7 +108,7 @@ data:
   path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
   requiredBy: []
   timestamp: '2020-09-24 16:21:56+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: segment_tree/test/AOJ_dual_segment_tree.test.cpp
 layout: document

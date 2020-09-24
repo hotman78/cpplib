@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_sqrt.hpp
     title: ModSqrt
   - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/random_gen.hpp
     title: util/random_gen.hpp
   - icon: ':question:'
@@ -16,7 +16,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_mod
@@ -86,7 +86,7 @@ data:
   path: math/test/LC_mod_sqrt.test.cpp
   requiredBy: []
   timestamp: '2020-09-24 16:21:56+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: math/test/LC_mod_sqrt.test.cpp
 layout: document

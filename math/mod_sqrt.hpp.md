@@ -4,16 +4,16 @@ data:
   - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/random_gen.hpp
     title: util/random_gen.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_mod_sqrt.test.cpp
     title: math/test/LC_mod_sqrt.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: ModSqrt
@@ -51,7 +51,7 @@ data:
   path: math/mod_sqrt.hpp
   requiredBy: []
   timestamp: '2020-09-14 10:33:36+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - math/test/LC_mod_sqrt.test.cpp
 documentation_of: math/mod_sqrt.hpp

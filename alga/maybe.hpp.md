@@ -8,7 +8,7 @@ data:
   - icon: ':x:'
     path: segment_tree/segment_tree.hpp
     title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/dual_segment_tree.hpp
     title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':x:'
@@ -37,7 +37,7 @@ data:
   - icon: ':x:'
     path: segment_tree/test/LC_segment_tree.test.cpp
     title: segment_tree/test/LC_segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
     title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
   - icon: ':x:'
