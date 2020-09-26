@@ -34,5 +34,12 @@
 "math/test/LC_prime_factor.test.cpp": "2020-09-24 16:21:56 +0900",
 "math/test/LC_tetration.test.cpp": "2020-09-24 16:21:56 +0900",
 "math/test/LC_totient_sum.test.cpp": "2020-09-24 16:21:56 +0900",
-"segment_tree/test/AOJ_dual_segment_tree.test.cpp": "2020-09-24 16:21:56 +0900"
+"segment_tree/test/AOJ_dual_segment_tree.test.cpp": "2020-09-24 16:21:56 +0900",
+"segment_tree/test/AOJ_lazy_segment_tree.test.cpp": "2020-09-24 16:21:56 +0900",
+"segment_tree/test/LC_segment_tree.test.cpp": "2020-09-24 16:21:56 +0900",
+"string/test/LC_Z_algorizm.test.cpp": "2020-09-24 16:21:56 +0900",
+"string/test/LC_online_Z_algorizm.test.cpp": "2020-09-24 16:21:56 +0900",
+"string/test/YUKI_Aho_Corasick.test.cpp": "2020-09-24 16:21:56 +0900",
+"util/test/LC_Number_of_Substrings.test.cpp": "2020-09-24 16:21:56 +0900",
+"util/test/LC_Suffix_Array.test.cpp": "2020-09-24 16:21:56 +0900"
 }
