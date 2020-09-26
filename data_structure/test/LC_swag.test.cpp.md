@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/swag.hpp
     title: SWAG(Queue)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
   - icon: ':heavy_check_mark:'

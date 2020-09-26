@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/Z_algorizm.hpp
     title: "Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
   - icon: ':question:'
@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
@@ -72,7 +72,7 @@ data:
   path: string/test/LC_Z_algorizm.test.cpp
   requiredBy: []
   timestamp: '2020-09-24 16:21:56+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: string/test/LC_Z_algorizm.test.cpp
 layout: document

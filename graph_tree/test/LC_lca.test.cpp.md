@@ -23,7 +23,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/sparse_table.hpp
     title: SparseTable
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
   - icon: ':heavy_check_mark:'

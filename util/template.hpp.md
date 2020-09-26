@@ -9,19 +9,19 @@ data:
     path: graph_tree/dijkstra.hpp
     title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/LC_segment_tree.test.cpp
     title: segment_tree/test/LC_segment_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
     title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
     title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Number_of_Substrings.test.cpp
     title: util/test/LC_Number_of_Substrings.test.cpp
   - icon: ':heavy_check_mark:'
@@ -63,13 +63,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/test/LC_tetration.test.cpp
     title: math/test/LC_tetration.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/YUKI_Aho_Corasick.test.cpp
     title: string/test/YUKI_Aho_Corasick.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/LC_Z_algorizm.test.cpp
     title: string/test/LC_Z_algorizm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/test/LC_online_Z_algorizm.test.cpp
     title: string/test/LC_online_Z_algorizm.test.cpp
   - icon: ':heavy_check_mark:'
@@ -105,6 +105,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_sparse_table.test.cpp
     title: data_structure/test/LC_sparse_table.test.cpp
+  - icon: ':x:'
+    path: data_structure/test/LC_hash_map.test.cpp
+    title: data_structure/test/LC_hash_map.test.cpp
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_fast_set.test.cpp
     title: data_structure/test/LC_fast_set.test.cpp
@@ -248,6 +251,7 @@ data:
   - graph_tree/test/LC_centroid_decomposition.test.cpp
   - graph_tree/test/LC_dominator_tree.test.cpp
   - data_structure/test/LC_sparse_table.test.cpp
+  - data_structure/test/LC_hash_map.test.cpp
   - data_structure/test/LC_fast_set.test.cpp
   - data_structure/test/LC_swag.test.cpp
   - data_structure/test/LC_binary_indexed_tree.test.cpp

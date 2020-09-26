@@ -9,10 +9,10 @@ data:
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Suffix_Array.test.cpp
     title: util/test/LC_Suffix_Array.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: util/test/LC_Number_of_Substrings.test.cpp
     title: util/test/LC_Number_of_Substrings.test.cpp
   - icon: ':heavy_check_mark:'
