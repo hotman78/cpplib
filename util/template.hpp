@@ -15,12 +15,10 @@ typedef vector<vector<lint>> mat;
 typedef vector<vector<vector<lint>>> mat3;
 typedef vector<string> svec;
 typedef vector<vector<string>> smat;
-template<typename T>inline void numout(T t){bool f=0;for(auto i:t){cout<<(f?" ":"")<<i<INF/2?i:"INF";f=1;}cout<<endl;}
-template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}
 template<typename T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?" ":"")<<i;f=1;}cout<<endl;}
 template<typename T>inline void output2(T t){for(auto i:t)output(i);}
-template<typename T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?"":" "<<t[i];f=1;}cout<<endl;}
-template<typename T>inline void _output2(T t){for(lint i=0;i<t.size();i++)output(t[i]);}
+template<typename T>inline void debug(T t){bool f=0;for(auto i:t){cerr<<(f?" ":"")<<i;f=1;}cerr<<endl;}
+template<typename T>inline void debug2(T t){for(auto i:t)output(i);}
 #define loop(n) for(long long _=0;_<(long long)(n);++_)
 #define rep(i,...) for(auto i:range(__VA_ARGS__)) 
 #define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))
@@ -38,4 +36,6 @@ const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
 template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
+#define extrep(v,...) for(auto v:__MAKE_MAT__({__VA_ARGS__}))
+vector<vector<long long>> __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return ret;}
 //#include "../graph_tree/graph_template.hpp"

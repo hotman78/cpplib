@@ -52,7 +52,7 @@ struct fastO{
             auto be=o;
             while(u)*o++=u%10+'0',u/=10;
             auto en=o;
-            while(be<en)swap(*--en,*be++);
+            while(be<en)std::swap(*--en,*be++);
         }else *o++='0';
         return *this;
     }
@@ -61,7 +61,7 @@ struct fastO{
             auto be=o;
             while(u)*o++=u%10+'0',u/=10;
             auto en=o;
-            while(be<en)swap(*--en,*be++);
+            while(be<en)std::swap(*--en,*be++);
         }else *o++='0';
         return *this;
     }

@@ -160,6 +160,14 @@ struct FPS_BASE:std::vector<T>{
         return ret.pre(n);
     }
     P pow(int c,int deg=-1){
+        const int n=deg==-1?this->size():deg;
+		long long i=0;
+		P ret(*static_cast<P*>(this));
+		while(i!=(int)this->size()&&ret[i]==0)i++;
+		if(i==(int)this->size())return P(n,0);
+		if(i*c>=n)return P(n,0);
+		T k=ret[i];
+		return ((((ret>>i)/k).log()*c).exp()*(k.pow(c))<<(i*c)).pre(n);
         // const int n=deg==-1?this->size():deg;
         // long long i=0;
         // P ret(*this);
@@ -168,18 +176,18 @@ struct FPS_BASE:std::vector<T>{
         // if(i*c>=n)return P(n,0);
         // T k=ret[i];
         // return ((((ret>>i)/k).log()*c).exp()*(k.pow(c))<<(i*c)).pre(n);
-        P x(*this);
-        P ret(1,1);
-        while(c) {
-            if(c&1){
-                ret*=x;
-                if(~deg)ret=ret.pre(deg);
-            }
-            x*=x;
-            if(~deg)x=x.pre(deg);
-            c>>=1;
-        }
-        return ret;
+        // P x(*this);
+        // P ret(1,1);
+        // while(c) {
+        //     if(c&1){
+        //         ret*=x;
+        //         if(~deg)ret=ret.pre(deg);
+        //     }
+        //     x*=x;
+        //     if(~deg)x=x.pre(deg);
+        //     c>>=1;
+        // }
+        // return ret;
     }
     P sqrt(int deg=-1){
         const int n=deg==-1?this->size():deg;
