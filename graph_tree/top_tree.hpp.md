@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: TopTree(WIP)
     links: []
   bundledCode: "#line 1 \"graph_tree/top_tree.hpp\"\n/**\n * @brief TopTree(WIP)\n\

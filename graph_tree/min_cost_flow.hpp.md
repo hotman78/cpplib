@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph_tree/push_relabel.hpp
     title: "\u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))"
   _extendedRequiredBy: []
@@ -12,7 +12,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6700\u5C0F\u8CBB\u7528\u6D41(CostScaling)"
     links: []
   bundledCode: "#line 2 \"graph_tree/min_cost_flow.hpp\"\n#include<vector>\n#include<queue>\n\

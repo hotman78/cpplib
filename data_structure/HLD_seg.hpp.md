@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"data_structure/HLD_seg.hpp\"\ntemplate<typename T>\nclass\
     \ HLD_seg{\n\tclass segment{\n\t\tT* node;\n\t\tint n=1;\n\t\tpublic:\n\t\tsegment(int\

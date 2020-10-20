@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u90E8\u5206\u6728\u306E\u5927\u304D\u3055"
     links: []
   bundledCode: "#line 2 \"graph_tree/child_size.hpp\"\n#include<vector>\n#include<cmath>\n\

@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"data_structure/euler_tour_tree.hpp\"\ntemplate<typename\
     \ T,typename E>\nclass euler_tour_tree{\n\tpublic:\n    struct node;\n    using\

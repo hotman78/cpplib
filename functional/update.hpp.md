@@ -3,13 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
     title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u66F4\u65B0"
     links: []
   bundledCode: "#line 2 \"functional/update.hpp\"\n\n/**\n * @brief \u66F4\u65B0\n\
@@ -23,7 +22,7 @@ data:
   path: functional/update.hpp
   requiredBy: []
   timestamp: '2020-09-19 12:18:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - segment_tree/test/AOJ_dual_segment_tree.test.cpp
 documentation_of: functional/update.hpp

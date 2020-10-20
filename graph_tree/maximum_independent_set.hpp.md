@@ -12,7 +12,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6700\u5927\u72EC\u7ACB\u96C6\u5408(V<=50)"
     links: []
   bundledCode: "#line 2 \"graph_tree/maximum_independent_set.hpp\"\n#include<tuple>\n\

@@ -13,7 +13,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"graph_tree/distance.hpp\"\nstd::vector<int> distance(const\
     \ graph& G,int start){\n    std::vector<int>memo(G.size());\n    auto f=[&](auto\

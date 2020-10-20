@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u4E8C\u8FBA\u9023\u7D50\u6210\u5206\u5206\u89E3"
     links: []
   bundledCode: "#line 1 \"graph_tree/two_edge_connectivity.hpp\"\n#include<vector>\n\

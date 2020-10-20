@@ -12,7 +12,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: BitVector
     links: []
   bundledCode: "#line 2 \"data_structure/bit_vector.hpp\"\n\n/**\n * @brief BitVector\n\

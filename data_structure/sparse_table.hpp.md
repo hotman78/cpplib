@@ -1,34 +1,33 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: alga/maybe.hpp
     title: Maybe
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: graph_tree/lca.hpp
-    title: "LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\u89E3\u3068\u540C\u7B49\u306E\u901F\
-      \u3055)"
   - icon: ':heavy_check_mark:'
     path: data_structure/RMQ.hpp
     title: RMQ&amp;lt;O(N),O(1)&amp;gt;
   - icon: ':heavy_check_mark:'
     path: data_structure/arg_rmq.hpp
     title: RangeArgminQuery &amp;lt;O(N),O(1)&amp;gt;
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/lca.hpp
+    title: "LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\u89E3\u3068\u540C\u7B49\u306E\u901F\
+      \u3055)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: graph_tree/test/LC_lca.test.cpp
-    title: graph_tree/test/LC_lca.test.cpp
+    path: data_structure/test/LC_RMQ.test.cpp
+    title: data_structure/test/LC_RMQ.test.cpp
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_sparse_table.test.cpp
     title: data_structure/test/LC_sparse_table.test.cpp
   - icon: ':heavy_check_mark:'
-    path: data_structure/test/LC_RMQ.test.cpp
-    title: data_structure/test/LC_RMQ.test.cpp
+    path: graph_tree/test/LC_lca.test.cpp
+    title: graph_tree/test/LC_lca.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: SparseTable
     links: []
   bundledCode: "#line 2 \"data_structure/sparse_table.hpp\"\n#include<vector>\n#include<functional>\n\
@@ -65,8 +64,8 @@ data:
   path: data_structure/sparse_table.hpp
   requiredBy:
   - graph_tree/lca.hpp
-  - data_structure/RMQ.hpp
   - data_structure/arg_rmq.hpp
+  - data_structure/RMQ.hpp
   timestamp: '2020-09-19 12:18:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

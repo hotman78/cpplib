@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 2 \"math/get_monomials.hpp\"\n#include<vector>\n#include<numeric>\n\
     \n// pws[i] = i^d (0 <= i < n)\ntemplate<typename T>\nstd::vector<T> get_monomials(long\

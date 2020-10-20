@@ -2,32 +2,31 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
+  - icon: ':x:'
+    path: math/mod_int1000000007.hpp
+    title: ModInt(1'000'000'007)
   - icon: ':question:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
-  - icon: ':heavy_check_mark:'
-    path: math/mod_int1000000007.hpp
-    title: ModInt(1'000'000'007)
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: math/test/LC_totient_sum.test.cpp
-    title: math/test/LC_totient_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/test/LC_convolution_1000000007.test.cpp
-    title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':x:'
-    path: math/test/LC_interpolation.test.cpp
-    title: math/test/LC_interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/test/LC_convolution_998244353.test.cpp
-    title: math/test/LC_convolution_998244353.test.cpp
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_swag.test.cpp
     title: data_structure/test/LC_swag.test.cpp
+  - icon: ':x:'
+    path: math/test/LC_convolution_1000000007.test.cpp
+    title: math/test/LC_convolution_1000000007.test.cpp
+  - icon: ':x:'
+    path: math/test/LC_convolution_998244353.test.cpp
+    title: math/test/LC_convolution_998244353.test.cpp
+  - icon: ':x:'
+    path: math/test/LC_interpolation.test.cpp
+    title: math/test/LC_interpolation.test.cpp
+  - icon: ':x:'
+    path: math/test/LC_totient_sum.test.cpp
+    title: math/test/LC_totient_sum.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: ModInt
     links: []
   bundledCode: "#line 2 \"math/mod_int.hpp\"\n#include<cstdint>\n#include<iostream>\n\
@@ -132,8 +131,8 @@ data:
   isVerificationFile: false
   path: math/mod_int.hpp
   requiredBy:
-  - math/mod_int998244353.hpp
   - math/mod_int1000000007.hpp
+  - math/mod_int998244353.hpp
   timestamp: '2020-09-24 10:34:58+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:

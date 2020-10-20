@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 2 \"math/sum_power_poly_limit.hpp\"\n#include<vector>\n\n//\
     \ \\sum_{i=0}^{\\infty} r^i f(i) (deg f <= d)\ntemplate<typename T>\nT sum_power_poly_limit(T\

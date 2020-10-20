@@ -7,15 +7,14 @@ data:
     title: RMQ&amp;lt;O(N),O(1)&amp;gt;
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: data_structure/test/LC_sparse_table.test.cpp
-    title: data_structure/test/LC_sparse_table.test.cpp
-  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_RMQ.test.cpp
     title: data_structure/test/LC_RMQ.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_sparse_table.test.cpp
+    title: data_structure/test/LC_sparse_table.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6700\u5C0F\u5024"
     links: []
   bundledCode: "#line 2 \"functional/MIN.hpp\"\n#include<algorithm>\n\n/**\n * @brief\

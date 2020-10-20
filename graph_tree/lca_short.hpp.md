@@ -12,7 +12,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;"
     links: []
   bundledCode: "#line 2 \"graph_tree/lca_short.hpp\"\n#include<vector>\n#line 3 \"\

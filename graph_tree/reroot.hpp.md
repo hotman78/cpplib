@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u5168\u65B9\u4F4D\u6728DP"
     links: []
   bundledCode: "#line 2 \"graph_tree/reroot.hpp\"\n#include<vector>\n\n/**\n * @brief\

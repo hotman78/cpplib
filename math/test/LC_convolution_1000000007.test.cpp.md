@@ -2,23 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
-    path: util/template.hpp
-    title: util/template.hpp
-  - icon: ':heavy_check_mark:'
-    path: math/mod_int1000000007.hpp
-    title: ModInt(1'000'000'007)
-  - icon: ':question:'
-    path: math/mod_int.hpp
-    title: ModInt
-  - icon: ':question:'
-    path: math/FPS_mint.hpp
-    title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
-  - icon: ':question:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-  - icon: ':question:'
-    path: util/ACL.hpp
-    title: util/ACL.hpp
+  - icon: ':x:'
+    path: math/FPS_mint.hpp
+    title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   - icon: ':question:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
@@ -26,12 +14,24 @@ data:
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
   - icon: ':question:'
+    path: math/mod_int.hpp
+    title: ModInt
+  - icon: ':x:'
+    path: math/mod_int1000000007.hpp
+    title: ModInt(1'000'000'007)
+  - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
+  - icon: ':question:'
+    path: util/ACL.hpp
+    title: util/ACL.hpp
+  - icon: ':question:'
+    path: util/template.hpp
+    title: util/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod_1000000007
@@ -45,22 +45,19 @@ data:
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
     \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
-    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void numout(T\
-    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i<INF/2?i:\"INF\";f=1;}cout<<endl;}\n\
-    template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}\ntemplate<typename\
-    \ T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\n\
-    template<typename T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename\
-    \ T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?\"\"\
-    :\" \"<<t[i];f=1;}cout<<endl;}\ntemplate<typename T>inline void _output2(T t){for(lint\
-    \ i=0;i<t.size();i++)output(t[i]);}\n#define loop(n) for(long long _=0;_<(long\
-    \ long)(n);++_)\n#define rep(i,...) for(auto i:range(__VA_ARGS__)) \n#define rrep(i,...)\
-    \ for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)\n\
-    #define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n#define irep(i) for(lint\
-    \ i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return vector<long\
-    \ long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline\
-    \ vector<long long> range(long long a,long long b){if(b<=a)return vector<long\
-    \ long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return v;}\ninline\
-    \ vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
+    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void output(T\
+    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\ntemplate<typename\
+    \ T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename T>inline\
+    \ void debug(T t){bool f=0;for(auto i:t){cerr<<(f?\" \":\"\")<<i;f=1;}cerr<<endl;}\n\
+    template<typename T>inline void debug2(T t){for(auto i:t)output(i);}\n#define\
+    \ loop(n) for(long long _=0;_<(long long)(n);++_)\n#define rep(i,...) for(auto\
+    \ i:range(__VA_ARGS__)) \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n\
+    #define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b)\
+    \ for(lint i=lint(b)-1;i>=lint(a);--i)\n#define irep(i) for(lint i=0;;++i)\ninline\
+    \ vector<long long> range(long long n){if(n<=0)return vector<long long>();vector<long\
+    \ long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline vector<long long> range(long\
+    \ long a,long long b){if(b<=a)return vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
     \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
     \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
     \ v;}\n#define all(n) begin(n),end(n)\ntemplate<typename T,typename E>bool chmin(T&\
@@ -69,12 +66,16 @@ data:
     \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
-    \ \"../graph_tree/graph_template.hpp\"\n#line 5 \"math/mod_int.hpp\"\n\n/**\n\
-    \ * @brief ModInt\n */\n\ntemplate<int MOD>\nstruct mod_int {\n    using mint=mod_int<MOD>;\n\
-    \    using u64 = std::uint_fast64_t;\n    u64 a;\n    constexpr mod_int(const\
-    \ long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}\n  \
-    \  constexpr u64 &value()noexcept{return a;}\n    constexpr const u64 &value()\
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#define\
+    \ extrep(v,...) for(auto v:__MAKE_MAT__({__VA_ARGS__}))\nvector<vector<long long>>\
+    \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
+    \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
+    \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 5 \"math/mod_int.hpp\"\
+    \n\n/**\n * @brief ModInt\n */\n\ntemplate<int MOD>\nstruct mod_int {\n    using\
+    \ mint=mod_int<MOD>;\n    using u64 = std::uint_fast64_t;\n    u64 a;\n    constexpr\
+    \ mod_int(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}\n\
+    \    constexpr u64 &value()noexcept{return a;}\n    constexpr const u64 &value()\
     \ const noexcept {return a;}\n    constexpr mint operator+(const mint rhs)const\
     \ noexcept{return mint(*this) += rhs;}\n    constexpr mint operator-(const mint\
     \ rhs)const noexcept{return mint(*this)-=rhs;}\n    constexpr mint operator*(const\
@@ -179,16 +180,19 @@ data:
     \        assert((*this)[0]==T(0));\n        const int n=deg==-1?this->size():deg;\n\
     \        P ret({T(1)});\n        for(int i=1;i<n;i<<=1){\n            ret=ret*(pre(i<<1)+1-ret.log(i<<1)).pre(i<<1);\n\
     \        }\n        return ret.pre(n);\n    }\n    P pow(int c,int deg=-1){\n\
+    \        const int n=deg==-1?this->size():deg;\n\t\tlong long i=0;\n\t\tP ret(*static_cast<P*>(this));\n\
+    \t\twhile(i!=(int)this->size()&&ret[i]==0)i++;\n\t\tif(i==(int)this->size())return\
+    \ P(n,0);\n\t\tif(i*c>=n)return P(n,0);\n\t\tT k=ret[i];\n\t\treturn ((((ret>>i)/k).log()*c).exp()*(k.pow(c))<<(i*c)).pre(n);\n\
     \        // const int n=deg==-1?this->size():deg;\n        // long long i=0;\n\
     \        // P ret(*this);\n        // while(i!=(int)this->size()&&ret[i]==0)i++;\n\
     \        // if(i==(int)this->size())return P(n,0);\n        // if(i*c>=n)return\
     \ P(n,0);\n        // T k=ret[i];\n        // return ((((ret>>i)/k).log()*c).exp()*(k.pow(c))<<(i*c)).pre(n);\n\
-    \        P x(*this);\n        P ret(1,1);\n        while(c) {\n            if(c&1){\n\
-    \                ret*=x;\n                if(~deg)ret=ret.pre(deg);\n        \
-    \    }\n            x*=x;\n            if(~deg)x=x.pre(deg);\n            c>>=1;\n\
-    \        }\n        return ret;\n    }\n    P sqrt(int deg=-1){\n        const\
-    \ int n=deg==-1?this->size():deg;\n        if((*this)[0]==T(0)) {\n          \
-    \  for(int i=1;i<(int)this->size();i++) {\n                if((*this)[i]!=T(0))\
+    \        // P x(*this);\n        // P ret(1,1);\n        // while(c) {\n     \
+    \   //     if(c&1){\n        //         ret*=x;\n        //         if(~deg)ret=ret.pre(deg);\n\
+    \        //     }\n        //     x*=x;\n        //     if(~deg)x=x.pre(deg);\n\
+    \        //     c>>=1;\n        // }\n        // return ret;\n    }\n    P sqrt(int\
+    \ deg=-1){\n        const int n=deg==-1?this->size():deg;\n        if((*this)[0]==T(0))\
+    \ {\n            for(int i=1;i<(int)this->size();i++) {\n                if((*this)[i]!=T(0))\
     \ {\n                    if(i&1)return{};\n                    if(n-i/2<=0)break;\n\
     \                    auto ret=(*this>>i).sqrt(n-i/2)<<(i/2);\n               \
     \     if((int)ret.size()<n)ret.resize(n,T(0));\n                    return ret;\n\
@@ -1036,8 +1040,8 @@ data:
   isVerificationFile: true
   path: math/test/LC_convolution_1000000007.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 16:21:56+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-21 08:20:00+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: math/test/LC_convolution_1000000007.test.cpp
 layout: document

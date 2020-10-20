@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u7D2F\u7A4D\u548C(WIP)"
     links: []
   bundledCode: "#line 1 \"data_structure/cumulative_sum.hpp\"\n/**\n * @brief \u7D2F\

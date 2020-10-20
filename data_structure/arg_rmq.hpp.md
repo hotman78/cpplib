@@ -1,15 +1,15 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: alga/maybe.hpp
+    title: Maybe
   - icon: ':heavy_check_mark:'
     path: data_structure/small_rmq.hpp
     title: data_structure/small_rmq.hpp
   - icon: ':heavy_check_mark:'
     path: data_structure/sparse_table.hpp
     title: SparseTable
-  - icon: ':heavy_check_mark:'
-    path: alga/maybe.hpp
-    title: Maybe
   - icon: ':heavy_check_mark:'
     path: functional/argmin.hpp
     title: "\u6700\u5C0F\u5024\u3068\u305D\u306E\u4F4D\u7F6E"
@@ -25,7 +25,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: RangeArgminQuery &amp;lt;O(N),O(1)&amp;gt;
     links:
     - https://noshi91.hatenablog.com/entry/2018/08/16/125415

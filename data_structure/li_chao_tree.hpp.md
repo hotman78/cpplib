@@ -4,15 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: data_structure/test/LC_segment_add_get_min.test.cpp
-    title: data_structure/test/LC_segment_add_get_min.test.cpp
-  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_line_add_get_min.test.cpp
     title: data_structure/test/LC_line_add_get_min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: data_structure/test/LC_segment_add_get_min.test.cpp
+    title: data_structure/test/LC_segment_add_get_min.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: LiChaoTree
     links: []
   bundledCode: "#line 2 \"data_structure/li_chao_tree.hpp\"\n#include<limits>\n#include<cmath>\n\
@@ -66,8 +65,8 @@ data:
   timestamp: '2020-09-18 14:05:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - data_structure/test/LC_segment_add_get_min.test.cpp
   - data_structure/test/LC_line_add_get_min.test.cpp
+  - data_structure/test/LC_segment_add_get_min.test.cpp
 documentation_of: data_structure/li_chao_tree.hpp
 layout: document
 redirect_from:

@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u4E8C\u5206\u63A2\u7D22(double)"
     links: []
   bundledCode: "#line 2 \"math/binary_search_double.hpp\"\n#include<functional>\n\

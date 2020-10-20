@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"graph_tree/lex_bfs.hpp\"\nvector<int> lex_bfs(graph g,int\
     \ n,int m){\n    list<list<int>>que;\n    vector<list<list<int>>::iterator>pos1(n);\n\

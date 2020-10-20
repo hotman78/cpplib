@@ -12,7 +12,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: WaveletMatrix(WIP)
     links: []
   bundledCode: "#line 2 \"data_structure/wavelet_matrix.hpp\"\n#include<vector>\n\

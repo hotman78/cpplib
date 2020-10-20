@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"data_structure/HLD_lazy.hpp\"\ntemplate<typename T,typename\
     \ E>\nclass HLD_lazy{\n\tclass lazy_segment_tree{\n\t\tint n=1,sz;\n\t\tT* node;\n\

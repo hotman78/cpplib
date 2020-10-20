@@ -12,7 +12,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9 O(E+VlogE)"
     links: []
   bundledCode: "#line 2 \"graph_tree/dijkstra_fast.hpp\"\n#include<vector>\n#include<tuple>\n\

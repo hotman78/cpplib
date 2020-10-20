@@ -3,26 +3,25 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: graph_tree/lca.hpp
-    title: "LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\u89E3\u3068\u540C\u7B49\u306E\u901F\
-      \u3055)"
-  - icon: ':heavy_check_mark:'
     path: data_structure/RMQ.hpp
     title: RMQ&amp;lt;O(N),O(1)&amp;gt;
   - icon: ':heavy_check_mark:'
     path: data_structure/arg_rmq.hpp
     title: RangeArgminQuery &amp;lt;O(N),O(1)&amp;gt;
-  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: graph_tree/test/LC_lca.test.cpp
-    title: graph_tree/test/LC_lca.test.cpp
+    path: graph_tree/lca.hpp
+    title: "LCA &amp;lt;O(N),O(1)&amp;gt;(HL\u5206\u89E3\u3068\u540C\u7B49\u306E\u901F\
+      \u3055)"
+  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_RMQ.test.cpp
     title: data_structure/test/LC_RMQ.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_lca.test.cpp
+    title: graph_tree/test/LC_lca.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 2 \"data_structure/small_rmq.hpp\"\n#include<vector>\n\n/**\n\
     \ * RMQ(small) &amp;lt;O(N),O(1)&amp;gt;(N<=64)\n */\n\ntemplate<typename T>\n\
@@ -54,8 +53,8 @@ data:
   path: data_structure/small_rmq.hpp
   requiredBy:
   - graph_tree/lca.hpp
-  - data_structure/RMQ.hpp
   - data_structure/arg_rmq.hpp
+  - data_structure/RMQ.hpp
   timestamp: '2020-09-19 10:39:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30DE\u30FC\u30B8\u53EF\u80FD\u30D2\u30FC\u30D7(LeftistHeap)"
     links: []
   bundledCode: "#line 2 \"data_structure/leftist_heap.hpp\"\n\n/**\n * @brief \u30DE\

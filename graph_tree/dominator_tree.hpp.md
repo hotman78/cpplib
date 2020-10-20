@@ -13,7 +13,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u652F\u914D\u6728"
     links: []
   bundledCode: "#line 2 \"graph_tree/dominator_tree.hpp\"\n#include<vector>\n#include<stack>\n\

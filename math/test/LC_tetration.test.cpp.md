@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/tetration.hpp
-    title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
+  - icon: ':x:'
+    path: math/euler_phi.hpp
+    title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
   - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
-  - icon: ':heavy_check_mark:'
-    path: math/euler_phi.hpp
-    title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
+  - icon: ':x:'
+    path: math/tetration.hpp
+    title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
   - icon: ':question:'
     path: util/template.hpp
     title: util/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tetration_mod
@@ -45,22 +45,19 @@ data:
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
     \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
-    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void numout(T\
-    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i<INF/2?i:\"INF\";f=1;}cout<<endl;}\n\
-    template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}\ntemplate<typename\
-    \ T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\n\
-    template<typename T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename\
-    \ T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?\"\"\
-    :\" \"<<t[i];f=1;}cout<<endl;}\ntemplate<typename T>inline void _output2(T t){for(lint\
-    \ i=0;i<t.size();i++)output(t[i]);}\n#define loop(n) for(long long _=0;_<(long\
-    \ long)(n);++_)\n#define rep(i,...) for(auto i:range(__VA_ARGS__)) \n#define rrep(i,...)\
-    \ for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)\n\
-    #define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n#define irep(i) for(lint\
-    \ i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return vector<long\
-    \ long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline\
-    \ vector<long long> range(long long a,long long b){if(b<=a)return vector<long\
-    \ long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return v;}\ninline\
-    \ vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
+    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void output(T\
+    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\ntemplate<typename\
+    \ T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename T>inline\
+    \ void debug(T t){bool f=0;for(auto i:t){cerr<<(f?\" \":\"\")<<i;f=1;}cerr<<endl;}\n\
+    template<typename T>inline void debug2(T t){for(auto i:t)output(i);}\n#define\
+    \ loop(n) for(long long _=0;_<(long long)(n);++_)\n#define rep(i,...) for(auto\
+    \ i:range(__VA_ARGS__)) \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n\
+    #define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b)\
+    \ for(lint i=lint(b)-1;i>=lint(a);--i)\n#define irep(i) for(lint i=0;;++i)\ninline\
+    \ vector<long long> range(long long n){if(n<=0)return vector<long long>();vector<long\
+    \ long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline vector<long long> range(long\
+    \ long a,long long b){if(b<=a)return vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
     \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
     \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
     \ v;}\n#define all(n) begin(n),end(n)\ntemplate<typename T,typename E>bool chmin(T&\
@@ -69,8 +66,12 @@ data:
     \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
-    \ \"../graph_tree/graph_template.hpp\"\n#line 4 \"math/test/LC_tetration.test.cpp\"\
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#define\
+    \ extrep(v,...) for(auto v:__MAKE_MAT__({__VA_ARGS__}))\nvector<vector<long long>>\
+    \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
+    \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
+    \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"math/test/LC_tetration.test.cpp\"\
     \n\nint main(){\n    int t;\n    cin>>t;\n    while(t--){\n        int a,b,m;\n\
     \        cin>>a>>b>>m;\n        cout<<tetration(a,b,m)<<endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tetration_mod\"\n#include\
@@ -85,8 +86,8 @@ data:
   isVerificationFile: true
   path: math/test/LC_tetration.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 16:21:56+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-21 08:20:00+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: math/test/LC_tetration.test.cpp
 layout: document

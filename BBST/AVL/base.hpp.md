@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 2 \"BBST/AVL/base.hpp\"\n#include<tuple>\n\ntemplate<typename\
     \ Node>\nstruct AVL_base{\n    using np=Node*;\n    int sz(np t){return t?t->sz:0;}\n\

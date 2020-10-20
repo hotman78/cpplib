@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30AB\u30BF\u30E9\u30F3\u53F0\u5F62"
     links: []
   bundledCode: "#line 1 \"math/catalans_trapezoids.hpp\"\n/**\n * @brief \u30AB\u30BF\

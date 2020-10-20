@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: BinaryHeap
     links: []
   bundledCode: "#line 2 \"data_structure/binary_heap.hpp\"\n#include<vector>\n#include<algorithm>\n\

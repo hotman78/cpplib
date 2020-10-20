@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
     links: []
   bundledCode: "#line 2 \"functional/composite.hpp\"\n#include<tuple>\n\n/**\n * @brief\

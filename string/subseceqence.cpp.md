@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u90E8\u5206\u5217DP(WIP)"
     links: []
   bundledCode: "#line 2 \"string/subseceqence.cpp\"\n#include<string>\n#include<vector>\n\

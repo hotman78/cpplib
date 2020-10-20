@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: DisjointSparseTable
     links: []
   bundledCode: "#line 2 \"data_structure/disjoint_sparse_table.hpp\"\n#include<functional>\n\

@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u7D04\u6570\u5217\u6319"
     links: []
   bundledCode: "#line 2 \"math/divisor_list.hpp\"\n/**\n * @brief \u7D04\u6570\u5217\

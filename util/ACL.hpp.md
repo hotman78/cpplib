@@ -5,32 +5,31 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/FPS_long.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-  - icon: ':question:'
+  - icon: ':x:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: util/test/LC_Suffix_Array.test.cpp
-    title: util/test/LC_Suffix_Array.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: util/test/LC_Number_of_Substrings.test.cpp
-    title: util/test/LC_Number_of_Substrings.test.cpp
-  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_centroid_decomposition.test.cpp
+    title: graph_tree/test/LC_centroid_decomposition.test.cpp
+  - icon: ':x:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
   - icon: ':x:'
-    path: math/test/LC_interpolation.test.cpp
-    title: math/test/LC_interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: graph_tree/test/LC_centroid_decomposition.test.cpp
-    title: graph_tree/test/LC_centroid_decomposition.test.cpp
+  - icon: ':x:'
+    path: math/test/LC_interpolation.test.cpp
+    title: math/test/LC_interpolation.test.cpp
+  - icon: ':x:'
+    path: util/test/LC_Number_of_Substrings.test.cpp
+    title: util/test/LC_Number_of_Substrings.test.cpp
+  - icon: ':x:'
+    path: util/test/LC_Suffix_Array.test.cpp
+    title: util/test/LC_Suffix_Array.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://en.wikipedia.org/wiki/Barrett_reduction
     - https://en.wikipedia.org/wiki/Fenwick_tree
@@ -1524,10 +1523,10 @@ data:
   verifiedWith:
   - util/test/LC_Suffix_Array.test.cpp
   - util/test/LC_Number_of_Substrings.test.cpp
+  - graph_tree/test/LC_centroid_decomposition.test.cpp
   - math/test/LC_convolution_1000000007.test.cpp
   - math/test/LC_interpolation.test.cpp
   - math/test/LC_convolution_998244353.test.cpp
-  - graph_tree/test/LC_centroid_decomposition.test.cpp
 documentation_of: util/ACL.hpp
 layout: document
 redirect_from:

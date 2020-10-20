@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6700\u5927\u6D41(Dinic\u6CD5)"
     links: []
   bundledCode: "#line 2 \"graph_tree/dinic.hpp\"\n#include<vector>\r\n#include<queue>\r\

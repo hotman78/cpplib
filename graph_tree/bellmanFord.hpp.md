@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u30D9\u30EB\u30DE\u30F3\u30D5\u30A9\u30FC\u30C9\u6CD5(WIP)"
     links: []
   bundledCode: "#line 1 \"graph_tree/bellmanFord.hpp\"\n/**\n * @brief \u30D9\u30EB\

@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6700\u5927\u5024"
     links: []
   bundledCode: "#line 2 \"functional/MAX.hpp\"\n#include<algorithm>\n/**\n * @brief\

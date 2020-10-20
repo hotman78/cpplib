@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: SuffixArray
     links: []
   bundledCode: "#line 2 \"string/suffix_array.hpp\"\n#include<string>\n#include<vector>\n\

@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"data_structure/link_cut_tree.hpp\"\ntemplate<typename T,typename\
     \ E>\nclass link_cut{\n    class myset{\n        struct node{\n            T val,l,r,sum;\n\

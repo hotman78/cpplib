@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u4E8C\u9805\u4FC2\u6570 mod P"
     links: []
   bundledCode: "#line 1 \"math/comb.hpp\"\n/**\r\n * @brief \u4E8C\u9805\u4FC2\u6570\

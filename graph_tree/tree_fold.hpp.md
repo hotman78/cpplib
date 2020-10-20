@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6728\u4E0A\u306E\u7573\u307F\u8FBC\u307F(WIP)"
     links: []
   bundledCode: "#line 1 \"graph_tree/tree_fold.hpp\"\n/**\n * @brief \u6728\u4E0A\u306E\

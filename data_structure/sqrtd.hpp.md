@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u5E73\u65B9\u5206\u5272(WIP)"
     links: []
   bundledCode: "#line 1 \"data_structure/sqrtd.hpp\"\n/**\n * @brief \u5E73\u65B9\u5206\

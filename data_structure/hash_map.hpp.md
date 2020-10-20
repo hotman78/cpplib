@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: HashMap(WIP)
     links: []
   bundledCode: "#line 2 \"data_structure/hash_map.hpp\"\n#include<tuple>\n/**\n *\

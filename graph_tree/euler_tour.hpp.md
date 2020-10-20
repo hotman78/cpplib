@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 2 \"graph_tree/euler_tour.hpp\"\n#include<vector>\n#line 3 \"\
     graph_tree/graph_template.hpp\"\n#include<tuple>\n#include<iostream>\n/**\n *\

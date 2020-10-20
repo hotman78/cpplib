@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: BinaryIndexedTree
     links: []
   bundledCode: "#line 2 \"data_structure/binary_indexed_tree.hpp\"\n#include<vector>\r\

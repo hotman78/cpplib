@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "Kd\u6728(WIP)"
     links: []
   bundledCode: "#line 2 \"data_structure/kd_tree.hpp\"\n#include<vector>\n\n/**\n\

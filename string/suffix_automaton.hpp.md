@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: SuffixAutomaton
     links: []
   bundledCode: "#line 2 \"string/suffix_automaton.hpp\"\n#include<string>\n#include<vector>\n\

@@ -16,7 +16,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6839\u304B\u3089\u306E\u6DF1\u3055"
     links: []
   bundledCode: "#line 2 \"graph_tree/depth.hpp\"\n#include<vector>\n#include<cmath>\n\

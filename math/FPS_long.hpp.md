@@ -5,9 +5,6 @@ data:
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
   - icon: ':question:'
-    path: util/ACL.hpp
-    title: util/ACL.hpp
-  - icon: ':question:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
   - icon: ':question:'
@@ -16,6 +13,9 @@ data:
   - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
+  - icon: ':question:'
+    path: util/ACL.hpp
+    title: util/ACL.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -24,7 +24,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
     links: []
   bundledCode: "#line 2 \"math/FPS_long.hpp\"\n#include<vector>\n#line 3 \"math/FPS_base.hpp\"\
@@ -88,16 +87,19 @@ data:
     \        assert((*this)[0]==T(0));\n        const int n=deg==-1?this->size():deg;\n\
     \        P ret({T(1)});\n        for(int i=1;i<n;i<<=1){\n            ret=ret*(pre(i<<1)+1-ret.log(i<<1)).pre(i<<1);\n\
     \        }\n        return ret.pre(n);\n    }\n    P pow(int c,int deg=-1){\n\
+    \        const int n=deg==-1?this->size():deg;\n\t\tlong long i=0;\n\t\tP ret(*static_cast<P*>(this));\n\
+    \t\twhile(i!=(int)this->size()&&ret[i]==0)i++;\n\t\tif(i==(int)this->size())return\
+    \ P(n,0);\n\t\tif(i*c>=n)return P(n,0);\n\t\tT k=ret[i];\n\t\treturn ((((ret>>i)/k).log()*c).exp()*(k.pow(c))<<(i*c)).pre(n);\n\
     \        // const int n=deg==-1?this->size():deg;\n        // long long i=0;\n\
     \        // P ret(*this);\n        // while(i!=(int)this->size()&&ret[i]==0)i++;\n\
     \        // if(i==(int)this->size())return P(n,0);\n        // if(i*c>=n)return\
     \ P(n,0);\n        // T k=ret[i];\n        // return ((((ret>>i)/k).log()*c).exp()*(k.pow(c))<<(i*c)).pre(n);\n\
-    \        P x(*this);\n        P ret(1,1);\n        while(c) {\n            if(c&1){\n\
-    \                ret*=x;\n                if(~deg)ret=ret.pre(deg);\n        \
-    \    }\n            x*=x;\n            if(~deg)x=x.pre(deg);\n            c>>=1;\n\
-    \        }\n        return ret;\n    }\n    P sqrt(int deg=-1){\n        const\
-    \ int n=deg==-1?this->size():deg;\n        if((*this)[0]==T(0)) {\n          \
-    \  for(int i=1;i<(int)this->size();i++) {\n                if((*this)[i]!=T(0))\
+    \        // P x(*this);\n        // P ret(1,1);\n        // while(c) {\n     \
+    \   //     if(c&1){\n        //         ret*=x;\n        //         if(~deg)ret=ret.pre(deg);\n\
+    \        //     }\n        //     x*=x;\n        //     if(~deg)x=x.pre(deg);\n\
+    \        //     c>>=1;\n        // }\n        // return ret;\n    }\n    P sqrt(int\
+    \ deg=-1){\n        const int n=deg==-1?this->size():deg;\n        if((*this)[0]==T(0))\
+    \ {\n            for(int i=1;i<(int)this->size();i++) {\n                if((*this)[i]!=T(0))\
     \ {\n                    if(i&1)return{};\n                    if(n-i/2<=0)break;\n\
     \                    auto ret=(*this>>i).sqrt(n-i/2)<<(i/2);\n               \
     \     if((int)ret.size()<n)ret.resize(n,T(0));\n                    return ret;\n\
@@ -931,7 +933,7 @@ data:
   isVerificationFile: false
   path: math/FPS_long.hpp
   requiredBy: []
-  timestamp: '2020-09-24 10:34:58+09:00'
+  timestamp: '2020-10-21 08:20:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - graph_tree/test/LC_centroid_decomposition.test.cpp

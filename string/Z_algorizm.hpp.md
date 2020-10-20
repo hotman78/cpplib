@@ -3,13 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/test/LC_Z_algorizm.test.cpp
     title: string/test/LC_Z_algorizm.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     links: []
   bundledCode: "#line 2 \"string/Z_algorizm.hpp\"\n#include<string>\n#include<vector>\n\
@@ -39,7 +38,7 @@ data:
   path: string/Z_algorizm.hpp
   requiredBy: []
   timestamp: '2020-09-14 10:40:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - string/test/LC_Z_algorizm.test.cpp
 documentation_of: string/Z_algorizm.hpp

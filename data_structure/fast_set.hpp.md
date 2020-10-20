@@ -9,7 +9,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "FastSet(\u9045\u3044)"
     links: []
   bundledCode: "#line 2 \"data_structure/fast_set.hpp\"\n#include<cstdint>\n#include<vector>\n\

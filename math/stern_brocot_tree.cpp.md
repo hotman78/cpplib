@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"math/stern_brocot_tree.cpp\"\n#include<iostream>\n\n//\u5206\
     \u6BCD\u304Cm\u4EE5\u4E0B\u306Ek\u756A\u76EE\u306E\u6570\nlong long m;\nvoid bs(long\

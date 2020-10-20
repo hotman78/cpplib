@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: Trie(WIP)
     links: []
   bundledCode: "#line 1 \"data_structure/trie.hpp\"\n/**\n * @brief Trie(WIP)\n */\n"

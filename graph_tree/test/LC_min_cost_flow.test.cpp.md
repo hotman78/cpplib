@@ -1,18 +1,18 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
-    path: util/template.hpp
-    title: util/template.hpp
   - icon: ':heavy_check_mark:'
     path: graph_tree/min_cost_flow.hpp
     title: "\u6700\u5C0F\u8CBB\u7528\u6D41(CostScaling)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph_tree/push_relabel.hpp
     title: "\u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))"
   - icon: ':heavy_check_mark:'
     path: util/int128.hpp
     title: util/int128.hpp
+  - icon: ':question:'
+    path: util/template.hpp
+    title: util/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -29,22 +29,19 @@ data:
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
     \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
-    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void numout(T\
-    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i<INF/2?i:\"INF\";f=1;}cout<<endl;}\n\
-    template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}\ntemplate<typename\
-    \ T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\n\
-    template<typename T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename\
-    \ T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?\"\"\
-    :\" \"<<t[i];f=1;}cout<<endl;}\ntemplate<typename T>inline void _output2(T t){for(lint\
-    \ i=0;i<t.size();i++)output(t[i]);}\n#define loop(n) for(long long _=0;_<(long\
-    \ long)(n);++_)\n#define rep(i,...) for(auto i:range(__VA_ARGS__)) \n#define rrep(i,...)\
-    \ for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)\n\
-    #define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n#define irep(i) for(lint\
-    \ i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return vector<long\
-    \ long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline\
-    \ vector<long long> range(long long a,long long b){if(b<=a)return vector<long\
-    \ long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return v;}\ninline\
-    \ vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
+    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void output(T\
+    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\ntemplate<typename\
+    \ T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename T>inline\
+    \ void debug(T t){bool f=0;for(auto i:t){cerr<<(f?\" \":\"\")<<i;f=1;}cerr<<endl;}\n\
+    template<typename T>inline void debug2(T t){for(auto i:t)output(i);}\n#define\
+    \ loop(n) for(long long _=0;_<(long long)(n);++_)\n#define rep(i,...) for(auto\
+    \ i:range(__VA_ARGS__)) \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n\
+    #define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b)\
+    \ for(lint i=lint(b)-1;i>=lint(a);--i)\n#define irep(i) for(lint i=0;;++i)\ninline\
+    \ vector<long long> range(long long n){if(n<=0)return vector<long long>();vector<long\
+    \ long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline vector<long long> range(long\
+    \ long a,long long b){if(b<=a)return vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
     \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
     \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
     \ v;}\n#define all(n) begin(n),end(n)\ntemplate<typename T,typename E>bool chmin(T&\
@@ -53,8 +50,12 @@ data:
     \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
-    \ \"../graph_tree/graph_template.hpp\"\n#line 6 \"graph_tree/push_relabel.hpp\"\
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#define\
+    \ extrep(v,...) for(auto v:__MAKE_MAT__({__VA_ARGS__}))\nvector<vector<long long>>\
+    \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
+    \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
+    \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 6 \"graph_tree/push_relabel.hpp\"\
     \n\n/**\n * @brief \u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))\n */\n\
     template<typename T>\nclass push_relabel{\n    int n;\n    T f=0;\n    using i64=long\
     \ long;\n    struct edge{\n        int from,to,rev;\n        T flow,cap;\n   \
@@ -176,7 +177,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_min_cost_flow.test.cpp
   requiredBy: []
-  timestamp: '2020-09-24 16:21:56+09:00'
+  timestamp: '2020-10-21 08:20:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_min_cost_flow.test.cpp

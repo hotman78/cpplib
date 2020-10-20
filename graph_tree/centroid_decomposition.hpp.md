@@ -12,7 +12,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u91CD\u5FC3\u5206\u89E3"
     links: []
   bundledCode: "#line 2 \"graph_tree/centroid_decomposition.hpp\"\n#include<vector>\n\

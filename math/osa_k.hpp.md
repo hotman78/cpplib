@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "osa_k\u6CD5"
     links: []
   bundledCode: "#line 2 \"math/osa_k.hpp\"\n#include<map>\n\n/**\n * @brief osa_k\u6CD5\

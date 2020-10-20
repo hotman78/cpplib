@@ -4,18 +4,17 @@ data:
   - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: util/random_gen.hpp
     title: util/random_gen.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_mod_sqrt.test.cpp
     title: math/test/LC_mod_sqrt.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: ModSqrt
     links: []
   bundledCode: "#line 1 \"math/mod_sqrt.hpp\"\n#include<tuple>\n#line 1 \"math/mod_pow.hpp\"\
@@ -51,7 +50,7 @@ data:
   path: math/mod_sqrt.hpp
   requiredBy: []
   timestamp: '2020-09-14 10:33:36+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - math/test/LC_mod_sqrt.test.cpp
 documentation_of: math/mod_sqrt.hpp

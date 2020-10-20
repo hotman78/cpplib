@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "\u6700\u5927\u5024\u3068\u305D\u306E\u4F4D\u7F6E"
     links: []
   bundledCode: "#line 2 \"functional/argmax.hpp\"\n#include<tuple>\n\n/**\n * @brief\

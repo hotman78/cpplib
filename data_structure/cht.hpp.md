@@ -6,7 +6,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 2 \"data_structure/cht.hpp\"\n#include<set>\n#include<functional>\n\
     #include<climits>\n#include<cassert>\n\nstruct Line {\n\tmutable long long k,\

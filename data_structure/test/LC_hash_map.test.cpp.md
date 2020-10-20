@@ -1,15 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
-    path: util/template.hpp
-    title: util/template.hpp
   - icon: ':x:'
     path: data_structure/hash_map.hpp
     title: HashMap(WIP)
   - icon: ':x:'
     path: util/fastIO.hpp
     title: "\u9AD8\u901F\u5165\u51FA\u529B(WIP)"
+  - icon: ':question:'
+    path: util/template.hpp
+    title: util/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -23,22 +23,19 @@ data:
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
     \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
-    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void numout(T\
-    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i<INF/2?i:\"INF\";f=1;}cout<<endl;}\n\
-    template<typename T>inline void numout2(T t){for(auto i:t)numout(i);}\ntemplate<typename\
-    \ T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\n\
-    template<typename T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename\
-    \ T>inline void _output(T t){bool f=0;for(lint i=0;i<t.size();i++){cout<<f?\"\"\
-    :\" \"<<t[i];f=1;}cout<<endl;}\ntemplate<typename T>inline void _output2(T t){for(lint\
-    \ i=0;i<t.size();i++)output(t[i]);}\n#define loop(n) for(long long _=0;_<(long\
-    \ long)(n);++_)\n#define rep(i,...) for(auto i:range(__VA_ARGS__)) \n#define rrep(i,...)\
-    \ for(auto i:reversed(range(__VA_ARGS__)))\n#define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)\n\
-    #define rrepi(i,a,b) for(lint i=lint(b)-1;i>=lint(a);--i)\n#define irep(i) for(lint\
-    \ i=0;;++i)\ninline vector<long long> range(long long n){if(n<=0)return vector<long\
-    \ long>();vector<long long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline\
-    \ vector<long long> range(long long a,long long b){if(b<=a)return vector<long\
-    \ long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return v;}\ninline\
-    \ vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
+    typedef vector<vector<string>> smat;\ntemplate<typename T>inline void output(T\
+    \ t){bool f=0;for(auto i:t){cout<<(f?\" \":\"\")<<i;f=1;}cout<<endl;}\ntemplate<typename\
+    \ T>inline void output2(T t){for(auto i:t)output(i);}\ntemplate<typename T>inline\
+    \ void debug(T t){bool f=0;for(auto i:t){cerr<<(f?\" \":\"\")<<i;f=1;}cerr<<endl;}\n\
+    template<typename T>inline void debug2(T t){for(auto i:t)output(i);}\n#define\
+    \ loop(n) for(long long _=0;_<(long long)(n);++_)\n#define rep(i,...) for(auto\
+    \ i:range(__VA_ARGS__)) \n#define rrep(i,...) for(auto i:reversed(range(__VA_ARGS__)))\n\
+    #define repi(i,a,b) for(lint i=lint(a);i<(lint)(b);++i)\n#define rrepi(i,a,b)\
+    \ for(lint i=lint(b)-1;i>=lint(a);--i)\n#define irep(i) for(lint i=0;;++i)\ninline\
+    \ vector<long long> range(long long n){if(n<=0)return vector<long long>();vector<long\
+    \ long>v(n);iota(v.begin(),v.end(),0LL);return v;}\ninline vector<long long> range(long\
+    \ long a,long long b){if(b<=a)return vector<long long>();vector<long long>v(b-a);iota(v.begin(),v.end(),a);return\
+    \ v;}\ninline vector<long long> range(long long a,long long b,long long c){if((b-a+c-1)/c<=0)return\
     \ vector<long long>();vector<long long>v((b-a+c-1)/c);for(int i=0;i<(int)v.size();++i)v[i]=i?v[i-1]+c:a;return\
     \ v;}\ntemplate<typename T>inline T reversed(T v){reverse(v.begin(),v.end());return\
     \ v;}\n#define all(n) begin(n),end(n)\ntemplate<typename T,typename E>bool chmin(T&\
@@ -47,8 +44,12 @@ data:
     \ vector<lint> dx={1,0,-1,0,1,1,-1,-1};\nconst vector<lint> dy={0,1,0,-1,1,-1,1,-1};\n\
     #define SUM(v) accumulate(all(v),0LL)\ntemplate<typename T,typename ...Args>auto\
     \ make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return\
-    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n//#include\
-    \ \"../graph_tree/graph_template.hpp\"\n#line 3 \"data_structure/hash_map.hpp\"\
+    \ vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}\n#define\
+    \ extrep(v,...) for(auto v:__MAKE_MAT__({__VA_ARGS__}))\nvector<vector<long long>>\
+    \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
+    \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
+    \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 3 \"data_structure/hash_map.hpp\"\
     \n/**\n * @brief HashMap(WIP)\n */\n\ntemplate<typename T,typename E,typename\
     \ F=std::hash<T>>\nstruct hash_map{\n    struct node{\n        T key;E val;\n\
     \        unsigned long b;\n        node():key(T()),val(E()),b(0){}\n        node(T\
@@ -103,11 +104,11 @@ data:
     \   }\n    ~fastO(){\n        fwrite(out,1,o-out,stdout);\n    }\n    fastO& operator<<(const\
     \ char& c){\n        *o++=c;\n        return *this;\n    }\n    fastO& operator<<(int\
     \ u){\n         if(u){\n            auto be=o;\n            while(u)*o++=u%10+'0',u/=10;\n\
-    \            auto en=o;\n            while(be<en)swap(*--en,*be++);\n        }else\
-    \ *o++='0';\n        return *this;\n    }\n    fastO& operator<<(long long u){\n\
-    \        if(u){\n            auto be=o;\n            while(u)*o++=u%10+'0',u/=10;\n\
-    \            auto en=o;\n            while(be<en)swap(*--en,*be++);\n        }else\
-    \ *o++='0';\n        return *this;\n    }\n} fout;\n#line 4 \"data_structure/test/LC_hash_map.test.cpp\"\
+    \            auto en=o;\n            while(be<en)std::swap(*--en,*be++);\n   \
+    \     }else *o++='0';\n        return *this;\n    }\n    fastO& operator<<(long\
+    \ long u){\n        if(u){\n            auto be=o;\n            while(u)*o++=u%10+'0',u/=10;\n\
+    \            auto en=o;\n            while(be<en)std::swap(*--en,*be++);\n   \
+    \     }else *o++='0';\n        return *this;\n    }\n} fout;\n#line 4 \"data_structure/test/LC_hash_map.test.cpp\"\
     \n\nint main(){\n    hash_map<lint,lint>m;\n    lint q;\n    fin>>q;\n    while(q--){\n\
     \        lint c;\n        fin>>c;\n        if(c==0){\n            lint k,v;\n\
     \            fin>>k>>v;\n            m[k]=v;\n        }else{\n            lint\
@@ -125,7 +126,7 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_hash_map.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 18:27:28+09:00'
+  timestamp: '2020-10-21 08:20:00+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: data_structure/test/LC_hash_map.test.cpp
