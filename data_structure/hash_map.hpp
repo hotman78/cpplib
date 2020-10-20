@@ -1,7 +1,7 @@
 #pragma once
 #include<tuple>
 /**
- * @brief HashMap(WIP)
+ * @brief HashMap
  */
 
 template<typename T,typename E,typename F=std::hash<T>>

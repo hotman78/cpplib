@@ -1,3 +1,4 @@
+#define PROBLEM "https://judge.yosupo.jp/problem/associative_array"
 #include"../../util/template.hpp"
 #include"../hash_map.hpp"
 #include"../../util/fastIO.hpp"
