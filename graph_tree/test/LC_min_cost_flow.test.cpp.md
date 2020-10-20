@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/min_cost_flow.hpp
     title: "\u6700\u5C0F\u8CBB\u7528\u6D41(CostScaling)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/push_relabel.hpp
     title: "\u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))"
   - icon: ':heavy_check_mark:'

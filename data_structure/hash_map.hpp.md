@@ -3,16 +3,16 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_hash_map.test.cpp
     title: data_structure/test/LC_hash_map.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    document_title: HashMap(WIP)
+    document_title: HashMap
     links: []
   bundledCode: "#line 2 \"data_structure/hash_map.hpp\"\n#include<tuple>\n/**\n *\
-    \ @brief HashMap(WIP)\n */\n\ntemplate<typename T,typename E,typename F=std::hash<T>>\n\
+    \ @brief HashMap\n */\n\ntemplate<typename T,typename E,typename F=std::hash<T>>\n\
     struct hash_map{\n    struct node{\n        T key;E val;\n        unsigned long\
     \ b;\n        node():key(T()),val(E()),b(0){}\n        node(T key,E val):key(key),val(val),b(0){}\n\
     \        static node* alc;\n        static size_t cnt;\n        static size_t\
@@ -50,7 +50,7 @@ data:
     \ T,typename E,typename F=std::hash<T>>typename hash_map<T,E,F>::node* hash_map<T,E,F>::node::alc=(node*)malloc(sizeof(node));\n\
     template<typename T,typename E,typename F=std::hash<T>>size_t hash_map<T,E,F>::node::cnt=0;\n\
     template<typename T,typename E,typename F=std::hash<T>>size_t hash_map<T,E,F>::node::alc_sz=1;\n"
-  code: "#pragma once\n#include<tuple>\n/**\n * @brief HashMap(WIP)\n */\n\ntemplate<typename\
+  code: "#pragma once\n#include<tuple>\n/**\n * @brief HashMap\n */\n\ntemplate<typename\
     \ T,typename E,typename F=std::hash<T>>\nstruct hash_map{\n    struct node{\n\
     \        T key;E val;\n        unsigned long b;\n        node():key(T()),val(E()),b(0){}\n\
     \        node(T key,E val):key(key),val(val),b(0){}\n        static node* alc;\n\
@@ -93,8 +93,8 @@ data:
   isVerificationFile: false
   path: data_structure/hash_map.hpp
   requiredBy: []
-  timestamp: '2020-09-26 18:27:28+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-21 08:35:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - data_structure/test/LC_hash_map.test.cpp
 documentation_of: data_structure/hash_map.hpp
@@ -102,5 +102,5 @@ layout: document
 redirect_from:
 - /library/data_structure/hash_map.hpp
 - /library/data_structure/hash_map.hpp.html
-title: HashMap(WIP)
+title: HashMap
 ---

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/hash_map.hpp
-    title: HashMap(WIP)
-  - icon: ':x:'
+    title: HashMap
+  - icon: ':heavy_check_mark:'
     path: util/fastIO.hpp
     title: "\u9AD8\u901F\u5165\u51FA\u529B(WIP)"
   - icon: ':question:'
@@ -13,13 +13,16 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    links: []
-  bundledCode: "#line 2 \"util/template.hpp\"\n#pragma GCC optimize(\"Ofast\")\n#pragma\
-    \ GCC optimize(\"unroll-loops\")\n#pragma GCC target(\"avx\")\n#include<bits/stdc++.h>\n\
-    using namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
+    PROBLEM: https://judge.yosupo.jp/problem/associative_array
+    links:
+    - https://judge.yosupo.jp/problem/associative_array
+  bundledCode: "#line 1 \"data_structure/test/LC_hash_map.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/associative_array\"\n#line 2 \"util/template.hpp\"\
+    \n#pragma GCC optimize(\"Ofast\")\n#pragma GCC optimize(\"unroll-loops\")\n#pragma\
+    \ GCC target(\"avx\")\n#include<bits/stdc++.h>\nusing namespace std;\nstruct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;\n\
     typedef long long lint;\n#define INF (1LL<<60)\n#define IINF (1<<30)\n#define\
     \ EPS (1e-10)\n#define endl ('\\n')\ntypedef vector<lint> vec;\ntypedef vector<vector<lint>>\
     \ mat;\ntypedef vector<vector<vector<lint>>> mat3;\ntypedef vector<string> svec;\n\
@@ -50,12 +53,12 @@ data:
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
     \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 3 \"data_structure/hash_map.hpp\"\
-    \n/**\n * @brief HashMap(WIP)\n */\n\ntemplate<typename T,typename E,typename\
-    \ F=std::hash<T>>\nstruct hash_map{\n    struct node{\n        T key;E val;\n\
-    \        unsigned long b;\n        node():key(T()),val(E()),b(0){}\n        node(T\
-    \ key,E val):key(key),val(val),b(0){}\n        static node* alc;\n        static\
-    \ size_t cnt;\n        static size_t alc_sz;\n        void* operator new(size_t){\n\
-    \            if(alc_sz==cnt){\n                alc_sz*=2;\n                alc=(node*)malloc(alc_sz*sizeof(node));\n\
+    \n/**\n * @brief HashMap\n */\n\ntemplate<typename T,typename E,typename F=std::hash<T>>\n\
+    struct hash_map{\n    struct node{\n        T key;E val;\n        unsigned long\
+    \ b;\n        node():key(T()),val(E()),b(0){}\n        node(T key,E val):key(key),val(val),b(0){}\n\
+    \        static node* alc;\n        static size_t cnt;\n        static size_t\
+    \ alc_sz;\n        void* operator new(size_t){\n            if(alc_sz==cnt){\n\
+    \                alc_sz*=2;\n                alc=(node*)malloc(alc_sz*sizeof(node));\n\
     \                cnt=0;\n            }\n            return alc+cnt++;\n      \
     \  }\n    };\n    size_t sz;\n    node* point;\n    constexpr static size_t mod_list[24]={37,67,131,257,521,1031,2053,4099,8209,16411,32771,65537,131101,262147,524309,1048583,2097169,4194319,8388617,16777259,33554467,67108879,134217757,268435459};\n\
     \    node** table;\n    F op;\n    hash_map(F op=F()):sz(15),op(op){\n       \
@@ -108,17 +111,17 @@ data:
     \     }else *o++='0';\n        return *this;\n    }\n    fastO& operator<<(long\
     \ long u){\n        if(u){\n            auto be=o;\n            while(u)*o++=u%10+'0',u/=10;\n\
     \            auto en=o;\n            while(be<en)std::swap(*--en,*be++);\n   \
-    \     }else *o++='0';\n        return *this;\n    }\n} fout;\n#line 4 \"data_structure/test/LC_hash_map.test.cpp\"\
+    \     }else *o++='0';\n        return *this;\n    }\n} fout;\n#line 5 \"data_structure/test/LC_hash_map.test.cpp\"\
     \n\nint main(){\n    hash_map<lint,lint>m;\n    lint q;\n    fin>>q;\n    while(q--){\n\
     \        lint c;\n        fin>>c;\n        if(c==0){\n            lint k,v;\n\
     \            fin>>k>>v;\n            m[k]=v;\n        }else{\n            lint\
     \ k;\n            fin>>k;\n            fout<<m[k]<<endl;\n        }\n    }\n}\n"
-  code: "#include\"../../util/template.hpp\"\n#include\"../hash_map.hpp\"\n#include\"\
-    ../../util/fastIO.hpp\"\n\nint main(){\n    hash_map<lint,lint>m;\n    lint q;\n\
-    \    fin>>q;\n    while(q--){\n        lint c;\n        fin>>c;\n        if(c==0){\n\
-    \            lint k,v;\n            fin>>k>>v;\n            m[k]=v;\n        }else{\n\
-    \            lint k;\n            fin>>k;\n            fout<<m[k]<<endl;\n   \
-    \     }\n    }\n}"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/associative_array\"\n#include\"\
+    ../../util/template.hpp\"\n#include\"../hash_map.hpp\"\n#include\"../../util/fastIO.hpp\"\
+    \n\nint main(){\n    hash_map<lint,lint>m;\n    lint q;\n    fin>>q;\n    while(q--){\n\
+    \        lint c;\n        fin>>c;\n        if(c==0){\n            lint k,v;\n\
+    \            fin>>k>>v;\n            m[k]=v;\n        }else{\n            lint\
+    \ k;\n            fin>>k;\n            fout<<m[k]<<endl;\n        }\n    }\n}"
   dependsOn:
   - util/template.hpp
   - data_structure/hash_map.hpp
@@ -126,8 +129,8 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_hash_map.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-21 08:35:07+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_hash_map.test.cpp
 layout: document

@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/totient_sum.hpp
     title: "\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\u306E\u548C"
   - icon: ':question:'
@@ -16,7 +16,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sum_of_totient_function
@@ -131,7 +131,7 @@ data:
   path: math/test/LC_totient_sum.test.cpp
   requiredBy: []
   timestamp: '2020-10-21 08:20:00+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: math/test/LC_totient_sum.test.cpp
 layout: document

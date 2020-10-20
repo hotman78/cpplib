@@ -30,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_fast_set.test.cpp
     title: data_structure/test/LC_fast_set.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_hash_map.test.cpp
     title: data_structure/test/LC_hash_map.test.cpp
   - icon: ':heavy_check_mark:'
@@ -75,46 +75,46 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_min_cost_flow.test.cpp
     title: graph_tree/test/LC_min_cost_flow.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_push_relabel.test.cpp
     title: graph_tree/test/LC_push_relabel.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/AOJ_binary_search.test.cpp
     title: math/test/AOJ_binary_search.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/AOJ_is_prime.test.cpp
     title: math/test/AOJ_is_prime.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_factor.test.cpp
     title: math/test/AOJ_prime_factor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_list.test.cpp
     title: math/test/AOJ_prime_list.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_floor_sum.test.cpp
     title: math/test/LC_floor_sum.test.cpp
   - icon: ':x:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_mod_log.test.cpp
     title: math/test/LC_mod_log.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_mod_sqrt.test.cpp
     title: math/test/LC_mod_sqrt.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_prime_factor.test.cpp
     title: math/test/LC_prime_factor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_tetration.test.cpp
     title: math/test/LC_tetration.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_totient_sum.test.cpp
     title: math/test/LC_totient_sum.test.cpp
   - icon: ':x:'
