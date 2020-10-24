@@ -26,17 +26,7 @@ struct trie{
         }
         t->sz2=1;
     }
-    string count(const std::string& s){
-        np t=root;
-        int last=0;
-        for(int i=0;i<(int)s.size();++i){
-            if(!t->ch[s[i]-'0'])t->ch[s[i]-'0']=new node();
-            t=t->ch[s[i]-'0'];
-            if(t->sz2)last=i;
-        }
-        return s.substr(0,last+1);
-    }
-    int count2(const std::string& s){
+    int count(const std::string& s){
         np t=root;
         for(int i=0;i<(int)s.size();++i){
             if(!t->ch[s[i]-'0'])t->ch[s[i]-'0']=new node();
@@ -45,14 +35,4 @@ struct trie{
         }
         return t->sz2;
     }
-    // int count_suffix(const std::string& s){
-    //     np t=root;
-    //     int res=0;
-    //     for(int i=0;i<(int)s.size();++i){
-    //         if(!t->ch[s[i]-'0'])t->ch[s[i]-'0']=new node();
-    //         t=t->ch[s[i]-'0'];
-    //         res+=t->sz2;
-    //     }
-    //     return res;
-    // }
 };
