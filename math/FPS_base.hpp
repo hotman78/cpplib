@@ -333,6 +333,30 @@ struct FPS_BASE:std::vector<T>{
         }
         return ans;
     }
+    P find_linear_recurrence()const{
+        const int n=this->size();
+        P b={T(-1)},c={T(-1)};
+        T y=T(1);
+        for(int i=1;i<=n;++i){
+            int l=c.size(),m=b.size();
+            T x=0;
+            for(int j=0;j<l;++j)x+=c[j]*(*this)[i-l+j];
+            b.emplace_back(0);
+            m++;
+            if(x==T(0))continue;
+            T freq=x/y;
+            if(l<m){
+                auto tmp=c;
+                c<<=m-l;
+                c-=b*freq;
+                b=tmp;
+                y=x;
+            }else{
+                c-=(b*freq)<<(l-m);
+            }
+        }
+        return c;
+    }
     static P stirling_second(int n){
         P a(n+1,0),b(n+1,0);
         for(int i=0;i<=n;++i){

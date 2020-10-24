@@ -39,3 +39,4 @@ template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){
 #define extrep(v,...) for(auto v:__MAKE_MAT__({__VA_ARGS__}))
 vector<vector<long long>> __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return ret;}
 //#include "../graph_tree/graph_template.hpp"
+template<typename T,typename E>ostream& operator<<(ostream& out,pair<T,E>v){out<<"("<<v.first<<","<<v.second<<")";return out;}
