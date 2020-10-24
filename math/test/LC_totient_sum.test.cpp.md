@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/totient_sum.hpp
     title: "\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\u306E\u548C"
   - icon: ':question:'
@@ -16,7 +16,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sum_of_totient_function
@@ -115,9 +115,10 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 5 \"math/test/LC_totient_sum.test.cpp\"\
-    \n\nint main(){\n    lint n;\n    cin>>n;\n    cout<<totient_sum<mint>(n)<<endl;\n\
-    }\n"
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 5 \"math/test/LC_totient_sum.test.cpp\"\n\nint main(){\n\
+    \    lint n;\n    cin>>n;\n    cout<<totient_sum<mint>(n)<<endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sum_of_totient_function\"\
     \n#include \"../totient_sum.hpp\"\n#include \"../mod_int998244353.hpp\"\n#include\
     \ \"../../util/template.hpp\"\n\nint main(){\n    lint n;\n    cin>>n;\n    cout<<totient_sum<mint>(n)<<endl;\n\
@@ -130,8 +131,8 @@ data:
   isVerificationFile: true
   path: math/test/LC_totient_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-24 18:26:33+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: math/test/LC_totient_sum.test.cpp
 layout: document

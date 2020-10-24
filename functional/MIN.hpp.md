@@ -31,8 +31,8 @@ data:
   timestamp: '2020-09-18 14:44:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - data_structure/test/LC_sparse_table.test.cpp
   - data_structure/test/LC_RMQ.test.cpp
+  - data_structure/test/LC_sparse_table.test.cpp
 documentation_of: functional/MIN.hpp
 layout: document
 redirect_from:

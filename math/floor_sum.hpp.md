@@ -6,11 +6,11 @@ data:
     path: math/test/LC_sum_power_poly_limit.cpp
     title: math/test/LC_sum_power_poly_limit.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_floor_sum.test.cpp
     title: math/test/LC_floor_sum.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: \sum_{i=0}^{n-1}\floor(a*i+b/c)
     links: []
@@ -32,7 +32,7 @@ data:
   requiredBy:
   - math/test/LC_sum_power_poly_limit.cpp
   timestamp: '2020-09-13 16:40:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - math/test/LC_floor_sum.test.cpp
 documentation_of: math/floor_sum.hpp

@@ -99,8 +99,10 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 5 \"graph_tree/test/LC_dijkstra_fast.test.cpp\"\
-    \n\nint main(){\n    lint n,m,s,t;\n    cin>>n>>m>>s>>t;\n    auto g=load_digraph0_weight<lint>(n,m);\n\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 5 \"graph_tree/test/LC_dijkstra_fast.test.cpp\"\n\nint\
+    \ main(){\n    lint n,m,s,t;\n    cin>>n>>m>>s>>t;\n    auto g=load_digraph0_weight<lint>(n,m);\n\
     \    dijkstra<lint> d(g,s);\n    if(d.reachable(t)){\n        auto p=d.get_path(t);\n\
     \        cout<<d[t]<<\" \"<<p.size()-1<<endl;\n        rep(i,p.size()-1){\n  \
     \          cout<<p[i]<<\" \"<<p[i+1]<<endl;\n        }\n    }else{\n        cout<<-1<<endl;\n\
@@ -119,7 +121,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_dijkstra_fast.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_dijkstra_fast.test.cpp

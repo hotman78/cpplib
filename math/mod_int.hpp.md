@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/mod_int1000000007.hpp
     title: ModInt(1'000'000'007)
   - icon: ':question:'
@@ -12,16 +12,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_swag.test.cpp
     title: data_structure/test/LC_swag.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
   - icon: ':x:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_totient_sum.test.cpp
     title: math/test/LC_totient_sum.test.cpp
   _pathExtension: hpp
@@ -136,11 +136,11 @@ data:
   timestamp: '2020-09-24 10:34:58+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - data_structure/test/LC_swag.test.cpp
+  - math/test/LC_convolution_998244353.test.cpp
+  - math/test/LC_interpolation.test.cpp
   - math/test/LC_totient_sum.test.cpp
   - math/test/LC_convolution_1000000007.test.cpp
-  - math/test/LC_interpolation.test.cpp
-  - math/test/LC_convolution_998244353.test.cpp
-  - data_structure/test/LC_swag.test.cpp
 documentation_of: math/mod_int.hpp
 layout: document
 redirect_from:

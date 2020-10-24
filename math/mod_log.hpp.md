@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/euler_phi.hpp
     title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
   - icon: ':question:'
@@ -9,11 +9,11 @@ data:
     title: (x^y)%mod
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_mod_log.test.cpp
     title: math/test/LC_mod_log.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
     links: []
@@ -58,7 +58,7 @@ data:
   path: math/mod_log.hpp
   requiredBy: []
   timestamp: '2020-09-13 16:40:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - math/test/LC_mod_log.test.cpp
 documentation_of: math/mod_log.hpp

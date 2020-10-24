@@ -75,10 +75,12 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"graph_tree/test/LC_push_relabel.test.cpp\"\
-    \n\nint main(){\n    lint n,m;\n    cin>>n>>m;\n    push_relabel<lint>mf(n);\n\
-    \    while(m--){\n        lint u,v,c;\n        cin>>u>>v>>c;\n        mf.add_edge(u,v,c);\n\
-    \    }\n    cout<<mf.run(0,n-1)<<endl;\n}\n"
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 4 \"graph_tree/test/LC_push_relabel.test.cpp\"\n\nint\
+    \ main(){\n    lint n,m;\n    cin>>n>>m;\n    push_relabel<lint>mf(n);\n    while(m--){\n\
+    \        lint u,v,c;\n        cin>>u>>v>>c;\n        mf.add_edge(u,v,c);\n   \
+    \ }\n    cout<<mf.run(0,n-1)<<endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A\"\
     \n#include \"../push_relabel.hpp\"\n#include \"../../util/template.hpp\"\n\nint\
     \ main(){\n    lint n,m;\n    cin>>n>>m;\n    push_relabel<lint>mf(n);\n    while(m--){\n\
@@ -90,7 +92,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_push_relabel.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_push_relabel.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/is_prime.hpp
     title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
   - icon: ':question:'
@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
@@ -58,10 +58,11 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"math/test/AOJ_is_prime.test.cpp\"\
-    \n\nint main(){\n    lint t;\n    cin>>t;\n    lint ans=0;\n    while(t--){\n\
-    \        lint n;\n        cin>>n;\n        ans+=is_prime(n);\n    }\n    cout<<ans<<endl;\n\
-    }\n"
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 4 \"math/test/AOJ_is_prime.test.cpp\"\n\nint main(){\n\
+    \    lint t;\n    cin>>t;\n    lint ans=0;\n    while(t--){\n        lint n;\n\
+    \        cin>>n;\n        ans+=is_prime(n);\n    }\n    cout<<ans<<endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
     \n#include \"../is_prime.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
     \    lint t;\n    cin>>t;\n    lint ans=0;\n    while(t--){\n        lint n;\n\
@@ -72,8 +73,8 @@ data:
   isVerificationFile: true
   path: math/test/AOJ_is_prime.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-24 18:26:33+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: math/test/AOJ_is_prime.test.cpp
 layout: document

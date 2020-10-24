@@ -63,15 +63,15 @@ data:
   isVerificationFile: false
   path: data_structure/sparse_table.hpp
   requiredBy:
-  - graph_tree/lca.hpp
-  - data_structure/arg_rmq.hpp
   - data_structure/RMQ.hpp
+  - data_structure/arg_rmq.hpp
+  - graph_tree/lca.hpp
   timestamp: '2020-09-19 12:18:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - graph_tree/test/LC_lca.test.cpp
-  - data_structure/test/LC_sparse_table.test.cpp
   - data_structure/test/LC_RMQ.test.cpp
+  - data_structure/test/LC_sparse_table.test.cpp
+  - graph_tree/test/LC_lca.test.cpp
 documentation_of: data_structure/sparse_table.hpp
 layout: document
 redirect_from:

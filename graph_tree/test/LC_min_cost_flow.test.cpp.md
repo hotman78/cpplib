@@ -55,12 +55,13 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 6 \"graph_tree/push_relabel.hpp\"\
-    \n\n/**\n * @brief \u6700\u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))\n */\n\
-    template<typename T>\nclass push_relabel{\n    int n;\n    T f=0;\n    using i64=long\
-    \ long;\n    struct edge{\n        int from,to,rev;\n        T flow,cap;\n   \
-    \ };\n    std::vector<i64>h,d;\n    std::vector<std::vector<edge*>>g;\n    std::vector<size_t>seen;\n\
-    \    std::priority_queue<std::pair<i64,int>,std::vector<std::pair<i64,int>>,std::greater<std::pair<i64,int>>>que;\n\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 6 \"graph_tree/push_relabel.hpp\"\n\n/**\n * @brief \u6700\
+    \u5927\u6D41(push_relabel\u6CD5O(V^2\u221AE))\n */\ntemplate<typename T>\nclass\
+    \ push_relabel{\n    int n;\n    T f=0;\n    using i64=long long;\n    struct\
+    \ edge{\n        int from,to,rev;\n        T flow,cap;\n    };\n    std::vector<i64>h,d;\n\
+    \    std::vector<std::vector<edge*>>g;\n    std::vector<size_t>seen;\n    std::priority_queue<std::pair<i64,int>,std::vector<std::pair<i64,int>>,std::greater<std::pair<i64,int>>>que;\n\
     \    public:\n    push_relabel(int n):n(n){\n        h.resize(n,0);\n        d.resize(n,0);\n\
     \        g.resize(n);\n        seen.resize(n,0);\n    }\n    void add_edge(int\
     \ u,int v,T cap){\n        g[u].emplace_back(new edge{u,v,(int)g[v].size(),0,cap});\n\
@@ -177,7 +178,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_min_cost_flow.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_min_cost_flow.test.cpp

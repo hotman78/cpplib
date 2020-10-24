@@ -78,9 +78,9 @@ data:
   isVerificationFile: false
   path: BBST/splay_tree/splay_tree_base.hpp
   requiredBy:
-  - BBST/splay_tree/splay_tree_array.hpp
   - BBST/splay_tree/splay_tree_array_ushi.hpp
   - BBST/splay_tree/splay_tree_set.hpp
+  - BBST/splay_tree/splay_tree_array.hpp
   timestamp: '2020-10-21 08:20:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

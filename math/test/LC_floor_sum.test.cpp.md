@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/floor_sum.hpp
     title: \sum_{i=0}^{n-1}\floor(a*i+b/c)
   - icon: ':question:'
@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sum_of_floor_of_linear
@@ -54,9 +54,11 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"math/test/LC_floor_sum.test.cpp\"\
-    \n\nint main(){\n    int t;\n    cin>>t;\n    while(t--){\n        lint n,a,b,c;\n\
-    \        cin>>n>>c>>a>>b;\n        cout<<floor_sum(a,b,c,n)<<endl;\n    }\n}\n"
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 4 \"math/test/LC_floor_sum.test.cpp\"\n\nint main(){\n\
+    \    int t;\n    cin>>t;\n    while(t--){\n        lint n,a,b,c;\n        cin>>n>>c>>a>>b;\n\
+    \        cout<<floor_sum(a,b,c,n)<<endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sum_of_floor_of_linear\"\
     \n#include \"../floor_sum.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
     \    int t;\n    cin>>t;\n    while(t--){\n        lint n,a,b,c;\n        cin>>n>>c>>a>>b;\n\
@@ -67,8 +69,8 @@ data:
   isVerificationFile: true
   path: math/test/LC_floor_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-24 18:26:33+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: math/test/LC_floor_sum.test.cpp
 layout: document

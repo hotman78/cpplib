@@ -165,50 +165,58 @@ data:
     \            }\n        }\n        return ans;\n    }\n    //(*this)(t(x))\n \
     \   P manipulate2(P t,int deg){\n        P ans=P();\n        P s=(*this).rev();\n\
     \        for(int i=0;i<(int)s.size();++i){\n            ans=(ans*t+s[i]).pre(deg);\n\
-    \        }\n        return ans;\n    }\n    static P stirling_second(int n){\n\
-    \        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n            a[i]=F().pow(T(i),n)/F().fact(T(i));\n\
-    \            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n        }\n        return\
-    \ (a*b).pre(n+1);\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
-    \ \\n\"[i==(int)(*this).size()-1];\n    }\n};\n#line 2 \"util/ACL.hpp\"\n#include\
-    \ <algorithm>\n#include <array>\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\
-    namespace atcoder {\nnamespace internal {\n// @param n `0 <= n`\n// @return minimum\
-    \ non-negative `x` s.t. `n <= 2**x`\nint ceil_pow2(int n) {\n    int x = 0;\n\
-    \    while ((1U << x) < (unsigned int)(n)) x++;\n    return x;\n}\n// @param n\
-    \ `1 <= n`\n// @return minimum non-negative `x` s.t. `(n & (1 << x)) != 0`\nint\
-    \ bsf(unsigned int n) {\n#ifdef _MSC_VER\n    unsigned long index;\n    _BitScanForward(&index,\
-    \ n);\n    return index;\n#else\n    return __builtin_ctz(n);\n#endif\n}\n}  //\
-    \ namespace internal\n}  // namespace atcoder\n#include <utility>\nnamespace atcoder\
-    \ {\nnamespace internal {\n// @param m `1 <= m`\n// @return x mod m\nconstexpr\
-    \ long long safe_mod(long long x, long long m) {\n    x %= m;\n    if (x < 0)\
-    \ x += m;\n    return x;\n}\n// Fast modular multiplication by barrett reduction\n\
-    // Reference: https://en.wikipedia.org/wiki/Barrett_reduction\n// NOTE: reconsider\
-    \ after Ice Lake\nstruct barrett {\n    unsigned int _m;\n    unsigned long long\
-    \ im;\n    // @param m `1 <= m < 2^31`\n    barrett(unsigned int m) : _m(m), im((unsigned\
-    \ long long)(-1) / m + 1) {}\n    // @return m\n    unsigned int umod() const\
-    \ { return _m; }\n    // @param a `0 <= a < m`\n    // @param b `0 <= b < m`\n\
-    \    // @return `a * b % m`\n    unsigned int mul(unsigned int a, unsigned int\
-    \ b) const {\n        // [1] m = 1\n        // a = b = im = 0, so okay\n     \
-    \   // [2] m >= 2\n        // im = ceil(2^64 / m)\n        // -> im * m = 2^64\
-    \ + r (0 <= r < m)\n        // let z = a*b = c*m + d (0 <= c, d < m)\n       \
-    \ // a*b * im = (c*m + d) * im = c*(im*m) + d*im = c*2^64 + c*r + d*im\n     \
-    \   // c*r + d*im < m * m + m * im < m * m + 2^64 + m <= 2^64 + m * (m + 1) <\
-    \ 2^64 * 2\n        // ((ab * im) >> 64) == c or c + 1\n        unsigned long\
-    \ long z = a;\n        z *= b;\n#ifdef _MSC_VER\n        unsigned long long x;\n\
-    \        _umul128(z, im, &x);\n#else\n        unsigned long long x =\n       \
-    \     (unsigned long long)(((unsigned __int128)(z)*im) >> 64);\n#endif\n     \
-    \   unsigned int v = (unsigned int)(z - x * _m);\n        if (_m <= v) v += _m;\n\
-    \        return v;\n    }\n};\n// @param n `0 <= n`\n// @param m `1 <= m`\n//\
-    \ @return `(x ** n) % m`\nconstexpr long long pow_mod_constexpr(long long x, long\
-    \ long n, int m) {\n    if (m == 1) return 0;\n    unsigned int _m = (unsigned\
-    \ int)(m);\n    unsigned long long r = 1;\n    unsigned long long y = safe_mod(x,\
-    \ m);\n    while (n) {\n        if (n & 1) r = (r * y) % _m;\n        y = (y *\
-    \ y) % _m;\n        n >>= 1;\n    }\n    return r;\n}\n// Reference:\n// M. Forisek\
-    \ and J. Jancina,\n// Fast Primality Testing for Integers That Fit into a Machine\
-    \ Word\n// @param n `0 <= n`\nconstexpr bool is_prime_constexpr(int n) {\n   \
-    \ if (n <= 1) return false;\n    if (n == 2 || n == 7 || n == 61) return true;\n\
-    \    if (n % 2 == 0) return false;\n    long long d = n - 1;\n    while (d % 2\
-    \ == 0) d /= 2;\n    constexpr long long bases[3] = {2, 7, 61};\n    for (long\
-    \ long a : bases) {\n        long long t = d;\n        long long y = pow_mod_constexpr(a,\
+    \        }\n        return ans;\n    }\n    P find_linear_recurrence()const{\n\
+    \        const int n=this->size();\n        P b={T(-1)},c={T(-1)};\n        T\
+    \ y=T(1);\n        for(int i=1;i<=n;++i){\n            int l=c.size(),m=b.size();\n\
+    \            T x=0;\n            for(int j=0;j<l;++j)x+=c[j]*(*this)[i-l+j];\n\
+    \            b.emplace_back(0);\n            m++;\n            if(x==T(0))continue;\n\
+    \            T freq=x/y;\n            if(l<m){\n                auto tmp=c;\n\
+    \                c<<=m-l;\n                c-=b*freq;\n                b=tmp;\n\
+    \                y=x;\n            }else{\n                c-=(b*freq)<<(l-m);\n\
+    \            }\n        }\n        return c;\n    }\n    static P stirling_second(int\
+    \ n){\n        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n        \
+    \    a[i]=F().pow(T(i),n)/F().fact(T(i));\n            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n\
+    \        }\n        return (a*b).pre(n+1);\n    }\n    void debug(){\n       \
+    \ for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\" \\n\"[i==(int)(*this).size()-1];\n\
+    \    }\n};\n#line 2 \"util/ACL.hpp\"\n#include <algorithm>\n#include <array>\n\
+    #ifdef _MSC_VER\n#include <intrin.h>\n#endif\nnamespace atcoder {\nnamespace internal\
+    \ {\n// @param n `0 <= n`\n// @return minimum non-negative `x` s.t. `n <= 2**x`\n\
+    int ceil_pow2(int n) {\n    int x = 0;\n    while ((1U << x) < (unsigned int)(n))\
+    \ x++;\n    return x;\n}\n// @param n `1 <= n`\n// @return minimum non-negative\
+    \ `x` s.t. `(n & (1 << x)) != 0`\nint bsf(unsigned int n) {\n#ifdef _MSC_VER\n\
+    \    unsigned long index;\n    _BitScanForward(&index, n);\n    return index;\n\
+    #else\n    return __builtin_ctz(n);\n#endif\n}\n}  // namespace internal\n}  //\
+    \ namespace atcoder\n#include <utility>\nnamespace atcoder {\nnamespace internal\
+    \ {\n// @param m `1 <= m`\n// @return x mod m\nconstexpr long long safe_mod(long\
+    \ long x, long long m) {\n    x %= m;\n    if (x < 0) x += m;\n    return x;\n\
+    }\n// Fast modular multiplication by barrett reduction\n// Reference: https://en.wikipedia.org/wiki/Barrett_reduction\n\
+    // NOTE: reconsider after Ice Lake\nstruct barrett {\n    unsigned int _m;\n \
+    \   unsigned long long im;\n    // @param m `1 <= m < 2^31`\n    barrett(unsigned\
+    \ int m) : _m(m), im((unsigned long long)(-1) / m + 1) {}\n    // @return m\n\
+    \    unsigned int umod() const { return _m; }\n    // @param a `0 <= a < m`\n\
+    \    // @param b `0 <= b < m`\n    // @return `a * b % m`\n    unsigned int mul(unsigned\
+    \ int a, unsigned int b) const {\n        // [1] m = 1\n        // a = b = im\
+    \ = 0, so okay\n        // [2] m >= 2\n        // im = ceil(2^64 / m)\n      \
+    \  // -> im * m = 2^64 + r (0 <= r < m)\n        // let z = a*b = c*m + d (0 <=\
+    \ c, d < m)\n        // a*b * im = (c*m + d) * im = c*(im*m) + d*im = c*2^64 +\
+    \ c*r + d*im\n        // c*r + d*im < m * m + m * im < m * m + 2^64 + m <= 2^64\
+    \ + m * (m + 1) < 2^64 * 2\n        // ((ab * im) >> 64) == c or c + 1\n     \
+    \   unsigned long long z = a;\n        z *= b;\n#ifdef _MSC_VER\n        unsigned\
+    \ long long x;\n        _umul128(z, im, &x);\n#else\n        unsigned long long\
+    \ x =\n            (unsigned long long)(((unsigned __int128)(z)*im) >> 64);\n\
+    #endif\n        unsigned int v = (unsigned int)(z - x * _m);\n        if (_m <=\
+    \ v) v += _m;\n        return v;\n    }\n};\n// @param n `0 <= n`\n// @param m\
+    \ `1 <= m`\n// @return `(x ** n) % m`\nconstexpr long long pow_mod_constexpr(long\
+    \ long x, long long n, int m) {\n    if (m == 1) return 0;\n    unsigned int _m\
+    \ = (unsigned int)(m);\n    unsigned long long r = 1;\n    unsigned long long\
+    \ y = safe_mod(x, m);\n    while (n) {\n        if (n & 1) r = (r * y) % _m;\n\
+    \        y = (y * y) % _m;\n        n >>= 1;\n    }\n    return r;\n}\n// Reference:\n\
+    // M. Forisek and J. Jancina,\n// Fast Primality Testing for Integers That Fit\
+    \ into a Machine Word\n// @param n `0 <= n`\nconstexpr bool is_prime_constexpr(int\
+    \ n) {\n    if (n <= 1) return false;\n    if (n == 2 || n == 7 || n == 61) return\
+    \ true;\n    if (n % 2 == 0) return false;\n    long long d = n - 1;\n    while\
+    \ (d % 2 == 0) d /= 2;\n    constexpr long long bases[3] = {2, 7, 61};\n    for\
+    \ (long long a : bases) {\n        long long t = d;\n        long long y = pow_mod_constexpr(a,\
     \ t, n);\n        while (t != n - 1 && y != 1 && y != n - 1) {\n            y\
     \ = y * y % n;\n            t <<= 1;\n        }\n        if (y != n - 1 && t %\
     \ 2 == 0) {\n            return false;\n        }\n    }\n    return true;\n}\n\
@@ -995,7 +1003,9 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 6 \"graph_tree/test/LC_centroid_decomposition.test.cpp\"\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 6 \"graph_tree/test/LC_centroid_decomposition.test.cpp\"\
     \n\nint main(){\n    int n;\n    cin>>n;\n    graph g=load_tree0(n);\n    centroid_decomposition\
     \ cd(g);\n    auto d=cd.get_euler_tour();\n    fps ans;\n    bitset<200000>used;\n\
     \    rep(i,n){\n        fps s{1};\n        used[d[i]]=1;\n        for(auto e:g[d[i]]){\n\
@@ -1034,7 +1044,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_centroid_decomposition.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_centroid_decomposition.test.cpp

@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_totient_sum.test.cpp
     title: math/test/LC_totient_sum.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\u306E\u548C"
     links: []
@@ -38,7 +38,7 @@ data:
   path: math/totient_sum.hpp
   requiredBy: []
   timestamp: '2020-09-13 16:40:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - math/test/LC_totient_sum.test.cpp
 documentation_of: math/totient_sum.hpp

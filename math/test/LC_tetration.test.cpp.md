@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/euler_phi.hpp
     title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
   - icon: ':question:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/tetration.hpp
     title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
   - icon: ':question:'
@@ -16,7 +16,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tetration_mod
@@ -71,9 +71,11 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"math/test/LC_tetration.test.cpp\"\
-    \n\nint main(){\n    int t;\n    cin>>t;\n    while(t--){\n        int a,b,m;\n\
-    \        cin>>a>>b>>m;\n        cout<<tetration(a,b,m)<<endl;\n    }\n}\n"
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 4 \"math/test/LC_tetration.test.cpp\"\n\nint main(){\n\
+    \    int t;\n    cin>>t;\n    while(t--){\n        int a,b,m;\n        cin>>a>>b>>m;\n\
+    \        cout<<tetration(a,b,m)<<endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tetration_mod\"\n#include\
     \ \"../tetration.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
     \    int t;\n    cin>>t;\n    while(t--){\n        int a,b,m;\n        cin>>a>>b>>m;\n\
@@ -86,8 +88,8 @@ data:
   isVerificationFile: true
   path: math/test/LC_tetration.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-24 18:26:33+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: math/test/LC_tetration.test.cpp
 layout: document

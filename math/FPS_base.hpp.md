@@ -5,17 +5,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/FPS_long.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-  - icon: ':question:'
+  - icon: ':x:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
     title: graph_tree/test/LC_centroid_decomposition.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
   - icon: ':x:'
@@ -152,11 +152,20 @@ data:
     \            }\n        }\n        return ans;\n    }\n    //(*this)(t(x))\n \
     \   P manipulate2(P t,int deg){\n        P ans=P();\n        P s=(*this).rev();\n\
     \        for(int i=0;i<(int)s.size();++i){\n            ans=(ans*t+s[i]).pre(deg);\n\
-    \        }\n        return ans;\n    }\n    static P stirling_second(int n){\n\
-    \        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n            a[i]=F().pow(T(i),n)/F().fact(T(i));\n\
-    \            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n        }\n        return\
-    \ (a*b).pre(n+1);\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
-    \ \\n\"[i==(int)(*this).size()-1];\n    }\n};\n"
+    \        }\n        return ans;\n    }\n    P find_linear_recurrence()const{\n\
+    \        const int n=this->size();\n        P b={T(-1)},c={T(-1)};\n        T\
+    \ y=T(1);\n        for(int i=1;i<=n;++i){\n            int l=c.size(),m=b.size();\n\
+    \            T x=0;\n            for(int j=0;j<l;++j)x+=c[j]*(*this)[i-l+j];\n\
+    \            b.emplace_back(0);\n            m++;\n            if(x==T(0))continue;\n\
+    \            T freq=x/y;\n            if(l<m){\n                auto tmp=c;\n\
+    \                c<<=m-l;\n                c-=b*freq;\n                b=tmp;\n\
+    \                y=x;\n            }else{\n                c-=(b*freq)<<(l-m);\n\
+    \            }\n        }\n        return c;\n    }\n    static P stirling_second(int\
+    \ n){\n        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n        \
+    \    a[i]=F().pow(T(i),n)/F().fact(T(i));\n            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n\
+    \        }\n        return (a*b).pre(n+1);\n    }\n    void debug(){\n       \
+    \ for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\" \\n\"[i==(int)(*this).size()-1];\n\
+    \    }\n};\n"
   code: "#pragma once\n#include<vector>\n#include<tuple>\n#include<iostream>\n#include<cmath>\n\
     #include<type_traits>\n#include<cassert>\n\n/**\n * @brief \u5F62\u5F0F\u7684\u51AA\
     \u7D1A\u6570(BASE)\n */\n\ntemplate<typename T,typename F>\nstruct FPS_BASE:std::vector<T>{\n\
@@ -282,24 +291,33 @@ data:
     \            }\n        }\n        return ans;\n    }\n    //(*this)(t(x))\n \
     \   P manipulate2(P t,int deg){\n        P ans=P();\n        P s=(*this).rev();\n\
     \        for(int i=0;i<(int)s.size();++i){\n            ans=(ans*t+s[i]).pre(deg);\n\
-    \        }\n        return ans;\n    }\n    static P stirling_second(int n){\n\
-    \        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n            a[i]=F().pow(T(i),n)/F().fact(T(i));\n\
-    \            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n        }\n        return\
-    \ (a*b).pre(n+1);\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
-    \ \\n\"[i==(int)(*this).size()-1];\n    }\n};"
+    \        }\n        return ans;\n    }\n    P find_linear_recurrence()const{\n\
+    \        const int n=this->size();\n        P b={T(-1)},c={T(-1)};\n        T\
+    \ y=T(1);\n        for(int i=1;i<=n;++i){\n            int l=c.size(),m=b.size();\n\
+    \            T x=0;\n            for(int j=0;j<l;++j)x+=c[j]*(*this)[i-l+j];\n\
+    \            b.emplace_back(0);\n            m++;\n            if(x==T(0))continue;\n\
+    \            T freq=x/y;\n            if(l<m){\n                auto tmp=c;\n\
+    \                c<<=m-l;\n                c-=b*freq;\n                b=tmp;\n\
+    \                y=x;\n            }else{\n                c-=(b*freq)<<(l-m);\n\
+    \            }\n        }\n        return c;\n    }\n    static P stirling_second(int\
+    \ n){\n        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n        \
+    \    a[i]=F().pow(T(i),n)/F().fact(T(i));\n            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n\
+    \        }\n        return (a*b).pre(n+1);\n    }\n    void debug(){\n       \
+    \ for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\" \\n\"[i==(int)(*this).size()-1];\n\
+    \    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: math/FPS_base.hpp
   requiredBy:
-  - math/FPS_long.hpp
   - math/FPS_mint.hpp
-  timestamp: '2020-10-21 08:20:00+09:00'
+  - math/FPS_long.hpp
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - graph_tree/test/LC_centroid_decomposition.test.cpp
-  - math/test/LC_convolution_1000000007.test.cpp
-  - math/test/LC_interpolation.test.cpp
   - math/test/LC_convolution_998244353.test.cpp
+  - math/test/LC_interpolation.test.cpp
+  - math/test/LC_convolution_1000000007.test.cpp
+  - graph_tree/test/LC_centroid_decomposition.test.cpp
 documentation_of: math/FPS_base.hpp
 layout: document
 redirect_from:

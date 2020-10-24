@@ -30,8 +30,8 @@ data:
   isVerificationFile: false
   path: functional/argmin.hpp
   requiredBy:
-  - graph_tree/lca.hpp
   - data_structure/arg_rmq.hpp
+  - graph_tree/lca.hpp
   timestamp: '2020-09-18 14:44:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

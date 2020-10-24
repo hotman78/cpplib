@@ -787,11 +787,13 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"util/test/LC_Number_of_Substrings.test.cpp\"\
-    \n\nint main(){\n    using namespace atcoder;\n    string s;\n    cin>>s;\n  \
-    \  int n=s.size();\n    auto sa=suffix_array(s);\n    auto lcp=lcp_array(s,sa);\n\
-    \    lint ans=n-sa[0];\n    for(int i=0;i<n-1;++i){\n        ans+=(n-sa[i+1])-lcp[i];\n\
-    \    }\n    cout<<ans<<endl;\n}\n"
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 4 \"util/test/LC_Number_of_Substrings.test.cpp\"\n\nint\
+    \ main(){\n    using namespace atcoder;\n    string s;\n    cin>>s;\n    int n=s.size();\n\
+    \    auto sa=suffix_array(s);\n    auto lcp=lcp_array(s,sa);\n    lint ans=n-sa[0];\n\
+    \    for(int i=0;i<n-1;++i){\n        ans+=(n-sa[i+1])-lcp[i];\n    }\n    cout<<ans<<endl;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n\
     #include\"../ACL.hpp\"\n#include \"../template.hpp\"\n\nint main(){\n    using\
     \ namespace atcoder;\n    string s;\n    cin>>s;\n    int n=s.size();\n    auto\
@@ -804,7 +806,7 @@ data:
   isVerificationFile: true
   path: util/test/LC_Number_of_Substrings.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: util/test/LC_Number_of_Substrings.test.cpp

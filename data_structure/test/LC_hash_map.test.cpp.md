@@ -52,15 +52,17 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 3 \"data_structure/hash_map.hpp\"\
-    \n/**\n * @brief HashMap\n */\n\ntemplate<typename T,typename E,typename F=std::hash<T>>\n\
-    struct hash_map{\n    struct node{\n        T key;E val;\n        unsigned long\
-    \ b;\n        node():key(T()),val(E()),b(0){}\n        node(T key,E val):key(key),val(val),b(0){}\n\
-    \        static node* alc;\n        static size_t cnt;\n        static size_t\
-    \ alc_sz;\n        void* operator new(size_t){\n            if(alc_sz==cnt){\n\
-    \                alc_sz*=2;\n                alc=(node*)malloc(alc_sz*sizeof(node));\n\
-    \                cnt=0;\n            }\n            return alc+cnt++;\n      \
-    \  }\n    };\n    size_t sz;\n    node* point;\n    constexpr static size_t mod_list[24]={37,67,131,257,521,1031,2053,4099,8209,16411,32771,65537,131101,262147,524309,1048583,2097169,4194319,8388617,16777259,33554467,67108879,134217757,268435459};\n\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 3 \"data_structure/hash_map.hpp\"\n/**\n * @brief HashMap\n\
+    \ */\n\ntemplate<typename T,typename E,typename F=std::hash<T>>\nstruct hash_map{\n\
+    \    struct node{\n        T key;E val;\n        unsigned long b;\n        node():key(T()),val(E()),b(0){}\n\
+    \        node(T key,E val):key(key),val(val),b(0){}\n        static node* alc;\n\
+    \        static size_t cnt;\n        static size_t alc_sz;\n        void* operator\
+    \ new(size_t){\n            if(alc_sz==cnt){\n                alc_sz*=2;\n   \
+    \             alc=(node*)malloc(alc_sz*sizeof(node));\n                cnt=0;\n\
+    \            }\n            return alc+cnt++;\n        }\n    };\n    size_t sz;\n\
+    \    node* point;\n    constexpr static size_t mod_list[24]={37,67,131,257,521,1031,2053,4099,8209,16411,32771,65537,131101,262147,524309,1048583,2097169,4194319,8388617,16777259,33554467,67108879,134217757,268435459};\n\
     \    node** table;\n    F op;\n    hash_map(F op=F()):sz(15),op(op){\n       \
     \ table=new node*[mod_list[sz]]();\n    }\n    node** _realloc(){\n        const\
     \ size_t old_sz=sz;\n        while(1){\n            sz++;\n            bool fail=0;\n\
@@ -129,7 +131,7 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_hash_map.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:35:07+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_hash_map.test.cpp

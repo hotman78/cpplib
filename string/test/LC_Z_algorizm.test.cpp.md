@@ -61,8 +61,10 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"string/test/LC_Z_algorizm.test.cpp\"\
-    \n\nint main(){\n    string s;\n    cin>>s;\n    output(Z_algorizm(s));\n}\n"
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 4 \"string/test/LC_Z_algorizm.test.cpp\"\n\nint main(){\n\
+    \    string s;\n    cin>>s;\n    output(Z_algorizm(s));\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\n#include\
     \ \"../Z_algorizm.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
     \    string s;\n    cin>>s;\n    output(Z_algorizm(s));\n}"
@@ -72,7 +74,7 @@ data:
   isVerificationFile: true
   path: string/test/LC_Z_algorizm.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: string/test/LC_Z_algorizm.test.cpp

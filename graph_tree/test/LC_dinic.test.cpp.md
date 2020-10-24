@@ -110,11 +110,13 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"graph_tree/test/LC_dinic.test.cpp\"\
-    \n\nint main(){\n    int n,e,q;\n    cin>>n>>e>>q;\n    dinic<lint>mf(n,0,n-1);\n\
-    \    while(e--){\n        int s,t;\n        cin>>s>>t;\n        s--;t--;\n   \
-    \     mf.update_edge(s,t,1);\n        mf.update_edge(t,s,1);\n    }\n    while(q--){\n\
-    \        int c,s,t;\n        cin>>c>>s>>t;\n        s--;t--;\n        mf.update_edge(s,t,c==1?1:-1);\n\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 4 \"graph_tree/test/LC_dinic.test.cpp\"\n\nint main(){\n\
+    \    int n,e,q;\n    cin>>n>>e>>q;\n    dinic<lint>mf(n,0,n-1);\n    while(e--){\n\
+    \        int s,t;\n        cin>>s>>t;\n        s--;t--;\n        mf.update_edge(s,t,1);\n\
+    \        mf.update_edge(t,s,1);\n    }\n    while(q--){\n        int c,s,t;\n\
+    \        cin>>c>>s>>t;\n        s--;t--;\n        mf.update_edge(s,t,c==1?1:-1);\n\
     \        mf.update_edge(t,s,c==1?1:-1);\n        cout<<mf.run()<<endl;\n    }\n\
     }\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2313\"\
@@ -131,7 +133,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_dinic.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_dinic.test.cpp

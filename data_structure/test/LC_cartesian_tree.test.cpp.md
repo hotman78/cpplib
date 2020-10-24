@@ -68,8 +68,10 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"data_structure/test/LC_cartesian_tree.test.cpp\"\
-    \n\nint main(){\n\tlint n;\n\tcin>>n;\n\tvec a(n);\n\trep(i,n)cin>>a[i];\n\tcartesian_tree<lint>ct(a);\n\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 4 \"data_structure/test/LC_cartesian_tree.test.cpp\"\n\
+    \nint main(){\n\tlint n;\n\tcin>>n;\n\tvec a(n);\n\trep(i,n)cin>>a[i];\n\tcartesian_tree<lint>ct(a);\n\
     \toutput(ct.get());\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/cartesian_tree\"\n#include\
     \ \"../cartesian_tree.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
@@ -81,7 +83,7 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_cartesian_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_cartesian_tree.test.cpp

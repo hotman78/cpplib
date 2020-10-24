@@ -67,9 +67,11 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"data_structure/test/LC_binary_trie.test.cpp\"\
-    \n\nint main(){\n\tlint n;\n\tcin>>n;\n\tbinary_trie b;\n\twhile(n--){\n\t\tlint\
-    \ c,x;\n\t\tcin>>c>>x;\n\t\tif(c==0&&!b.count(x))b.insert(x);\n\t\tif(c==1)b.erase(x);\n\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 4 \"data_structure/test/LC_binary_trie.test.cpp\"\n\n\
+    int main(){\n\tlint n;\n\tcin>>n;\n\tbinary_trie b;\n\twhile(n--){\n\t\tlint c,x;\n\
+    \t\tcin>>c>>x;\n\t\tif(c==0&&!b.count(x))b.insert(x);\n\t\tif(c==1)b.erase(x);\n\
     \t\tif(c==2)cout<<b.xor_min(x)<<endl;\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n#include\
     \ \"../binary_trie.hpp\"\n#include \"../../util/template.hpp\"\n\nint main(){\n\
@@ -82,7 +84,7 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_binary_trie.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_binary_trie.test.cpp

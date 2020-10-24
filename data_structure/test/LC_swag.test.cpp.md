@@ -139,11 +139,13 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 6 \"data_structure/test/LC_swag.test.cpp\"\
-    \n\nint main(){\n\tlint n;\n\tcin>>n;\n\tswag<pair<mint,mint>,composite<mint>>sw;\n\
-    \twhile(n--){\n\t\tlint c;\n\t\tcin>>c;\n\t\tif(c==0){\n\t\t\tlint s,t;\n\t\t\t\
-    cin>>s>>t;\n\t\t\tsw.push(make_pair(s,t));\n\t\t}\n\t\tif(c==1){\n\t\t\tsw.pop();\n\
-    \t\t}\n\t\tif(c==2){\n\t\t\tlint x;\n\t\t\tcin>>x;\n\t\t\tcout<<composite<mint>()(make_pair(0,x),sw.fold().unwrap_or(make_pair(1,0))).second<<endl;\n\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 6 \"data_structure/test/LC_swag.test.cpp\"\n\nint main(){\n\
+    \tlint n;\n\tcin>>n;\n\tswag<pair<mint,mint>,composite<mint>>sw;\n\twhile(n--){\n\
+    \t\tlint c;\n\t\tcin>>c;\n\t\tif(c==0){\n\t\t\tlint s,t;\n\t\t\tcin>>s>>t;\n\t\
+    \t\tsw.push(make_pair(s,t));\n\t\t}\n\t\tif(c==1){\n\t\t\tsw.pop();\n\t\t}\n\t\
+    \tif(c==2){\n\t\t\tlint x;\n\t\t\tcin>>x;\n\t\t\tcout<<composite<mint>()(make_pair(0,x),sw.fold().unwrap_or(make_pair(1,0))).second<<endl;\n\
     \t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/queue_operate_all_composite\"\
     \n#include \"../../math/mod_int998244353.hpp\"\n#include \"../swag.hpp\"\n#include\
@@ -163,7 +165,7 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_swag.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_swag.test.cpp

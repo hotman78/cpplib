@@ -131,6 +131,9 @@ data:
   - name: dsu
     pages:
     - icon: ':warning:'
+      path: dsu/UF_data.hpp
+      title: dsu/UF_data.hpp
+    - icon: ':warning:'
       path: dsu/UF_list.hpp
       title: dsu/UF_list.hpp
     - icon: ':heavy_check_mark:'
@@ -253,10 +256,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/FPS_long.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-    - icon: ':question:'
+    - icon: ':x:'
       path: math/FPS_mint.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/binary_search.hpp
       title: "\u4E8C\u5206\u63A2\u7D22"
     - icon: ':warning:'
@@ -277,10 +280,10 @@ data:
     - icon: ':warning:'
       path: math/divisor_list.hpp
       title: "\u7D04\u6570\u5217\u6319"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/euler_phi.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/floor_sum.hpp
       title: \sum_{i=0}^{n-1}\floor(a*i+b/c)
     - icon: ':question:'
@@ -289,7 +292,7 @@ data:
     - icon: ':warning:'
       path: math/get_monomials.hpp
       title: math/get_monomials.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/is_prime.hpp
       title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
     - icon: ':warning:'
@@ -299,7 +302,7 @@ data:
     - icon: ':question:'
       path: math/mod_int.hpp
       title: ModInt
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/mod_int1000000007.hpp
       title: ModInt(1'000'000'007)
     - icon: ':question:'
@@ -308,22 +311,22 @@ data:
     - icon: ':warning:'
       path: math/mod_inv.hpp
       title: math/mod_inv.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/mod_log.hpp
       title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
     - icon: ':question:'
       path: math/mod_pow.hpp
       title: (x^y)%mod
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/mod_sqrt.hpp
       title: ModSqrt
     - icon: ':warning:'
       path: math/osa_k.hpp
       title: "osa_k\u6CD5"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/prime_factor.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/prime_list.hpp
       title: "\u7D20\u6570\u5217\u6319"
     - icon: ':warning:'
@@ -335,10 +338,10 @@ data:
     - icon: ':warning:'
       path: math/sum_power_poly_limit.hpp
       title: math/sum_power_poly_limit.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/tetration.hpp
       title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/totient_sum.hpp
       title: "\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\u306E\u548C"
   - name: math/test
@@ -403,7 +406,7 @@ data:
     - icon: ':warning:'
       path: util/pbds.hpp
       title: util/pbds.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
     - icon: ':question:'
@@ -490,43 +493,43 @@ data:
       title: graph_tree/test/LC_push_relabel.test.cpp
   - name: math/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/AOJ_binary_search.test.cpp
       title: math/test/AOJ_binary_search.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/AOJ_is_prime.test.cpp
       title: math/test/AOJ_is_prime.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/AOJ_prime_factor.test.cpp
       title: math/test/AOJ_prime_factor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/AOJ_prime_list.test.cpp
       title: math/test/AOJ_prime_list.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_convolution_1000000007.test.cpp
       title: math/test/LC_convolution_1000000007.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_convolution_998244353.test.cpp
       title: math/test/LC_convolution_998244353.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_floor_sum.test.cpp
       title: math/test/LC_floor_sum.test.cpp
     - icon: ':x:'
       path: math/test/LC_interpolation.test.cpp
       title: math/test/LC_interpolation.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_mod_log.test.cpp
       title: math/test/LC_mod_log.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_mod_sqrt.test.cpp
       title: math/test/LC_mod_sqrt.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_prime_factor.test.cpp
       title: math/test/LC_prime_factor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_tetration.test.cpp
       title: math/test/LC_tetration.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/test/LC_totient_sum.test.cpp
       title: math/test/LC_totient_sum.test.cpp
   - name: segment_tree/test

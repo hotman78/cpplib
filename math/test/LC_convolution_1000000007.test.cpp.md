@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-  - icon: ':question:'
+  - icon: ':x:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   - icon: ':question:'
@@ -16,7 +16,7 @@ data:
   - icon: ':question:'
     path: math/mod_int.hpp
     title: ModInt
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/mod_int1000000007.hpp
     title: ModInt(1'000'000'007)
   - icon: ':question:'
@@ -31,7 +31,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod_1000000007
@@ -71,16 +71,18 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 5 \"math/mod_int.hpp\"\
-    \n\n/**\n * @brief ModInt\n */\n\ntemplate<int MOD>\nstruct mod_int {\n    using\
-    \ mint=mod_int<MOD>;\n    using u64 = std::uint_fast64_t;\n    u64 a;\n    constexpr\
-    \ mod_int(const long long x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}\n\
-    \    constexpr u64 &value()noexcept{return a;}\n    constexpr const u64 &value()\
-    \ const noexcept {return a;}\n    constexpr mint operator+(const mint rhs)const\
-    \ noexcept{return mint(*this) += rhs;}\n    constexpr mint operator-(const mint\
-    \ rhs)const noexcept{return mint(*this)-=rhs;}\n    constexpr mint operator*(const\
-    \ mint rhs) const noexcept {return mint(*this) *= rhs;}\n    constexpr mint operator/(const\
-    \ mint rhs) const noexcept {return mint(*this) /= rhs;}\n    constexpr mint &operator+=(const\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 5 \"math/mod_int.hpp\"\n\n/**\n * @brief ModInt\n */\n\
+    \ntemplate<int MOD>\nstruct mod_int {\n    using mint=mod_int<MOD>;\n    using\
+    \ u64 = std::uint_fast64_t;\n    u64 a;\n    constexpr mod_int(const long long\
+    \ x = 0)noexcept:a(x>=0?x%get_mod():get_mod()-(-x)%get_mod()){}\n    constexpr\
+    \ u64 &value()noexcept{return a;}\n    constexpr const u64 &value() const noexcept\
+    \ {return a;}\n    constexpr mint operator+(const mint rhs)const noexcept{return\
+    \ mint(*this) += rhs;}\n    constexpr mint operator-(const mint rhs)const noexcept{return\
+    \ mint(*this)-=rhs;}\n    constexpr mint operator*(const mint rhs) const noexcept\
+    \ {return mint(*this) *= rhs;}\n    constexpr mint operator/(const mint rhs) const\
+    \ noexcept {return mint(*this) /= rhs;}\n    constexpr mint &operator+=(const\
     \ mint rhs) noexcept {\n        a += rhs.a;\n        if (a >= get_mod())a -= get_mod();\n\
     \        return *this;\n    }\n    constexpr mint &operator-=(const mint rhs)\
     \ noexcept {\n        if (a<rhs.a)a += get_mod();\n        a -= rhs.a;\n     \
@@ -245,24 +247,33 @@ data:
     \            }\n        }\n        return ans;\n    }\n    //(*this)(t(x))\n \
     \   P manipulate2(P t,int deg){\n        P ans=P();\n        P s=(*this).rev();\n\
     \        for(int i=0;i<(int)s.size();++i){\n            ans=(ans*t+s[i]).pre(deg);\n\
-    \        }\n        return ans;\n    }\n    static P stirling_second(int n){\n\
-    \        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n            a[i]=F().pow(T(i),n)/F().fact(T(i));\n\
-    \            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n        }\n        return\
-    \ (a*b).pre(n+1);\n    }\n    void debug(){\n        for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\"\
-    \ \\n\"[i==(int)(*this).size()-1];\n    }\n};\n#line 4 \"util/ACL.hpp\"\n#ifdef\
-    \ _MSC_VER\n#include <intrin.h>\n#endif\nnamespace atcoder {\nnamespace internal\
-    \ {\n// @param n `0 <= n`\n// @return minimum non-negative `x` s.t. `n <= 2**x`\n\
-    int ceil_pow2(int n) {\n    int x = 0;\n    while ((1U << x) < (unsigned int)(n))\
-    \ x++;\n    return x;\n}\n// @param n `1 <= n`\n// @return minimum non-negative\
-    \ `x` s.t. `(n & (1 << x)) != 0`\nint bsf(unsigned int n) {\n#ifdef _MSC_VER\n\
-    \    unsigned long index;\n    _BitScanForward(&index, n);\n    return index;\n\
-    #else\n    return __builtin_ctz(n);\n#endif\n}\n}  // namespace internal\n}  //\
-    \ namespace atcoder\n#line 30 \"util/ACL.hpp\"\nnamespace atcoder {\nnamespace\
-    \ internal {\n// @param m `1 <= m`\n// @return x mod m\nconstexpr long long safe_mod(long\
-    \ long x, long long m) {\n    x %= m;\n    if (x < 0) x += m;\n    return x;\n\
-    }\n// Fast modular multiplication by barrett reduction\n// Reference: https://en.wikipedia.org/wiki/Barrett_reduction\n\
-    // NOTE: reconsider after Ice Lake\nstruct barrett {\n    unsigned int _m;\n \
-    \   unsigned long long im;\n    // @param m `1 <= m < 2^31`\n    barrett(unsigned\
+    \        }\n        return ans;\n    }\n    P find_linear_recurrence()const{\n\
+    \        const int n=this->size();\n        P b={T(-1)},c={T(-1)};\n        T\
+    \ y=T(1);\n        for(int i=1;i<=n;++i){\n            int l=c.size(),m=b.size();\n\
+    \            T x=0;\n            for(int j=0;j<l;++j)x+=c[j]*(*this)[i-l+j];\n\
+    \            b.emplace_back(0);\n            m++;\n            if(x==T(0))continue;\n\
+    \            T freq=x/y;\n            if(l<m){\n                auto tmp=c;\n\
+    \                c<<=m-l;\n                c-=b*freq;\n                b=tmp;\n\
+    \                y=x;\n            }else{\n                c-=(b*freq)<<(l-m);\n\
+    \            }\n        }\n        return c;\n    }\n    static P stirling_second(int\
+    \ n){\n        P a(n+1,0),b(n+1,0);\n        for(int i=0;i<=n;++i){\n        \
+    \    a[i]=F().pow(T(i),n)/F().fact(T(i));\n            b[i]=(i%2?T(-1):T(1))/F().fact(T(i));\n\
+    \        }\n        return (a*b).pre(n+1);\n    }\n    void debug(){\n       \
+    \ for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<\" \\n\"[i==(int)(*this).size()-1];\n\
+    \    }\n};\n#line 4 \"util/ACL.hpp\"\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\
+    namespace atcoder {\nnamespace internal {\n// @param n `0 <= n`\n// @return minimum\
+    \ non-negative `x` s.t. `n <= 2**x`\nint ceil_pow2(int n) {\n    int x = 0;\n\
+    \    while ((1U << x) < (unsigned int)(n)) x++;\n    return x;\n}\n// @param n\
+    \ `1 <= n`\n// @return minimum non-negative `x` s.t. `(n & (1 << x)) != 0`\nint\
+    \ bsf(unsigned int n) {\n#ifdef _MSC_VER\n    unsigned long index;\n    _BitScanForward(&index,\
+    \ n);\n    return index;\n#else\n    return __builtin_ctz(n);\n#endif\n}\n}  //\
+    \ namespace internal\n}  // namespace atcoder\n#line 30 \"util/ACL.hpp\"\nnamespace\
+    \ atcoder {\nnamespace internal {\n// @param m `1 <= m`\n// @return x mod m\n\
+    constexpr long long safe_mod(long long x, long long m) {\n    x %= m;\n    if\
+    \ (x < 0) x += m;\n    return x;\n}\n// Fast modular multiplication by barrett\
+    \ reduction\n// Reference: https://en.wikipedia.org/wiki/Barrett_reduction\n//\
+    \ NOTE: reconsider after Ice Lake\nstruct barrett {\n    unsigned int _m;\n  \
+    \  unsigned long long im;\n    // @param m `1 <= m < 2^31`\n    barrett(unsigned\
     \ int m) : _m(m), im((unsigned long long)(-1) / m + 1) {}\n    // @return m\n\
     \    unsigned int umod() const { return _m; }\n    // @param a `0 <= a < m`\n\
     \    // @param b `0 <= b < m`\n    // @return `a * b % m`\n    unsigned int mul(unsigned\
@@ -1040,8 +1051,8 @@ data:
   isVerificationFile: true
   path: math/test/LC_convolution_1000000007.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-10-24 18:26:33+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: math/test/LC_convolution_1000000007.test.cpp
 layout: document

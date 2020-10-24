@@ -5,17 +5,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/FPS_long.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-  - icon: ':question:'
+  - icon: ':x:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
     title: graph_tree/test/LC_centroid_decomposition.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
   - icon: ':x:'
@@ -1516,17 +1516,17 @@ data:
   isVerificationFile: false
   path: util/ACL.hpp
   requiredBy:
-  - math/FPS_long.hpp
   - math/FPS_mint.hpp
+  - math/FPS_long.hpp
   timestamp: '2020-09-14 19:00:57+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - util/test/LC_Suffix_Array.test.cpp
   - util/test/LC_Number_of_Substrings.test.cpp
-  - graph_tree/test/LC_centroid_decomposition.test.cpp
-  - math/test/LC_convolution_1000000007.test.cpp
-  - math/test/LC_interpolation.test.cpp
   - math/test/LC_convolution_998244353.test.cpp
+  - math/test/LC_interpolation.test.cpp
+  - math/test/LC_convolution_1000000007.test.cpp
+  - graph_tree/test/LC_centroid_decomposition.test.cpp
 documentation_of: util/ACL.hpp
 layout: document
 redirect_from:

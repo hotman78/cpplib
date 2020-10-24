@@ -84,26 +84,26 @@ data:
   isVerificationFile: false
   path: alga/maybe.hpp
   requiredBy:
-  - segment_tree/lazy_segment_tree.hpp
+  - data_structure/sparse_table.hpp
+  - data_structure/RMQ.hpp
+  - data_structure/swag.hpp
+  - data_structure/arg_rmq.hpp
+  - alga/monoid.hpp
+  - functional/range_add_and_range_sum.hpp
   - segment_tree/dual_segment_tree.hpp
   - segment_tree/segment_tree.hpp
+  - segment_tree/lazy_segment_tree.hpp
   - graph_tree/lca.hpp
-  - functional/range_add_and_range_sum.hpp
-  - alga/monoid.hpp
-  - data_structure/swag.hpp
-  - data_structure/sparse_table.hpp
-  - data_structure/arg_rmq.hpp
-  - data_structure/RMQ.hpp
   timestamp: '2020-09-19 12:18:12+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - segment_tree/test/LC_segment_tree.test.cpp
-  - segment_tree/test/AOJ_dual_segment_tree.test.cpp
-  - segment_tree/test/AOJ_lazy_segment_tree.test.cpp
-  - graph_tree/test/LC_lca.test.cpp
-  - data_structure/test/LC_sparse_table.test.cpp
   - data_structure/test/LC_RMQ.test.cpp
+  - data_structure/test/LC_sparse_table.test.cpp
   - data_structure/test/LC_swag.test.cpp
+  - segment_tree/test/LC_segment_tree.test.cpp
+  - segment_tree/test/AOJ_lazy_segment_tree.test.cpp
+  - segment_tree/test/AOJ_dual_segment_tree.test.cpp
+  - graph_tree/test/LC_lca.test.cpp
 documentation_of: alga/maybe.hpp
 layout: document
 redirect_from:

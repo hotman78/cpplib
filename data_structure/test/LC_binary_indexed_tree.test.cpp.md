@@ -59,7 +59,9 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 4 \"data_structure/test/LC_binary_indexed_tree.test.cpp\"\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 4 \"data_structure/test/LC_binary_indexed_tree.test.cpp\"\
     \n\nint main(){\n\tlint n,q;\n\tcin>>n>>q;\n\tBIT bit(n);\n\trep(i,n){\n\t\tlint\
     \ x;\n\t\tcin>>x;\n\t\tbit.add(i,x);\n\t}\n\twhile(q--){\n\t\tlint c,s,t;\n\t\t\
     cin>>c>>s>>t;\n\t\tif(c==0){\n\t\t\tbit.add(s,t);\n\t\t}else{\n\t\t\tcout<<bit.sum(s,t)<<endl;\n\
@@ -76,7 +78,7 @@ data:
   isVerificationFile: true
   path: data_structure/test/LC_binary_indexed_tree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: data_structure/test/LC_binary_indexed_tree.test.cpp

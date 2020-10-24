@@ -78,14 +78,15 @@ data:
     \ __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long\
     \ long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long\
     \ long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return\
-    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\n#line 10 \"graph_tree/dijkstra.hpp\"\
-    \n/**\n * @brief \u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)\n */\n\
-    \ntemplate<typename T,typename F=std::less<T>,typename Add=std::plus<T>>\nstruct\
-    \ dijkstra{\n    int s;\n    std::vector<T> diff;\n    std::vector<int> par;\n\
-    \    std::vector<int>used;\n    dijkstra(const graph_w<T>& list,int s,T zero=T(),T\
-    \ inf=std::numeric_limits<T>::max(),F f=F(),Add add=Add()):s(s){\n        int\
-    \ n=list.size();\n        diff.resize(n,inf);\n        par.resize(n,-1);\n   \
-    \     used.resize(n,0);\n        std::priority_queue<std::pair<T,int>,std::vector<std::pair<T,int>>,std::greater<std::pair<T,int>>>que;\n\
+    \ ret;}\n//#include \"../graph_tree/graph_template.hpp\"\ntemplate<typename T,typename\
+    \ E>ostream& operator<<(ostream& out,pair<T,E>v){out<<\"(\"<<v.first<<\",\"<<v.second<<\"\
+    )\";return out;}\n#line 10 \"graph_tree/dijkstra.hpp\"\n/**\n * @brief \u30C0\u30A4\
+    \u30AF\u30B9\u30C8\u30E9\u6CD5 O((E+V)logE)\n */\n\ntemplate<typename T,typename\
+    \ F=std::less<T>,typename Add=std::plus<T>>\nstruct dijkstra{\n    int s;\n  \
+    \  std::vector<T> diff;\n    std::vector<int> par;\n    std::vector<int>used;\n\
+    \    dijkstra(const graph_w<T>& list,int s,T zero=T(),T inf=std::numeric_limits<T>::max(),F\
+    \ f=F(),Add add=Add()):s(s){\n        int n=list.size();\n        diff.resize(n,inf);\n\
+    \        par.resize(n,-1);\n        used.resize(n,0);\n        std::priority_queue<std::pair<T,int>,std::vector<std::pair<T,int>>,std::greater<std::pair<T,int>>>que;\n\
     \        diff[s]=zero;\n        que.push(std::make_pair(T(),s));\n        while(!que.empty()){\n\
     \            auto d=que.top();\n            que.pop();\n            T x;\n   \
     \         int now;\n            std::tie(x,now)=d;\n            if(used[now])continue;\n\
@@ -118,7 +119,7 @@ data:
   isVerificationFile: true
   path: graph_tree/test/LC_dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-24 18:26:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: graph_tree/test/LC_dijkstra.test.cpp
