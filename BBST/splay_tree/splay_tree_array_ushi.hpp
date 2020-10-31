@@ -31,8 +31,8 @@ struct splay_tree_array_ushi:splay_tree_base<splay_tree_array_ushi_node<T,F>>{
     inline void erase(int idx){return super::erase(idx);}
     inline void push_back(T val){insert(size(),val);}
     inline void pop_back(T val){erase(size()-1,val);}
-    inline T& back(){return (*this)[size()-1];}
-    inline T& front(){return (*this)[0];}
+    inline T back(){return (*this)[size()-1];}
+    inline T front(){return (*this)[0];}
     T operator[](int idx){return super::get(idx)->val;}
     void update(int idx,T val){
         np t=super::get(idx);

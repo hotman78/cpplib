@@ -77,13 +77,14 @@ struct splay_tree_base{
     template<typename C>
     int lower_bound(C less){
         int res=__lower_bound(root,less);
-        root=splay(root,res);
+        if(res<size())root=splay(root,res);
         return res;
     }
     template<typename C>
     int __lower_bound(np t,C less){
+        if(!t)return 0;
         bool b=less(t);
-        if(b)__lower_bound(t->ch[0],less);
-        else __lower_bound(t->ch[1],less);
+        if(b)return size(t->ch[0])+1+__lower_bound(t->ch[1],less);
+        else return __lower_bound(t->ch[0],less);
     }
 };

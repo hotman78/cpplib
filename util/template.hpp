@@ -1,7 +1,7 @@
 #pragma once
 #pragma GCC optimize("Ofast")
 #pragma GCC optimize("unroll-loops")
-#pragma GCC target("avx")
+#pragma GCC target("avx2")
 #include<bits/stdc++.h>
 using namespace std;
 struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;

@@ -16,7 +16,7 @@ struct splay_tree_set_node{
 };
 
 template<typename T>
-struct splay_tree_array:splay_tree_base<splay_tree_set_node<T>>{
+struct splay_tree_set:splay_tree_base<splay_tree_set_node<T>>{
     using node=splay_tree_set_node<T>;
     using super=splay_tree_base<node>;
     inline int size(){return super::size(super::root);}
