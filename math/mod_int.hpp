@@ -105,6 +105,7 @@ struct mod_int {
     }
     mint comb(long long b){
         if(init)build();
+        if(a<0||b<0)return 0;
         if(a==0&&b==0)return 1;
         if((long long)a<b)return 0;
         return fac[a]*ifac[a-b]*ifac[b];
@@ -125,6 +126,7 @@ struct mod_int {
         lhs >> rhs.a;
         return lhs;
     }
+    constexpr static bool is_static=true;
     constexpr static u64 get_mod(){
         return MOD;
     }

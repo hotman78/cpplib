@@ -21,7 +21,12 @@ class UF_data{
         x=root(x);
         val[x]=v;
     }
-    inline T get(int x){
+    template<typename G>
+    void apply(int x,G g=G()){
+        x=root(x);
+        g(val[x]);
+    }
+    inline T& get(int x){
         return val[root(x)];
     }
     inline int root(int x){return data[x]<0?x:data[x]=root(data[x]);}

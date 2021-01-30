@@ -8,7 +8,7 @@
 
 struct lca{
     graph g;
-    std::vector<int>sz,in,out,nxt,par;
+    std::vector<int>sz,in,out,nxt,par,par2;
     lca(const graph& g,int s):g(g){
         int n=g.size();
         sz.resize(n,0);
@@ -16,6 +16,7 @@ struct lca{
         out.resize(n,0);
         nxt.resize(n,s);
         par.resize(n,s);
+        par2.resize(n,s);
         dfs_sz(s,-1);
         dfs_hld(s,-1);
     }
@@ -35,6 +36,7 @@ struct lca{
             if(p==u)continue;
             nxt[u]=(u==g[v][0]?nxt[v]:u);
             par[u]=(u==g[v][0]?par[v]:v);
+            par2[u]=v;
             dfs_hld(u,v);
         }
         out[v] = t;
@@ -60,4 +62,19 @@ struct lca{
 		}
 		return res+std::abs(in[s]-in[t]);
 	}
+    std::vector<int>path(int s,int t){
+        int l=query(s,t);
+        vector<int>p,q;
+        while(s!=l){
+            p.push_back(s);
+            s=par2[s];
+        }
+        while(t!=l){
+            q.push_back(t);
+            t=par2[t];
+        }
+        p.push_back(l);
+        p.insert(p.end(),q.rbegin(),q.rend());
+        return p;
+    }
 };

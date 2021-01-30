@@ -228,6 +228,35 @@ struct FPS_BASE:std::vector<T>{
         }
         return res;
     }
+    P mul(const vector<pair<int,T>>& x){
+        int mx=0;
+        for(auto [s,t]:x){
+            if(mx<s)mx=s;
+        }
+        P res((int)this->size()+mx);
+        for(int i=0;i<(int)this->size();++i){
+            for(auto [s,t]:x){
+                res[i+s]+=(*this)[i]*t;
+            }
+        }
+        return res;
+    }
+    P div(const vector<pair<int,T>>& x){
+        P res(*this);
+        T cnt=0;
+        for(auto [s,t]:x){
+            if(s==0)cnt+=t;
+        }
+        cnt=cnt.inv();
+        for(int i=0;i<(int)this->size();++i){
+            for(auto [s,t]:x){
+                if(s==0)continue;
+                if(i>=s)res[i]-=res[i-s]*t*cnt;
+            }
+        }
+        res*=cnt;
+        return res;
+    }
     static P interpolation(const std::vector<T>&x,const std::vector<T>& y){
         const int n=x.size();
         std::vector<std::pair<P,P>>a(n*2-1);
@@ -280,7 +309,9 @@ struct FPS_BASE:std::vector<T>{
         p*=q2;
         return p.slice(x%2,p.size(),2).nth_term(q.slice(0,q.size(),2),x/2);
     }
-    
+    P gcd(P q){
+        return *this==P()?q:(q%(*this).shrink()).gcd(*this);
+    }
     //(*this)(t(x))
     P manipulate(P t,int deg){
         P s=P(*this);

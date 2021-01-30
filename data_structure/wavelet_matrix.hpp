@@ -60,4 +60,20 @@ class wavelet_matrix{
         }
         return ans;
     }
+    lint lower_bound(lint l,lint r,lint k){
+        lint ans=0;
+        for(int i=MAXLOG-1;i>=0;i--){
+            lint cnt=matrix[i].rank(r,0)-matrix[i].rank(l,0);
+            lint b=(k>>i&1);
+            if(b)ans+=cnt;
+            l=matrix[i].rank(l,b);
+            r=matrix[i].rank(r,b);
+            if(b==1){
+                lint t=matrix[i].rank(sz,0);
+                l+=t;
+                r+=t;
+            }
+        }
+        return ans;
+    }
 };

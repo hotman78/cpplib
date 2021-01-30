@@ -18,7 +18,7 @@ bool is_prime(long long n){
         }
         return (long long)(res);
     };
-    for(long long e:{2,3,5,7,11,13,17,19,23,29,31,37}){
+    for(long long e:{2, 325, 9375, 28178, 450775, 9780504, 1795265022}){
         if(n<=e)break;
         if(mod_pow(e,d,n)==1)continue;
         bool b=1;
