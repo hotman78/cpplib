@@ -21,3 +21,4 @@ minima:
     twitter: hotmanww
     github: hotman78
 
+exclude: ["ac-library"]
