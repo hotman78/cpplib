@@ -228,7 +228,7 @@ struct FPS_BASE:std::vector<T>{
         }
         return res;
     }
-    P mul(const vector<pair<int,T>>& x){
+    P mul(const std::vector<std::pair<int,T>>& x){
         int mx=0;
         for(auto [s,t]:x){
             if(mx<s)mx=s;
@@ -241,7 +241,7 @@ struct FPS_BASE:std::vector<T>{
         }
         return res;
     }
-    P div(const vector<pair<int,T>>& x){
+    P div(const std::vector<std::pair<int,T>>& x){
         P res(*this);
         T cnt=0;
         for(auto [s,t]:x){

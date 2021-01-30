@@ -8,8 +8,8 @@
  *
  */
 
-long long garner(std::vector<long long>a,std::vector<long long>mods){
-    const int sz=3;
+long long garner(const std::vector<long long>&a,const std::vector<long long>&mods){
+    const int sz=a.size();
     long long coeffs[sz+1]={1,1,1,1};
     long long constants[sz+1]={};
     for(int i=0;i<sz;i++){
@@ -19,5 +19,5 @@ long long garner(std::vector<long long>a,std::vector<long long>mods){
             coeffs[j]=(coeffs[j]*mods[i])%mods[j];
         }
     }
-    return constants[3];
+    return constants[sz];
 }
