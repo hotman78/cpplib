@@ -1,31 +1,35 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: math/FPS_long.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
+  - icon: ':warning:'
+    path: math/kth_root.hpp
+    title: math/kth_root.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
     title: graph_tree/test/LC_centroid_decomposition.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     links: []
@@ -34,35 +38,36 @@ data:
     \ long mod){\n    long long ret=1;\n    while(y>0) {\n        if(y&1)(ret*=x)%=mod;\n\
     \        (x*=x)%=mod;\n        y>>=1;\n    }\n    return ret;\n}\n#line 4 \"math/garner.hpp\"\
     \n\n/**\n * \n * @brief \u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\
-    \u30BA\u30E0\n *\n */\n\nlong long garner(std::vector<long long>a,std::vector<long\
-    \ long>mods){\n    const int sz=3;\n    long long coeffs[sz+1]={1,1,1,1};\n  \
-    \  long long constants[sz+1]={};\n    for(int i=0;i<sz;i++){\n        long long\
+    \u30BA\u30E0\n *\n */\n\nlong long garner(const std::vector<long long>&a,const\
+    \ std::vector<long long>&mods){\n    const int sz=a.size();\n    long long coeffs[sz+1]={1,1,1,1};\n\
+    \    long long constants[sz+1]={};\n    for(int i=0;i<sz;i++){\n        long long\
     \ v=(mods[i]+a[i]-constants[i])%mods[i]*mod_pow(coeffs[i],mods[i]-2,mods[i])%mods[i];\n\
     \        for(int j=i+1;j<sz+1;j++) {\n            constants[j]=(constants[j]+coeffs[j]*v)%mods[j];\n\
     \            coeffs[j]=(coeffs[j]*mods[i])%mods[j];\n        }\n    }\n    return\
-    \ constants[3];\n}\n"
+    \ constants[sz];\n}\n"
   code: "#pragma once\n#include<vector>\n#include\"mod_pow.hpp\"\n\n/**\n * \n * @brief\
     \ \u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0\n *\n */\n\
-    \nlong long garner(std::vector<long long>a,std::vector<long long>mods){\n    const\
-    \ int sz=3;\n    long long coeffs[sz+1]={1,1,1,1};\n    long long constants[sz+1]={};\n\
-    \    for(int i=0;i<sz;i++){\n        long long v=(mods[i]+a[i]-constants[i])%mods[i]*mod_pow(coeffs[i],mods[i]-2,mods[i])%mods[i];\n\
+    \nlong long garner(const std::vector<long long>&a,const std::vector<long long>&mods){\n\
+    \    const int sz=a.size();\n    long long coeffs[sz+1]={1,1,1,1};\n    long long\
+    \ constants[sz+1]={};\n    for(int i=0;i<sz;i++){\n        long long v=(mods[i]+a[i]-constants[i])%mods[i]*mod_pow(coeffs[i],mods[i]-2,mods[i])%mods[i];\n\
     \        for(int j=i+1;j<sz+1;j++) {\n            constants[j]=(constants[j]+coeffs[j]*v)%mods[j];\n\
     \            coeffs[j]=(coeffs[j]*mods[i])%mods[j];\n        }\n    }\n    return\
-    \ constants[3];\n}"
+    \ constants[sz];\n}"
   dependsOn:
   - math/mod_pow.hpp
   isVerificationFile: false
   path: math/garner.hpp
   requiredBy:
   - math/FPS_mint.hpp
+  - math/kth_root.hpp
   - math/FPS_long.hpp
-  timestamp: '2020-09-14 19:36:00+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2021-01-30 11:24:14+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - math/test/LC_convolution_998244353.test.cpp
-  - math/test/LC_interpolation.test.cpp
-  - math/test/LC_convolution_1000000007.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp
+  - math/test/LC_convolution_998244353.test.cpp
+  - math/test/LC_convolution_1000000007.test.cpp
+  - math/test/LC_interpolation.test.cpp
 documentation_of: math/garner.hpp
 layout: document
 redirect_from:

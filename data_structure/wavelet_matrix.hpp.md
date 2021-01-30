@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_wavelet_matrix.test.cpp
     title: data_structure/test/LC_wavelet_matrix.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -49,7 +50,13 @@ data:
     \            lint b=cnt<=k;\n            ans+=b<<i;\n            l=matrix[i].rank(l,b);\n\
     \            r=matrix[i].rank(r,b);\n            if(b==1){\n                lint\
     \ t=matrix[i].rank(sz,0);\n                k-=cnt;\n                l+=t;\n  \
-    \              r+=t;\n            }\n        }\n        return ans;\n    }\n};\n"
+    \              r+=t;\n            }\n        }\n        return ans;\n    }\n \
+    \   lint lower_bound(lint l,lint r,lint k){\n        lint ans=0;\n        for(int\
+    \ i=MAXLOG-1;i>=0;i--){\n            lint cnt=matrix[i].rank(r,0)-matrix[i].rank(l,0);\n\
+    \            lint b=(k>>i&1);\n            if(b)ans+=cnt;\n            l=matrix[i].rank(l,b);\n\
+    \            r=matrix[i].rank(r,b);\n            if(b==1){\n                lint\
+    \ t=matrix[i].rank(sz,0);\n                l+=t;\n                r+=t;\n    \
+    \        }\n        }\n        return ans;\n    }\n};\n"
   code: "#pragma once\n#include<vector>\n#include<algorithm>\n#include\"bit_vector.hpp\"\
     \n\n/**\n * @brief WaveletMatrix(WIP)\n */\n\nclass wavelet_matrix{\n    using\
     \ lint=long long;\n    const lint MAXLOG=32;\n\tstd::vector<bitvec> matrix;\n\
@@ -68,13 +75,19 @@ data:
     \           ans+=b<<i;\n            l=matrix[i].rank(l,b);\n            r=matrix[i].rank(r,b);\n\
     \            if(b==1){\n                lint t=matrix[i].rank(sz,0);\n       \
     \         k-=cnt;\n                l+=t;\n                r+=t;\n            }\n\
-    \        }\n        return ans;\n    }\n};\n"
+    \        }\n        return ans;\n    }\n    lint lower_bound(lint l,lint r,lint\
+    \ k){\n        lint ans=0;\n        for(int i=MAXLOG-1;i>=0;i--){\n          \
+    \  lint cnt=matrix[i].rank(r,0)-matrix[i].rank(l,0);\n            lint b=(k>>i&1);\n\
+    \            if(b)ans+=cnt;\n            l=matrix[i].rank(l,b);\n            r=matrix[i].rank(r,b);\n\
+    \            if(b==1){\n                lint t=matrix[i].rank(sz,0);\n       \
+    \         l+=t;\n                r+=t;\n            }\n        }\n        return\
+    \ ans;\n    }\n};\n"
   dependsOn:
   - data_structure/bit_vector.hpp
   isVerificationFile: false
   path: data_structure/wavelet_matrix.hpp
   requiredBy: []
-  timestamp: '2020-09-18 12:11:44+09:00'
+  timestamp: '2021-01-30 10:06:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - data_structure/test/LC_wavelet_matrix.test.cpp

@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_dinic.test.cpp
     title: graph_tree/test/LC_dinic.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

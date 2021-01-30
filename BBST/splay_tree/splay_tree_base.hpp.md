@@ -9,9 +9,13 @@ data:
     path: BBST/splay_tree/splay_tree_array_ushi.hpp
     title: BBST/splay_tree/splay_tree_array_ushi.hpp
   - icon: ':warning:'
+    path: BBST/splay_tree/splay_tree_map_ushi.hpp
+    title: BBST/splay_tree/splay_tree_map_ushi.hpp
+  - icon: ':warning:'
     path: BBST/splay_tree/splay_tree_set.hpp
     title: BBST/splay_tree/splay_tree_set.hpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
@@ -42,9 +46,10 @@ data:
     \        };\n        dfs(dfs,root);\n        return res;\n    }\n    np get_root(){return\
     \ root;}\n    np get(int i){root=splay(root,i);return root;}\n    \n    template<typename\
     \ C>\n    int lower_bound(C less){\n        int res=__lower_bound(root,less);\n\
-    \        root=splay(root,res);\n        return res;\n    }\n    template<typename\
-    \ C>\n    int __lower_bound(np t,C less){\n        bool b=less(t);\n        if(b)__lower_bound(t->ch[0],less);\n\
-    \        else __lower_bound(t->ch[1],less);\n    }\n};\n"
+    \        if(res<size())root=splay(root,res);\n        return res;\n    }\n   \
+    \ template<typename C>\n    int __lower_bound(np t,C less){\n        if(!t)return\
+    \ 0;\n        bool b=less(t);\n        if(b)return size(t->ch[0])+1+__lower_bound(t->ch[1],less);\n\
+    \        else return __lower_bound(t->ch[0],less);\n    }\n};\n"
   code: "#include<vector>\n#include<tuple>\n#include<assert.h>\n\ntemplate<typename\
     \ Node>\nstruct splay_tree_base{\n    using np=Node*;\n    np root=0;\n    inline\
     \ int size(np t){return t?t->sz:0;}\n    int size(){return size(root);}\n    np\
@@ -71,17 +76,19 @@ data:
     \       dfs(dfs,root);\n        return res;\n    }\n    np get_root(){return root;}\n\
     \    np get(int i){root=splay(root,i);return root;}\n    \n    template<typename\
     \ C>\n    int lower_bound(C less){\n        int res=__lower_bound(root,less);\n\
-    \        root=splay(root,res);\n        return res;\n    }\n    template<typename\
-    \ C>\n    int __lower_bound(np t,C less){\n        bool b=less(t);\n        if(b)__lower_bound(t->ch[0],less);\n\
-    \        else __lower_bound(t->ch[1],less);\n    }\n};"
+    \        if(res<size())root=splay(root,res);\n        return res;\n    }\n   \
+    \ template<typename C>\n    int __lower_bound(np t,C less){\n        if(!t)return\
+    \ 0;\n        bool b=less(t);\n        if(b)return size(t->ch[0])+1+__lower_bound(t->ch[1],less);\n\
+    \        else return __lower_bound(t->ch[0],less);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: BBST/splay_tree/splay_tree_base.hpp
   requiredBy:
-  - BBST/splay_tree/splay_tree_array_ushi.hpp
+  - BBST/splay_tree/splay_tree_map_ushi.hpp
   - BBST/splay_tree/splay_tree_set.hpp
   - BBST/splay_tree/splay_tree_array.hpp
-  timestamp: '2020-10-21 08:20:00+09:00'
+  - BBST/splay_tree/splay_tree_array_ushi.hpp
+  timestamp: '2020-10-31 15:42:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: BBST/splay_tree/splay_tree_base.hpp

@@ -9,6 +9,7 @@ data:
     path: graph_tree/two_sat.hpp
     title: 2-SAT
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:

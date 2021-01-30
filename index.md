@@ -26,11 +26,19 @@ data:
       path: BBST/splay_tree/splay_tree_base.hpp
       title: BBST/splay_tree/splay_tree_base.hpp
     - icon: ':warning:'
+      path: BBST/splay_tree/splay_tree_map_ushi.hpp
+      title: BBST/splay_tree/splay_tree_map_ushi.hpp
+    - icon: ':warning:'
       path: BBST/splay_tree/splay_tree_set.hpp
       title: BBST/splay_tree/splay_tree_set.hpp
+  - name: DP
+    pages:
+    - icon: ':warning:'
+      path: DP/monotone_minima.hpp
+      title: DP/monotone_minima.hpp
   - name: alga
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: alga/maybe.hpp
       title: Maybe
     - icon: ':warning:'
@@ -160,12 +168,35 @@ data:
     - icon: ':heavy_check_mark:'
       path: functional/composite.hpp
       title: "\u4E00\u6B21\u95A2\u6570\u306E\u5408\u6210"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: functional/range_add_and_range_sum.hpp
       title: "\u533A\u9593\u52A0\u7B97"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: functional/update.hpp
       title: "\u66F4\u65B0"
+  - name: give_us_tmp
+    pages:
+    - icon: ':warning:'
+      path: give_us_tmp/centroid_decomposition.cpp
+      title: "\u91CD\u5FC3\u5206\u89E3"
+    - icon: ':warning:'
+      path: give_us_tmp/factorize.cpp
+      title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
+    - icon: ':warning:'
+      path: give_us_tmp/fft.cpp
+      title: "\u591A\u9805\u5F0F\u4E57\u7B97"
+    - icon: ':warning:'
+      path: give_us_tmp/fps.cpp
+      title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
+    - icon: ':warning:'
+      path: give_us_tmp/is_prime.cpp
+      title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
+    - icon: ':warning:'
+      path: give_us_tmp/lca.cpp
+      title: give_us_tmp/lca.cpp
+    - icon: ':warning:'
+      path: give_us_tmp/mod_int.cpp
+      title: give_us_tmp/mod_int.cpp
   - name: graph_tree
     pages:
     - icon: ':warning:'
@@ -250,16 +281,22 @@ data:
       title: 2-SAT
   - name: math
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/FPS_base.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: math/FPS_long.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/FPS_mint.hpp
       title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
-    - icon: ':x:'
+    - icon: ':warning:'
+      path: math/NTT2d.hpp
+      title: math/NTT2d.hpp
+    - icon: ':warning:'
+      path: math/and_convolution.hpp
+      title: math/and_convolution.hpp
+    - icon: ':heavy_check_mark:'
       path: math/binary_search.hpp
       title: "\u4E8C\u5206\u63A2\u7D22"
     - icon: ':warning:'
@@ -271,62 +308,80 @@ data:
     - icon: ':warning:'
       path: math/catalans_trapezoids.hpp
       title: "\u30AB\u30BF\u30E9\u30F3\u53F0\u5F62"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/ceil_pow2.hpp
       title: math/ceil_pow2.hpp
     - icon: ':warning:'
       path: math/comb.hpp
       title: "\u4E8C\u9805\u4FC2\u6570 mod P"
     - icon: ':warning:'
+      path: math/concave_max_plus_convolution.hpp
+      title: math/concave_max_plus_convolution.hpp
+    - icon: ':warning:'
       path: math/divisor_list.hpp
       title: "\u7D04\u6570\u5217\u6319"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/euler_phi.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30D5\u30A1\u30A4\u95A2\u6570"
-    - icon: ':x:'
+    - icon: ':warning:'
+      path: math/fact_list.hpp
+      title: math/fact_list.hpp
+    - icon: ':heavy_check_mark:'
       path: math/floor_sum.hpp
       title: \sum_{i=0}^{n-1}\floor(a*i+b/c)
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/garner.hpp
       title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
       path: math/get_monomials.hpp
       title: math/get_monomials.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/is_prime.hpp
       title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
+    - icon: ':warning:'
+      path: math/kth_root.hpp
+      title: math/kth_root.hpp
     - icon: ':warning:'
       path: math/lagrange_interpolation.hpp
       title: "\u30E9\u30B0\u30E9\u30F3\u30B8\u30E5\u88DC\u5B8C(\u9023\u7D9A\u70B9\
         ->\u4E00\u70B9)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_int.hpp
       title: ModInt
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_int1000000007.hpp
       title: ModInt(1'000'000'007)
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_int998244353.hpp
       title: ModInt(998'244'353)
     - icon: ':warning:'
+      path: math/mod_int_dynamic.hpp
+      title: ModInt
+    - icon: ':warning:'
       path: math/mod_inv.hpp
       title: math/mod_inv.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_log.hpp
       title: "\u96E2\u6563\u5BFE\u6570(ModLog)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_pow.hpp
       title: (x^y)%mod
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/mod_sqrt.hpp
       title: ModSqrt
     - icon: ':warning:'
+      path: math/or_convolution.hpp
+      title: math/or_convolution.hpp
+    - icon: ':warning:'
       path: math/osa_k.hpp
       title: "osa_k\u6CD5"
-    - icon: ':x:'
+    - icon: ':warning:'
+      path: math/partition_function.hpp
+      title: math/partition_function.hpp
+    - icon: ':heavy_check_mark:'
       path: math/prime_factor.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/prime_list.hpp
       title: "\u7D20\u6570\u5217\u6319"
     - icon: ':warning:'
@@ -338,12 +393,15 @@ data:
     - icon: ':warning:'
       path: math/sum_power_poly_limit.hpp
       title: math/sum_power_poly_limit.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/tetration.hpp
       title: "\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/totient_sum.hpp
       title: "\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\u306E\u548C"
+    - icon: ':warning:'
+      path: math/xor_convolution.hpp
+      title: math/xor_convolution.hpp
   - name: math/test
     pages:
     - icon: ':warning:'
@@ -351,27 +409,27 @@ data:
       title: math/test/LC_sum_power_poly_limit.cpp
   - name: segment_tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/dual_segment_tree.hpp
       title: "\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/lazy_segment_tree.hpp
       title: segment_tree/lazy_segment_tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/segment_tree.hpp
       title: "\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - name: string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/AhoCorasick.hpp
       title: "Aho-Corasick\u6CD5"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/Z_algorizm.hpp
       title: "Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
       path: string/manacher.hpp
       title: Manacher
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/online_Zalgo.hpp
       title: "\u30AA\u30F3\u30E9\u30A4\u30F3Z\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
     - icon: ':warning:'
@@ -391,7 +449,7 @@ data:
       title: "Trie\u6728"
   - name: util
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: util/ACL.hpp
       title: util/ACL.hpp
     - icon: ':warning:'
@@ -404,12 +462,15 @@ data:
       path: util/int128.hpp
       title: util/int128.hpp
     - icon: ':warning:'
+      path: util/make_case.hpp
+      title: util/make_case.hpp
+    - icon: ':warning:'
       path: util/pbds.hpp
       title: util/pbds.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: util/random_gen.hpp
       title: util/random_gen.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: util/template.hpp
       title: util/template.hpp
   verificationCategories:
@@ -493,74 +554,90 @@ data:
       title: graph_tree/test/LC_push_relabel.test.cpp
   - name: math/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/AOJ_binary_search.test.cpp
       title: math/test/AOJ_binary_search.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/AOJ_is_prime.test.cpp
       title: math/test/AOJ_is_prime.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/AOJ_prime_factor.test.cpp
       title: math/test/AOJ_prime_factor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/AOJ_prime_list.test.cpp
       title: math/test/AOJ_prime_list.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_convolution_1000000007.test.cpp
       title: math/test/LC_convolution_1000000007.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_convolution_998244353.test.cpp
       title: math/test/LC_convolution_998244353.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_floor_sum.test.cpp
       title: math/test/LC_floor_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_interpolation.test.cpp
       title: math/test/LC_interpolation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_mod_log.test.cpp
       title: math/test/LC_mod_log.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_mod_sqrt.test.cpp
       title: math/test/LC_mod_sqrt.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_prime_factor.test.cpp
       title: math/test/LC_prime_factor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_tetration.test.cpp
       title: math/test/LC_tetration.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/test/LC_totient_sum.test.cpp
       title: math/test/LC_totient_sum.test.cpp
   - name: segment_tree/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/test/AOJ_dual_segment_tree.test.cpp
       title: segment_tree/test/AOJ_dual_segment_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
       title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: segment_tree/test/LC_segment_tree.test.cpp
       title: segment_tree/test/LC_segment_tree.test.cpp
   - name: string/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/test/LC_Z_algorizm.test.cpp
       title: string/test/LC_Z_algorizm.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/test/LC_online_Z_algorizm.test.cpp
       title: string/test/LC_online_Z_algorizm.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/test/YUKI_Aho_Corasick.test.cpp
       title: string/test/YUKI_Aho_Corasick.test.cpp
   - name: util/test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: util/test/LC_Number_of_Substrings.test.cpp
       title: util/test/LC_Number_of_Substrings.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: util/test/LC_Suffix_Array.test.cpp
       title: util/test/LC_Suffix_Array.test.cpp
 layout: toppage
 ---
+# Hotman's Library
+
+[![Actions Status](https://github.com/hotman78/cpplib/workflows/verify/badge.svg)](https://github.com/hotman78/cpplib/actions)
+[![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://hotman78.github.io/cpplib/)
+[![License: CC0](https://img.shields.io/badge/License-CC0-yellow.svg)](https://github.com/hotman78/cpplib/blob/master/LICENSE)
+[![hotman78](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Fhotman78)](https://atcoder.jp/users/hotman78)
+[![hotman78](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fcodeforces%2Fjson%2Fhotman78)](https://codeforces.com/profile/hotman78)
+
+
+https://hotman78.github.io/cpplib/
+
+競技プログラミングのC++のライブラリです
+
+CC0ライセンスなので好きにコピーして下さい
+
+themeは[ei1333/minima](https://github.com/ei1333/minima)をforkして使わせて頂いてます

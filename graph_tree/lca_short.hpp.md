@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_lca_short.test.cpp
     title: graph_tree/test/LC_lca_short.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -40,47 +41,58 @@ data:
     \ g;}\ntemplate<typename T>graph_w<T> load_treep_weight(int n){graph_w<T> g(n);for(int\
     \ i=0;i<n-1;++i){int t;T u;std::cin>>t>>u;g[i+1].emplace_back(t,u);g[t].emplace_back(i+1,u);}return\
     \ g;}\n#line 4 \"graph_tree/lca_short.hpp\"\n\n/**\n * @brief LCA(HL\u5206\u89E3\
-    )&amp;lt;O(N),O(logN)&amp;gt;\n */\n\nstruct lca{\n    graph g;\n    std::vector<int>sz,in,out,nxt,par;\n\
+    )&amp;lt;O(N),O(logN)&amp;gt;\n */\n\nstruct lca{\n    graph g;\n    std::vector<int>sz,in,out,nxt,par,par2;\n\
     \    lca(const graph& g,int s):g(g){\n        int n=g.size();\n        sz.resize(n,0);\n\
     \        in.resize(n,0);\n        out.resize(n,0);\n        nxt.resize(n,s);\n\
-    \        par.resize(n,s);\n        dfs_sz(s,-1);\n        dfs_hld(s,-1);\n   \
-    \ }\n    void dfs_sz(int v,int p) {\n        sz[v] = 1;\n        for(auto &u:\
+    \        par.resize(n,s);\n        par2.resize(n,s);\n        dfs_sz(s,-1);\n\
+    \        dfs_hld(s,-1);\n    }\n    void dfs_sz(int v,int p) {\n        sz[v]\
+    \ = 1;\n        for(auto &u: g[v]) {\n            if(p==u)continue;\n        \
+    \    dfs_sz(u,v);\n            sz[v]+=sz[u];\n            if(sz[u]>sz[g[v][0]])std::swap(u,g[v][0]);\n\
+    \        }\n    }\n    void dfs_hld(int v,int p) {\n        static int t=0;\n\
+    \        in[v]=t++;\n        for(auto u: g[v]){\n            if(p==u)continue;\n\
+    \            nxt[u]=(u==g[v][0]?nxt[v]:u);\n            par[u]=(u==g[v][0]?par[v]:v);\n\
+    \            par2[u]=v;\n            dfs_hld(u,v);\n        }\n        out[v]\
+    \ = t;\n    }\n    int query(int s,int t){\n        while(nxt[s]!=nxt[t]){\n\t\
+    \t\tif(sz[nxt[s]]>sz[nxt[t]])t=par[t];\n\t\t\telse s=par[s];\n\t\t}\n        return\
+    \ sz[s]>sz[t]?s:t;\n    }\n    int distance(int s,int t){\n\t\tint res=0;\n\t\t\
+    while(nxt[s]!=nxt[t]){\n\t\t\tif(sz[nxt[s]]>sz[nxt[t]]){\n\t\t\t\tres+=in[t]-in[nxt[t]]+1;\n\
+    \t\t\t\tt=par[t];\n\t\t\t}\n\t\t\telse {\n\t\t\t\tres+=in[s]-in[nxt[s]]+1;\n\t\
+    \t\t\ts=par[s];\n\t\t\t}\n\t\t}\n\t\treturn res+std::abs(in[s]-in[t]);\n\t}\n\
+    \    std::vector<int>path(int s,int t){\n        int l=query(s,t);\n        std::vector<int>p,q;\n\
+    \        while(s!=l){\n            p.push_back(s);\n            s=par2[s];\n \
+    \       }\n        while(t!=l){\n            q.push_back(t);\n            t=par2[t];\n\
+    \        }\n        p.push_back(l);\n        p.insert(p.end(),q.rbegin(),q.rend());\n\
+    \        return p;\n    }\n};\n"
+  code: "#pragma once\n#include<vector>\n#include\"graph_template.hpp\"\n\n/**\n *\
+    \ @brief LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;\n */\n\nstruct lca{\n\
+    \    graph g;\n    std::vector<int>sz,in,out,nxt,par,par2;\n    lca(const graph&\
+    \ g,int s):g(g){\n        int n=g.size();\n        sz.resize(n,0);\n        in.resize(n,0);\n\
+    \        out.resize(n,0);\n        nxt.resize(n,s);\n        par.resize(n,s);\n\
+    \        par2.resize(n,s);\n        dfs_sz(s,-1);\n        dfs_hld(s,-1);\n  \
+    \  }\n    void dfs_sz(int v,int p) {\n        sz[v] = 1;\n        for(auto &u:\
     \ g[v]) {\n            if(p==u)continue;\n            dfs_sz(u,v);\n         \
     \   sz[v]+=sz[u];\n            if(sz[u]>sz[g[v][0]])std::swap(u,g[v][0]);\n  \
     \      }\n    }\n    void dfs_hld(int v,int p) {\n        static int t=0;\n  \
     \      in[v]=t++;\n        for(auto u: g[v]){\n            if(p==u)continue;\n\
     \            nxt[u]=(u==g[v][0]?nxt[v]:u);\n            par[u]=(u==g[v][0]?par[v]:v);\n\
-    \            dfs_hld(u,v);\n        }\n        out[v] = t;\n    }\n    int query(int\
-    \ s,int t){\n        while(nxt[s]!=nxt[t]){\n\t\t\tif(sz[nxt[s]]>sz[nxt[t]])t=par[t];\n\
-    \t\t\telse s=par[s];\n\t\t}\n        return sz[s]>sz[t]?s:t;\n    }\n    int distance(int\
-    \ s,int t){\n\t\tint res=0;\n\t\twhile(nxt[s]!=nxt[t]){\n\t\t\tif(sz[nxt[s]]>sz[nxt[t]]){\n\
-    \t\t\t\tres+=in[t]-in[nxt[t]]+1;\n\t\t\t\tt=par[t];\n\t\t\t}\n\t\t\telse {\n\t\
-    \t\t\tres+=in[s]-in[nxt[s]]+1;\n\t\t\t\ts=par[s];\n\t\t\t}\n\t\t}\n\t\treturn\
-    \ res+std::abs(in[s]-in[t]);\n\t}\n};\n"
-  code: "#pragma once\n#include<vector>\n#include\"graph_template.hpp\"\n\n/**\n *\
-    \ @brief LCA(HL\u5206\u89E3)&amp;lt;O(N),O(logN)&amp;gt;\n */\n\nstruct lca{\n\
-    \    graph g;\n    std::vector<int>sz,in,out,nxt,par;\n    lca(const graph& g,int\
-    \ s):g(g){\n        int n=g.size();\n        sz.resize(n,0);\n        in.resize(n,0);\n\
-    \        out.resize(n,0);\n        nxt.resize(n,s);\n        par.resize(n,s);\n\
-    \        dfs_sz(s,-1);\n        dfs_hld(s,-1);\n    }\n    void dfs_sz(int v,int\
-    \ p) {\n        sz[v] = 1;\n        for(auto &u: g[v]) {\n            if(p==u)continue;\n\
-    \            dfs_sz(u,v);\n            sz[v]+=sz[u];\n            if(sz[u]>sz[g[v][0]])std::swap(u,g[v][0]);\n\
-    \        }\n    }\n    void dfs_hld(int v,int p) {\n        static int t=0;\n\
-    \        in[v]=t++;\n        for(auto u: g[v]){\n            if(p==u)continue;\n\
-    \            nxt[u]=(u==g[v][0]?nxt[v]:u);\n            par[u]=(u==g[v][0]?par[v]:v);\n\
-    \            dfs_hld(u,v);\n        }\n        out[v] = t;\n    }\n    int query(int\
-    \ s,int t){\n        while(nxt[s]!=nxt[t]){\n\t\t\tif(sz[nxt[s]]>sz[nxt[t]])t=par[t];\n\
-    \t\t\telse s=par[s];\n\t\t}\n        return sz[s]>sz[t]?s:t;\n    }\n    int distance(int\
-    \ s,int t){\n\t\tint res=0;\n\t\twhile(nxt[s]!=nxt[t]){\n\t\t\tif(sz[nxt[s]]>sz[nxt[t]]){\n\
-    \t\t\t\tres+=in[t]-in[nxt[t]]+1;\n\t\t\t\tt=par[t];\n\t\t\t}\n\t\t\telse {\n\t\
-    \t\t\tres+=in[s]-in[nxt[s]]+1;\n\t\t\t\ts=par[s];\n\t\t\t}\n\t\t}\n\t\treturn\
-    \ res+std::abs(in[s]-in[t]);\n\t}\n};"
+    \            par2[u]=v;\n            dfs_hld(u,v);\n        }\n        out[v]\
+    \ = t;\n    }\n    int query(int s,int t){\n        while(nxt[s]!=nxt[t]){\n\t\
+    \t\tif(sz[nxt[s]]>sz[nxt[t]])t=par[t];\n\t\t\telse s=par[s];\n\t\t}\n        return\
+    \ sz[s]>sz[t]?s:t;\n    }\n    int distance(int s,int t){\n\t\tint res=0;\n\t\t\
+    while(nxt[s]!=nxt[t]){\n\t\t\tif(sz[nxt[s]]>sz[nxt[t]]){\n\t\t\t\tres+=in[t]-in[nxt[t]]+1;\n\
+    \t\t\t\tt=par[t];\n\t\t\t}\n\t\t\telse {\n\t\t\t\tres+=in[s]-in[nxt[s]]+1;\n\t\
+    \t\t\ts=par[s];\n\t\t\t}\n\t\t}\n\t\treturn res+std::abs(in[s]-in[t]);\n\t}\n\
+    \    std::vector<int>path(int s,int t){\n        int l=query(s,t);\n        std::vector<int>p,q;\n\
+    \        while(s!=l){\n            p.push_back(s);\n            s=par2[s];\n \
+    \       }\n        while(t!=l){\n            q.push_back(t);\n            t=par2[t];\n\
+    \        }\n        p.push_back(l);\n        p.insert(p.end(),q.rbegin(),q.rend());\n\
+    \        return p;\n    }\n};"
   dependsOn:
   - graph_tree/graph_template.hpp
   isVerificationFile: false
   path: graph_tree/lca_short.hpp
   requiredBy: []
-  timestamp: '2020-09-24 10:34:58+09:00'
+  timestamp: '2021-01-30 10:31:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - graph_tree/test/LC_lca_short.test.cpp

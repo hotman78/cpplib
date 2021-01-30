@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_binary_indexed_tree.test.cpp
     title: data_structure/test/LC_binary_indexed_tree.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

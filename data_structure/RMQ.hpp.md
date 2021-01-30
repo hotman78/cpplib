@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
   - icon: ':heavy_check_mark:'
@@ -18,6 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_RMQ.test.cpp
     title: data_structure/test/LC_RMQ.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

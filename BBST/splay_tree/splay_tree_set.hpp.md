@@ -6,6 +6,7 @@ data:
     title: BBST/splay_tree/splay_tree_base.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
@@ -36,14 +37,15 @@ data:
     \        };\n        dfs(dfs,root);\n        return res;\n    }\n    np get_root(){return\
     \ root;}\n    np get(int i){root=splay(root,i);return root;}\n    \n    template<typename\
     \ C>\n    int lower_bound(C less){\n        int res=__lower_bound(root,less);\n\
-    \        root=splay(root,res);\n        return res;\n    }\n    template<typename\
-    \ C>\n    int __lower_bound(np t,C less){\n        bool b=less(t);\n        if(b)__lower_bound(t->ch[0],less);\n\
-    \        else __lower_bound(t->ch[1],less);\n    }\n};\n#line 2 \"BBST/splay_tree/splay_tree_set.hpp\"\
+    \        if(res<size())root=splay(root,res);\n        return res;\n    }\n   \
+    \ template<typename C>\n    int __lower_bound(np t,C less){\n        if(!t)return\
+    \ 0;\n        bool b=less(t);\n        if(b)return size(t->ch[0])+1+__lower_bound(t->ch[1],less);\n\
+    \        else return __lower_bound(t->ch[0],less);\n    }\n};\n#line 2 \"BBST/splay_tree/splay_tree_set.hpp\"\
     \n\ntemplate<typename T>\nstruct splay_tree_set_node{\n    using np=splay_tree_set_node*;\n\
     \    np ch[2]={0,0};\n    int sz=1;\n    T val;\n    splay_tree_set_node(T val):val(val){}\n\
     \    int size(np t){return t?t->sz:0;}\n    np push(){}\n    np update(){\n  \
     \      sz=size(ch[0])+1+size(ch[1]);\n        return this;\n    }\n};\n\ntemplate<typename\
-    \ T>\nstruct splay_tree_array:splay_tree_base<splay_tree_set_node<T>>{\n    using\
+    \ T>\nstruct splay_tree_set:splay_tree_base<splay_tree_set_node<T>>{\n    using\
     \ node=splay_tree_set_node<T>;\n    using super=splay_tree_base<node>;\n    inline\
     \ int size(){return super::size(super::root);}\n    inline void insert(int idx,T\
     \ val){return super::insert(idx,new node(val));}\n    inline void erase(int idx){return\
@@ -54,7 +56,7 @@ data:
     \    using np=splay_tree_set_node*;\n    np ch[2]={0,0};\n    int sz=1;\n    T\
     \ val;\n    splay_tree_set_node(T val):val(val){}\n    int size(np t){return t?t->sz:0;}\n\
     \    np push(){}\n    np update(){\n        sz=size(ch[0])+1+size(ch[1]);\n  \
-    \      return this;\n    }\n};\n\ntemplate<typename T>\nstruct splay_tree_array:splay_tree_base<splay_tree_set_node<T>>{\n\
+    \      return this;\n    }\n};\n\ntemplate<typename T>\nstruct splay_tree_set:splay_tree_base<splay_tree_set_node<T>>{\n\
     \    using node=splay_tree_set_node<T>;\n    using super=splay_tree_base<node>;\n\
     \    inline int size(){return super::size(super::root);}\n    inline void insert(int\
     \ idx,T val){return super::insert(idx,new node(val));}\n    inline void erase(int\
@@ -66,7 +68,7 @@ data:
   isVerificationFile: false
   path: BBST/splay_tree/splay_tree_set.hpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-31 15:42:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: BBST/splay_tree/splay_tree_set.hpp

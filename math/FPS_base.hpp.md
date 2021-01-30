@@ -2,27 +2,31 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: math/FPS_long.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/FPS_mint.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(ModInt)"
+  - icon: ':warning:'
+    path: math/kth_root.hpp
+    title: math/kth_root.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_centroid_decomposition.test.cpp
     title: graph_tree/test/LC_centroid_decomposition.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
     links: []
@@ -111,9 +115,19 @@ data:
     \        f*=g;\n        f>>=n-1;\n        for(int i=0;i<n;++i)f[i]/=F().fact(T(i));\n\
     \        return f;\n    }\n    T eval(T x){\n        T res=0;\n        for(int\
     \ i=(int)this->size()-1;i>=0;--i){\n            res*=x;\n            res+=(*this)[i];\n\
-    \        }\n        return res;\n    }\n    static P interpolation(const std::vector<T>&x,const\
-    \ std::vector<T>& y){\n        const int n=x.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n\
-    \        std::vector<P> b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-x[i],1});\n\
+    \        }\n        return res;\n    }\n    P mul(const std::vector<std::pair<int,T>>&\
+    \ x){\n        int mx=0;\n        for(auto [s,t]:x){\n            if(mx<s)mx=s;\n\
+    \        }\n        P res((int)this->size()+mx);\n        for(int i=0;i<(int)this->size();++i){\n\
+    \            for(auto [s,t]:x){\n                res[i+s]+=(*this)[i]*t;\n   \
+    \         }\n        }\n        return res;\n    }\n    P div(const std::vector<std::pair<int,T>>&\
+    \ x){\n        P res(*this);\n        T cnt=0;\n        for(auto [s,t]:x){\n \
+    \           if(s==0)cnt+=t;\n        }\n        cnt=cnt.inv();\n        for(int\
+    \ i=0;i<(int)this->size();++i){\n            for(auto [s,t]:x){\n            \
+    \    if(s==0)continue;\n                if(i>=s)res[i]-=res[i-s]*t*cnt;\n    \
+    \        }\n        }\n        res*=cnt;\n        return res;\n    }\n    static\
+    \ P interpolation(const std::vector<T>&x,const std::vector<T>& y){\n        const\
+    \ int n=x.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n        std::vector<P>\
+    \ b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-x[i],1});\n\
     \        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};\n\
     \        auto d=(a[0].first).multipoint_eval(x);\n        for(int i=0;i<n;++i)b[i+n-1]=P{T(y[i]/d[i])};\n\
     \        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;\n\
@@ -133,7 +147,8 @@ data:
     \        return res;\n    }\n    T nth_term(P q,int64_t x){\n        if(x==0)return\
     \ (*this)[0]/q[0];\n        P p(*this);\n        P q2=q;\n        for(int i=1;i<(int)q2.size();i+=2)q2[i]*=-1;\n\
     \        q*=q2;\n        p*=q2;\n        return p.slice(x%2,p.size(),2).nth_term(q.slice(0,q.size(),2),x/2);\n\
-    \    }\n    \n    //(*this)(t(x))\n    P manipulate(P t,int deg){\n        P s=P(*this);\n\
+    \    }\n    P gcd(P q){\n        return *this==P()?q:(q%(*this).shrink()).gcd(*this);\n\
+    \    }\n    //(*this)(t(x))\n    P manipulate(P t,int deg){\n        P s=P(*this);\n\
     \        if(deg==0)return P();\n        if((int)t.size()==1)return P{s.eval(t[0])};\n\
     \        int k=std::min((int)::sqrt(deg/(::log2(deg)+1))+1,(int)t.size());\n \
     \       int b=deg/k+1;\n        P t2=t.pre(k);\n        std::vector<P>table(s.size()/2+1,P{1});\n\
@@ -250,9 +265,19 @@ data:
     \        f*=g;\n        f>>=n-1;\n        for(int i=0;i<n;++i)f[i]/=F().fact(T(i));\n\
     \        return f;\n    }\n    T eval(T x){\n        T res=0;\n        for(int\
     \ i=(int)this->size()-1;i>=0;--i){\n            res*=x;\n            res+=(*this)[i];\n\
-    \        }\n        return res;\n    }\n    static P interpolation(const std::vector<T>&x,const\
-    \ std::vector<T>& y){\n        const int n=x.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n\
-    \        std::vector<P> b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-x[i],1});\n\
+    \        }\n        return res;\n    }\n    P mul(const std::vector<std::pair<int,T>>&\
+    \ x){\n        int mx=0;\n        for(auto [s,t]:x){\n            if(mx<s)mx=s;\n\
+    \        }\n        P res((int)this->size()+mx);\n        for(int i=0;i<(int)this->size();++i){\n\
+    \            for(auto [s,t]:x){\n                res[i+s]+=(*this)[i]*t;\n   \
+    \         }\n        }\n        return res;\n    }\n    P div(const std::vector<std::pair<int,T>>&\
+    \ x){\n        P res(*this);\n        T cnt=0;\n        for(auto [s,t]:x){\n \
+    \           if(s==0)cnt+=t;\n        }\n        cnt=cnt.inv();\n        for(int\
+    \ i=0;i<(int)this->size();++i){\n            for(auto [s,t]:x){\n            \
+    \    if(s==0)continue;\n                if(i>=s)res[i]-=res[i-s]*t*cnt;\n    \
+    \        }\n        }\n        res*=cnt;\n        return res;\n    }\n    static\
+    \ P interpolation(const std::vector<T>&x,const std::vector<T>& y){\n        const\
+    \ int n=x.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n        std::vector<P>\
+    \ b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-x[i],1});\n\
     \        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};\n\
     \        auto d=(a[0].first).multipoint_eval(x);\n        for(int i=0;i<n;++i)b[i+n-1]=P{T(y[i]/d[i])};\n\
     \        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;\n\
@@ -272,7 +297,8 @@ data:
     \        return res;\n    }\n    T nth_term(P q,int64_t x){\n        if(x==0)return\
     \ (*this)[0]/q[0];\n        P p(*this);\n        P q2=q;\n        for(int i=1;i<(int)q2.size();i+=2)q2[i]*=-1;\n\
     \        q*=q2;\n        p*=q2;\n        return p.slice(x%2,p.size(),2).nth_term(q.slice(0,q.size(),2),x/2);\n\
-    \    }\n    \n    //(*this)(t(x))\n    P manipulate(P t,int deg){\n        P s=P(*this);\n\
+    \    }\n    P gcd(P q){\n        return *this==P()?q:(q%(*this).shrink()).gcd(*this);\n\
+    \    }\n    //(*this)(t(x))\n    P manipulate(P t,int deg){\n        P s=P(*this);\n\
     \        if(deg==0)return P();\n        if((int)t.size()==1)return P{s.eval(t[0])};\n\
     \        int k=std::min((int)::sqrt(deg/(::log2(deg)+1))+1,(int)t.size());\n \
     \       int b=deg/k+1;\n        P t2=t.pre(k);\n        std::vector<P>table(s.size()/2+1,P{1});\n\
@@ -310,14 +336,15 @@ data:
   path: math/FPS_base.hpp
   requiredBy:
   - math/FPS_mint.hpp
+  - math/kth_root.hpp
   - math/FPS_long.hpp
-  timestamp: '2020-10-24 18:26:33+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2021-01-30 11:24:14+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - math/test/LC_convolution_998244353.test.cpp
-  - math/test/LC_interpolation.test.cpp
-  - math/test/LC_convolution_1000000007.test.cpp
   - graph_tree/test/LC_centroid_decomposition.test.cpp
+  - math/test/LC_convolution_998244353.test.cpp
+  - math/test/LC_convolution_1000000007.test.cpp
+  - math/test/LC_interpolation.test.cpp
 documentation_of: math/FPS_base.hpp
 layout: document
 redirect_from:

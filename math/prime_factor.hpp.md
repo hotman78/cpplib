@@ -1,19 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/is_prime.hpp
     title: "\u7D20\u6570\u5224\u5B9A(\u9AD8\u901F)"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: math/fact_list.hpp
+    title: math/fact_list.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/AOJ_prime_factor.test.cpp
     title: math/test/AOJ_prime_factor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_prime_factor.test.cpp
     title: math/test/LC_prime_factor.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "\u7D20\u56E0\u6570\u5206\u89E3(\u9AD8\u901F)"
     links: []
@@ -60,9 +64,10 @@ data:
   - math/is_prime.hpp
   isVerificationFile: false
   path: math/prime_factor.hpp
-  requiredBy: []
-  timestamp: '2020-09-24 10:34:58+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  requiredBy:
+  - math/fact_list.hpp
+  timestamp: '2021-01-30 11:27:51+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - math/test/LC_prime_factor.test.cpp
   - math/test/AOJ_prime_factor.test.cpp

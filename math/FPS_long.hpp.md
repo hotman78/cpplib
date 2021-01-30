@@ -1,28 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/FPS_base.hpp
     title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(BASE)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/ceil_pow2.hpp
     title: math/ceil_pow2.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/garner.hpp
     title: "\u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_pow.hpp
     title: (x^y)%mod
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: util/ACL.hpp
     title: util/ACL.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: graph_tree/test/LC_centroid_decomposition.test.cpp
-    title: graph_tree/test/LC_centroid_decomposition.test.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     document_title: "\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570(Integer)"
     links: []
@@ -111,9 +109,19 @@ data:
     \        f*=g;\n        f>>=n-1;\n        for(int i=0;i<n;++i)f[i]/=F().fact(T(i));\n\
     \        return f;\n    }\n    T eval(T x){\n        T res=0;\n        for(int\
     \ i=(int)this->size()-1;i>=0;--i){\n            res*=x;\n            res+=(*this)[i];\n\
-    \        }\n        return res;\n    }\n    static P interpolation(const std::vector<T>&x,const\
-    \ std::vector<T>& y){\n        const int n=x.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n\
-    \        std::vector<P> b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-x[i],1});\n\
+    \        }\n        return res;\n    }\n    P mul(const std::vector<std::pair<int,T>>&\
+    \ x){\n        int mx=0;\n        for(auto [s,t]:x){\n            if(mx<s)mx=s;\n\
+    \        }\n        P res((int)this->size()+mx);\n        for(int i=0;i<(int)this->size();++i){\n\
+    \            for(auto [s,t]:x){\n                res[i+s]+=(*this)[i]*t;\n   \
+    \         }\n        }\n        return res;\n    }\n    P div(const std::vector<std::pair<int,T>>&\
+    \ x){\n        P res(*this);\n        T cnt=0;\n        for(auto [s,t]:x){\n \
+    \           if(s==0)cnt+=t;\n        }\n        cnt=cnt.inv();\n        for(int\
+    \ i=0;i<(int)this->size();++i){\n            for(auto [s,t]:x){\n            \
+    \    if(s==0)continue;\n                if(i>=s)res[i]-=res[i-s]*t*cnt;\n    \
+    \        }\n        }\n        res*=cnt;\n        return res;\n    }\n    static\
+    \ P interpolation(const std::vector<T>&x,const std::vector<T>& y){\n        const\
+    \ int n=x.size();\n        std::vector<std::pair<P,P>>a(n*2-1);\n        std::vector<P>\
+    \ b(n*2-1);\n        for(int i=0;i<n;++i)a[i+n-1]=std::make_pair(P{1},P{T()-x[i],1});\n\
     \        for(int i=n-2;i>=0;--i)a[i]={a[2*i+1].first*a[2*i+2].second+a[2*i+2].first*a[2*i+1].second,a[2*i+1].second*a[2*i+2].second};\n\
     \        auto d=(a[0].first).multipoint_eval(x);\n        for(int i=0;i<n;++i)b[i+n-1]=P{T(y[i]/d[i])};\n\
     \        for(int i=n-2;i>=0;--i)b[i]=b[2*i+1]*a[2*i+2].second+b[2*i+2]*a[2*i+1].second;\n\
@@ -133,7 +141,8 @@ data:
     \        return res;\n    }\n    T nth_term(P q,int64_t x){\n        if(x==0)return\
     \ (*this)[0]/q[0];\n        P p(*this);\n        P q2=q;\n        for(int i=1;i<(int)q2.size();i+=2)q2[i]*=-1;\n\
     \        q*=q2;\n        p*=q2;\n        return p.slice(x%2,p.size(),2).nth_term(q.slice(0,q.size(),2),x/2);\n\
-    \    }\n    \n    //(*this)(t(x))\n    P manipulate(P t,int deg){\n        P s=P(*this);\n\
+    \    }\n    P gcd(P q){\n        return *this==P()?q:(q%(*this).shrink()).gcd(*this);\n\
+    \    }\n    //(*this)(t(x))\n    P manipulate(P t,int deg){\n        P s=P(*this);\n\
     \        if(deg==0)return P();\n        if((int)t.size()==1)return P{s.eval(t[0])};\n\
     \        int k=std::min((int)::sqrt(deg/(::log2(deg)+1))+1,(int)t.size());\n \
     \       int b=deg/k+1;\n        P t2=t.pre(k);\n        std::vector<P>table(s.size()/2+1,P{1});\n\
@@ -906,13 +915,13 @@ data:
     \ long mod){\n    long long ret=1;\n    while(y>0) {\n        if(y&1)(ret*=x)%=mod;\n\
     \        (x*=x)%=mod;\n        y>>=1;\n    }\n    return ret;\n}\n#line 4 \"math/garner.hpp\"\
     \n\n/**\n * \n * @brief \u30AC\u30FC\u30CA\u30FC\u306E\u30A2\u30EB\u30B4\u30EA\
-    \u30BA\u30E0\n *\n */\n\nlong long garner(std::vector<long long>a,std::vector<long\
-    \ long>mods){\n    const int sz=3;\n    long long coeffs[sz+1]={1,1,1,1};\n  \
-    \  long long constants[sz+1]={};\n    for(int i=0;i<sz;i++){\n        long long\
+    \u30BA\u30E0\n *\n */\n\nlong long garner(const std::vector<long long>&a,const\
+    \ std::vector<long long>&mods){\n    const int sz=a.size();\n    long long coeffs[sz+1]={1,1,1,1};\n\
+    \    long long constants[sz+1]={};\n    for(int i=0;i<sz;i++){\n        long long\
     \ v=(mods[i]+a[i]-constants[i])%mods[i]*mod_pow(coeffs[i],mods[i]-2,mods[i])%mods[i];\n\
     \        for(int j=i+1;j<sz+1;j++) {\n            constants[j]=(constants[j]+coeffs[j]*v)%mods[j];\n\
     \            coeffs[j]=(coeffs[j]*mods[i])%mods[j];\n        }\n    }\n    return\
-    \ constants[3];\n}\n#line 7 \"math/FPS_long.hpp\"\n\n/**\n * @brief \u5F62\u5F0F\
+    \ constants[sz];\n}\n#line 7 \"math/FPS_long.hpp\"\n\n/**\n * @brief \u5F62\u5F0F\
     \u7684\u51AA\u7D1A\u6570(Integer)\n */\n\nstruct _FPS{\n    template<typename\
     \ T>\n    T operator()(const T& _s,const T& _t){\n        std::vector<long long>v=atcoder::convolution_ll(static_cast<std::vector<long\
     \ long>>(_s),static_cast<std::vector<long long>>(_t));\n        return *static_cast<T*>(&v);\n\
@@ -941,10 +950,9 @@ data:
   isVerificationFile: false
   path: math/FPS_long.hpp
   requiredBy: []
-  timestamp: '2020-10-24 18:26:33+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - graph_tree/test/LC_centroid_decomposition.test.cpp
+  timestamp: '2021-01-30 11:24:14+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: math/FPS_long.hpp
 layout: document
 redirect_from:

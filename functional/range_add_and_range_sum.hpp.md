@@ -1,16 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: alga/maybe.hpp
     title: Maybe
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
     title: segment_tree/test/AOJ_lazy_segment_tree.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "\u533A\u9593\u52A0\u7B97"
     links: []
@@ -38,7 +39,7 @@ data:
   path: functional/range_add_and_range_sum.hpp
   requiredBy: []
   timestamp: '2020-09-19 12:47:58+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - segment_tree/test/AOJ_lazy_segment_tree.test.cpp
 documentation_of: functional/range_add_and_range_sum.hpp

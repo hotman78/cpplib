@@ -6,6 +6,7 @@ data:
     title: BBST/splay_tree/splay_tree_base.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
@@ -36,9 +37,10 @@ data:
     \        };\n        dfs(dfs,root);\n        return res;\n    }\n    np get_root(){return\
     \ root;}\n    np get(int i){root=splay(root,i);return root;}\n    \n    template<typename\
     \ C>\n    int lower_bound(C less){\n        int res=__lower_bound(root,less);\n\
-    \        root=splay(root,res);\n        return res;\n    }\n    template<typename\
-    \ C>\n    int __lower_bound(np t,C less){\n        bool b=less(t);\n        if(b)__lower_bound(t->ch[0],less);\n\
-    \        else __lower_bound(t->ch[1],less);\n    }\n};\n#line 2 \"BBST/splay_tree/splay_tree_array_ushi.hpp\"\
+    \        if(res<size())root=splay(root,res);\n        return res;\n    }\n   \
+    \ template<typename C>\n    int __lower_bound(np t,C less){\n        if(!t)return\
+    \ 0;\n        bool b=less(t);\n        if(b)return size(t->ch[0])+1+__lower_bound(t->ch[1],less);\n\
+    \        else return __lower_bound(t->ch[0],less);\n    }\n};\n#line 2 \"BBST/splay_tree/splay_tree_array_ushi.hpp\"\
     \n\ntemplate<typename T,typename F>\nstruct splay_tree_array_ushi_node{\n    using\
     \ np=splay_tree_array_ushi_node*;\n    np ch[2]={0,0};\n    int sz=1;\n    T val,sum;\n\
     \    F op;\n    splay_tree_array_ushi_node(T val,F op):val(val),op(op){}\n   \
@@ -51,8 +53,8 @@ data:
     \    inline int size(){return super::size(super::root);}\n    inline void insert(int\
     \ idx,T val){return super::insert(idx,new node(val,op));}\n    inline void erase(int\
     \ idx){return super::erase(idx);}\n    inline void push_back(T val){insert(size(),val);}\n\
-    \    inline void pop_back(T val){erase(size()-1,val);}\n    inline T& back(){return\
-    \ (*this)[size()-1];}\n    inline T& front(){return (*this)[0];}\n    T operator[](int\
+    \    inline void pop_back(T val){erase(size()-1,val);}\n    inline T back(){return\
+    \ (*this)[size()-1];}\n    inline T front(){return (*this)[0];}\n    T operator[](int\
     \ idx){return super::get(idx)->val;}\n    void update(int idx,T val){\n      \
     \  np t=super::get(idx);\n        t->val=val;\n        t->update();\n    }\n \
     \   T fold(int l,int r){\n        auto [p,q]=super::split(super::root,l);\n  \
@@ -70,8 +72,8 @@ data:
     \    inline int size(){return super::size(super::root);}\n    inline void insert(int\
     \ idx,T val){return super::insert(idx,new node(val,op));}\n    inline void erase(int\
     \ idx){return super::erase(idx);}\n    inline void push_back(T val){insert(size(),val);}\n\
-    \    inline void pop_back(T val){erase(size()-1,val);}\n    inline T& back(){return\
-    \ (*this)[size()-1];}\n    inline T& front(){return (*this)[0];}\n    T operator[](int\
+    \    inline void pop_back(T val){erase(size()-1,val);}\n    inline T back(){return\
+    \ (*this)[size()-1];}\n    inline T front(){return (*this)[0];}\n    T operator[](int\
     \ idx){return super::get(idx)->val;}\n    void update(int idx,T val){\n      \
     \  np t=super::get(idx);\n        t->val=val;\n        t->update();\n    }\n \
     \   T fold(int l,int r){\n        auto [p,q]=super::split(super::root,l);\n  \
@@ -82,7 +84,7 @@ data:
   isVerificationFile: false
   path: BBST/splay_tree/splay_tree_array_ushi.hpp
   requiredBy: []
-  timestamp: '2020-10-21 08:20:00+09:00'
+  timestamp: '2020-10-31 15:42:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: BBST/splay_tree/splay_tree_array_ushi.hpp

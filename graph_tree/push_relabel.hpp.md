@@ -12,6 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_push_relabel.test.cpp
     title: graph_tree/test/LC_push_relabel.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

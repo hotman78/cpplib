@@ -6,6 +6,7 @@ data:
     path: BBST/AVL/set.hpp
     title: BBST/AVL/set.hpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:

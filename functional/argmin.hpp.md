@@ -13,6 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph_tree/test/LC_lca.test.cpp
     title: graph_tree/test/LC_lca.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -30,8 +31,8 @@ data:
   isVerificationFile: false
   path: functional/argmin.hpp
   requiredBy:
-  - data_structure/arg_rmq.hpp
   - graph_tree/lca.hpp
+  - data_structure/arg_rmq.hpp
   timestamp: '2020-09-18 14:44:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

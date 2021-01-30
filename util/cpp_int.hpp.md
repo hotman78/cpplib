@@ -3,37 +3,38 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: '#line 1 "util/cpp_int.hpp"
 
-    // #include <boost/multiprecision/cpp_dec_float.hpp>
+    #include <boost/multiprecision/cpp_dec_float.hpp>
 
-    // #include <boost/multiprecision/cpp_int.hpp>
+    #include <boost/multiprecision/cpp_int.hpp>
 
-    // namespace mp = boost::multiprecision;
+    namespace mp = boost::multiprecision;
 
-    // typedef mp::number<mp::cpp_dec_float<0>> cdouble;
+    typedef mp::number<mp::cpp_dec_float<0>> cdouble;
 
-    // typedef mp::cpp_int cint;
+    typedef mp::cpp_int cint;
 
     '
-  code: '// #include <boost/multiprecision/cpp_dec_float.hpp>
+  code: '#include <boost/multiprecision/cpp_dec_float.hpp>
 
-    // #include <boost/multiprecision/cpp_int.hpp>
+    #include <boost/multiprecision/cpp_int.hpp>
 
-    // namespace mp = boost::multiprecision;
+    namespace mp = boost::multiprecision;
 
-    // typedef mp::number<mp::cpp_dec_float<0>> cdouble;
+    typedef mp::number<mp::cpp_dec_float<0>> cdouble;
 
-    // typedef mp::cpp_int cint;'
+    typedef mp::cpp_int cint;'
   dependsOn: []
   isVerificationFile: false
   path: util/cpp_int.hpp
   requiredBy: []
-  timestamp: '2020-09-10 20:18:46+09:00'
+  timestamp: '1970-01-01 00:00:00+00:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: util/cpp_int.hpp

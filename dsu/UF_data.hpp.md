@@ -3,6 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
@@ -14,10 +15,11 @@ data:
     \ 0;\n        if(data[x]>data[y])swap(x,y);\n\t\tdata[x]+=data[y];\n\t\tdata[y]=x;\n\
     \        val[x]=merge(move(val[x]),move(val[y]));\n\t\tsz--;\n        return 1;\n\
     \    }\n    inline void set(int x,const T&v){\n        x=root(x);\n        val[x]=v;\n\
-    \    }\n    inline T get(int x){\n        return val[root(x)];\n    }\n    inline\
-    \ int root(int x){return data[x]<0?x:data[x]=root(data[x]);}\n    inline bool\
-    \ same(int x, int y){return root(x)==root(y);}\n    inline int size(){return sz;}\n\
-    \tinline int size(int x){return -data[root(x)];}\n};\n"
+    \    }\n    template<typename G>\n    void apply(int x,G g=G()){\n        x=root(x);\n\
+    \        g(val[x]);\n    }\n    inline T& get(int x){\n        return val[root(x)];\n\
+    \    }\n    inline int root(int x){return data[x]<0?x:data[x]=root(data[x]);}\n\
+    \    inline bool same(int x, int y){return root(x)==root(y);}\n    inline int\
+    \ size(){return sz;}\n\tinline int size(int x){return -data[root(x)];}\n};\n"
   code: "template<typename T,typename F>\nclass UF_data{\n    public:\n    vector<int>\
     \ data;\n    vector<T>val;\n    int sz;\n    F merge;\n\tpublic:\n    UF_data(int\
     \ sz,F merge=F()):sz(sz),merge(merge){data.resize(sz,-1);val.resize(sz,T());}\n\
@@ -25,15 +27,16 @@ data:
     \ 0;\n        if(data[x]>data[y])swap(x,y);\n\t\tdata[x]+=data[y];\n\t\tdata[y]=x;\n\
     \        val[x]=merge(move(val[x]),move(val[y]));\n\t\tsz--;\n        return 1;\n\
     \    }\n    inline void set(int x,const T&v){\n        x=root(x);\n        val[x]=v;\n\
-    \    }\n    inline T get(int x){\n        return val[root(x)];\n    }\n    inline\
-    \ int root(int x){return data[x]<0?x:data[x]=root(data[x]);}\n    inline bool\
-    \ same(int x, int y){return root(x)==root(y);}\n    inline int size(){return sz;}\n\
-    \tinline int size(int x){return -data[root(x)];}\n};"
+    \    }\n    template<typename G>\n    void apply(int x,G g=G()){\n        x=root(x);\n\
+    \        g(val[x]);\n    }\n    inline T& get(int x){\n        return val[root(x)];\n\
+    \    }\n    inline int root(int x){return data[x]<0?x:data[x]=root(data[x]);}\n\
+    \    inline bool same(int x, int y){return root(x)==root(y);}\n    inline int\
+    \ size(){return sz;}\n\tinline int size(int x){return -data[root(x)];}\n};"
   dependsOn: []
   isVerificationFile: false
   path: dsu/UF_data.hpp
   requiredBy: []
-  timestamp: '2020-10-24 18:26:33+09:00'
+  timestamp: '2021-01-30 10:06:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: dsu/UF_data.hpp

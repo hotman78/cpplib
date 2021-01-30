@@ -2,30 +2,34 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int1000000007.hpp
     title: ModInt(1'000'000'007)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/mod_int998244353.hpp
     title: ModInt(998'244'353)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: data_structure/test/LC_swag.test.cpp
     title: data_structure/test/LC_swag.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
+    path: graph_tree/test/LC_centroid_decomposition.test.cpp
+    title: graph_tree/test/LC_centroid_decomposition.test.cpp
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_1000000007.test.cpp
     title: math/test/LC_convolution_1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_convolution_998244353.test.cpp
     title: math/test/LC_convolution_998244353.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_interpolation.test.cpp
     title: math/test/LC_interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/test/LC_totient_sum.test.cpp
     title: math/test/LC_totient_sum.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: ModInt
     links: []
@@ -67,15 +71,16 @@ data:
     \ build()const{\n        init=0;\n        fac.resize(mx);\n        ifac.resize(mx);\n\
     \        fac[0]=1,ifac[0]=1;\n        for(int i=1;i<mx;i++)fac[i]=fac[i-1]*i;\n\
     \        ifac[mx-1]=fac[mx-1].inv();\n        for(int i=mx-2;i>=0;i--)ifac[i]=ifac[i+1]*(i+1);\n\
-    \    }\n    mint comb(long long b){\n        if(init)build();\n        if(a==0&&b==0)return\
-    \ 1;\n        if((long long)a<b)return 0;\n        return fac[a]*ifac[a-b]*ifac[b];\n\
-    \    }\n    mint fact()const{\n        if(init)build();\n        return fac[a];\n\
-    \    }\n    mint fact_inv()const{\n        if(init)build();\n        return ifac[a];\n\
-    \    }\n    friend std::ostream& operator<<(std::ostream& lhs, const mint& rhs)\
-    \ noexcept {\n        lhs << rhs.a;\n        return lhs;\n    }\n    friend std::istream&\
-    \ operator>>(std::istream& lhs,mint& rhs) noexcept {\n        lhs >> rhs.a;\n\
-    \        return lhs;\n    }\n    constexpr static u64 get_mod(){\n        return\
-    \ MOD;\n    }\n};\ntemplate<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;\n\
+    \    }\n    mint comb(long long b){\n        if(init)build();\n        if(a<0||b<0)return\
+    \ 0;\n        if(a==0&&b==0)return 1;\n        if((long long)a<b)return 0;\n \
+    \       return fac[a]*ifac[a-b]*ifac[b];\n    }\n    mint fact()const{\n     \
+    \   if(init)build();\n        return fac[a];\n    }\n    mint fact_inv()const{\n\
+    \        if(init)build();\n        return ifac[a];\n    }\n    friend std::ostream&\
+    \ operator<<(std::ostream& lhs, const mint& rhs) noexcept {\n        lhs << rhs.a;\n\
+    \        return lhs;\n    }\n    friend std::istream& operator>>(std::istream&\
+    \ lhs,mint& rhs) noexcept {\n        lhs >> rhs.a;\n        return lhs;\n    }\n\
+    \    constexpr static bool is_static=true;\n    constexpr static u64 get_mod(){\n\
+    \        return MOD;\n    }\n};\ntemplate<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;\n\
     template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::ifac;\ntemplate<int MOD>bool\
     \ mod_int<MOD>::init=1;\n"
   code: "#pragma once\n#include<cstdint>\n#include<iostream>\n#include<vector>\n\n\
@@ -116,31 +121,33 @@ data:
     \ build()const{\n        init=0;\n        fac.resize(mx);\n        ifac.resize(mx);\n\
     \        fac[0]=1,ifac[0]=1;\n        for(int i=1;i<mx;i++)fac[i]=fac[i-1]*i;\n\
     \        ifac[mx-1]=fac[mx-1].inv();\n        for(int i=mx-2;i>=0;i--)ifac[i]=ifac[i+1]*(i+1);\n\
-    \    }\n    mint comb(long long b){\n        if(init)build();\n        if(a==0&&b==0)return\
-    \ 1;\n        if((long long)a<b)return 0;\n        return fac[a]*ifac[a-b]*ifac[b];\n\
-    \    }\n    mint fact()const{\n        if(init)build();\n        return fac[a];\n\
-    \    }\n    mint fact_inv()const{\n        if(init)build();\n        return ifac[a];\n\
-    \    }\n    friend std::ostream& operator<<(std::ostream& lhs, const mint& rhs)\
-    \ noexcept {\n        lhs << rhs.a;\n        return lhs;\n    }\n    friend std::istream&\
-    \ operator>>(std::istream& lhs,mint& rhs) noexcept {\n        lhs >> rhs.a;\n\
-    \        return lhs;\n    }\n    constexpr static u64 get_mod(){\n        return\
-    \ MOD;\n    }\n};\ntemplate<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;\n\
+    \    }\n    mint comb(long long b){\n        if(init)build();\n        if(a<0||b<0)return\
+    \ 0;\n        if(a==0&&b==0)return 1;\n        if((long long)a<b)return 0;\n \
+    \       return fac[a]*ifac[a-b]*ifac[b];\n    }\n    mint fact()const{\n     \
+    \   if(init)build();\n        return fac[a];\n    }\n    mint fact_inv()const{\n\
+    \        if(init)build();\n        return ifac[a];\n    }\n    friend std::ostream&\
+    \ operator<<(std::ostream& lhs, const mint& rhs) noexcept {\n        lhs << rhs.a;\n\
+    \        return lhs;\n    }\n    friend std::istream& operator>>(std::istream&\
+    \ lhs,mint& rhs) noexcept {\n        lhs >> rhs.a;\n        return lhs;\n    }\n\
+    \    constexpr static bool is_static=true;\n    constexpr static u64 get_mod(){\n\
+    \        return MOD;\n    }\n};\ntemplate<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::fac;\n\
     template<int MOD>std::vector<mod_int<MOD>> mod_int<MOD>::ifac;\ntemplate<int MOD>bool\
     \ mod_int<MOD>::init=1;"
   dependsOn: []
   isVerificationFile: false
   path: math/mod_int.hpp
   requiredBy:
-  - math/mod_int1000000007.hpp
   - math/mod_int998244353.hpp
-  timestamp: '2020-09-24 10:34:58+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  - math/mod_int1000000007.hpp
+  timestamp: '2021-01-30 10:06:08+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - data_structure/test/LC_swag.test.cpp
-  - math/test/LC_convolution_998244353.test.cpp
-  - math/test/LC_interpolation.test.cpp
+  - graph_tree/test/LC_centroid_decomposition.test.cpp
   - math/test/LC_totient_sum.test.cpp
+  - math/test/LC_convolution_998244353.test.cpp
   - math/test/LC_convolution_1000000007.test.cpp
+  - math/test/LC_interpolation.test.cpp
+  - data_structure/test/LC_swag.test.cpp
 documentation_of: math/mod_int.hpp
 layout: document
 redirect_from:
