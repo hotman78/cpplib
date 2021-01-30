@@ -64,7 +64,7 @@ struct lca{
 	}
     std::vector<int>path(int s,int t){
         int l=query(s,t);
-        vector<int>p,q;
+        std::vector<int>p,q;
         while(s!=l){
             p.push_back(s);
             s=par2[s];

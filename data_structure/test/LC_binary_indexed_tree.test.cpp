@@ -5,19 +5,19 @@
 int main(){
 	lint n,q;
 	cin>>n>>q;
-	BIT bit(n);
+	BIT b(n);
 	rep(i,n){
 		lint x;
 		cin>>x;
-		bit.add(i,x);
+		b.add(i,x);
 	}
 	while(q--){
 		lint c,s,t;
 		cin>>c>>s>>t;
 		if(c==0){
-			bit.add(s,t);
+			b.add(s,t);
 		}else{
-			cout<<bit.sum(s,t)<<endl;
+			cout<<b.sum(s,t)<<endl;
 		}
 	}
 }
