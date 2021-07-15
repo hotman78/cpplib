@@ -13,9 +13,10 @@ struct reroot{
     std::vector<bool>p_checked;
     std::vector<map<int,T>>table;
     std::vector<T>ans;
+    T e;
     F f;
     Fix fix;
-    reroot(const std::vector<std::vector<long long>>& g,F f=F(),Fix fix=Fix()):g(g),f(f),fix(fix){
+    reroot(const std::vector<std::vector<long long>>& g,T e,F f=F(),Fix fix=Fix()):g(g),e(e),f(f),fix(fix){
         int n=g.size();
         p_list.resize(n,-1);
         p_checked.resize(n,0);

@@ -27,6 +27,7 @@ struct dinic {
     std::vector<int>level,seen;
     std::map<std::pair<int,int>,bool>exist;
     std::map<std::pair<int,int>,typename std::list<edge>::iterator>m;
+    dinic(){}
     dinic(int n,int s,int t):n(n),src(s),dst(t){g.assign(n,std::list<edge>());itr.resize(n);}
 
     void add_edge(int from, int to, T cap) {

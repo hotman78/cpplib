@@ -54,22 +54,22 @@ struct mod_int {
         }
         return *this;
     }
-    constexpr bool operator==(mint x) noexcept {
+    constexpr bool operator==(mint x) const{
         return a==x.a;
     }
-    constexpr bool operator!=(mint x) noexcept {
+    constexpr bool operator!=(mint x) const{
         return a!=x.a;
     }
-    constexpr bool operator<(mint x) noexcept {
+    constexpr bool operator<(mint x) const{
         return a<x.a;
     }
-    constexpr bool operator>(mint x) noexcept {
+    constexpr bool operator>(mint x) const{
         return a>x.a;
     }
-    constexpr bool operator<=(mint x) noexcept {
+    constexpr bool operator<=(mint x) const{
         return a<=x.a;
     }
-    constexpr bool operator>=(mint x) noexcept {
+    constexpr bool operator>=(mint x) const{
         return a>=x.a;
     }
     constexpr static int root(){

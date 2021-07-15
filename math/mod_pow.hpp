@@ -1,3 +1,4 @@
+#pragma once
 /**
  * @brief (x^y)%mod
  */

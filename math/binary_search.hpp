@@ -3,12 +3,12 @@
 /**
  * @brief 二分探索
  */
-template<typename F>
-long long bs(long long mn,long long mx,F func){
+template<typename T=long long,typename F>
+T bs(T mn,T mx,F func){
     mn--;
     mx++;
 	while(mx-mn>1){
-		long long mid=(mn+mx)/2;
+		T mid=(mn+mx)/2;
 		if(!func(mid))mx=mid;
 		else mn=mid;
 	}

@@ -46,6 +46,9 @@ struct dijkstra{
             }
         }
     }
+    vector<T> get(){
+        return diff;
+    }
     T operator[](int idx){
         return diff[idx];
     }

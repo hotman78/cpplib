@@ -6,7 +6,7 @@
  * @brief 重心分解
  */
 
-class centroid_decomposition{
+struct centroid_decomposition{
     graph g;
     std::vector<int>used;
     std::vector<int>v;
@@ -43,4 +43,31 @@ class centroid_decomposition{
     int get_root(){return s;}
     std::vector<int> operator[](int i){return ch[i];}
     std::vector<int> get_euler_tour(){return v;}
+};
+
+template<typename T,typename F>
+struct tree_convolution{
+    graph g;
+    vector<T>st;
+    F f;
+    centroid_decomposition* cd;
+    tree_convolution(const graph&g,vector<T>st,F f=F()):g(g),st(st),f(f){
+        cd=new centroid_decomposition(g);
+    }
+    T run(){
+        return dfs(cd->get_root());
+    }
+    T dfs(int now){
+        T res=st[now];
+        set<int>s;
+        for(auto e:g[now])s.emplace(e);
+        for(auto e:cd->ch[now]){
+            auto tmp=dfs(e);
+            for(auto [p,q]:tmp.edge)if(s.count(p)){
+                res=f(res,tmp,now,p);
+                break;
+            }
+        }
+        return res;
+    }
 };

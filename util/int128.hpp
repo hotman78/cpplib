@@ -22,10 +22,12 @@ std::ostream &operator<<(std::ostream &dest, __int128_t value) {
 }
 __int128 parse(string &s) {
     __int128 ret = 0;
-    for (int i = 0; i < (int)s.length(); i++)
+    bool neg=0;
+    if(s[0]=='-')neg=1;
+    for (int i = neg; i < (int)s.length(); i++)
         if ('0' <= s[i] && s[i] <= '9')
             ret = 10 * ret + s[i] - '0';
-    return ret;
+    return neg?-ret:ret;
 }
 std::istream &operator>>(std::istream &dest, __int128_t& value){
     string s;

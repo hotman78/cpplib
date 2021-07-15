@@ -8,7 +8,7 @@
  * @brief 素数列挙
  */
 
-std::bitset<500'000'001> p;
+std::bitset<10'000'001> p;
 std::vector<long long> prime_list(int n) {
     p.set();
     p[0]=0;

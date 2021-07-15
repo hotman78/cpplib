@@ -109,21 +109,7 @@ struct min_cost_flow{
         }
         return ans;
     }
-    bool ok(std::vector<T>b){
-        T tmp=0,tmp2=0;
-        for(int i=0;i<v;++i){
-            if(d[i]+b[i]>=0){
-                mf.add_edge(v,i,d[i]+b[i]);
-                tmp2+=d[i]+b[i];
-            }
-            else{
-                mf.add_edge(i,v+1,-(d[i]+b[i]));
-                tmp+=-(d[i]+b[i]);
-            }
-        }
-        return tmp==tmp2&&mf.run(v,v+1)==tmp;
-    }
-    Res run(int s,int t,T f){
+    Res run(int s,int t,T f=-1){
         d[s]+=f;
         d[t]-=f;
         return flow();

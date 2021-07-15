@@ -51,7 +51,7 @@ class lazy_segment_tree{
         t->lazy=maybe<E>();
     }
     F _f;G _g;H _h;
-    maybe<T> h(const maybe<T>&s,const maybe<E>&t,int l,int r){
+    maybe<T> h(const maybe<T>&s,const maybe<E>&t,i64 l,i64 r){
         if(t.is_none())return s;
         else return maybe<T>(_h(s,t.unwrap(),l,r));
     }

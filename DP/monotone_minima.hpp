@@ -1,7 +1,7 @@
 //monotoneな二変数関数に対して各行の最小値を求める
 template<typename T,typename F>
-vector<int> monotone_minima(int h,int w,T inf,F f){
-    vector<int>ret(h);
+std::vector<int> monotone_minima(int h,int w,T inf,F f){
+    std::vector<int>ret(h);
     auto g=[&](auto g,int a,int b,int c,int d,T inf,auto f)->void{
         int e=(a+b)/2,idx=0;
         T mn=inf;

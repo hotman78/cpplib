@@ -40,6 +40,7 @@ class disjoint_sparse_table{
 		}
 	}
 	T get(int l,int r){
+		if(l==r)return T();
 		r--;
 		if(l==r)return data[l];
 		const int t=31-__builtin_clz((int)(l^r));

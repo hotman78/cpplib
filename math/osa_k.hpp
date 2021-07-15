@@ -6,7 +6,7 @@
  */
 
 std::map<int,int> osa_k(int n){
-    constexpr int mx=10'000'000;
+    constexpr int mx=20'000'001;
     assert(n<mx);
     static bool init=false;
     static int v[mx];

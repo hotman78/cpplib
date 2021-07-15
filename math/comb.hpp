@@ -20,7 +20,7 @@ long long comb(long long a, long long b){
         };
         for(int i=0;i<1000000;i++){
             fac[i+1]=fac[i]*(i+1)%mod;
-            ifac[i+1]=ifac[i]*mod_pow(i+1, MOD-2)%mod;
+            ifac[i+1]=ifac[i]*mod_pow(i+1, mod-2)%mod;
         }
     }
     if(a==0&&b==0)return 1;

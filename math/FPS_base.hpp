@@ -167,7 +167,7 @@ struct FPS_BASE:std::vector<T>{
 		if(i==(int)this->size())return P(n,0);
 		if(i*c>=n)return P(n,0);
 		T k=ret[i];
-		return ((((ret>>i)/k).log()*c).exp()*(k.pow(c))<<(i*c)).pre(n);
+		return ((((ret>>i)/k).log(n)*c).exp(n)*(k.pow(c))<<(i*c)).pre(n);
         // const int n=deg==-1?this->size():deg;
         // long long i=0;
         // P ret(*this);
@@ -309,6 +309,12 @@ struct FPS_BASE:std::vector<T>{
         p*=q2;
         return p.slice(x%2,p.size(),2).nth_term(q.slice(0,q.size(),2),x/2);
     }
+    T guess(int64_t x){
+        auto p=find_linear_recurrence();
+        auto q=p*P(*this);
+        q.resize(this->size());
+        return q.nth_term(p,x);
+    }
     P gcd(P q){
         return *this==P()?q:(q%(*this).shrink()).gcd(*this);
     }
@@ -386,7 +392,7 @@ struct FPS_BASE:std::vector<T>{
                 c-=(b*freq)<<(l-m);
             }
         }
-        return c;
+        return c.rev().shrink().rev();
     }
     static P stirling_second(int n){
         P a(n+1,0),b(n+1,0);
@@ -395,6 +401,43 @@ struct FPS_BASE:std::vector<T>{
             b[i]=(i%2?T(-1):T(1))/F().fact(T(i));
         }
         return (a*b).pre(n+1);
+    }
+    static pair<P,P> sum_of_fractional(const vector<pair<P,P>>&v){
+        auto f=[&](const auto& s,const auto& t){
+            return s.second>t.second;
+        };
+        priority_queue<pair<P,P>,vector<pair<P,P>>,decltype(f)>que(f);
+        for(auto& e:v){
+            que.emplace(e);
+        }
+        while(que.size()>=2){
+            auto [s,t]=move(que.top());
+            que.pop();
+            auto [u,r]=move(que.top());
+            que.pop();
+            que.emplace(s*r+t*u,t*r);
+        }
+        return que.top();
+    }
+    static P sum_of_exp(const vector<T>&v){
+        vector<pair<P,P>>tmp(v.size());
+        for(int i=0;i<(int)v.size();++i){
+            tmp[i]=make_pair(P{T(1)},P{T(1),T(v[i])*(-1)});
+        }
+        auto [s,t]=sum_of_fractional(tmp);
+        auto res=s*t.inv();
+        res.ord_to_exp();
+        return res;
+    }
+    void ord_to_exp(){
+        for(int i=0;i<this->size();++i){
+            (*this)[i]/=F().fact(T(i));
+        }
+    }
+    void exp_to_ord(){
+        for(int i=0;i<this->size();++i){
+            (*this)[i]*=F().fact(T(i));
+        }
     }
     void debug(){
         for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<" \n"[i==(int)(*this).size()-1];

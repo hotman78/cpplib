@@ -20,7 +20,7 @@ template<typename T>using VV=V<V<T>>;
 template<typename T>inline void output(T t){bool f=0;for(auto i:t){cout<<(f?" ":"")<<i;f=1;}cout<<endl;}
 template<typename T>inline void output2(T t){for(auto i:t)output(i);}
 template<typename T>inline void debug(T t){bool f=0;for(auto i:t){cerr<<(f?" ":"")<<i;f=1;}cerr<<endl;}
-template<typename T>inline void debug2(T t){for(auto i:t)output(i);}
+template<typename T>inline void debug2(T t){for(auto i:t)debug(i);}
 #define loop(n) for(long long _=0;_<(long long)(n);++_)
 #define _overload4(_1,_2,_3,_4,name,...) name
 #define __rep(i,a) repi(i,0,a,1)
@@ -47,11 +47,22 @@ template<typename T,typename E>bool chmax(T& s,const E& t){bool res=s<t;s=max<T>
 const vector<lint> dx={1,0,-1,0,1,1,-1,-1};
 const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 #define SUM(v) accumulate(all(v),0LL)
-template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
+#if __cplusplus>=201703L
+    template<typename T,typename ...Args>auto make_vector(T x,int arg,Args ...args){if constexpr(sizeof...(args)==0)return vector<T>(arg,x);else return vector(arg,make_vector<T>(x,args...));}
+#endif
 #define extrep(v,...) for(auto v:__MAKE_MAT__({__VA_ARGS__}))
 #define bit(n,a) ((n>>a)&1)
 vector<vector<long long>> __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return ret;}
 using graph=vector<vector<int>>;
 template<typename T>using graph_w=vector<vector<pair<int,T>>>;
 template<typename T,typename E>ostream& operator<<(ostream& out,pair<T,E>v){out<<"("<<v.first<<","<<v.second<<")";return out;}
-constexpr inline long long powll(long long a,long long b){long long res=1;while(b--)res*=a;return res;}
+#if __cplusplus>=201703L
+    constexpr inline long long powll(long long a,long long b){long long res=1;while(b--)res*=a;return res;}
+#endif
+
+template<typename T,typename E>pair<T,E>& operator+=(pair<T,E>&s,const pair<T,E>&t){s.first+=t.first;s.second+=t.second;return s;}
+template<typename T,typename E>pair<T,E>& operator-=(pair<T,E>&s,const pair<T,E>&t){s.first-=t.first;s.second-=t.second;return s;}
+template<typename T,typename E>pair<T,E> operator+(const pair<T,E>&s,const pair<T,E>&t){auto res=s;return res+=t;}
+template<typename T,typename E>pair<T,E> operator-(const pair<T,E>&s,const pair<T,E>&t){auto res=s;return res-=t;}
+#define BEGIN_STACK_EXTEND(size) void * stack_extend_memory_ = malloc(size);void * stack_extend_origin_memory_;char * stack_extend_dummy_memory_ = (char*)alloca((1+(int)(((long long)stack_extend_memory_)&127))*16);*stack_extend_dummy_memory_ = 0;asm volatile("mov %%rsp, %%rbx\nmov %%rax, %%rsp":"=b"(stack_extend_origin_memory_):"a"((char*)stack_extend_memory_+(size)-1024));
+#define END_STACK_EXTEND asm volatile("mov %%rax, %%rsp"::"a"(stack_extend_origin_memory_));free(stack_extend_memory_);

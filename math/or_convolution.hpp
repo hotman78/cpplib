@@ -1,5 +1,5 @@
 template<typename T>
-vector<T> or_conv(vector<T>s,vector<T>t,int n){
+vector<T> or_convolution(vector<T>s,vector<T>t,int n){
 	auto zeta=[](vector<T>& f,int n){
 		for(int i=0;i<n;++i){
 			for(int j=0;j<(1<<n);++j){
