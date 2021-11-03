@@ -13,15 +13,16 @@ std::istream& operator>>(std::istream& lhs,mint& rhs) noexcept {
     return lhs;
 }
 
-static int MOD_NOW=-1;
-static int sz=0;
-static std::vector<mint>fact_table,fact_inv_table;
+int MOD_NOW=-1;
+int sz=0;
+std::vector<mint>fact_table,fact_inv_table;
 
 void update(int x){
     if(MOD_NOW!=mint::mod()||sz==0){
         fact_table.assign(1,1);
         fact_inv_table.assign(1,1);
         sz=1;
+        MOD_NOW=mint::mod();
     }
     while(sz<=x){
         fact_table.resize(sz*2);
@@ -36,6 +37,7 @@ void update(int x){
         sz*=2;
     }
 }
+
 inline mint fact(int x){
     assert(x>=0);
     update(x);

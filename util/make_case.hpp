@@ -4,11 +4,19 @@ void make_case(string name,lint num,F in,G out){
         string s=to_string(i);
         while(s.size()<2)s="0"+s;
         ofstream input("in/"+name+s+".txt");
-        in(input);
+        in(input,i);
         input<<flush;
         ifstream input2("in/"+name+s+".txt");
         ofstream output("out/"+name+s+".txt");
         out(input2,output);
         output<<flush;
     }
+}
+
+void reset_case(){
+    namespace fs = std::filesystem;
+    fs::remove_all("in");
+    fs::remove_all("out");
+    fs::create_directory("in");
+    fs::create_directory("out");
 }

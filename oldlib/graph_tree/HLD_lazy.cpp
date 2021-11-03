@@ -127,11 +127,11 @@ class HLD_lazy{
 	int* head;
 	lazy_segment_tree* seg;
 	public:
-	HLD_lazy(const auto& v,int root=0){
+	HLD_lazy(const graph& v,int root=0){
 		make(v,root);
 		seg=new lazy_segment_tree(v.size());
 	}
-	HLD_lazy(const auto& v,const auto& a,int root=0){
+	HLD_lazy(const graph& v,const auto& a,int root=0){
 		vector<T>tmp(v.size());
 		make(v,root);
 		for(int i=0;i<(int)v.size();i++){

@@ -1,4 +1,4 @@
-template<typename T,typename E,typename R>
+template<typename T,typename E,typename R,typename F,typename G>
 struct dynamic_segment{
     struct node;
     using np=node*;
@@ -8,13 +8,13 @@ struct dynamic_segment{
         node(T e):val(e){}
     };
     np root=0;
-    void update(int64_t l,int64_t r,int64_t x,E val,T e,auto f){
+    void update(int64_t l,int64_t r,int64_t x,E val,T e,F f){
         root=update(l,r,x,val,e,f,root);
     }
-    R get(int64_t l,int64_t r,int64_t a,int64_t b,R e,auto f,auto g){
+    R get(int64_t l,int64_t r,int64_t a,int64_t b,R e,F f,G g){
         return get(l,r,a,b,e,f,g,root);
     }
-    np update(int64_t l,int64_t r,int64_t x,E val,T e,auto f,np t){
+    np update(int64_t l,int64_t r,int64_t x,E val,T e,F f,np t){
         if(x<l||r<=x)return t;
         if(!t)t=new node(e);
         f(t->val,val);
@@ -25,7 +25,7 @@ struct dynamic_segment{
         }
         return t;
     }
-    R get(int64_t l,int64_t r,int64_t a,int64_t b,R e,auto f,auto g,np t){
+    R get(int64_t l,int64_t r,int64_t a,int64_t b,R e,F f,G g,np t){
         if(!t)return e;
         if(b<=l||r<=a)return e;
         if(a<=l&&r<=b)return g(t->val);

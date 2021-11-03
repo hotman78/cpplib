@@ -45,7 +45,9 @@ struct reroot{
         return fix(table[n][p]=tmp1,n,p);
     }
     T dfs2(int n,int p){
-        if(n==-1)return e;
+        if(n==-1){
+            return e;
+        }
         if(!p_checked[n]){
             p_checked[n]=1;
             p_table[n]=dfs2(p_list[n],n);

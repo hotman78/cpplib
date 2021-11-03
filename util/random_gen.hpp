@@ -2,15 +2,16 @@
 #include<random>
 #include<chrono>
 
+template<typename T>
 struct RandomNumberGenerator {
     std::mt19937 mt;
     RandomNumberGenerator() : mt(std::chrono::steady_clock::now().time_since_epoch().count()) {}
-    int operator()(int a, int b) { // [a, b)
-        std::uniform_int_distribution< int > dist(a, b - 1);
+    T operator()(T a, T b) { // [a, b)
+        std::uniform_int_distribution< T > dist(a, b - 1);
         return dist(mt);
     }
 
-    int operator()(int b) { // [0, b)
+    T operator()(T b) { // [0, b)
         return (*this)(0, b);
     }
 };

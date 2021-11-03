@@ -35,3 +35,9 @@ std::istream &operator>>(std::istream &dest, __int128_t& value){
     value=parse(s);
     return dest;
 }
+__int128_t gcd(const __int128_t &a,const __int128_t &b) {
+	return b?gcd(b,a%b):a;
+}
+inline __int128_t lcm(const __int128_t &a,const __int128_t &b) {
+	return a/gcd(a,b)*b;
+}

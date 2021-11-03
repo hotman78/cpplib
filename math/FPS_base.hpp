@@ -104,7 +104,7 @@ struct FPS_BASE:std::vector<T>{
         for(int i=0;i<(int)(*this).size();++i)std::cerr<<(*this)[i]<<" \n"[i==(int)(*this).size()-1];
         if((int)(*this).size()==0)std::cerr<<'\n';
     }
-    inline P& shrink(){while((*this).back()==0)(*this).pop_back();return (*this);}
+    inline P& shrink(){while((int)(*this).size()!=1&&(*this).back()==0)(*this).pop_back();return (*this);}
     inline P pre(int sz)const{
         return P(begin(*this),begin(*this)+std::min((int)this->size(),sz));
     }

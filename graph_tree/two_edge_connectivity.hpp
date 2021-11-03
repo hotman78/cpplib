@@ -39,7 +39,7 @@ struct two_edge_connectivity{
 			while(1){
 				int e=s.top();s.pop();ins[e]=0;
 				bcc.push_back(e);
-				cmp[v]=each_bcc.size();
+				cmp[e]=each_bcc.size();
 				if(e==v)break;
 			}
 			each_bcc.push_back(bcc);
