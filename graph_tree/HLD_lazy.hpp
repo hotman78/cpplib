@@ -73,29 +73,37 @@ class HLD_lazy{
 		}
 	}
 	inline void update_vertex(int u,E x){
-		seg->update(vertex[u],vertex[u],x);
+		update_seg(vertex[u],vertex[u],x);
 	}
 	inline maybe<T> get_vertex(int u){
-		return seg->get(vertex[u],vertex[u]);
+		return get_seg(vertex[u],vertex[u]);
 	}
 	inline void update_subtree(int u,E x){
-		seg->update(vertex[u],vertex[u]+sz[u]-1);
+		update_seg(vertex[u],vertex[u]+sz[u]-1,x);
 	}
 	inline maybe<T> get_subtree(int u){
-		return seg->get(vertex[u],vertex[u]+sz[u]-1);
+		return get_seg(vertex[u],vertex[u]+sz[u]-1);
+	}
+	maybe<T> get_seg(int u,int v){
+		if(u>v)swap(u,v);
+		return seg->get(u,v+1);
+	}
+	void update_seg(int u,int v,E x){
+		if(u>v)swap(u,v);
+		seg->update(u,v+1,x);
 	}
 	void update_path(int u,int v,E x){
 		while(1){
 			if(head[u]==head[v]){
-				seg->update(vertex[u],vertex[v],x);
+				update_seg(vertex[u],vertex[v],x);
 				break;
 			}
 			else if(sz[head[u]]>sz[head[v]]){
-				seg->update(vertex[v],vertex[head[v]],x);
+				update_seg(vertex[v],vertex[head[v]],x);
 				v=par[v];
 			}
 			else{
-				seg->update(vertex[u],vertex[head[u]],x);
+				update_seg(vertex[u],vertex[head[u]],x);
 				u=par[u];
 			}
 		}
@@ -105,14 +113,14 @@ class HLD_lazy{
 		maybe<T> res;
 		while(1){
 			if(head[u]==head[v]){
-				return f(res,seg->get(vertex[u],vertex[v]));
+				return f(res,get_seg(vertex[u],vertex[v]));
 			}
 			else if(sz[head[u]]>sz[head[v]]){
-				res=f(res,seg->get(vertex[v],vertex[head[v]]));
+				res=f(res,get_seg(vertex[v],vertex[head[v]]));
 				v=par[v];
 			}
 			else{
-				res=f(res,seg->get(vertex[u],vertex[head[u]]));
+				res=f(res,get_seg(vertex[u],vertex[head[u]]));
 				u=par[u];
 			}
 		}

@@ -1,5 +1,5 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
-#include "../Z_algorizm.hpp"
+#include "../Z_algorithm.hpp"
 #include "../../util/template.hpp"
 
 int main(){

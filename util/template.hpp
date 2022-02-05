@@ -4,14 +4,15 @@
 #pragma GCC target("avx2")
 #include<bits/stdc++.h>
 using namespace std;
+#include"ioutil.hpp"
 struct __INIT__{__INIT__(){cin.tie(0);ios::sync_with_stdio(false);cout<<fixed<<setprecision(15);}}__INIT__;
 typedef long long lint;
 #define INF (1LL<<60)
 #define IINF (1<<30)
 #define EPS (1e-10)
 #define endl ('\n')
-typedef vector<lint> vec;
-typedef vector<vector<lint>> mat;
+// typedef vector<lint> vec;
+// typedef vector<vector<lint>> mat;
 typedef vector<vector<vector<lint>>> mat3;
 typedef vector<string> svec;
 typedef vector<vector<string>> smat;
@@ -55,7 +56,7 @@ const vector<lint> dy={0,1,0,-1,1,-1,1,-1};
 vector<vector<long long>> __MAKE_MAT__(vector<long long> v){if(v.empty())return vector<vector<long long>>(1,vector<long long>());long long n=v.back();v.pop_back();vector<vector<long long>> ret;vector<vector<long long>> tmp=__MAKE_MAT__(v);for(auto e:tmp)for(long long i=0;i<n;++i){ret.push_back(e);ret.back().push_back(i);}return ret;}
 using graph=vector<vector<int>>;
 template<typename T>using graph_w=vector<vector<pair<int,T>>>;
-template<typename T,typename E>ostream& operator<<(ostream& out,pair<T,E>v){out<<"("<<v.first<<","<<v.second<<")";return out;}
+
 #if __cplusplus>=201703L
     constexpr inline long long powll(long long a,long long b){long long res=1;while(b--)res*=a;return res;}
 #endif

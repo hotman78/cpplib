@@ -5,25 +5,28 @@
  * @brief BinaryIndexedTree
  */
 
+template<typename T=std::int64_t,typename F=plus<T>,typename Inv=minus<T>>
 struct BIT{
-    std::vector<long long> bit;
+    std::vector<T> bit;
     int n;
-    BIT(long long n):n(n){
-        bit.resize(n+1,0);
+    F f;
+    Inv inv;
+    BIT(int n,T zero=T(),F f=F(),Inv inv=Inv()):n(n),f(f),inv(inv){
+        bit.resize(n+1,zero);
     }
     //0-indexed [0,x)-sum
-    long long sum(long long x){
-        long long res=0;
-        for(int i=x;i;i-=i&-i)res+=bit[i];
+    T sum(T x){
+        T res=0;
+        for(int i=x;i;i-=i&-i)res=f(res,bit[i]);
         return res;
     }
     //0-indexed [x,y)-sum
-    long long sum(long long x,long long y){
-        return sum(y)-sum(x);
+    T sum(int x,int y){
+        return inv(sum(y),sum(x));
     }
     //0-indexed
-    void add(long long x,long long val){
+    void add(int x,T val){
         if(x>=n)return;
-        for(long long i=x+1;i<=n;i+=i&-i)bit[i]+=val;
+        for(int i=x+1;i<=n;i+=i&-i)bit[i]=f(bit[i],val);
     }
 };
