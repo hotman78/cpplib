@@ -20,5 +20,11 @@
 "math/test/LC_convolution_998244353.test.cpp": "2022-02-05 12:25:10 +0900",
 "math/test/LC_floor_sum.test.cpp": "2022-02-05 12:25:10 +0900",
 "math/test/LC_mod_log.test.cpp": "2022-02-05 12:25:10 +0900",
-"math/test/LC_tetration.test.cpp": "2022-02-05 12:25:10 +0900"
+"math/test/LC_tetration.test.cpp": "2022-02-05 12:25:10 +0900",
+"math/test/LC_totient_sum.test.cpp": "2022-02-05 12:25:10 +0900",
+"segment_tree/test/AOJ_dual_segment_tree.test.cpp": "2022-02-05 12:25:10 +0900",
+"segment_tree/test/AOJ_lazy_segment_tree.test.cpp": "2022-02-05 12:25:10 +0900",
+"string/test/YUKI_Aho_Corasick.test.cpp": "2022-02-05 12:25:10 +0900",
+"util/test/LC_Number_of_Substrings.test.cpp": "2022-02-05 12:25:10 +0900",
+"util/test/LC_Suffix_Array.test.cpp": "2022-02-05 12:25:10 +0900"
 }
