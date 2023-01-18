@@ -1,21 +1,17 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/frequency_table_of_tree_distance"
-#include "../../math/FPS_mint.hpp"
-#include "../graph_template.hpp"
-#include "../centroid_decomposition.hpp"
-#include "../../util/template.hpp"
-#include "../../math/mod_int.hpp"
-#include "../../math/garner.hpp"
+#include "../../../cpplib/util/template.hpp"
+#include "../../../cpplib/graph_tree/centroid_decomposition.hpp"
+#include "atcoder/convolution.hpp"
 
-template<int MOD>
-fps<mod_int<MOD>> solve(int n,const graph&g,const vector<int>&d){
-    using fps=fps<mod_int<MOD>>;
-    fps ans;
+vector<long long> solve(int n,const graph&g,const vector<int>&d){
+    using poly=vector<long long>;
+    poly ans(n);
     std::bitset<200000>used;
     rep(i,n){
-        fps s{1};
+        poly s{1};
         used[d[i]]=1;
         for(auto e:g[d[i]]){
-            fps v{0};
+            poly v{0};
             auto f=[&](auto f,lint n,lint p,lint cnt){
                 if(used[n])return;
                 if((int)v.size()==cnt)v.resize(v.size()*2);
@@ -28,13 +24,16 @@ fps<mod_int<MOD>> solve(int n,const graph&g,const vector<int>&d){
                 }
             };
             f(f,e,-1,1);
-            ans-=v*v;
+            auto res=atcoder::convolution_ll(v,v);
+            for(int j=0;j<res.size();++j){
+                ans[j]-=res[j];
+            }
         }
-        ans+=s*s;
+        auto res=atcoder::convolution_ll(s,s);
+        for(int j=0;j<res.size();++j){
+            ans[j]+=res[j];
+        }
     }
-    ans>>=1;
-    ans/=2;
-    ans.resize(n-1,0);
     return ans;
 }
 
@@ -44,11 +43,10 @@ int main(){
     graph g=load_tree0(n);
     centroid_decomposition cd(g);
     auto d=cd.get_euler_tour();
-    auto s=solve<1224736769>(n,g,d);
-    auto t=solve<1045430273>(n,g,d);
-    vector<lint>ans(n-1);
+    auto ans=solve(n,g,d);
+    vector<long long>ans2(n-1);
     for(int i=0;i<n-1;++i){
-        ans[i]=garner(vector<long long>{(long long)s[i].value(),(long long)t[i].value()},vector<long long>{1224736769LL,1045430273LL,1LL<<40});
+        ans2[i]=ans[i+1]/2;
     }
-    output(ans);
+    output(ans2);
 }
