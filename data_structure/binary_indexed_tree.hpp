@@ -1,11 +1,12 @@
 #pragma once
 #include<vector>
+#include<functional>
 
 /**
  * @brief BinaryIndexedTree
  */
 
-template<typename T=std::int64_t,typename F=plus<T>,typename Inv=minus<T>>
+template<typename T=long long,typename F=std::plus<T>,typename Inv=std::minus<T>>
 struct BIT{
     std::vector<T> bit;
     int n;

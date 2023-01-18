@@ -5,7 +5,7 @@
 int main(){
 	lint n,q;
 	cin>>n>>q;
-	BIT b(n);
+	BIT<lint,plus<lint>,minus<lint>> b(n);
 	rep(i,n){
 		lint x;
 		cin>>x;
