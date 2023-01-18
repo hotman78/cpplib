@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
-#include "../binary_heap.hpp"
 #include "../../util/template.hpp"
+#include "../binary_heap.hpp"
 
 int main(){
 	lint n,m,s,t;

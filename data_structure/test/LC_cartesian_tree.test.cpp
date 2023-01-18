@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/cartesian_tree"
-#include "../cartesian_tree.hpp"
 #include "../../util/template.hpp"
+#include "../cartesian_tree.hpp"
 
 int main(){
 	lint n;

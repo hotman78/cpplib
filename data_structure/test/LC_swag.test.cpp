@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/queue_operate_all_composite"
+#include "../../util/template.hpp"
 #include "../../math/mod_int998244353.hpp"
 #include "../swag.hpp"
 #include "../../functional/composite.hpp"
-#include "../../util/template.hpp"
 
 int main(){
 	lint n;

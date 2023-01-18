@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/line_add_get_min"
-#include "../li_chao_tree.hpp"
 #include "../../util/template.hpp"
+#include "../li_chao_tree.hpp"
 
 int main(){
 	lint n,q;

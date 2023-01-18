@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/associative_array"
-#include "../fast_set.hpp"
 #include "../../util/template.hpp"
+#include "../fast_set.hpp"
 
 int main(){
     lint q;

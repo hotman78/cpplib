@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
-#include "../RMQ.hpp"
 #include "../../util/template.hpp"
+#include "../RMQ.hpp"
 
 int main(){
 	lint n,q;

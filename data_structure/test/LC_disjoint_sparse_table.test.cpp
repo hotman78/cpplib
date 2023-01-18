@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
-#include "../disjoint_sparse_table.hpp"
 #include "../../util/template.hpp"
+#include "../disjoint_sparse_table.hpp"
 
 int main(){
 	lint n,q;

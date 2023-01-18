@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
+#include "../../util/template.hpp"
 #include "../sparse_table.hpp"
 #include "../../functional/MIN.hpp"
-#include "../../util/template.hpp"
 
 int main(){
 	lint n,q;
