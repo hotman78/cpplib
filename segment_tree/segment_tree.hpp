@@ -26,6 +26,10 @@ class segment_tree{
 	segment_tree(i64 sz,F op=F()):sz(sz),op(op){
 		while(n<=sz)n<<=1;
 	}
+    segment_tree(std::vector<T> v,F op=F()):sz(v.size()),op(op){
+		while(n<=sz)n<<=1;
+        for(int i=0;i<sz;++i)change(i,v[i]);
+	}
     maybe<T> get(i64 a,i64 b){
         return get(a,b,0,n,root);
     }

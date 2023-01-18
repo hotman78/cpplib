@@ -11,8 +11,8 @@ typedef long long lint;
 #define IINF (1<<30)
 #define EPS (1e-10)
 #define endl ('\n')
-// typedef vector<lint> vec;
-// typedef vector<vector<lint>> mat;
+typedef vector<lint> vec;
+typedef vector<vector<lint>> mat;
 typedef vector<vector<vector<lint>>> mat3;
 typedef vector<string> svec;
 typedef vector<vector<string>> smat;
