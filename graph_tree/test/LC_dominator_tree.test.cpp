@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/dominatortree"
+#include"../../util/template.hpp"
 #include"../dominator_tree.hpp"
 #include"../graph_template.hpp"
-#include"../../util/template.hpp"
 
 int main(){
     lint n,m,s;

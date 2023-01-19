@@ -12,7 +12,7 @@ int main(){
     rep(i,q){
         lint x;
         cin>>x;
-        lint t=bs(0,n-1,[&](lint i){return a[i]<=x;});
+        lint t=bs<lint>(0,n-1,[&](lint i){return a[i]<=x;});
         if(t!=-1&&a[t]==x){
             ans++;
         }
