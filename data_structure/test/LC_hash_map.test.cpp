@@ -4,7 +4,7 @@
 #include"../../util/fastIO.hpp"
 
 int main(){
-    hash_map<lint,lint>m;
+    map<lint,lint>m;
     lint q;
     fin>>q;
     while(q--){
