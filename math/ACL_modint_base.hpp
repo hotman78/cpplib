@@ -14,27 +14,27 @@ std::istream& operator>>(std::istream& lhs,mint& rhs) noexcept {
 }
 
 int MOD_NOW=-1;
-int sz=0;
+int FACT_TABLE_SIZE=0;
 std::vector<mint>fact_table,fact_inv_table;
 
 void update(int x){
-    if(MOD_NOW!=mint::mod()||sz==0){
+    if(MOD_NOW!=mint::mod()||FACT_TABLE_SIZE==0){
         fact_table.assign(1,1);
         fact_inv_table.assign(1,1);
-        sz=1;
+        FACT_TABLE_SIZE=1;
         MOD_NOW=mint::mod();
     }
-    while(sz<=x){
-        fact_table.resize(sz*2);
-        fact_inv_table.resize(sz*2);
-        for(int i=sz;i<sz*2;++i){
+    while(FACT_TABLE_SIZE<=x){
+        fact_table.resize(FACT_TABLE_SIZE*2);
+        fact_inv_table.resize(FACT_TABLE_SIZE*2);
+        for(int i=FACT_TABLE_SIZE;i<FACT_TABLE_SIZE*2;++i){
             fact_table[i]=fact_table[i-1]*i;
         }
-        fact_inv_table[sz*2-1]=fact_table[sz*2-1].inv();
-        for(int i=sz*2-2;i>=sz;--i){
+        fact_inv_table[FACT_TABLE_SIZE*2-1]=fact_table[FACT_TABLE_SIZE*2-1].inv();
+        for(int i=FACT_TABLE_SIZE*2-2;i>=FACT_TABLE_SIZE;--i){
             fact_inv_table[i]=fact_inv_table[i+1]*(i+1);
         }
-        sz*=2;
+        FACT_TABLE_SIZE*=2;
     }
 }
 
@@ -53,8 +53,12 @@ inline mint comb(int x,int y){
     return fact(x)*fact_inv(y)*fact_inv(x-y);
 }
 inline mint perm(int x,int y){
-    return fact(x)*fact_inv(y);
+    return fact(x)*fact_inv(x-y);
 }
+
+// x個のグループにy個のものを分ける場合の数
 inline mint multi_comb(int x,int y){
+    if(y==0&&x>=0)return 1;
+    if(y<0||x<=0)return 0;
     return comb(x+y-1,y);
 }
