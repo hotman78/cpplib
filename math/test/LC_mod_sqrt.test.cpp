@@ -2,12 +2,12 @@
 #include "../../util/template.hpp"
 #include "../mod_sqrt.hpp"
 
-int main(){
+int main() {
     lint t;
-    cin>>t;
-    while(t--){
-        lint y,p;
-        cin>>y>>p;
-        cout<<mod_sqrt(y,p)<<endl;
+    cin >> t;
+    while (t--) {
+        lint y, p;
+        cin >> y >> p;
+        cout << mod_sqrt(y, p) << endl;
     }
 }

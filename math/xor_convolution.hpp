@@ -1,6 +1,5 @@
-template <typename T>
-vector<T>xor_conv(vector<T> s,vector<T> t){
-    auto fwt=[](vector<T>& f){
+template <typename T> vector<T> xor_conv(vector<T> s, vector<T> t) {
+    auto fwt = [](vector<T>& f) {
         int n = f.size();
         for (int i = 1; i < n; i <<= 1) {
             for (int j = 0; j < n; j++) {
@@ -11,7 +10,7 @@ vector<T>xor_conv(vector<T> s,vector<T> t){
             }
         }
     };
-    auto ifwt=[](vector<T>& f){
+    auto ifwt = [](vector<T>& f) {
         int n = f.size();
         for (int i = 1; i < n; i <<= 1) {
             for (int j = 0; j < n; j++) {
@@ -24,8 +23,8 @@ vector<T>xor_conv(vector<T> s,vector<T> t){
     };
     fwt(s);
     fwt(t);
-    for(int i=0;i<(int)s.size();i++){
-        s[i]*=t[i];
+    for (int i = 0; i < (int)s.size(); i++) {
+        s[i] *= t[i];
     }
     ifwt(s);
     return s;

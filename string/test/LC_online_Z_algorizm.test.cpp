@@ -2,12 +2,12 @@
 #include "../online_Zalgo.hpp"
 #include "../../util/template.hpp"
 
-int main(){
+int main() {
     string s;
-    cin>>s;
+    cin >> s;
     online_Zalgo z;
-    for(auto e:s)z.add(e);
+    for (auto e : s) z.add(e);
     vec v(s.size());
-    rep(i,s.size())v[i]=z[i];
+    rep(i, s.size()) v[i] = z[i];
     output(v);
 }

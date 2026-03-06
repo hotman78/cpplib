@@ -57,7 +57,8 @@ struct barrett {
         // -> im * m = 2^64 + r (0 <= r < m)
         // let z = a*b = c*m + d (0 <= c, d < m)
         // a*b * im = (c*m + d) * im = c*(im*m) + d*im = c*2^64 + c*r + d*im
-        // c*r + d*im < m * m + m * im < m * m + 2^64 + m <= 2^64 + m * (m + 1) < 2^64 * 2
+        // c*r + d*im < m * m + m * im < m * m + 2^64 + m <= 2^64 + m * (m + 1)
+        // < 2^64 * 2
         // ((ab * im) >> 64) == c or c + 1
         unsigned long long z = a;
         z *= b;
@@ -273,6 +274,7 @@ template <class T> using is_modint_t = std::enable_if_t<is_modint<T>::value>;
 template <int m, std::enable_if_t<(1 <= m)>* = nullptr>
 struct static_modint : internal::static_modint_base {
     using mint = static_modint;
+
   public:
     static constexpr int mod() { return m; }
     static mint raw(int v) {
@@ -370,6 +372,7 @@ struct static_modint : internal::static_modint_base {
     friend bool operator!=(const mint& lhs, const mint& rhs) {
         return lhs._v != rhs._v;
     }
+
   private:
     unsigned int _v;
     static constexpr unsigned int umod() { return m; }
@@ -377,6 +380,7 @@ struct static_modint : internal::static_modint_base {
 };
 template <int id> struct dynamic_modint : internal::modint_base {
     using mint = dynamic_modint;
+
   public:
     static int mod() { return (int)(bt.umod()); }
     static void set_mod(int m) {
@@ -471,6 +475,7 @@ template <int id> struct dynamic_modint : internal::modint_base {
     friend bool operator!=(const mint& lhs, const mint& rhs) {
         return lhs._v != rhs._v;
     }
+
   private:
     unsigned int _v;
     static internal::barrett bt;
@@ -735,12 +740,13 @@ struct dsu {
         for (int i = 0; i < _n; i++) {
             result[leader_buf[i]].push_back(i);
         }
-        result.erase(
-            std::remove_if(result.begin(), result.end(),
-                           [&](const std::vector<int>& v) { return v.empty(); }),
-            result.end());
+        result.erase(std::remove_if(
+                         result.begin(), result.end(),
+                         [&](const std::vector<int>& v) { return v.empty(); }),
+                     result.end());
         return result;
     }
+
   private:
     int _n;
     // root node: -1 * component size
@@ -754,6 +760,7 @@ namespace atcoder {
 // Reference: https://en.wikipedia.org/wiki/Fenwick_tree
 template <class T> struct fenwick_tree {
     using U = internal::to_unsigned_t<T>;
+
   public:
     fenwick_tree() : _n(0) {}
     fenwick_tree(int n) : _n(n), data(n) {}
@@ -769,6 +776,7 @@ template <class T> struct fenwick_tree {
         assert(0 <= l && l <= r && r <= _n);
         return sum(r) - sum(l);
     }
+
   private:
     int _n;
     std::vector<U> data;
@@ -928,6 +936,7 @@ struct lazy_segtree {
         } while ((r & -r) != r);
         return 0;
     }
+
   private:
     int _n, size, log;
     std::vector<S> d;
@@ -1169,6 +1178,7 @@ template <class Cap> struct mf_graph {
         }
         return visited;
     }
+
   private:
     int _n;
     struct _edge {
@@ -1285,9 +1295,10 @@ template <class Cap, class Cost> struct mcf_graph {
             for (int v = 0; v < _n; v++) {
                 if (!vis[v]) continue;
                 // dual[v] = dual[v] - dist[t] + dist[v]
-                //         = dual[v] - (shortest(s, t) + dual[s] - dual[t]) + (shortest(s, v) + dual[s] - dual[v])
-                //         = - shortest(s, t) + dual[t] + shortest(s, v)
-                //         = shortest(s, v) - shortest(s, t) >= 0 - (n-1)C
+                //         = dual[v] - (shortest(s, t) + dual[s] - dual[t]) +
+                //         (shortest(s, v) + dual[s] - dual[v]) = - shortest(s,
+                //         t) + dual[t] + shortest(s, v) = shortest(s, v) -
+                //         shortest(s, t) >= 0 - (n-1)C
                 dual[v] -= dist[t] - dist[v];
             }
             return true;
@@ -1318,6 +1329,7 @@ template <class Cap, class Cost> struct mcf_graph {
         }
         return result;
     }
+
   private:
     int _n;
     struct _edge {
@@ -1411,6 +1423,7 @@ struct scc_graph {
         }
         return groups;
     }
+
   private:
     int _n;
     struct edge {
@@ -1434,6 +1447,7 @@ struct scc_graph {
         internal.add_edge(from, to);
     }
     std::vector<std::vector<int>> scc() { return internal.scc(); }
+
   private:
     internal::scc_graph internal;
 };
@@ -1531,6 +1545,7 @@ template <class S, S (*op)(S, S), S (*e)()> struct segtree {
         } while ((r & -r) != r);
         return 0;
     }
+
   private:
     int _n, size, log;
     std::vector<S> d;
@@ -1812,6 +1827,7 @@ struct two_sat {
         return true;
     }
     std::vector<bool> answer() { return _answer; }
+
   private:
     int _n;
     std::vector<bool> _answer;

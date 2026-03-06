@@ -1,9 +1,9 @@
-std::ostream &operator<<(std::ostream &dest, __int128_t value) {
+std::ostream& operator<<(std::ostream& dest, __int128_t value) {
     std::ostream::sentry s(dest);
-    if(s){
+    if (s) {
         __uint128_t tmp = value < 0 ? -value : value;
         char buffer[128];
-        char *d = std::end(buffer);
+        char* d = std::end(buffer);
         do {
             --d;
             *d = "0123456789"[tmp % 10];
@@ -20,24 +20,23 @@ std::ostream &operator<<(std::ostream &dest, __int128_t value) {
     }
     return dest;
 }
-__int128 parse(string &s) {
+__int128 parse(string& s) {
     __int128 ret = 0;
-    bool neg=0;
-    if(s[0]=='-')neg=1;
+    bool neg = 0;
+    if (s[0] == '-') neg = 1;
     for (int i = neg; i < (int)s.length(); i++)
-        if ('0' <= s[i] && s[i] <= '9')
-            ret = 10 * ret + s[i] - '0';
-    return neg?-ret:ret;
+        if ('0' <= s[i] && s[i] <= '9') ret = 10 * ret + s[i] - '0';
+    return neg ? -ret : ret;
 }
-std::istream &operator>>(std::istream &dest, __int128_t& value){
+std::istream& operator>>(std::istream& dest, __int128_t& value) {
     string s;
-    dest>>s;
-    value=parse(s);
+    dest >> s;
+    value = parse(s);
     return dest;
 }
-__int128_t gcd(const __int128_t &a,const __int128_t &b) {
-	return b?gcd(b,a%b):a;
+__int128_t gcd(const __int128_t& a, const __int128_t& b) {
+    return b ? gcd(b, a % b) : a;
 }
-inline __int128_t lcm(const __int128_t &a,const __int128_t &b) {
-	return a/gcd(a,b)*b;
+inline __int128_t lcm(const __int128_t& a, const __int128_t& b) {
+    return a / gcd(a, b) * b;
 }

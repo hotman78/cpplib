@@ -3,11 +3,11 @@
 #include "../../math/mod_int998244353.hpp"
 #include "../FPS_mint.hpp"
 
-int main(){
-    lint n,m;
-    cin>>n>>m;
-    fps<mint> a(n),b(m);
-    rep(i,n)cin>>a[i];
-    rep(i,m)cin>>b[i];
-    output(a*b);
+int main() {
+    lint n, m;
+    cin >> n >> m;
+    fps<mint> a(n), b(m);
+    rep(i, n) cin >> a[i];
+    rep(i, m) cin >> b[i];
+    output(a * b);
 }

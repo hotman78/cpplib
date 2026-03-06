@@ -1,0 +1,77 @@
+version: '3'
+
+vars:
+  CPP_FILES:
+    sh: |
+      git ls-files '*.hpp' '*.cpp' '*.cc' '*.cxx' \
+        ':(exclude)ac-library/**'
+  CHANGED_CPP_FILES:
+    sh: |
+      git diff --name-only -- '*.hpp' '*.cpp' '*.cc' '*.cxx' \
+        ':(exclude)ac-library/**' \
+      | tr '\n' ' ' \
+      | sed 's/[[:space:]]*$//'
+
+tasks:
+  default:
+    desc: Show available tasks.
+    cmds:
+      - task --list
+    silent: true
+
+  fmt:
+    desc: Format all tracked C++ sources except ac-library.
+    aliases: [format]
+    cmds:
+      - |
+        if [ -z "{{.CPP_FILES}}" ]; then
+          echo "no C++ files found"
+          exit 0
+        fi
+        printf '%s\n' "{{.CPP_FILES}}" | xargs clang-format -i
+
+  fmt-check:
+    desc: Check formatting for all tracked C++ sources except ac-library.
+    cmds:
+      - |
+        if [ -z "{{.CPP_FILES}}" ]; then
+          echo "no C++ files found"
+          exit 0
+        fi
+        printf '%s\n' "{{.CPP_FILES}}" | xargs clang-format --dry-run --Werror
+
+  fmt-changed:
+    desc: Format changed C++ sources except ac-library.
+    cmds:
+      - |
+        if [ -z "{{.CHANGED_CPP_FILES}}" ]; then
+          echo "no changed C++ files"
+          exit 0
+        fi
+        clang-format -i {{.CHANGED_CPP_FILES}}
+
+  lint:
+    desc: Run clang-tidy for all tracked C++ sources except ac-library.
+    cmds:
+      - |
+        if [ -z "{{.CPP_FILES}}" ]; then
+          echo "no C++ files found"
+          exit 0
+        fi
+        printf '%s\n' "{{.CPP_FILES}}" \
+        | xargs -n 20 clang-tidy --extra-arg=-std=c++17 --extra-arg=-I. --extra-arg=-Iac-library
+
+  lint-changed:
+    desc: Run clang-tidy for changed C++ sources except ac-library.
+    cmds:
+      - |
+        if [ -z "{{.CHANGED_CPP_FILES}}" ]; then
+          echo "no changed C++ files"
+          exit 0
+        fi
+        clang-tidy {{.CHANGED_CPP_FILES}} --extra-arg=-std=c++17 --extra-arg=-I. --extra-arg=-Iac-library
+
+  verify:
+    desc: Run online-judge-verify tests with the current config.
+    cmds:
+      - oj-verify run

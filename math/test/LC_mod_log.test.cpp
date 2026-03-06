@@ -2,12 +2,12 @@
 #include "../mod_log.hpp"
 #include "../../util/template.hpp"
 
-int main(){
+int main() {
     lint t;
-    cin>>t;
-    while(t--){
-        lint x,y,p;
-        cin>>x>>y>>p;
-        cout<<mod_log(x,y,p)<<endl;
+    cin >> t;
+    while (t--) {
+        lint x, y, p;
+        cin >> x >> y >> p;
+        cout << mod_log(x, y, p) << endl;
     }
 }

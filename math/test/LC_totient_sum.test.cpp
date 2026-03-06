@@ -3,8 +3,8 @@
 #include "../mod_int998244353.hpp"
 #include "../../util/template.hpp"
 
-int main(){
+int main() {
     lint n;
-    cin>>n;
-    cout<<totient_sum<mint>(n)<<endl;
+    cin >> n;
+    cout << totient_sum<mint>(n) << endl;
 }

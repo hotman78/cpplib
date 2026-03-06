@@ -1,17 +1,17 @@
 #define PROBLEM "https://yukicoder.me/problems/no/430"
-#include"../AhoCorasick.hpp"
+#include "../AhoCorasick.hpp"
 #include "../../util/template.hpp"
 
-int main(){
+int main() {
     string s;
-    cin>>s;
+    cin >> s;
     lint q;
-    cin>>q;
+    cin >> q;
     AhoCorasick aho;
-    while(q--){
+    while (q--) {
         string t;
-        cin>>t;
+        cin >> t;
         aho.insert(t);
     }
-    cout<<aho.count(s)<<endl;
+    cout << aho.count(s) << endl;
 }

@@ -2,21 +2,21 @@
 #include "../../util/template.hpp"
 #include "../fast_set.hpp"
 
-int main(){
+int main() {
     lint q;
-    cin>>q;
-    fast_set<lint>v;
-    while(q--){
+    cin >> q;
+    fast_set<lint> v;
+    while (q--) {
         lint c;
-        cin>>c;
-        if(c==0){
-            lint s,t;
-            cin>>s>>t;
-            v[s]=t;
-        }else{
+        cin >> c;
+        if (c == 0) {
+            lint s, t;
+            cin >> s >> t;
+            v[s] = t;
+        } else {
             lint s;
-            cin>>s;
-            cout<<v[s]<<endl;
+            cin >> s;
+            cout << v[s] << endl;
         }
     }
 }

@@ -2,8 +2,8 @@
 #include "../../util/template.hpp"
 #include "../z_algorithm.hpp"
 
-int main(){
+int main() {
     string s;
-    cin>>s;
+    cin >> s;
     output(z_algorithm(s));
 }

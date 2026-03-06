@@ -9,9 +9,10 @@
 //     return out;
 // }
 
-template<typename T,typename E>
-std::ostream& operator<<(std::ostream& out,std::pair<T,E>v){
-    out<<"("<<v.first<<","<<v.second<<")";return out;
+template <typename T, typename E>
+std::ostream& operator<<(std::ostream& out, std::pair<T, E> v) {
+    out << "(" << v.first << "," << v.second << ")";
+    return out;
 }
 
 // template <class... Args>
