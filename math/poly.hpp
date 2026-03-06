@@ -118,6 +118,19 @@ pair<poly,poly> divmod(const poly&a,const poly& b){
     return make_pair(c,pre(a-c*b,(int)b.size()-1));
 }
 
+// 多項式の gcd（最高次係数を 1 に正規化）
+poly poly_gcd(poly a, poly b){
+    a=shrink(a); b=shrink(b);
+    while(!b.empty()){
+        auto r=divmod(a,b).second;
+        a=b; b=shrink(r);
+    }
+    if(a.empty()) return a;
+    mint inv_lead=a.back().inv();
+    for(auto &v:a) v*=inv_lead;
+    return a;
+}
+
 poly multipoint_evalution(const poly&a,const poly&b){
     int n=b.size();
     vector<poly>v(n*2);
@@ -159,4 +172,45 @@ vector<mint> composition(vector<mint>f,vector<mint>g){
         g_pow2.resize(n);
     }
     return res;
+}
+vector<mint> shift(vector<mint>f,int c){
+    const int n=f.size();
+    vector<mint> g(n,0);
+    for(int i=0;i<n;++i)f[i]*=fact(i);
+    for(int i=0;i<n;++i)g[i]=mint(c).pow(i)*fact_inv(i);
+    reverse(begin(g),end(g));
+    f*=g;
+    f =vector<mint>{f.begin()+n-1,f.end()};
+    for(int i=0;i<n;++i)f[i]*=fact_inv(i);
+    return f;
+}
+
+poly even_part(const poly& a){
+    poly res;
+    res.reserve((a.size()+1)/2);
+    for(int i=0;i<a.size();i+=2)res.emplace_back(a[i]);
+    return shrink(res);
+}
+poly odd_part(const poly& a){
+    poly res;
+    res.reserve(a.size()/2);
+    for(int i=1;i<a.size();i+=2)res.emplace_back(a[i]);
+    return shrink(res);
+}
+
+// bostan-mori: P/Q の級数展開における x^k の係数を返す (Q[0] ≠ 0 を仮定)
+mint bostan_mori(poly p, poly q, long long k){
+    p=shrink(p); q=shrink(q);
+    assert(!q.empty() && q[0].val()!=0);
+    while(k){
+        poly q_neg(q.size());
+        rep(i,0,q.size()) q_neg[i]=(i&1)?-q[i]:q[i];
+        poly r=p*q_neg;
+        poly s=q*q_neg;
+        if(k&1) p=odd_part(r);
+        else     p=even_part(r);
+        q=even_part(s);
+        k>>=1;
+    }
+    return p.empty()?mint(0):p[0]/q[0];
 }
